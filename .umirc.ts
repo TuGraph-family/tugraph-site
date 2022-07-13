@@ -6,4 +6,12 @@ export default defineConfig({
   },
   routes: [{ path: '/', component: '@/pages/index' }],
   fastRefresh: {},
+  locale: {
+    antd: true,
+    baseNavigator: true,
+    baseSeparator: '-',
+    default: 'zh-CN',
+    title: true,
+    useLocalStorage: true,
+  },
 });
