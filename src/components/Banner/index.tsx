@@ -1,6 +1,8 @@
 import React from 'react';
 import { useIntl } from 'umi';
 import { Space, Button } from 'antd';
+import { Header } from '../Header';
+
 import styles from './index.less';
 
 export const Banner = () => {
@@ -8,6 +10,7 @@ export const Banner = () => {
 
   return (
     <div className={styles.banner}>
+      <Header />
       <div className={styles.slogan}>
         {intl.formatMessage({ id: 'home.banner.slogan' })}
       </div>

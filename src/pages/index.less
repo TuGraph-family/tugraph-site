@@ -1,13 +1,7 @@
   body {
-    background-color: #fff;
+    background: #fff;
   }
   
-  .homeLayout {
-    background-image: url('https://gw.alipayobjects.com/zos/bmw-prod/15d38f2d-4bf6-46be-9ccf-645ca15a5a17.svg');
-    background-repeat: no-repeat;
-    background-position-y: -20px;
-  }
-
   :global {
     .lightBtn {
       background: #0069FD;
@@ -27,6 +21,31 @@
       background: #00122B;
       border-color: #00122B;
     }
+    .ant-layout {
+      background: #fff;
+    }
   }
   
- 
+.containerWrapper {
+  .users {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 55px;
+  }
+
+  .moreDemo {
+    margin: 0 180px;
+    border-top: 1px solid #D8D8D8;
+
+    .text {
+      float: right;
+      font-size: 16px;
+      color: #494949;
+      margin-top: 30px;
+      
+      &:hover {
+        color:#0069FD;
+      }
+    }
+  }
+}
