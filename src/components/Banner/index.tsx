@@ -1,3 +1,4 @@
+import React from 'react';
 import { useIntl } from 'umi';
 import { Space, Button } from 'antd';
 import styles from './index.less';
@@ -10,11 +11,11 @@ export const Banner = () => {
       <div className={styles.slogan}>
         {intl.formatMessage({ id: 'home.banner.slogan' })}
       </div>
-      <Space size={30} className={styles.buttons}>
-        <Button type="primary" block className={styles.useFree}>
+      <Space size={30}>
+        <Button type="primary" block className="lightBtn">
           {intl.formatMessage({ id: 'home.banner.useFree' })}
         </Button>
-        <Button type="primary" block className={styles.quickStart}>
+        <Button type="primary" block className="darkBtn">
           {intl.formatMessage({ id: 'home.banner.quickStart' })}
         </Button>
       </Space>

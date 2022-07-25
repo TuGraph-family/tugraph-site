@@ -1,0 +1,43 @@
+.sliders {
+  height: 441px;
+  margin: 0 86px;
+  background-color: #FFFFFF;
+  border-radius: 12px;
+  background-color: #FFFFFF;
+  box-shadow: 0 10px 30px 12px rgba(158,181,213,0.10);
+  border-radius: 12px;
+  background-color: #FFFFFF;
+
+  .slider {
+    padding: 48px 58px 0 83px;
+    height: 441px;
+    display: flex;
+    
+    .desc {
+      float: left;
+
+      .title {
+        margin: 50px 0 100px 0;
+        height: 100px;
+        width: 430px;
+        font-size: 36px;
+        color: rgba(51,51,51,0.89);
+      }
+    }
+
+    .demoImg {
+      float: right;
+    }
+  }
+  :global {
+    .ant-carousel .slick-dots li button {
+      width: 7px;
+      height: 7px;
+      border-radius: 7px;
+      background: #D8D8D8;
+    }
+    .ant-carousel .slick-dots li.slick-active button {
+      background: #7FB4FE;
+    }
+  }
+}
