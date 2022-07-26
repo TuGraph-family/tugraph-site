@@ -36,6 +36,7 @@
   .moreDemo {
     margin: 0 180px;
     border-top: 1px solid #D8D8D8;
+    height: 60px;
 
     .text {
       float: right;
@@ -45,6 +46,91 @@
       
       &:hover {
         color:#0069FD;
+      }
+    }
+  }
+
+  .reasonCards {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 80px;
+
+    .reasonCard {
+      text-align: center;
+      height: 416px;
+      width: 300px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px 10px rgba(158,181,213,0.10);
+      border-radius: 12px;
+      background-color: #FFFFFF;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .title {
+        font-weight: 600;
+        font-size: 20px;
+        color: rgba(51,51,51,0.89);
+        margin: 38px 0 26px 0;
+        text-align: center;
+      }
+
+      .desc {
+        width: 223px;
+        height: 110px;
+        font-weight: 400;
+        font-size: 14px;
+        color: #333333;
+        letter-spacing: 0.8px;
+        text-align: center;
+        line-height: 22px;
+        
+      }
+    }
+
+  }
+
+  .versionsWrapper {
+    padding-top: 66px;
+    background-image: linear-gradient(180deg, #ECF5FF 0%, rgba(235,245,255,0.00) 100%);
+    
+    .versions {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 100px;
+
+      .version {
+        height: 379px;
+        width: 534px;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px 10px rgba(158,181,213,0.10);
+        border-radius: 12px;
+        background-color: #FFFFFF;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .title {
+          width: 170px;
+          font-weight: 600;
+          font-size: 24px;
+          color: rgba(51,51,51,0.89);
+          text-align: center;
+        }
+
+        .desc {  
+          height: 128px;
+          width: 379px;
+          font-family:  PingFangSC;
+          font-weight: 600;
+          font-size: 16px;
+          color: rgba(51,51,51,0.89);
+          text-align: center;
+          line-height: 32px;
+          margin: 43px 0 39px 0 ;
+        }
       }
     }
   }
