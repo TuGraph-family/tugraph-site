@@ -1,37 +1,21 @@
 import React from 'react';
-import { Button, Layout, Space } from 'antd';
+import { Button, Col, Layout, Row, Space } from 'antd';
 import { Banner } from '@/components/Banner';
 import { Carousel } from '@/components/Carousel';
 import { SubTitle } from '@/components/SubTitle';
+import { Footer } from '@/components/Footer';
 import { useIntl } from 'umi';
+import { getReasons } from '@/data/reasons';
+import { getVersions } from '@/data/version-feats';
+import cx from 'classnames';
+import { CheckOutlined } from '@ant-design/icons';
+
 import styles from './index.less';
 
-const { Content, Footer } = Layout;
+const { Content } = Layout;
 
 export default function IndexPage() {
   const intl = useIntl();
-  const reasons = [
-    {
-      icon: 'https://gw.alipayobjects.com/zos/bmw-prod/a857ccc8-fa90-4505-9011-79de5d1cfdd9.svg',
-      title: intl.formatMessage({ id: 'home.reason0' }),
-      desc: intl.formatMessage({ id: 'home.reason.desc0' }),
-    },
-    {
-      icon: 'https://gw.alipayobjects.com/zos/bmw-prod/db35b305-00ce-4e4c-903d-bc8b6f207dfe.svg',
-      title: intl.formatMessage({ id: 'home.reason1' }),
-      desc: intl.formatMessage({ id: 'home.reason.desc1' }),
-    },
-    {
-      icon: 'https://gw.alipayobjects.com/zos/bmw-prod/6e588b1a-94c4-41aa-a096-72b249dd71b3.svg',
-      title: intl.formatMessage({ id: 'home.reason2' }),
-      desc: intl.formatMessage({ id: 'home.reason.desc2' }),
-    },
-    {
-      icon: 'https://gw.alipayobjects.com/zos/bmw-prod/d2afb1b2-25cc-4a0d-9b1b-3aff691d353a.svg',
-      title: intl.formatMessage({ id: 'home.reason3' }),
-      desc: intl.formatMessage({ id: 'home.reason.desc3' }),
-    },
-  ];
 
   return (
     <Layout className={styles.homeLayout}>
@@ -53,7 +37,7 @@ export default function IndexPage() {
           </div>
           <SubTitle title={intl.formatMessage({ id: 'home.choseReason' })} />
           <Space size={20} className={styles.reasonCards}>
-            {reasons.map((item, key) => {
+            {getReasons(intl)?.map((item, key) => {
               return (
                 <div className={styles.reasonCard} key={key}>
                   <img src={item.icon} />
@@ -93,9 +77,52 @@ export default function IndexPage() {
               </div>
             </Space>
           </div>
+          <div className={styles.featList}>
+            <Row>
+              <Col offset={8} span={8} className={styles.title}>
+                {intl.formatMessage({ id: 'home.version0' })}
+              </Col>
+              <Col span={8} className={cx(styles.title, 'boldText')}>
+                {intl.formatMessage({ id: 'home.version1' })}
+              </Col>
+            </Row>
+            {getVersions(intl)?.map((item, key) => {
+              return (
+                <Row
+                  key={key}
+                  className={key % 2 === 0 ? styles.crossRow : styles.baseRow}
+                >
+                  <Col
+                    span={6}
+                    className={cx(styles.textAlignLeft, styles.text)}
+                    offset={2}
+                  >
+                    {item.feat}
+                  </Col>
+                  <Col span={8} className={styles.text}>
+                    {item.community ? <CheckOutlined /> : null}
+                  </Col>
+                  <Col span={8} className={styles.text}>
+                    {item.pro ? <CheckOutlined /> : null}
+                  </Col>
+                </Row>
+              );
+            })}
+          </div>
+          <div className={styles.footerBtn}>
+            <Space size={100}>
+              <Button type="primary" block className="lightBtn">
+                {intl.formatMessage({ id: 'home.version.download' })}
+              </Button>
+
+              <Button type="primary" block className="darkBtn">
+                {intl.formatMessage({ id: 'home.version.useFree' })}
+              </Button>
+            </Space>
+          </div>
         </div>
       </Content>
-      <Footer style={{ textAlign: 'center' }}>xxx</Footer>
+      <Footer />
     </Layout>
   );
 }

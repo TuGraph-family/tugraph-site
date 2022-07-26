@@ -12,7 +12,7 @@ export const Header = () => {
     {
       label: (
         <a href="" target="_blank" rel="noopener noreferrer">
-          {intl.formatMessage({ id: 'home.header.product' })}
+          {intl.formatMessage({ id: 'header.product' })}
         </a>
       ),
       key: 'product',
@@ -20,7 +20,7 @@ export const Header = () => {
     {
       label: (
         <a href="" target="_blank" rel="noopener noreferrer">
-          {intl.formatMessage({ id: 'home.header.demo' })}
+          {intl.formatMessage({ id: 'header.demo' })}
         </a>
       ),
       key: 'demo',
@@ -28,7 +28,7 @@ export const Header = () => {
     {
       label: (
         <a href="" target="_blank" rel="noopener noreferrer">
-          {intl.formatMessage({ id: 'home.header.doc' })}
+          {intl.formatMessage({ id: 'header.doc' })}
         </a>
       ),
       key: 'doc',
@@ -36,7 +36,7 @@ export const Header = () => {
     {
       label: (
         <a href="" target="_blank" rel="noopener noreferrer">
-          {intl.formatMessage({ id: 'home.header.blog' })}
+          {intl.formatMessage({ id: 'header.blog' })}
         </a>
       ),
       key: 'blog',
@@ -44,7 +44,7 @@ export const Header = () => {
     {
       label: (
         <a href="" target="_blank" rel="noopener noreferrer">
-          {intl.formatMessage({ id: 'home.header.community' })}
+          {intl.formatMessage({ id: 'header.community' })}
         </a>
       ),
       key: 'community',
@@ -52,7 +52,7 @@ export const Header = () => {
     {
       label: (
         <a href="" target="_blank" rel="noopener noreferrer">
-          {intl.formatMessage({ id: 'home.header.download' })}
+          {intl.formatMessage({ id: 'header.download' })}
         </a>
       ),
       key: 'download',
