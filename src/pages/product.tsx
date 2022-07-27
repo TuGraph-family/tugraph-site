@@ -1,15 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Button, Col, Layout, Row, Space, Switch } from 'antd';
+import { Col, Layout, Row, Space, Switch } from 'antd';
 import { Banner } from '@/components/Banner';
-import { Carousel } from '@/components/Carousel';
+import JoLPlayer, { JoLPlayerRef } from 'jol-player';
 import { SubTitle } from '@/components/SubTitle';
 import { Footer } from '@/components/Footer';
 import { useIntl } from 'umi';
-import JoLPlayer, { JoLPlayerRef } from 'jol-player';
-import { getReasons } from '@/data/reasons';
-import { getVersions } from '@/data/version-feats';
-import cx from 'classnames';
-import { CheckOutlined } from '@ant-design/icons';
 
 import styles from './product.less';
 
@@ -17,7 +12,7 @@ const { Content } = Layout;
 
 export default function ProductPage() {
   const intl = useIntl();
-  const buttons = [intl.formatMessage({ id: 'product.banner.quickStart' })];
+  const buttons = [intl.formatMessage({ id: 'product.quickStart' })];
   const videoRef = useRef<JoLPlayerRef>(null!);
   const [autoPlay, setAutoPlay] = useState<boolean>(true);
 
@@ -52,7 +47,7 @@ export default function ProductPage() {
                   ref={videoRef}
                   option={{
                     videoSrc:
-                      'https://gw.alipayobjects.com/mdn/rms_a8a5bf/afts/file/A*mnpLT77ldiIAAAAAAAAAAAAAARQnAQ',
+                      'https://gw.alipayobjects.com/v/rms_fa12c2/afts/video/A*CGu4RqkzzDgAAAAAAAAAAAAAARQnAQ/720P',
                     width: '100%',
                     height: 319,
                   }}
@@ -101,7 +96,7 @@ export default function ProductPage() {
               </div>
               <img
                 className={styles.rightImg}
-                src="https://gw.alipayobjects.com/zos/bmw-prod/ca547d7d-8080-4fb9-8c3b-71f764ecf09a.svg"
+                src="https://gw.alipayobjects.com/v/rms_fa12c2/afts/video/A*CGu4RqkzzDgAAAAAAAAAAAAAARQnAQ/720P"
               />
             </Col>
 
@@ -148,12 +143,12 @@ export default function ProductPage() {
             title={intl.formatMessage({ id: 'product.quickStart' })}
             showIcon={false}
           />
-          <div className={styles.quickStart}>
+          <div id="quickStart" className={styles.quickStart}>
             <div className={styles.videoWrapper}>
               <JoLPlayer
                 option={{
                   videoSrc:
-                    'https://gw.alipayobjects.com/mdn/rms_a8a5bf/afts/file/A*mnpLT77ldiIAAAAAAAAAAAAAARQnAQ',
+                    'https://gw.alipayobjects.com/v/rms_fa12c2/afts/video/A*CGu4RqkzzDgAAAAAAAAAAAAAARQnAQ/720P',
                   width: 865,
                   height: 487,
                 }}

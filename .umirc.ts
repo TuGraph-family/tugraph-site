@@ -7,6 +7,7 @@ export default defineConfig({
   routes: [
     { path: '/', component: '@/pages/index' },
     { path: '/product', component: '@/pages/product' },
+    { path: '/demo', component: '@/pages/demo' },
   ],
   fastRefresh: {},
   locale: {

@@ -7,11 +7,13 @@ import styles from './index.less';
 export const Banner = ({
   slogan,
   bgUrl,
+  subTitle,
   buttons = [],
   activeKey = '',
 }: {
   slogan: string;
   bgUrl: string;
+  subTitle?: string;
   activeKey?: string;
   buttons?: string[];
 }) => {
@@ -19,7 +21,8 @@ export const Banner = ({
     <div className={styles.banner} style={{ backgroundImage: `url(${bgUrl})` }}>
       <Header activeKey={activeKey} />
       <div className={styles.slogan}>{slogan}</div>
-      <Space size={30}>
+      <div className={styles.subTitle}>{subTitle}</div>
+      <Space className={styles.btnGroup} size={30}>
         {buttons?.[0] && (
           <Button type="primary" block className="lightBtn">
             {buttons?.[0]}
