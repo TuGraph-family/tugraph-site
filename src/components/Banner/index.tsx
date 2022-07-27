@@ -1,26 +1,35 @@
 import React from 'react';
-import { useIntl } from 'umi';
 import { Space, Button } from 'antd';
 import { Header } from '../Header';
 
 import styles from './index.less';
 
-export const Banner = () => {
-  const intl = useIntl();
-
+export const Banner = ({
+  slogan,
+  bgUrl,
+  buttons = [],
+  activeKey = '',
+}: {
+  slogan: string;
+  bgUrl: string;
+  activeKey?: string;
+  buttons?: string[];
+}) => {
   return (
-    <div className={styles.banner}>
-      <Header />
-      <div className={styles.slogan}>
-        {intl.formatMessage({ id: 'home.banner.slogan' })}
-      </div>
+    <div className={styles.banner} style={{ backgroundImage: `url(${bgUrl})` }}>
+      <Header activeKey={activeKey} />
+      <div className={styles.slogan}>{slogan}</div>
       <Space size={30}>
-        <Button type="primary" block className="lightBtn">
-          {intl.formatMessage({ id: 'home.banner.useFree' })}
-        </Button>
-        <Button type="primary" block className="darkBtn">
-          {intl.formatMessage({ id: 'home.banner.quickStart' })}
-        </Button>
+        {buttons?.[0] && (
+          <Button type="primary" block className="lightBtn">
+            {buttons?.[0]}
+          </Button>
+        )}
+        {buttons?.[1] && (
+          <Button type="primary" block className="darkBtn">
+            {buttons?.[1]}
+          </Button>
+        )}
       </Space>
     </div>
   );

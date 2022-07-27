@@ -12,22 +12,22 @@ export const Footer = () => {
       <Row>
         <Col span={16} offset={3}>
           <Space size={50}>
-            <a href="" rel="noopener noreferrer">
+            <a href="/product" rel="noopener noreferrer">
               {intl.formatMessage({ id: 'header.product' })}
             </a>
-            <a href="" rel="noopener noreferrer">
+            <a href="/demo" rel="noopener noreferrer">
               {intl.formatMessage({ id: 'header.demo' })}
             </a>
-            <a href="" rel="noopener noreferrer">
+            <a href="/doc" rel="noopener noreferrer">
               {intl.formatMessage({ id: 'header.doc' })}
             </a>
-            <a href="" rel="noopener noreferrer">
+            <a href="blog" rel="noopener noreferrer">
               {intl.formatMessage({ id: 'header.blog' })}
             </a>
-            <a href="" rel="noopener noreferrer">
+            <a href="" target="_blank" rel="noopener noreferrer">
               {intl.formatMessage({ id: 'header.community' })}
             </a>
-            <a href="" rel="noopener noreferrer">
+            <a href="/download" rel="noopener noreferrer">
               {intl.formatMessage({ id: 'header.download' })}
             </a>
           </Space>

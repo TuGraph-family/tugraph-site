@@ -60,4 +60,28 @@ export default {
   'footer.qrCode.desc': '微信公众号扫一扫了解更多资讯',
   'footer.rules': '隐私条款',
   'footer.address': '地址：中国北京朝阳区东三环中路1号环球金融中心东塔9层',
+  'product.banner.slogan': '极速的开源图数据库TuGraph',
+  'product.banner.autoPlay': '自动播放',
+  'product.banner.playDesc0': '◆ TuGraph快速上手演示',
+  'product.banner.playDesc1': '◆ 可视化操作演示',
+  'product.banner.quickStart': '3分钟了解图数据库',
+  'product.feature': '产品特性',
+  'product.feature.title0': '完备可靠的一站式图存储',
+  'product.feature.desc0':
+    'HTAP原生图数据库，满足实时（如实时审核或推荐业务）和离线（如审计业务）的毫秒级复杂查询需求。支持分布式扩展，万亿图数据处理能力，千万顶点/秒的高吞吐率和低延迟，轻松应对不断变化的业务数据。支持 ACID 事务处理，达到可串行化隔离级别，保障数据一致性；超越国际灾难恢复能力6级要求，金融级高可靠。',
+  'product.feature.title1': '极速灵活的图分析',
+  'product.feature.desc1':
+    '强大的图数据计算能力，对海量数据进行全图迭代计算，以极短时间完成超大计算量的业务需求；多跳复杂分析能力，深度挖掘数据关系。内置5大类近30种图分析算法，支持各类业务分析场景。提供灵活、多层级API，兼容主流查询语言。低门槛轻量级部署，支持与常见开源架构间数据的平滑迁移。',
+  'product.feature.title2': '便捷易用的可视化平台',
+  'product.feature.desc2':
+    '内置可视化控制台和管理工具，帮助用户实现零代码数据获取和数据挖掘。数据可视化展示，直观展现数据之间的复杂关联关系。',
+  'product.feature.title3': '开箱即用的运维监控平台',
+  'product.feature.desc3':
+    '数据库实时运维监控展示，Docker 一键部署，接口丰富易扩展，支持Prometheus、Grafana 监控告警工具。',
+  'product.choseReason': '为什么需要图计算',
+  'product.choseReason0':
+    '全球数据领域进入加速发展时期，社交媒体、物流服务、设备管网、金融交易等应用极大催生了关联数据的爆发，以及对强大数据引擎的迫切需求。权威研究机构Gartner预测，到2025年图技术在数据和分析创新中的占比将从2021年的10%上升到80%，将促进整个企业机构的快速决策。',
+  'product.choseReason1':
+    '图数据库作为最适合关联数据管理和分析的基础设施，善于分析复杂数据关系，天然具备数据可视化展示。',
+  'product.quickStart': '3分钟读懂图计算',
 };

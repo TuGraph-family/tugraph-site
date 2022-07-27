@@ -16,11 +16,21 @@ const { Content } = Layout;
 
 export default function IndexPage() {
   const intl = useIntl();
+  const buttons = [
+    intl.formatMessage({ id: 'home.banner.useFree' }),
+    intl.formatMessage({ id: 'home.banner.quickStart' }),
+  ];
 
   return (
-    <Layout className={styles.homeLayout}>
+    <Layout>
       <Content>
-        <Banner />
+        <Banner
+          buttons={buttons}
+          bgUrl={
+            'https://gw.alipayobjects.com/zos/bmw-prod/15d38f2d-4bf6-46be-9ccf-645ca15a5a17.svg'
+          }
+          slogan={intl.formatMessage({ id: 'home.banner.slogan' })}
+        />
         <div className={styles.containerWrapper}>
           <Carousel />
           <SubTitle title={intl.formatMessage({ id: 'home.users' })} />

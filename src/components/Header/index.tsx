@@ -5,13 +5,13 @@ import type { MenuProps } from 'antd';
 
 import styles from './index.less';
 
-export const Header = () => {
+export const Header = ({ activeKey }: { activeKey: string }) => {
   const intl = useIntl();
 
   const items: MenuProps['items'] = [
     {
       label: (
-        <a href="" target="_blank" rel="noopener noreferrer">
+        <a href="/product" rel="noopener noreferrer">
           {intl.formatMessage({ id: 'header.product' })}
         </a>
       ),
@@ -19,7 +19,7 @@ export const Header = () => {
     },
     {
       label: (
-        <a href="" target="_blank" rel="noopener noreferrer">
+        <a href="/demo" rel="noopener noreferrer">
           {intl.formatMessage({ id: 'header.demo' })}
         </a>
       ),
@@ -27,7 +27,7 @@ export const Header = () => {
     },
     {
       label: (
-        <a href="" target="_blank" rel="noopener noreferrer">
+        <a href="/doc" rel="noopener noreferrer">
           {intl.formatMessage({ id: 'header.doc' })}
         </a>
       ),
@@ -35,7 +35,7 @@ export const Header = () => {
     },
     {
       label: (
-        <a href="" target="_blank" rel="noopener noreferrer">
+        <a href="blog" target="_blank" rel="noopener noreferrer">
           {intl.formatMessage({ id: 'header.blog' })}
         </a>
       ),
@@ -51,7 +51,7 @@ export const Header = () => {
     },
     {
       label: (
-        <a href="" target="_blank" rel="noopener noreferrer">
+        <a href="/download" rel="noopener noreferrer">
           {intl.formatMessage({ id: 'header.download' })}
         </a>
       ),
@@ -62,8 +62,11 @@ export const Header = () => {
   return (
     <div className={styles.header}>
       <Space size={30}>
-        <img src="https://gw.alipayobjects.com/zos/bmw-prod/5c0610ba-4c85-455b-8833-53dcea242430.svg" />
-        <Menu mode="horizontal" items={items} />
+        <a href="/" rel="noopener noreferrer">
+          <img src="https://gw.alipayobjects.com/zos/bmw-prod/5c0610ba-4c85-455b-8833-53dcea242430.svg" />
+        </a>
+
+        <Menu activeKey={activeKey} mode="horizontal" items={items} />
       </Space>
     </div>
   );

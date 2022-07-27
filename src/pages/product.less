@@ -1,0 +1,124 @@
+.containerWrapper {
+
+  .banner,
+  .reasonCard,
+  .videoWrapper {
+    border-radius: 12px;
+    box-shadow: 0 10px 30px 12px rgba(158,181,213,0.10);
+    border-radius: 12px;
+    background-color: #FFF;
+  }
+
+  .banner {
+      margin: -100px 80px 80px 80px;
+      padding: 35px 65px 35px 65px;
+      height: 478px;
+
+      .title {
+        font-weight: 600;
+        font-size: 28px;
+        color: #494949;
+        margin-bottom: 32px;
+      }
+
+      .autoPlay {
+        float: right;
+      }
+
+      .list {
+        font-weight: 500;
+        font-size: 24px;
+        color: rgba(51,51,51,0.89);
+        margin: 80px;
+      }
+  }
+
+  .featCards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .featCard {
+     
+      margin-right: 40px;
+      height: 321px;
+      max-width: 514px;  
+      border-radius: 12px;
+      background-color: #FFFFFF;
+      box-shadow: 0 10px 30px 10px rgba(158,181,213,0.10);
+      padding: 85px 65px !important;
+
+      .title {
+        position: relative;
+        font-weight: 600;
+        font-size: 20px;
+        color: rgba(51,51,51,0.89);
+        text-align: center;
+        margin-bottom: 22px;
+        z-index: 99;
+      }
+
+      .leftImg {
+        position: absolute;
+        top: 50px;
+        left: 110px;
+        z-index: 1;
+      }
+
+      .rightImg {
+        position: absolute;
+        top: 50px;
+        right: 110px;
+        z-index: 1;
+      }
+
+
+      .desc {
+        font-weight: 400;
+        font-size: 14px;
+        color: rgba(51,51,51,0.89);
+        letter-spacing: 0.8px;
+        text-align: center;
+        line-height: 22px;
+      }
+    }
+  }
+
+  .reasonCard {
+    margin: 0 100px 35px 100px;
+    padding: 50px 160px 0 160px;
+    position: relative;
+    color: rgba(51,51,51,0.89);
+    font-size: 18px;
+    color: rgba(51,51,51,0.89);
+    letter-spacing: 1.03px;
+    height: 360px;
+
+      img {
+        position: absolute;
+        top: 40px;
+        right: 37px;
+      }
+    }
+    
+
+  .quickStart {
+    display: flex;
+    justify-content: center;
+
+    .videoWrapper {
+      height: 561px;
+      width: 958px;
+      padding: 37px 49px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 120px;
+
+      video {
+        border-radius: 6px;
+      }
+    }
+   
+  }
+}
