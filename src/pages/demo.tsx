@@ -1,5 +1,5 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { Button, Col, Layout, Row, Space, Switch } from 'antd';
+import React from 'react';
+import { Col, Layout, Row, Space } from 'antd';
 import { Banner } from '@/components/Banner';
 import { SubTitle } from '@/components/SubTitle';
 import { Footer } from '@/components/Footer';
