@@ -1,0 +1,135 @@
+.containerWrapper {
+  .demoCard,
+  .exampleCard {
+    border-radius: 12px;
+    box-shadow: 0 10px 30px 10px rgba(158,181,213,0.10);
+    border-radius: 12px;
+    background-color: #FFF;
+  }
+
+  .demoCards {
+    margin: -100px 0 0 0;
+    display: flex;
+    justify-content: center;
+    
+    .demoCard {
+      height: 390px;
+      max-width: 357px;
+      margin: 0 35px 56px 0;
+      text-align: center;
+      padding: 44px 60px !important;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+
+      img {
+        width: 60px;
+        height: 60px;
+      }
+
+      .title {
+        margin: 34px 0 20px 0;
+        font-weight: 500;
+        font-size: 18px;
+        color: rgba(51,51,51,0.89);
+        letter-spacing: 1.03px;
+        text-align: center;
+        line-height: 26px;
+      }
+      
+      .desc {
+        font-weight: 400;
+        font-size: 14px;
+        color: rgba(51,51,51,0.89);
+        letter-spacing: 0.9px;
+        text-align: center;
+        line-height: 22px;
+      }
+
+      .type {
+        height: 48px;
+        width: 180px;
+        background-color: #00122B;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 20px;
+        color: rgba(255,255,255,0.89);
+        padding: 8px;
+        position: absolute;
+        bottom: -24px;
+      }
+
+      :global {
+        .darkBtn {
+          width: 180px !important;
+          height: 48px !important;
+        }
+      }
+    }
+  }
+
+  .exampleCard {
+    margin: 0 120px 65px 120px;
+
+    .textWrapper {
+      padding: 50px 80px;
+      max-width: 577px;
+      box-sizing: content-box;
+
+      .header {
+        padding-bottom: 35px;
+
+        .title {       
+          font-weight: 600;
+          font-size: 28px;
+          color: #000A1C;
+        }
+
+        .subTitle {
+          font-weight: 500;
+          font-size: 18px;
+          color: #00122B;
+          letter-spacing: 1.03px;
+          line-height: 22px;
+        }
+        
+        .splitLine {
+          width: 100%;
+          border-bottom: 1px solid #979797;
+        }
+      }
+
+      .text {
+        margin: 36px 0 8px 0;
+        font-weight: 500;
+        font-size: 18px;
+        color: #333333;
+        letter-spacing: 1.03px;
+        line-height: 30px;
+
+        .textNormalSize {
+          font-weight: 400;
+          font-size: 14px;
+          color: #333333;
+          letter-spacing: 0.8px;
+          margin-left: 24px;
+        }
+      }
+    }
+
+    .exampleImg {
+      background-image: url(https://gw.alipayobjects.com/zos/bmw-prod/2fcdbedf-872f-487f-b8d0-e1b3ff093020.svg);
+      background-repeat: no-repeat;
+      padding: 0px !important;
+    }
+
+    .imgWrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+  }
+}

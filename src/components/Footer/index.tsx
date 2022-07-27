@@ -46,7 +46,7 @@ export const Footer = () => {
             <img src="https://gw.alipayobjects.com/zos/bmw-prod/5bb7aed7-7b96-4f15-9147-6ba150e5a220.svg" />
             <img src="https://gw.alipayobjects.com/zos/bmw-prod/eba3a225-f8a3-4c56-ad7a-339a60707a49.svg" />
             <img src="https://gw.alipayobjects.com/zos/bmw-prod/db10078e-ebc9-4d19-b13a-18d07f327c8c.svg" />
-            <img src="https://gw.alipayobjects.com/zos/bmw-prod/eba3a225-f8a3-4c56-ad7a-339a60707a49.svg" />
+            <img src="https://gw.alipayobjects.com/zos/bmw-prod/88933248-acee-4d21-9daf-242670675dbc.svg" />
           </Space>
           <Row>
             <Col span={10}>
