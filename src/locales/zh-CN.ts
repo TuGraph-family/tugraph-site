@@ -137,4 +137,6 @@ export default {
     '双方通过TuGraph探索实时跟踪电网中数亿台设备的状态，包括响应复杂的实时查询（例如“从电源到接收器的最短路径”），模拟计划运行的效果（例如“添加新的设备或断开开关不会无意中破坏整个电网”）。',
   'demo.example.profit2':
     '替代原有的开源计算框架GraphX，运算时间从10小时降至10分钟，并在业务效果上取得突破。 有效识别涉及套现、骗贷等违规行为的团伙控制信用卡。',
+  'download.banner.slogan': 'TuGraph v3.X.X.X',
+  'download.banner.notice': '最新版本2022.XX.XX',
 };

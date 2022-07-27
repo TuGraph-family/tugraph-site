@@ -10,18 +10,22 @@ export const Banner = ({
   subTitle,
   buttons = [],
   activeKey = '',
+  notice = '',
 }: {
   slogan: string;
   bgUrl: string;
   subTitle?: string;
   activeKey?: string;
   buttons?: string[];
+  notice?: string;
 }) => {
   return (
     <div className={styles.banner} style={{ backgroundImage: `url(${bgUrl})` }}>
       <Header activeKey={activeKey} />
+      {notice && <div className={styles.notice}>{notice}</div>}
       <div className={styles.slogan}>{slogan}</div>
-      <div className={styles.subTitle}>{subTitle}</div>
+      {subTitle && <div className={styles.subTitle}>{subTitle}</div>}
+
       <Space className={styles.btnGroup} size={30}>
         {buttons?.[0] && (
           <Button type="primary" block className="lightBtn">
