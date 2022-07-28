@@ -31,5 +31,37 @@
 
   .btnGroup {
     margin-top: 50px;
+
+    .btn {
+      border-radius: 8px;
+      width: 180px;
+      height: 48px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #0169fd;
+      border-color: #0169fd;
+
+      &:hover {
+        border-color: #40a9ff;
+        background: #40a9ff;
+        transition: all ease 0.3s;
+      }
+
+      :global {
+        .ant-anchor-ink {
+          display: none;
+        }
+
+        .ant-anchor-link {
+          padding: 0;
+        }
+
+        .ant-anchor-link-title:only-child {
+          font-size: 16px;
+          color: rgba(255, 255, 255, 0.89);
+        }
+      }
+    }
   }
 }
