@@ -26,7 +26,6 @@ export default function FormPage() {
     <Layout>
       <Content>
         <Banner
-          activeKey={'demo'}
           bgUrl={
             'https://gw.alipayobjects.com/zos/bmw-prod/fa509fe6-d53c-40ce-8034-0456823f0713.svg'
           }
@@ -116,7 +115,15 @@ export default function FormPage() {
             <Form.Item
               label={intl.formatMessage({ id: 'form.item.title5' })}
               name={intl.formatMessage({ id: 'form.item.title5' })}
-              rules={[{ required: true }]}
+              rules={[
+                { required: true },
+                {
+                  pattern: new RegExp(/^[0-9]*$/, 'g'),
+                  message: intl.formatMessage({
+                    id: 'form.input.phoneError',
+                  }),
+                },
+              ]}
             >
               <Input
                 placeholder={intl.formatMessage({

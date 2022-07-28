@@ -145,6 +145,7 @@ export default {
   'form.item.title0': '应用场景',
   'form.item.desc0':
     '您计划将本产品应用于什么业务场景和期望达到什么效果，帮助我们更好了解您的需求',
+  'form.input.phoneError': '请输入正确的手机号',
   'form.item.title1': '您的姓名',
   'form.item.name1': '姓 名',
   'form.item.title2': '公司名称',

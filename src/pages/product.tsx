@@ -102,7 +102,7 @@ export default function ProductPage() {
               </div>
               <img
                 className={styles.rightImg}
-                src="https://gw.alipayobjects.com/v/rms_fa12c2/afts/video/A*CGu4RqkzzDgAAAAAAAAAAAAAARQnAQ/720P"
+                src="https://gw.alipayobjects.com/zos/bmw-prod/ca547d7d-8080-4fb9-8c3b-71f764ecf09a.svg"
               />
             </Col>
 
