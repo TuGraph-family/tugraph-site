@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Col, Layout, Row, Space, Switch } from 'antd';
 import { Banner } from '@/components/Banner';
+import type { BannerButtonProps } from '@/components/Banner';
 import JoLPlayer, { JoLPlayerRef } from 'jol-player';
 import { SubTitle } from '@/components/SubTitle';
 import { Footer } from '@/components/Footer';
@@ -12,7 +13,12 @@ const { Content } = Layout;
 
 export default function ProductPage() {
   const intl = useIntl();
-  const buttons = [intl.formatMessage({ id: 'product.quickStart' })];
+  const buttons: BannerButtonProps[] = [
+    {
+      text: intl.formatMessage({ id: 'product.quickStart' }),
+      url: '#quickStart',
+    },
+  ];
   const videoRef = useRef<JoLPlayerRef>(null!);
   const [autoPlay, setAutoPlay] = useState<boolean>(true);
 

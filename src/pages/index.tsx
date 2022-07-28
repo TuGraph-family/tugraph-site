@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button, Col, Layout, Row, Space } from 'antd';
 import { Banner } from '@/components/Banner';
+import type { BannerButtonProps } from '@/components/Banner';
 import { Carousel } from '@/components/Carousel';
 import { SubTitle } from '@/components/SubTitle';
 import { Footer } from '@/components/Footer';
@@ -16,9 +17,15 @@ const { Content } = Layout;
 
 export default function IndexPage() {
   const intl = useIntl();
-  const buttons = [
-    intl.formatMessage({ id: 'home.banner.useFree' }),
-    intl.formatMessage({ id: 'home.banner.quickStart' }),
+  const buttons: BannerButtonProps[] = [
+    {
+      text: intl.formatMessage({ id: 'home.banner.useFree' }),
+      url: '/form',
+    },
+    {
+      text: intl.formatMessage({ id: 'home.banner.quickStart' }),
+      url: '/doc',
+    },
   ];
 
   return (
