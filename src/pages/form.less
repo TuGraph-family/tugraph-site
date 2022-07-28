@@ -1,0 +1,100 @@
+.containerWrapper {
+  margin: -100px 88px 120px 88px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px 10px rgba(158,181,213,0.10);
+  border-radius: 12px;
+  background-color: #FFFFFF;
+  padding: 40px 80px;
+
+  .submit {
+    height: 48px;
+    width: 246px;
+    background-color: #0069FD;
+    border-radius: 8px;
+    float: right;
+  }
+
+  .itemWithTip {
+    position: relative;
+    
+    .tip {
+      font-weight: 500;
+      font-size: 18px;
+      color: #00122B;
+      letter-spacing: 1.03px;
+      line-height: 22px;
+      margin: 0 9px;
+      position: absolute;
+      top: 56px;
+    }
+  }
+
+  
+
+  :global {
+    .ant-form-vertical .ant-form-item-label > label {
+      font-weight: 500;
+      font-size: 24px;
+      color: #000A1C;
+      margin-top: 16px;
+    }
+
+    .ant-form-item-label > label.ant-form-item-required:not(.ant-form-item-required-mark-optional)::before {
+      color: #000A1C;
+    }
+
+    .ant-form-item-control-input-content {
+  
+      .ant-input {
+        border: 1px solid #979797;
+        height: 49px;
+        margin-top: 26px;
+      }
+
+      textarea.ant-input {
+        margin-top: 26px !important;
+        border: 1px solid #979797;
+        height: 279px;
+        padding: 18px 24px
+      }
+    }
+    
+    .ant-form-item-explain-error {
+      margin-left: 8px;
+    }
+
+    .ant-checkbox {
+      width: 20px;
+      height: 20px;
+    }
+
+    .ant-checkbox-checked::after {
+      top: 3px;
+    }
+
+    .ant-checkbox-inner,
+    .ant-checkbox-wrapper.ant-checkbox-wrapper-in-form-item input[type='checkbox'] {
+      width: 20px;
+      height: 20px;
+      top: 3px;
+    }
+
+    .ant-checkbox .ant-checkbox-inner {
+      background-image: url('https://gw.alipayobjects.com/zos/bmw-prod/96990256-7d58-448c-8d82-c14986fd7a10.svg');
+      border: none;
+      background-repeat: no-repeat;
+      background-color: #000a1c00;
+    }
+
+    .ant-checkbox-checked .ant-checkbox-inner {
+      background-image: url('https://gw.alipayobjects.com/zos/bmw-prod/fe93b9b4-ceee-4325-8f92-712bf804294a.svg');
+      border: none;
+      background-repeat: no-repeat;
+      background-color: #000a1c00;
+    }
+
+    .ant-checkbox-checked .ant-checkbox-inner::after {
+      border: none;
+    }
+  }
+}

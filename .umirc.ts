@@ -9,6 +9,7 @@ export default defineConfig({
     { path: '/product', component: '@/pages/product' },
     { path: '/demo', component: '@/pages/demo' },
     { path: '/download', component: '@/pages/download' },
+    { path: '/form', component: '@/pages/form' },
   ],
   fastRefresh: {},
   locale: {

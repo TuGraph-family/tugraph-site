@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Col, Layout, Row, Space } from 'antd';
+import { Button, Col, Layout, Row } from 'antd';
 import { Banner } from '@/components/Banner';
 import { Footer } from '@/components/Footer';
 import { useIntl } from 'umi';
