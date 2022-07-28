@@ -35,7 +35,7 @@ export const Header = ({ activeKey }: { activeKey: string }) => {
     },
     {
       label: (
-        <a href="blog" target="_blank" rel="noopener noreferrer">
+        <a href="" rel="noopener noreferrer">
           {intl.formatMessage({ id: 'header.blog' })}
         </a>
       ),
@@ -43,7 +43,7 @@ export const Header = ({ activeKey }: { activeKey: string }) => {
     },
     {
       label: (
-        <a href="" target="_blank" rel="noopener noreferrer">
+        <a href="" rel="noopener noreferrer">
           {intl.formatMessage({ id: 'header.community' })}
         </a>
       ),

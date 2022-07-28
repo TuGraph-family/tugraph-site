@@ -8,6 +8,7 @@ export default defineConfig({
     { path: '/', component: '@/pages/index' },
     { path: '/product', component: '@/pages/product' },
     { path: '/demo', component: '@/pages/demo' },
+    { path: '/doc', component: '@/pages/doc' },
     { path: '/download', component: '@/pages/download' },
     { path: '/form', component: '@/pages/form' },
   ],
