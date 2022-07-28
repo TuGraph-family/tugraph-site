@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Checkbox, Form, FormInstance, Input, Layout } from 'antd';
+import { Button, Checkbox, Form, Input, Layout } from 'antd';
 import { Banner } from '@/components/Banner';
 import { Footer } from '@/components/Footer';
 import { useIntl } from 'umi';
