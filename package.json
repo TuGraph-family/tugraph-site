@@ -21,10 +21,11 @@
   },
   "dependencies": {
     "antd": "^4.21.6",
+    "jol-player": "^3.2.0",
     "react": "17.x",
     "react-dom": "17.x",
-    "umi": "^3.5.28",
-    "jol-player": "^3.2.0"
+    "react-use": "^17.4.0",
+    "umi": "^3.5.28"
   },
   "devDependencies": {
     "@types/react": "^17.0.0",

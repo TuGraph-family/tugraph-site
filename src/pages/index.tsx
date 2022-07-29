@@ -48,29 +48,29 @@ export default function IndexPage() {
             <img src="https://gw.alipayobjects.com/zos/bmw-prod/70556970-4075-482c-ac07-e30b55403184.svg" />
           </Space>
           <div className={styles.moreDemo}>
-            <a href="" className={styles.text}>
+            <a href="/demo" className={styles.text}>
               {intl.formatMessage({ id: 'home.moreDemo' })}
             </a>
           </div>
           <SubTitle title={intl.formatMessage({ id: 'home.choseReason' })} />
-          <Space size={20} className={styles.reasonCards}>
+          <Row className={styles.reasonCards}>
             {getReasons(intl)?.map((item, key) => {
               return (
-                <div className={styles.reasonCard} key={key}>
+                <Col span={6} className={styles.reasonCard} key={key}>
                   <img src={item.icon} />
                   <div className={styles.title}>{item.title}</div>
                   <div className={styles.desc}>{item.desc}</div>
-                </div>
+                </Col>
               );
             })}
-          </Space>
+          </Row>
           <div className={styles.versionsWrapper}>
             <SubTitle
               title={intl.formatMessage({ id: 'home.chooseVersion' })}
               showIcon={false}
             />
-            <Space className={styles.versions} size={54}>
-              <div className={styles.version} key={0}>
+            <Row className={styles.versions}>
+              <Col span={12} className={styles.version} key={0}>
                 <div className={styles.title}>
                   {intl.formatMessage({ id: 'home.version0' })}
                 </div>
@@ -80,8 +80,8 @@ export default function IndexPage() {
                 <Button type="primary" block className="lightBtn">
                   {intl.formatMessage({ id: 'home.version.startUse' })}
                 </Button>
-              </div>
-              <div className={styles.version} key={1}>
+              </Col>
+              <Col span={12} className={styles.version} key={1}>
                 <div className={styles.title}>
                   {intl.formatMessage({ id: 'home.version1' })}
                 </div>
@@ -91,8 +91,8 @@ export default function IndexPage() {
                 <Button type="primary" block className="lightBtn">
                   {intl.formatMessage({ id: 'home.version.contactUs' })}
                 </Button>
-              </div>
-            </Space>
+              </Col>
+            </Row>
           </div>
           <div className={styles.featList}>
             <Row>
