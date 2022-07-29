@@ -1,18 +1,38 @@
 .header {
-    padding: 8px 0;
-    img.log {
-      width: 100px;
-      height: auto;
-      }
+  padding: 16px 0;
+  z-index: 999;
+ 
   :global {
+    
     .ant-menu {
       background: rgba(0, 0, 0, 0);
       border: none;
       font-size: 18px;
       color: rgba(51, 51, 51, 0.89); 
     }
+
     img {
-      width: 100px;
+      width: 120px;
+    }
+  }
+
+}
+
+@media only screen and (max-width: 767.99px) {
+  .header {
+    padding: 16px 32px;
+    width: 100vw;
+    height: 60px;
+    position: fixed;
+    background-color: #fff;
+    margin-left: -32px;
+  
+    .menuIcon {
+      font-size: 24px;
+      position: fixed;
+      top: 16px;
+      right: 32px;
+      transition: all .3s;
     }
   }
 }
