@@ -5,18 +5,21 @@ import type { BannerButtonProps } from '@/components/Banner';
 import { Carousel } from '@/components/Carousel';
 import { SubTitle } from '@/components/SubTitle';
 import { Footer } from '@/components/Footer';
-import { useIntl } from 'umi';
+import { useIntl, history } from 'umi';
 import { getReasons } from '@/data/reasons';
 import { getVersions } from '@/data/version-feats';
 import cx from 'classnames';
 import { CheckOutlined } from '@ant-design/icons';
 
 import styles from './index.less';
+import { useMedia } from 'react-use';
 
 const { Content } = Layout;
 
 export default function IndexPage() {
   const intl = useIntl();
+  const isWide = useMedia('(min-width: 767.99px)', true);
+
   const buttons: BannerButtonProps[] = [
     {
       text: intl.formatMessage({ id: 'home.banner.useFree' }),
@@ -41,16 +44,37 @@ export default function IndexPage() {
         <div className={styles.containerWrapper}>
           <Carousel />
           <SubTitle title={intl.formatMessage({ id: 'home.users' })} />
-          <Space size={75} className={styles.users}>
-            <img src="https://gw.alipayobjects.com/zos/bmw-prod/dbe22a71-a25c-4a48-afcc-1c506f46e967.svg" />
-            <img src="https://gw.alipayobjects.com/zos/bmw-prod/c6011698-6941-45f2-ae6b-30c68533bf2e.svg" />
-            <img src="https://gw.alipayobjects.com/zos/bmw-prod/2a719040-1c3d-4e89-8582-6123edd66bfb.svg" />
-            <img src="https://gw.alipayobjects.com/zos/bmw-prod/70556970-4075-482c-ac07-e30b55403184.svg" />
-          </Space>
+          <Row className={styles.users}>
+            <Col span={isWide ? 6 : 12}>
+              <img src="https://gw.alipayobjects.com/zos/bmw-prod/dbe22a71-a25c-4a48-afcc-1c506f46e967.svg" />
+            </Col>
+            <Col span={isWide ? 6 : 12}>
+              <img src="https://gw.alipayobjects.com/zos/bmw-prod/c6011698-6941-45f2-ae6b-30c68533bf2e.svg" />
+            </Col>
+            <Col span={isWide ? 6 : 12}>
+              <img src="https://gw.alipayobjects.com/zos/bmw-prod/2a719040-1c3d-4e89-8582-6123edd66bfb.svg" />
+            </Col>
+            <Col span={isWide ? 6 : 12}>
+              <img src="https://gw.alipayobjects.com/zos/bmw-prod/70556970-4075-482c-ac07-e30b55403184.svg" />
+            </Col>
+          </Row>
           <div className={styles.moreDemo}>
-            <a href="/demo" className={styles.text}>
-              {intl.formatMessage({ id: 'home.moreDemo' })}
-            </a>
+            {isWide ? (
+              <a href="/demo" className={styles.text}>
+                {intl.formatMessage({ id: 'home.moreDemo' })}
+              </a>
+            ) : (
+              <Button
+                type="primary"
+                block
+                onClick={() => {
+                  history.push('/demo');
+                }}
+                className="lightBtn"
+              >
+                {intl.formatMessage({ id: 'home.knowMore' })}
+              </Button>
+            )}
           </div>
           <SubTitle title={intl.formatMessage({ id: 'home.choseReason' })} />
           <Row className={styles.reasonCards}>
@@ -96,10 +120,10 @@ export default function IndexPage() {
           </div>
           <div className={styles.featList}>
             <Row>
-              <Col offset={8} span={8} className={styles.title}>
+              <Col offset={14} span={5} className={styles.title}>
                 {intl.formatMessage({ id: 'home.version0' })}
               </Col>
-              <Col span={8} className={cx(styles.title, 'boldText')}>
+              <Col span={5} className={cx(styles.title, 'boldText')}>
                 {intl.formatMessage({ id: 'home.version1' })}
               </Col>
             </Row>
@@ -110,16 +134,15 @@ export default function IndexPage() {
                   className={key % 2 === 0 ? styles.crossRow : styles.baseRow}
                 >
                   <Col
-                    span={6}
+                    span={14}
                     className={cx(styles.textAlignLeft, styles.text)}
-                    offset={2}
                   >
                     {item.feat}
                   </Col>
-                  <Col span={8} className={styles.text}>
+                  <Col span={5} className={styles.text}>
                     {item.community ? <CheckOutlined /> : null}
                   </Col>
-                  <Col span={8} className={styles.text}>
+                  <Col span={5} className={styles.text}>
                     {item.pro ? <CheckOutlined /> : null}
                   </Col>
                 </Row>
@@ -127,7 +150,7 @@ export default function IndexPage() {
             })}
           </div>
           <div className={styles.footerBtn}>
-            <Space size={100}>
+            <Space size={isWide ? 100 : 8}>
               <Button type="primary" block className="lightBtn">
                 {intl.formatMessage({ id: 'home.version.download' })}
               </Button>
