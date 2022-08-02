@@ -148,8 +148,8 @@ export const Footer = () => {
         {intl.formatMessage({ id: 'home.version.contactUs' })}
         <Row className={styles.iconGroup}>
           {icons.map((item, key) => (
-            <Col span={6}>
-              <a key={key} href={item.url} rel="noopener noreferrer">
+            <Col span={6} key={key}>
+              <a href={item.url} rel="noopener noreferrer">
                 <img src={item.icon} />
               </a>
             </Col>

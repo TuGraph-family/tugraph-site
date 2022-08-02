@@ -29,11 +29,11 @@ export default {
   'home.reason.desc3':
     '开发人员可使用主流查询语言、编程语言、接口协议来快速创建应用，快速对接业务系统、融合数据存储，与常见开源架构平滑迁移。',
   'home.chooseVersion': '版本选择',
-  'home.version0': 'TuGraph社区版',
+  'home.version0': '社区版',
   'home.version.desc0':
     '包含TuGraph的全部基本功能，适用于单实例部署它提供了完备的图数据库基础功能，例如ACID兼容的事务，编程API，配套的相关工具等。它是学习TuGraph和实现小型项目的理想选择。',
   'home.version.startUse': '开始使用',
-  'home.version1': 'TuGraph企业版',
+  'home.version1': '企业版',
   'home.version.desc1':
     '企业版本在TuGraph的基本功能上进行了扩展。例如部署形式包括高可用和分布式，性能提升速度更快的底层存储引擎，功能提升更精细的角色权限控制等。它是商业化解决方案的理想选择。',
   'home.version.contactUs': '联系我们',
@@ -114,11 +114,11 @@ export default {
   'demo.example.challenge': '◆ 业务挑战',
   'demo.example.solution': '◆ 解决方案',
   'demo.example.profit': '◆ 客户收益',
-  'demo.example.title0': '蚂蚁集团 ｜ ',
+  'demo.example.title0': '蚂蚁集团 ',
   'demo.example.subTitle0': '全图风控技术应对复杂多变、不断升级的金融风险',
-  'demo.example.title1': '某大型能源集团 ｜ ',
+  'demo.example.title1': '某大型能源集团',
   'demo.example.subTitle1': '实现电网状态可视化及实时管理',
-  'demo.example.title2': '某大型国有银行 ｜ ',
+  'demo.example.title2': '某大型国有银行',
   'demo.example.subTitle2': '有效识别信用卡申请团伙欺诈',
   'demo.example.challenge0':
     '金融风险防控是一个不断对抗升级的过程，越来越多的欺诈、洗钱案例呈现出团伙性和隐蔽性，仅靠单一事件和行为识别已无法准确决策，需要引入多维异构数据，进行全局洞察。',

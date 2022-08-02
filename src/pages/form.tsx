@@ -30,6 +30,9 @@ export default function FormPage() {
           bgUrl={
             'https://gw.alipayobjects.com/zos/bmw-prod/fa509fe6-d53c-40ce-8034-0456823f0713.svg'
           }
+          mobileIcon={
+            'https://gw.alipayobjects.com/zos/bmw-prod/875fbeba-6f1e-4a99-93ab-7d1b74b3b86b.svg'
+          }
           subTitle={intl.formatMessage({ id: 'form.banner.subTitle' })}
           slogan={intl.formatMessage({ id: 'form.banner.slogan' })}
         />
