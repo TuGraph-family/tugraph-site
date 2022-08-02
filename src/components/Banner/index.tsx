@@ -46,7 +46,9 @@ export const Banner = ({
                 affix={false}
                 className={cx(
                   styles.primaryBtn,
-                  isWide ? null : styles.primaryBtnMobile,
+                  isWide || buttons?.length < 2
+                    ? null
+                    : styles.primaryBtnMobile,
                 )}
               >
                 <Link href={buttons[0].url} title={buttons[0].text} />

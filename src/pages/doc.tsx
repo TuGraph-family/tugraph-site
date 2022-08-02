@@ -1,25 +1,13 @@
 import React from 'react';
-import { Button, Checkbox, Form, Input, Layout } from 'antd';
+import { Layout } from 'antd';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
-import { useIntl, useRequest } from 'umi';
 
 import styles from './doc.less';
 
 const { Content } = Layout;
 
 export default function FormPage() {
-  React.useEffect(() => {
-    // const { data, error, loading } = useRequest(() => {
-    //   return fetch('/api/test');
-    // });
-
-    fetch(
-      'https://my-json-server.typicode.com/antvis/antvis-sites-data/notifications',
-    ).then((res) => {
-      console.log(res);
-    });
-  }, []);
   return (
     <Layout>
       <div className={styles.headerWrapper}>

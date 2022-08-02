@@ -11,7 +11,7 @@
 
   .banner {
       margin: -100px 80px 80px 80px;
-      padding: 35px 65px 35px 65px;
+      padding: 35px 65px;
       height: 478px;
 
       .title {
@@ -19,10 +19,6 @@
         font-size: 28px;
         color: #494949;
         margin-bottom: 32px;
-      }
-
-      .autoPlay {
-        float: right;
       }
 
       .list {
@@ -80,19 +76,22 @@
         letter-spacing: 0.8px;
         text-align: center;
         line-height: 22px;
+        z-index: 2;
       }
     }
   }
 
-  .reasonCard {
-    margin: 0 100px 35px 100px;
-    padding: 50px 160px 0 160px;
-    position: relative;
-    color: rgba(51,51,51,0.89);
-    font-size: 18px;
-    color: rgba(51,51,51,0.89);
-    letter-spacing: 1.03px;
-    height: 360px;
+  .reasonWrapper {
+
+    .reasonCard {
+      margin: 0 100px 35px 100px;
+      padding: 50px 160px 0 160px;
+      position: relative;
+      color: rgba(51,51,51,0.89);
+      font-size: 18px;
+      color: rgba(51,51,51,0.89);
+      letter-spacing: 1.03px;
+      height: 360px;
 
       img {
         position: absolute;
@@ -100,8 +99,9 @@
         right: 37px;
       }
     }
+  }
+  
     
-
   .quickStart {
     display: flex;
     justify-content: center;
@@ -110,9 +110,6 @@
       height: 561px;
       width: 958px;
       padding: 37px 49px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
       margin-bottom: 120px;
 
       video {
@@ -120,5 +117,105 @@
       }
     }
    
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .containerWrapper {
+    .banner {
+      margin: -100px 64px 64px 64px;
+      padding: 32px 64px;
+    }
+  }
+}
+
+@media only screen and (max-width: 931.99px) {
+  .containerWrapper {
+    .banner {
+      margin: -100px 32px 32px 32px;
+       padding: 16px 24px;
+      height: auto;
+    }
+    .reasonWrapper {
+      .reasonCard {
+        margin: 32px;
+        padding: 64px 32px;
+        height: auto;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 767.99px) {
+  .containerWrapper {
+   .banner {
+      margin: -100px 16px 16px 16px;
+      padding: 16px 32px;
+      height: auto;
+
+      .list {
+        font-size: 14px;
+        margin: 16px 0;
+      }
+    }
+
+    .featCards {
+      margin: 0 !important;
+      padding: 0 16px;
+      display: block;
+      
+      .featCard {
+        margin: 16px auto;
+        padding: 32px 16px !important;
+        height: auto;
+        height: 514px;
+
+        .title {
+          .mobileImg {
+            display: block;
+            width: 100px;
+            height: 100px;
+            margin: 50px auto;
+          }
+        }
+
+        .leftImg,
+        .rightImg {
+          width: 70px;
+          left: 16px !important;
+          top: 216px !important;
+        }
+      }
+    }
+
+    .reasonWrapper {
+      margin-top: -120px;
+      padding-top: 100px;
+      background-image: linear-gradient(180deg, #ECF5FF 0%, #ECF5FF 48%, rgba(235,245,255,0.00) 100%);
+
+      .reasonCard {
+        margin: 16px;
+        padding: 32px 16px;
+        height: auto;
+      }
+    }
+    .quickStart {
+      display: block;
+      padding: 0 16px;
+
+      .videoWrapper {
+        width: 100%;
+        padding: 32px 16px;
+        height: auto;
+        display: block;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 120px;
+
+        video {
+          border-radius: 6px;
+        }
+      }
+    }
   }
 }
