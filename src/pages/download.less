@@ -1,4 +1,4 @@
-.containerWrapper{
+.containerWrapper {
   margin: -100px 88px 120px 88px;
   border-radius: 12px;
   box-shadow: 0 10px 30px 10px rgba(158,181,213,0.10);
@@ -29,5 +29,37 @@
     letter-spacing: 1.03px;
     text-align: center;
     line-height: 26px;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .containerWrapper {
+    margin: -100px 64px 120px 64px;
+    padding: 64px;
+    
+  }
+}
+
+@media only screen and (max-width: 931.99px) {
+  .containerWrapper {
+    margin: -100px 32px 120px 32px;
+    padding: 32px;
+  }
+}
+
+@media only screen and (max-width: 767.99px) {
+  .containerWrapper {
+    margin: -100px 16px 120px 16px;
+    padding: 32px 16px;
+
+    .list {
+      font-size: 14px;
+    }
+
+    button {
+      height: 32px;
+      font-size: 14px;
+      line-height: 16px;
+    }
   }
 }
