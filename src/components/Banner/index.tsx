@@ -22,6 +22,7 @@ export const Banner = ({
   buttons = [],
   activeKey = '',
   notice = '',
+  mobileIcon = '',
 }: {
   slogan: string;
   bgUrl: string;
@@ -29,6 +30,7 @@ export const Banner = ({
   activeKey?: string;
   buttons?: BannerButtonProps[];
   notice?: string;
+  mobileIcon?: string;
 }) => {
   const isWide = useMedia('(min-width: 767.99px)', true);
   return (
@@ -38,6 +40,9 @@ export const Banner = ({
         {notice && <div className={styles.notice}>{notice}</div>}
         <div className={styles.slogan}>{slogan}</div>
         {subTitle && <div className={styles.subTitle}>{subTitle}</div>}
+        {mobileIcon && !isWide && (
+          <img className={styles.mobileIcon} src={mobileIcon} />
+        )}
 
         {buttons?.length > 0 && (
           <Space className={styles.btnGroup} size={isWide ? 30 : 0}>
