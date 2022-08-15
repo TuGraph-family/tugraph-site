@@ -12,7 +12,7 @@ export const Carousel = () => {
   const sliders = [
     {
       title: intl.formatMessage({ id: 'home.sliders0' }),
-      url: '',
+      url: 'https://ldbcouncil.org/post/announcing-the-ldbc-financial-benchmark-task-force/',
       imgPc:
         'https://gw.alipayobjects.com/zos/bmw-prod/f9b45673-5cb0-47ab-8496-1bc90426e19e.svg',
       imgMobile:
@@ -20,7 +20,7 @@ export const Carousel = () => {
     },
     {
       title: intl.formatMessage({ id: 'home.sliders1' }),
-      url: '',
+      url: 'https://gw.alipayobjects.com/os/bmw-prod/a9693083-7fb6-430f-a9d4-232e3298c038.pdf',
       imgPc:
         'https://gw.alipayobjects.com/zos/bmw-prod/2ca300c6-47c6-4cda-8d93-8c422dade111.svg',
       imgMobile:

@@ -11,7 +11,7 @@ export default {
   'home.sliders0': '领导立项全球金融图数据库测试基准',
   'home.sliders1': 'Gartner 图计算白皮书',
   'home.sliders2': '入选世界互联网领先科技成果',
-  'home.sliders3': '获国际图数据库性能基准测试LDBC SNB 第一名',
+  'home.sliders3': '获国际图数据库性能基准测试LDBC SNB 第一名（2020）',
   'home.knowMore': '了解更多',
   'home.users': '我们的用户',
   'home.moreDemo': '更多案例 >>',
