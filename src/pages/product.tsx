@@ -1,5 +1,5 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { Col, Layout, Row, Space, Switch } from 'antd';
+import React, { useRef, useState } from 'react';
+import { Col, Layout, Row } from 'antd';
 import { Banner } from '@/components/Banner';
 import type { BannerButtonProps } from '@/components/Banner';
 import JoLPlayer, { JoLPlayerRef } from 'jol-player';
@@ -15,6 +15,9 @@ const { Content } = Layout;
 export default function ProductPage() {
   const intl = useIntl();
   const isWide = useMedia('(min-width: 767.99px)', true);
+  const [video, setVideo] = useState<string>(
+    'https://gw.alipayobjects.com/os/bmw-prod/2145f227-08f0-435a-abe6-7f503b65da7d.mov',
+  );
 
   const buttons: BannerButtonProps[] = [
     {
@@ -45,18 +48,31 @@ export default function ProductPage() {
                 <JoLPlayer
                   ref={videoRef}
                   option={{
-                    videoSrc:
-                      'https://gw.alipayobjects.com/v/rms_fa12c2/afts/video/A*CGu4RqkzzDgAAAAAAAAAAAAAARQnAQ/720P',
+                    videoSrc: video,
                     width: '100%',
                     height: 319,
                   }}
                 />
               </Col>
               <Col span={isWide ? 12 : 24}>
-                <div className={styles.list}>
+                <div
+                  onClick={() =>
+                    setVideo(
+                      'https://gw.alipayobjects.com/os/bmw-prod/2145f227-08f0-435a-abe6-7f503b65da7d.mov',
+                    )
+                  }
+                  className={styles.list}
+                >
                   {intl.formatMessage({ id: 'product.banner.playDesc0' })}
                 </div>
-                <div className={styles.list}>
+                <div
+                  onClick={() =>
+                    setVideo(
+                      'https://gw.alipayobjects.com/os/bmw-prod/c9cd86a4-6bd6-48bb-8926-ef62b3995d0b.mov',
+                    )
+                  }
+                  className={styles.list}
+                >
                   {intl.formatMessage({ id: 'product.banner.playDesc1' })}
                 </div>
               </Col>

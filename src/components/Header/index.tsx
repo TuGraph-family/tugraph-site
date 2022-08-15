@@ -58,12 +58,26 @@ export const Header = ({ activeKey }: { activeKey: string }) => {
       key: 'blog',
     },
     {
-      label: (
-        <a href="" rel="noopener noreferrer">
-          {intl.formatMessage({ id: 'header.community' })}
-        </a>
-      ),
+      label: intl.formatMessage({ id: 'header.community' }),
       key: 'community',
+      children: [
+        {
+          label: (
+            <a href="https://github.com/TuGraph-db" rel="noopener noreferrer">
+              Github
+            </a>
+          ),
+          key: 'Github',
+        },
+        {
+          label: (
+            <a href="https://gitee.com/tugraph" rel="noopener noreferrer">
+              Gitee
+            </a>
+          ),
+          key: 'Gitee',
+        },
+      ],
     },
     {
       label: (
