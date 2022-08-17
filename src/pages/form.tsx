@@ -2,7 +2,7 @@ import React from 'react';
 import { Button, Checkbox, Form, Input, Layout } from 'antd';
 import { Banner } from '@/components/Banner';
 import { Footer } from '@/components/Footer';
-import { useIntl } from 'umi';
+import { useIntl, isBrowser } from 'umi';
 
 import styles from './form.less';
 
@@ -16,10 +16,14 @@ export default function FormPage() {
     for (const [key, value] of Object.entries(values)) {
       body.push(`${key}: ${value}`);
     }
-    const bodyString = body.join(';');
-    window.location.href = `mailto:tugraph@service.alipay.com?subject=${intl.formatMessage(
-      { id: 'form.banner.slogan' },
-    )}&body=${bodyString}`;
+    if (!isBrowser()) {
+      const bodyString = body.join(';');
+      window.location.href = `mailto:tugraph@service.alipay.com?subject=${intl.formatMessage(
+        {
+          id: 'form.banner.slogan',
+        },
+      )}&body=${bodyString}`;
+    }
   };
 
   return (
