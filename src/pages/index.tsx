@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Col, Layout, Row, Space } from 'antd';
+import { Anchor, Button, Col, Layout, Row, Space } from 'antd';
 import { Banner } from '@/components/Banner';
 import type { BannerButtonProps } from '@/components/Banner';
 import { Carousel } from '@/components/Carousel';
@@ -15,6 +15,7 @@ import styles from './index.less';
 import { useMedia } from 'react-use';
 
 const { Content } = Layout;
+const { Link } = Anchor;
 
 export default function IndexPage() {
   const intl = useIntl();
@@ -23,11 +24,11 @@ export default function IndexPage() {
   const buttons: BannerButtonProps[] = [
     {
       text: intl.formatMessage({ id: 'home.banner.useFree' }),
-      url: '/form',
+      url: '/download',
     },
     {
       text: intl.formatMessage({ id: 'home.banner.quickStart' }),
-      url: '/doc',
+      url: '/product',
     },
   ];
 
@@ -101,7 +102,12 @@ export default function IndexPage() {
                 <div className={styles.desc}>
                   {intl.formatMessage({ id: 'home.version.desc0' })}
                 </div>
-                <Button type="primary" block className="lightBtn">
+                <Button
+                  type="primary"
+                  block
+                  onClick={() => history.push('/download')}
+                  className="lightBtn"
+                >
                   {intl.formatMessage({ id: 'home.version.startUse' })}
                 </Button>
               </Col>
@@ -112,9 +118,12 @@ export default function IndexPage() {
                 <div className={styles.desc}>
                   {intl.formatMessage({ id: 'home.version.desc1' })}
                 </div>
-                <Button type="primary" block className="lightBtn">
-                  {intl.formatMessage({ id: 'home.version.contactUs' })}
-                </Button>
+                <Anchor affix={false} className={styles.primaryBtn}>
+                  <Link
+                    href="#contactUs"
+                    title={intl.formatMessage({ id: 'home.version.contactUs' })}
+                  />
+                </Anchor>
               </Col>
             </Row>
           </div>
@@ -151,11 +160,25 @@ export default function IndexPage() {
           </div>
           <div className={styles.footerBtn}>
             <Space size={isWide ? 100 : 8}>
-              <Button type="primary" block className="lightBtn">
+              <Button
+                onClick={() => {
+                  history.push('/download');
+                }}
+                type="primary"
+                block
+                className="lightBtn"
+              >
                 {intl.formatMessage({ id: 'home.version.download' })}
               </Button>
 
-              <Button type="primary" block className="darkBtn">
+              <Button
+                onClick={() => {
+                  history.push('/form');
+                }}
+                type="primary"
+                block
+                className="darkBtn"
+              >
                 {intl.formatMessage({ id: 'home.version.useFree' })}
               </Button>
             </Space>

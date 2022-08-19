@@ -1,6 +1,6 @@
 import React from 'react';
 import { useIntl } from 'umi';
-import { Row, Col, Space } from 'antd';
+import { Row, Col, Space, Popover } from 'antd';
 import { PhoneFilled, MailFilled } from '@ant-design/icons';
 import { useMedia } from 'react-use';
 
@@ -40,19 +40,19 @@ export const Footer = ({ className }: { className?: string }) => {
   const icons = [
     {
       icon: 'https://gw.alipayobjects.com/zos/bmw-prod/5bb7aed7-7b96-4f15-9147-6ba150e5a220.svg',
-      url: '/',
+      url: 'https://github.com/TuGraph-db',
     },
     {
       icon: 'https://gw.alipayobjects.com/zos/bmw-prod/eba3a225-f8a3-4c56-ad7a-339a60707a49.svg',
-      url: '/',
+      img: 'https://gw.alipayobjects.com/zos/antfincdn/v6wTr95cHw/ae4398ac-2cc3-4401-9149-992b93a81b27.png',
     },
     {
       icon: 'https://gw.alipayobjects.com/zos/bmw-prod/db10078e-ebc9-4d19-b13a-18d07f327c8c.svg',
-      url: '/',
+      url: 'https://space.bilibili.com/1196053065/',
     },
     {
       icon: 'https://gw.alipayobjects.com/zos/bmw-prod/88933248-acee-4d21-9daf-242670675dbc.svg',
-      url: '/',
+      url: 'https://zhuanlan.zhihu.com/p/141047442',
     },
   ];
 
@@ -78,12 +78,26 @@ export const Footer = ({ className }: { className?: string }) => {
       <Row className={styles.contactGroup}>
         <Col span={16} offset={3}>
           <div>{intl.formatMessage({ id: 'home.version.contactUs' })}</div>
-          <Space size={26} className={styles.iconGroup}>
-            {icons.map((item, key) => (
-              <a key={key} href={item.url} rel="noopener noreferrer">
-                <img src={item.icon} />
-              </a>
-            ))}
+          <Space id="contactUs" size={26} className={styles.iconGroup}>
+            {icons.map((item, key) => {
+              return item?.url ? (
+                <a key={key} href={item.url} rel="noopener noreferrer">
+                  <img src={item.icon} />
+                </a>
+              ) : (
+                <Popover
+                  key={key}
+                  content={
+                    <img
+                      style={{ width: '200px', height: '200px' }}
+                      src={item.img}
+                    />
+                  }
+                >
+                  <img src={item.icon} />
+                </Popover>
+              );
+            })}
           </Space>
           <Row>
             <Col span={10}>
@@ -95,7 +109,9 @@ export const Footer = ({ className }: { className?: string }) => {
             <Col span={14}>
               <Space>
                 <MailFilled />
-                tugraph@service.alipay.com
+                <a href="mailto:tugraph@service.alipay.com">
+                  tugraph@service.alipay.com
+                </a>
               </Space>
             </Col>
           </Row>
@@ -114,7 +130,12 @@ export const Footer = ({ className }: { className?: string }) => {
       </Row>
       <Row className={styles.footerExtraInfo}>
         <Col span={8} offset={3}>
-          {intl.formatMessage({ id: 'footer.rules' })}
+          <a
+            href="https://render.alipay.com/p/yuyan/180020010001196791/preview.html?agreementId=AG00000174"
+            rel="noopener noreferrer"
+          >
+            {intl.formatMessage({ id: 'footer.rules' })}
+          </a>
         </Col>
         <Col span={10}>{intl.formatMessage({ id: 'footer.address' })}</Col>
       </Row>
@@ -129,7 +150,14 @@ export const Footer = ({ className }: { className?: string }) => {
             src="https://gw.alipayobjects.com/zos/bmw-prod/b54deb36-47fb-483a-8240-a682fe8348ec.svg"
             className={styles.logo}
           />
-          <div> {intl.formatMessage({ id: 'footer.rules' })}</div>
+          <div>
+            <a
+              href="https://render.alipay.com/p/yuyan/180020010001196791/preview.html?agreementId=AG00000174"
+              rel="noopener noreferrer"
+            >
+              {intl.formatMessage({ id: 'footer.rules' })}
+            </a>
+          </div>
         </Col>
         <Col span={10} className={styles.qrCode}>
           <img src="https://gw.alipayobjects.com/zos/bmw-prod/b543c652-c2a5-4ff1-90e2-dc6d4077b68e.svg" />
@@ -144,14 +172,28 @@ export const Footer = ({ className }: { className?: string }) => {
         ))}
       </div>
 
-      <div className={styles.contactInfo}>
+      <div className={styles.contactInfo} id="contactUs">
         {intl.formatMessage({ id: 'home.version.contactUs' })}
         <Row className={styles.iconGroup}>
           {icons.map((item, key) => (
             <Col span={6} key={key}>
-              <a href={item.url} rel="noopener noreferrer">
-                <img src={item.icon} />
-              </a>
+              {item.url ? (
+                <a href={item.url} rel="noopener noreferrer">
+                  <img src={item.icon} />
+                </a>
+              ) : (
+                <Popover
+                  trigger={'click'}
+                  content={
+                    <img
+                      style={{ width: '200px', height: '200px' }}
+                      src={item.img}
+                    />
+                  }
+                >
+                  <img src={item.icon} />
+                </Popover>
+              )}
             </Col>
           ))}
         </Row>
