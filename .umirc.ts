@@ -13,6 +13,9 @@ export default defineConfig({
     { path: '/form', component: '@/pages/form' },
   ],
   fastRefresh: {},
+  request: {
+    dataField: '',
+  },
   locale: {
     antd: true,
     baseNavigator: true,

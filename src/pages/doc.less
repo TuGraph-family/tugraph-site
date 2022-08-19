@@ -1,22 +1,93 @@
 .headerWrapper {
- padding: 0 170px;
+  padding: 0 170px;
 }
 
-.containerWrapper {
-  padding-top: 16px;
+.sideWrapper {
+  text-align: center;
+  border-right: 1px solid #EBEDF0;
+  height: 100vh;
+  position: fixed;
+  z-index: 9999;
+}
 
-  .iframeWrapper {
-    position: relative;
-    padding-bottom: calc(100vh - 188px); 
-    height: 124px;
-    overflow: hidden;
+
+.containerWrapper {
+  padding: 40px;
+  margin-left: 242px;
+
+  .updateTimeLabel {
+    font-weight: 400;
+    font-size: 14px;
+    color: #1677FF;
+    letter-spacing: 0;
+  }
+
+  .updateTime {
+    font-weight: 400;
+    font-size: 14px;
+    color: #697B8C;
+    letter-spacing: 0;  
+  }
+
+  html {
+    margin: 24px 0 40px 0;  
+  }
+
+  h1 {
+    font-weight: 600;
+    font-size: 30px;
+    color: rgba(13,26,38,0.90);
+    line-height: 38px;
+  }
+
+  h2 {
+    margin: 40px 0 16px 0;
+  }
+
+  p {
+    font-weight: 400;
+    font-size: 14px;
+    color: #314659;
+    letter-spacing: 0;
+    line-height: 28px;
+  }
+
+  ul {
+    list-style: disc;
+    padding-left: 2em;
     
-    .doc {
-      width: 100%;
-      height: calc(100vh + 124px);
-      top: -124px;
-      left: 0;
-      position: absolute;
+    li {
+      margin-bottom: 4px;
+      color: #0d1a26;
+      font-size: 14px;
+      font-family: PingFangSC-Regular;
+      line-height: 24px;
+      list-style: inherit;
+    }
+  }
+  
+  :global {
+    .codeContainer {
+      &:after {
+        display: none;
+      }
+      &:before {
+        display: none;
+      }
+      
+      pre {
+         &:after {
+        display: none;
+      }
+      &:before {
+        display: none;
+      }
+        padding: 16px !important;
+       
+        code {
+          font-family: Monaco, Consolas, Courier, monospace;
+        }
+      }
     }
   }
 }
@@ -33,18 +104,7 @@
   }
    
   .containerWrapper { 
-    .iframeWrapper {
-      position: relative;
-      padding-bottom: calc(100vh - 204px);
-
-      .doc {
-        width: 100%;
-        height: calc(100vh + 140px);
-        top: -140px;
-        left: 0;
-        position: absolute;
-      }
-    }
+   
   }
 }
 
@@ -57,17 +117,7 @@
   .containerWrapper {
     padding-top: 60px;
 
-    .iframeWrapper {
-      position: relative;
-      padding-bottom: calc(100vh - 188px);
-
-      .doc {
-        width: 100%;
-        height: calc(100vh + 56px);
-        top: -56px;
-        left: 0;
-        position: absolute;
-      }
-    }
+    
+    
   }
 }

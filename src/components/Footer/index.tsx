@@ -6,7 +6,7 @@ import { useMedia } from 'react-use';
 
 import styles from './index.less';
 
-export const Footer = () => {
+export const Footer = ({ className }: { className?: string }) => {
   const intl = useIntl();
   const isWide = useMedia('(min-width: 767.99px)', true);
 
@@ -57,7 +57,7 @@ export const Footer = () => {
   ];
 
   const pc = (
-    <>
+    <div className={className}>
       <Row>
         <Col span={16} offset={3}>
           <Space size={50}>
@@ -118,7 +118,7 @@ export const Footer = () => {
         </Col>
         <Col span={10}>{intl.formatMessage({ id: 'footer.address' })}</Col>
       </Row>
-    </>
+    </div>
   );
 
   const mobile = (
