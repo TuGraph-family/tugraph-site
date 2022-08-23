@@ -1,7 +1,7 @@
 import React from 'react';
 import HTMLRenderer from 'react-html-renderer';
 import { categoryItem, docContent } from '@/interface';
-import { MenuProps, Select, Affix, Anchor } from 'antd';
+import { MenuProps, Select, Affix, Anchor, Spin } from 'antd';
 import { Layout, Menu } from 'antd';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
@@ -88,41 +88,46 @@ export default function DocPage() {
       <Layout>
         <Affix offsetTop={0}>
           <Sider className={styles.sideWrapper} theme="light" width={243}>
-            <Select
-              style={{
-                width: '184px',
-                textAlign: 'left',
-                marginBottom: '16px',
-              }}
-              value={currentVersion}
-              onChange={(v) => setCurrentVersion(v)}
-            >
-              {versions?.map((version: { branch: string }, index) => (
-                <Option value={version?.branch} key={index}>
-                  {version?.branch}
-                </Option>
-              ))}
-            </Select>
-            <Menu
-              mode="inline"
-              selectedKeys={[currentCategory]}
-              style={{ height: '100%', borderRight: 0 }}
-              items={items}
-              onSelect={({ key }) => setCurrentCategory(key)}
-            />
+            <Spin spinning={!!!currentVersion}>
+              <Select
+                style={{
+                  width: '184px',
+                  textAlign: 'left',
+                  marginBottom: '16px',
+                }}
+                value={currentVersion}
+                onChange={(v) => setCurrentVersion(v)}
+              >
+                {versions?.map((version: { branch: string }, index) => (
+                  <Option value={version?.branch} key={index}>
+                    {version?.branch}
+                  </Option>
+                ))}
+              </Select>
+              <Menu
+                mode="inline"
+                selectedKeys={[currentCategory]}
+                style={{ height: '100%', borderRight: 0 }}
+                items={items}
+                onSelect={({ key }) => setCurrentCategory(key)}
+              />
+            </Spin>
           </Sider>
         </Affix>
+
         <Content className={styles.containerWrapper}>
-          <h1>{content?.title}</h1>
-          <div>
-            {content?.updated_at && (
-              <span className={styles.updateTimeLabel}>最后更新时间：</span>
-            )}
-            <span className={styles.updateTime}>
-              {dateFormat(content?.updated_at)}
-            </span>
-          </div>
-          <HTMLRenderer html={content?.body_html} />
+          <Spin spinning={!!!content}>
+            <h1>{content?.title}</h1>
+            <div>
+              {content?.updated_at && (
+                <span className={styles.updateTimeLabel}>最后更新时间：</span>
+              )}
+              <span className={styles.updateTime}>
+                {dateFormat(content?.updated_at)}
+              </span>
+            </div>
+            <HTMLRenderer html={content?.body_html} />
+          </Spin>
         </Content>
         <Anchor
           affix={true}
