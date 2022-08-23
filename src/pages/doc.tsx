@@ -1,18 +1,21 @@
 import React from 'react';
 import HTMLRenderer from 'react-html-renderer';
 import { categoryItem, docContent } from '@/interface';
-import { MenuProps, Select } from 'antd';
+import { MenuProps, Select, Affix, Anchor } from 'antd';
 import { Layout, Menu } from 'antd';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { useGetDocsInfo } from '@/hooks/useGetDocsInfo';
+import moment from 'moment';
 
 import styles from './doc.less';
+
+const { Link } = Anchor;
 
 const { Content, Sider } = Layout;
 const { Option } = Select;
 
-export default function FormPage() {
+export default function DocPage() {
   const { getCategoryList, getVersions, getDocDetail } = useGetDocsInfo();
   const [versions, setVersions] = React.useState([]);
   const [currentVersion, setCurrentVersion] = React.useState('');
@@ -26,6 +29,13 @@ export default function FormPage() {
     } else {
       return items[0].id;
     }
+  };
+
+  const dateFormat = (dateString?: string) => {
+    if (!dateString) {
+      return '';
+    }
+    return moment(new Date(dateString)).format('YYYY-MM-DD HH:MM:SS');
   };
 
   React.useEffect(() => {
@@ -68,40 +78,62 @@ export default function FormPage() {
 
   const items = transformCategoryList(categoryList);
 
+  const onAnchorLinkChange = (activeLink: string) => {};
+
   return (
     <Layout>
       <div className={styles.headerWrapper}>
         <Header activeKey="doc" />
       </div>
       <Layout>
-        <Sider className={styles.sideWrapper} theme="light" width={243}>
-          <Select
-            style={{ width: '184px', textAlign: 'left' }}
-            value={currentVersion}
-            onChange={(v) => setCurrentVersion(v)}
-          >
-            {versions?.map((version: { branch: string }, index) => (
-              <Option value={version?.branch} key={index}>
-                {version?.branch}
-              </Option>
-            ))}
-          </Select>
-          <Menu
-            mode="inline"
-            selectedKeys={[currentCategory]}
-            style={{ height: '100%', borderRight: 0 }}
-            items={items}
-            onSelect={({ key }) => setCurrentCategory(key)}
-          />
-        </Sider>
+        <Affix offsetTop={0}>
+          <Sider className={styles.sideWrapper} theme="light" width={243}>
+            <Select
+              style={{
+                width: '184px',
+                textAlign: 'left',
+                marginBottom: '16px',
+              }}
+              value={currentVersion}
+              onChange={(v) => setCurrentVersion(v)}
+            >
+              {versions?.map((version: { branch: string }, index) => (
+                <Option value={version?.branch} key={index}>
+                  {version?.branch}
+                </Option>
+              ))}
+            </Select>
+            <Menu
+              mode="inline"
+              selectedKeys={[currentCategory]}
+              style={{ height: '100%', borderRight: 0 }}
+              items={items}
+              onSelect={({ key }) => setCurrentCategory(key)}
+            />
+          </Sider>
+        </Affix>
         <Content className={styles.containerWrapper}>
           <h1>{content?.title}</h1>
           <div>
-            <span className={styles.updateTimeLabel}>最后更新时间：</span>
-            <span className={styles.updateTime}>{content?.updated_at}</span>
+            {content?.updated_at && (
+              <span className={styles.updateTimeLabel}>最后更新时间：</span>
+            )}
+            <span className={styles.updateTime}>
+              {dateFormat(content?.updated_at)}
+            </span>
           </div>
           <HTMLRenderer html={content?.body_html} />
         </Content>
+        <Anchor
+          affix={true}
+          className={styles.apiAnchor}
+          onChange={onAnchorLinkChange}
+          style={{ zIndex: 8 }}
+        >
+          {content?.anchors?.map((item) => (
+            <Link href={item.id} title={item.title} />
+          ))}
+        </Anchor>
       </Layout>
 
       <Footer className="docFooter" />

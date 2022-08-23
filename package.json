@@ -22,6 +22,7 @@
   "dependencies": {
     "antd": "^4.21.6",
     "jol-player": "^3.2.0",
+    "moment": "^2.29.4",
     "react": "17.x",
     "react-dom": "17.x",
     "react-html-renderer": "^0.3.3",

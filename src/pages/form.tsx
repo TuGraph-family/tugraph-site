@@ -18,6 +18,7 @@ export default function FormPage() {
     }
     if (!isBrowser()) {
       const bodyString = body.join(';');
+      // TODO 用邮件服务替换掉 https://dashboard.emailjs.com/
       window.location.href = `mailto:tugraph@service.alipay.com?subject=${intl.formatMessage(
         {
           id: 'form.banner.slogan',

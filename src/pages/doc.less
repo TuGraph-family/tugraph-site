@@ -1,13 +1,41 @@
 .headerWrapper {
-  padding: 0 170px;
+  padding: 0 40px;
+  box-shadow: 0 2px 8px 0 rgba(240,241,242,0.65);
+  z-index: 9999;
+
 }
 
 .sideWrapper {
   text-align: center;
   border-right: 1px solid #EBEDF0;
+  padding-top: 40px;
   height: 100vh;
   position: fixed;
-  z-index: 9999;
+  z-index: 999;
+  :global {
+    .ant-menu-sub.ant-menu-inline {
+      background-color: #fff;
+    }
+  }
+}
+
+.apiAnchor {
+  margin: 56px 24px 56px 0;
+ 
+
+  :global {
+    .ant-affix {
+      z-index: 8;
+    }
+    .ant-anchor-ink-ball {
+      width: 0px;
+      height: 20px;
+      background-color: #fff;
+      border: 1px solid #1677FF;
+      margin-top: -4px;
+      border-radius: 0;
+    }
+  }
 }
 
 
@@ -18,7 +46,7 @@
   .updateTimeLabel {
     font-weight: 400;
     font-size: 14px;
-    color: #1677FF;
+    color: @primary-color;
     letter-spacing: 0;
   }
 
@@ -44,6 +72,10 @@
     margin: 40px 0 16px 0;
   }
 
+  h3 {
+    margin: 16px 0;
+  }
+
   p {
     font-weight: 400;
     font-size: 14px;
@@ -65,12 +97,51 @@
       list-style: inherit;
     }
   }
+
+  blockquote {
+    padding: 0 16px;
+    color: #777;
+    border-left: 4px solid #ddd;
+  }
+
+  table {
+    display: table;
+    max-width: 100%!important;
+    width: 100%;
+    margin-top: 24px;
+    table-layout: fixed;
+    border: 1px solid rgba(105,122,140,0.10);
+
+
+    tr {
+      background-color: #fff;
+       box-shadow: 0 1px 0 0 rgba(105,122,140,0.10);
+    }
+
+    th {
+      padding: 6px 12px;
+      border: 1px solid rgba(105,122,140,0.10);
+      background-color: #FAFBFC;
+      text-align: center;
+    }
+
+    td {
+      border: 1px solid rgba(105,122,140,0.10);
+      padding: 6px 12px;
+      word-break: break-word;
+      text-align: left;
+    }
+  }
   
   :global {
     .codeContainer {
+      background-color: #FAFBFC;
+      border-radius: 12px;
+      
       &:after {
         display: none;
       }
+      
       &:before {
         display: none;
       }
