@@ -1,6 +1,6 @@
 import React from 'react';
 import { useIntl } from 'umi';
-import { Space, Menu, Drawer } from 'antd';
+import { Row, Menu, Drawer, Col } from 'antd';
 import { useMedia } from 'react-use';
 import type { MenuProps } from 'antd';
 import { MenuOutlined, CloseOutlined } from '@ant-design/icons';
@@ -91,12 +91,19 @@ export const Header = ({ activeKey }: { activeKey: string }) => {
 
   const pc = (
     <>
-      <Space size={30}>
-        <a href="/" rel="noopener noreferrer">
-          <img src="https://gw.alipayobjects.com/zos/bmw-prod/5c0610ba-4c85-455b-8833-53dcea242430.svg" />
-        </a>
-        <Menu activeKey={activeKey} mode="horizontal" items={menuItems} />
-      </Space>
+      <a href="/" rel="noopener noreferrer">
+        <img
+          className={styles.log}
+          src="https://gw.alipayobjects.com/zos/bmw-prod/5c0610ba-4c85-455b-8833-53dcea242430.svg"
+        />
+      </a>
+
+      <Menu
+        className={styles.menu}
+        activeKey={activeKey}
+        mode="horizontal"
+        items={menuItems}
+      />
     </>
   );
 

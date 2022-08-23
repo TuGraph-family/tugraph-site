@@ -15,9 +15,15 @@ export default defineConfig({
     { path: '/download', component: '@/pages/download' },
     { path: '/form', component: '@/pages/form' },
   ],
+  theme: {
+    'primary-color': '#1677FF',
+  },
   ssr: {},
   exportStatic: {},
   fastRefresh: {},
+  request: {
+    dataField: '',
+  },
   locale: {
     antd: true,
     baseNavigator: true,
