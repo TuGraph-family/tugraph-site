@@ -1,12 +1,11 @@
 .footer {
   background: #00122B;
-  height: 698px;
-  padding: 64px 0 0 0;
+  height: 389px;
+ 
   z-index: 9;
 
   a,
-  .contactGroup,
-  .footerExtraInfo {
+  .contactGroup {
     font-size: 16px;
     font-weight: 400;
     color: rgba(255,255,255,0.89);
@@ -17,7 +16,7 @@
   }
 
   .contactGroup {
-    padding: 80px 0 32px 0; 
+    padding: 88px 120px 20px 120px;
 
     .iconGroup {
       margin: 36px 0 30px 0;
@@ -26,23 +25,52 @@
         cursor: pointer;
       }
     }
-  
-  }
-
-  .splitLine {
-    border-bottom: 1px solid #979797;
-    margin: 0 0 24px 0 ;
+    
+    .contactInfo {
+      font-size: 14px;
+      color: rgba(255,255,255,0.85);
+    }
   }
 
   .qrCode,
   .logo {
-    text-align: right;
+    text-align: center;
+    width: 100px;
+      height: 100px;
   }
 
-  .qrCode > div {
-    margin-top: 6px;
-    font-size: 14px;
-    color: rgba(255,255,255,0.89)
+  .qrCode {
+    .desc {
+      margin-top: 16px;
+      font-size: 14px;
+      color: rgba(255,255,255,0.89)
+    }
+
+    .subDesc {
+      margin-top: 8px;
+      font-size: 12px;
+      color: rgba(255,255,255,0.65);
+    }
+    
+  
+  }
+
+  .footerExtraInfo {
+    margin-top: 42px;
+    border-top: 1px solid #404e60;
+    height: 95px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+
+    a,
+    div {
+      font-size: 14px;
+      color: rgba(255,255,255,0.65);
+    }
+    a {
+      text-decoration: underline;
+    }
   }
 
   :global {

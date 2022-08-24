@@ -133,7 +133,6 @@ export default function DocPage() {
           affix={true}
           className={styles.apiAnchor}
           onChange={onAnchorLinkChange}
-          style={{ zIndex: 8 }}
         >
           {content?.anchors?.map((item) => (
             <Link href={item.id} title={item.title} />
