@@ -20,13 +20,10 @@ export default function DemoPage() {
       <Content>
         <Banner
           activeKey={'demo'}
-          bgUrl={
-            'https://gw.alipayobjects.com/zos/bmw-prod/492ccb4d-1451-4a76-a369-389008003c6c.svg'
+          bgIconUrl={
+            'https://gw.alipayobjects.com/zos/bmw-prod/0637191d-4925-4280-8238-d8fb3c58f666.svg'
           }
           subTitle={intl.formatMessage({ id: 'demo.banner.subTitle' })}
-          mobileIcon={
-            'https://gw.alipayobjects.com/zos/bmw-prod/a1b6acd1-ed85-46fd-b333-fbb6c32984fa.svg'
-          }
           slogan={intl.formatMessage({ id: 'demo.banner.slogan' })}
         />
         <div className={styles.containerWrapper}>

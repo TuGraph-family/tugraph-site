@@ -1,14 +1,15 @@
 import React, { useRef, useState } from 'react';
-import { Col, Layout, Row } from 'antd';
+import { Button, Col, Layout, Row } from 'antd';
 import { Banner } from '@/components/Banner';
 import type { BannerButtonProps } from '@/components/Banner';
 import JoLPlayer, { JoLPlayerRef } from 'jol-player';
 import { SubTitle } from '@/components/SubTitle';
 import { Footer } from '@/components/Footer';
+import { useMedia } from 'react-use';
 import { useIntl } from 'umi';
+import cx from 'classnames';
 
 import styles from './product.less';
-import { useMedia } from 'react-use';
 
 const { Content } = Layout;
 
@@ -32,8 +33,8 @@ export default function ProductPage() {
       <Content>
         <Banner
           activeKey={'product'}
-          bgUrl={
-            'https://gw.alipayobjects.com/zos/bmw-prod/c6a71ee8-ce75-4dae-b984-eea57723b65d.svg'
+          bgIconUrl={
+            'https://gw.alipayobjects.com/zos/bmw-prod/a6072058-9e9a-471b-817f-39b3b3044152.svg'
           }
           slogan={intl.formatMessage({ id: 'product.banner.slogan' })}
           buttons={buttons}
@@ -44,7 +45,7 @@ export default function ProductPage() {
               {intl.formatMessage({ id: 'home.banner.quickStart' })}
             </div>
             <Row>
-              <Col span={isWide ? 12 : 24}>
+              <Col span={isWide ? 16 : 24}>
                 <JoLPlayer
                   ref={videoRef}
                   option={{
@@ -54,27 +55,27 @@ export default function ProductPage() {
                   }}
                 />
               </Col>
-              <Col span={isWide ? 12 : 24}>
-                <div
+              <Col span={isWide ? 8 : 24}>
+                <Button
                   onClick={() =>
                     setVideo(
                       'https://gw.alipayobjects.com/os/bmw-prod/2145f227-08f0-435a-abe6-7f503b65da7d.mov',
                     )
                   }
-                  className={styles.list}
+                  className={cx(styles.list, 'grayBtn')}
                 >
                   {intl.formatMessage({ id: 'product.banner.playDesc0' })}
-                </div>
-                <div
+                </Button>
+                <Button
                   onClick={() =>
                     setVideo(
                       'https://gw.alipayobjects.com/os/bmw-prod/c9cd86a4-6bd6-48bb-8926-ef62b3995d0b.mov',
                     )
                   }
-                  className={styles.list}
+                  className={cx(styles.list, 'grayBtn')}
                 >
                   {intl.formatMessage({ id: 'product.banner.playDesc1' })}
-                </div>
+                </Button>
               </Col>
             </Row>
           </div>

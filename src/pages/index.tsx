@@ -37,8 +37,8 @@ export default function IndexPage() {
       <Content>
         <Banner
           buttons={buttons}
-          bgUrl={
-            'https://gw.alipayobjects.com/zos/bmw-prod/b5c7dfd1-de33-49a4-b7ac-2c0fc1232d2c.svg'
+          bgIconUrl={
+            'https://gw.alipayobjects.com/zos/bmw-prod/b3cee56d-ebfd-4954-b7d3-e920f0c9de5f.svg'
           }
           slogan={intl.formatMessage({ id: 'home.banner.slogan' })}
         />
@@ -114,7 +114,7 @@ export default function IndexPage() {
               title={intl.formatMessage({ id: 'home.chooseVersion' })}
             />
             <Row className={styles.versions}>
-              <Col span={12} className={styles.version} key={0}>
+              <Col span={isWide ? 12 : 24} className={styles.version} key={0}>
                 <div className={styles.versionCard}>
                   <div className={styles.title}>
                     {intl.formatMessage({ id: 'home.version0' })}
@@ -132,7 +132,7 @@ export default function IndexPage() {
                   </Button>
                 </div>
               </Col>
-              <Col span={12} className={styles.version} key={1}>
+              <Col span={isWide ? 12 : 24} className={styles.version} key={1}>
                 <div className={styles.versionCard}>
                   <div className={styles.title}>
                     {intl.formatMessage({ id: 'home.version1' })}

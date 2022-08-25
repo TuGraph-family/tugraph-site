@@ -64,8 +64,8 @@ export default {
   'footer.address': '地址：中国北京朝阳区东三环中路1号环球金融中心东塔9层',
   'product.banner.slogan': '极速的开源图数据库TuGraph',
   'product.banner.autoPlay': '自动播放',
-  'product.banner.playDesc0': '◆ TuGraph快速上手演示',
-  'product.banner.playDesc1': '◆ 可视化操作演示',
+  'product.banner.playDesc0': 'TuGraph快速上手演示',
+  'product.banner.playDesc1': '可视化操作演示',
   'product.feature': '产品特性',
   'product.feature.title0': '完备可靠的一站式图存储',
   'product.feature.desc0':
