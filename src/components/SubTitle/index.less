@@ -2,34 +2,26 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 80px 0 60px 0px;
+  margin: 120px 0 32px 0;
   
   .subTitle { 
+    color: rgba(0,0,0,0.85);
     font-size: 36px;
-    color: rgba(0,10,26,0.89);
     position: relative;
 
-    img {
-        width: 96px;
-        height: auto;
-        position: absolute;
-        bottom: -14px;
-        left: -54px;
-      }
+  }
+      
+  .subTitleBorderContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 16px;
+      
+    .subTitleBorder {
+      background-image: linear-gradient(90deg, rgba(22,222,255,0.50) 0%, #1650FF 51%, rgba(22,222,255,0.50) 100%);
+      height: 1px;
+      width: 92px;
     }
-      
-    .subTitleBorderContainer {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      margin-top: 25px;
-      
-      .subTitleBorder {
-        height: 4px;
-        width: 59px;
-        background-color: #333333;
-        border-radius: 16px;
-      }
   }
 }
 

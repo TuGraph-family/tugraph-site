@@ -39,13 +39,10 @@ export default function DemoPage() {
       <Content>
         <Banner
           activeKey={'download'}
-          bgUrl={
-            'https://gw.alipayobjects.com/zos/bmw-prod/2aa3933c-0ace-4b87-aeb4-a58473b9bc90.svg'
+          bgIconUrl={
+            'https://gw.alipayobjects.com/zos/bmw-prod/2000dea9-a112-4ec5-afa3-30776eeadabb.svg'
           }
           notice={intl.formatMessage({ id: 'download.banner.notice' })}
-          mobileIcon={
-            'https://gw.alipayobjects.com/zos/bmw-prod/1ea4aa81-6d85-4bd5-83aa-9213ddf7cb22.svg'
-          }
           slogan={intl.formatMessage({ id: 'download.banner.slogan' })}
         />
         <div className={styles.containerWrapper}>

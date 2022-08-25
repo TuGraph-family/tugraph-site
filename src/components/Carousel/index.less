@@ -1,12 +1,6 @@
 .sliders {
-  height: 441px;
-  margin: -80px 86px 80px 86px;
-  background-color: #FFFFFF;
-  border-radius: 12px;
-  background-color: #FFFFFF;
-  box-shadow: 0 10px 30px 12px rgba(158,181,213,0.10);
-  border-radius: 12px;
-  background-color: #FFFFFF;
+  height: 400px;
+  margin: -78px 0 198px 0;
 
   .slider {
     padding: 48px 48px 0 83px;
@@ -15,7 +9,7 @@
     
     .desc {
       float: left;
-      width: 60%;
+      width: 40%;
 
       .title {
         margin: 50px 0 100px 0;
@@ -32,21 +26,29 @@
 
     .demoImg {
       height: 320px;
+    
       float: right;
-      width: 40%;
+      width: 60%;
       display: flex;
       justify-content: center;
       align-items: center;
 
       img  {
         width: 100%;
-        max-width: 540px;
+        border-radius: 8px;
+        max-width: 650px;
         height: auto;
+        max-height: 320px;
       }
     }
   }
 
   :global {
+    .ant-carousel {
+      background-color: #FFFFFF;
+      box-shadow: 0 10px 30px 12px rgba(158,181,213,0.10);
+      border-radius: 12px;
+    }
     .ant-carousel .slick-dots li button {
       width: 7px;
       height: 7px;
