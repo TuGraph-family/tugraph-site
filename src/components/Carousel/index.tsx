@@ -14,7 +14,7 @@ export const Carousel = () => {
       title: intl.formatMessage({ id: 'home.sliders0' }),
       url: 'https://ldbcouncil.org/post/announcing-the-ldbc-financial-benchmark-task-force/',
       imgPc:
-        'https://gw.alipayobjects.com/zos/bmw-prod/f9b45673-5cb0-47ab-8496-1bc90426e19e.svg',
+        'https://gw.alipayobjects.com/mdn/rms_fa12c2/afts/img/A*G5CHTp0IxLsAAAAAAAAAAAAAARQnAQ',
       imgMobile:
         'https://gw.alipayobjects.com/mdn/rms_fa12c2/afts/img/A*5c09T6RzbIwAAAAAAAAAAAAAARQnAQ',
     },
@@ -22,7 +22,7 @@ export const Carousel = () => {
       title: intl.formatMessage({ id: 'home.sliders1' }),
       url: 'https://gw.alipayobjects.com/os/bmw-prod/a9693083-7fb6-430f-a9d4-232e3298c038.pdf',
       imgPc:
-        'https://gw.alipayobjects.com/zos/bmw-prod/2ca300c6-47c6-4cda-8d93-8c422dade111.svg',
+        'https://gw.alipayobjects.com/mdn/rms_fa12c2/afts/img/A*JGrVRJx8j-EAAAAAAAAAAAAAARQnAQ',
       imgMobile:
         'https://gw.alipayobjects.com/mdn/rms_fa12c2/afts/img/A*4jmiQaMBtxQAAAAAAAAAAAAAARQnAQ',
     },
@@ -30,7 +30,7 @@ export const Carousel = () => {
       title: intl.formatMessage({ id: 'home.sliders2' }),
       url: '',
       imgPc:
-        'https://gw.alipayobjects.com/mdn/rms_fa12c2/afts/img/A*8rRjQLVLio0AAAAAAAAAAAAAARQnAQ',
+        'https://gw.alipayobjects.com/mdn/rms_fa12c2/afts/img/A*NFQWTJTyvN0AAAAAAAAAAAAAARQnAQ',
       imgMobile:
         'https://gw.alipayobjects.com/mdn/rms_fa12c2/afts/img/A*NFQWTJTyvN0AAAAAAAAAAAAAARQnAQ',
     },
@@ -38,7 +38,7 @@ export const Carousel = () => {
       title: intl.formatMessage({ id: 'home.sliders3' }),
       url: '',
       imgPc:
-        'https://gw.alipayobjects.com/zos/bmw-prod/fcacd35f-c67e-4d75-a3ef-3217fa527379.svg',
+        'https://gw.alipayobjects.com/mdn/rms_fa12c2/afts/img/A*h_EySZFqFGAAAAAAAAAAAAAAARQnAQ',
       imgMobile:
         'https://gw.alipayobjects.com/mdn/rms_fa12c2/afts/img/A*tPZtQIgfSC8AAAAAAAAAAAAAARQnAQ',
     },
@@ -46,12 +46,9 @@ export const Carousel = () => {
 
   return (
     <div className={styles.sliders}>
-      <AntdCarousel dots={{ className: 'dots' }}>
+      <AntdCarousel autoplay dots={{ className: 'dots' }}>
         {sliders.map((item, key) => (
           <div className={styles.slider} key={key}>
-            <div className={styles.demoImg}>
-              <img src={isWide ? item.imgPc : item.imgMobile} />
-            </div>
             <div className={styles.desc}>
               <h3 className={styles.title}>{item.title}</h3>
               {isWide ? (
@@ -65,6 +62,9 @@ export const Carousel = () => {
                   {intl.formatMessage({ id: 'home.knowMore' })}
                 </a>
               )}
+            </div>
+            <div className={styles.demoImg}>
+              <img src={isWide ? item.imgPc : item.imgMobile} />
             </div>
           </div>
         ))}

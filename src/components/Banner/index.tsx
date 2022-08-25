@@ -64,7 +64,7 @@ export const Banner = ({
                 type="primary"
                 block
                 ghost={!isWide}
-                className={isWide ? 'darkBtn' : styles.darkBtnMobile}
+                className={isWide ? 'grayBtn' : styles.darkBtnMobile}
                 onClick={() => {
                   history.push(buttons[1].url);
                 }}

@@ -157,7 +157,6 @@ export default function ProductPage() {
           <div className={styles.reasonWrapper}>
             <SubTitle
               title={intl.formatMessage({ id: 'product.choseReason' })}
-              showIcon={false}
             />
             <div className={styles.reasonCard}>
               <div>{intl.formatMessage({ id: 'product.choseReason0' })}</div>
@@ -170,10 +169,7 @@ export default function ProductPage() {
             </div>
           </div>
 
-          <SubTitle
-            title={intl.formatMessage({ id: 'product.quickStart' })}
-            showIcon={false}
-          />
+          <SubTitle title={intl.formatMessage({ id: 'product.quickStart' })} />
           <div id="quickStart" className={styles.quickStart}>
             <div className={styles.videoWrapper}>
               <JoLPlayer
