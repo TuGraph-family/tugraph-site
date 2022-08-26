@@ -1,13 +1,9 @@
 import React from 'react';
 import { Button, Col, Layout, Row } from 'antd';
-import { Banner } from '@/components/Banner';
-import { Footer } from '@/components/Footer';
 import { useIntl } from 'umi';
-
-import styles from './download.less';
 import { useMedia } from 'react-use';
-
-const { Content } = Layout;
+import { LayoutTemplate } from '@/components/LayoutTemplate';
+import styles from './download.less';
 
 export default function DemoPage() {
   const intl = useIntl();
@@ -34,33 +30,34 @@ export default function DemoPage() {
     },
   ];
 
+  const content = (
+    <div className={styles.containerWrapper}>
+      {versionList.map((item, key) => (
+        <Row className={styles.list} key={key}>
+          <Col span={isWide ? 12 : 6}>{item.name}</Col>
+          <Col span={isWide ? 4 : 6}> {item.version}</Col>
+          <Col span={isWide ? 4 : 6}>{item.size}</Col>
+          <Col span={isWide ? 4 : 6}>
+            <Button type="primary" block>
+              {intl.formatMessage({ id: 'header.download' })}
+            </Button>
+          </Col>
+        </Row>
+      ))}
+    </div>
+  );
+
   return (
-    <Layout>
-      <Content>
-        <Banner
-          activeKey={'download'}
-          bgIconUrl={
-            'https://gw.alipayobjects.com/zos/bmw-prod/2000dea9-a112-4ec5-afa3-30776eeadabb.svg'
-          }
-          notice={intl.formatMessage({ id: 'download.banner.notice' })}
-          slogan={intl.formatMessage({ id: 'download.banner.slogan' })}
-        />
-        <div className={styles.containerWrapper}>
-          {versionList.map((item, key) => (
-            <Row className={styles.list} key={key}>
-              <Col span={isWide ? 12 : 6}>{item.name}</Col>
-              <Col span={isWide ? 4 : 6}> {item.version}</Col>
-              <Col span={isWide ? 4 : 6}>{item.size}</Col>
-              <Col span={isWide ? 4 : 6}>
-                <Button type="primary" block>
-                  {intl.formatMessage({ id: 'header.download' })}
-                </Button>
-              </Col>
-            </Row>
-          ))}
-        </div>
-      </Content>
-      <Footer />
-    </Layout>
+    <LayoutTemplate
+      bannerInfo={{
+        bgIconUrl:
+          'https://gw.alipayobjects.com/zos/bmw-prod/2000dea9-a112-4ec5-afa3-30776eeadabb.svg',
+        activeKey: 'download',
+
+        slogan: intl.formatMessage({ id: 'download.banner.slogan' }),
+        notice: intl.formatMessage({ id: 'download.banner.notice' }),
+      }}
+      content={content}
+    />
   );
 }

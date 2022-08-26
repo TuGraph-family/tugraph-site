@@ -8,78 +8,66 @@
   }
 
   .demoCards {
-    margin: -100px 0 0 0;
     display: flex;
     justify-content: center;
     
-    .demoCard {
-      height: 390px;
-      max-width: 357px;
-      margin: 0 35px 56px 0;
-      text-align: center;
-      padding: 44px 60px !important;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-
-      img {
-        width: 60px;
-        height: 60px;
-      }
-
-      .title {
-        margin: 34px 0 20px 0;
-        font-weight: 500;
-        font-size: 18px;
-        color: rgba(51,51,51,0.89);
-        letter-spacing: 1.03px;
+    .demoCardWrapper {
+     
+      padding: 0 12px 24px 0;
+       .demoCard {
+         display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 404px;
+        max-width: 384px;
         text-align: center;
-        line-height: 26px;
-      }
+        padding: 40px !important;
+
+        img {
+          width: 60px;
+          height: 60px;
+        }
+
+        .title {
+          margin: 36px 0 16px 0;
+          font-weight: 500;
+          font-size: 20px;
+          color: rgba(0,0,0,0.85);
+          text-align: center;
+          line-height: 24px;
+        }
       
-      .desc {
-        font-weight: 400;
-        font-size: 14px;
-        color: rgba(51,51,51,0.89);
-        letter-spacing: 0.9px;
-        text-align: center;
-        line-height: 22px;
-      }
+        .desc {
+          font-weight: 400;
+          font-size: 14px;
+          color: #697A8C;
+          text-align: center;
+          line-height: 22px;
+        }
 
-      .type {
-        height: 48px;
-        width: 180px;
-        background-color: #00122B;
-        border-radius: 8px;
-        font-weight: 600;
-        font-size: 20px;
-        color: rgba(255,255,255,0.89);
-        padding: 8px;
-        position: absolute;
-        bottom: -24px;
-      }
-
-      :global {
-        .darkBtn {
-          width: 180px !important;
-          height: 48px !important;
+        .type {
+          height: 48px;
+          width: 180px;
+          background-color: #00122B;
+          border-radius: 8px;
+          font-size: 16px;
+          color: rgba(255,255,255,0.89);
+          padding: 8px;
+          margin-top: 24px;
+        
         }
       }
     }
   }
 
   .exampleWrapper {
-   
     width: 100%;
     
     .exampleCards {
-      margin: 0 auto;
-      display: table;
      
       .exampleCard {
-        margin: 0 120px 65px 120px;
+        margin: 40px 0;
         max-width: 1200px;
         width: 100%;
 
@@ -122,7 +110,7 @@
         .textNormalSize {
           font-weight: 400;
           font-size: 14px;
-          color: #333333;
+          color: #697A8C;;
           letter-spacing: 0.8px;
           margin-left: 24px;
         }

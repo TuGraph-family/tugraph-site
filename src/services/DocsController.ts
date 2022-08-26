@@ -1,5 +1,5 @@
 import { request } from 'umi';
-import { DOC_HOST } from '@/constants';
+import { DOC_HOST } from '@/constant';
 
 /* 获取版本列表 */
 export async function queryVersions(params: { tenant: number }) {

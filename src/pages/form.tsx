@@ -1,12 +1,8 @@
 import React from 'react';
-import { Button, Checkbox, Form, Input, Layout } from 'antd';
-import { Banner } from '@/components/Banner';
-import { Footer } from '@/components/Footer';
+import { Button, Checkbox, Form, Input } from 'antd';
 import { useIntl, isBrowser } from 'umi';
-
+import { LayoutTemplate } from '@/components/LayoutTemplate';
 import styles from './form.less';
-
-const { Content } = Layout;
 
 export default function FormPage() {
   const intl = useIntl();
@@ -27,132 +23,129 @@ export default function FormPage() {
     }
   };
 
-  return (
-    <Layout>
-      <Content>
-        <Banner
-          activeKey={'demo'}
-          bgIconUrl={
-            'https://gw.alipayobjects.com/zos/bmw-prod/2a554dbd-14a3-41a5-a314-b9cafbe46023.svg'
-          }
-          subTitle={intl.formatMessage({ id: 'form.banner.subTitle' })}
-          slogan={intl.formatMessage({ id: 'form.banner.slogan' })}
-        />
-        <div className={styles.containerWrapper}>
-          <Form
-            name="applyForFree"
-            layout={'vertical'}
-            labelCol={{ span: 20 }}
-            initialValues={{ remember: true }}
-            onFinish={onFinish}
-            autoComplete="off"
+  const content = (
+    <div className={styles.containerWrapper}>
+      <Form
+        name="applyForFree"
+        layout={'vertical'}
+        labelCol={{ span: 20 }}
+        initialValues={{ remember: true }}
+        onFinish={onFinish}
+        autoComplete="off"
+      >
+        <div className={styles.itemWithTip}>
+          <div className={styles.tip}>
+            {intl.formatMessage({ id: 'form.item.desc0' })}
+          </div>
+          <Form.Item
+            label={intl.formatMessage({ id: 'form.item.title0' })}
+            name={intl.formatMessage({ id: 'form.item.title0' })}
+            rules={[{ required: true }]}
           >
-            <div className={styles.itemWithTip}>
-              <div className={styles.tip}>
-                {intl.formatMessage({ id: 'form.item.desc0' })}
-              </div>
-              <Form.Item
-                label={intl.formatMessage({ id: 'form.item.title0' })}
-                name={intl.formatMessage({ id: 'form.item.title0' })}
-                rules={[{ required: true }]}
-              >
-                <Input.TextArea
-                  placeholder={intl.formatMessage({
-                    id: 'form.input.placeholder',
-                  })}
-                />
-              </Form.Item>
-            </div>
-
-            <Form.Item
-              label={intl.formatMessage({ id: 'form.item.title1' })}
-              name={intl.formatMessage({ id: 'form.item.name1' })}
-              rules={[{ required: true }]}
-            >
-              <Input
-                placeholder={intl.formatMessage({
-                  id: 'form.input.placeholder',
-                })}
-              />
-            </Form.Item>
-
-            <Form.Item
-              label={intl.formatMessage({ id: 'form.item.title2' })}
-              name={intl.formatMessage({ id: 'form.item.title2' })}
-              rules={[{ required: true }]}
-            >
-              <Input
-                placeholder={intl.formatMessage({
-                  id: 'form.input.placeholder',
-                })}
-              />
-            </Form.Item>
-
-            <div className={styles.itemWithTip}>
-              <div className={styles.tip}>
-                {intl.formatMessage({ id: 'form.item.desc3' })}
-              </div>
-              <Form.Item
-                label={intl.formatMessage({ id: 'form.item.title3' })}
-                name={intl.formatMessage({ id: 'form.item.title3' })}
-                rules={[{ required: true, type: 'email' }]}
-              >
-                <Input
-                  type="email"
-                  placeholder={intl.formatMessage({
-                    id: 'form.input.placeholder',
-                  })}
-                />
-              </Form.Item>
-            </div>
-
-            <Form.Item
-              label={intl.formatMessage({ id: 'form.item.title4' })}
-              name={intl.formatMessage({ id: 'form.item.title4' })}
-              rules={[{ required: true }]}
-            >
-              <Input
-                placeholder={intl.formatMessage({
-                  id: 'form.input.placeholder',
-                })}
-              />
-            </Form.Item>
-
-            <Form.Item
-              label={intl.formatMessage({ id: 'form.item.title5' })}
-              name={intl.formatMessage({ id: 'form.item.title5' })}
-              rules={[{ required: true }]}
-            >
-              <Input
-                placeholder={intl.formatMessage({
-                  id: 'form.input.placeholder',
-                })}
-              />
-            </Form.Item>
-
-            <Form.Item
-              name={intl.formatMessage({ id: 'form.submit.info' })}
-              valuePropName="checked"
-              rules={[{ required: true }]}
-            >
-              <Checkbox defaultChecked={false}>
-                {intl.formatMessage({ id: 'form.submit.info' })}
-              </Checkbox>
-            </Form.Item>
-
-            <Form.Item>
-              <Button
-                className={styles.submit}
-                type="primary"
-                htmlType="submit"
-              >
-                {intl.formatMessage({ id: 'form.submit' })}
-              </Button>
-            </Form.Item>
-          </Form>
+            <Input.TextArea
+              placeholder={intl.formatMessage({
+                id: 'form.input.placeholder',
+              })}
+            />
+          </Form.Item>
         </div>
-      </Content>
-      <Footer />
-    </Layout>
+
+        <Form.Item
+          label={intl.formatMessage({ id: 'form.item.title1' })}
+          name={intl.formatMessage({ id: 'form.item.name1' })}
+          rules={[{ required: true }]}
+        >
+          <Input
+            placeholder={intl.formatMessage({
+              id: 'form.input.placeholder',
+            })}
+          />
+        </Form.Item>
+
+        <Form.Item
+          label={intl.formatMessage({ id: 'form.item.title2' })}
+          name={intl.formatMessage({ id: 'form.item.title2' })}
+          rules={[{ required: true }]}
+        >
+          <Input
+            placeholder={intl.formatMessage({
+              id: 'form.input.placeholder',
+            })}
+          />
+        </Form.Item>
+
+        <div className={styles.itemWithTip}>
+          <div className={styles.tip}>
+            {intl.formatMessage({ id: 'form.item.desc3' })}
+          </div>
+          <Form.Item
+            label={intl.formatMessage({ id: 'form.item.title3' })}
+            name={intl.formatMessage({ id: 'form.item.title3' })}
+            rules={[{ required: true, type: 'email' }]}
+          >
+            <Input
+              type="email"
+              placeholder={intl.formatMessage({
+                id: 'form.input.placeholder',
+              })}
+            />
+          </Form.Item>
+        </div>
+
+        <Form.Item
+          label={intl.formatMessage({ id: 'form.item.title4' })}
+          name={intl.formatMessage({ id: 'form.item.title4' })}
+          rules={[{ required: true }]}
+        >
+          <Input
+            placeholder={intl.formatMessage({
+              id: 'form.input.placeholder',
+            })}
+          />
+        </Form.Item>
+
+        <Form.Item
+          label={intl.formatMessage({ id: 'form.item.title5' })}
+          name={intl.formatMessage({ id: 'form.item.title5' })}
+          rules={[{ required: true }]}
+        >
+          <Input
+            placeholder={intl.formatMessage({
+              id: 'form.input.placeholder',
+            })}
+          />
+        </Form.Item>
+
+        <Form.Item
+          name={intl.formatMessage({ id: 'form.submit.info' })}
+          valuePropName="checked"
+          rules={[{ required: true }]}
+        >
+          <Checkbox defaultChecked={false}>
+            {intl.formatMessage({ id: 'form.submit.info' })}
+          </Checkbox>
+        </Form.Item>
+
+        <Form.Item>
+          <Button className={styles.submit} type="primary" htmlType="submit">
+            {intl.formatMessage({ id: 'form.submit' })}
+          </Button>
+        </Form.Item>
+      </Form>
+    </div>
+  );
+
+  return (
+    <LayoutTemplate
+      bannerInfo={{
+        bgIconUrl:
+          'https://gw.alipayobjects.com/zos/bmw-prod/2a554dbd-14a3-41a5-a314-b9cafbe46023.svg',
+        activeKey: 'demo',
+
+        slogan: intl.formatMessage({ id: 'form.banner.slogan' }),
+        subTitle: intl.formatMessage({ id: 'form.banner.subTitle' }),
+      }}
+      content={content}
+    />
   );
 }

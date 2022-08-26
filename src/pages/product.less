@@ -10,7 +10,6 @@
   }
 
   .banner {
-      margin: -100px 80px 80px 80px;
       padding: 35px 65px;
       height: 478px;
 
@@ -21,13 +20,29 @@
         margin-bottom: 32px;
       }
 
-      .list {
-        margin: 24px;
-        font-size: 24px;
-        cursor: pointer;
-        height: 94px;
-        width: 362px !important;
+      .videoContainer {
+        padding-right: 30px;
       }
+
+      video {
+        border-radius: 8px;
+      }
+
+      .btnGroup {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .playBtn {
+          margin: 20px 0;
+          font-size: 24px;
+          cursor: pointer;
+          height: 94px;
+          width: 362px !important;
+        }
+      }
+
   }
 
   .featCards {
@@ -36,47 +51,28 @@
     align-items: center;
 
     .featCard {
-      margin-right: 40px;
-      height: 321px;
-      max-width: 514px;  
+      margin-right: 24px;
+      min-height: 255px;
+      max-width: 588px;  
       border-radius: 12px;
       background-color: #FFFFFF;
       box-shadow: 0 10px 30px 10px rgba(158,181,213,0.10);
-      padding: 85px 65px !important;
+      padding: 40px 32px !important;
+      text-align: center;
 
       .title {
-        position: relative;
-        font-weight: 600;
+        font-weight: 500;
         font-size: 20px;
-        color: rgba(51,51,51,0.89);
-        text-align: center;
-        margin-bottom: 22px;
-        z-index: 99;
+        color: rgba(0,0,0,0.85);
+        line-height: 24px;
+        margin: -8px 0 16px 0;
+        background-color: #fff;
       }
-
-      .leftImg {
-        position: absolute;
-        top: 50px;
-        left: 110px;
-        z-index: 1;
-      }
-
-      .rightImg {
-        position: absolute;
-        top: 50px;
-        right: 110px;
-        z-index: 1;
-      }
-
 
       .desc {
-        font-weight: 400;
         font-size: 14px;
-        color: rgba(51,51,51,0.89);
-        letter-spacing: 0.8px;
-        text-align: center;
+        color: #697A8C;
         line-height: 22px;
-        z-index: 2;
       }
     }
   }
@@ -84,14 +80,13 @@
   .reasonWrapper {
 
     .reasonCard {
-      margin: 0 100px 35px 100px;
-      padding: 50px 160px 0 160px;
+      padding: 80px 56px;
       position: relative;
+      font-weight: 400;
+      font-size: 20px;
       color: rgba(51,51,51,0.89);
-      font-size: 18px;
-      color: rgba(51,51,51,0.89);
-      letter-spacing: 1.03px;
-      height: 360px;
+      letter-spacing: 1.14px;
+      line-height: 30px;
 
       img {
         position: absolute;
@@ -113,7 +108,7 @@
       margin-bottom: 120px;
 
       video {
-        border-radius: 6px;
+        border-radius: 8px;
       }
     }
    
@@ -123,7 +118,6 @@
 @media only screen and (max-width: 1024px) {
   .containerWrapper {
     .banner {
-      margin: -100px 64px 64px 64px;
       padding: 32px 64px;
     }
   }
@@ -132,7 +126,6 @@
 @media only screen and (max-width: 931.99px) {
   .containerWrapper {
     .banner {
-      margin: -100px 32px 32px 32px;
        padding: 16px 24px;
       height: auto;
     }
@@ -149,7 +142,6 @@
 @media only screen and (max-width: 767.99px) {
   .containerWrapper {
    .banner {
-      margin: -100px 16px 16px 16px;
       padding: 16px 32px;
       height: auto;
 
@@ -179,8 +171,7 @@
           }
         }
 
-        .leftImg,
-        .rightImg {
+        .bgImg {
           width: 70px;
           left: 16px !important;
           top: 216px !important;
