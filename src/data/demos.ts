@@ -6,7 +6,7 @@ export const getDemos = (intl: IntlShape) => [
     desc: intl.formatMessage({ id: 'demo.desc0' }),
     type: intl.formatMessage({ id: 'demo.type0' }),
     iconUrl:
-      'https://gw.alipayobjects.com/zos/bmw-prod/6eccbadc-7a90-49cf-80a5-770631be83c5.svg',
+      'https://gw.alipayobjects.com/zos/bmw-prod/26097f9f-9674-432b-8d22-d631978b74a9.svg',
   },
   {
     title: intl.formatMessage({ id: 'demo.title1' }),
