@@ -46,9 +46,12 @@ export const Carousel = () => {
 
   return (
     <div className={styles.sliders}>
-      <AntdCarousel autoplay dots={{ className: 'dots' }}>
+      <AntdCarousel dots={{ className: 'dots' }}>
         {sliders.map((item, key) => (
           <div className={styles.slider} key={key}>
+            <div className={styles.demoImg}>
+              <img src={isWide ? item.imgPc : item.imgMobile} />
+            </div>
             <div className={styles.desc}>
               <h3 className={styles.title}>{item.title}</h3>
               {isWide ? (
@@ -62,9 +65,6 @@ export const Carousel = () => {
                   {intl.formatMessage({ id: 'home.knowMore' })}
                 </a>
               )}
-            </div>
-            <div className={styles.demoImg}>
-              <img src={isWide ? item.imgPc : item.imgMobile} />
             </div>
           </div>
         ))}

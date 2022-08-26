@@ -1,11 +1,11 @@
-export interface categoryItem {
+export interface CategoryItem {
   fileName: string;
   fileType: number;
   id: string;
   parentPath: string;
   path: string;
   sort: number;
-  children: categoryItem[] | [];
+  children: CategoryItem[] | [];
 }
 
 export interface Anchor {
@@ -14,7 +14,7 @@ export interface Anchor {
   title: string;
 }
 
-export interface docContent {
+export interface DocContent {
   body_html: string;
   editUrl: string;
   id: string;

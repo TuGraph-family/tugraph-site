@@ -62,7 +62,6 @@
   }
   
 .containerWrapper {
-  padding: 0 120px;
   .users {
     display: flex;
     justify-content: center;
@@ -98,9 +97,9 @@
     margin-bottom: 60px;
 
     .reasonCardGroup {
-      height: 211px;
+      min-height: 187px;
       width: 100%;
-      min-width: 505px;
+      max-width: 588px;
       padding: 12px;
       align-items: center;
       display: flex;
@@ -112,8 +111,12 @@
         box-shadow: 0 10px 30px 10px rgba(158,181,213,0.10);
         border-radius: 12px;
         width: 100%;
-        height: 187px;
+        height: 100%;
         padding: 40px;
+
+        img {
+          margin-bottom: 32px;
+        }
       }
 
       .title {
@@ -132,7 +135,6 @@
         color: #697A8C;
         line-height: 22px;
         width: 100%;
-        min-width: 290px;
         text-align: left; 
 
       }
@@ -147,7 +149,7 @@
 
     .versionCard {
       width: 100%;
-      height: 272px;
+      min-height: 272px;
       padding: 40px 60px;
       text-align: center;
     }
@@ -195,7 +197,7 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        min-width: 510px;
+        max-width: 588px;
 
         .versionCard {
           border-radius: 12px;
@@ -273,8 +275,6 @@
 
 @media only screen and (max-width: 1024px) {
   .containerWrapper {
-    padding: 0 64px;
-    
     .featList {
       padding: 0 64px;
       
@@ -291,7 +291,6 @@
 
 @media only screen and (max-width: 931.99px) {
   .containerWrapper {
-    padding: 0 32px;
 
     .featList {
       padding: 0 32px;
@@ -309,7 +308,6 @@
 
 @media only screen and (max-width: 767.99px) {
   .containerWrapper {
-    padding: 0 32px;
     text-align: center;
 
     .users {
@@ -345,6 +343,11 @@
         max-width: 100vw;
         padding: 16px;
 
+        .title,
+        .desc {
+          text-align: center;
+        }
+        
         .desc {
           width: 100%;
           height: auto;
@@ -371,6 +374,11 @@
     .footerBtn {
       margin-right: 0px;
       text-align: center;
+
+        button {
+         width: 130px !important;
+        }
     }
+     
   }
 }

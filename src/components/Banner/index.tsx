@@ -15,6 +15,15 @@ export interface BannerButtonProps {
   url: string;
 }
 
+export interface BannerInfoProps {
+  slogan: string;
+  bgIconUrl: string;
+  subTitle?: string;
+  activeKey?: string;
+  buttons?: BannerButtonProps[];
+  notice?: string;
+}
+
 export const Banner = ({
   slogan,
   bgIconUrl,
@@ -22,14 +31,7 @@ export const Banner = ({
   buttons = [],
   activeKey = '',
   notice = '',
-}: {
-  slogan: string;
-  bgIconUrl: string;
-  subTitle?: string;
-  activeKey?: string;
-  buttons?: BannerButtonProps[];
-  notice?: string;
-}) => {
+}: BannerInfoProps) => {
   const isWide = useMedia('(min-width: 767.99px)', true);
   return (
     <div

@@ -1,6 +1,6 @@
 import React from 'react';
 import HTMLRenderer from 'react-html-renderer';
-import { categoryItem, docContent } from '@/interface';
+import { CategoryItem, DocContent } from '@/interface';
 import { MenuProps, Select, Affix, Anchor, Spin } from 'antd';
 import { Layout, Menu } from 'antd';
 import { Header } from '@/components/Header';
@@ -19,11 +19,11 @@ export default function DocPage() {
   const { getCategoryList, getVersions, getDocDetail } = useGetDocsInfo();
   const [versions, setVersions] = React.useState([]);
   const [currentVersion, setCurrentVersion] = React.useState('');
-  const [categoryList, setCategoryList] = React.useState<categoryItem[]>([]);
+  const [categoryList, setCategoryList] = React.useState<CategoryItem[]>([]);
   const [currentCategory, setCurrentCategory] = React.useState<string>('');
-  const [content, setContent] = React.useState<docContent>();
+  const [content, setContent] = React.useState<DocContent>();
 
-  const findFirstChild = (items: categoryItem[]): string => {
+  const findFirstChild = (items: CategoryItem[]): string => {
     if (items[0].children?.length > 0) {
       return findFirstChild(items[0].children);
     } else {
@@ -59,13 +59,13 @@ export default function DocPage() {
     if (!currentCategory) {
       return;
     }
-    getDocDetail({ id: currentCategory }).then((res: docContent) => {
+    getDocDetail({ id: currentCategory }).then((res: DocContent) => {
       setContent(res);
     });
   }, [currentCategory]);
 
-  const transformCategoryList = (items: categoryItem[]): MenuProps['items'] => {
-    return items.map((item: categoryItem) => {
+  const transformCategoryList = (items: CategoryItem[]): MenuProps['items'] => {
+    return items.map((item: CategoryItem) => {
       const children = item?.children || [];
       return {
         key: item.id,
