@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { Button, Col, Row } from 'antd';
+import { Helmet } from 'react-helmet';
 import type { BannerButtonProps } from '@/components/Banner';
 import JoLPlayer, { JoLPlayerRef } from 'jol-player';
 import { SubTitle } from '@/components/SubTitle';
@@ -27,6 +28,13 @@ export default function ProductPage() {
 
   const content = (
     <div className={styles.containerWrapper}>
+      <Helmet>
+        <title>{intl.formatMessage({ id: 'product.title' })}</title>
+        <meta
+          name="description"
+          content={intl.formatMessage({ id: 'product.description' })}
+        />
+      </Helmet>
       <div className={styles.banner}>
         <div className={styles.title}>
           {intl.formatMessage({ id: 'home.banner.quickStart' })}

@@ -5,6 +5,9 @@ export default {
   'header.blog': '博客',
   'header.community': '社区',
   'header.download': ' 下载',
+  'home.title': ' Tugraph 首页',
+  'home.description':
+    'TuGraph,蚂蚁图数据库,蚂蚁图计算,图数据库,图计算,图平台,图数据分析, 分布式数据库, Graph,大数据,关联关系分析,知识图谱,GNN, 图神经网络, Neo4j, GeaGraph, GeaBase, GeaFlow, 费马, 人工智能, big data, graph processing,graph database, graph computing, artificial intelligence',
   'home.banner.slogan': '支付宝万亿业务背后的图数据库',
   'home.banner.useFree': '免费使用',
   'home.banner.quickStart': '快速上手',
