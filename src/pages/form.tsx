@@ -12,15 +12,14 @@ export default function FormPage() {
     for (const [key, value] of Object.entries(values)) {
       body.push(`${key}: ${value}`);
     }
-    if (!isBrowser()) {
-      const bodyString = body.join(';');
-      // TODO 用邮件服务替换掉 https://dashboard.emailjs.com/
-      window.location.href = `mailto:tugraph@service.alipay.com?subject=${intl.formatMessage(
-        {
-          id: 'form.banner.slogan',
-        },
-      )}&body=${bodyString}`;
-    }
+
+    const bodyString = body.join(';');
+    // TODO 用邮件服务替换掉 https://dashboard.emailjs.com/
+    window.location.href = `mailto:tugraph@service.alipay.com?subject=${intl.formatMessage(
+      {
+        id: 'form.banner.slogan',
+      },
+    )}&body=${bodyString}`;
   };
 
   const content = (
@@ -139,9 +138,7 @@ export default function FormPage() {
     <LayoutTemplate
       bannerInfo={{
         bgIconUrl:
-          'https://gw.alipayobjects.com/zos/bmw-prod/2a554dbd-14a3-41a5-a314-b9cafbe46023.svg',
-        activeKey: 'demo',
-
+          'https://gw.alipayobjects.com/mdn/rms_fa12c2/afts/img/A*ZAErS4gYbHwAAAAAAAAAAAAAARQnAQ',
         slogan: intl.formatMessage({ id: 'form.banner.slogan' }),
         subTitle: intl.formatMessage({ id: 'form.banner.subTitle' }),
       }}

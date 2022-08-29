@@ -147,7 +147,7 @@ export default function DemoPage() {
     <LayoutTemplate
       bannerInfo={{
         bgIconUrl:
-          'https://gw.alipayobjects.com/zos/bmw-prod/0637191d-4925-4280-8238-d8fb3c58f666.svg',
+          'https://gw.alipayobjects.com/mdn/rms_fa12c2/afts/img/A*7qVsSI2IHrEAAAAAAAAAAAAAARQnAQ',
         activeKey: 'demo',
 
         slogan: intl.formatMessage({ id: 'demo.banner.slogan' }),

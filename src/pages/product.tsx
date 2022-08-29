@@ -182,7 +182,7 @@ export default function ProductPage() {
       bannerInfo={{
         buttons,
         bgIconUrl:
-          'https://gw.alipayobjects.com/zos/bmw-prod/a6072058-9e9a-471b-817f-39b3b3044152.svg',
+          'https://gw.alipayobjects.com/mdn/rms_fa12c2/afts/img/A*GGAAQK3xMRgAAAAAAAAAAAAAARQnAQ',
         activeKey: 'product',
 
         slogan: intl.formatMessage({ id: 'product.banner.slogan' }),

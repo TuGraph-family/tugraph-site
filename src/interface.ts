@@ -24,3 +24,11 @@ export interface DocContent {
   updated_at: string;
   anchors: Anchor[];
 }
+
+export interface BlogItem {
+  img: string;
+  title: string;
+  desc: string;
+  updateDate: string;
+  content: string;
+}

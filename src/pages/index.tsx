@@ -1,13 +1,11 @@
 import React from 'react';
-import { Anchor, Button, Col, Layout, Row, Space } from 'antd';
+import { Anchor, Button, Col, Row, Space } from 'antd';
 import cx from 'classnames';
 import { CheckOutlined } from '@ant-design/icons';
-import { Banner } from '@/components/Banner';
 import type { BannerButtonProps } from '@/components/Banner';
 import { LayoutTemplate } from '@/components/LayoutTemplate';
 import { Carousel } from '@/components/Carousel';
 import { SubTitle } from '@/components/SubTitle';
-import { Footer } from '@/components/Footer';
 import { useIntl, history } from 'umi';
 import { getReasons } from '@/data/reasons';
 import { getVersions } from '@/data/version-feats';
@@ -212,7 +210,7 @@ export default function IndexPage() {
       bannerInfo={{
         buttons,
         bgIconUrl:
-          'https://gw.alipayobjects.com/zos/bmw-prod/b3cee56d-ebfd-4954-b7d3-e920f0c9de5f.svg',
+          'https://gw.alipayobjects.com/mdn/rms_fa12c2/afts/img/A*RYUfQayHZ0YAAAAAAAAAAAAAARQnAQ',
 
         slogan: intl.formatMessage({ id: 'home.banner.slogan' }),
       }}
