@@ -12,21 +12,21 @@ export default function DemoPage() {
   const versionList = [
     {
       name: 'CentOS',
-      version: '8.0.29',
+      version: '3.3.0',
       size: '445.6M',
-      url: '',
+      url: 'https://tugraph-web.oss-cn-beijing.aliyuncs.com/tugraph/tugraph-3.3.0/TuGraph-3.3.0-1.el7.x86_64.rpm',
     },
     {
       name: 'Ubuntu',
-      version: '8.0.29',
+      version: '3.3.0',
       size: '452.0M',
-      url: '',
+      url: 'https://tugraph-web.oss-cn-beijing.aliyuncs.com/tugraph/tugraph-3.3.0/TuGraph-3.3.0-1.x86_64.deb',
     },
     {
       name: 'Docker Images',
-      version: '8.0.29',
+      version: '3.3.0',
       size: '167.4M',
-      url: '',
+      url: 'https://tugraph-web.oss-cn-beijing.aliyuncs.com/tugraph/tugraph-3.3.0/TuGraph-Image-3.3.0.tar.gz',
     },
   ];
 
@@ -34,11 +34,17 @@ export default function DemoPage() {
     <div className={styles.containerWrapper}>
       {versionList.map((item, key) => (
         <Row className={styles.list} key={key}>
-          <Col span={isWide ? 12 : 6}>{item.name}</Col>
-          <Col span={isWide ? 4 : 6}> {item.version}</Col>
-          <Col span={isWide ? 4 : 6}>{item.size}</Col>
-          <Col span={isWide ? 4 : 6}>
-            <Button type="primary" block>
+          <Col span={isWide ? 16 : 8}>{item.name}</Col>
+          <Col span={isWide ? 4 : 8}> {item.version}</Col>
+          {/* <Col span={isWide ? 4 : 6}>{item.size}</Col> */}
+          <Col span={isWide ? 4 : 8}>
+            <Button
+              onClick={() => {
+                window.location.href = item.url;
+              }}
+              type="primary"
+              block
+            >
               {intl.formatMessage({ id: 'header.download' })}
             </Button>
           </Col>
