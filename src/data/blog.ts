@@ -5,7 +5,6 @@ import md04 from '@/doc/04.md';
 import md05 from '@/doc/05.md';
 import md06 from '@/doc/06.md';
 
-console.log(md01.html);
 // TODO 国际化
 export const blogs = [
   {
