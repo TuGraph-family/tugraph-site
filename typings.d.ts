@@ -8,13 +8,6 @@ declare module '*.svg' {
   const url: string;
   export default url;
 }
-
-// declare module '*.md' {
-//   import React from 'react';
-//   const react: React.VFC;
-//   export { react };
-// }
-
 declare module '*.md' {
   const html: string;
   export { html };
