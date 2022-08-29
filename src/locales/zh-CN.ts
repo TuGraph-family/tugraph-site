@@ -156,4 +156,9 @@ export default {
   'form.item.title5': '手 机',
   'form.submit.info': '接受软件许可权 *',
   'form.submit': '确认提交',
+  'blog.banner.slogan': 'Tugraph 图数据库解读',
+  'blog.banner.subTitle': '带你了解更多信息',
+  'blog.all': '全部',
+  'blog.total': '共',
+  'blog.item': '条',
 };

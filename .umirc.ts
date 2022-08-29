@@ -12,13 +12,27 @@ export default defineConfig({
     { path: '/product', component: '@/pages/product' },
     { path: '/demo', component: '@/pages/demo' },
     { path: '/doc', component: '@/pages/doc' },
+    { path: '/blog', component: '@/pages/blog' },
+    { path: '/blog:id', component: '@/pages/blog' },
     { path: '/download', component: '@/pages/download' },
     { path: '/form', component: '@/pages/form' },
   ],
   theme: {
     'primary-color': '#1677FF',
   },
-  ssr: {},
+  chainWebpack(memo, { env, webpack }) {
+    memo.module
+      .rule('plaintext')
+      .test(/\.(txt|text)$/)
+      .use('raw-loader')
+      .loader(require.resolve('raw-loader'));
+    memo.module
+      .rule('markdown')
+      .test(/\.md$/)
+      .use('frontmatter-markdown-loader')
+      .loader('frontmatter-markdown-loader');
+  },
+  ssr: false,
   exportStatic: {},
   fastRefresh: {},
   request: {

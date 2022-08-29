@@ -12,15 +12,14 @@ export default function FormPage() {
     for (const [key, value] of Object.entries(values)) {
       body.push(`${key}: ${value}`);
     }
-    if (!isBrowser()) {
-      const bodyString = body.join(';');
-      // TODO 用邮件服务替换掉 https://dashboard.emailjs.com/
-      window.location.href = `mailto:tugraph@service.alipay.com?subject=${intl.formatMessage(
-        {
-          id: 'form.banner.slogan',
-        },
-      )}&body=${bodyString}`;
-    }
+
+    const bodyString = body.join(';');
+    // TODO 用邮件服务替换掉 https://dashboard.emailjs.com/
+    window.location.href = `mailto:tugraph@service.alipay.com?subject=${intl.formatMessage(
+      {
+        id: 'form.banner.slogan',
+      },
+    )}&body=${bodyString}`;
   };
 
   const content = (
