@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { Col, Layout, Row, Space } from 'antd';
 import { SubTitle } from '@/components/SubTitle';
 import { useIntl } from 'umi';
@@ -13,6 +14,13 @@ export default function DemoPage() {
   const isWide = useMedia('(min-width: 767.99px)', true);
   const content = (
     <div className={styles.containerWrapper}>
+      <Helmet>
+        <title>{intl.formatMessage({ id: 'demo.title' })}</title>
+        <meta
+          name="description"
+          content={intl.formatMessage({ id: 'demo.description' })}
+        />
+      </Helmet>
       <Row wrap={true} className={styles.demoCards}>
         {getDemos(intl)?.map((item, key) => (
           <Col span={8} className={styles.demoCardWrapper} key={key}>

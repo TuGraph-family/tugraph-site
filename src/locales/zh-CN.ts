@@ -5,6 +5,9 @@ export default {
   'header.blog': '博客',
   'header.community': '社区',
   'header.download': ' 下载',
+  'home.title': ' Tugraph 首页',
+  'home.description':
+    'TuGraph,蚂蚁图数据库,蚂蚁图计算,图数据库,图计算,图平台,图数据分析, 分布式数据库, Graph,大数据,关联关系分析,知识图谱,GNN, 图神经网络, Neo4j, GeaGraph, GeaBase, GeaFlow, 费马, 人工智能, big data, graph processing,graph database, graph computing, artificial intelligence',
   'home.banner.slogan': '支付宝万亿业务背后的图数据库',
   'home.banner.useFree': '免费使用',
   'home.banner.quickStart': '快速上手',
@@ -62,6 +65,9 @@ export default {
   'footer.qrCode.desc.mobile': '微信扫一扫',
   'footer.rules': '隐私条款',
   'footer.address': '地址：中国北京朝阳区东三环中路1号环球金融中心东塔9层',
+  'product.title': ' Tugraph 产品',
+  'product.description':
+    '图数据库,图计算,图平台,图数据分析, 分布式数据库, Graph,大数据分析,关联关系分析,知识图谱,GNN, 图神经网络, GeaBase, GeaFlow',
   'product.banner.slogan': '极速的开源图数据库TuGraph',
   'product.banner.autoPlay': '自动播放',
   'product.banner.playDesc0': 'TuGraph快速上手演示',
@@ -85,6 +91,9 @@ export default {
   'product.choseReason1':
     '图数据库作为最适合关联数据管理和分析的基础设施，善于分析复杂数据关系，天然具备数据可视化展示。',
   'product.quickStart': '3分钟读懂图计算',
+  'demo.title': ' Tugraph 案例',
+  'demo.description':
+    '图数据库,图计算,图平台,图数据分析, 分布式数据库, Graph,大数据分析,关联关系分析,大数据分析,反洗钱,反欺诈,金融风控,物联网, 设备管理, 国家电网',
   'demo.banner.slogan': '数千倍效果提升',
   'demo.banner.subTitle': '助力行业客户打破分析瓶颈',
   'demo.title0': '信贷风控、反洗钱、反欺诈、资金追踪、营销推荐：',

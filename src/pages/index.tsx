@@ -1,6 +1,7 @@
 import React from 'react';
 import { Anchor, Button, Col, Row, Space } from 'antd';
 import cx from 'classnames';
+import { Helmet } from 'react-helmet';
 import { CheckOutlined } from '@ant-design/icons';
 import type { BannerButtonProps } from '@/components/Banner';
 import { LayoutTemplate } from '@/components/LayoutTemplate';
@@ -32,6 +33,13 @@ export default function IndexPage() {
 
   const content = (
     <div className={styles.containerWrapper}>
+      <Helmet>
+        <title>{intl.formatMessage({ id: 'home.title' })}</title>
+        <meta
+          name="description"
+          content={intl.formatMessage({ id: 'home.description' })}
+        />
+      </Helmet>
       <Carousel />
       <SubTitle title={intl.formatMessage({ id: 'home.users' })} />
       <Row className={styles.users}>
