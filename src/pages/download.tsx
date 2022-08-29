@@ -51,7 +51,7 @@ export default function DemoPage() {
     <LayoutTemplate
       bannerInfo={{
         bgIconUrl:
-          'https://gw.alipayobjects.com/zos/bmw-prod/2000dea9-a112-4ec5-afa3-30776eeadabb.svg',
+          'https://gw.alipayobjects.com/mdn/rms_fa12c2/afts/img/A*Kr0CT6lMDnoAAAAAAAAAAAAAARQnAQ',
         activeKey: 'download',
 
         slogan: intl.formatMessage({ id: 'download.banner.slogan' }),

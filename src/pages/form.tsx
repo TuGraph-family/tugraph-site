@@ -139,9 +139,7 @@ export default function FormPage() {
     <LayoutTemplate
       bannerInfo={{
         bgIconUrl:
-          'https://gw.alipayobjects.com/zos/bmw-prod/2a554dbd-14a3-41a5-a314-b9cafbe46023.svg',
-        activeKey: 'demo',
-
+          'https://gw.alipayobjects.com/mdn/rms_fa12c2/afts/img/A*ZAErS4gYbHwAAAAAAAAAAAAAARQnAQ',
         slogan: intl.formatMessage({ id: 'form.banner.slogan' }),
         subTitle: intl.formatMessage({ id: 'form.banner.subTitle' }),
       }}
