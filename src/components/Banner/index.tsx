@@ -42,23 +42,54 @@ export const Banner = ({
     >
       <Header activeKey={activeKey} />
       <div className={styles.containerWrapper}>
-        <Row>
-          <Col span={isWide ? 14 : 24}>
+        {isWide ? (
+          <Row>
+            <Col span={14}>
+              <div className={styles.slogan}>{slogan}</div>
+              {subTitle && <div className={styles.subTitle}>{subTitle}</div>}
+              {notice && <div className={styles.notice}>{notice}</div>}
+              {buttons?.length > 0 && (
+                <Space className={styles.btnGroup} size={30}>
+                  {buttons?.[0] && (
+                    <Anchor affix={false} className={styles.primaryBtn}>
+                      <Link href={buttons[0].url} title={buttons[0].text} />
+                    </Anchor>
+                  )}
+                  {buttons?.[1] && (
+                    <Button
+                      type="primary"
+                      block
+                      className="grayBtn"
+                      onClick={() => {
+                        history.push(buttons[1].url);
+                      }}
+                    >
+                      {buttons[1].text}
+                    </Button>
+                  )}
+                </Space>
+              )}
+            </Col>
+            <Col span={10}>
+              <img
+                className={isWide ? styles.pcIcon : styles.mobileIcon}
+                src={bgIconUrl}
+              />
+            </Col>
+          </Row>
+        ) : (
+          <>
             <div className={styles.slogan}>{slogan}</div>
             {subTitle && <div className={styles.subTitle}>{subTitle}</div>}
             {notice && <div className={styles.notice}>{notice}</div>}
+            <img
+              className={isWide ? styles.pcIcon : styles.mobileIcon}
+              src={bgIconUrl}
+            />
             {buttons?.length > 0 && (
-              <Space className={styles.btnGroup} size={isWide ? 30 : 0}>
+              <Space className={styles.btnGroup} size={12}>
                 {buttons?.[0] && (
-                  <Anchor
-                    affix={false}
-                    className={cx(
-                      styles.primaryBtn,
-                      isWide || buttons?.length < 2
-                        ? null
-                        : styles.primaryBtnMobile,
-                    )}
-                  >
+                  <Anchor affix={false} className={styles.primaryBtn}>
                     <Link href={buttons[0].url} title={buttons[0].text} />
                   </Anchor>
                 )}
@@ -66,8 +97,7 @@ export const Banner = ({
                   <Button
                     type="primary"
                     block
-                    ghost={!isWide}
-                    className={isWide ? 'grayBtn' : styles.darkBtnMobile}
+                    className="grayBtn"
                     onClick={() => {
                       history.push(buttons[1].url);
                     }}
@@ -77,14 +107,8 @@ export const Banner = ({
                 )}
               </Space>
             )}
-          </Col>
-          <Col span={isWide ? 10 : 24}>
-            <img
-              className={isWide ? styles.pcIcon : styles.mobileIcon}
-              src={bgIconUrl}
-            />
-          </Col>
-        </Row>
+          </>
+        )}
       </div>
     </div>
   );

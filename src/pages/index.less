@@ -278,15 +278,11 @@
 @media only screen and (max-width: 1024px) {
   .containerWrapper {
     .featList {
-      padding: 0 64px;
+
       
       .textAlignLeft {
         padding-left: 48px;
       }
-    }
-
-    .users {
-      padding: 0 100px;
     }
   } 
 }
@@ -314,11 +310,16 @@
 
     .users {
       padding: 0;
+      margin-bottom: 24px;
+
+      img {
+        width: 92%;
+      }
     }
 
     .moreDemo {
       border-top: none;
-      margin: 0;
+      margin: 0 0 88px 0;
       text-align: center;
     }
 
@@ -328,7 +329,15 @@
 
         .version {
           max-width: 100vw;
-          padding: 16px;
+          
+          .versionCard {
+            padding: 40px;
+
+            .primaryBtn,
+              button {
+                width: 100% !important;
+              }
+          }
 
           .desc {
             width: 100%;
@@ -378,7 +387,7 @@
       text-align: center;
 
         button {
-         width: 130px !important;
+         width: 160px !important;
         }
     }
      

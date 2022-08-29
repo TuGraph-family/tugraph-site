@@ -15,7 +15,7 @@ export default {
   'home.sliders1': 'Gartner 图计算白皮书',
   'home.sliders2': '入选世界互联网领先科技成果',
   'home.sliders3': '获国际图数据库性能基准测试LDBC SNB 第一名',
-  'home.knowMore': '了解更多',
+  'home.knowMore': '了解更多 →',
   'home.users': '我们的用户',
   'home.moreDemo': '更多案例 >>',
   'home.choseReason': '为什么选择TuGraph',
@@ -62,9 +62,13 @@ export default {
   'home.version.useFree': '30天免费试用',
   'footer.qrCode.desc': '微信公众号',
   'footer.qrCode.subDesc': '扫码了解更多资讯',
-  'footer.qrCode.desc.mobile': '微信扫一扫',
   'footer.rules': '隐私条款',
+  'footer.extraInfo': '© 2022 蚂蚁集团',
   'footer.address': '地址：中国北京朝阳区东三环中路1号环球金融中心东塔9层',
+  'footer.addressMobile': '中国北京朝阳区东三环中路1号环球金融中心东塔9层',
+  'product.title': ' Tugraph 产品',
+  'product.description':
+    '图数据库,图计算,图平台,图数据分析, 分布式数据库, Graph,大数据分析,关联关系分析,知识图谱,GNN, 图神经网络, GeaBase, GeaFlow',
   'product.banner.slogan': '极速的开源图数据库TuGraph',
   'product.banner.autoPlay': '自动播放',
   'product.banner.playDesc0': 'TuGraph快速上手演示',
@@ -88,6 +92,9 @@ export default {
   'product.choseReason1':
     '图数据库作为最适合关联数据管理和分析的基础设施，善于分析复杂数据关系，天然具备数据可视化展示。',
   'product.quickStart': '3分钟读懂图计算',
+  'demo.title': ' Tugraph 案例',
+  'demo.description':
+    '图数据库,图计算,图平台,图数据分析, 分布式数据库, Graph,大数据分析,关联关系分析,大数据分析,反洗钱,反欺诈,金融风控,物联网, 设备管理, 国家电网',
   'demo.banner.slogan': '数千倍效果提升',
   'demo.banner.subTitle': '助力行业客户打破分析瓶颈',
   'demo.title0': '信贷风控、反洗钱、反欺诈、资金追踪、营销推荐：',
