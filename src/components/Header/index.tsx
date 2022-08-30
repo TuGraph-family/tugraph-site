@@ -64,10 +64,10 @@ export const Header = ({ activeKey }: { activeKey: string }) => {
         {
           label: (
             <a href="https://github.com/TuGraph-db" rel="noopener noreferrer">
-              Github
+              GitHub
             </a>
           ),
-          key: 'Github',
+          key: 'GitHub',
         },
         {
           label: (
