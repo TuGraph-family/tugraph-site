@@ -13,8 +13,7 @@ import styles from './blog.less';
 
 const { Link } = Anchor;
 
-const { Content, Sider } = Layout;
-const { Option } = Select;
+const { Content } = Layout;
 
 export default function BlogPage() {
   const intl = useIntl();

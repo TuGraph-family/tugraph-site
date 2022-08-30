@@ -46,7 +46,7 @@ export const Carousel = () => {
 
   return (
     <div className={styles.sliders}>
-      <AntdCarousel dots={{ className: 'dots' }}>
+      <AntdCarousel autoplay dots={{ className: 'dots' }}>
         {sliders.map((item, key) => (
           <div className={styles.slider} key={key}>
             <div className={styles.demoImg}>

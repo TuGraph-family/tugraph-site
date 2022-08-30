@@ -43,16 +43,16 @@ export default function IndexPage() {
       <Carousel />
       <SubTitle title={intl.formatMessage({ id: 'home.users' })} />
       <Row className={styles.users}>
-        <Col span={isWide ? 5 : 12}>
+        <Col span={isWide ? 5 : 6}>
           <img src="https://gw.alipayobjects.com/zos/bmw-prod/dbe22a71-a25c-4a48-afcc-1c506f46e967.svg" />
         </Col>
-        <Col span={isWide ? 5 : 12}>
+        <Col span={isWide ? 5 : 6}>
           <img src="https://gw.alipayobjects.com/zos/bmw-prod/c6011698-6941-45f2-ae6b-30c68533bf2e.svg" />
         </Col>
-        <Col span={isWide ? 5 : 12}>
+        <Col span={isWide ? 5 : 6}>
           <img src="https://gw.alipayobjects.com/zos/bmw-prod/2a719040-1c3d-4e89-8582-6123edd66bfb.svg" />
         </Col>
-        <Col span={isWide ? 5 : 12}>
+        <Col span={isWide ? 5 : 6}>
           <img src="https://gw.alipayobjects.com/zos/bmw-prod/70556970-4075-482c-ac07-e30b55403184.svg" />
         </Col>
         {isWide && (
@@ -78,9 +78,9 @@ export default function IndexPage() {
           onClick={() => {
             history.push('/demo');
           }}
-          className="lightBtn"
+          className={cx('grayBtn', styles.moreDemo)}
         >
-          {intl.formatMessage({ id: 'home.knowMore' })}
+          {intl.formatMessage({ id: 'home.moreDemo' })}
         </Button>
       )}
 
@@ -89,7 +89,7 @@ export default function IndexPage() {
         {getReasons(intl)?.map((item, key) => {
           return (
             <Col
-              span={isWide ? 12 : 24}
+              span={isWide ? 12 : 6}
               className={styles.reasonCardGroup}
               key={key}
             >
@@ -186,14 +186,14 @@ export default function IndexPage() {
         })}
       </div>
       <div className={styles.footerBtn}>
-        <Space size={isWide ? 24 : 8}>
+        <Space size={isWide ? 24 : 12}>
           <Button
             onClick={() => {
               history.push('/download');
             }}
             type="primary"
             block
-            className="darkBtn"
+            className={isWide ? 'darkBtn' : 'lightBtn'}
           >
             {intl.formatMessage({ id: 'home.version.download' })}
           </Button>
@@ -204,7 +204,7 @@ export default function IndexPage() {
             }}
             type="primary"
             block
-            className="lightBtn"
+            className={isWide ? 'lightBtn' : 'grayBtn'}
           >
             {intl.formatMessage({ id: 'home.version.useFree' })}
           </Button>

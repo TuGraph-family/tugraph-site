@@ -73,29 +73,6 @@
           }
         }
       }
-
-      .primaryBtnMobile {
-        height: 46px;
-        width: 130px;
-        background-color: #0069FD;
-        border-radius: 8px 0 0 8px;
-        font-family: PingFangSC-Medium;
-        color: rgba(255,255,255,0.89);
-        text-align: center;
-        transition: all .3s;
-      }
-
-      .darkBtnMobile {
-        height: 46px;
-        width: 130px;
-        font-size: 16px;
-        color: #000;
-        font-weight: 500;
-        background-color: #EDF5FF;
-        border: 1px solid #0069FD;
-        border-radius: 0 8px 8px 0;
-        transition: all .3s;
-      }
     }
   }
 }
@@ -108,9 +85,8 @@
 
 @media only screen and (max-width: 931.99px) {
   .banner {
-    padding: 0 32px;
-    justify-content: center;
-
+    padding: 0 64px;
+    justify-content: c;
     .containerWrapper {
       display: flex;
       flex-direction: column;
@@ -131,15 +107,26 @@
 
 @media only screen and (max-width: 767.99px) {
   .banner {
-    background: url('https://gw.alipayobjects.com/mdn/rms_fa12c2/afts/img/A*WuDLRoBoCSoAAAAAAAAAAAAAARQnAQ') !important;
-     padding: 0 32px;
-     display: flex;
+    background: url('https://gw.alipayobjects.com/zos/bmw-prod/0772c82c-b10f-49e9-9355-55a5348bc860.svg') !important;
+    padding: 24px;
+    height: 100%;
 
     .containerWrapper {
       margin: 0;
-
+      
       .btnGroup {
-        margin-top: 24px;
+        margin: 24px 0 120px 0;
+
+        .primaryBtn {
+          width: 160px;
+        }
+
+        :global {
+          .grayBtn {
+            width: 160px !important
+          }
+          
+        }
       }
 
       .slogan {
@@ -152,13 +139,13 @@
 
       .subTitle {
         line-height: 0;
-        margin-top: 0;
         font-size: 22px;
-        margin-top: -28px;
+        margin-top: 24px;
       }
 
       .mobileIcon {
-        width: 100%;
+        margin: 60px auto;
+        width: 80%;
       }
     }
   }
