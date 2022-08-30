@@ -23,7 +23,11 @@ export default function DemoPage() {
       </Helmet>
       <Row wrap={true} className={styles.demoCards}>
         {getDemos(intl)?.map((item, key) => (
-          <Col span={8} className={styles.demoCardWrapper} key={key}>
+          <Col
+            span={isWide ? 8 : 24}
+            className={styles.demoCardWrapper}
+            key={key}
+          >
             <div className={styles.demoCard}>
               <img src={item.iconUrl} />
               <div className={styles.title}>{item.title}</div>
@@ -44,7 +48,7 @@ export default function DemoPage() {
                     id: 'demo.example.title0',
                   })}${isWide ? ' | ' : ''}`}
                 </div>
-                <div className={styles.subTitle}>
+                <div className={styles.subTitle} style={{ height: '80px' }}>
                   {intl.formatMessage({ id: 'demo.example.subTitle0' })}
                 </div>
               </Space>
@@ -67,6 +71,9 @@ export default function DemoPage() {
                   {intl.formatMessage({ id: 'demo.example.profit0' })}
                 </div>
               </div>
+              {!isWide && (
+                <img src="https://gw.alipayobjects.com/mdn/rms_fa12c2/afts/img/A*sDXjRLtJWygAAAAAAAAAAAAAARQnAQ" />
+              )}
             </Col>
             <Col flex="auto" className={styles.exampleImg}></Col>
           </Row>
@@ -106,6 +113,9 @@ export default function DemoPage() {
                   {intl.formatMessage({ id: 'demo.example.profit2' })}
                 </div>
               </div>
+              {!isWide && (
+                <img src="https://gw.alipayobjects.com/mdn/rms_fa12c2/afts/img/A*vGTURoxbMP8AAAAAAAAAAAAAARQnAQ" />
+              )}
             </Col>
           </Row>
           <Row className={styles.exampleCard} style={{ marginBottom: '120px' }}>
@@ -139,6 +149,9 @@ export default function DemoPage() {
                   {intl.formatMessage({ id: 'demo.example.profit2' })}
                 </div>
               </div>
+              {!isWide && (
+                <img src="https://gw.alipayobjects.com/mdn/rms_fa12c2/afts/img/A*A6DZTI6GU6EAAAAAAAAAAAAAARQnAQ" />
+              )}
             </Col>
             <Col className={styles.imgWrapper} flex="auto">
               {isWide && (

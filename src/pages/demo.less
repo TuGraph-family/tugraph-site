@@ -19,7 +19,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        min-height: 404px;
+        min-height: 446px;
         max-width: 384px;
         text-align: center;
         padding: 40px !important;
@@ -139,29 +139,33 @@
   .containerWrapper {
     .demoCards {
       display: block;
-      margin: -100px 16px 0 16px !important;
+      margin: 0;
       width: 100%;
 
-      .demoCard {
-        max-width: 100%;
-        padding: 16px !important;
+      .demoCardWrapper {
+        padding: 0;
+        
+        .demoCard {
+          max-width: 100%;
+          padding: 16px !important;
+          margin-bottom: 32px;
+        }
       }
+      
     }
 
     .exampleWrapper {
-      background-image: linear-gradient(180deg, #ECF5FF 0%, #ECF5FF 48%, rgba(235,245,255,0.00) 100%);
-      margin-top: -120px;
-      padding-top: 100px;
-
+      margin-top: 120px;
+    
       .exampleCards {
-        padding: 16px;
+        padding: 0;
         display: block;
 
         .exampleCard {
           display: block;
           width: 100%; 
           margin: 0 0 32px 0;
-          padding: 32px 16px;
+          padding: 32px 16px 0 16px;
 
           .textWrapper {
             padding: 0px;
@@ -171,17 +175,27 @@
               text-align: center;
 
               .subTitle {
-                height: 64px;
+                height: 60px;
                 width: 100%;
-                background-image: linear-gradient(124deg, #B5D4FF 0%, rgba(0,105,253,0.81) 52%, #B6D5FF 100%);
+                background-color: #F5F7FA;
                 border-radius: 8px;
                 font-size: 16px;
                 margin-top: 24px;
-                color: #FFFFFF;
                 padding: 20px;
               }
             }
 
+            .text{
+              margin: 0 0 32px 0;
+              color: rgba(0,0,0,0.85);
+              text-align: left;
+            }
+
+            img {
+              margin-bottom: 32px;
+              width: 100%;
+              height: auto;
+            }
           }
         }
       }
