@@ -71,7 +71,7 @@ export default {
     '图数据库,图计算,图平台,图数据分析, 分布式数据库, Graph,大数据分析,关联关系分析,知识图谱,GNN, 图神经网络, GeaBase, GeaFlow',
   'product.banner.slogan': '极速的开源图数据库TuGraph',
   'product.banner.autoPlay': '自动播放',
-  'product.banner.playDesc0': 'TuGraph快速上手演示',
+  'product.banner.playDesc0': '快速上手演示',
   'product.banner.playDesc1': '可视化操作演示',
   'product.feature': '产品特性',
   'product.feature.title0': '完备可靠的一站式图存储',

@@ -155,7 +155,7 @@ export default function DemoPage() {
     <LayoutTemplate
       bannerInfo={{
         bgIconUrl:
-          'https://gw.alipayobjects.com/mdn/rms_fa12c2/afts/img/A*7qVsSI2IHrEAAAAAAAAAAAAAARQnAQ',
+          'https://gw.alipayobjects.com/mdn/rms_fa12c2/afts/img/A*iYl4SKalE60AAAAAAAAAAAAAARQnAQ',
         activeKey: 'demo',
 
         slogan: intl.formatMessage({ id: 'demo.banner.slogan' }),

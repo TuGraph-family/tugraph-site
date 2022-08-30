@@ -39,39 +39,76 @@ export default function ProductPage() {
         <div className={styles.title}>
           {intl.formatMessage({ id: 'home.banner.quickStart' })}
         </div>
-        <Row>
-          <Col span={isWide ? 16 : 24} className={styles.videoContainer}>
+        {isWide ? (
+          <Row>
+            <Col span={16} className={styles.videoContainer}>
+              <JoLPlayer
+                ref={videoRef}
+                option={{
+                  videoSrc: video,
+                  height: 319,
+                }}
+              />
+            </Col>
+            <Col span={8} className={styles.btnGroup}>
+              <Button
+                onClick={() =>
+                  setVideo(
+                    'https://gw.alipayobjects.com/os/bmw-prod/2145f227-08f0-435a-abe6-7f503b65da7d.mov',
+                  )
+                }
+                className={cx(styles.playBtn, 'grayBtn')}
+              >
+                {intl.formatMessage({ id: 'product.banner.playDesc0' })}
+              </Button>
+              <Button
+                onClick={() =>
+                  setVideo(
+                    'https://gw.alipayobjects.com/os/bmw-prod/c9cd86a4-6bd6-48bb-8926-ef62b3995d0b.mov',
+                  )
+                }
+                className={cx(styles.playBtn, 'grayBtn')}
+              >
+                {intl.formatMessage({ id: 'product.banner.playDesc1' })}
+              </Button>
+            </Col>
+          </Row>
+        ) : (
+          <>
             <JoLPlayer
               ref={videoRef}
               option={{
                 videoSrc: video,
-                height: 319,
+                height: 240,
               }}
             />
-          </Col>
-          <Col span={isWide ? 8 : 24} className={styles.btnGroup}>
-            <Button
-              onClick={() =>
-                setVideo(
-                  'https://gw.alipayobjects.com/os/bmw-prod/2145f227-08f0-435a-abe6-7f503b65da7d.mov',
-                )
-              }
-              className={cx(styles.playBtn, 'grayBtn')}
-            >
-              {intl.formatMessage({ id: 'product.banner.playDesc0' })}
-            </Button>
-            <Button
-              onClick={() =>
-                setVideo(
-                  'https://gw.alipayobjects.com/os/bmw-prod/c9cd86a4-6bd6-48bb-8926-ef62b3995d0b.mov',
-                )
-              }
-              className={cx(styles.playBtn, 'grayBtn')}
-            >
-              {intl.formatMessage({ id: 'product.banner.playDesc1' })}
-            </Button>
-          </Col>
-        </Row>
+            <div className={styles.btnGroup}>
+              <Button
+                type="primary"
+                onClick={() =>
+                  setVideo(
+                    'https://gw.alipayobjects.com/os/bmw-prod/2145f227-08f0-435a-abe6-7f503b65da7d.mov',
+                  )
+                }
+                className={styles.left}
+              >
+                {intl.formatMessage({ id: 'product.banner.playDesc0' })}
+              </Button>
+              <Button
+                type="primary"
+                ghost
+                className={styles.right}
+                onClick={() =>
+                  setVideo(
+                    'https://gw.alipayobjects.com/os/bmw-prod/c9cd86a4-6bd6-48bb-8926-ef62b3995d0b.mov',
+                  )
+                }
+              >
+                {intl.formatMessage({ id: 'product.banner.playDesc1' })}
+              </Button>
+            </div>
+          </>
+        )}
       </div>
       <SubTitle title={intl.formatMessage({ id: 'product.feature' })} />
       <Row className={styles.featCards} gutter={[24, 24]}>
@@ -162,24 +199,26 @@ export default function ProductPage() {
         <div className={styles.reasonCard}>
           <div>{intl.formatMessage({ id: 'product.choseReason0' })}</div>
 
-          <div style={{ marginTop: '16px' }}>
-            {intl.formatMessage({ id: 'product.choseReason1' })}
-          </div>
+          <div>{intl.formatMessage({ id: 'product.choseReason1' })}</div>
 
-          <img src="https://gw.alipayobjects.com/zos/bmw-prod/5eda9000-4c3c-4d30-9378-abfb25b57db3.svg" />
+          {isWide && (
+            <img src="https://gw.alipayobjects.com/zos/bmw-prod/5eda9000-4c3c-4d30-9378-abfb25b57db3.svg" />
+          )}
         </div>
       </div>
 
-      <SubTitle title={intl.formatMessage({ id: 'product.quickStart' })} />
-      <div id="quickStart" className={styles.quickStart}>
-        <div className={styles.videoWrapper}>
-          <JoLPlayer
-            option={{
-              videoSrc:
-                'https://gw.alipayobjects.com/v/rms_fa12c2/afts/video/A*CGu4RqkzzDgAAAAAAAAAAAAAARQnAQ/720P',
-              height: isWide ? 487 : 220,
-            }}
-          />
+      <div className={styles.quickStartWrapper}>
+        <SubTitle title={intl.formatMessage({ id: 'product.quickStart' })} />
+        <div id="quickStart" className={styles.quickStart}>
+          <div className={styles.videoWrapper}>
+            <JoLPlayer
+              option={{
+                videoSrc:
+                  'https://gw.alipayobjects.com/v/rms_fa12c2/afts/video/A*CGu4RqkzzDgAAAAAAAAAAAAAARQnAQ/720P',
+                height: isWide ? 487 : 220,
+              }}
+            />
+          </div>
         </div>
       </div>
     </div>
@@ -190,7 +229,7 @@ export default function ProductPage() {
       bannerInfo={{
         buttons,
         bgIconUrl:
-          'https://gw.alipayobjects.com/mdn/rms_fa12c2/afts/img/A*GGAAQK3xMRgAAAAAAAAAAAAAARQnAQ',
+          'https://gw.alipayobjects.com/mdn/rms_fa12c2/afts/img/A*0dYkQpmLLyEAAAAAAAAAAAAAARQnAQ',
         activeKey: 'product',
 
         slogan: intl.formatMessage({ id: 'product.banner.slogan' }),

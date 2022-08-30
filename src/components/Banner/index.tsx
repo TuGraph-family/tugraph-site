@@ -86,7 +86,7 @@ export const Banner = ({
               className={isWide ? styles.pcIcon : styles.mobileIcon}
               src={bgIconUrl}
             />
-            {buttons?.length > 0 && (
+            {isWide ? (
               <Space className={styles.btnGroup} size={12}>
                 {buttons?.[0] && (
                   <Anchor affix={false} className={styles.primaryBtn}>
@@ -106,6 +106,18 @@ export const Banner = ({
                   </Button>
                 )}
               </Space>
+            ) : (
+              <div className={styles.btnGroup} style={{ width: '100%' }}>
+                {buttons?.[0] && (
+                  <Anchor
+                    style={{ width: '100%' }}
+                    affix={false}
+                    className={styles.primaryBtn}
+                  >
+                    <Link href={buttons[0].url} title={buttons[0].text} />
+                  </Anchor>
+                )}
+              </div>
             )}
           </>
         )}
