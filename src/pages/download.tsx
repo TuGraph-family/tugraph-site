@@ -31,9 +31,14 @@ export default function DemoPage() {
     <div className={styles.containerWrapper}>
       {versionList.map((item, key) => (
         <Row className={styles.list} key={key}>
-          <Col span={isWide ? 16 : 8}>{item.name}</Col>
-          <Col span={isWide ? 4 : 8}> {item.version}</Col>
-          <Col span={isWide ? 4 : 8}>
+          <Col span={isWide ? 16 : 20} className={styles.listName}>
+            {item.name}
+          </Col>
+          <Col className={styles.listVersion} span={isWide ? 4 : 4}>
+            {' '}
+            {item.version}
+          </Col>
+          <Col span={isWide ? 4 : 24}>
             <Button
               onClick={() => {
                 window.location.href = item.url;

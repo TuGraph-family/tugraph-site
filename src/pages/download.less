@@ -14,7 +14,7 @@
     letter-spacing: 0;
     display: flex;
     align-items: center;
-    border-bottom: 1px solid #ececec;
+    border-bottom: 1px solid #f2f2f2;
     
     &:last-child {
       border-bottom: none;
@@ -35,34 +35,27 @@
   }
 }
 
-@media only screen and (max-width: 1024px) {
-  .containerWrapper {
-    margin: -100px 64px 120px 64px;
-    padding: 64px;
-    
-  }
-}
-
-@media only screen and (max-width: 931.99px) {
-  .containerWrapper {
-    margin: -100px 32px 120px 32px;
-    padding: 32px;
-  }
-}
 
 @media only screen and (max-width: 767.99px) {
   .containerWrapper {
-    margin: -100px 16px 120px 16px;
-    padding: 32px 16px;
-
-    .list {
-      font-size: 14px;
-    }
+    padding: 40px;
 
     button {
-      height: 32px;
+      height: 42px;
       font-size: 14px;
-      line-height: 16px;
+      margin-bottom: 24px;
+    }
+    
+    .listName {
+      text-align: left;
+    }
+
+    .listVersion {
+      font-weight: 400;
+      font-size: 24px;
+      color: rgba(0,0,0,0.65);
+      line-height: 54px;
+      text-align: right;
     }
   }
 }
