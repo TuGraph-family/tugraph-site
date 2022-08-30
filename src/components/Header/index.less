@@ -63,4 +63,42 @@
       transition: all 0.3s;
     }
   }
+
+  :global {
+    .ant-collapse-ghost > .ant-collapse-item-active {
+      height: 282px !important;
+    }
+  }
+
+  .collapse {
+    height: 96px;
+    :global {
+      .ant-collapse-content-box {
+        padding: 0 0 0 24px !important;
+      }
+
+      .ant-collapse-header {
+        padding: 0 !important;
+      }
+
+      .ant-collapse-expand-icon {
+        position: absolute;
+        right: 0px;
+        color: #fff;
+        padding: 30px 0;
+        span {
+          font-size: 24px !important;
+        }
+      }
+
+      .ant-collapse-header-text {
+        font-size: 24px;
+        height: 94px;
+        letter-spacing: 8px;
+        padding: 24px 0;
+        color: #ffffff;
+        border-bottom: 1px solid #5097fc;
+      }
+    }
+  }
 }

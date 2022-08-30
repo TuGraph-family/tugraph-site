@@ -1,11 +1,13 @@
 import React from 'react';
 import { useIntl } from 'umi';
-import { Row, Menu, Drawer, Col } from 'antd';
+import { Menu, Drawer, Collapse } from 'antd';
 import { useMedia } from 'react-use';
-import type { MenuProps } from 'antd';
+import type { MenuItem } from '@/interface';
 import { MenuOutlined, CloseOutlined } from '@ant-design/icons';
 
 import styles from './index.less';
+
+const { Panel } = Collapse;
 
 export const Header = ({ activeKey }: { activeKey: string }) => {
   const intl = useIntl();
@@ -24,7 +26,7 @@ export const Header = ({ activeKey }: { activeKey: string }) => {
     />
   ) : null;
 
-  const menuItems: MenuProps['items'] = [
+  const menuItems: MenuItem[] = [
     {
       label: (
         <a href="/product" rel="noopener noreferrer">
@@ -136,11 +138,36 @@ export const Header = ({ activeKey }: { activeKey: string }) => {
         extra={<CloseOutlined onClick={() => setPopupMenuVisible(false)} />}
         visible={popupMenuVisible}
       >
-        {menuItems?.map((item) => (
-          <div className="menuList" key={item?.key}>
-            {item?.label}
-          </div>
-        ))}
+        {menuItems?.map((item, key) => {
+          if (item?.children) {
+            return (
+              <Collapse ghost key={key}>
+                <Panel
+                  header={item?.label}
+                  key={key}
+                  className={styles.collapse}
+                >
+                  {item?.children?.map(
+                    (
+                      child: { label: {} | null | undefined },
+                      index: string | number,
+                    ) => (
+                      <div className="menuList" key={index}>
+                        {child?.label}
+                      </div>
+                    ),
+                  )}
+                </Panel>
+              </Collapse>
+            );
+          } else {
+            return (
+              <div className="menuList" key={key}>
+                {item?.label}
+              </div>
+            );
+          }
+        })}
       </Drawer>
     </>
   );
