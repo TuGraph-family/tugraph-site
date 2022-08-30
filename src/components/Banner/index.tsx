@@ -107,17 +107,21 @@ export const Banner = ({
                 )}
               </Space>
             ) : (
-              <div className={styles.btnGroup} style={{ width: '100%' }}>
-                {buttons?.[0] && (
-                  <Anchor
-                    style={{ width: '100%' }}
-                    affix={false}
-                    className={styles.primaryBtn}
-                  >
-                    <Link href={buttons[0].url} title={buttons[0].text} />
-                  </Anchor>
+              <>
+                {buttons?.length > 0 && (
+                  <div className={styles.btnGroup} style={{ width: '100%' }}>
+                    {buttons?.[0] && (
+                      <Anchor
+                        style={{ width: '100%' }}
+                        affix={false}
+                        className={styles.primaryBtn}
+                      >
+                        <Link href={buttons[0].url} title={buttons[0].text} />
+                      </Anchor>
+                    )}
+                  </div>
                 )}
-              </div>
+              </>
             )}
           </>
         )}

@@ -4,10 +4,10 @@ import { Col, Layout, Row, Space } from 'antd';
 import { SubTitle } from '@/components/SubTitle';
 import { useIntl } from 'umi';
 import { getDemos } from '@/data/demos';
-
-import styles from './demo.less';
 import { useMedia } from 'react-use';
 import { LayoutTemplate } from '@/components/LayoutTemplate';
+
+import styles from './demo.less';
 
 export default function DemoPage() {
   const intl = useIntl();
