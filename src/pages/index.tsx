@@ -218,7 +218,7 @@ export default function IndexPage() {
       bannerInfo={{
         buttons,
         bgIconUrl:
-          'https://gw.alipayobjects.com/mdn/rms_fa12c2/afts/img/A*RYUfQayHZ0YAAAAAAAAAAAAAARQnAQ',
+          'https://gw.alipayobjects.com/mdn/rms_fa12c2/afts/img/A*pyP-SaLO_UkAAAAAAAAAAAAAARQnAQ',
 
         slogan: intl.formatMessage({ id: 'home.banner.slogan' }),
       }}

@@ -52,7 +52,7 @@
 
     .featCard {
       margin-right: 24px;
-      min-height: 255px;
+      min-height: 271px;
       max-width: 588px;  
       border-radius: 12px;
       background-color: #FFFFFF;
@@ -115,20 +115,8 @@
   }
 }
 
-@media only screen and (max-width: 1024px) {
-  .containerWrapper {
-    .banner {
-      padding: 32px 64px;
-    }
-  }
-}
-
 @media only screen and (max-width: 931.99px) {
   .containerWrapper {
-    .banner {
-       padding: 16px 24px;
-      height: auto;
-    }
     .reasonWrapper {
       .reasonCard {
         margin: 32px;
@@ -141,15 +129,31 @@
 
 @media only screen and (max-width: 767.99px) {
   .containerWrapper {
-   .banner {
-      padding: 16px 32px;
-      height: auto;
+    .banner {
+      padding: 24px;
+    }
+    .banner {
+      margin-bottom: 88px;
+      .btnGroup {
+        margin-top: 32px;
+        width: 100%;
+        display: inline-block;
 
-      .list {
-        font-size: 14px;
-        margin: 16px 0;
+        button {
+          height: 42px;
+          width: 50%;
+        }
+
+        .left {
+          border-radius: 8px 0 0 8px;
+        }
+
+        .right {
+          border-radius: 0 8px 8px 0;
+        }
       }
     }
+  
 
     .featCards {
       margin: 0 !important;
@@ -160,7 +164,6 @@
         margin: 16px auto;
         padding: 32px 16px !important;
         height: auto;
-        height: 514px;
 
         .title {
           .mobileImg {
@@ -180,23 +183,29 @@
     }
 
     .reasonWrapper {
-      margin-top: -120px;
-      padding-top: 100px;
-      background-image: linear-gradient(180deg, #ECF5FF 0%, #ECF5FF 48%, rgba(235,245,255,0.00) 100%);
+      margin: 120px 0;
+     
 
       .reasonCard {
-        margin: 16px;
-        padding: 32px 16px;
+        margin: 0;
+        padding: 0;
         height: auto;
+         box-shadow: none;
       }
     }
+
+    .quickStartWrapper {
+        background-color: #F5F7FA;
+        padding: 32px 16px;
+        margin: 0 -16px;
+    }
+
     .quickStart {
       display: block;
-      padding: 0 16px;
 
       .videoWrapper {
         width: 100%;
-        padding: 32px 16px;
+        padding: 0;
         height: auto;
         display: block;
         justify-content: center;

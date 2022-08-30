@@ -1,8 +1,8 @@
 .headerWrapper {
   padding: 0 40px;
   box-shadow: 0 2px 8px 0 rgba(240,241,242,0.65);
-  z-index: 9999;
-
+  z-index: 9998; 
+  transition: all 0.3s;
 }
 
 .sideWrapper {
@@ -23,7 +23,7 @@
 }
 
 .apiAnchor {
-  margin: 56px 24px;
+  margin: 56px 24px 56px 0;
   max-width: 150px;
   background-color: #fff;
   max-height: calc(100vh - 56px) !important;
@@ -168,6 +168,7 @@
 @media only screen and (max-width: 1024px) {
   .headerWrapper {
     padding: 0 100px;
+    transition: all 0.3s;
   }
 }
 
@@ -177,20 +178,74 @@
   }
    
   .containerWrapper { 
-   
+    padding: 32px 24px;
   }
 }
 
 
 @media only screen and (max-width: 767.99px) {
   .headerWrapper {
-    padding-left: 32px;
+    padding: 24px;
+    height: 96px;
+    transition: all 0.3s;
   }
 
   .containerWrapper {
-    padding-top: 60px;
+    padding: 32px 24px;
+    margin: 0;
 
-    
-    
+    .versionWrapper {
+      width: 100%;
+      margin-bottom: 48px;
+      img {
+        width: 35px;
+        height: 35px;
+      }
+      .select {
+        width: calc(100vw - 107px);
+        height: 48px;
+        background-color: #FFFFFF;
+        border: 1px solid #D9D9D9;
+        border-radius: 8px;
+        :global {
+          .ant-select-selector {
+            border-radius: 8px;
+            height: 48px;
+          } 
+          .ant-select-selection-item {
+            font-size: 24px;
+            color: rgba(0,0,0,0.65);
+            line-height: 48px;
+          }
+        }
+      }
+
+    }
+  }
+
+
+  .docMenu {
+    :global {
+      .ant-drawer-header-title {
+        justify-content: end;
+        
+        button {
+          margin: 0;
+          padding: 0;
+        }
+      }
+
+      .ant-menu-submenu-arrow {
+        right: 24px;
+      }
+
+      .ant-drawer-body {
+        padding: 0;
+      }
+
+      .ant-menu {
+        background-color: #fff;
+      }
+    }
   }
 }

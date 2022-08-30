@@ -1,22 +1,22 @@
 import React from 'react';
 import HTMLRenderer from 'react-html-renderer';
 import { useIntl } from 'umi';
-import { Select, Anchor, Spin, Row, Col, Pagination } from 'antd';
-import { Layout, Menu } from 'antd';
+import { Spin, Row, Col, Pagination } from 'antd';
+import { Layout } from 'antd';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { blogs } from '@/data/blog';
 import { LayoutTemplate } from '@/components/LayoutTemplate';
 import { BlogItem } from '@/interface';
+import { useMedia } from 'react-use';
 
 import styles from './blog.less';
-
-const { Link } = Anchor;
 
 const { Content } = Layout;
 
 export default function BlogPage() {
   const intl = useIntl();
+  const isWide = useMedia('(min-width: 767.99px)', true);
   const [blogDetail, setBlogDetail] = React.useState<string>();
   const [listData, setListData] = React.useState<BlogItem[]>(blogs.slice(0, 5));
 
@@ -26,7 +26,7 @@ export default function BlogPage() {
     setListData(blogs.slice(start, end));
   };
 
-  const content = (
+  const pcContent = (
     <div className={styles.containerWrapper}>
       <div className={styles.listWrapper}>
         <div className={styles.title}>
@@ -55,7 +55,6 @@ export default function BlogPage() {
           ))}
         </div>
       </div>
-
       <Pagination
         defaultCurrent={1}
         total={blogs?.length}
@@ -70,19 +69,50 @@ export default function BlogPage() {
     </div>
   );
 
+  const mobileContent = (
+    <div className={styles.containerWrapper}>
+      <div className={styles.listWrapper}>
+        <div className={styles.title}>
+          {intl.formatMessage({ id: 'blog.all' })}
+        </div>
+        <div className={styles.lists}>
+          {blogs?.map((item, key) => (
+            <div
+              className={styles.list}
+              key={key}
+              onClick={() => {
+                setBlogDetail(item.content);
+              }}
+            >
+              <Row>
+                <Col span={6}>
+                  <img src={item.img} alt={item.title} />
+                </Col>
+                <Col span={18} className={styles.textWrapper}>
+                  <div className={styles.listTitle}>{item.title}</div>
+                  <div className={styles.updateDate}>{item.updateDate}</div>
+                </Col>
+              </Row>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+
   return (
     <>
       {!blogDetail ? (
         <LayoutTemplate
           bannerInfo={{
             bgIconUrl:
-              'https://gw.alipayobjects.com/mdn/rms_fa12c2/afts/img/A*xAXjS6iKeFcAAAAAAAAAAAAAARQnAQ',
+              'https://gw.alipayobjects.com/mdn/rms_fa12c2/afts/img/A*XQVyRqTv_3kAAAAAAAAAAAAAARQnAQ',
             activeKey: 'blog',
 
             slogan: intl.formatMessage({ id: 'blog.banner.slogan' }),
             subTitle: intl.formatMessage({ id: 'blog.banner.subTitle' }),
           }}
-          content={content}
+          content={isWide ? pcContent : mobileContent}
         />
       ) : (
         <Layout>

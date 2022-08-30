@@ -1,11 +1,12 @@
 import React from 'react';
 import HTMLRenderer from 'react-html-renderer';
 import { CategoryItem, DocContent } from '@/interface';
-import { MenuProps, Select, Affix, Anchor, Spin } from 'antd';
+import { MenuProps, Select, Affix, Anchor, Spin, Space, Drawer } from 'antd';
 import { Layout, Menu } from 'antd';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { useGetDocsInfo } from '@/hooks/useGetDocsInfo';
+import { useMedia } from 'react-use';
 import moment from 'moment';
 
 import styles from './doc.less';
@@ -16,8 +17,10 @@ const { Content, Sider } = Layout;
 const { Option } = Select;
 
 export default function DocPage() {
+  const isWide = useMedia('(min-width: 767.99px)', true);
   const { getCategoryList, getVersions, getDocDetail } = useGetDocsInfo();
   const [versions, setVersions] = React.useState([]);
+  const [docMenuVisible, setDocMenuVisible] = React.useState<boolean>(false);
   const [currentVersion, setCurrentVersion] = React.useState('');
   const [categoryList, setCategoryList] = React.useState<CategoryItem[]>([]);
   const [currentCategory, setCurrentCategory] = React.useState<string>('');
@@ -76,6 +79,16 @@ export default function DocPage() {
     });
   };
 
+  const getCategoryMenu = () => (
+    <Menu
+      mode="inline"
+      selectedKeys={[currentCategory]}
+      style={{ height: '100%', borderRight: 0 }}
+      items={items}
+      onSelect={({ key }) => setCurrentCategory(key)}
+    />
+  );
+
   const items = transformCategoryList(categoryList);
 
   const onAnchorLinkChange = (activeLink: string) => {};
@@ -86,36 +99,57 @@ export default function DocPage() {
         <Header activeKey="doc" />
       </div>
       <Layout>
-        <Affix offsetTop={0}>
-          <Sider className={styles.sideWrapper} theme="light" width={243}>
-            <Spin spinning={!!!currentVersion}>
-              <Select
-                style={{
-                  width: '184px',
-                  textAlign: 'left',
-                  marginBottom: '16px',
-                }}
-                value={currentVersion}
-                onChange={(v) => setCurrentVersion(v)}
-              >
-                {versions?.map((version: { branch: string }, index) => (
-                  <Option value={version?.branch} key={index}>
-                    {version?.branch}
-                  </Option>
-                ))}
-              </Select>
-              <Menu
-                mode="inline"
-                selectedKeys={[currentCategory]}
-                style={{ height: '100%', borderRight: 0 }}
-                items={items}
-                onSelect={({ key }) => setCurrentCategory(key)}
-              />
-            </Spin>
-          </Sider>
-        </Affix>
+        {isWide && (
+          <Affix offsetTop={0}>
+            <Sider className={styles.sideWrapper} theme="light" width={243}>
+              <Spin spinning={!!!currentVersion}>
+                <Select
+                  style={{
+                    width: '184px',
+                    textAlign: 'left',
+                    marginBottom: '16px',
+                  }}
+                  value={currentVersion}
+                  onChange={(v) => setCurrentVersion(v)}
+                >
+                  {versions?.map((version: { branch: string }, index) => (
+                    <Option value={version?.branch} key={index}>
+                      {version?.branch}
+                    </Option>
+                  ))}
+                </Select>
+                {getCategoryMenu()}
+              </Spin>
+            </Sider>
+          </Affix>
+        )}
 
         <Content className={styles.containerWrapper}>
+          {!isWide && (
+            <Spin spinning={!!!currentVersion}>
+              <div className={styles.versionWrapper}>
+                <Space size={24}>
+                  <img
+                    onClick={() => {
+                      setDocMenuVisible(true);
+                    }}
+                    src="https://gw.alipayobjects.com/zos/bmw-prod/1236f8bd-ab42-4e2a-a5af-de1bdb8e7266.svg"
+                  />
+                  <Select
+                    className={styles.select}
+                    value={currentVersion}
+                    onChange={(v) => setCurrentVersion(v)}
+                  >
+                    {versions?.map((version: { branch: string }, index) => (
+                      <Option value={version?.branch} key={index}>
+                        {version?.branch}
+                      </Option>
+                    ))}
+                  </Select>
+                </Space>
+              </div>
+            </Spin>
+          )}
           <Spin spinning={!!!content}>
             <h1>{content?.title}</h1>
             <div>
@@ -129,17 +163,31 @@ export default function DocPage() {
             <HTMLRenderer html={content?.body_html} />
           </Spin>
         </Content>
-        <Anchor
-          affix={true}
-          className={styles.apiAnchor}
-          onChange={onAnchorLinkChange}
-        >
-          {content?.anchors?.map((item) => (
-            <Link href={item.id} title={item.title} />
-          ))}
-        </Anchor>
+        {isWide && (
+          <Anchor
+            affix={true}
+            className={styles.apiAnchor}
+            onChange={onAnchorLinkChange}
+          >
+            {content?.anchors?.map((item) => (
+              <Link href={item.id} title={item.title} />
+            ))}
+          </Anchor>
+        )}
       </Layout>
-
+      {!isWide && (
+        <Drawer
+          className={styles.docMenu}
+          placement={'left'}
+          width={'80%'}
+          visible={docMenuVisible}
+          onClose={() => {
+            setDocMenuVisible(false);
+          }}
+        >
+          {getCategoryMenu()}
+        </Drawer>
+      )}
       <Footer className="docFooter" />
     </Layout>
   );
