@@ -110,6 +110,15 @@ export default function ProductPage() {
           </>
         )}
       </div>
+
+      <div className={styles.reasonWrapper}>
+        <div className={styles.reasonCard}>
+          <div>{intl.formatMessage({ id: 'product.introduction' })}</div>
+          {isWide && (
+            <img src="https://gw.alipayobjects.com/zos/bmw-prod/5eda9000-4c3c-4d30-9378-abfb25b57db3.svg" />
+          )}
+        </div>
+      </div>
       <SubTitle title={intl.formatMessage({ id: 'product.feature' })} />
       <Row className={styles.featCards} gutter={[24, 24]}>
         <Col className={styles.featCard} span={isWide ? 12 : 24}>

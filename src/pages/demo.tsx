@@ -48,7 +48,7 @@ export default function DemoPage() {
                     id: 'demo.example.title0',
                   })}${isWide ? ' | ' : ''}`}
                 </div>
-                <div className={styles.subTitle} style={{ height: '80px' }}>
+                <div className={styles.subTitle}>
                   {intl.formatMessage({ id: 'demo.example.subTitle0' })}
                 </div>
               </Space>
