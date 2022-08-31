@@ -36,7 +36,7 @@ export const Carousel = () => {
     },
     {
       title: intl.formatMessage({ id: 'home.sliders3' }),
-      url: '',
+      url: '/blog?id=0',
       imgPc:
         'https://gw.alipayobjects.com/mdn/rms_fa12c2/afts/img/A*h_EySZFqFGAAAAAAAAAAAAAAARQnAQ',
       imgMobile:
