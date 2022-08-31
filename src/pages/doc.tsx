@@ -1,5 +1,6 @@
 import React from 'react';
 import HTMLRenderer from 'react-html-renderer';
+import { history, useLocation } from 'umi';
 import { CategoryItem, DocContent } from '@/interface';
 import { MenuProps, Select, Affix, Anchor, Spin, Space, Drawer } from 'antd';
 import { Layout, Menu } from 'antd';
@@ -17,7 +18,9 @@ const { Content, Sider } = Layout;
 const { Option } = Select;
 
 export default function DocPage() {
+  const location = useLocation();
   const isWide = useMedia('(min-width: 767.99px)', true);
+
   const { getCategoryList, getVersions, getDocDetail } = useGetDocsInfo();
   const [versions, setVersions] = React.useState([]);
   const [docMenuVisible, setDocMenuVisible] = React.useState<boolean>(false);
@@ -42,19 +45,30 @@ export default function DocPage() {
   };
 
   React.useEffect(() => {
+    const { version, id } = location.query;
     getVersions({ tenant: 0 }).then((res: any) => {
       setVersions(res.data);
-      setCurrentVersion(res?.data?.[0]?.branch);
+      if (version && id) {
+        setCurrentVersion(version);
+      } else {
+        setCurrentVersion(res?.data?.[0]?.branch);
+      }
     });
   }, []);
 
   React.useEffect(() => {
+    const { version, id } = location.query;
     if (!currentVersion) {
       return;
     }
+    setCurrentCategory('');
     getCategoryList({ version: currentVersion }).then((res: any) => {
       setCategoryList(res.data);
-      setCurrentCategory(findFirstChild(res.data));
+      if (version && id && currentVersion === version) {
+        setCurrentCategory(id);
+      } else {
+        setCurrentCategory(findFirstChild(res.data));
+      }
     });
   }, [currentVersion]);
 
@@ -62,6 +76,7 @@ export default function DocPage() {
     if (!currentCategory) {
       return;
     }
+    history.push(`/doc?version=${currentVersion}&id=${currentCategory}`);
     getDocDetail({ id: currentCategory }).then((res: DocContent) => {
       setContent(res);
     });
@@ -91,6 +106,7 @@ export default function DocPage() {
 
   const items = transformCategoryList(categoryList);
 
+  // TODO 锚点滚动
   const onAnchorLinkChange = (activeLink: string) => {};
 
   return (
@@ -110,7 +126,9 @@ export default function DocPage() {
                     marginBottom: '16px',
                   }}
                   value={currentVersion}
-                  onChange={(v) => setCurrentVersion(v)}
+                  onChange={(v) => {
+                    setCurrentVersion(v);
+                  }}
                 >
                   {versions?.map((version: { branch: string }, index) => (
                     <Option value={version?.branch} key={index}>

@@ -27,6 +27,7 @@ export interface DocContent {
   anchors: Anchor[];
 }
 export interface BlogItem {
+  id: number;
   img: string;
   title: string;
   desc: string;

@@ -1,6 +1,6 @@
 import React from 'react';
 import HTMLRenderer from 'react-html-renderer';
-import { useIntl } from 'umi';
+import { useIntl, history, useLocation } from 'umi';
 import { Spin, Row, Col, Pagination } from 'antd';
 import { Layout } from 'antd';
 import { Header } from '@/components/Header';
@@ -16,6 +16,7 @@ const { Content } = Layout;
 
 export default function BlogPage() {
   const intl = useIntl();
+  const location = useLocation();
   const isWide = useMedia('(min-width: 767.99px)', true);
   const [blogDetail, setBlogDetail] = React.useState<string>();
   const [listData, setListData] = React.useState<BlogItem[]>(blogs.slice(0, 5));
@@ -25,6 +26,14 @@ export default function BlogPage() {
     const end = start + 5;
     setListData(blogs.slice(start, end));
   };
+
+  React.useEffect(() => {
+    const id = location.query?.id;
+    if (!id) {
+      return;
+    }
+    setBlogDetail(blogs[id]?.content);
+  }, []);
 
   const pcContent = (
     <div className={styles.containerWrapper}>
@@ -38,6 +47,7 @@ export default function BlogPage() {
               className={styles.list}
               key={key}
               onClick={() => {
+                history.push(`/blog?id=${item.id}`);
                 setBlogDetail(item.content);
               }}
             >
@@ -81,6 +91,7 @@ export default function BlogPage() {
               className={styles.list}
               key={key}
               onClick={() => {
+                history.push(`/blog?id=${item.id}`);
                 setBlogDetail(item.content);
               }}
             >
