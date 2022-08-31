@@ -17,7 +17,9 @@ export const LayoutTemplate = ({ bannerInfo, content }: LayoutProps) => {
     <Layout>
       <Content>
         <Banner {...bannerInfo} />
-        <div className={styles.mainWrapper}>{content}</div>
+        <div className={styles.mainWrapper}>
+          <div className={styles.content}>{content}</div>
+        </div>
       </Content>
       <Footer />
     </Layout>
