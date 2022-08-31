@@ -23,10 +23,10 @@ export const Footer = ({ className }: { className?: string }) => {
       icon: 'https://gw.alipayobjects.com/zos/bmw-prod/db10078e-ebc9-4d19-b13a-18d07f327c8c.svg',
       url: 'https://space.bilibili.com/1196053065/',
     },
-    {
-      icon: 'https://gw.alipayobjects.com/zos/bmw-prod/88933248-acee-4d21-9daf-242670675dbc.svg',
-      url: 'https://zhuanlan.zhihu.com/p/141047442',
-    },
+    // {
+    //   icon: 'https://gw.alipayobjects.com/zos/bmw-prod/88933248-acee-4d21-9daf-242670675dbc.svg',
+    //   url: 'https://zhuanlan.zhihu.com/p/141047442',
+    // },
   ];
 
   const pc = (
@@ -59,7 +59,7 @@ export const Footer = ({ className }: { className?: string }) => {
             <Space size={32}>
               <Space size={16}>
                 <PhoneFilled size={12} />
-                888-8888-8888
+                电话：0571-85022088，转分机号 83789993#
               </Space>
               <Space>
                 <MailFilled size={12} />
@@ -123,10 +123,10 @@ export const Footer = ({ className }: { className?: string }) => {
             </Col>
           ))}
         </Row>
-        <Space>
-          <PhoneFilled />
-          888-8888-8888
-        </Space>
+        <span>
+          <PhoneFilled style={{ marginRight: '8px' }} />
+          电话：0571-85022088，转分机号 83789993#
+        </span>
         <Space>
           <MailFilled />
           tugraph@service.alipay.com
@@ -136,7 +136,7 @@ export const Footer = ({ className }: { className?: string }) => {
           {intl.formatMessage({ id: 'footer.addressMobile' })}
         </span>
       </div>
-      <div span={10} className={styles.qrCode}>
+      <div className={styles.qrCode}>
         <img src="https://gw.alipayobjects.com/zos/bmw-prod/b543c652-c2a5-4ff1-90e2-dc6d4077b68e.svg" />
         <div className={styles.desc}>
           {intl.formatMessage({ id: 'footer.qrCode.desc' })}

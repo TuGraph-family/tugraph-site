@@ -110,7 +110,7 @@ export default function DemoPage() {
               <div className={styles.text}>
                 {intl.formatMessage({ id: 'demo.example.profit' })}
                 <div className={styles.textNormalSize}>
-                  {intl.formatMessage({ id: 'demo.example.profit2' })}
+                  {intl.formatMessage({ id: 'demo.example.profit1' })}
                 </div>
               </div>
               {!isWide && (
