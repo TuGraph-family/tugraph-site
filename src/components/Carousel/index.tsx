@@ -28,7 +28,7 @@ export const Carousel = () => {
     },
     {
       title: intl.formatMessage({ id: 'home.sliders2' }),
-      url: '',
+      url: 'http://www.wicwuzhen.cn/web21/news/original/202110/t20211029_23287882.shtml',
       imgPc:
         'https://gw.alipayobjects.com/mdn/rms_fa12c2/afts/img/A*NFQWTJTyvN0AAAAAAAAAAAAAARQnAQ',
       imgMobile:
