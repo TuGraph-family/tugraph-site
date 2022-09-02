@@ -1,69 +1,69 @@
-  body {
+body {
+  background: #fff;
+  font-family: 'PingFang SC,Helvetica Neue For Number,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Hiragino Sans GB,Microsoft YaHei,Helvetica Neue,Helvetica,Arial,sans-serif';
+  overflow-x: hidden;
+}
+
+:global {
+  .ant-drawer {
+    z-index: 9999;
+  }
+
+  .lightBtn {
+    background: #0069fd;
+    border-radius: 8px;
+    width: 180px !important;
+    height: 48px;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.89);
+  }
+
+  .boldText {
+    font-weight: 600;
+  }
+
+  .grayBtn,
+  .darkBtn {
+    border-radius: 8px;
+    width: 180px !important;
+    height: 48px;
+    font-size: 16px;
+  }
+
+  .darkBtn {
+    color: rgba(255, 255, 255, 0.89);
+    background: #00122b;
+    border-color: #00122b;
+  }
+
+  .grayBtn {
+    color: rgba(0, 0, 0, 0.85);
+    background: #eaeef2;
+    border-color: #eaeef2;
+  }
+
+  .ant-layout {
     background: #fff;
-    font-family: 'PingFang SC,Helvetica Neue For Number,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Hiragino Sans GB,Microsoft YaHei,Helvetica Neue,Helvetica,Arial,sans-serif';
-    overflow-x: hidden;
   }
-  
-  :global {
-    .ant-drawer {
-      z-index: 9999;
-    }
 
-    .lightBtn {
-      background: #0069FD;
-      border-radius: 8px;
-      width: 180px !important;
-      height: 48px;
-      font-size: 16px;
-      color: rgba(255, 255, 255, 0.89);
-    }
+  .textNormalSize {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.89);
+  }
 
-    .boldText {
-      font-weight: 600;
-    }
+  .menuList {
+    font-size: 24px;
+    height: 94px;
+    letter-spacing: 8px;
+    padding: 28px 0;
+    border-bottom: 1px solid #5097fc;
 
-    .grayBtn,
-    .darkBtn {
-      border-radius: 8px;
-      width: 180px !important;
-      height: 48px;
-      font-size: 16px;
-    }
-
-    .darkBtn {
-      color: rgba(255, 255, 255, 0.89);
-      background: #00122B;
-      border-color: #00122B;
-    }
-
-    .grayBtn {
-      color: rgba(0,0,0,0.85);
-      background: #eaeef2;
-      border-color: #eaeef2;
-    }
-
-    .ant-layout {
-      background: #fff;
-    }
-    
-    .textNormalSize {
-      font-size: 16px;
-      color: rgba(255,255,255,0.89)
-    }
-    
-     .menuList {
-      font-size: 24px;
-      height: 94px;
-      letter-spacing: 8px;
-      padding: 28px 0;
-      border-bottom: 1px solid #5097fc;
-
-      a {
-        color: #fff;
-      }
+    a {
+      color: #fff;
     }
   }
-  
+}
+
 .containerWrapper {
   .users {
     display: flex;
@@ -79,7 +79,7 @@
 
   .moreDemo {
     margin: 0 180px;
-    border-top: 1px solid #D8D8D8;
+    border-top: 1px solid #d8d8d8;
     height: 60px;
 
     .text {
@@ -87,9 +87,9 @@
       font-size: 16px;
       color: #494949;
       margin-top: 30px;
-      
+
       &:hover {
-        color:#0069FD;
+        color: #0069fd;
       }
     }
   }
@@ -108,10 +108,10 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      
+
       .reasonCard {
-        background-color: #FFFFFF;
-        box-shadow: 0 10px 30px 10px rgba(158,181,213,0.10);
+        background-color: #ffffff;
+        box-shadow: 0 10px 30px 10px rgba(158, 181, 213, 0.1);
         border-radius: 12px;
         width: 100%;
         height: 100%;
@@ -128,7 +128,7 @@
       .title {
         font-weight: 500;
         font-size: 20px;
-        color: rgba(0,0,0,0.85);
+        color: rgba(0, 0, 0, 0.85);
         line-height: 24px;
         text-align: left;
         width: 100%;
@@ -138,18 +138,21 @@
       .desc {
         font-weight: 400;
         font-size: 14px;
-        color: #697A8C;
+        color: #697a8c;
         line-height: 22px;
         width: 100%;
-        text-align: left; 
-
+        text-align: left;
       }
     }
   }
 
   .versionsWrapper {
     padding-top: 1px;
-    background-image: linear-gradient(180deg, rgba(236,245,255,0.50) 0%, rgba(235,245,255,0.00) 100%);
+    background-image: linear-gradient(
+      180deg,
+      rgba(236, 245, 255, 0.5) 0%,
+      rgba(235, 245, 255, 0) 100%
+    );
     margin: 0 -120px;
     padding: 1px 120px;
 
@@ -207,9 +210,9 @@
 
         .versionCard {
           border-radius: 12px;
-          box-shadow: 0 10px 30px 10px rgba(158,181,213,0.10);
+          box-shadow: 0 10px 30px 10px rgba(158, 181, 213, 0.1);
           border-radius: 12px;
-          background-color: #FFFFFF;
+          background-color: #ffffff;
           text-align: center;
           display: flex;
           flex-direction: column;
@@ -220,15 +223,15 @@
         .title {
           font-weight: 600;
           font-size: 24px;
-          color: rgba(51,51,51,0.89);
+          color: rgba(51, 51, 51, 0.89);
           text-align: center;
         }
 
-        .desc {  
+        .desc {
           font-family: PingFangSC;
           font-weight: 400;
           font-size: 14px;
-          color: #697A8C;
+          color: #697a8c;
           text-align: center;
           line-height: 21px;
           margin: 16px 0 32px 0;
@@ -240,18 +243,18 @@
   .featList {
     .title {
       font-size: 18px;
-      color: rgba(51,51,51,0.89);
+      color: rgba(51, 51, 51, 0.89);
       text-align: center;
       margin-bottom: 16px;
-    } 
+    }
 
     .text {
       font-weight: 500;
       font-size: 16px;
       text-align: center;
-      color: rgba(51,51,51,0.89);
+      color: rgba(51, 51, 51, 0.89);
     }
-  
+
     .textAlignLeft {
       text-align: left;
       padding-left: 56px;
@@ -268,32 +271,29 @@
       background-color: #fafafb;
     }
   }
-   .footerBtn {
-      margin: 40px 0 120px 0;
-      text-align: right;
-      
-      button {
-         width: 246px !important;
-         height: 49px !important;
-      }
+  .footerBtn {
+    margin: 40px 0 120px 0;
+    text-align: right;
+
+    button {
+      width: 246px !important;
+      height: 49px !important;
     }
+  }
 }
 
 @media only screen and (max-width: 1024px) {
   .containerWrapper {
     .featList {
-
-      
       .textAlignLeft {
         padding-left: 48px;
       }
     }
-  } 
+  }
 }
 
 @media only screen and (max-width: 931.99px) {
   .containerWrapper {
-
     .featList {
       padding: 0 32px;
 
@@ -305,12 +305,15 @@
     .users {
       padding: 0 80px;
     }
-  } 
+  }
 }
 
 @media only screen and (max-width: 767.99px) {
   .containerWrapper {
     text-align: center;
+    img {
+      width: 100%;
+    }
 
     .users {
       padding: 0;
@@ -327,20 +330,20 @@
       text-align: center;
     }
 
-    .versionsWrapper { 
+    .versionsWrapper {
       .versions {
         display: block;
 
         .version {
           max-width: 100vw;
-          
+
           .versionCard {
             padding: 40px;
 
             .primaryBtn,
-              button {
-                width: 100% !important;
-              }
+            button {
+              width: 100% !important;
+            }
           }
 
           .desc {
@@ -353,7 +356,7 @@
 
     .reasonCards {
       display: block;
-      
+
       .reasonCard {
         max-width: 100vw;
         padding: 16px;
@@ -362,7 +365,7 @@
         .desc {
           text-align: center;
         }
-        
+
         .desc {
           width: 100%;
           height: auto;
@@ -390,10 +393,9 @@
       margin-right: 0px;
       text-align: center;
 
-        button {
-         width: 160px !important;
-        }
+      button {
+        width: 160px !important;
+      }
     }
-     
   }
 }
