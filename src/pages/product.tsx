@@ -71,6 +71,16 @@ export default function ProductPage() {
               >
                 {intl.formatMessage({ id: 'product.banner.playDesc1' })}
               </Button>
+              <Button
+                onClick={() =>
+                  setVideo(
+                    'https://gw.alipayobjects.com/mdn/rms_fa12c2/afts/file/A*osHgQZG-F1cAAAAAAAAAAAAAARQnAQ',
+                  )
+                }
+                className={cx(styles.playBtn, 'grayBtn')}
+              >
+                {intl.formatMessage({ id: 'product.banner.playCase0' })}
+              </Button>
             </Col>
           </Row>
         ) : (
@@ -105,6 +115,16 @@ export default function ProductPage() {
                 }
               >
                 {intl.formatMessage({ id: 'product.banner.playDesc1' })}
+              </Button>
+              <Button
+                onClick={() =>
+                  setVideo(
+                    'https://gw.alipayobjects.com/mdn/rms_fa12c2/afts/file/A*osHgQZG-F1cAAAAAAAAAAAAAARQnAQ',
+                  )
+                }
+                className={cx(styles.playBtn, 'grayBtn')}
+              >
+                {intl.formatMessage({ id: 'product.banner.playCase0' })}
               </Button>
             </div>
           </>
@@ -223,7 +243,7 @@ export default function ProductPage() {
             <JoLPlayer
               option={{
                 videoSrc:
-                  'https://gw.alipayobjects.com/v/rms_fa12c2/afts/video/A*CGu4RqkzzDgAAAAAAAAAAAAAARQnAQ/720P',
+                  'https://gw.alipayobjects.com/mdn/rms_fa12c2/afts/file/A*CGu4RqkzzDgAAAAAAAAAAAAAARQnAQ',
                 height: isWide ? 487 : 220,
               }}
             />
