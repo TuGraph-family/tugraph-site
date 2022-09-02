@@ -32,7 +32,7 @@ export default function BlogPage() {
     if (!id) {
       return;
     }
-    setBlogDetail(blogs[id]?.content);
+    setBlogDetail(blogs?.find((item) => item.id === Number(id))?.content);
   }, []);
 
   const pcContent = (
