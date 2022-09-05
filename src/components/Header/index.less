@@ -18,16 +18,22 @@
     width: 163px;
     height: 32px;
   }
- 
+
+  .containerWrapper {
+    img {
+      width: 100%;
+    }
+  }
+
   :global {
     .ant-menu {
       background: rgba(0, 0, 0, 0);
       border: none;
       font-size: 14px;
-      color: rgba(13,26,38,0.90);
+      color: rgba(13, 26, 38, 0.9);
       line-height: 22px;
     }
-    
+
     .ant-menu-item,
     .ant-menu-submenu {
       display: flex;
@@ -39,7 +45,7 @@
     .ant-menu-horizontal > .ant-menu-item::after {
       display: none;
     }
-     .ant-menu-item-active {
+    .ant-menu-item-active {
       color: @primary-color;
       box-shadow: inset 0 2px 0 @primary-color;
     }
@@ -47,7 +53,6 @@
       width: 120px;
     }
   }
-
 }
 
 @media only screen and (max-width: 767.99px) {
@@ -61,6 +66,12 @@
       right: 32px;
       top: 36px;
       transition: all 0.3s;
+    }
+
+    .containerWrapper {
+      img {
+        width: 100%;
+      }
     }
   }
 
