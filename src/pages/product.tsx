@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { Button, Col, Row } from 'antd';
+import { Button, Col, Menu, Row } from 'antd';
 import { Helmet } from 'react-helmet';
 import type { BannerButtonProps } from '@/components/Banner';
 import JoLPlayer, { JoLPlayerRef } from 'jol-player';
@@ -79,12 +79,48 @@ export default function ProductPage() {
                 }
                 className={cx(styles.playBtn, 'grayBtn')}
               >
-                {intl.formatMessage({ id: 'product.banner.playCase0' })}
+                {intl.formatMessage({ id: 'product.banner.playDesc2' })}
               </Button>
             </Col>
           </Row>
         ) : (
           <>
+            <Menu
+              mode="horizontal"
+              defaultSelectedKeys={['0']}
+              className={styles.videoMenu}
+            >
+              <Menu.Item
+                onClick={() =>
+                  setVideo(
+                    'https://gw.alipayobjects.com/os/bmw-prod/2145f227-08f0-435a-abe6-7f503b65da7d.mov',
+                  )
+                }
+                key="0"
+              >
+                {intl.formatMessage({ id: 'product.banner.playDesc0' })}
+              </Menu.Item>
+              <Menu.Item
+                onClick={() =>
+                  setVideo(
+                    'https://gw.alipayobjects.com/os/bmw-prod/c9cd86a4-6bd6-48bb-8926-ef62b3995d0b.mov',
+                  )
+                }
+                key="1"
+              >
+                {intl.formatMessage({ id: 'product.banner.playDesc1' })}
+              </Menu.Item>
+              <Menu.Item
+                key="2"
+                onClick={() =>
+                  setVideo(
+                    'https://gw.alipayobjects.com/mdn/rms_fa12c2/afts/file/A*osHgQZG-F1cAAAAAAAAAAAAAARQnAQ',
+                  )
+                }
+              >
+                {intl.formatMessage({ id: 'product.banner.playDesc2' })}
+              </Menu.Item>
+            </Menu>
             <JoLPlayer
               ref={videoRef}
               option={{
@@ -92,41 +128,6 @@ export default function ProductPage() {
                 height: 240,
               }}
             />
-            <div className={styles.btnGroup}>
-              <Button
-                type="primary"
-                onClick={() =>
-                  setVideo(
-                    'https://gw.alipayobjects.com/os/bmw-prod/2145f227-08f0-435a-abe6-7f503b65da7d.mov',
-                  )
-                }
-                className={styles.left}
-              >
-                {intl.formatMessage({ id: 'product.banner.playDesc0' })}
-              </Button>
-              <Button
-                type="primary"
-                ghost
-                className={styles.right}
-                onClick={() =>
-                  setVideo(
-                    'https://gw.alipayobjects.com/os/bmw-prod/c9cd86a4-6bd6-48bb-8926-ef62b3995d0b.mov',
-                  )
-                }
-              >
-                {intl.formatMessage({ id: 'product.banner.playDesc1' })}
-              </Button>
-              <Button
-                onClick={() =>
-                  setVideo(
-                    'https://gw.alipayobjects.com/mdn/rms_fa12c2/afts/file/A*osHgQZG-F1cAAAAAAAAAAAAAARQnAQ',
-                  )
-                }
-                className={cx(styles.playBtn, 'grayBtn')}
-              >
-                {intl.formatMessage({ id: 'product.banner.playCase0' })}
-              </Button>
-            </div>
           </>
         )}
       </div>
