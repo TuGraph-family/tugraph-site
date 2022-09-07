@@ -44,17 +44,18 @@ export default function IndexPage() {
       <SubTitle title={intl.formatMessage({ id: 'home.users' })} />
       <Row className={styles.users}>
         <Col span={isWide ? 5 : 6}>
-          <img src="https://gw.alipayobjects.com/zos/bmw-prod/dbe22a71-a25c-4a48-afcc-1c506f46e967.svg" />
+          <img src="https://gw.alipayobjects.com/zos/bmw-prod/30ae5685-3a2a-4363-a664-99d3872b5b11.svg" />
         </Col>
         <Col span={isWide ? 5 : 6}>
-          <img src="https://gw.alipayobjects.com/zos/bmw-prod/c6011698-6941-45f2-ae6b-30c68533bf2e.svg" />
+          <img src="https://gw.alipayobjects.com/zos/bmw-prod/891eceee-c0b0-4a40-bc31-b945d57f6d93.svg" />
         </Col>
         <Col span={isWide ? 5 : 6}>
-          <img src="https://gw.alipayobjects.com/zos/bmw-prod/2a719040-1c3d-4e89-8582-6123edd66bfb.svg" />
+          <img src="https://gw.alipayobjects.com/zos/bmw-prod/8d4767b8-f93a-4c83-8f76-a8298ecaf274.svg" />
         </Col>
         <Col span={isWide ? 5 : 6}>
-          <img src="https://gw.alipayobjects.com/zos/bmw-prod/70556970-4075-482c-ac07-e30b55403184.svg" />
+          <img src="https://gw.alipayobjects.com/zos/bmw-prod/58f9c5a7-e689-4319-80cf-7a7e699ec515.svg" />
         </Col>
+
         {isWide && (
           <Col span={4}>
             <Button
