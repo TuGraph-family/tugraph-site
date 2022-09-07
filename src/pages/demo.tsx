@@ -52,7 +52,7 @@ export default function DemoPage() {
                   {intl.formatMessage({ id: 'demo.example.subTitle0' })}
                 </div>
               </Space>
-              {isWide && <hr className={styles.splitLine} />}
+              {isWide && <div className={styles.splitLine} />}
               <div className={styles.text}>
                 {intl.formatMessage({ id: 'demo.example.challenge' })}
                 <div className={styles.textNormalSize}>
@@ -94,7 +94,7 @@ export default function DemoPage() {
                   {intl.formatMessage({ id: 'demo.example.subTitle1' })}
                 </div>
               </Space>
-              {isWide && <hr className={styles.splitLine} />}
+              {isWide && <div className={styles.splitLine} />}
               <div className={styles.text}>
                 {intl.formatMessage({ id: 'demo.example.challenge' })}
                 <div className={styles.textNormalSize}>
@@ -130,7 +130,7 @@ export default function DemoPage() {
                   {intl.formatMessage({ id: 'demo.example.subTitle2' })}
                 </div>
               </Space>
-              {isWide && <hr className={styles.splitLine} />}
+              {isWide && <div className={styles.splitLine} />}
               <div className={styles.text}>
                 {intl.formatMessage({ id: 'demo.example.challenge' })}
                 <div className={styles.textNormalSize}>

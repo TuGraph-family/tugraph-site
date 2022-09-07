@@ -121,9 +121,9 @@ export default function DocPage() {
               <Spin spinning={!!!currentVersion}>
                 <Select
                   style={{
-                    width: '184px',
+                    width: '204px',
                     textAlign: 'left',
-                    marginBottom: '16px',
+                    margin: '24px',
                   }}
                   value={currentVersion}
                   onChange={(v) => {
