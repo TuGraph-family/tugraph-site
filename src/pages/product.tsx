@@ -237,14 +237,17 @@ export default function ProductPage() {
       </div>
 
       <div className={styles.quickStartWrapper}>
-        <SubTitle title={intl.formatMessage({ id: 'product.quickStart' })} />
+        <SubTitle
+          title={intl.formatMessage({ id: 'product.quickStart' })}
+          style={{ marginTop: 0 }}
+        />
         <div id="quickStart" className={styles.quickStart}>
           <div className={styles.videoWrapper}>
             <JoLPlayer
               option={{
                 videoSrc:
                   'https://gw.alipayobjects.com/mdn/rms_fa12c2/afts/file/A*CGu4RqkzzDgAAAAAAAAAAAAAARQnAQ',
-                height: isWide ? 487 : 220,
+                height: isWide ? 486 : 220,
               }}
             />
           </div>

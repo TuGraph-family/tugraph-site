@@ -35,7 +35,8 @@
           font-size: 20px;
           color: rgba(0,0,0,0.85);
           text-align: center;
-          min-height: 94px;
+          min-height: 60px;
+          line-height: 30px;
         }
       
         .desc {
@@ -44,7 +45,7 @@
           color: #697A8C;
           text-align: center;
           line-height: 22px;
-          min-height: 110px;
+          min-height: 88px;
         }
 
         .type {
@@ -72,7 +73,7 @@
         width: 100%;
 
         .textWrapper {
-          padding: 50px 80px;
+          padding: 56px 40px 12px 40px;
           max-width: 577px;
           box-sizing: content-box;
 
@@ -81,56 +82,61 @@
 
             .title {       
               font-weight: 600;
-              font-size: 28px;
+              font-size: 24px;
               color: #000A1C;
             }
 
-          .subTitle {
+            .subTitle {
+              font-weight: 500;
+              font-size: 20px;
+              color: rgba(0,0,0,0.85);
+              line-height: 24px;
+            }
+          }
+
+          .splitLine {
+            width: 100%;
+            border-top: 1px solid rgba(0,0,0,0.25);
+            height: 1px;
+          }
+
+          .text {
+            margin: 40px 0;
             font-weight: 500;
             font-size: 18px;
-            color: #00122B;
+            color: #333333;
             letter-spacing: 1.03px;
-            line-height: 22px;
+            line-height: 30px;
+
+            .textNormalSize {
+              font-weight: 400;
+              font-size: 14px;
+              color: #697A8C;;
+              letter-spacing: 0.8px;
+              margin: 16px 0 0 24px;
+              line-height: 21px;
+            }
           }
-        
-        .splitLine {
-          width: 100%;
-          border-bottom: 1px solid #979797;
         }
-      }
 
-      .text {
-        margin: 36px 0 8px 0;
-        font-weight: 500;
-        font-size: 18px;
-        color: #333333;
-        letter-spacing: 1.03px;
-        line-height: 30px;
+        .exampleImg {
+          background-image: url(https://gw.alipayobjects.com/zos/bmw-prod/2fcdbedf-872f-487f-b8d0-e1b3ff093020.svg);
+          background-repeat: no-repeat;
+          padding: 0px !important;
+        }
 
-        .textNormalSize {
-          font-weight: 400;
-          font-size: 14px;
-          color: #697A8C;;
-          letter-spacing: 0.8px;
-          margin-left: 24px;
+        .imgWrapper {
+          display: flex;
+          align-items: end;
+          justify-content: center;
+          padding: 56px 40px;
+
+          img {
+            border-radius: 8px;
+          }
         }
       }
     }
-
-    .exampleImg {
-      background-image: url(https://gw.alipayobjects.com/zos/bmw-prod/2fcdbedf-872f-487f-b8d0-e1b3ff093020.svg);
-      background-repeat: no-repeat;
-      padding: 0px !important;
-    }
-
-    .imgWrapper {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    }
-    }
-   
   }
 }
 
