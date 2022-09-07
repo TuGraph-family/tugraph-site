@@ -152,7 +152,7 @@ export default function ProductPage() {
             {!isWide && (
               <img
                 className={styles.mobileImg}
-                src="https://gw.alipayobjects.com/zos/bmw-prod/18042c99-14ba-42e3-b00c-a3368143fc71.svg"
+                src="https://gw.alipayobjects.com/zos/bmw-prod/f5a9ce75-c879-4057-9d20-c993ed4e4a47.svg"
               />
             )}
             {intl.formatMessage({ id: 'product.feature.title0' })}
@@ -172,7 +172,7 @@ export default function ProductPage() {
             {!isWide && (
               <img
                 className={styles.mobileImg}
-                src="https://gw.alipayobjects.com/zos/bmw-prod/984031e2-9518-4f10-8aab-486fafcbdc5b.svg"
+                src="https://gw.alipayobjects.com/zos/bmw-prod/3a398574-536f-4cd2-b12d-5bfdc6e45cc5.svg"
               />
             )}
             {intl.formatMessage({ id: 'product.feature.title1' })}
@@ -186,7 +186,7 @@ export default function ProductPage() {
           {isWide && (
             <img
               className={styles.bgImg}
-              src="https://gw.alipayobjects.com/zos/bmw-prod/3a398574-536f-4cd2-b12d-5bfdc6e45cc5.svg"
+              src="https://gw.alipayobjects.com/zos/bmw-prod/50eb0393-b8c9-4e23-bdcc-b6983c368b9a.svg"
             />
           )}
           <div className={styles.title}>
@@ -213,7 +213,7 @@ export default function ProductPage() {
             {!isWide && (
               <img
                 className={styles.mobileImg}
-                src="https://gw.alipayobjects.com/zos/bmw-prod/68df5910-6288-4f2b-8fc2-01e944a44b56.svg"
+                src="https://gw.alipayobjects.com/zos/bmw-prod/7fef43b0-8b14-4e2d-8f4f-edac2d9dcf28.svg"
               />
             )}
             {intl.formatMessage({ id: 'product.feature.title3' })}
