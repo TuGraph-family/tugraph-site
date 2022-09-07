@@ -38,6 +38,7 @@ export const Banner = ({
       className={styles.banner}
       style={{
         backgroundImage: `url('https://gw.alipayobjects.com/zos/bmw-prod/7cab75ff-4f5f-4fe5-ae73-65ee3856ff97.svg')`,
+        height: buttons?.length > 0 ? '600px' : '450px',
       }}
     >
       <Header activeKey={activeKey} />
@@ -73,6 +74,10 @@ export const Banner = ({
             <Col span={10}>
               <img
                 className={isWide ? styles.pcIcon : styles.mobileIcon}
+                style={{
+                  margin:
+                    isWide && buttons?.length > 0 ? '40px 80px' : '-24px 80px',
+                }}
                 src={bgIconUrl}
               />
             </Col>

@@ -42,7 +42,7 @@ export default function DemoPage() {
         <div className={styles.exampleCards}>
           <Row className={styles.exampleCard}>
             <Col className={styles.textWrapper} span={16}>
-              <Space className={styles.header}>
+              <Space className={styles.header} size={16}>
                 <div className={styles.title}>
                   {`${intl.formatMessage({
                     id: 'demo.example.title0',
@@ -84,7 +84,7 @@ export default function DemoPage() {
               )}
             </Col>
             <Col className={styles.textWrapper} span={12}>
-              <Space className={styles.header}>
+              <Space className={styles.header} size={16}>
                 <div className={styles.title}>
                   {`${intl.formatMessage({
                     id: 'demo.example.title1',
@@ -120,7 +120,7 @@ export default function DemoPage() {
           </Row>
           <Row className={styles.exampleCard} style={{ marginBottom: '120px' }}>
             <Col className={styles.textWrapper} span={16}>
-              <Space className={styles.header}>
+              <Space className={styles.header} size={16}>
                 <div className={styles.title}>
                   {`${intl.formatMessage({
                     id: 'demo.example.title2',

@@ -74,7 +74,7 @@ export default {
   'product.banner.autoPlay': '自动播放',
   'product.banner.playDesc0': '快速上手演示',
   'product.banner.playDesc1': '可视化操作演示',
-  'product.banner.playCase0': '黑灰产网络案例演示',
+  'product.banner.playDesc2': '黑灰产网络案例演示',
   'product.feature': '产品特性',
   'product.introduction':
     ' 图数据库由蚂蚁集团与清华大学联合研发，构建了一套包含图存储、图计算、图学习、图研发平台的完善的图技术体系，拥有业界领先规模的图集群，解决了图数据分析面临的大数据量、高吞吐率和低延迟等重大挑战，是蚂蚁集团金融风控能力的重要基础设施，显著提升了欺诈洗钱等金融风险的实时识别能力和审理分析效率，并面向金融、工业、政务服务等行业客户。',
