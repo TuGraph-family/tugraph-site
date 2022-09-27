@@ -4,18 +4,9 @@ import md03 from '@/doc/03.md';
 import md04 from '@/doc/04.md';
 import md05 from '@/doc/05.md';
 import md06 from '@/doc/06.md';
-import md07 from '@/doc/07.md';
 
 // TODO 国际化
 export const blogs = [
-  {
-    id: 6,
-    img: 'https://tugraph-web-static.oss-cn-beijing.aliyuncs.com/tugraph-expolore/tugraph-explore-case-16.png',
-    title: '基于 TuGraph Explore 挖掘网络黑灰产子图',
-    desc: '使用 TuGraph Explore 分析黑灰产团伙掌握的网络资产及其关联关系，有利于理解黑灰产团伙的业务运作机制、识别核心网络资产和关键资产链路、挖掘真实世界的嫌疑人信息、制定有效的打击策略。',
-    updateDate: '2022-09-01',
-    content: md07?.html,
-  },
   {
     id: 0,
     img: 'https://gw.alipayobjects.com/mdn/rms_fa12c2/afts/img/A*AFG0R5M7EA8AAAAAAAAAAAAAARQnAQ',

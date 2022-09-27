@@ -71,16 +71,6 @@ export default function ProductPage() {
               >
                 {intl.formatMessage({ id: 'product.banner.playDesc1' })}
               </Button>
-              <Button
-                onClick={() =>
-                  setVideo(
-                    'https://gw.alipayobjects.com/mdn/rms_fa12c2/afts/file/A*osHgQZG-F1cAAAAAAAAAAAAAARQnAQ',
-                  )
-                }
-                className={cx(styles.playBtn, 'grayBtn')}
-              >
-                {intl.formatMessage({ id: 'product.banner.playDesc2' })}
-              </Button>
             </Col>
           </Row>
         ) : (
@@ -109,16 +99,6 @@ export default function ProductPage() {
                 key="1"
               >
                 {intl.formatMessage({ id: 'product.banner.playDesc1' })}
-              </Menu.Item>
-              <Menu.Item
-                key="2"
-                onClick={() =>
-                  setVideo(
-                    'https://gw.alipayobjects.com/mdn/rms_fa12c2/afts/file/A*osHgQZG-F1cAAAAAAAAAAAAAARQnAQ',
-                  )
-                }
-              >
-                {intl.formatMessage({ id: 'product.banner.playDesc2' })}
               </Menu.Item>
             </Menu>
             <JoLPlayer
