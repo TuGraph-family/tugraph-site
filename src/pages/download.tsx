@@ -58,9 +58,7 @@ export default function DemoPage() {
     <LayoutTemplate
       bannerInfo={{
         bgIconUrl:
-          'https://gw.alipayobjects.com/mdn/rms_fa12c2/afts/img/A*gB_YQZ1QsosAAAAAAAAAAAAAARQnAQ',
-        activeKey: 'download',
-
+          'https://mdn.alipayobjects.com/mdn/huamei_qcdryc/afts/img/A*QaKQRqje18MAAAAAAAAAAAAADgOBAQ',
         slogan: intl.formatMessage({ id: 'download.banner.slogan' }),
         notice: intl.formatMessage({ id: 'download.banner.notice' }),
       }}

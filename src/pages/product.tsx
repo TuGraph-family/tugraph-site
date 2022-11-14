@@ -1,7 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { Button, Col, Menu, Row } from 'antd';
 import { Helmet } from 'react-helmet';
-import type { BannerButtonProps } from '@/components/Banner';
 import JoLPlayer, { JoLPlayerRef } from 'jol-player';
 import { SubTitle } from '@/components/SubTitle';
 import { useMedia } from 'react-use';
@@ -18,12 +17,6 @@ export default function ProductPage() {
     'https://gw.alipayobjects.com/os/bmw-prod/2145f227-08f0-435a-abe6-7f503b65da7d.mov',
   );
 
-  const buttons: BannerButtonProps[] = [
-    {
-      text: intl.formatMessage({ id: 'product.quickStart' }),
-      url: '#quickStart',
-    },
-  ];
   const videoRef = useRef<JoLPlayerRef>(null!);
 
   const content = (
@@ -240,11 +233,8 @@ export default function ProductPage() {
   return (
     <LayoutTemplate
       bannerInfo={{
-        buttons,
         bgIconUrl:
-          'https://gw.alipayobjects.com/mdn/rms_fa12c2/afts/img/A*0dYkQpmLLyEAAAAAAAAAAAAAARQnAQ',
-        activeKey: 'product',
-
+          'https://mdn.alipayobjects.com/mdn/huamei_qcdryc/afts/img/A*ga9NQ6eVsx4AAAAAAAAAAAAADgOBAQ',
         slogan: intl.formatMessage({ id: 'product.banner.slogan' }),
       }}
       content={content}

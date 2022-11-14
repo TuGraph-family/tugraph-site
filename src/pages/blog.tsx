@@ -117,9 +117,7 @@ export default function BlogPage() {
         <LayoutTemplate
           bannerInfo={{
             bgIconUrl:
-              'https://gw.alipayobjects.com/mdn/rms_fa12c2/afts/img/A*XQVyRqTv_3kAAAAAAAAAAAAAARQnAQ',
-            activeKey: 'blog',
-
+              'https://mdn.alipayobjects.com/mdn/huamei_qcdryc/afts/img/A*sLOlR5lxll8AAAAAAAAAAAAADgOBAQ',
             slogan: intl.formatMessage({ id: 'blog.banner.slogan' }),
             subTitle: intl.formatMessage({ id: 'blog.banner.subTitle' }),
           }}
@@ -128,7 +126,7 @@ export default function BlogPage() {
       ) : (
         <Layout>
           <div className={styles.headerWrapper}>
-            <Header activeKey="blog" />
+            <Header />
           </div>
           <Layout>
             <Content className={styles.blogContainerWrapper}>

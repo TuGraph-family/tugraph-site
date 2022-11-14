@@ -17,7 +17,7 @@ export default defineConfig({
     { path: '/form', component: '@/pages/form' },
   ],
   theme: {
-    'primary-color': '#1677FF',
+    'primary-color': 'rgba(22,80,255,1)',
   },
   chainWebpack(memo, { env, webpack }) {
     memo.module

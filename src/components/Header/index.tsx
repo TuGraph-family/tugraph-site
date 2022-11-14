@@ -1,6 +1,7 @@
-import React from 'react';
-import { useIntl } from 'umi';
+import React,{ useEffect, useState }  from 'react';
+import { useIntl, useLocation } from 'umi';
 import { Menu, Drawer, Collapse } from 'antd';
+import cx from 'classnames';
 import { useMedia } from 'react-use';
 import type { MenuItem } from '@/interface';
 import { MenuOutlined, CloseOutlined } from '@ant-design/icons';
@@ -9,11 +10,11 @@ import styles from './index.less';
 
 const { Panel } = Collapse;
 
-export const Header = ({ activeKey }: { activeKey: string }) => {
+export const Header = ({ isStick }: { isStick?: boolean }) => {
   const intl = useIntl();
+  const  { pathname } = useLocation();
   const isWide = useMedia('(min-width: 767.99px)', true);
-
-  const [popupMenuVisible, setPopupMenuVisible] = React.useState(false);
+  const [popupMenuVisible, setPopupMenuVisible] = useState(false);
 
   const onTogglePopupMenuVisible = () => {
     setPopupMenuVisible(!popupMenuVisible);
@@ -96,13 +97,13 @@ export const Header = ({ activeKey }: { activeKey: string }) => {
       <a href="/" rel="noopener noreferrer">
         <img
           className={styles.log}
-          src="https://gw.alipayobjects.com/zos/bmw-prod/5c0610ba-4c85-455b-8833-53dcea242430.svg"
+          src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*AbamQ5lxv0IAAAAAAAAAAAAADgOBAQ/original"
         />
       </a>
 
       <Menu
         className={styles.menu}
-        activeKey={activeKey}
+        activeKey={pathname.replace('/', '')}
         mode="horizontal"
         items={menuItems}
       />
@@ -112,7 +113,7 @@ export const Header = ({ activeKey }: { activeKey: string }) => {
   const mobile = (
     <>
       <a href="/" rel="noopener noreferrer">
-        <img src="https://gw.alipayobjects.com/zos/bmw-prod/5c0610ba-4c85-455b-8833-53dcea242430.svg" />
+        <img src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*AbamQ5lxv0IAAAAAAAAAAAAADgOBAQ/original" />
       </a>
       {menuIcon}
       <Drawer
@@ -172,5 +173,5 @@ export const Header = ({ activeKey }: { activeKey: string }) => {
     </>
   );
 
-  return <div className={styles.header}>{isWide ? pc : mobile}</div>;
+  return <div className={cx(styles.header, isStick ? styles.sticky: null)}>{isWide ? pc : mobile}</div>;
 };

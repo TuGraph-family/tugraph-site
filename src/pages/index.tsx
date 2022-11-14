@@ -3,7 +3,6 @@ import { Anchor, Button, Col, Row, Space } from 'antd';
 import cx from 'classnames';
 import { Helmet } from 'react-helmet';
 import { CheckOutlined } from '@ant-design/icons';
-import type { BannerButtonProps } from '@/components/Banner';
 import { LayoutTemplate } from '@/components/LayoutTemplate';
 import { Carousel } from '@/components/Carousel';
 import { SubTitle } from '@/components/SubTitle';
@@ -19,17 +18,6 @@ const { Link } = Anchor;
 export default function IndexPage() {
   const intl = useIntl();
   const isWide = useMedia('(min-width: 767.99px)', true);
-
-  const buttons: BannerButtonProps[] = [
-    {
-      text: intl.formatMessage({ id: 'home.banner.useFree' }),
-      url: '/download',
-    },
-    {
-      text: intl.formatMessage({ id: 'home.banner.quickStart' }),
-      url: '/product',
-    },
-  ];
 
   const content = (
     <div className={styles.containerWrapper}>
@@ -217,9 +205,8 @@ export default function IndexPage() {
   return (
     <LayoutTemplate
       bannerInfo={{
-        buttons,
         bgIconUrl:
-          'https://gw.alipayobjects.com/mdn/rms_fa12c2/afts/img/A*pyP-SaLO_UkAAAAAAAAAAAAAARQnAQ',
+          'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*hP1DSZ24ZCIAAAAAAAAAAAAADgOBAQ/original',
 
         slogan: intl.formatMessage({ id: 'home.banner.slogan' }),
       }}

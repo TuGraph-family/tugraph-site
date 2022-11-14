@@ -168,9 +168,7 @@ export default function DemoPage() {
     <LayoutTemplate
       bannerInfo={{
         bgIconUrl:
-          'https://gw.alipayobjects.com/mdn/rms_fa12c2/afts/img/A*iYl4SKalE60AAAAAAAAAAAAAARQnAQ',
-        activeKey: 'demo',
-
+          'https://mdn.alipayobjects.com/mdn/huamei_qcdryc/afts/img/A*cgX1TZO2nlAAAAAAAAAAAAAADgOBAQ',
         slogan: intl.formatMessage({ id: 'demo.banner.slogan' }),
         subTitle: intl.formatMessage({ id: 'demo.banner.subTitle' }),
       }}

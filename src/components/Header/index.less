@@ -1,10 +1,14 @@
 .header {
-  padding: 0;
-  z-index: 999;
+  padding: 0 120px;
+  z-index: 99999;
   display: flex;
-  height: 64px;
+  height: 68px;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  transition:all ease 0.3s;
 
   a {
     height: 32px;
@@ -54,6 +58,13 @@
     }
   }
 }
+
+.sticky {
+  background: rgba(255,255,255,0.72);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
 
 @media only screen and (max-width: 767.99px) {
   .header {

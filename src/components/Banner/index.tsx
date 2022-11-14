@@ -1,26 +1,14 @@
-import React from 'react';
-import { history } from 'umi';
-import { Anchor, Row, Col } from 'antd';
-import { Space, Button } from 'antd';
-import { Header } from '../Header';
+import React, { ReactNode } from 'react';
+import {  Row, Col } from 'antd';
 import { useMedia } from 'react-use';
-import cx from 'classnames';
 
 import styles from './index.less';
-
-const { Link } = Anchor;
-
-export interface BannerButtonProps {
-  text: string;
-  url: string;
-}
 
 export interface BannerInfoProps {
   slogan: string;
   bgIconUrl: string;
   subTitle?: string;
-  activeKey?: string;
-  buttons?: BannerButtonProps[];
+  footer?: ReactNode;
   notice?: string;
 }
 
@@ -28,8 +16,7 @@ export const Banner = ({
   slogan,
   bgIconUrl,
   subTitle,
-  buttons = [],
-  activeKey = '',
+  footer,
   notice = '',
 }: BannerInfoProps) => {
   const isWide = useMedia('(min-width: 767.99px)', true);
@@ -37,46 +24,25 @@ export const Banner = ({
     <div
       className={styles.banner}
       style={{
-        backgroundImage: `url('https://gw.alipayobjects.com/zos/bmw-prod/7cab75ff-4f5f-4fe5-ae73-65ee3856ff97.svg')`,
-        height: buttons?.length > 0 ? '600px' : '450px',
+        backgroundImage: `url('https://mdn.alipayobjects.com/mdn/huamei_qcdryc/afts/img/A*O6LBSacdQS8AAAAAAAAAAAAADgOBAQ')`,
+        height: '600px',
       }}
     >
-      <Header activeKey={activeKey} />
       <div className={styles.containerWrapper}>
         {isWide ? (
           <Row>
-            <Col span={14}>
+            <Col span={12}>
               <div className={styles.slogan}>{slogan}</div>
               {subTitle && <div className={styles.subTitle}>{subTitle}</div>}
               {notice && <div className={styles.notice}>{notice}</div>}
-              {buttons?.length > 0 && (
-                <Space className={styles.btnGroup} size={30}>
-                  {buttons?.[0] && (
-                    <Anchor affix={false} className={styles.primaryBtn}>
-                      <Link href={buttons[0].url} title={buttons[0].text} />
-                    </Anchor>
-                  )}
-                  {buttons?.[1] && (
-                    <Button
-                      type="primary"
-                      block
-                      className="grayBtn"
-                      onClick={() => {
-                        history.push(buttons[1].url);
-                      }}
-                    >
-                      {buttons[1].text}
-                    </Button>
-                  )}
-                </Space>
-              )}
+              {footer}
             </Col>
-            <Col span={10}>
+            <Col span={12}>
               <img
                 className={isWide ? styles.pcIcon : styles.mobileIcon}
                 style={{
                   margin:
-                    isWide && buttons?.length > 0 ? '40px 80px' : '-24px 80px',
+                    isWide ? '0' : '-24px 80px',
                 }}
                 src={bgIconUrl}
               />
@@ -91,43 +57,7 @@ export const Banner = ({
               className={isWide ? styles.pcIcon : styles.mobileIcon}
               src={bgIconUrl}
             />
-            {isWide ? (
-              <Space className={styles.btnGroup} size={12}>
-                {buttons?.[0] && (
-                  <Anchor affix={false} className={styles.primaryBtn}>
-                    <Link href={buttons[0].url} title={buttons[0].text} />
-                  </Anchor>
-                )}
-                {buttons?.[1] && (
-                  <Button
-                    type="primary"
-                    block
-                    className="grayBtn"
-                    onClick={() => {
-                      history.push(buttons[1].url);
-                    }}
-                  >
-                    {buttons[1].text}
-                  </Button>
-                )}
-              </Space>
-            ) : (
-              <>
-                {buttons?.length > 0 && (
-                  <div className={styles.btnGroup} style={{ width: '100%' }}>
-                    {buttons?.[0] && (
-                      <Anchor
-                        style={{ width: '100%' }}
-                        affix={false}
-                        className={styles.primaryBtn}
-                      >
-                        <Link href={buttons[0].url} title={buttons[0].text} />
-                      </Anchor>
-                    )}
-                  </div>
-                )}
-              </>
-            )}
+            {footer}
           </>
         )}
       </div>
