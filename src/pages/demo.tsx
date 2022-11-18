@@ -1,6 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { Col, Layout, Row, Space } from 'antd';
+import { Col, Row, Space } from 'antd';
 import { SubTitle } from '@/components/SubTitle';
 import { useIntl } from 'umi';
 import { getDemos } from '@/data/demos';
@@ -170,7 +170,7 @@ export default function DemoPage() {
         bgIconUrl:
           'https://mdn.alipayobjects.com/mdn/huamei_qcdryc/afts/img/A*cgX1TZO2nlAAAAAAAAAAAAAADgOBAQ',
         slogan: intl.formatMessage({ id: 'demo.banner.slogan' }),
-        subTitle: intl.formatMessage({ id: 'demo.banner.subTitle' }),
+       description: intl.formatMessage({ id: 'demo.banner.subTitle' }),
       }}
       content={content}
     />

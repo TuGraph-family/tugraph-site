@@ -119,7 +119,7 @@ export default function BlogPage() {
             bgIconUrl:
               'https://mdn.alipayobjects.com/mdn/huamei_qcdryc/afts/img/A*sLOlR5lxll8AAAAAAAAAAAAADgOBAQ',
             slogan: intl.formatMessage({ id: 'blog.banner.slogan' }),
-            subTitle: intl.formatMessage({ id: 'blog.banner.subTitle' }),
+           description: intl.formatMessage({ id: 'blog.banner.subTitle' }),
           }}
           content={isWide ? pcContent : mobileContent}
         />

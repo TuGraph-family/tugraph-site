@@ -154,7 +154,7 @@ export default {
   'demo.example.profit2':
     '双方通过TuGraph探索实时跟踪电网中数亿台设备的状态，包括响应复杂的实时查询（例如“从电源到接收器的最短路径”），模拟计划运行的效果（例如“添加新的设备或断开开关不会无意中破坏整个电网”）。',
   'download.banner.slogan': 'TuGraph v3.3.0',
-  'download.banner.notice': '最新版本2022.09.01',
+  'download.banner.description': '最新版本2022.09.01',
   'form.banner.slogan': 'TuGraph企业版30天试用申请',
   'form.banner.subTitle': '欢迎使用TuGraph图数据库！',
   'form.input.placeholder': '请输入',

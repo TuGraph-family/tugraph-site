@@ -6,18 +6,16 @@ import styles from './index.less';
 
 export interface BannerInfoProps {
   slogan: string;
-  bgIconUrl: string;
-  subTitle?: string;
+  bgIconUrl?: string;
   footer?: ReactNode;
-  notice?: string;
+  description?: string;
 }
 
 export const Banner = ({
   slogan,
   bgIconUrl,
-  subTitle,
   footer,
-  notice = '',
+  description = '',
 }: BannerInfoProps) => {
   const isWide = useMedia('(min-width: 767.99px)', true);
   return (
@@ -33,11 +31,10 @@ export const Banner = ({
           <Row>
             <Col span={12}>
               <div className={styles.slogan}>{slogan}</div>
-              {subTitle && <div className={styles.subTitle}>{subTitle}</div>}
-              {notice && <div className={styles.notice}>{notice}</div>}
+              {description && <div className={styles.description}>{description}</div>}
               {footer}
             </Col>
-            <Col span={12}>
+            {bgIconUrl && <Col span={12}>
               <img
                 className={isWide ? styles.pcIcon : styles.mobileIcon}
                 style={{
@@ -46,13 +43,12 @@ export const Banner = ({
                 }}
                 src={bgIconUrl}
               />
-            </Col>
+            </Col>}   
           </Row>
         ) : (
           <>
             <div className={styles.slogan}>{slogan}</div>
-            {subTitle && <div className={styles.subTitle}>{subTitle}</div>}
-            {notice && <div className={styles.notice}>{notice}</div>}
+            {description && <div className={styles.description}>{description}</div>}
             <img
               className={isWide ? styles.pcIcon : styles.mobileIcon}
               src={bgIconUrl}

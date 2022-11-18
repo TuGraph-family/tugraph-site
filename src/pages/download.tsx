@@ -60,7 +60,7 @@ export default function DemoPage() {
         bgIconUrl:
           'https://mdn.alipayobjects.com/mdn/huamei_qcdryc/afts/img/A*QaKQRqje18MAAAAAAAAAAAAADgOBAQ',
         slogan: intl.formatMessage({ id: 'download.banner.slogan' }),
-        notice: intl.formatMessage({ id: 'download.banner.notice' }),
+        description: intl.formatMessage({ id: 'download.banner.description' }),
       }}
       content={content}
     />
