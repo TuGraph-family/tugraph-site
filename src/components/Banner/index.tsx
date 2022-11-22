@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import {  Row, Col } from 'antd';
+import { Row, Col } from 'antd';
 import { useMedia } from 'react-use';
 
 import styles from './index.less';
@@ -22,8 +22,9 @@ export const Banner = ({
     <div
       className={styles.banner}
       style={{
-        backgroundImage: `url('https://mdn.alipayobjects.com/mdn/huamei_qcdryc/afts/img/A*O6LBSacdQS8AAAAAAAAAAAAADgOBAQ')`,
+        backgroundImage: `url('https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*399oSYCBVagAAAAAAAAAAAAADgOBAQ/original')`,
         height: '600px',
+        backgroundColor: 'rgba(22,80,255,0.05)',
       }}
     >
       <div className={styles.containerWrapper}>
@@ -31,24 +32,29 @@ export const Banner = ({
           <Row>
             <Col span={12}>
               <div className={styles.slogan}>{slogan}</div>
-              {description && <div className={styles.description}>{description}</div>}
+              {description && (
+                <div className={styles.description}>{description}</div>
+              )}
               {footer}
             </Col>
-            {bgIconUrl && <Col span={12}>
-              <img
-                className={isWide ? styles.pcIcon : styles.mobileIcon}
-                style={{
-                  margin:
-                    isWide ? '0' : '-24px 80px',
-                }}
-                src={bgIconUrl}
-              />
-            </Col>}   
+            {bgIconUrl && (
+              <Col span={12}>
+                <img
+                  className={isWide ? styles.pcIcon : styles.mobileIcon}
+                  style={{
+                    margin: isWide ? '40px 0 0 0' : '-24px 80px',
+                  }}
+                  src={bgIconUrl}
+                />
+              </Col>
+            )}
           </Row>
         ) : (
           <>
             <div className={styles.slogan}>{slogan}</div>
-            {description && <div className={styles.description}>{description}</div>}
+            {description && (
+              <div className={styles.description}>{description}</div>
+            )}
             <img
               className={isWide ? styles.pcIcon : styles.mobileIcon}
               src={bgIconUrl}
