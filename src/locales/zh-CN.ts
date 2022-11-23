@@ -5,7 +5,7 @@ export default {
   'header.blog': '博客',
   'header.community': '社区',
   'header.download': ' 下载',
-  'home.title': ' Tugraph 首页',
+  'home.title': ' TuGraph 首页',
   'home.description':
     'TuGraph,蚂蚁图数据库,蚂蚁图计算,图数据库,图计算,图平台,图数据分析, 分布式数据库, Graph,大数据,关联关系分析,知识图谱,GNN, 图神经网络, Neo4j, GeaGraph, GeaBase, GeaFlow, 费马, 人工智能, big data, graph processing,graph database, graph computing, artificial intelligence',
   'home.banner.slogan': '极速的开源图数据库TuGraph',
@@ -62,12 +62,12 @@ export default {
   'home.reason.desc3':
     '开发人员可使用主流查询语言、编程语言、接口协议来快速创建应用,快速对接业务系统、融合数据存储，能够与常见开源架构平滑迁移。',
   'home.chooseVersion': '版本选择',
-  'home.version0': 'Tugraph 社区版',
+  'home.version0': 'TuGraph 社区版',
   'home.version.desc0':
     '包含TuGraph的全部基本功能，适用于单实例部署它提供了完备的图数据库基础功能，例如ACID兼容的事务，编程API，配套的相关工具等。它是学习TuGraph和实现小型项目的理想选择。',
   'home.version.startUse': '前往下载',
   'home.function': '功能',
-  'home.version1': 'Tugraph 企业版',
+  'home.version1': 'TuGraph 企业版',
   'home.version.desc1':
     '企业版本在TuGraph的基本功能上进行了扩展。例如部署形式包括高可用和分布式，性能提升速度更快的底层存储引擎，功能提升更精细的角色权限控制等。它是商业化解决方案的理想选择。',
   'home.version.contactUs': '联系我们',
@@ -97,7 +97,7 @@ export default {
   'footer.extraInfo': '© 2022 蚂蚁集团',
   'footer.address': '地址：中国北京朝阳区东三环中路1号环球金融中心东塔9层',
   'footer.addressMobile': '中国北京朝阳区东三环中路1号环球金融中心东塔9层',
-  'product.title': ' Tugraph 产品',
+  'product.title': ' TuGraph 产品',
   'product.description':
     '图数据库,图计算,图平台,图数据分析, 分布式数据库, Graph,大数据分析,关联关系分析,知识图谱,GNN, 图神经网络, GeaBase, GeaFlow',
   'product.banner.slogan': '极速的开源图数据库TuGraph',
@@ -125,7 +125,7 @@ export default {
   'product.choseReason1':
     '图数据库作为最适合关联数据管理和分析的基础设施，善于分析复杂数据关系，天然具备数据可视化展示。',
   'product.quickStart': '3分钟读懂图计算',
-  'demo.title': ' Tugraph 案例',
+  'demo.title': ' TuGraph 案例',
   'demo.description':
     '图数据库,图计算,图平台,图数据分析, 分布式数据库, Graph,大数据分析,关联关系分析,大数据分析,反洗钱,反欺诈,金融风控,物联网, 设备管理, 国家电网',
   'demo.banner.slogan': '数千倍效果提升',
@@ -182,9 +182,14 @@ export default {
     '替代原有的开源计算框架GraphX，运算时间从 10 小时降至 10 分钟，并在业务效果上取得突破。 有效识别涉及套现、骗贷等违规行为的团伙控制信用卡。',
   'demo.example.profit2':
     '双方通过TuGraph探索实时跟踪电网中数亿台设备的状态，包括响应复杂的实时查询（例如“从电源到接收器的最短路径”），模拟计划运行的效果（例如“添加新的设备或断开开关不会无意中破坏整个电网”）。',
-  'download.banner.slogan': 'TuGraph v3.3.0',
-  'download.banner.description': '最新版本2022.09.01',
-  'form.banner.slogan': 'TuGraph企业版30天试用申请',
+  'download.banner.slogan': 'TuGraph v3.3.1',
+  'download.banner.description': '最新版本2022.10.20',
+  'download.title0': 'TuGraph 社区版下载',
+  'download.title1': 'TuGraph 企业版申请',
+  'download.downloadBtn': '立即下载',
+  'download.applyText': '免费申请30天试用',
+  'download.contactBtn': '联系我们',
+  'form.banner.slogan': 'TuGraph 企业版30天试用申请',
   'form.banner.subTitle': '欢迎使用TuGraph图数据库！',
   'form.input.placeholder': '请输入',
   'form.item.title0': '应用场景',
@@ -199,7 +204,7 @@ export default {
   'form.item.title5': '手 机',
   'form.submit.info': '接受软件许可权 *',
   'form.submit': '确认提交',
-  'blog.banner.slogan': 'Tugraph 图数据库解读',
+  'blog.banner.slogan': 'TuGraph 图数据库解读',
   'blog.banner.subTitle': '带你了解更多信息',
   'blog.all': '全部',
   'blog.total': '共',

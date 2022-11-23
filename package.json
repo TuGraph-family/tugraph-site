@@ -20,7 +20,7 @@
     ]
   },
   "dependencies": {
-    "antd": "^4.21.6",
+    "antd": "^4.24.3",
     "jol-player": "^3.2.0",
     "moment": "^2.29.4",
     "react": "17.x",
