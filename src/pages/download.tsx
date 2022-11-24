@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Button, Col, Dropdown, Row, Select } from 'antd';
-import { DownOutlined } from '@ant-design/icons';
+import { Button, Col, Row, Select } from 'antd';
+import { ApplyForm } from '@/components/ApplyForm';
 import { useIntl } from 'umi';
 import { useMedia } from 'react-use';
 import { LayoutTemplate } from '@/components/LayoutTemplate';
@@ -12,6 +12,7 @@ export default function DemoPage() {
   const isWide = useMedia('(min-width: 767.99px)', true);
   const initActiveVersions = versionList.map((item) => item.assets[0].value);
   const [activeVersions, setActiveVersions] = useState(initActiveVersions);
+  const [showApplyForm, setShowApplyForm] = useState(false);
 
   const content = (
     <div className={styles.containerWrapper}>
@@ -57,11 +58,17 @@ export default function DemoPage() {
           {intl.formatMessage({ id: 'download.applyText' })}
         </Col>
         <Col className={styles.right} span={isWide ? 4 : 24}>
-          <Button onClick={() => {}} block>
+          <Button
+            onClick={() => {
+              setShowApplyForm(true);
+            }}
+            block
+          >
             {intl.formatMessage({ id: 'download.contactBtn' })}
           </Button>
         </Col>
       </Row>
+      <ApplyForm visible={showApplyForm} setVisible={setShowApplyForm} />
     </div>
   );
 

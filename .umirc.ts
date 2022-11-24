@@ -14,7 +14,6 @@ export default defineConfig({
     { path: '/doc', component: '@/pages/doc' },
     { path: '/blog', component: '@/pages/blog' },
     { path: '/download', component: '@/pages/download' },
-    { path: '/form', component: '@/pages/form' },
   ],
   theme: {
     'primary-color': 'rgba(22,80,255,1)',

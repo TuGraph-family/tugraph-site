@@ -1,0 +1,174 @@
+.containerWrapper {
+
+  .submit {
+    height: 48px;
+    width: 246px;
+    background-color: #0069FD;
+    border-radius: 8px;
+    float: right;
+  }
+
+  .itemWithTip {
+    position: relative;
+    
+    .tip {
+      font-weight: 400;
+      font-size: 14px;
+      color: rgba(26,27,37,0.45);
+      position: absolute;
+      top: 32px;
+      left: 0;
+    }
+  }
+
+  :global {
+    .ant-modal-header {
+      border-radius: 12px;
+      padding: 32px 40px 24px 40px;
+      border: none;
+    }
+
+    .ant-modal-title {
+      font-weight: 500;
+      font-size: 20px;
+      color: rgba(26,27,37,0.88);
+    }
+
+    .ant-modal-content {
+      background-color: #FFFFFF;
+      box-shadow: 0 8px 16px 8px rgba(0,0,0,0.03);
+      border-radius: 12px;
+    }
+
+    .ant-modal-body {
+      padding: 0 40px;
+    }
+
+    .ant-modal-footer {
+      border: none;
+      padding: 0 40px 32px 40px;
+
+      .ant-btn {
+        height: 48px;
+        width: 136px;
+        border-radius: 8px;
+      }
+    }
+
+    .ant-form-vertical .ant-form-item-label > label {
+      font-weight: 500;
+      font-size: 14px;
+      color: rgba(26,27,37,0.88);
+      margin-top: 8px;
+    }
+
+    .ant-form-item-label > label.ant-form-item-required:not(.ant-form-item-required-mark-optional)::before {
+      color: #000A1C;
+    }
+
+    .ant-form-item-control-input-content {
+  
+      .ant-input {
+        padding: 16px 24px;
+        height: 48px;
+        width: 332px;
+        border: 1px solid rgba(26,27,37,0.25);
+        border-radius: 8px;
+      }
+
+      textarea.ant-input {
+        height: 90px;
+        width: 100%;
+        border: 1px solid rgba(26,27,37,0.25);
+        border-radius: 8px;
+        margin-top: 20px;
+      }
+    }
+    
+    .ant-form-item-explain-error {
+      margin-left: 8px;
+    }
+
+    .ant-checkbox {
+      width: 20px;
+      height: 20px;
+    }
+
+    .ant-checkbox-checked::after {
+      top: 3px;
+    }
+
+    .ant-checkbox-inner,
+    .ant-checkbox-wrapper.ant-checkbox-wrapper-in-form-item input[type='checkbox'] {
+      width: 20px;
+      height: 20px;
+      top: 3px;
+    }
+
+    .ant-checkbox .ant-checkbox-inner {
+      background-image: url('https://gw.alipayobjects.com/zos/bmw-prod/96990256-7d58-448c-8d82-c14986fd7a10.svg');
+      border: none;
+      background-repeat: no-repeat;
+      background-color: #000a1c00;
+    }
+
+    .ant-checkbox-checked .ant-checkbox-inner {
+      background-image: url('https://gw.alipayobjects.com/zos/bmw-prod/fe93b9b4-ceee-4325-8f92-712bf804294a.svg');
+      border: none;
+      background-repeat: no-repeat;
+      background-color: #000a1c00;
+    }
+
+    .ant-checkbox-checked .ant-checkbox-inner::after {
+      border: none;
+    }
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .containerWrapper {
+    padding: 32px 64px;
+  }
+}
+
+@media only screen and (max-width: 931.99px) {
+  .containerWrapper {
+    padding: 24px;
+  }
+}
+
+@media only screen and (max-width: 767.99px) {
+  .containerWrapper {
+    padding: 16px;
+
+    .itemWithTip {
+    
+      .tip {
+        font-size: 16px;
+        text-align: left;
+        color: rgba(0,0,0,0.45);
+        transition: all ease 0.3s;
+      }
+    }
+
+    .submit {
+      width: 100%;
+    }
+
+    :global {
+     .ant-form-item-control-input-content textarea.ant-input {
+        margin-top: 68px !important;
+       
+      }
+
+      .ant-input {
+        border: 1px solid rgba(0,0,0,0.25) !important;
+         border-radius: 8px;
+      }
+
+      .ant-form-item-control-input-content {
+        text-align: left;
+      }
+    }
+  }
+}

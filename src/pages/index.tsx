@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Anchor, Button, Col, Row, Space } from 'antd';
 import cx from 'classnames';
 import { Helmet } from 'react-helmet';
@@ -12,12 +12,14 @@ import { getVersions } from '@/data/version-feats';
 import { useMedia } from 'react-use';
 
 import styles from './index.less';
+import { ApplyForm } from '@/components/ApplyForm';
 
 const { Link } = Anchor;
 
 export default function IndexPage() {
   const intl = useIntl();
   const isWide = useMedia('(min-width: 767.99px)', true);
+  const [showApplyForm, setShowApplyForm] = useState(false);
 
   const content = (
     <>
@@ -62,7 +64,7 @@ export default function IndexPage() {
               <div className={styles.desc}>
                 {intl.formatMessage({ id: 'home.notice1.desc' })}
               </div>
-              <a className="textLink" href="">
+              <a className="textLink" href="/demo">
                 {intl.formatMessage({ id: 'home.knowMore' })}
                 <ArrowRightOutlined />
               </a>
@@ -130,7 +132,7 @@ export default function IndexPage() {
               <div className={styles.desc}>
                 {intl.formatMessage({ id: 'home.case.desc1' })}
               </div>
-              <a className={cx('textLink', styles.knowMore)} href="">
+              <a className={cx('textLink', styles.knowMore)} href="/demo">
                 {intl.formatMessage({ id: 'home.knowMore' })}
                 <ArrowRightOutlined />
               </a>
@@ -214,14 +216,14 @@ export default function IndexPage() {
                 <div className={styles.desc}>
                   {intl.formatMessage({ id: 'home.version.desc1' })}
                 </div>
-                <Anchor affix={false} className={styles.primaryBtn}>
-                  <Link
-                    href="#contactUs"
-                    title={intl.formatMessage({
-                      id: 'home.version.contactUs',
-                    })}
-                  />
-                </Anchor>
+                <Button
+                  type="primary"
+                  block
+                  onClick={() => setShowApplyForm(true)}
+                  className="lightBtn"
+                >
+                  {intl.formatMessage({ id: 'home.version.contactUs' })}
+                </Button>
               </div>
             </Col>
           </Row>
@@ -263,6 +265,7 @@ export default function IndexPage() {
             );
           })}
         </div>
+        <ApplyForm visible={showApplyForm} setVisible={setShowApplyForm} />
       </div>
     </>
   );
