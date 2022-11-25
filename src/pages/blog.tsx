@@ -1,7 +1,7 @@
 import React from 'react';
 import HTMLRenderer from 'react-html-renderer';
 import { useIntl, history, useLocation } from 'umi';
-import { Spin, Row, Col, Pagination } from 'antd';
+import { Spin, Row, Col, Pagination, Tabs } from 'antd';
 import { Layout } from 'antd';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
@@ -38,32 +38,43 @@ export default function BlogPage() {
   const pcContent = (
     <div className={styles.containerWrapper}>
       <div className={styles.listWrapper}>
-        <div className={styles.title}>
-          {intl.formatMessage({ id: 'blog.all' })}
-        </div>
-        <div className={styles.lists}>
-          {listData?.map((item, key) => (
-            <div
-              className={styles.list}
-              key={key}
-              onClick={() => {
-                history.push(`/blog?id=${item.id}`);
-                setBlogDetail(item.content);
-              }}
-            >
-              <Row>
-                <Col span={6}>
-                  <img src={item.img} alt={item.title} />
-                </Col>
-                <Col span={18} className={styles.textWrapper}>
-                  <div className={styles.listTitle}>{item.title}</div>
-                  <div className={styles.updateDate}>{item.updateDate}</div>
-                  <div className={styles.desc}>{item.desc}</div>
-                </Col>
-              </Row>
+        <Tabs defaultActiveKey="all" className={styles.title}>
+          <Tabs.TabPane tab={intl.formatMessage({ id: 'blog.all' })} key="all">
+            <div className={styles.lists}>
+              {listData?.map((item, key) => (
+                <div
+                  className={styles.list}
+                  key={key}
+                  onClick={() => {
+                    history.push(`/blog?id=${item.id}`);
+                    setBlogDetail(item.content);
+                  }}
+                >
+                  <Row>
+                    <Col span={6}>
+                      <img src={item.img} alt={item.title} />
+                    </Col>
+                    <Col span={18} className={styles.textWrapper}>
+                      <div className={styles.listTitle}>{item.title}</div>
+                      <div className={styles.updateDate}>{item.updateDate}</div>
+                      <div className={styles.desc}>{item.desc}</div>
+                    </Col>
+                  </Row>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
+          </Tabs.TabPane>
+          <Tabs.TabPane
+            disabled={true}
+            tab={intl.formatMessage({ id: 'blog.news' })}
+            key="news"
+          ></Tabs.TabPane>
+          <Tabs.TabPane
+            disabled={true}
+            tab={intl.formatMessage({ id: 'blog.technology' })}
+            key="technology"
+          ></Tabs.TabPane>
+        </Tabs>
       </div>
       <Pagination
         defaultCurrent={1}
@@ -119,7 +130,7 @@ export default function BlogPage() {
             bgIconUrl:
               'https://mdn.alipayobjects.com/mdn/huamei_qcdryc/afts/img/A*sLOlR5lxll8AAAAAAAAAAAAADgOBAQ',
             slogan: intl.formatMessage({ id: 'blog.banner.slogan' }),
-           description: intl.formatMessage({ id: 'blog.banner.subTitle' }),
+            description: intl.formatMessage({ id: 'blog.banner.subTitle' }),
           }}
           content={isWide ? pcContent : mobileContent}
         />

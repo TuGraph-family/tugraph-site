@@ -1,132 +1,117 @@
 .containerWrapper {
-  .banner,
-  .reasonCard {
+
+
+  .videoWrapper {
+    box-shadow: 0px 0px 30px 15px rgba(0,15,60,0.05);
     border-radius: 12px;
-    box-shadow: 0 10px 30px 12px rgba(158, 181, 213, 0.1);
-    border-radius: 12px;
-    background-color: #fff;
-  }
+    background: #FFFFFF;
+    
+    .card {
+     padding: 32px;
+     
+      video {
+        border-radius: 8px;
+      }
 
-  .banner {
-    padding: 40px;
-    height: 478px;
-    max-width: 1200px;
-    margin: auto auto 120px auto;
-
-    .title {
-      font-weight: 500;
-      font-size: 24px;
-      color: rgba(0,0,0,0.85);
-      margin-bottom: 32px;
-    }
-
-    .videoContainer {
-      padding-right: 30px;
-    }
-
-    video {
-      border-radius: 8px;
-    }
-
-    .btnGroup {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding-left: 10px;
-
-      .playBtn {
-        margin: 20px 0;
+      .title {
         font-weight: 500;
         font-size: 20px;
-        background-color: #F3F5F8;
-        border: 1px solid #F3F5F8;
-        border-radius: 8px;
-        color: rgba(0,0,0,0.85); 
-        cursor: pointer;
-        height: 70px;
-        width: 362px !important;
+        color: rgba(26,27,37,0.88);
+        margin-top: 16px;
+        display: inline-block;
+      }
+
+      .tag {
+        margin-left: 12px;
+        height: 24px;
+        text-align: center;
+        width: 68px;
+        padding: 4px 8px;
+        background-color: rgba(0,0,0,0.06);
+        border-radius: 4px;
+        font-weight: 400;
+        font-size: 12px;
+        color: rgba(0,0,0,0.65);
+        display: inline-block;
+        line-height: 18px;
       }
     }
+  }
 
-    .videoMenu {
-      margin-bottom: 40px;
-      border-bottom: none;
-    }
+  .introWrapper {
+    font-weight: 400;
+    font-size: 14px;
+    color: rgba(26,27,37,0.65);
+    text-align: center;
+    line-height: 22px;
   }
 
   .featCards {
     display: flex;
     justify-content: center;
-    align-items: center;
     margin: -12px;
 
-    .featCard {
-      min-height: 271px;
-      max-width: 580px;
-      margin: 0 12px;
-      border-radius: 12px;
-      background-color: #ffffff;
-      box-shadow: 0 10px 30px 10px rgba(158, 181, 213, 0.1);
-      padding: 40px 32px !important;
-      text-align: center;
+    .featCardGroup {
+      min-height: 187px;
+      width: 100%;
+      max-width: 1184px;
+      padding: 12px;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .featCard {
+        border-radius: 12px;
+        background-color: rgba(22,80,255,0.04);
+        width: 100%;
+        height: 100%;
+        padding: 40px;
+        margin: auto;
+
+        img {
+          margin-bottom: 32px;
+          width: auto;
+          height: 72px;
+        }
+      }
 
       .title {
         font-weight: 500;
         font-size: 20px;
-        color: rgba(0, 0, 0, 0.85);
-        line-height: 24px;
-        margin: -8px 0 16px 0;
-        background-color: #fff;
+        color: rgba(26,27,37,0.88);
+        line-height: 28px;
+        text-align: left;
+        width: 100%;
+        margin-bottom: 16px;
       }
 
       .desc {
+        font-weight: 400;
         font-size: 14px;
-        color: #697a8c;
+        color: rgba(26,27,37,0.45);
+        text-align: justify;
         line-height: 22px;
       }
     }
   }
 
   .reasonWrapper {
+    background-image: url(https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*H1z6QbQW9vMAAAAAAAAAAAAADgOBAQ/original);
+    background-size: cover;
+    margin: 71px -120px -72px -120px;
+    padding: 1px 120px 72px 120px;
+    
     .reasonCard {
-      max-width: 1200px;
-      margin: auto;
-      padding: 80px 56px;
-      position: relative;
-      font-weight: 400;
-      font-size: 20px;
-      color: rgba(51, 51, 51, 0.89);
-      letter-spacing: 1.14px;
-      line-height: 30px;
-
-      img {
-        position: absolute;
-        top: 40px;
-        right: 37px;
-      }
-    }
-  }
-
-  .quickStartWrapper {
-    margin: 60px -120px;
-    padding: 60px 40px;
-    background-color: #F5F7FA;
-
-    .quickStart {
-      display: flex;
-      justify-content: center;
-
-      .videoWrapper {
-        height: 561px;
-        width: 958px;
-        padding: 37px 49px;
-        margin-bottom: 120px;
-
-        video {
-          border-radius: 8px;
-        }
-      }
+      height: 130px;
+      background-color: #FFFFFF;
+      box-shadow: 0 3px 6px -4px rgba(132,135,155,0.12), 0 6px 16px 0 rgba(132,135,155,0.08), 0 9px 28px 8px rgba(132,135,155,0.05);
+      border-radius: 12px;
+      font-size: 14px;
+      color: rgba(26,27,37,0.65);
+      text-align: center;
+      line-height: 22px;
+      padding: 32px;
     }
   }
 }
@@ -208,28 +193,5 @@
       }
     }
 
-    .quickStartWrapper {
-      background-color: #F5F7FA;
-      padding: 32px 16px;
-      margin: 0 -16px;
-    }
-
-    .quickStart {
-      display: block;
-
-      .videoWrapper {
-        width: 100%;
-        padding: 0;
-        height: auto;
-        display: block;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 120px;
-
-        video {
-          border-radius: 6px;
-        }
-      }
-    }
   }
 }

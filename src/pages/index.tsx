@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
-import { Anchor, Button, Col, Row, Space } from 'antd';
+import { Button, Col, Row, Space } from 'antd';
 import cx from 'classnames';
 import { Helmet } from 'react-helmet';
-import { CheckOutlined, ArrowRightOutlined } from '@ant-design/icons';
+import {
+  CheckOutlined,
+  ArrowRightOutlined,
+  GithubOutlined,
+} from '@ant-design/icons';
 import { LayoutTemplate } from '@/components/LayoutTemplate';
 import { SubTitle } from '@/components/SubTitle';
 import { useIntl, history } from 'umi';
@@ -10,16 +14,33 @@ import { getReasons } from '@/data/reasons';
 import { getCases } from '@/data/cases';
 import { getVersions } from '@/data/version-feats';
 import { useMedia } from 'react-use';
-
-import styles from './index.less';
 import { ApplyForm } from '@/components/ApplyForm';
 
-const { Link } = Anchor;
+import styles from './index.less';
 
 export default function IndexPage() {
   const intl = useIntl();
   const isWide = useMedia('(min-width: 767.99px)', true);
   const [showApplyForm, setShowApplyForm] = useState(false);
+
+  const bannerButton = (
+    <div className={styles.bannerButtons}>
+      <Button
+        className={styles.github}
+        onClick={() => {
+          window.open('https://github.com/TuGraph-db');
+        }}
+        type="primary"
+      >
+        <GithubOutlined />
+        GitHub
+      </Button>
+      <Button className={styles.play} type="text">
+        <img src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*NyD0T5CdYfMAAAAAAAAAAAAADgOBAQ/original" />
+        {intl.formatMessage({ id: 'home.banner.quickStart' })}
+      </Button>
+    </div>
+  );
 
   const content = (
     <>
@@ -275,6 +296,7 @@ export default function IndexPage() {
       bannerInfo={{
         slogan: intl.formatMessage({ id: 'home.banner.slogan' }),
         description: intl.formatMessage({ id: 'home.banner.description' }),
+        footer: bannerButton,
       }}
       content={content}
     />
