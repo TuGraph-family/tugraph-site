@@ -130,11 +130,11 @@ export default {
   'demo.example.solution': '◆ 解决方案',
   'demo.example.profit': '◆ 客户收益',
   'demo.example.title0': '蚂蚁集团 ',
-  'demo.example.subTitle0': '全图风控技术应对复杂多变、不断升级的金融风险',
+  'demo.example.description0': '全图风控技术应对复杂多变、不断升级的金融风险',
   'demo.example.title1': '某大型能源集团',
-  'demo.example.subTitle1': '实现电网状态可视化及实时管理',
+  'demo.example.description1': '实现电网状态可视化及实时管理',
   'demo.example.title2': '某大型国有银行',
-  'demo.example.subTitle2': '有效识别信用卡申请团伙欺诈',
+  'demo.example.description2': '有效识别信用卡申请团伙欺诈',
   'demo.example.challenge0':
     '金融风险防控是一个不断对抗升级的过程，越来越多的欺诈、洗钱案例呈现出团伙性和隐蔽性，仅靠单一事件和行为识别已无法准确决策，需要引入多维异构数据，进行全局洞察。',
   'demo.example.challenge1':
