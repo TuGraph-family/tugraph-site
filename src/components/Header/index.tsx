@@ -1,4 +1,4 @@
-import React,{ useEffect, useState }  from 'react';
+import React, { useEffect, useState } from 'react';
 import { useIntl, useLocation } from 'umi';
 import { Menu, Drawer, Collapse } from 'antd';
 import cx from 'classnames';
@@ -12,7 +12,7 @@ const { Panel } = Collapse;
 
 export const Header = ({ isStick }: { isStick?: boolean }) => {
   const intl = useIntl();
-  const  { pathname } = useLocation();
+  const { pathname } = useLocation();
   const isWide = useMedia('(min-width: 767.99px)', true);
   const [popupMenuVisible, setPopupMenuVisible] = useState(false);
 
@@ -66,7 +66,11 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
       children: [
         {
           label: (
-            <a href="https://github.com/TuGraph-db" rel="noopener noreferrer">
+            <a
+              href="https://github.com/TuGraph-db"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               GitHub
             </a>
           ),
@@ -74,7 +78,11 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
         },
         {
           label: (
-            <a href="https://gitee.com/tugraph" rel="noopener noreferrer">
+            <a
+              href="https://gitee.com/tugraph"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Gitee
             </a>
           ),
@@ -173,5 +181,9 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
     </>
   );
 
-  return <div className={cx(styles.header, isStick ? styles.sticky: null)}>{isWide ? pc : mobile}</div>;
+  return (
+    <div className={cx(styles.header, isStick ? styles.sticky : null)}>
+      {isWide ? pc : mobile}
+    </div>
+  );
 };

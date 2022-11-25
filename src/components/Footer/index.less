@@ -3,19 +3,38 @@
   height: 389px;
   z-index: 9;
 
-  a,
   .contactGroup {
     font-size: 16px;
     font-weight: 400;
     color: rgba(255,255,255,0.89);
   }
 
+
   a:hover {
     color:#1890ff;
   }
 
-  .contactGroup {
-    padding: 88px 120px 20px 120px;
+  .containerWrapper {
+    padding: 57px 120px 54px 120px;
+    .title {
+      font-weight: 500;
+      font-size: 14px;
+      color: #FFFFFF;
+      line-height: 24px;
+    }
+
+    a,
+    .item {
+      font-size: 14px;
+      color: rgba(255,255,255,0.65);
+      line-height: 22px;
+   
+      display: block;
+    }
+
+    .item {
+      margin-top: 12px;
+    }
 
     .iconGroup {
       margin: 36px 0 30px 0;
@@ -25,14 +44,6 @@
       }
     }
     
-    .contactInfo {
-      a,
-      div {
-        font-size: 14px;
-        color: rgba(255,255,255,0.65);
-      }
-     
-    }
   }
 
   .logo {
@@ -42,11 +53,11 @@
   }
 
   .qrCode {
-    height: 202px;
-    width: 156px;
-    background-color: #01132B;
+    height: 211px;
+    width: 164px;
+    background-color: rgba(255,255,255,0.08);
+    border-radius: 8px;
     box-shadow: -7px 27px 60px 0 rgb(1 2 30 / 63%);
-    border-radius: 4px;
     padding: 24px;
     text-align: center;
     
@@ -62,6 +73,10 @@
       color: rgba(255,255,255,0.65);
     }
     
+    img {
+      border-radius: 8px;
+      width: 100px;
+    }
   
   }
 
