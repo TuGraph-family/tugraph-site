@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { Button, Col, Menu, Row, Space } from 'antd';
 import { Helmet } from 'react-helmet';
-import JoLPlayer, { JoLPlayerRef } from 'jol-player';
+import JoLPlayer from 'jol-player';
 import { SubTitle } from '@/components/SubTitle';
 import { useMedia } from 'react-use';
 import { LayoutTemplate } from '@/components/LayoutTemplate';
@@ -14,11 +14,6 @@ import styles from './product.less';
 export default function ProductPage() {
   const intl = useIntl();
   const isWide = useMedia('(min-width: 767.99px)', true);
-  const [video, setVideo] = useState<string>(
-    'https://gw.alipayobjects.com/os/bmw-prod/2145f227-08f0-435a-abe6-7f503b65da7d.mov',
-  );
-
-  const videoRef = useRef<JoLPlayerRef>(null!);
 
   const content = (
     <div className={styles.containerWrapper}>

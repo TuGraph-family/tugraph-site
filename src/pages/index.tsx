@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Button, Col, Row, Space } from 'antd';
+import { Button, Col, Modal, Row, Space } from 'antd';
 import cx from 'classnames';
+import JoLPlayer from 'jol-player';
 import { Helmet } from 'react-helmet';
 import {
   CheckOutlined,
@@ -22,6 +23,7 @@ export default function IndexPage() {
   const intl = useIntl();
   const isWide = useMedia('(min-width: 767.99px)', true);
   const [showApplyForm, setShowApplyForm] = useState(false);
+  const [showVideo, setShowVideo] = useState(false);
 
   const bannerButton = (
     <div className={styles.bannerButtons}>
@@ -35,7 +37,13 @@ export default function IndexPage() {
         <GithubOutlined />
         GitHub
       </Button>
-      <Button className={styles.play} type="text">
+      <Button
+        className={styles.play}
+        type="text"
+        onClick={() => {
+          setShowVideo(true);
+        }}
+      >
         <img src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*NyD0T5CdYfMAAAAAAAAAAAAADgOBAQ/original" />
         {intl.formatMessage({ id: 'home.banner.quickStart' })}
       </Button>
@@ -287,6 +295,26 @@ export default function IndexPage() {
           })}
         </div>
         <ApplyForm visible={showApplyForm} setVisible={setShowApplyForm} />
+        <Modal
+          centered
+          bodyStyle={{ padding: 0 }}
+          open={showVideo}
+          onCancel={() => setShowVideo(false)}
+          width={800}
+          footer={null}
+        >
+          <div className={styles.videoBtn} onClick={() => setShowVideo(false)}>
+            X
+          </div>
+          <JoLPlayer
+            option={{
+              videoSrc:
+                'https://gw.alipayobjects.com/os/bmw-prod/2145f227-08f0-435a-abe6-7f503b65da7d.mov',
+              height: isWide ? 450 : 102,
+              width: 800,
+            }}
+          />
+        </Modal>
       </div>
     </>
   );
