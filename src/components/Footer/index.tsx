@@ -203,7 +203,7 @@ export const Footer = ({ className }: { className?: string }) => {
       <div className={styles.qrCode}>
         <img src="https://gw.alipayobjects.com/zos/bmw-prod/b543c652-c2a5-4ff1-90e2-dc6d4077b68e.svg" />
         <div className={styles.desc}>
-          {intl.formatMessage({ id: 'footer.qrCode.desc' })}
+          {intl.formatMessage({ id: 'footer.qrCode.weChart' })}
         </div>
         <div className={styles.subDesc}>
           {intl.formatMessage({ id: 'footer.qrCode.subDesc' })}

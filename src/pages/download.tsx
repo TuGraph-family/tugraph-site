@@ -4,13 +4,13 @@ import { ApplyForm } from '@/components/ApplyForm';
 import { useIntl } from 'umi';
 import { useMedia } from 'react-use';
 import { LayoutTemplate } from '@/components/LayoutTemplate';
-import * as versionList from '@/data/download.json';
+import { versionList } from '@/data/download';
 import styles from './download.less';
 
 export default function DemoPage() {
   const intl = useIntl();
   const isWide = useMedia('(min-width: 767.99px)', true);
-  const initActiveVersions = versionList.map((item) => item.assets[0].value);
+  const initActiveVersions = versionList?.map((item) => item.assets[0].value);
   const [activeVersions, setActiveVersions] = useState(initActiveVersions);
   const [showApplyForm, setShowApplyForm] = useState(false);
 
@@ -19,7 +19,7 @@ export default function DemoPage() {
       <div className={styles.title}>
         {intl.formatMessage({ id: 'download.title0' })}
       </div>
-      {versionList.map((item, key) => (
+      {versionList?.map((item, key) => (
         <Row className={styles.list} key={key}>
           <Col span={isWide ? 16 : 20} className={styles.listName}>
             {item.name}
