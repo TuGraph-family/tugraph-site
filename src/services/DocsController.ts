@@ -6,7 +6,7 @@ export async function queryVersions(params: { tenant: number }) {
   return request(`${DOC_HOST}/api/docs/gitlab/product/list`, {
     method: 'GET',
     params: {
-      productCode: 'tutorials-doc-cn',
+      productCode: 'tugraph-doc-cn',
       ...params,
     },
   });
@@ -15,7 +15,7 @@ export async function queryVersions(params: { tenant: number }) {
 /* 获取目录列表 */
 export async function queryCategory(params: { version: string }) {
   return request(
-    `${DOC_HOST}/api/docs/gitlab/tutorials-doc-cn/${params.version}/category/1`,
+    `${DOC_HOST}/api/docs/gitlab/tugraph-doc-cn/${params.version}/category/1`,
     {
       method: 'GET',
     },
