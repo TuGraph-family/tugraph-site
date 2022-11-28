@@ -67,7 +67,7 @@ export const blogs = [
   },
   {
     id: 6,
-    img: 'https://gw.alipayobjects.com/mdn/rms_fa12c2/afts/img/A*QT2hRbUkNkUAAAAAAAAAAAAAARQnAQ',
+    img: 'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*xMIOSq4QU_UAAAAAAAAAAAAADgOBAQ/original',
     title: '蚂蚁集团开源图数据库 TuGraph，成立图计算开源委员会',
     desc: '9 月 1 日，2022 世界人工智能大会“新一代图智能技术发展与实践论坛”上，蚂蚁集团图计算负责人陈文光宣布开源蚂蚁集团高性能图数据库 TuGraph 单机版，并成立图计算开源技术委员会，中国工程院院士郑纬民、陈纯分别担任主席、副主席，5 位业界知名专家担任委员。',
     updateDate: '2022-09-01',
@@ -76,7 +76,7 @@ export const blogs = [
   },
   {
     id: 7,
-    img: 'https://gw.alipayobjects.com/mdn/rms_fa12c2/afts/img/A*QT2hRbUkNkUAAAAAAAAAAAAAARQnAQ',
+    img: 'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*9wctSpP77icAAAAAAAAAAAAADgOBAQ/original',
     title: '图计算领域报告最新发布',
     desc: '近日，全球信息技术研究机构 Gartner® 发布了《图数据库管理系统市场指南》报告，预测到 2025 年，包括图数据库管理系统在内的图技术市场将突破新关口，增长到 32 亿美元，复合年增长率为 28.1%。',
     updateDate: '2022-10-14',
@@ -85,7 +85,7 @@ export const blogs = [
   },
   {
     id: 8,
-    img: 'https://gw.alipayobjects.com/mdn/rms_fa12c2/afts/img/A*QT2hRbUkNkUAAAAAAAAAAAAAARQnAQ',
+    img: 'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*q-6QSJrO7QYAAAAAAAAAAAAADgOBAQ/original',
     title: '技术解读 | TuGraph 图分析引擎技术剖析',
     desc: '图分析引擎又称图计算框架，主要用来进行复杂图分析，是一种能够全量数据集运行快速循环迭代的技术，适用场景包括社区发现、基因序列预测、重要性排名等，典型算法有 PageRank、WCC、BFS、LPA、SSSP。',
     updateDate: '2022-10-25',
@@ -94,7 +94,7 @@ export const blogs = [
   },
   {
     id: 9,
-    img: 'https://gw.alipayobjects.com/mdn/rms_fa12c2/afts/img/A*QT2hRbUkNkUAAAAAAAAAAAAAARQnAQ',
+    img: 'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*hFSqSq5-zTcAAAAAAAAAAAAADgOBAQ/original',
     title: '金融图数据库选型工具“LDBC-FinBench”',
     desc: '图计算技术在金融反洗钱，风控，KYC，股票推荐等领域的价值有目共睹。图数据库作为图计算技术最重要的基础软件，其选型对项目的最终效果起着决定性的作用',
     updateDate: '2022-11-14',
@@ -102,3 +102,10 @@ export const blogs = [
     content: md10?.html,
   },
 ];
+
+export const getBlogs = (type: string) => {
+  if (!type || type === 'all') {
+    return blogs;
+  }
+  return blogs.filter((blog) => blog.type === type);
+};
