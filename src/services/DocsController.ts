@@ -1,12 +1,16 @@
 import { request } from 'umi';
 import { DOC_HOST } from '@/constant';
 
+const PRODUCT_CODE = 'tugraph-doc-cn';
+
+const CATEGORY_ID = 0;
+
 /* 获取版本列表 */
 export async function queryVersions(params: { tenant: number }) {
   return request(`${DOC_HOST}/api/docs/gitlab/product/list`, {
     method: 'GET',
     params: {
-      productCode: 'tutorials-doc-cn',
+      productCode: PRODUCT_CODE,
       ...params,
     },
   });
@@ -15,7 +19,7 @@ export async function queryVersions(params: { tenant: number }) {
 /* 获取目录列表 */
 export async function queryCategory(params: { version: string }) {
   return request(
-    `${DOC_HOST}/api/docs/gitlab/tutorials-doc-cn/${params.version}/category/1`,
+    `${DOC_HOST}/api/docs/gitlab/${PRODUCT_CODE}/${params.version}/category/${CATEGORY_ID}`,
     {
       method: 'GET',
     },
