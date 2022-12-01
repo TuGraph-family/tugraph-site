@@ -11,9 +11,6 @@ export const SubTitle = ({
   return (
     <div className={styles.subTitleGroup} style={{ ...style }}>
       <div className={styles.subTitle}>{title}</div>
-      <div className={styles.subTitleBorderContainer}>
-        <div className={styles.subTitleBorder} />
-      </div>
     </div>
   );
 };

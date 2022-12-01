@@ -1,28 +1,18 @@
 .containerWrapper {
-  .demoCard,
-  .exampleCard {
+  .demoWrapper {
+    background-color: #FFFFFF;
+    box-shadow: 0 3px 6px -4px rgba(132,135,155,0.12), 0 6px 16px 0 rgba(132,135,155,0.08), 0 9px 28px 8px rgba(132,135,155,0.05);
     border-radius: 12px;
-    box-shadow: 0 10px 30px 10px rgba(158,181,213,0.10);
-    border-radius: 12px;
-    background-color: #FFF;
-  }
-
-  .demoCards {
-    display: flex;
-    justify-content: center;
+    padding: 32px;
     
-    .demoCardWrapper {
-     
+    .demoCards {
       padding: 12px;
-       .demoCard {
-         display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        min-height: 492px;
-        max-width: 384px;
-        text-align: center;
-        padding: 40px !important;
+      .demoCard {
+        padding: 24px;
+        min-height: 216px;
+        max-width: 362px;
+        background-color:rgba(22,80,255,0.04);
+        border-radius: 12px;
 
         img {
           width: 60px;
@@ -30,113 +20,80 @@
         }
 
         .title {
-          margin: 36px 0 16px 0;
           font-weight: 500;
-          font-size: 20px;
-          color: rgba(0,0,0,0.85);
-          text-align: center;
-          min-height: 60px;
-          line-height: 30px;
+          font-size: 14px;
+          color: rgba(26,27,37,0.88);
+          letter-spacing: 0;
+          text-align: justify;
+          line-height: 22px;
         }
       
         .desc {
           font-weight: 400;
           font-size: 14px;
-          color: #697A8C;
-          text-align: center;
+          color: rgba(26,27,37,0.45);
+          letter-spacing: 0;
+          text-align: justify;
           line-height: 22px;
-          min-height: 88px;
         }
 
         .type {
-          height: 48px;
-          width: 180px;
-          background-color: #00122B;
-          border-radius: 8px;
+          font-weight: 500;
           font-size: 16px;
-          color: rgba(255,255,255,0.89);
-          padding: 12px;
-          margin-top: 24px;
-        
+          color: rgba(26,27,37,0.88);
+          line-height: 24px;
+          margin: 12px 0 8px 0;
         }
       }
     }
   }
 
   .exampleWrapper {
-    width: 100%;
-    
-    .exampleCards {
-     
-      .exampleCard {
-        margin: 40px auto;
-        width: 100%;
-
-        .textWrapper {
-          padding: 56px 40px 12px 40px;
-          max-width: 577px;
-          box-sizing: content-box;
-
-          .header {
-            padding-bottom: 24px;
-
-            .title {       
-              font-weight: 600;
-              font-size: 24px;
-              color: #000A1C;
-            }
-
-            .subTitle {
-              font-weight: 500;
-              font-size: 20px;
-              color: rgba(0,0,0,0.85);
-              line-height: 24px;
-            }
-          }
-
-          .splitLine {
-            width: 100%;
-            border-top: 1px solid rgba(0,0,0,0.25);
-            height: 1px;
-          }
-
-          .text {
-            margin: 40px 0;
-            font-weight: 500;
-            font-size: 18px;
-            color: #333333;
-            letter-spacing: 1.03px;
-            line-height: 30px;
-
-            .textNormalSize {
-              font-weight: 400;
-              font-size: 14px;
-              color: #697A8C;;
-              letter-spacing: 0.8px;
-              margin: 16px 0 0 24px;
-              line-height: 21px;
-            }
-          }
-        }
-
-        .exampleImg {
-          background-image: url(https://gw.alipayobjects.com/zos/bmw-prod/2fcdbedf-872f-487f-b8d0-e1b3ff093020.svg);
-          background-repeat: no-repeat;
-          padding: 0px !important;
-        }
-
-        .imgWrapper {
-          display: flex;
-          align-items: end;
-          justify-content: center;
-          padding: 56px 40px;
-
-          img {
-            border-radius: 8px;
-          }
-        }
-      }
+    background-color: #FFF;
+ 
+    .crossRow {
+       background-color: rgba(22,80,255,0.04);
     }
+
+    .textWrapper {
+      padding-right: 16px;
+    }
+
+   .exampleCard {
+    margin: 0 -120px;
+    padding: 32px 120px;
+    font-weight: 400;
+    font-size: 14px;
+    color: rgba(26,27,37,0.45);
+    text-align: center;
+    line-height: 22px;
+    text-align: left;
+
+    .title {
+      font-weight: 500;
+      font-size: 20px;
+      color: rgba(26,27,37,0.88);
+      line-height: 28px;
+    }
+
+    .description {
+      margin-bottom: 20px;
+    }
+
+    .subTitle {
+      margin-top: 16px;
+      font-weight: 500;
+      font-size: 14px;
+      color: rgba(26,27,37,0.88);
+      line-height: 22px;
+    }
+      
+     img {
+      width: 427px;
+      height: 320px;
+      border-radius: 8px;
+     }
+   }
   }
 }
 

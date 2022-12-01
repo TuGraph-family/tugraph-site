@@ -9,6 +9,18 @@ body {
     z-index: 9999;
   }
 
+  .textLink {
+    margin-top: 24px;
+    font-weight: 500;
+    font-size: 14px;
+    color: rgba(26,27,37,0.88);
+    display: block;
+  
+    span {
+      margin-left: 8px
+    }
+  }
+
   .lightBtn {
     background: #0069fd;
     border-radius: 8px;
@@ -20,6 +32,7 @@ body {
 
   .boldText {
     font-weight: 600;
+    color: rgba(26,27,37,0.88);
   }
 
   .grayBtn,
@@ -64,7 +77,144 @@ body {
   }
 }
 
+.bannerImg {
+  position: absolute;
+  top: 88px;
+  right: 77px;
+  z-index: 998;
+}
+
+.videoBtn {
+    height: 32px;
+    width: 32px;
+    background-color: #bababd;
+    border-radius: 4px;
+    text-align: center;
+    position: absolute;
+    right: -56px;
+    padding: 4px;
+    top: 0;
+    color: rgba(255,255,255,0.65);
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.bannerButtons {
+    .github {
+      margin: 32px 24px 0 0;
+      height: 48px;
+      width: 160px;
+      background-color: #1650FF;
+      border-radius: 8px;
+      font-weight: 500;
+      font-size: 16px;
+    }
+    .play {
+      z-index: 999;
+      img {
+        width: 24px;
+        height: 24px;
+        margin-right: 8px;
+      }
+    }
+  }
+
 .containerWrapper {
+
+  .noticeWrapper {
+    box-shadow: 0px 0px 30px 15px rgba(0,15,60,0.05);
+    border-radius: 12px;
+    background: #FFFFFF;
+    
+    .card {
+     padding: 32px;
+     
+      .tag {
+        font-weight: 400;
+        font-size: 12px;
+        color: rgba(0,0,0,0.65);
+        text-align: center;
+        line-height: 20px;
+        height: 24px;
+        width: 68px;
+        background-color: rgba(0,0,0,0.06);
+        border-radius: 4px;
+        padding: 2px 8px;
+      }
+
+      .title {
+        width: 259px;
+        font-weight: 500;
+        font-size: 20px;
+        color: rgba(26,27,37,0.88);
+        margin: 16px 0 8px 0;
+      }
+
+      .desc {
+        font-size: 14px;
+        color: rgba(0,0,0,0.45);
+        line-height: 22px;
+      }
+    }
+  }
+
+  .cases {
+    background-image: url(https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*u4XVSo4Vi-UAAAAAAAAAAAAADgOBAQ/original);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin:  72px -120px;
+    padding: 56px 120px;
+
+    .title {
+      font-size: 32px;
+      color: rgba(26,27,37,0.88);
+      margin-bottom: 8px;
+    }
+
+    .desc {
+      font-size: 14px;
+      color: rgba(26,27,37,0.45);
+    }
+
+    .knowMore {
+      position: absolute;
+      bottom: 0px;
+    }
+
+    .cardWrapper {
+      width: 100%;
+      height: 100%;
+      margin: auto;
+
+      .card {
+        padding: 24px 0 28px 0;
+        background-color: #FFFFFF;
+        border-radius: 12px;
+        text-align: center;
+        margin: 12px;
+
+        img {
+          height: 48px;
+          width: 48px;
+        }
+
+        .title {
+          font-weight: 500;
+          font-size: 16px;
+          color: rgba(26,27,37,0.88);
+          margin: 8px 0 16px 0;
+        }
+        .desc {
+          font-weight: 400;
+          font-size: 14px;
+          color: rgba(26,27,37,0.45);
+          text-align: center;
+          line-height: 22px;
+        }
+      }
+    }
+  }
+
   .users {
     display: flex;
     justify-content: center;
@@ -73,6 +223,7 @@ body {
     width: 100%;
 
     img {
+      width: 282px;
       margin-bottom: 24px;
     }
   }
@@ -97,7 +248,7 @@ body {
   .reasonCards {
     display: flex;
     justify-content: center;
-    margin-bottom: 60px;
+    margin: -12px;
 
     .reasonCardGroup {
       min-height: 187px;
@@ -110,9 +261,8 @@ body {
       justify-content: center;
 
       .reasonCard {
-        background-color: #ffffff;
-        box-shadow: 0 10px 30px 10px rgba(158, 181, 213, 0.1);
         border-radius: 12px;
+        background-color: rgba(22,80,255,0.04);
         width: 100%;
         height: 100%;
         padding: 40px;
@@ -120,7 +270,7 @@ body {
 
         img {
           margin-bottom: 32px;
-          width: 72px;
+          width: auto;
           height: 72px;
         }
       }
@@ -128,8 +278,8 @@ body {
       .title {
         font-weight: 500;
         font-size: 20px;
-        color: rgba(0, 0, 0, 0.85);
-        line-height: 24px;
+        color: rgba(26,27,37,0.88);
+        line-height: 28px;
         text-align: left;
         width: 100%;
         margin-bottom: 16px;
@@ -138,21 +288,16 @@ body {
       .desc {
         font-weight: 400;
         font-size: 14px;
-        color: #697a8c;
+        color: rgba(26,27,37,0.45);
+        text-align: justify;
         line-height: 22px;
-        width: 100%;
-        text-align: left;
       }
     }
   }
 
   .versionsWrapper {
     padding-top: 1px;
-    background-image: linear-gradient(
-      180deg,
-      rgba(236, 245, 255, 0.5) 0%,
-      rgba(235, 245, 255, 0) 100%
-    );
+     background-image: linear-gradient(180deg, rgba(22,80,255,0.06) 0%, rgba(49,146,255,0.00) 100%);
     margin: 0 -120px;
     padding: 1px 120px;
 
@@ -242,17 +387,17 @@ body {
 
   .featList {
     .title {
-      font-size: 18px;
-      color: rgba(51, 51, 51, 0.89);
-      text-align: center;
+      font-size: 16px;
+      color: rgba(26,27,37,0.88);
       margin-bottom: 16px;
+      text-align: center;
     }
 
     .text {
       font-weight: 500;
       font-size: 16px;
       text-align: center;
-      color: rgba(51, 51, 51, 0.89);
+      color: rgba(26,27,37,0.65);
     }
 
     .textAlignLeft {
@@ -268,16 +413,8 @@ body {
     }
 
     .crossRow {
-      background-color: #fafafb;
-    }
-  }
-  .footerBtn {
-    margin: 40px 0 120px 0;
-    text-align: right;
-
-    button {
-      width: 246px !important;
-      height: 49px !important;
+      background-color: rgba(22,80,255,0.04);
+      border-radius: 8px;
     }
   }
 }
@@ -393,15 +530,6 @@ body {
 
       .textAlignLeft {
         padding-left: 16px;
-      }
-    }
-
-    .footerBtn {
-      margin-right: 0px;
-      text-align: center;
-
-      button {
-        width: 160px !important;
       }
     }
   }

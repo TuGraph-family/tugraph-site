@@ -1,56 +1,74 @@
-import React from 'react';
-import { Button, Col, Layout, Row } from 'antd';
+import React, { useState } from 'react';
+import { Button, Col, Row, Select } from 'antd';
+import { ApplyForm } from '@/components/ApplyForm';
 import { useIntl } from 'umi';
 import { useMedia } from 'react-use';
 import { LayoutTemplate } from '@/components/LayoutTemplate';
+import { versionList } from '@/data/download';
 import styles from './download.less';
 
 export default function DemoPage() {
   const intl = useIntl();
   const isWide = useMedia('(min-width: 767.99px)', true);
-
-  const versionList = [
-    {
-      name: 'CentOS',
-      version: '3.3.0',
-      url: 'https://tugraph-web.oss-cn-beijing.aliyuncs.com/tugraph/tugraph-3.3.0/TuGraph-3.3.0-1.el7.x86_64.rpm',
-    },
-    {
-      name: 'Ubuntu',
-      version: '3.3.0',
-      url: 'https://tugraph-web.oss-cn-beijing.aliyuncs.com/tugraph/tugraph-3.3.0/TuGraph-3.3.0-1.x86_64.deb',
-    },
-    {
-      name: 'Docker Images',
-      version: '3.3.0',
-      url: 'https://tugraph-web.oss-cn-beijing.aliyuncs.com/tugraph/tugraph-3.3.0/TuGraph-Image-3.3.0.tar.gz',
-    },
-  ];
+  const initActiveVersions = versionList?.map((item) => item.assets[0].value);
+  const [activeVersions, setActiveVersions] = useState(initActiveVersions);
+  const [showApplyForm, setShowApplyForm] = useState(false);
 
   const content = (
     <div className={styles.containerWrapper}>
-      {versionList.map((item, key) => (
+      <div className={styles.title}>
+        {intl.formatMessage({ id: 'download.title0' })}
+      </div>
+      {versionList?.map((item, key) => (
         <Row className={styles.list} key={key}>
           <Col span={isWide ? 16 : 20} className={styles.listName}>
             {item.name}
           </Col>
-          <Col className={styles.listVersion} span={isWide ? 4 : 4}>
-            {' '}
-            {item.version}
+          <Col className={styles.right} span={isWide ? 4 : 4}>
+            <Select
+              className={styles.listVersions}
+              onChange={(value) => {
+                activeVersions[key] = value;
+                const newActiveVersions = [...activeVersions];
+                setActiveVersions(newActiveVersions);
+              }}
+              value={activeVersions[key]}
+              bordered={false}
+              options={item.assets}
+            />
           </Col>
-          <Col span={isWide ? 4 : 24}>
+
+          <Col className={styles.right} span={isWide ? 4 : 24}>
             <Button
               onClick={() => {
-                window.location.href = item.url;
+                window.location.href = activeVersions[key];
               }}
-              type="primary"
               block
             >
-              {intl.formatMessage({ id: 'header.download' })}
+              {intl.formatMessage({ id: 'download.downloadBtn' })}
             </Button>
           </Col>
         </Row>
       ))}
+      <div className={styles.title}>
+        {intl.formatMessage({ id: 'download.title0' })}
+      </div>
+      <Row className={styles.list}>
+        <Col span={isWide ? 20 : 20} className={styles.listName}>
+          {intl.formatMessage({ id: 'download.applyText' })}
+        </Col>
+        <Col className={styles.right} span={isWide ? 4 : 24}>
+          <Button
+            onClick={() => {
+              setShowApplyForm(true);
+            }}
+            block
+          >
+            {intl.formatMessage({ id: 'download.contactBtn' })}
+          </Button>
+        </Col>
+      </Row>
+      <ApplyForm visible={showApplyForm} setVisible={setShowApplyForm} />
     </div>
   );
 
@@ -58,11 +76,9 @@ export default function DemoPage() {
     <LayoutTemplate
       bannerInfo={{
         bgIconUrl:
-          'https://gw.alipayobjects.com/mdn/rms_fa12c2/afts/img/A*gB_YQZ1QsosAAAAAAAAAAAAAARQnAQ',
-        activeKey: 'download',
-
+          'https://mdn.alipayobjects.com/mdn/huamei_qcdryc/afts/img/A*QaKQRqje18MAAAAAAAAAAAAADgOBAQ',
         slogan: intl.formatMessage({ id: 'download.banner.slogan' }),
-        notice: intl.formatMessage({ id: 'download.banner.notice' }),
+        description: intl.formatMessage({ id: 'download.banner.description' }),
       }}
       content={content}
     />

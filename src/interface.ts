@@ -33,6 +33,7 @@ export interface BlogItem {
   desc: string;
   updateDate: string;
   content: string;
+  type: string;
 }
 
 export interface MenuItem {

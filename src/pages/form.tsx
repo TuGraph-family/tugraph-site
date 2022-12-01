@@ -140,7 +140,7 @@ export default function FormPage() {
         bgIconUrl:
           'https://gw.alipayobjects.com/mdn/rms_fa12c2/afts/img/A*iYpbRrIWsHMAAAAAAAAAAAAAARQnAQ',
         slogan: intl.formatMessage({ id: 'form.banner.slogan' }),
-        subTitle: intl.formatMessage({ id: 'form.banner.subTitle' }),
+       description: intl.formatMessage({ id: 'form.banner.subTitle' }),
       }}
       content={content}
     />

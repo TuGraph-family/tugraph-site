@@ -1,37 +1,57 @@
 .containerWrapper {
-  margin-bottom: 120px;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px 10px rgba(158,181,213,0.10);
-  border-radius: 12px;
   background-color: #FFFFFF;
-  padding: 40px 80px;
+  box-shadow: 0 3px 6px -4px rgba(132,135,155,0.12), 0 6px 16px 0 rgba(132,135,155,0.08), 0 9px 28px 8px rgba(132,135,155,0.05);
+  border-radius: 12px;
+  padding: 0 32px 16px 32px;
+  overflow: hidden;
+
+  .title {
+    margin: 32px 0 20px 0;
+    font-family:  PingFangSC;
+    font-weight: 500;
+    font-size: 20px;
+    color: rgba(26,27,37,0.88);
+    }
+  
+  .right {
+    text-align: right;
+  }
 
   .list {
-    height: 130px;
-    font-weight: 500;
-    font-size: 24px;
-    color: #00122B;
     letter-spacing: 0;
     display: flex;
+    padding: 24px 32px;
     align-items: center;
-    border-bottom: 1px solid #f2f2f2;
+    height: 80px;
+    background-color: rgba(22,80,255,0.04);
+    border-radius: 8px;
+    margin: 16px 0;
     
-    &:last-child {
-      border-bottom: none;
+    .listName {
+      font-family:  PingFangSC;
+      font-weight: 500;
+      font-size: 16px;
+      color: rgba(26,27,37,0.88);
+    }
+
+    .listVersions {
+      width: 100px;
+      font-weight: 400;
+      font-size: 16px;
+      color: rgba(26,27,37,0.65);
     }
   }
 
   button {
-    width: 175px;
-    height: 40px;
-    font-weight: 500;
-    background-color: @primary-color;
+    height: 32px;
+    width: 100px !important;
+    background-color: rgba(255,255,255,1);
+    border: 1px solid rgba(26,27,37,0.15);
     border-radius: 8px;
-    font-size: 18px;
-    color: rgba(255,255,255,0.89);
-    letter-spacing: 1.03px;
-    text-align: center;
-    line-height: 26px;
+    color: rgba(26,27,37,0.88);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
   }
 }
 

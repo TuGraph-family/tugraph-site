@@ -112,7 +112,7 @@ export default function DocPage() {
   return (
     <Layout>
       <div className={styles.headerWrapper}>
-        <Header activeKey="doc" />
+        <Header />
       </div>
       <Layout>
         {isWide && (
