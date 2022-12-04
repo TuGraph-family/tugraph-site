@@ -1,8 +1,6 @@
 .headerWrapper {
-  padding: 0 40px;
+  background-color: #fff;
   box-shadow: 0 2px 8px 0 rgba(240, 241, 242, 0.65);
-  z-index: 9998;
-  transition: all 0.3s;
 }
 
 .sideWrapper {
@@ -12,6 +10,7 @@
   max-height: 100vh;
   height: 100vh;
   overflow-y: auto;
+  overflow-x: hidden;
   margin-bottom: 389px;
   position: fixed;
   z-index: 999;
@@ -47,6 +46,7 @@
 }
 
 .containerWrapper {
+  background-color: #fff;
   padding: 40px;
   margin-left: 242px;
 
@@ -172,17 +172,11 @@
   }
 }
 
-@media only screen and (max-width: 1024px) {
-  .headerWrapper {
-    padding: 0 100px;
-    transition: all 0.3s;
-  }
+.docFooter {
+  margin-left: 242px;
 }
 
 @media only screen and (max-width: 931.99px) {
-  .headerWrapper {
-    padding: 0 70px;
-  }
 
   .containerWrapper {
     padding: 32px 24px;
@@ -193,11 +187,7 @@
 }
 
 @media only screen and (max-width: 767.99px) {
-  .headerWrapper {
-    padding: 24px;
-    height: 96px;
-    transition: all 0.3s;
-  }
+
 
   .containerWrapper {
     padding: 32px 24px;

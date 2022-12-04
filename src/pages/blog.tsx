@@ -203,9 +203,7 @@ export default function BlogPage() {
         />
       ) : (
         <Layout>
-          <div className={styles.headerWrapper}>
-            <Header />
-          </div>
+          <Header />
           <Layout>
             <Content className={styles.blogContainerWrapper}>
               <Spin spinning={!!!blogDetail}>
