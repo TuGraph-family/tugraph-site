@@ -51,7 +51,7 @@ export default function DemoPage() {
         </Row>
       ))}
       <div className={styles.title}>
-        {intl.formatMessage({ id: 'download.title0' })}
+        {intl.formatMessage({ id: 'download.title1' })}
       </div>
       <Row className={styles.list}>
         <Col span={isWide ? 20 : 20} className={styles.listName}>

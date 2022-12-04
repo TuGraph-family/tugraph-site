@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useIntl, useLocation } from 'umi';
 import { Menu, Drawer, Collapse } from 'antd';
 import cx from 'classnames';
@@ -28,6 +28,14 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
   ) : null;
 
   const menuItems: MenuItem[] = [
+    {
+      label: (
+        <a href="/" rel="noopener noreferrer">
+          {intl.formatMessage({ id: 'header.home' })}
+        </a>
+      ),
+      key: '',
+    },
     {
       label: (
         <a href="/product" rel="noopener noreferrer">

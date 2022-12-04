@@ -8,6 +8,7 @@ import md07 from '@/doc/07.md';
 import md08 from '@/doc/08.md';
 import md09 from '@/doc/09.md';
 import md10 from '@/doc/10.md';
+import moment from 'moment';
 
 // TODO 国际化
 export const blogs = [
@@ -104,8 +105,11 @@ export const blogs = [
 ];
 
 export const getBlogs = (type: string) => {
+  let list;
   if (!type || type === 'all') {
-    return blogs;
+    list = blogs;
   }
-  return blogs.filter((blog) => blog.type === type);
+  list = blogs.filter((blog) => blog.type === type);
+  return list;
+  // return list.sort((item) => new Date(item.updateDate));
 };
