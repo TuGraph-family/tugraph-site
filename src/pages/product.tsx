@@ -117,11 +117,12 @@ export default function ProductPage() {
         })}
       </Row>
 
-      <div className={styles.reasonWrapper}>
-        <SubTitle title={intl.formatMessage({ id: 'product.choseReason' })} />
-        <div className={styles.reasonCard}>
-          <div>{intl.formatMessage({ id: 'product.choseReasonDesc' })}</div>
-        </div>
+      <div className={styles.ecoWrapper}>
+        <SubTitle title={intl.formatMessage({ id: 'product.ecosystem' })} />
+        <img
+          src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*OEU-TLbbJb4AAAAAAAAAAAAADgOBAQ/original"
+          alt="ecosystem"
+        />
       </div>
     </div>
   );

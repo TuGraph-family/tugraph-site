@@ -1,3 +1,5 @@
+import { sortBy } from 'lodash';
+
 import md01 from '@/doc/01.md';
 import md02 from '@/doc/02.md';
 import md03 from '@/doc/03.md';
@@ -8,7 +10,6 @@ import md07 from '@/doc/07.md';
 import md08 from '@/doc/08.md';
 import md09 from '@/doc/09.md';
 import md10 from '@/doc/10.md';
-import moment from 'moment';
 
 // TODO 国际化
 export const blogs = [
@@ -108,8 +109,14 @@ export const getBlogs = (type: string) => {
   let list;
   if (!type || type === 'all') {
     list = blogs;
+  } else {
+    list = blogs.filter((blog) => blog.type === type);
   }
-  list = blogs.filter((blog) => blog.type === type);
+
+  list = sortBy(
+    list,
+    (item: { updateDate: string }) =>
+      -new Date(Date.parse(item.updateDate)).getTime(),
+  );
   return list;
-  // return list.sort((item) => new Date(item.updateDate));
 };

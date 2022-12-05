@@ -132,9 +132,7 @@ export default {
   'product.feature.title3': '开箱即用的运维监控平台',
   'product.feature.desc3':
     '数据库实时运维监控展示，支持Docker、CentOS、Ubuntu的一键部署，开箱即用。同时提供了丰富可拓展的接口，支持用户的二次开发，实现系统对接。并支持Prometheus、Grafana等主流开源监控告警工具。',
-  'product.choseReason': '为什么需要图计算',
-  'product.choseReasonDesc':
-    '全球数据领域进入加速发展时期，社交媒体、物流服务、设备管网、金融交易等应用极大催生了关联数据的爆发，以及对强大数据引擎的迫切需求。权威研究机构Gartner预测，到2025年图技术在数据和分析创新中的占比将从2021年的10%上升到80%，将促进整个企业机构的快速决策。图数据库作为最适合关联数据管理和分析的基础设施，善于分析复杂数据关系，天然具备数据可视化展示。',
+  'product.ecosystem': 'TuGraph 生态体系',
   'demo.title': ' TuGraph 案例',
   'demo.description':
     '图数据库,图计算,图平台,图数据分析, 分布式数据库, Graph,大数据分析,关联关系分析,大数据分析,反洗钱,反欺诈,金融风控,物联网, 设备管理, 国家电网',
@@ -220,7 +218,7 @@ export default {
     '利用图计算技术，将业务、数据、任务、输入、输出、负责人等对象抽象为图数据结构的点和边，构建数据资产图谱，支撑智能化的数据血缘管理。',
   'demo.example.profit6':
     '可视化、准确地呈现数据之间的血缘路径，便于用户追踪数据链路状态、进行数仓规范化治理、数据安全权限检查等。',
-  'download.banner.slogan': 'TuGraph v3.3.1',
+  'download.banner.slogan': 'TuGraph v3.3.2',
   'download.banner.description': '最新版本2022.10.20',
   'download.title0': 'TuGraph 社区版下载',
   'download.title1': 'TuGraph 企业版申请',

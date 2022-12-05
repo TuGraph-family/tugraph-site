@@ -38,13 +38,13 @@ export const Footer = ({ className }: { className?: string }) => {
             </a>
             <a
               className={styles.item}
-              href="/doc?version=V3.3.0&id=10000000000658662"
+              href="/doc?version=V3.3.0&id=10000000001031969"
             >
               TuGraph Browser
             </a>
             <a
               className={styles.item}
-              href="/doc?version=V3.3.0&id=10000000000658664"
+              href="/doc?version=V3.3.0&id=10000000001031971"
             >
               TuGraph Explore
             </a>
