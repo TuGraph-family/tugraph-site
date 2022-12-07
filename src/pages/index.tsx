@@ -111,7 +111,7 @@ export default function IndexPage() {
               <a
                 className="textLink"
                 target="_blank"
-                href="http://www.wicwuzhen.cn/web21/news/original/202110/t20211029_23287882.shtml"
+                href="https://mp.weixin.qq.com/s/h8TR4gn5keqGNEUAd4lBOQ"
               >
                 {intl.formatMessage({ id: 'home.knowMore' })}
                 <ArrowRightOutlined />

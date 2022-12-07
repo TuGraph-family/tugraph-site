@@ -33,7 +33,7 @@ export const Footer = ({ className }: { className?: string }) => {
             <div className={styles.title}>
               {intl.formatMessage({ id: 'header.product' })}
             </div>
-            <a className={styles.item} href="/">
+            <a className={styles.item} href="/product">
               {intl.formatMessage({ id: 'footer.productName' })}
             </a>
             <a
@@ -46,7 +46,7 @@ export const Footer = ({ className }: { className?: string }) => {
               className={styles.item}
               href="/doc?version=V3.3.0&id=10000000001031971"
             >
-              TuGraph Explore
+              TuGraph Explorer
             </a>
           </div>
           {/* <Space id="contactUs" size={26} className={styles.iconGroup}>
