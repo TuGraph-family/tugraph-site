@@ -46,27 +46,43 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
     },
     {
       label: (
-        <a href="/demo" rel="noopener noreferrer">
-          {intl.formatMessage({ id: 'header.demo' })}
+        <a href="/case" rel="noopener noreferrer">
+          {intl.formatMessage({ id: 'header.case' })}
         </a>
       ),
       key: 'demo',
     },
     {
       label: (
-        <a href="/doc" rel="noopener noreferrer">
-          {intl.formatMessage({ id: 'header.doc' })}
+        <a href="" rel="noopener noreferrer">
+          {intl.formatMessage({ id: 'header.eco' })}
         </a>
       ),
-      key: 'doc',
+      key: 'eco',
     },
     {
-      label: (
-        <a href="/blog" rel="noopener noreferrer">
-          {intl.formatMessage({ id: 'header.blog' })}
-        </a>
-      ),
-      key: 'blog',
+      label: intl.formatMessage({ id: 'header.assets' }),
+      key: 'assets',
+      children: [
+        {
+          label: <a href="/doc">{intl.formatMessage({ id: 'header.doc' })}</a>,
+          key: 'doc',
+        },
+        {
+          label: (
+            <a href="/blog">{intl.formatMessage({ id: 'header.blog' })}</a>
+          ),
+          key: 'blog',
+        },
+        {
+          label: (
+            <a href="" target="_blank" rel="noopener noreferrer">
+              Demo
+            </a>
+          ),
+          key: 'demo',
+        },
+      ],
     },
     {
       label: intl.formatMessage({ id: 'header.community' }),
@@ -121,6 +137,7 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
         className={styles.menu}
         activeKey={pathname.replace('/', '')}
         mode="horizontal"
+        triggerSubMenuAction={'click'}
         items={menuItems}
       />
     </>

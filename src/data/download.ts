@@ -1,4 +1,19 @@
-export const versionList = [
+export const assetsList = [
+  {
+    name: 'Docker 镜像',
+    assets: [
+      {
+        label: 'v3.3.2',
+        value:
+          'https://tugraph-web.oss-cn-beijing.aliyuncs.com/tugraph/tugraph-3.3.2/tugraph-3.3.2.tar.gz',
+      },
+      {
+        label: 'v3.3.0',
+        value:
+          'https://tugraph-web.oss-cn-beijing.aliyuncs.com/tugraph/tugraph-3.3.0/TuGraph-Image-3.3.0.tar.gz',
+      },
+    ],
+  },
   {
     name: 'CentOS',
     assets: [
@@ -29,18 +44,26 @@ export const versionList = [
       },
     ],
   },
+];
+
+export const docsList = [
   {
-    name: 'Docker Images',
+    name: 'CPP',
     assets: [
       {
         label: 'v3.3.2',
         value:
-          'https://tugraph-web.oss-cn-beijing.aliyuncs.com/tugraph/tugraph-3.3.2/tugraph-3.3.2.tar.gz',
+          'https://tugraph-web-static.oss-cn-beijing.aliyuncs.com/%E6%96%87%E6%A1%A3/procedure-api/3.3.2/TuGraph-CPP-Procedure-API.tar.gz',
       },
+    ],
+  },
+  {
+    name: 'Python',
+    assets: [
       {
-        label: 'v3.3.0',
+        label: 'v3.3.2',
         value:
-          'https://tugraph-web.oss-cn-beijing.aliyuncs.com/tugraph/tugraph-3.3.0/TuGraph-Image-3.3.0.tar.gz',
+          'https://tugraph-web-static.oss-cn-beijing.aliyuncs.com/%E6%96%87%E6%A1%A3/procedure-api/3.3.2/TuGraph-Python-Procedure-API.tar.gz',
       },
     ],
   },

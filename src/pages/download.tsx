@@ -4,14 +4,16 @@ import { ApplyForm } from '@/components/ApplyForm';
 import { useIntl } from 'umi';
 import { useMedia } from 'react-use';
 import { LayoutTemplate } from '@/components/LayoutTemplate';
-import { versionList } from '@/data/download';
+import { assetsList, docsList } from '@/data/download';
 import styles from './download.less';
 
 export default function DemoPage() {
   const intl = useIntl();
   const isWide = useMedia('(min-width: 767.99px)', true);
-  const initActiveVersions = versionList?.map((item) => item.assets[0].value);
-  const [activeVersions, setActiveVersions] = useState(initActiveVersions);
+  const initActiveAssetsVersion = assetsList?.map(
+    (item) => item.assets[0].value,
+  );
+  const [activeVersions, setActiveVersions] = useState(initActiveAssetsVersion);
   const [showApplyForm, setShowApplyForm] = useState(false);
 
   const content = (
@@ -19,7 +21,7 @@ export default function DemoPage() {
       <div className={styles.title}>
         {intl.formatMessage({ id: 'download.title0' })}
       </div>
-      {versionList?.map((item, key) => (
+      {assetsList?.map((item, key) => (
         <Row className={styles.list} key={key}>
           <Col span={isWide ? 16 : 20} className={styles.listName}>
             {item.name}
@@ -50,8 +52,40 @@ export default function DemoPage() {
           </Col>
         </Row>
       ))}
+
       <div className={styles.title}>
         {intl.formatMessage({ id: 'download.title1' })}
+      </div>
+
+      {docsList?.map((item, key) => (
+        <Row className={styles.list} key={key}>
+          <Col span={isWide ? 16 : 20} className={styles.listName}>
+            {item.name}
+          </Col>
+          <Col className={styles.right} span={isWide ? 4 : 4}>
+            <Select
+              className={styles.listVersions}
+              value={item.assets[0].value}
+              bordered={false}
+              options={item.assets}
+            />
+          </Col>
+
+          <Col className={styles.right} span={isWide ? 4 : 24}>
+            <Button
+              onClick={() => {
+                window.location.href = item.assets[0].value;
+              }}
+              block
+            >
+              {intl.formatMessage({ id: 'download.downloadBtn' })}
+            </Button>
+          </Col>
+        </Row>
+      ))}
+
+      <div className={styles.title}>
+        {intl.formatMessage({ id: 'download.title2' })}
       </div>
       <Row className={styles.list}>
         <Col span={isWide ? 20 : 20} className={styles.listName}>

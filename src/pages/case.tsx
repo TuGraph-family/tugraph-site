@@ -9,7 +9,7 @@ import cx from 'classnames';
 import { useMedia } from 'react-use';
 import { LayoutTemplate } from '@/components/LayoutTemplate';
 
-import styles from './demo.less';
+import styles from './case.less';
 
 export default function DemoPage() {
   const intl = useIntl();
