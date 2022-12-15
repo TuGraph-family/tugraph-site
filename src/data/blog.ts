@@ -1,3 +1,5 @@
+import { sortBy } from 'lodash';
+
 import md01 from '@/doc/01.md';
 import md02 from '@/doc/02.md';
 import md03 from '@/doc/03.md';
@@ -71,7 +73,7 @@ export const blogs = [
     title: '蚂蚁集团开源图数据库 TuGraph，成立图计算开源委员会',
     desc: '9 月 1 日，2022 世界人工智能大会“新一代图智能技术发展与实践论坛”上，蚂蚁集团图计算负责人陈文光宣布开源蚂蚁集团高性能图数据库 TuGraph 单机版，并成立图计算开源技术委员会，中国工程院院士郑纬民、陈纯分别担任主席、副主席，5 位业界知名专家担任委员。',
     updateDate: '2022-09-01',
-    type: 'tech',
+    type: 'news',
     content: md07?.html,
   },
   {
@@ -89,7 +91,7 @@ export const blogs = [
     title: '技术解读 | TuGraph 图分析引擎技术剖析',
     desc: '图分析引擎又称图计算框架，主要用来进行复杂图分析，是一种能够全量数据集运行快速循环迭代的技术，适用场景包括社区发现、基因序列预测、重要性排名等，典型算法有 PageRank、WCC、BFS、LPA、SSSP。',
     updateDate: '2022-10-25',
-    type: 'news',
+    type: 'tech',
     content: md09?.html,
   },
   {
@@ -104,8 +106,17 @@ export const blogs = [
 ];
 
 export const getBlogs = (type: string) => {
+  let list;
   if (!type || type === 'all') {
-    return blogs;
+    list = blogs;
+  } else {
+    list = blogs.filter((blog) => blog.type === type);
   }
-  return blogs.filter((blog) => blog.type === type);
+
+  list = sortBy(
+    list,
+    (item: { updateDate: string }) =>
+      -new Date(Date.parse(item.updateDate)).getTime(),
+  );
+  return list;
 };

@@ -1,5 +1,11 @@
 
+.docHeader {
+    box-shadow: 0 2px 8px 0 rgba(240, 241, 242, 0.65);
+    background-color: #fff;
+}
+
 .containerWrapper {
+  max-width: 1200px;
   padding-bottom: 120px;
   text-align: right;
 
@@ -76,12 +82,6 @@
   }
 }
 
-.headerWrapper {
-  padding: 0 40px;
-  box-shadow: 0 2px 8px 0 rgba(240,241,242,0.65);
-  z-index: 9999;
-
-}
 
 .sideWrapper {
   text-align: center;
@@ -121,7 +121,15 @@
 }
 
 .blogContainerWrapper {
+  background-color: #fff;
   padding: 40px 242px 120px 242px;
+  
+  p > img {
+    width: 600px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+  }
 
   .updateTimeLabel {
     font-weight: 400;
@@ -249,10 +257,6 @@
 }
 
 @media only screen and (max-width: 1189px) {
-  .headerWrapper {
-    padding: 0 100px;
-  }
-
   .blogContainerWrapper {
     padding: 40px 120px 120px 120px;
   }
@@ -278,9 +282,6 @@
 }
 
 @media only screen and (max-width: 931.99px) { 
-  .headerWrapper {
-    padding: 0 70px;
-  }
 
   .blogContainerWrapper {
     padding: 40px 64px 120px 64px;
@@ -311,10 +312,6 @@
 
 
 @media only screen and (max-width: 767.99px) {
-  .headerWrapper {
-    padding: 24px;
-    height: 96px;
-  }
 
   .blogContainerWrapper {
     padding: 40px 24px 80px 24px;

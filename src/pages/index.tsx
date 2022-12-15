@@ -78,7 +78,7 @@ export default function IndexPage() {
               <div className={styles.desc}>
                 {intl.formatMessage({ id: 'home.notice0.desc' })}
               </div>
-              <a className="textLink" href="">
+              <a className="textLink" href="/blog?id=0" target="_blank">
                 {intl.formatMessage({ id: 'home.knowMore' })}
                 <ArrowRightOutlined />
               </a>
@@ -93,7 +93,7 @@ export default function IndexPage() {
               <div className={styles.desc}>
                 {intl.formatMessage({ id: 'home.notice1.desc' })}
               </div>
-              <a className="textLink" href="/demo">
+              <a className="textLink" href="/blog?id=3" target="_blank">
                 {intl.formatMessage({ id: 'home.knowMore' })}
                 <ArrowRightOutlined />
               </a>
@@ -108,7 +108,11 @@ export default function IndexPage() {
               <div className={styles.desc}>
                 {intl.formatMessage({ id: 'home.notice2.desc' })}
               </div>
-              <a className="textLink" href="">
+              <a
+                className="textLink"
+                target="_blank"
+                href="https://mp.weixin.qq.com/s/h8TR4gn5keqGNEUAd4lBOQ"
+              >
                 {intl.formatMessage({ id: 'home.knowMore' })}
                 <ArrowRightOutlined />
               </a>
@@ -161,10 +165,10 @@ export default function IndexPage() {
               <div className={styles.desc}>
                 {intl.formatMessage({ id: 'home.case.desc1' })}
               </div>
-              <a className={cx('textLink', styles.knowMore)} href="/demo">
+              {/* <a className={cx('textLink', styles.knowMore)} href="/demo">
                 {intl.formatMessage({ id: 'home.knowMore' })}
                 <ArrowRightOutlined />
-              </a>
+              </a> */}
             </Col>
             <Col span={18}>
               <Row style={{ margin: '-12px' }}>
@@ -221,7 +225,9 @@ export default function IndexPage() {
           <Row className={styles.versions}>
             <Col span={isWide ? 12 : 24} className={styles.version} key={0}>
               <div className={styles.versionCard}>
-                <div className={styles.title}>
+                <div
+                  className={cx(styles.title, styles.textAlignLeft, 'boldText')}
+                >
                   {intl.formatMessage({ id: 'home.version0' })}
                 </div>
                 <div className={styles.desc}>
@@ -230,7 +236,7 @@ export default function IndexPage() {
                 <Button
                   type="primary"
                   block
-                  onClick={() => history.push('/download')}
+                  onClick={() => window.location.replace('/download')}
                   className="lightBtn"
                 >
                   {intl.formatMessage({ id: 'home.version.startUse' })}
@@ -265,7 +271,7 @@ export default function IndexPage() {
             >
               {intl.formatMessage({ id: 'home.function' })}
             </Col>
-            <Col span={5} className={styles.title}>
+            <Col span={5} className={cx(styles.title, 'boldText')}>
               {intl.formatMessage({ id: 'home.version0' })}
             </Col>
             <Col span={5} className={cx(styles.title, 'boldText')}>

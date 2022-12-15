@@ -25,7 +25,6 @@ export default function BlogPage() {
   const [listData, setListData] = React.useState<BlogItem[]>(
     initBlogs.slice(0, 5),
   );
-
   useEffect(() => {
     setBlogs(getBlogs(type));
   }, [type]);
@@ -203,9 +202,10 @@ export default function BlogPage() {
         />
       ) : (
         <Layout>
-          <div className={styles.headerWrapper}>
+          <div className={styles.docHeader}>
             <Header />
           </div>
+
           <Layout>
             <Content className={styles.blogContainerWrapper}>
               <Spin spinning={!!!blogDetail}>

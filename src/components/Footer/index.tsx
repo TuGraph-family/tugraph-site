@@ -33,23 +33,23 @@ export const Footer = ({ className }: { className?: string }) => {
             <div className={styles.title}>
               {intl.formatMessage({ id: 'header.product' })}
             </div>
-            <a className={styles.item} href="/">
+            <a className={styles.item} href="/product">
               {intl.formatMessage({ id: 'footer.productName' })}
             </a>
             <a
               className={styles.item}
-              href="/doc?version=V3.3.0&id=10000000000658662"
+              href="/doc?version=V3.3.0&id=10000000001031969"
             >
               TuGraph Browser
             </a>
             <a
               className={styles.item}
-              href="/doc?version=V3.3.0&id=10000000000658664"
+              href="/doc?version=V3.3.0&id=10000000001031971"
             >
-              TuGraph Explore
+              TuGraph Explorer
             </a>
           </div>
-          <Space id="contactUs" size={26} className={styles.iconGroup}>
+          {/* <Space id="contactUs" size={26} className={styles.iconGroup}>
             {icons.map((item, key) => {
               return item?.url ? (
                 <a
@@ -74,7 +74,7 @@ export const Footer = ({ className }: { className?: string }) => {
                 </Popover>
               );
             })}
-          </Space>
+          </Space> */}
         </Col>
         <Col span={3}>
           <div className={styles.textGroup}>
@@ -130,7 +130,9 @@ export const Footer = ({ className }: { className?: string }) => {
                 {intl.formatMessage({ id: 'footer.qrCode.weChart' })}
               </div>
               <div className={styles.subDesc}>
-                {intl.formatMessage({ id: 'footer.qrCode.subDesc' })}
+                {intl.formatMessage({
+                  id: 'footer.qrCode.subDescWeChart',
+                })}
               </div>
             </div>
             <div className={styles.qrCode}>
@@ -139,7 +141,9 @@ export const Footer = ({ className }: { className?: string }) => {
                 {intl.formatMessage({ id: 'footer.qrCode.dingTalk' })}
               </div>
               <div className={styles.subDesc}>
-                {intl.formatMessage({ id: 'footer.qrCode.subDesc' })}
+                {intl.formatMessage({
+                  id: 'footer.qrCode.subDescDingTalk',
+                })}
               </div>
             </div>
           </Space>
@@ -206,7 +210,7 @@ export const Footer = ({ className }: { className?: string }) => {
           {intl.formatMessage({ id: 'footer.qrCode.weChart' })}
         </div>
         <div className={styles.subDesc}>
-          {intl.formatMessage({ id: 'footer.qrCode.subDesc' })}
+          {intl.formatMessage({ id: 'footer.qrCode.subDescWeChart' })}
         </div>
       </div>
       <Row className={styles.footerExtraInfo}>

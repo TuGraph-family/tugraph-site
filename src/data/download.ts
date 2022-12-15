@@ -1,16 +1,31 @@
-export const versionList = [
+export const assetsList = [
+  {
+    name: 'Docker 镜像',
+    assets: [
+      {
+        label: 'v3.3.2',
+        value:
+          'https://tugraph-web.oss-cn-beijing.aliyuncs.com/tugraph/tugraph-3.3.2/tugraph-3.3.2.tar.gz',
+      },
+      {
+        label: 'v3.3.0',
+        value:
+          'https://tugraph-web.oss-cn-beijing.aliyuncs.com/tugraph/tugraph-3.3.0/TuGraph-Image-3.3.0.tar.gz',
+      },
+    ],
+  },
   {
     name: 'CentOS',
     assets: [
       {
-        label: 'v3.3.0',
+        label: 'v3.3.2',
         value:
-          'https://tugraph-web.oss-cn-beijing.aliyuncs.com/tugraph/tugraph-v3.3.0/TuGraph-v3.3.0-1.el7.x86_64.rpm',
+          'https://tugraph-web.oss-cn-beijing.aliyuncs.com/tugraph/tugraph-3.3.2/TuGraph-3.3.2-1.el7.x86_64.rpm',
       },
       {
-        label: 'v3.3.1',
+        label: 'v3.3.0',
         value:
-          'https://tugraph-web.oss-cn-beijing.aliyuncs.com/tugraph/tugraph-v3.3.1/TuGraph-v3.3.1-1.el7.x86_64.rpm',
+          'https://tugraph-web.oss-cn-beijing.aliyuncs.com/tugraph/tugraph-3.3.0/TuGraph-3.3.0-1.el7.x86_64.rpm',
       },
     ],
   },
@@ -18,29 +33,37 @@ export const versionList = [
     name: 'Ubuntu',
     assets: [
       {
-        label: 'v3.3.0',
+        label: 'v3.3.2',
         value:
-          'https://tugraph-web.oss-cn-beijing.aliyuncs.com/tugraph/tugraph-v3.3.0/TuGraph-v3.3.0-1.x86_64.deb',
+          'https://tugraph-web.oss-cn-beijing.aliyuncs.com/tugraph/tugraph-3.3.2/TuGraph-3.3.2-1.x86_64.deb',
       },
       {
-        label: 'v3.3.1',
+        label: 'v3.3.0',
         value:
-          'https://tugraph-web.oss-cn-beijing.aliyuncs.com/tugraph/tugraph-v3.3.1/TuGraph-v3.3.1-1.x86_64.deb',
+          'https://tugraph-web.oss-cn-beijing.aliyuncs.com/tugraph/tugraph-3.3.0/TuGraph-3.3.0-1.x86_64.deb',
+      },
+    ],
+  },
+];
+
+export const docsList = [
+  {
+    name: 'CPP',
+    assets: [
+      {
+        label: 'v3.3.2',
+        value:
+          'https://tugraph-web-static.oss-cn-beijing.aliyuncs.com/%E6%96%87%E6%A1%A3/procedure-api/3.3.2/TuGraph-CPP-Procedure-API.tar.gz',
       },
     ],
   },
   {
-    name: 'Docker Images',
+    name: 'Python',
     assets: [
       {
-        label: 'v3.3.0',
+        label: 'v3.3.2',
         value:
-          'https://tugraph-web.oss-cn-beijing.aliyuncs.com/tugraph/tugraph-v3.3.0/TuGraph-Image-v3.3.1.tar.gz',
-      },
-      {
-        label: 'v3.3.1',
-        value:
-          'https://tugraph-web.oss-cn-beijing.aliyuncs.com/tugraph/tugraph-v3.3.1/TuGraph-Image-v3.3.1.tar.gz',
+          'https://tugraph-web-static.oss-cn-beijing.aliyuncs.com/%E6%96%87%E6%A1%A3/procedure-api/3.3.2/TuGraph-Python-Procedure-API.tar.gz',
       },
     ],
   },

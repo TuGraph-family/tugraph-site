@@ -47,7 +47,7 @@ export default function ProductPage() {
             <JoLPlayer
               option={{
                 videoSrc:
-                  'https://gw.alipayobjects.com/mdn/rms_fa12c2/afts/file/A*CGu4RqkzzDgAAAAAAAAAAAAAARQnAQ',
+                  'https://gw.alipayobjects.com/os/bmw-prod/c9cd86a4-6bd6-48bb-8926-ef62b3995d0b.mov',
                 height: isWide ? 204 : 102,
                 width: 362,
               }}
@@ -69,10 +69,10 @@ export default function ProductPage() {
               }}
             />
             <div className={styles.title}>
-              {intl.formatMessage({ id: 'product.video1' })}
+              {intl.formatMessage({ id: 'product.video2' })}
             </div>
             <div className={styles.tag}>
-              {intl.formatMessage({ id: 'product.videoTime1' })}
+              {intl.formatMessage({ id: 'product.videoTime2' })}
             </div>
           </Col>
         </Row>
@@ -95,7 +95,7 @@ export default function ProductPage() {
             >
               <div className={styles.featCard}>
                 {isWide ? (
-                  <Space size={36}>
+                  <Space size={24}>
                     <img src={item.icon} />
                     <div className={styles.textGroup}>
                       <div className={styles.title}>{item.title}</div>
@@ -117,11 +117,12 @@ export default function ProductPage() {
         })}
       </Row>
 
-      <div className={styles.reasonWrapper}>
-        <SubTitle title={intl.formatMessage({ id: 'product.choseReason' })} />
-        <div className={styles.reasonCard}>
-          <div>{intl.formatMessage({ id: 'product.choseReasonDesc' })}</div>
-        </div>
+      <div className={styles.ecoWrapper}>
+        <SubTitle title={intl.formatMessage({ id: 'product.ecosystem' })} />
+        <img
+          src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*OEU-TLbbJb4AAAAAAAAAAAAADgOBAQ/original"
+          alt="ecosystem"
+        />
       </div>
     </div>
   );

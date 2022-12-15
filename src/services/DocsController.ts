@@ -28,7 +28,10 @@ export async function queryCategory(params: { version: string }) {
 
 /* 获取文档内容 */
 export async function queryDocDetail(params: { id: string }) {
-  return request(`${DOC_HOST}/api/docs/gitlab/detail/${params.id}/1`, {
-    method: 'GET',
-  });
+  return request(
+    `${DOC_HOST}/api/docs/gitlab/detail/${params.id}/${CATEGORY_ID}`,
+    {
+      method: 'GET',
+    },
+  );
 }

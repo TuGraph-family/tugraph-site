@@ -10,7 +10,7 @@ export default defineConfig({
   routes: [
     { path: '/', component: '@/pages/index' },
     { path: '/product', component: '@/pages/product' },
-    { path: '/demo', component: '@/pages/demo' },
+    { path: '/case', component: '@/pages/case' },
     { path: '/doc', component: '@/pages/doc' },
     { path: '/blog', component: '@/pages/blog' },
     { path: '/download', component: '@/pages/download' },

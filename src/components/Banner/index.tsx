@@ -3,6 +3,7 @@ import { Row, Col } from 'antd';
 import { useMedia } from 'react-use';
 
 import styles from './index.less';
+import { useLocation } from 'umi';
 
 export interface BannerInfoProps {
   slogan: string;
@@ -17,6 +18,8 @@ export const Banner = ({
   footer,
   description = '',
 }: BannerInfoProps) => {
+  const { pathname } = useLocation();
+  const isHome = pathname === '/' ? true : false;
   const isWide = useMedia('(min-width: 767.99px)', true);
   return (
     <div
@@ -30,7 +33,7 @@ export const Banner = ({
       <div className={styles.containerWrapper}>
         {isWide ? (
           <Row>
-            <Col span={12}>
+            <Col span={isHome ? 10 : 14}>
               <div className={styles.slogan}>{slogan}</div>
               {description && (
                 <div className={styles.description}>{description}</div>
@@ -38,7 +41,7 @@ export const Banner = ({
               {footer}
             </Col>
             {bgIconUrl && (
-              <Col span={12}>
+              <Col span={isHome ? 14 : 10}>
                 <img
                   className={isWide ? styles.pcIcon : styles.mobileIcon}
                   style={{

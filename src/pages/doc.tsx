@@ -114,14 +114,14 @@ export default function DocPage() {
       <div className={styles.headerWrapper}>
         <Header />
       </div>
-      <Layout>
+      <Layout style={{ backgroundColor: '#fff' }}>
         {isWide && (
           <Affix offsetTop={0}>
             <Sider className={styles.sideWrapper} theme="light" width={243}>
               <Spin spinning={!!!currentVersion}>
                 <Select
                   style={{
-                    width: '204px',
+                    width: '180px',
                     textAlign: 'left',
                     margin: '24px',
                   }}
@@ -206,7 +206,9 @@ export default function DocPage() {
           {getCategoryMenu()}
         </Drawer>
       )}
-      <Footer className="docFooter" />
+      <div className={styles.docFooter}>
+        <Footer />
+      </div>
     </Layout>
   );
 }
