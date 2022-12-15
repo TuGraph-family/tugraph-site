@@ -103,9 +103,10 @@ export const blogs = [
     updateDate: '2022-11-14',
     type: 'tech',
     content: md10?.html,
-  },{
+  },
+  {
     id: 10,
-    img: 'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*hFSqSq5-zTcAAAAAAAAAAAAADgOBAQ/original',
+    img: 'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*XtLHSp8jd7kAAAAAAAAAAAAADgOBAQ/original',
     title: 'TuGraph开源JAVA客户端工具TuGraph-OGM，无缝对接JAVA开发生态',
     desc: 'TuGraph 图数据库提供了 JAVA、C++、Python 等多种语言的 SDK 支持，方便客户在各种场景下使用。用户使用 SDK 向TuGraph服务器发送Cypher请求，服务器则以 JSON形式返回数据。近日，TuGraph 推出了一款面向 JAVA 客户端用户的开发工具 TuGraph-OGM (Object Graph Mapping)，为用户提供了对象操作接口，相较 Cypher/JSON 接口应用起来更加便捷。',
     updateDate: '2022-11-27',
