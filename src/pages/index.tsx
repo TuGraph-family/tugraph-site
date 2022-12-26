@@ -230,7 +230,12 @@ export default function IndexPage() {
         <div className={styles.versionsWrapper}>
           <SubTitle title={intl.formatMessage({ id: 'home.chooseVersion' })} />
           <Row className={styles.versions}>
-            <Col span={isWide ? 12 : 24} className={styles.version} key={0}>
+            <Col
+              span={isWide ? 12 : 24}
+              className={styles.version}
+              style={{ paddingRight: '12px' }}
+              key={0}
+            >
               <div className={styles.versionCard}>
                 <div
                   className={cx(styles.title, styles.textAlignLeft, 'boldText')}
@@ -250,7 +255,12 @@ export default function IndexPage() {
                 </Button>
               </div>
             </Col>
-            <Col span={isWide ? 12 : 24} className={styles.version} key={1}>
+            <Col
+              style={{ paddingLeft: '12px' }}
+              span={isWide ? 12 : 24}
+              className={styles.version}
+              key={1}
+            >
               <div className={styles.versionCard}>
                 <div className={styles.title}>
                   {intl.formatMessage({ id: 'home.version1' })}

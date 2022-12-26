@@ -50,7 +50,7 @@ export const ApplyForm = ({
         initialValues={{ remember: true }}
         autoComplete="off"
       >
-        <Row>
+        <Row gutter={56}>
           <Col span={12}>
             <Form.Item
               label={intl.formatMessage({ id: 'form.item.name' })}
@@ -64,7 +64,6 @@ export const ApplyForm = ({
               />
             </Form.Item>
           </Col>
-
           <Col span={12}>
             <Form.Item
               label={intl.formatMessage({ id: 'form.item.position' })}
@@ -104,7 +103,6 @@ export const ApplyForm = ({
               />
             </Form.Item>
           </Col>
-
           <Col span={12}>
             <Form.Item
               label={intl.formatMessage({ id: 'form.item.email' })}
