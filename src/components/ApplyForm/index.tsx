@@ -147,6 +147,20 @@ export const ApplyForm = ({
             {intl.formatMessage({ id: 'form.submit.info' })}
           </Checkbox>
         </Form.Item>
+        <div className={styles.footer}>
+          <div className={styles.splitLine} />
+          <Typography.Text className={styles.tip} type="secondary">
+            {intl.formatMessage({ id: 'form.tip0' })}
+            <a
+              href="https://render.alipay.com/p/yuyan/180020010001196791/preview.html?agreementId=AG00000174"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {intl.formatMessage({ id: 'form.rule' })}
+            </a>
+            {intl.formatMessage({ id: 'form.tip1' })}
+          </Typography.Text>
+        </div>
       </Form>
     </Modal>
   );

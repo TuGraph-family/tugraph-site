@@ -155,6 +155,7 @@ export const Footer = ({ className }: { className?: string }) => {
           <a
             href="https://render.alipay.com/p/yuyan/180020010001196791/preview.html?agreementId=AG00000174"
             rel="noopener noreferrer"
+            target="_blank"
           >
             {intl.formatMessage({ id: 'footer.rules' })}
           </a>

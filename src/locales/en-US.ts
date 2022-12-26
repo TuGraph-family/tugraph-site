@@ -1,7 +1,9 @@
 export default {
   'header.home': '首页',
   'header.product': '产品',
-  'header.demo': '案例',
+  'header.case': '案例',
+  'header.eco': '生态',
+  'header.assets': '资源',
   'header.doc': '文档',
   'header.blog': '博客',
   'header.community': '社区',
@@ -9,7 +11,7 @@ export default {
   'footer.productName': 'TuGraph 图数据库',
   'footer.community': '社区',
   'footer.communityName': '哔哩哔哩',
-  'footer.phone': '(+86) 0571-85022088  转分机号 83789993#',
+  'footer.phone': '400-903-0809',
   'home.title': ' TuGraph 首页',
   'home.description':
     'TuGraph,蚂蚁图数据库,蚂蚁图计算,图数据库,图计算,图平台,图数据分析, 分布式数据库, Graph,大数据,关联关系分析,知识图谱,GNN, 图神经网络, Neo4j, GeaGraph, GeaBase, GeaFlow, 费马, 人工智能, big data, graph processing,graph database, graph computing, artificial intelligence',
@@ -173,7 +175,7 @@ export default {
   'demo.example.solution0':
     '图计算技术正是解决这种复杂金融关系的有效手段。通过构建体系化监控，进一步识别风险全貌，显著提高遏制洗钱、欺诈等恶意金融行为的精准性。TuGraph同时支持OLTP和OLAP，其高吞吐、低延迟的产品特性，能够快速识别和防范金融风险行为，满足日趋严格的防控要求。',
   'demo.example.profit0':
-    '通过图计算技术，2020全年反洗钱风险审理分析效率提升90%，风险识别能力提升了9.4倍，有效的保护了支付宝百万亿交易规模的资金安全。',
+    '帮助2021年支付宝资损率小于千万分之0.098，有效的保护了支付宝百万亿交易规模的资金安全。',
   'demo.example.title1': '某大型能源集团',
   'demo.example.description1': '实现电网状态可视化及实时管理',
   'demo.example.challenge1':
@@ -189,7 +191,7 @@ export default {
   'demo.example.solution2':
     '团伙在申请信用卡时，通常会重复使用一些特定信息。在TuGraph上构建信用卡申请关联图谱，通过产品内置的社区发现等算法挖掘异常申请信息，进而锁定可疑群体团体。',
   'demo.example.profit2':
-    '替代原有的开源计算框架GraphX，运算时间从10小时降至10分钟，并在业务效果上取得突破。有效识别涉及套现、骗贷等违规行为的团伙控制信用卡。',
+    '替代原有的开源计算框架，运算时间从10小时降至10分钟，并在业务效果上取得突破。有效识别涉及套现、骗贷等违规行为的团伙控制信用卡。',
   'demo.example.title3': '证券账户持仓相似性挖掘',
   'demo.example.challenge3':
     '挖掘高相似持仓用户，基于用户持仓数据寻找一段时期内的平均持仓高度相似用户对，后续可进一步用于老鼠仓识别、内幕交易识别以及关联账户分析。',
@@ -221,7 +223,8 @@ export default {
   'download.banner.slogan': 'TuGraph v3.3.2',
   'download.banner.description': '最新版本2022.10.20',
   'download.title0': 'TuGraph 社区版下载',
-  'download.title1': 'TuGraph 企业版申请',
+  'download.title1': '存储过程接口文档',
+  'download.title2': 'TuGraph 企业版申请',
   'download.downloadBtn': '立即下载',
   'download.applyText': '免费申请30天试用',
   'download.contactBtn': '联系我们',
@@ -239,6 +242,10 @@ export default {
   'form.item.phone': '手机',
   'form.submit.info': '接受软件许可权 *',
   'form.submit': '提交',
+  'form.tip0':
+    '您提供以上联系信息，即授权蚂蚁集团通过有关TuGraph的产品和服务的通信与您保持联系，以方便回复您的询问或者发送我们的资料等内容，请参阅我们的',
+  'form.rule': '隐私政策',
+  'form.tip1': '以了解更多详情或者您可以选择随时退出。',
   'blog.banner.slogan': '最新资讯',
   'blog.banner.subTitle':
     '我们将通过官网和微信公众号持续发布最新的产品信息、技术分享、活动要闻等资讯。',

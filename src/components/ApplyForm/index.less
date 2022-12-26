@@ -4,18 +4,26 @@
   .submit {
     height: 48px;
     width: 246px;
-    background-color: #0069FD;
+    background-color: #0069fd;
     border-radius: 8px;
     float: right;
   }
 
+  .footer {
+    margin-bottom: 24px;
+    .splitLine {
+      border-bottom: 1px solid rgba(26, 27, 37, 0.25);
+      margin-bottom: 16px;
+    }
+  }
+
   .itemWithTip {
     position: relative;
-    
+
     .tip {
       font-weight: 400;
       font-size: 14px;
-      color: rgba(26,27,37,0.45);
+      color: rgba(26, 27, 37, 0.45);
       position: absolute;
       top: 32px;
       left: 0;
@@ -32,12 +40,12 @@
     .ant-modal-title {
       font-weight: 500;
       font-size: 20px;
-      color: rgba(26,27,37,0.88);
+      color: rgba(26, 27, 37, 0.88);
     }
 
     .ant-modal-content {
-      background-color: #FFFFFF;
-      box-shadow: 0 8px 16px 8px rgba(0,0,0,0.03);
+      background-color: #ffffff;
+      box-shadow: 0 8px 16px 8px rgba(0, 0, 0, 0.03);
       border-radius: 12px;
     }
 
@@ -59,33 +67,35 @@
     .ant-form-vertical .ant-form-item-label > label {
       font-weight: 500;
       font-size: 14px;
-      color: rgba(26,27,37,0.88);
+      color: rgba(26, 27, 37, 0.88);
       margin-top: 8px;
     }
 
-    .ant-form-item-label > label.ant-form-item-required:not(.ant-form-item-required-mark-optional)::before {
-      color: #000A1C;
+    .ant-form-item-label
+      > label.ant-form-item-required:not(
+        .ant-form-item-required-mark-optional
+      )::before {
+      color: #000a1c;
     }
 
     .ant-form-item-control-input-content {
-  
       .ant-input {
         padding: 16px 24px;
         height: 48px;
         width: 332px;
-        border: 1px solid rgba(26,27,37,0.25);
+        border: 1px solid rgba(26, 27, 37, 0.25);
         border-radius: 8px;
       }
 
       textarea.ant-input {
         height: 90px;
         width: 100%;
-        border: 1px solid rgba(26,27,37,0.25);
+        border: 1px solid rgba(26, 27, 37, 0.25);
         border-radius: 8px;
         margin-top: 20px;
       }
     }
-    
+
     .ant-form-item-explain-error {
       margin-left: 8px;
     }
@@ -100,7 +110,8 @@
     }
 
     .ant-checkbox-inner,
-    .ant-checkbox-wrapper.ant-checkbox-wrapper-in-form-item input[type='checkbox'] {
+    .ant-checkbox-wrapper.ant-checkbox-wrapper-in-form-item
+      input[type='checkbox'] {
       width: 20px;
       height: 20px;
       top: 3px;
@@ -143,11 +154,10 @@
     padding: 16px;
 
     .itemWithTip {
-    
       .tip {
         font-size: 16px;
         text-align: left;
-        color: rgba(0,0,0,0.45);
+        color: rgba(0, 0, 0, 0.45);
         transition: all ease 0.3s;
       }
     }
@@ -157,14 +167,13 @@
     }
 
     :global {
-     .ant-form-item-control-input-content textarea.ant-input {
+      .ant-form-item-control-input-content textarea.ant-input {
         margin-top: 68px !important;
-       
       }
 
       .ant-input {
-        border: 1px solid rgba(0,0,0,0.25) !important;
-         border-radius: 8px;
+        border: 1px solid rgba(0, 0, 0, 0.25) !important;
+        border-radius: 8px;
       }
 
       .ant-form-item-control-input-content {
