@@ -2,7 +2,6 @@ export default {
   'header.home': '首页',
   'header.product': '产品',
   'header.case': '案例',
-  'header.eco': '生态',
   'header.assets': '资源',
   'header.doc': '文档',
   'header.blog': '博客',

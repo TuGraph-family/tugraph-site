@@ -20,6 +20,11 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
     setPopupMenuVisible(!popupMenuVisible);
   };
 
+  const getActiveKey = () => {
+    const key = pathname.replace('/', '');
+    return [key];
+  };
+
   const menuIcon = !isWide ? (
     <MenuOutlined
       className={styles.menuIcon}
@@ -50,15 +55,7 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
           {intl.formatMessage({ id: 'header.case' })}
         </a>
       ),
-      key: 'demo',
-    },
-    {
-      label: (
-        <a href="" rel="noopener noreferrer">
-          {intl.formatMessage({ id: 'header.eco' })}
-        </a>
-      ),
-      key: 'eco',
+      key: 'case',
     },
     {
       label: intl.formatMessage({ id: 'header.assets' }),
@@ -135,8 +132,10 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
 
       <Menu
         className={styles.menu}
-        activeKey={pathname.replace('/', '')}
+        defaultSelectedKeys={['assets']}
+        selectedKeys={getActiveKey()}
         mode="horizontal"
+        style={{ with: 96 }}
         triggerSubMenuAction={'click'}
         items={menuItems}
       />
