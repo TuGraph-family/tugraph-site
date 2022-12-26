@@ -52,11 +52,14 @@ export default function IndexPage() {
 
   const content = (
     <>
-      <img
-        className={styles.bannerImg}
-        src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*hP1DSZ24ZCIAAAAAAAAAAAAADgOBAQ/original"
-        alt="banner"
-      />
+      <div className="maxContainer">
+        <img
+          className={styles.bannerImg}
+          src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*SeWxTJnZ4_8AAAAAAAAAAAAADgOBAQ/original"
+          alt="banner"
+        />
+      </div>
+
       <div className={styles.containerWrapper}>
         <Helmet>
           <title>{intl.formatMessage({ id: 'home.title' })}</title>
@@ -87,7 +90,7 @@ export default function IndexPage() {
               <div className={styles.tag}>
                 {intl.formatMessage({ id: 'home.notice1.tag' })}
               </div>
-              <div className={styles.title}>
+              <div className={styles.title} style={{ width: '244px' }}>
                 {intl.formatMessage({ id: 'home.notice1.title' })}
               </div>
               <div className={styles.desc}>
@@ -121,40 +124,42 @@ export default function IndexPage() {
         </div>
 
         <SubTitle title={intl.formatMessage({ id: 'home.choseReason' })} />
-        <Row className={styles.reasonCards}>
-          {getReasons(intl)?.map((item, key) => {
-            return (
-              <Col
-                span={isWide ? 12 : 6}
-                className={styles.reasonCardGroup}
-                key={key}
-              >
-                <div className={styles.reasonCard}>
-                  {isWide ? (
-                    <Space size={36}>
-                      <img src={item.icon} />
-                      <div className={styles.textGroup}>
-                        <div className={styles.title}>{item.title}</div>
-                        <div className={styles.desc}>{item.desc}</div>
-                      </div>
-                    </Space>
-                  ) : (
-                    <>
-                      <img src={item.icon} />
-                      <div className={styles.textGroup}>
-                        <div className={styles.title}>{item.title}</div>
-                        <div className={styles.desc}>{item.desc}</div>
-                      </div>
-                    </>
-                  )}
-                </div>
-              </Col>
-            );
-          })}
-        </Row>
+        <div className="maxContainer">
+          <Row className={styles.reasonCards}>
+            {getReasons(intl)?.map((item, key) => {
+              return (
+                <Col
+                  span={isWide ? 12 : 6}
+                  className={styles.reasonCardGroup}
+                  key={key}
+                >
+                  <div className={styles.reasonCard}>
+                    {isWide ? (
+                      <Space size={24}>
+                        <img src={item.icon} />
+                        <div className={styles.textGroup}>
+                          <div className={styles.title}>{item.title}</div>
+                          <div className={styles.desc}>{item.desc}</div>
+                        </div>
+                      </Space>
+                    ) : (
+                      <>
+                        <img src={item.icon} />
+                        <div className={styles.textGroup}>
+                          <div className={styles.title}>{item.title}</div>
+                          <div className={styles.desc}>{item.desc}</div>
+                        </div>
+                      </>
+                    )}
+                  </div>
+                </Col>
+              );
+            })}
+          </Row>
+        </div>
 
         <div className={styles.cases}>
-          <Row>
+          <Row className="maxContainer">
             <Col span={6} className={styles.caseGroup}>
               <div className={styles.title}>
                 {intl.formatMessage({ id: 'home.case.title' })}
@@ -188,24 +193,26 @@ export default function IndexPage() {
         </div>
 
         <SubTitle title={intl.formatMessage({ id: 'home.users' })} />
-        <Row className={styles.users}>
-          <Col span={6}>
-            <img src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*yZnbTbOz1RAAAAAAAAAAAAAADgOBAQ/original" />
-          </Col>
-          <Col span={6}>
-            <img src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*6qfKQo719XQAAAAAAAAAAAAADgOBAQ/original" />
-          </Col>
-          <Col span={6}>
-            <img src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*7szLS7kQW-QAAAAAAAAAAAAADgOBAQ/original" />
-          </Col>
-          <Col span={6}>
-            <img src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*LsymQLEes6wAAAAAAAAAAAAADgOBAQ/original" />
-          </Col>
-          <a className="textLink" href="/demo">
-            {intl.formatMessage({ id: 'home.moreDemo' })}
-            <ArrowRightOutlined />
-          </a>
-        </Row>
+        <div className="maxContainer">
+          <Row className={styles.users}>
+            <Col span={6}>
+              <img src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*yZnbTbOz1RAAAAAAAAAAAAAADgOBAQ/original" />
+            </Col>
+            <Col span={6}>
+              <img src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*6qfKQo719XQAAAAAAAAAAAAADgOBAQ/original" />
+            </Col>
+            <Col span={6}>
+              <img src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*7szLS7kQW-QAAAAAAAAAAAAADgOBAQ/original" />
+            </Col>
+            <Col span={6}>
+              <img src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*LsymQLEes6wAAAAAAAAAAAAADgOBAQ/original" />
+            </Col>
+            <a className="textLink" href="/demo">
+              {intl.formatMessage({ id: 'home.moreDemo' })}
+              <ArrowRightOutlined />
+            </a>
+          </Row>
+        </div>
 
         {!isWide && (
           <Button
@@ -263,43 +270,46 @@ export default function IndexPage() {
             </Col>
           </Row>
         </div>
-        <div className={styles.featList}>
-          <Row>
-            <Col
-              span={14}
-              className={cx(styles.title, styles.textAlignLeft, 'boldText')}
-            >
-              {intl.formatMessage({ id: 'home.function' })}
-            </Col>
-            <Col span={5} className={cx(styles.title, 'boldText')}>
-              {intl.formatMessage({ id: 'home.version0' })}
-            </Col>
-            <Col span={5} className={cx(styles.title, 'boldText')}>
-              {intl.formatMessage({ id: 'home.version1' })}
-            </Col>
-          </Row>
-          {getVersions(intl)?.map((item, key) => {
-            return (
-              <Row
-                key={key}
-                className={key % 2 === 1 ? styles.crossRow : styles.baseRow}
+        <div className="maxContainer">
+          <div className={styles.featList}>
+            <Row>
+              <Col
+                span={14}
+                className={cx(styles.title, styles.textAlignLeft, 'boldText')}
               >
-                <Col
-                  span={14}
-                  className={cx(styles.textAlignLeft, styles.text)}
+                {intl.formatMessage({ id: 'home.function' })}
+              </Col>
+              <Col span={5} className={cx(styles.title, 'boldText')}>
+                {intl.formatMessage({ id: 'home.version0' })}
+              </Col>
+              <Col span={5} className={cx(styles.title, 'boldText')}>
+                {intl.formatMessage({ id: 'home.version1' })}
+              </Col>
+            </Row>
+            {getVersions(intl)?.map((item, key) => {
+              return (
+                <Row
+                  key={key}
+                  className={key % 2 === 1 ? styles.crossRow : styles.baseRow}
                 >
-                  {item.feat}
-                </Col>
-                <Col span={5} className={styles.text}>
-                  {item.community ? <CheckOutlined /> : '-'}
-                </Col>
-                <Col span={5} className={styles.text}>
-                  {item.pro ? <CheckOutlined /> : '-'}
-                </Col>
-              </Row>
-            );
-          })}
+                  <Col
+                    span={14}
+                    className={cx(styles.textAlignLeft, styles.text)}
+                  >
+                    {item.feat}
+                  </Col>
+                  <Col span={5} className={styles.text}>
+                    {item.community ? <CheckOutlined /> : '-'}
+                  </Col>
+                  <Col span={5} className={styles.text}>
+                    {item.pro ? <CheckOutlined /> : '-'}
+                  </Col>
+                </Row>
+              );
+            })}
+          </div>
         </div>
+
         <ApplyForm visible={showApplyForm} setVisible={setShowApplyForm} />
         <Modal
           centered

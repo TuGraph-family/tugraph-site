@@ -1,18 +1,22 @@
 .containerWrapper {
-  background-color: #FFFFFF;
-  box-shadow: 0 3px 6px -4px rgba(132,135,155,0.12), 0 6px 16px 0 rgba(132,135,155,0.08), 0 9px 28px 8px rgba(132,135,155,0.05);
+  max-width: 1200px;
+  margin: auto;
+  background-color: #ffffff;
+  box-shadow: 0 3px 6px -4px rgba(132, 135, 155, 0.12),
+    0 6px 16px 0 rgba(132, 135, 155, 0.08),
+    0 9px 28px 8px rgba(132, 135, 155, 0.05);
   border-radius: 12px;
   padding: 0 32px 16px 32px;
   overflow: hidden;
 
   .title {
     margin: 32px 0 20px 0;
-    font-family:  PingFangSC;
+    font-family: PingFangSC;
     font-weight: 500;
     font-size: 20px;
-    color: rgba(26,27,37,0.88);
-    }
-  
+    color: rgba(26, 27, 37, 0.88);
+  }
+
   .right {
     text-align: right;
   }
@@ -23,38 +27,37 @@
     padding: 24px 32px;
     align-items: center;
     height: 80px;
-    background-color: rgba(22,80,255,0.04);
+    background-color: rgba(22, 80, 255, 0.04);
     border-radius: 8px;
     margin: 16px 0;
-    
+
     .listName {
-      font-family:  PingFangSC;
+      font-family: PingFangSC;
       font-weight: 500;
       font-size: 16px;
-      color: rgba(26,27,37,0.88);
+      color: rgba(26, 27, 37, 0.88);
     }
 
     .listVersions {
       width: 100px;
       font-weight: 400;
       font-size: 16px;
-      color: rgba(26,27,37,0.65);
+      color: rgba(26, 27, 37, 0.65);
     }
   }
 
   button {
     height: 32px;
     width: 100px !important;
-    background-color: rgba(255,255,255,1);
-    border: 1px solid rgba(26,27,37,0.15);
+    background-color: rgba(255, 255, 255, 1);
+    border: 1px solid rgba(26, 27, 37, 0.15);
     border-radius: 8px;
-    color: rgba(26,27,37,0.88);
+    color: rgba(26, 27, 37, 0.88);
     font-size: 14px;
     font-weight: 400;
     line-height: 22px;
   }
 }
-
 
 @media only screen and (max-width: 767.99px) {
   .containerWrapper {
@@ -65,7 +68,7 @@
       font-size: 14px;
       margin-bottom: 24px;
     }
-    
+
     .listName {
       text-align: left;
     }
@@ -73,7 +76,7 @@
     .listVersion {
       font-weight: 400;
       font-size: 24px;
-      color: rgba(0,0,0,0.65);
+      color: rgba(0, 0, 0, 0.65);
       line-height: 54px;
       text-align: right;
     }

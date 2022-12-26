@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import HTMLRenderer from 'react-html-renderer';
 import { useIntl, history, useLocation } from 'umi';
-import { Spin, Row, Col, Pagination, Tabs } from 'antd';
+import { Spin, Row, Col, Pagination, Tabs, Space } from 'antd';
 import { Layout } from 'antd';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
@@ -68,16 +68,16 @@ export default function BlogPage() {
                     setBlogDetail(item.content);
                   }}
                 >
-                  <Row>
-                    <Col span={6}>
+                  <Space size={24}>
+                    <div>
                       <img src={item.img} alt={item.title} />
-                    </Col>
-                    <Col span={18} className={styles.textWrapper}>
+                    </div>
+                    <div className={styles.textWrapper}>
                       <div className={styles.listTitle}>{item.title}</div>
-                      <div className={styles.updateDate}>{item.updateDate}</div>
                       <div className={styles.desc}>{item.desc}</div>
-                    </Col>
-                  </Row>
+                      <div className={styles.updateDate}>{item.updateDate}</div>
+                    </div>
+                  </Space>
                 </div>
               ))}
             </div>
@@ -86,7 +86,6 @@ export default function BlogPage() {
             tab={intl.formatMessage({ id: 'blog.news' })}
             key="news"
           >
-            {' '}
             <div className={styles.lists}>
               {listData?.map((item, key) => (
                 <div
@@ -209,7 +208,9 @@ export default function BlogPage() {
           <Layout>
             <Content className={styles.blogContainerWrapper}>
               <Spin spinning={!!!blogDetail}>
-                <HTMLRenderer html={blogDetail} />
+                <div className={styles.blogContainer}>
+                  <HTMLRenderer html={blogDetail} />
+                </div>
               </Spin>
             </Content>
           </Layout>

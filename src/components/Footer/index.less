@@ -1,33 +1,36 @@
 .footer {
-  background: #00122B;
-  height: 403px;
+  background: rgba(1, 19, 43, 1);
+  height: 388px;
   z-index: 9;
 
   .contactGroup {
     font-size: 16px;
     font-weight: 400;
-    color: rgba(255,255,255,0.89);
+    color: rgba(255, 255, 255, 0.89);
   }
 
   a:hover {
-    color:#1890ff;
+    color: #1890ff;
   }
 
   .containerWrapper {
-    padding: 57px 120px 54px 120px;
+    max-width: 1200px;
+    margin: auto;
+    padding: 57px 120px 56px 120px;
     .title {
       font-weight: 500;
       font-size: 14px;
-      color: #FFFFFF;
+      color: #ffffff;
       line-height: 24px;
+      margin-bottom: 17px;
     }
 
     a,
     .item {
       font-size: 14px;
-      color: rgba(255,255,255,0.65);
+      color: rgba(255, 255, 255, 0.65);
       line-height: 22px;
-   
+
       display: block;
     }
 
@@ -37,12 +40,11 @@
 
     .iconGroup {
       margin: 36px 0 30px 0;
-      
+
       img {
         cursor: pointer;
       }
     }
-    
   }
 
   .logo {
@@ -54,34 +56,33 @@
   .qrCode {
     height: 211px;
     width: 164px;
-    background-color: rgba(255,255,255,0.08);
+    background-color: rgba(255, 255, 255, 0.08);
     border-radius: 8px;
     box-shadow: -7px 27px 60px 0 rgb(1 2 30 / 63%);
     padding: 24px;
     text-align: center;
-    
+
     .desc {
       margin-top: 16px;
       font-size: 14px;
-      color: rgba(255,255,255,0.89)
+      color: rgba(255, 255, 255, 0.89);
     }
 
     .subDesc {
       margin-top: 8px;
       font-size: 12px;
-      color: rgba(255,255,255,0.65);
+      color: rgba(255, 255, 255, 0.65);
     }
-    
+
     img {
       border-radius: 8px;
       width: 100px;
     }
-  
   }
 
   .footerExtraInfo {
-    border-top: 1px solid #353c45;
-    height: 78px;
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
+    height: 64px;
     text-align: center;
     display: flex;
     justify-content: center;
@@ -89,7 +90,7 @@
     a,
     div {
       font-size: 14px;
-      color: rgba(255,255,255,0.65);
+      color: rgba(255, 255, 255, 0.65);
     }
     a {
       text-decoration: underline;
@@ -106,7 +107,7 @@
 @media only screen and (max-width: 767.99px) {
   .footer {
     padding: 80px 24px;
-    color: rgba(255,255,255,0.89);
+    color: rgba(255, 255, 255, 0.89);
     font-weight: 400;
     font-size: 16px;
     height: auto;
@@ -114,15 +115,14 @@
     .logo {
       margin-bottom: 76px;
     }
-    
+
     .qrCode {
       text-align: center;
       height: 100%;
       padding: 48px;
       width: 300px;
       margin: 80px auto;
-      background-color: #01132B;
-      box-shadow: -14px 54px 120px 0 rgba(1,2,30,0.90);
+      background-color: rgba(255, 255, 255, 0.08);
       border-radius: 8px;
 
       img {
@@ -130,12 +130,12 @@
         height: 204px;
       }
     }
-    
+
     .contactInfo {
       margin: 0;
       display: flex;
       flex-direction: column;
-      color: rgba(255,255,255,0.85);
+      color: rgba(255, 255, 255, 0.85);
       line-height: 48px;
 
       img {
@@ -150,6 +150,5 @@
       padding: 24px;
       height: 64px;
     }
-
   }
 }

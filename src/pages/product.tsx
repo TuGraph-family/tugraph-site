@@ -36,12 +36,14 @@ export default function ProductPage() {
                 width: 362,
               }}
             />
-            <div className={styles.title}>
-              {intl.formatMessage({ id: 'product.video0' })}
-            </div>
-            <div className={styles.tag}>
-              {intl.formatMessage({ id: 'product.videoTime0' })}
-            </div>
+            <Space size={12}>
+              <div className={styles.title}>
+                {intl.formatMessage({ id: 'product.video0' })}
+              </div>
+              <div className={styles.tag}>
+                {intl.formatMessage({ id: 'product.videoTime0' })}
+              </div>
+            </Space>
           </Col>
           <Col span={isWide ? 8 : 24} className={styles.card}>
             <JoLPlayer
@@ -52,12 +54,14 @@ export default function ProductPage() {
                 width: 362,
               }}
             />
-            <div className={styles.title}>
-              {intl.formatMessage({ id: 'product.video1' })}
-            </div>
-            <div className={styles.tag}>
-              {intl.formatMessage({ id: 'product.videoTime1' })}
-            </div>
+            <Space size={12}>
+              <div className={styles.title}>
+                {intl.formatMessage({ id: 'product.video1' })}
+              </div>
+              <div className={styles.tag}>
+                {intl.formatMessage({ id: 'product.videoTime1' })}
+              </div>
+            </Space>
           </Col>
           <Col span={isWide ? 8 : 24} className={styles.card}>
             <JoLPlayer
@@ -68,12 +72,14 @@ export default function ProductPage() {
                 width: 362,
               }}
             />
-            <div className={styles.title}>
-              {intl.formatMessage({ id: 'product.video2' })}
-            </div>
-            <div className={styles.tag}>
-              {intl.formatMessage({ id: 'product.videoTime2' })}
-            </div>
+            <Space size={12}>
+              <div className={styles.title}>
+                {intl.formatMessage({ id: 'product.video2' })}
+              </div>
+              <div className={styles.tag}>
+                {intl.formatMessage({ id: 'product.videoTime2' })}
+              </div>
+            </Space>
           </Col>
         </Row>
       </div>
@@ -85,44 +91,48 @@ export default function ProductPage() {
       </div>
 
       <SubTitle title={intl.formatMessage({ id: 'product.feature' })} />
-      <Row className={styles.featCards}>
-        {getFeats(intl)?.map((item, key) => {
-          return (
-            <Col
-              span={isWide ? 12 : 6}
-              className={styles.featCardGroup}
-              key={key}
-            >
-              <div className={styles.featCard}>
-                {isWide ? (
-                  <Space size={24}>
-                    <img src={item.icon} />
-                    <div className={styles.textGroup}>
-                      <div className={styles.title}>{item.title}</div>
-                      <div className={styles.desc}>{item.desc}</div>
-                    </div>
-                  </Space>
-                ) : (
-                  <>
-                    <img src={item.icon} />
-                    <div className={styles.textGroup}>
-                      <div className={styles.title}>{item.title}</div>
-                      <div className={styles.desc}>{item.desc}</div>
-                    </div>
-                  </>
-                )}
-              </div>
-            </Col>
-          );
-        })}
-      </Row>
+      <div className="maxContainer">
+        <Row className={styles.featCards}>
+          {getFeats(intl)?.map((item, key) => {
+            return (
+              <Col
+                span={isWide ? 12 : 6}
+                className={styles.featCardGroup}
+                key={key}
+              >
+                <div className={styles.featCard}>
+                  {isWide ? (
+                    <Space size={27}>
+                      <img src={item.icon} />
+                      <div className={styles.textGroup}>
+                        <div className={styles.title}>{item.title}</div>
+                        <div className={styles.desc}>{item.desc}</div>
+                      </div>
+                    </Space>
+                  ) : (
+                    <>
+                      <img src={item.icon} />
+                      <div className={styles.textGroup}>
+                        <div className={styles.title}>{item.title}</div>
+                        <div className={styles.desc}>{item.desc}</div>
+                      </div>
+                    </>
+                  )}
+                </div>
+              </Col>
+            );
+          })}
+        </Row>
+      </div>
 
       <div className={styles.ecoWrapper}>
         <SubTitle title={intl.formatMessage({ id: 'product.ecosystem' })} />
-        <img
-          src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*OEU-TLbbJb4AAAAAAAAAAAAADgOBAQ/original"
-          alt="ecosystem"
-        />
+        <div className="maxContainer">
+          <img
+            src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*OEU-TLbbJb4AAAAAAAAAAAAADgOBAQ/original"
+            alt="ecosystem"
+          />
+        </div>
       </div>
     </div>
   );

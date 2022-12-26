@@ -16,7 +16,7 @@ export default {
     'TuGraph,蚂蚁图数据库,蚂蚁图计算,图数据库,图计算,图平台,图数据分析, 分布式数据库, Graph,大数据,关联关系分析,知识图谱,GNN, 图神经网络, Neo4j, GeaGraph, GeaBase, GeaFlow, 费马, 人工智能, big data, graph processing,graph database, graph computing, artificial intelligence',
   'home.banner.slogan': '支付宝万亿业务背后的图数据库',
   'home.banner.description':
-    '高性能图数据库TuGraph由蚂蚁集团和清华大学共同研发，历经蚂蚁万亿级业务的实际场景锤炼，在国际图数据库基准测试中获得性能第一。',
+    '高性能图数据库TuGraph由蚂蚁集团和清华大学共同研发，历经蚂蚁实际业务场景锤炼，在国际图数据库基准测试中获得性能第一。',
   'home.banner.quickStart': '快速上手',
   'home.notice0.tag': '测试报告',
   'home.notice0.title': '蚂蚁图数据库再获 LDBC 权威测试世界第一',
@@ -239,7 +239,7 @@ export default {
   'form.item.email': '公司邮箱',
   'form.item.position': '职位',
   'form.item.phone': '手机',
-  'form.submit.info': '接受软件许可权 *',
+  'form.submit.info': '接受软件许可权',
   'form.submit': '提交',
   'form.tip0':
     '您提供以上联系信息，即授权蚂蚁集团通过有关TuGraph的产品和服务的通信与您保持联系，以方便回复您的询问或者发送我们的资料等内容，请参阅我们的',

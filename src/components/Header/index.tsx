@@ -135,7 +135,6 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
         defaultSelectedKeys={['assets']}
         selectedKeys={getActiveKey()}
         mode="horizontal"
-        style={{ with: 96 }}
         triggerSubMenuAction={'click'}
         items={menuItems}
       />

@@ -20,12 +20,17 @@ export const Banner = ({
 }: BannerInfoProps) => {
   const { pathname } = useLocation();
   const isHome = pathname === '/' ? true : false;
+
   const isWide = useMedia('(min-width: 767.99px)', true);
+  let background = `url('https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*399oSYCBVagAAAAAAAAAAAAADgOBAQ/original')`;
+  if (isHome) {
+    background = `url('https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*if0TTLtCrA0AAAAAAAAAAAAADgOBAQ/original')`;
+  }
   return (
     <div
       className={styles.banner}
       style={{
-        backgroundImage: `url('https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*399oSYCBVagAAAAAAAAAAAAADgOBAQ/original')`,
+        backgroundImage: background,
         height: '600px',
         backgroundColor: 'rgba(22,80,255,0.05)',
       }}

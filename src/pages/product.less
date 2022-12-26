@@ -1,15 +1,13 @@
 .containerWrapper {
-
-
   .videoWrapper {
-    box-shadow: 0px 0px 30px 15px rgba(0,15,60,0.05);
+    box-shadow: 0px 0px 30px 15px rgba(0, 15, 60, 0.05);
     border-radius: 12px;
     padding: 32px;
-    background: #FFFFFF;
-    
+    background: #ffffff;
+    max-width: 1200px;
+    margin: auto;
+
     .card {
-     padding: 12px;
-     
       video {
         border-radius: 8px;
       }
@@ -17,24 +15,21 @@
       .title {
         font-weight: 500;
         font-size: 20px;
-        color: rgba(26,27,37,0.88);
+        color: rgba(26, 27, 37, 0.88);
         margin-top: 16px;
-        display: inline-block;
       }
 
       .tag {
-        margin-left: 12px;
+        margin-top: 12px;
         height: 24px;
         text-align: center;
         width: 68px;
         padding: 4px 8px;
-        background-color: rgba(0,0,0,0.06);
+        background-color: rgba(0, 0, 0, 0.06);
         border-radius: 4px;
         font-weight: 400;
         font-size: 12px;
-        color: rgba(0,0,0,0.65);
-        display: inline-block;
-        line-height: 18px;
+        color: rgba(0, 0, 0, 0.65);
       }
     }
   }
@@ -42,9 +37,11 @@
   .introWrapper {
     font-weight: 400;
     font-size: 14px;
-    color: rgba(26,27,37,0.65);
+    color: rgba(26, 27, 37, 0.65);
     text-align: center;
     line-height: 22px;
+    max-width: 1200px;
+    margin: auto;
   }
 
   .featCards {
@@ -64,23 +61,23 @@
 
       .featCard {
         border-radius: 12px;
-        background-color: rgba(22,80,255,0.04);
+        background-color: rgba(22, 80, 255, 0.04);
         width: 100%;
         height: 100%;
-        padding: 40px;
+        padding: 32px 32px 32px 44px;
         margin: auto;
 
         img {
           margin-bottom: 32px;
           width: auto;
-          height: 72px;
+          height: 56px;
         }
       }
 
       .title {
         font-weight: 500;
         font-size: 20px;
-        color: rgba(26,27,37,0.88);
+        color: rgba(26, 27, 37, 0.88);
         line-height: 28px;
         text-align: left;
         width: 100%;
@@ -90,7 +87,7 @@
       .desc {
         font-weight: 400;
         font-size: 14px;
-        color: rgba(26,27,37,0.45);
+        color: rgba(26, 27, 37, 0.45);
         text-align: justify;
         line-height: 22px;
       }
@@ -102,11 +99,23 @@
     background-size: cover;
     margin: 71px -120px -72px -120px;
     padding: 1px 120px 72px 120px;
-    
-   img {
+
+    img {
       max-width: 1200px;
       margin-top: -36px;
-   }
+    }
+  }
+}
+
+:global {
+  .JoL-controller-container {
+    .play-icon {
+      width: 26px !important;
+      height: 26px !important;
+    }
+  }
+  .JoL-player-container .tooltip .hover-icon-animate {
+    font-size: 14px !important;
   }
 }
 
@@ -186,6 +195,5 @@
         box-shadow: none;
       }
     }
-
   }
 }

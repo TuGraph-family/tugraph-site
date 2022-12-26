@@ -28,7 +28,7 @@ export const getCases = (intl: IntlShape) => [
     desc0: intl.formatMessage({ id: 'home.case3.desc0' }),
     desc1: intl.formatMessage({ id: 'home.case3.desc1' }),
     iconUrl:
-      'https://mdn.alipayobjects.com/mdn/huamei_qcdryc/afts/img/A*DW7JQLFHy8sAAAAAAAAAAAAADgOBAQ',
+      'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*d0J0S5kZK-UAAAAAAAAAAAAADgOBAQ/original',
   },
   {
     title: intl.formatMessage({ id: 'home.case4.title' }),

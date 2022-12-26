@@ -61,6 +61,7 @@
         height: 48px;
         width: 136px;
         border-radius: 8px;
+        font-size: 16px;
       }
     }
 
@@ -75,7 +76,7 @@
       > label.ant-form-item-required:not(
         .ant-form-item-required-mark-optional
       )::before {
-      color: #000a1c;
+      display: none;
     }
 
     .ant-form-item-control-input-content {
@@ -98,41 +99,6 @@
 
     .ant-form-item-explain-error {
       margin-left: 8px;
-    }
-
-    .ant-checkbox {
-      width: 20px;
-      height: 20px;
-    }
-
-    .ant-checkbox-checked::after {
-      top: 3px;
-    }
-
-    .ant-checkbox-inner,
-    .ant-checkbox-wrapper.ant-checkbox-wrapper-in-form-item
-      input[type='checkbox'] {
-      width: 20px;
-      height: 20px;
-      top: 3px;
-    }
-
-    .ant-checkbox .ant-checkbox-inner {
-      background-image: url('https://gw.alipayobjects.com/zos/bmw-prod/96990256-7d58-448c-8d82-c14986fd7a10.svg');
-      border: none;
-      background-repeat: no-repeat;
-      background-color: #000a1c00;
-    }
-
-    .ant-checkbox-checked .ant-checkbox-inner {
-      background-image: url('https://gw.alipayobjects.com/zos/bmw-prod/fe93b9b4-ceee-4325-8f92-712bf804294a.svg');
-      border: none;
-      background-repeat: no-repeat;
-      background-color: #000a1c00;
-    }
-
-    .ant-checkbox-checked .ant-checkbox-inner::after {
-      border: none;
     }
   }
 }
