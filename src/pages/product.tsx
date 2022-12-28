@@ -129,7 +129,7 @@ export default function ProductPage() {
         <SubTitle title={intl.formatMessage({ id: 'product.ecosystem' })} />
         <div className="maxContainer">
           <img
-            src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*OEU-TLbbJb4AAAAAAAAAAAAADgOBAQ/original"
+            src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*Fk3USIh9o1MAAAAAAAAAAAAADgOBAQ/original"
             alt="ecosystem"
           />
         </div>

@@ -52,14 +52,6 @@ export default function IndexPage() {
 
   const content = (
     <>
-      <div className="maxContainer">
-        <img
-          className={styles.bannerImg}
-          src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*SeWxTJnZ4_8AAAAAAAAAAAAADgOBAQ/original"
-          alt="banner"
-        />
-      </div>
-
       <div className={styles.containerWrapper}>
         <Helmet>
           <title>{intl.formatMessage({ id: 'home.title' })}</title>
@@ -348,6 +340,8 @@ export default function IndexPage() {
   return (
     <LayoutTemplate
       bannerInfo={{
+        bgIconUrl:
+          'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*SeWxTJnZ4_8AAAAAAAAAAAAADgOBAQ/original',
         slogan: intl.formatMessage({ id: 'home.banner.slogan' }),
         description: intl.formatMessage({ id: 'home.banner.description' }),
         footer: bannerButton,

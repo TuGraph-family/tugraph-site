@@ -85,15 +85,6 @@ body {
   }
 }
 
-.bannerImg {
-  position: absolute;
-  top: 106px;
-  right: 77px;
-  z-index: 998;
-  width: 50%;
-  max-width: 745px;
-}
-
 .videoBtn {
   height: 32px;
   width: 32px;
@@ -119,9 +110,10 @@ body {
     font-weight: 500;
     font-size: 16px;
 
-    svg {
-      width: 20px;
-      height: 20px;
+    :global {
+      .anticon-github {
+        font-size: 20px;
+      }
     }
 
     span {
@@ -225,7 +217,7 @@ body {
           font-weight: 500;
           font-size: 16px;
           color: rgba(26, 27, 37, 0.88);
-          margin: 8px 0 16px 0;
+          margin: 8px 0;
         }
         .desc {
           font-weight: 400;
