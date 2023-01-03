@@ -26,8 +26,8 @@ export default function ProductPage() {
       </Helmet>
 
       <div className={styles.videoWrapper}>
-        <Row>
-          <Col span={isWide ? 8 : 24} className={styles.card}>
+        <Space size={25}>
+          <div className={styles.card}>
             <JoLPlayer
               option={{
                 videoSrc:
@@ -44,8 +44,8 @@ export default function ProductPage() {
                 {intl.formatMessage({ id: 'product.videoTime0' })}
               </div>
             </Space>
-          </Col>
-          <Col span={isWide ? 8 : 24} className={styles.card}>
+          </div>
+          <div className={styles.card}>
             <JoLPlayer
               option={{
                 videoSrc:
@@ -62,8 +62,8 @@ export default function ProductPage() {
                 {intl.formatMessage({ id: 'product.videoTime1' })}
               </div>
             </Space>
-          </Col>
-          <Col span={isWide ? 8 : 24} className={styles.card}>
+          </div>
+          <div className={styles.card}>
             <JoLPlayer
               option={{
                 videoSrc:
@@ -80,8 +80,8 @@ export default function ProductPage() {
                 {intl.formatMessage({ id: 'product.videoTime2' })}
               </div>
             </Space>
-          </Col>
-        </Row>
+          </div>
+        </Space>
       </div>
 
       <SubTitle title={intl.formatMessage({ id: 'product.intro' })} />

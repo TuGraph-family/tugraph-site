@@ -19,9 +19,8 @@
       font-weight: 500;
       font-size: 20px;
       color: rgba(0, 0, 0, 0.85);
-      padding: 32px 20px 0px 32px;
+      padding: 20px 32px 0px 32px;
       width: 100%;
-      border-bottom: 1px solid #f1f1f1;
       line-height: 20px;
     }
 
@@ -56,7 +55,7 @@
           }
 
           .updateDate {
-            font-size: 12px;
+            font-size: 14px;
             color: rgba(0, 0, 0, 0.45);
             letter-spacing: 0;
             line-height: 18px;
@@ -93,6 +92,18 @@
   :global {
     .ant-pagination-total-text {
       color: #8b8b8b;
+    }
+
+    .ant-pagination-item,
+    .ant-pagination-item-link {
+      height: 32px;
+      width: 32px;
+      border-radius: 4px;
+    }
+
+    .ant-pagination-total-text {
+      margin-right: 16px;
+      height: 30px;
     }
   }
 }

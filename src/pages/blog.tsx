@@ -14,6 +14,8 @@ import styles from './blog.less';
 
 const { Content } = Layout;
 
+const PAGE_SIZE = 7;
+
 export default function BlogPage() {
   const intl = useIntl();
   const location = useLocation();
@@ -23,19 +25,19 @@ export default function BlogPage() {
   const [blogDetail, setBlogDetail] = React.useState<string>();
   const [blogs, setBlogs] = React.useState<BlogItem[]>(initBlogs);
   const [listData, setListData] = React.useState<BlogItem[]>(
-    initBlogs.slice(0, 5),
+    initBlogs.slice(0, PAGE_SIZE),
   );
   useEffect(() => {
     setBlogs(getBlogs(type));
   }, [type]);
 
   useEffect(() => {
-    setListData(blogs.slice(0, 5));
+    setListData(blogs.slice(0, PAGE_SIZE));
   }, [blogs]);
 
   const onPaginationChange = (page: number) => {
-    const start = 0 + (page - 1) * 5;
-    const end = start + 5;
+    const start = 0 + (page - 1) * PAGE_SIZE;
+    const end = start + PAGE_SIZE;
     setListData(blogs.slice(start, end));
   };
 
@@ -114,7 +116,6 @@ export default function BlogPage() {
             tab={intl.formatMessage({ id: 'blog.technology' })}
             key="tech"
           >
-            {' '}
             <div className={styles.lists}>
               {listData?.map((item, key) => (
                 <div
@@ -149,7 +150,7 @@ export default function BlogPage() {
             id: 'blog.total',
           })} ${total} ${intl.formatMessage({ id: 'blog.item' })}`
         }
-        pageSize={5}
+        pageSize={PAGE_SIZE}
         onChange={onPaginationChange}
       />
     </div>

@@ -73,7 +73,11 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
         },
         {
           label: (
-            <a href="" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://space.bilibili.com/1196053065/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Demo
             </a>
           ),
