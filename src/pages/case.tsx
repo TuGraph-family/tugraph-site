@@ -53,7 +53,7 @@ export default function DemoPage() {
               <Space size={32}>
                 <div className={styles.textWrapper}>
                   <div className={styles.title}>{item.title}</div>
-                  <div style={{ marginBottom: '32px' }}>{item.description}</div>
+                  <div style={{ marginBottom: '20px' }}>{item.description}</div>
 
                   <div className={styles.subTitle}>
                     {intl.formatMessage({ id: 'demo.example.challenge' })}

@@ -29,10 +29,10 @@ body {
   .lightBtn {
     background: @primary-color;
     border-radius: 8px;
-    width: 180px !important;
+    width: 190px !important;
     height: 48px;
     font-size: 16px;
-    color: rgba(255, 255, 255, 0.89);
+    color: #fff;
   }
 
   .boldText {
@@ -109,15 +109,24 @@ body {
     border-radius: 8px;
     font-weight: 500;
     font-size: 16px;
+    position: relative;
 
     :global {
       .anticon-github {
         font-size: 20px;
+        position: absolute;
+        top: 14px;
+        left: 41px;
       }
     }
 
     span {
       font-weight: 400;
+    }
+    .githubText {
+      position: absolute;
+      top: 12px;
+      right: 38px;
     }
   }
   .play {
@@ -216,7 +225,7 @@ body {
           font-weight: 500;
           font-size: 16px;
           color: rgba(26, 27, 37, 0.88);
-          margin: 8px 0;
+          margin: 16px 0 8px 0;
         }
         .desc {
           font-weight: 400;
@@ -319,13 +328,6 @@ body {
     margin: 0 -120px;
     padding: 1px 120px;
 
-    .versionCard {
-      width: 100%;
-      min-height: 272px;
-      padding: 40px 60px;
-      text-align: center;
-    }
-
     .versions {
       display: flex;
       justify-content: center;
@@ -333,7 +335,7 @@ body {
 
       .primaryBtn {
         border-radius: 8px;
-        width: 180px;
+        width: 190px;
         height: 48px;
         display: flex;
         justify-content: center;
@@ -371,15 +373,15 @@ body {
         max-width: 600px;
 
         .versionCard {
+          width: 100%;
+          min-height: 238px;
+          padding: 32px;
+          text-align: center;
           border-radius: 12px;
           box-shadow: 0 10px 30px 10px rgba(158, 181, 213, 0.1);
           border-radius: 12px;
           background-color: #ffffff;
           text-align: center;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
         }
 
         .title {

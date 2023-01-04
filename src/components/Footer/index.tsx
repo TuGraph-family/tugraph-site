@@ -101,7 +101,7 @@ export const Footer = ({ className }: { className?: string }) => {
           </div>
         </Col>
         <Col span={10}>
-          <div className={styles.textGroup}>
+          <div className={styles.textGroup} id="contactUs">
             <div className={styles.title}>
               {intl.formatMessage({ id: 'home.version.contactUs' })}
             </div>

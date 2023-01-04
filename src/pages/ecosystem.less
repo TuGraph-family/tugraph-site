@@ -1,0 +1,105 @@
+.containerWrapper {
+  max-width: 1200px;
+  margin: auto;
+
+  .cardWrapper {
+    background-color: #ffffff;
+    box-shadow: 0 3px 6px -4px rgba(132, 135, 155, 0.12),
+      0 6px 16px 0 rgba(132, 135, 155, 0.08),
+      0 9px 28px 8px rgba(132, 135, 155, 0.05);
+    border-radius: 12px;
+    padding: 32px;
+    text-align: center;
+
+    .title {
+      font-family: AlibabaPuHuiTi_2_85_Bold;
+      font-size: 32px;
+      color: rgba(26, 27, 37, 0.88);
+      text-align: center;
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+
+    .description {
+      font-family: AlibabaPuHuiTi_2_55_Regular;
+      font-size: 14px;
+      color: rgba(26, 27, 37, 0.45);
+      text-align: center;
+      line-height: 22px;
+      margin-bottom: 32px;
+    }
+  }
+
+  .typeWrapper {
+    .typeItem {
+      height: 172px;
+      background-color: rgba(22, 80, 255, 0.04);
+      border-radius: 12px;
+      padding: 24px;
+      text-align: left;
+
+      .title {
+        font-weight: 500;
+        font-size: 16px;
+        color: rgba(26, 27, 37, 0.88);
+        line-height: 24px;
+        margin: 12px 0 8px 0;
+        text-align: left;
+      }
+
+      .description {
+        font-weight: 400;
+        font-size: 14px;
+        color: rgba(26, 27, 37, 0.45);
+        letter-spacing: 0;
+        text-align: justify;
+        line-height: 22px;
+      }
+    }
+  }
+
+  .supportWrapper {
+    .supportItem {
+      height: 84px;
+      background-color: rgba(22, 80, 255, 0.04);
+      border-radius: 12px;
+      padding: 24px;
+      text-align: left;
+
+      div {
+        font-weight: 500;
+        font-size: 16px;
+        color: rgba(26, 27, 37, 0.88);
+        line-height: 28px;
+      }
+    }
+  }
+}
+
+.contactBtn {
+  height: 48px;
+  width: 160px;
+  background-color: @primary-color;
+  border-radius: 8px;
+  margin-top: 32px;
+  padding: 12px 32px;
+  color: #fff;
+
+  :global {
+    .ant-anchor-link {
+      padding: 0;
+    }
+
+    .ant-anchor-ink::before {
+      display: none;
+    }
+
+    .ant-anchor-link-title {
+      font-weight: 500;
+      font-size: 16px;
+      color: #ffffff;
+      text-align: center;
+      line-height: 24px;
+    }
+  }
+}

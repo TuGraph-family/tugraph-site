@@ -58,6 +58,14 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
       key: 'case',
     },
     {
+      label: (
+        <a href="/ecosystem" rel="noopener noreferrer">
+          {intl.formatMessage({ id: 'header.ecosystem' })}
+        </a>
+      ),
+      key: 'ecosystem',
+    },
+    {
       label: intl.formatMessage({ id: 'header.assets' }),
       key: 'assets',
       children: [

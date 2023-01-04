@@ -35,7 +35,7 @@ export default function IndexPage() {
         type="primary"
       >
         <GithubOutlined />
-        GitHub
+        <span className={styles.githubText}>GitHub</span>
       </Button>
       <Button
         className={styles.play}

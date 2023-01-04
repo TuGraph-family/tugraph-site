@@ -2,6 +2,7 @@ export default {
   'header.home': '首页',
   'header.product': '产品',
   'header.case': '案例',
+  'header.ecosystem': '生态',
   'header.assets': '资源',
   'header.doc': '文档',
   'header.blog': '博客',
@@ -219,6 +220,34 @@ export default {
     '利用图计算技术，将业务、数据、任务、输入、输出、负责人等对象抽象为图数据结构的点和边，构建数据资产图谱，支撑智能化的数据血缘管理。',
   'demo.example.profit6':
     '可视化、准确地呈现数据之间的血缘路径，便于用户追踪数据链路状态、进行数仓规范化治理、数据安全权限检查等。',
+  'ecosystem.banner.slogan': '携手合作伙伴共促生态发展',
+  'ecosystem.banner.description':
+    '即刻加入快速增长的图数据库市场，TuGraph为您提供专业的技术、业务和营销支持',
+  'ecosystem.banner.btn': '联系我们',
+  'ecosystem.type.title': '合作伙伴类型',
+  'ecosystem.type.description':
+    '欢迎来自全球的合作伙伴，我们提供多种适合您业务模式的合作伙伴类型',
+  'ecosystem.type0.title': '产品与方案集成伙伴',
+  'ecosystem.type0.description':
+    '具备与TuGraph相集成的整体解决方案或集成产品，可以将集成方案或产品（含TuGraph）整体提供给最终用户。',
+  'ecosystem.type1.title': '产品生态伙伴',
+  'ecosystem.type1.description':
+    '与TuGraph的生态工具、服务器、中间件以及芯片、操作系统等产业生态合作，推动产业发展。',
+  'ecosystem.type2.title': '培训认证伙伴',
+  'ecosystem.type2.description':
+    '为其他用户、合作伙伴及对TuGraph有兴趣的人士提供正规、专业的培训。',
+  'ecosystem.type3.title': '技术服务伙伴',
+  'ecosystem.type3.description':
+    '具备TuGraph产品的交付、实施、运维能力，可以为最终用户提供企业级增值服务。',
+  'ecosystem.type4.title': '经销商合作伙伴',
+  'ecosystem.type4.description':
+    '具备TuGraph产品的销售、售前咨询能力，将TuGraph销售给最终用户。',
+  'ecosystem.support.title': '合作伙伴支持',
+  'ecosystem.support.description': '精选支持资源帮助您构建、营销和销售您的产品',
+  'ecosystem.support0': '全面的产品和服务培训',
+  'ecosystem.support1': '技术赋能',
+  'ecosystem.support2': '重点项目POC支持',
+  'ecosystem.support3': '销售激励及市场推广支持',
   'download.banner.slogan': 'TuGraph v3.3.2',
   'download.banner.description': '最新版本2022.10.20',
   'download.title0': 'TuGraph 社区版下载',
