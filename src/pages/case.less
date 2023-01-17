@@ -101,64 +101,64 @@
 
 @media only screen and (max-width: 767.99px) {
   .containerWrapper {
-    .demoCards {
-      display: block;
-      margin: 0;
-      width: 100%;
-
-      .demoCardWrapper {
+    .demoWrapper {
+      transition: all 0.3s;
+      height: 260px;
+      padding: 32px;
+      margin-bottom: 100px;
+      .demoCards {
         padding: 0;
-
         .demoCard {
+          padding: 0;
+          background: #fff;
           max-width: 100%;
-          padding: 16px !important;
-          margin-bottom: 32px;
+          text-align: left;
+          margin-bottom: 20px;
+          img {
+            width: 40px;
+            margin-top: 12px;
+          }
+          .type {
+            font-size: 28px;
+            margin-top: 20px;
+          }
+          .title {
+            font-size: 24px;
+          }
+          .desc {
+            margin-top: 20px;
+            font-size: 24px;
+            line-height: 36px;
+          }
         }
       }
     }
-
     .exampleWrapper {
-      margin-top: 120px;
-
-      .exampleCards {
-        padding: 0;
-        display: block;
-
-        .exampleCard {
-          display: block;
-          width: 100%;
-          margin: 0 0 32px 0;
-          padding: 32px 16px 0 16px;
-
-          .textWrapper {
-            padding: 0px;
-
-            .header {
-              display: block;
-              text-align: center;
-
-              .subTitle {
-                height: 60px;
-                width: 100%;
-                background-color: #f5f7fa;
-                border-radius: 8px;
-                font-size: 16px;
-                margin-top: 24px;
-                padding: 20px;
-              }
-            }
-
-            .text {
-              margin: 0 0 32px 0;
-              color: rgba(0, 0, 0, 0.85);
-              text-align: left;
-            }
-
-            img {
-              margin-bottom: 32px;
-              width: 100%;
-              height: auto;
-            }
+      .exampleCard {
+        margin: 0 0 20px 0;
+        padding: 32px;
+        box-shadow: 0 3px 6px -4px rgba(132, 135, 155, 0.12),
+          0 6px 16px 0 rgba(132, 135, 155, 0.08),
+          0 9px 28px 8px rgba(132, 135, 155, 0.05);
+        border-radius: 12px;
+        font-size: 24px;
+        text-align: justify;
+        line-height: 36px;
+        img {
+          margin: -32px -32px 0 -32px;
+          border-radius: 12px 12px 0 0;
+          width: calc(100vw - 46px);
+          object-fit: cover;
+          height: 360px;
+        }
+        .textWrapper {
+          .title {
+            font-size: 28px;
+            margin: 24px 0 12px 0;
+          }
+          .subTitle {
+            font-size: 24px;
+            margin: 24px 0 12px 0;
           }
         }
       }

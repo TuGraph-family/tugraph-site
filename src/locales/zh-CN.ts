@@ -274,12 +274,12 @@ export default {
     '您提供以上联系信息，即授权蚂蚁集团通过有关TuGraph的产品和服务的通信与您保持联系，以方便回复您的询问或者发送我们的资料等内容，请参阅我们的',
   'form.rule': '隐私政策',
   'form.tip1': '以了解更多详情或者您可以选择随时退出。',
-  'blog.banner.slogan': '最新资讯',
-  'blog.banner.subTitle':
-    '我们将通过官网和微信公众号持续发布最新的产品信息、技术分享、活动要闻等资讯。',
+  'blog.banner.slogan': 'Tugraph图数据库解读',
+  'blog.banner.subTitle': '带你了解更多信息',
   'blog.all': '全部',
   'blog.news': '新闻',
   'blog.technology': '技术',
   'blog.total': '共',
   'blog.item': '条',
+  'blog.more': '查看更多',
 };

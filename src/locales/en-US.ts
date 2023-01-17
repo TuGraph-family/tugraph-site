@@ -69,12 +69,12 @@ export default {
   'home.reason.desc3':
     '开发人员可使用主流查询语言、编程语言、接口协议来快速创建应用，快速对接业务系统、融合数据存储，能够与常见开源架构平滑迁移。',
   'home.chooseVersion': '版本选择',
-  'home.version0': 'TuGraph 社区版',
+  'home.version0': '社区版',
   'home.version.desc0':
     '包含TuGraph的全部基本功能，适用于单实例部署。它提供了完备的图数据库基础功能，例如ACID兼容的事务，编程API，配套的相关工具等。它是学习TuGraph和实现小型项目的理想选择。',
   'home.version.startUse': '免费下载',
   'home.function': '功能',
-  'home.version1': 'TuGraph 企业版',
+  'home.version1': '企业版',
   'home.version.desc1':
     '企业版本在TuGraph的基本功能上进行了扩展。例如部署形式包括高可用和分布式，性能提升速度更快的底层存储引擎，功能提升更精细的角色权限控制等。它是商业化解决方案的理想选择。',
   'home.version.contactUs': '联系我们',
@@ -245,9 +245,9 @@ export default {
   'ecosystem.support.title': '合作伙伴支持',
   'ecosystem.support.description': '精选支持资源帮助您构建、营销和销售您的产品',
   'ecosystem.support0': '全面的产品和服务培训',
-  'ecoSystem.support1': '技术赋能',
-  'ecoSystem.support2': '重点项目POC支持',
-  'ecoSystem.support3': '销售激励及市场推广支持',
+  'ecosystem.support1': '技术赋能',
+  'ecosystem.support2': '重点项目POC支持',
+  'ecosystem.support3': '销售激励及市场推广支持',
   'download.banner.slogan': 'TuGraph v3.3.2',
   'download.banner.description': '最新版本2022.10.20',
   'download.title0': 'TuGraph 社区版下载',
@@ -274,12 +274,12 @@ export default {
     '您提供以上联系信息，即授权蚂蚁集团通过有关TuGraph的产品和服务的通信与您保持联系，以方便回复您的询问或者发送我们的资料等内容，请参阅我们的',
   'form.rule': '隐私政策',
   'form.tip1': '以了解更多详情或者您可以选择随时退出。',
-  'blog.banner.slogan': '最新资讯',
-  'blog.banner.subTitle':
-    '我们将通过官网和微信公众号持续发布最新的产品信息、技术分享、活动要闻等资讯。',
+  'blog.banner.slogan': 'Tugraph图数据库解读',
+  'blog.banner.subTitle': '带你了解更多信息',
   'blog.all': '全部',
   'blog.news': '新闻',
   'blog.technology': '技术',
   'blog.total': '共',
   'blog.item': '条',
+  'blog.more': '查看更多',
 };
