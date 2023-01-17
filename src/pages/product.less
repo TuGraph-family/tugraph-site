@@ -169,7 +169,8 @@
   .featCards {
     margin-bottom: 100px !important;
     .featCardGroup {
-      height: 368px !important;
+      padding: 10px !important;
+      height: 100% !important;
       .title {
         font-size: 28px !important;
       }
@@ -178,10 +179,16 @@
         text-align: justify !important;
         line-height: 36px !important;
         margin-top: 12px !important;
+        height: 100% !important;
       }
       .featCard {
         img {
           height: 88px !important;
+        }
+        :global {
+          .ant-space-align-center {
+            align-items: flex-start;
+          }
         }
       }
     }
