@@ -75,11 +75,11 @@ export const Banner = ({
             {description && (
               <div className={styles.description}>{description}</div>
             )}
+            {footer}
             <img
               className={isWide ? styles.pcIcon : styles.mobileIcon}
               src={bgIconUrl}
             />
-            {footer}
           </>
         )}
       </div>

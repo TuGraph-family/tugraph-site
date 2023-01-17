@@ -83,6 +83,30 @@ body {
   .ant-modal-mask {
     background-color: rgba(0, 0, 0, 0.65);
   }
+
+  .ant-carousel {
+    .slick-dots-bottom {
+      bottom: -23px;
+    }
+
+    .slick-dots {
+      li {
+        margin: 0 -1px;
+        width: 61px;
+      }
+      li.slick-active {
+        z-index: 999;
+        width: 60px;
+        button {
+          background-color: @primary-color;
+        }
+      }
+      li button {
+        background-color: #ddddde;
+        opacity: 1;
+      }
+    }
+  }
 }
 
 .videoBtn {
@@ -466,91 +490,143 @@ body {
 }
 
 @media only screen and (max-width: 767.99px) {
-  .containerWrapper {
-    text-align: center;
-    img {
-      width: 100%;
+  :global {
+    .textLink {
+      font-size: 28px !important;
     }
+  }
+  .bannerButtons {
+    .github {
+      margin: 0;
+      margin-right: 40px;
+    }
+    .play {
+      position: relative;
+      top: 4px;
+    }
+  }
 
-    .users {
-      padding: 0;
-      margin-bottom: 24px;
-
-      img {
-        width: 92%;
-        height: 50px;
+  .noticeWrapper {
+    transition: all ease 0.3s;
+    margin: 0 0 108px 0 !important;
+    .card {
+      height: 320px;
+      box-shadow: 0 8px 16px 8px rgba(0, 0, 0, 0.03);
+      border-radius: 12px;
+      text-align: left;
+      .tag {
+        height: 32px !important;
+        width: 96px !important;
+        background-color: rgba(0, 0, 0, 0.06);
+        font-size: 16px !important;
+        padding: 6px 16px !important;
       }
-    }
-
-    .moreDemo {
-      border-top: none;
-      margin: 0 0 88px 0;
-      height: 60px !important;
-      width: 180px !important;
-      text-align: center;
-      font-weight: 400;
-      font-size: 24px;
-      color: rgba(51, 51, 51, 0.89);
-      line-height: 34px;
-    }
-
-    .versionsWrapper {
-      .versions {
-        display: block;
-
-        .version {
-          max-width: 100vw;
-
-          .versionCard {
-            padding: 40px;
-
-            .primaryBtn,
-            button {
-              width: 100% !important;
-            }
-          }
-
-          .desc {
-            width: 100%;
-            height: auto;
-          }
-        }
-      }
-    }
-
-    .reasonCards {
-      display: block;
-
-      .reasonCard {
-        max-width: 100vw;
-        padding: 16px;
-
-        .title,
-        .desc {
-          text-align: center;
-        }
-
-        .desc {
-          width: 100%;
-          height: auto;
-        }
-      }
-    }
-
-    .featList {
-      padding: 0 16px;
-
       .title {
-        font-size: 14px;
+        font-size: 28px !important;
+        margin: 20px 0 12px 0 !important;
       }
+      .desc {
+        font-size: 24px !important;
+        text-align: justify;
+        line-height: 36px !important;
+      }
+      a {
+        margin-top: 40px;
+      }
+    }
+  }
 
-      .text {
-        font-size: 12px;
+  .reasonCardGroup {
+    transition: all ease 0.3s;
+    height: 224px;
+    .title {
+      font-size: 24px !important;
+    }
+    .desc {
+      font-size: 18px !important;
+      line-height: 28px !important;
+    }
+    .reasonCard {
+      img {
+        height: 88px !important;
       }
+    }
+  }
 
-      .textAlignLeft {
-        padding-left: 16px;
+  .cases {
+    padding-top: 48px !important;
+    .groupTitle {
+      font-family: AlibabaPuHuiTi_2_85_Bold;
+      font-size: 48px;
+      color: rgba(26, 27, 37, 0.88);
+      text-align: center;
+      font-weight: 600;
+    }
+    .groupDesc {
+      font-family: AlibabaPuHuiTi_2_55_Regular;
+      font-size: 24px;
+      color: rgba(26, 27, 37, 0.45);
+      line-height: 36px;
+      margin: 12px 0 36px;
+    }
+    .title {
+      font-size: 28px !important;
+      margin-bottom: 12px;
+    }
+    .desc {
+      font-size: 19px !important;
+      line-height: 36px !important;
+    }
+
+    .card {
+      height: 288px !important;
+      padding: 32px 24px !important;
+    }
+  }
+
+  .users {
+    margin: 46px 0 110px 0 !important;
+  }
+
+  .versions {
+    max-width: 100% !important;
+    .version {
+      max-width: 100% !important;
+      margin-bottom: 20px;
+      .title {
+        font-size: 24px !important;
       }
+      .desc {
+        font-size: 20px !important;
+        line-height: 36px !important;
+      }
+    }
+    :global {
+      .lightBtn {
+        width: 100% !important;
+      }
+    }
+  }
+  .featList {
+    padding: 0 !important;
+    margin-bottom: 48px !important;
+    .crossRow {
+      border-radius: 0px !important;
+    }
+    .baseRow,
+    .crossRow {
+      height: 74px !important;
+      padding: 20px 0 !important;
+    }
+    .title {
+      font-size: 24px !important;
+      font-weight: 400 !important;
+    }
+    .text {
+      font-weight: 400 !important;
+
+      color: rgba(26, 27, 37, 0.65) !important;
+      line-height: 36px !important;
     }
   }
 }

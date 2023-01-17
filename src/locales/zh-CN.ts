@@ -69,12 +69,12 @@ export default {
   'home.reason.desc3':
     '开发人员可使用主流查询语言、编程语言、接口协议来快速创建应用，快速对接业务系统、融合数据存储，能够与常见开源架构平滑迁移。',
   'home.chooseVersion': '版本选择',
-  'home.version0': 'TuGraph 社区版',
+  'home.version0': '社区版',
   'home.version.desc0':
     '包含TuGraph的全部基本功能，适用于单实例部署。它提供了完备的图数据库基础功能，例如ACID兼容的事务，编程API，配套的相关工具等。它是学习TuGraph和实现小型项目的理想选择。',
   'home.version.startUse': '免费下载',
   'home.function': '功能',
-  'home.version1': 'TuGraph 企业版',
+  'home.version1': '企业版',
   'home.version.desc1':
     '企业版本在TuGraph的基本功能上进行了扩展。例如部署形式包括高可用和分布式，性能提升速度更快的底层存储引擎，功能提升更精细的角色权限控制等。它是商业化解决方案的理想选择。',
   'home.version.contactUs': '联系我们',

@@ -3,10 +3,10 @@
   flex-wrap: wrap;
   justify-content: center;
   margin: 72px 0 32px 0;
-  
-  .subTitle { 
+
+  .subTitle {
     font-family: AlibabaPuHuiTi_2_85_Bold;
-    color: rgba(26,27,37,0.88);
+    color: rgba(26, 27, 37, 0.88);
     font-size: 32px;
     position: relative;
     font-weight: 500;
@@ -15,6 +15,11 @@
 
 @media only screen and (max-width: 767.99px) {
   .subTitleGroup {
-    margin: 32px 0;
+    transition: all ease 0.3s;
+    margin: 48px 0 24px 0 !important;
+    .subTitle {
+      font-size: 48px;
+      font-weight: 600;
+    }
   }
 }
