@@ -218,6 +218,7 @@ export const Footer = ({ className }: { className?: string }) => {
           <Panel
             header={intl.formatMessage({ id: 'home.version.contactUs' })}
             key="contactUs"
+            id="contactUs"
           >
             <div className={styles.item}>
               <Space size={16}>

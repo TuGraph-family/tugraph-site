@@ -10,7 +10,7 @@ import {
 } from '@ant-design/icons';
 import { LayoutTemplate } from '@/components/LayoutTemplate';
 import { SubTitle } from '@/components/SubTitle';
-import { useIntl, history } from 'umi';
+import { useIntl } from 'umi';
 import { getReasons } from '@/data/reasons';
 import { getCases } from '@/data/cases';
 import { getVersions } from '@/data/version-feats';
