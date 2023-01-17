@@ -105,37 +105,51 @@
 
 @media only screen and (max-width: 767.99px) {
   .footer {
-    padding: 80px 24px;
+    padding: 24px;
     color: rgba(255, 255, 255, 0.89);
     font-weight: 400;
     font-size: 16px;
     height: auto;
 
-    .logo {
-      margin-bottom: 76px;
-    }
-
     .qrCode {
       text-align: center;
-      height: 100%;
-      padding: 48px;
-      width: 300px;
-      margin: 80px auto;
+      height: 148px;
+      padding: 24px;
+      width: 100%;
+      margin: 24px auto;
       background-color: rgba(255, 255, 255, 0.08);
-      border-radius: 8px;
+      border-radius: 12px;
 
       img {
-        width: 204px;
-        height: 204px;
+        width: 100px;
+        height: 100px;
+      }
+
+      .group {
+        height: 102px;
+
+        .desc {
+          color: #fff;
+          font-weight: 500;
+          font-size: 28px;
+        }
+
+        .subDesc {
+          font-weight: 400;
+          font-size: 18px;
+          color: rgba(255, 255, 255, 0.65);
+          line-height: 30px;
+          margin-top: 20px;
+        }
       }
     }
 
     .contactInfo {
       margin: 0;
-      display: flex;
-      flex-direction: column;
-      color: rgba(255, 255, 255, 0.85);
+      color: #fff;
       line-height: 48px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+      height: 85px;
 
       img {
         width: 24px;
@@ -145,9 +159,57 @@
     }
 
     .footerExtraInfo {
-      margin: 0 -24px 40px -24px;
-      padding: 24px;
-      height: 64px;
+      margin: 0;
+      padding: 0;
+      height: auto;
+      border: none;
+      display: block;
+
+      a {
+        margin-bottom: 8px;
+        display: block;
+      }
+    }
+
+    .textGroup {
+      margin: 0 -24px;
+      .item {
+        display: block;
+        color: #fff;
+        height: 96px;
+        padding: 32px 40px;
+      }
+
+      :global {
+        .ant-collapse {
+          border-radius: 0;
+          background-color: #01132b;
+          border: none;
+          .ant-collapse-item {
+            border: none;
+            .ant-collapse-header {
+              height: 96px;
+              padding: 24px;
+              font-size: 28px;
+              color: #fff;
+              .ant-collapse-arrow {
+                font-size: 28px;
+                padding: 0px 28px;
+              }
+            }
+          }
+        }
+        .ant-collapse-content {
+          font-weight: 400;
+          font-size: 24px;
+          color: #fff;
+          background-color: #01132b;
+          border: none;
+          a {
+            color: #fff;
+          }
+        }
+      }
     }
   }
 }

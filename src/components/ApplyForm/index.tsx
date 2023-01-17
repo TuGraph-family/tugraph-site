@@ -1,6 +1,7 @@
 import React, { Dispatch, SetStateAction } from 'react';
 import { Checkbox, Col, Form, Input, Modal, Row, Typography } from 'antd';
 import { useIntl } from 'umi';
+import { useMedia } from 'react-use';
 import styles from './index.less';
 
 export const ApplyForm = ({
@@ -10,6 +11,7 @@ export const ApplyForm = ({
   visible?: boolean;
   setVisible: Dispatch<SetStateAction<boolean>>;
 }) => {
+  const isWide = useMedia('(min-width: 767.99px)', true);
   const intl = useIntl();
   const [form] = Form.useForm();
 
@@ -32,7 +34,7 @@ export const ApplyForm = ({
 
   return (
     <Modal
-      width={800}
+      width={isWide ? 800 : '100%'}
       title={intl.formatMessage({ id: 'form.banner.slogan' })}
       open={visible}
       onOk={onOk}
@@ -50,8 +52,8 @@ export const ApplyForm = ({
         initialValues={{ remember: true }}
         autoComplete="off"
       >
-        <Row gutter={56}>
-          <Col span={12}>
+        <Row gutter={isWide ? 56 : 24}>
+          <Col span={isWide ? 12 : 24}>
             <Form.Item
               label={intl.formatMessage({ id: 'form.item.name' })}
               name={intl.formatMessage({ id: 'form.name' })}
@@ -64,7 +66,7 @@ export const ApplyForm = ({
               />
             </Form.Item>
           </Col>
-          <Col span={12}>
+          <Col span={isWide ? 12 : 24}>
             <Form.Item
               label={intl.formatMessage({ id: 'form.item.position' })}
               name={intl.formatMessage({ id: 'form.item.position' })}
@@ -77,7 +79,7 @@ export const ApplyForm = ({
               />
             </Form.Item>
           </Col>
-          <Col span={12}>
+          <Col span={isWide ? 12 : 24}>
             <Form.Item
               label={intl.formatMessage({ id: 'form.item.firm' })}
               name={intl.formatMessage({ id: 'form.item.firm' })}
@@ -90,7 +92,7 @@ export const ApplyForm = ({
               />
             </Form.Item>
           </Col>
-          <Col span={12}>
+          <Col span={isWide ? 12 : 24}>
             <Form.Item
               label={intl.formatMessage({ id: 'form.item.phone' })}
               name={intl.formatMessage({ id: 'form.item.phone' })}
@@ -103,7 +105,7 @@ export const ApplyForm = ({
               />
             </Form.Item>
           </Col>
-          <Col span={12}>
+          <Col span={isWide ? 12 : 24}>
             <Form.Item
               label={intl.formatMessage({ id: 'form.item.email' })}
               name={intl.formatMessage({ id: 'form.item.email' })}

@@ -162,10 +162,6 @@ export default function IndexPage() {
               <div className={styles.desc}>
                 {intl.formatMessage({ id: 'home.case.desc1' })}
               </div>
-              {/* <a className={cx('textLink', styles.knowMore)} href="/demo">
-                {intl.formatMessage({ id: 'home.knowMore' })}
-                <ArrowRightOutlined />
-              </a> */}
             </Col>
             <Col span={18}>
               <Row style={{ margin: '-12px' }}>
@@ -199,7 +195,7 @@ export default function IndexPage() {
             <Col span={6}>
               <img src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*LsymQLEes6wAAAAAAAAAAAAADgOBAQ/original" />
             </Col>
-            <a className="textLink" href="/demo">
+            <a className="textLink" href="/case">
               {intl.formatMessage({ id: 'home.moreDemo' })}
               <ArrowRightOutlined />
             </a>
