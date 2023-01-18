@@ -35,7 +35,7 @@ export const Footer = ({ className }: { className?: string }) => {
         <Col span={4}>
           <div className={styles.textGroup}>
             <div className={styles.title}>
-              {intl.formatMessage({ id: 'header.product' })}
+              {intl.formatMessage({ id: 'footer.product' })}
             </div>
             <a className={styles.item} href="/product">
               {intl.formatMessage({ id: 'footer.productName' })}
@@ -83,7 +83,7 @@ export const Footer = ({ className }: { className?: string }) => {
         <Col span={3}>
           <div className={styles.textGroup}>
             <div className={styles.title}>
-              {intl.formatMessage({ id: 'header.community' })}
+              {intl.formatMessage({ id: 'footer.community' })}
             </div>
             <a
               target="_blank"
@@ -107,7 +107,7 @@ export const Footer = ({ className }: { className?: string }) => {
         <Col span={10}>
           <div className={styles.textGroup} id="contactUs">
             <div className={styles.title}>
-              {intl.formatMessage({ id: 'home.version.contactUs' })}
+              {intl.formatMessage({ id: 'footer.contact' })}
             </div>
             <div className={styles.item}>
               <Space size={16}>
@@ -174,7 +174,7 @@ export const Footer = ({ className }: { className?: string }) => {
       <div className={styles.textGroup}>
         <Collapse expandIconPosition="end">
           <Panel
-            header={intl.formatMessage({ id: 'header.product' })}
+            header={intl.formatMessage({ id: 'footer.product' })}
             key="product"
           >
             <a className={styles.item} href="/product">
@@ -194,7 +194,7 @@ export const Footer = ({ className }: { className?: string }) => {
             </a>
           </Panel>
           <Panel
-            header={intl.formatMessage({ id: 'header.community' })}
+            header={intl.formatMessage({ id: 'footer.community' })}
             key="community"
           >
             <a
@@ -216,7 +216,7 @@ export const Footer = ({ className }: { className?: string }) => {
             </a>
           </Panel>
           <Panel
-            header={intl.formatMessage({ id: 'home.version.contactUs' })}
+            header={intl.formatMessage({ id: 'footer.contact' })}
             key="contactUs"
             id="contactUs"
           >

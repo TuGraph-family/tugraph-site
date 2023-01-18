@@ -211,7 +211,7 @@ export default function IndexPage() {
                 {intl.formatMessage({ id: 'home.case.desc1' })}
               </div>
             </Col>
-            <Col span={isWide ? 6 : 24}>
+            <Col span={isWide ? 18 : 24}>
               <Row style={{ margin: '-12px' }}>
                 {getCases(intl)?.map((item, key) => (
                   <Col
