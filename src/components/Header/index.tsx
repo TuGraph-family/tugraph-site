@@ -20,6 +20,11 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
     setPopupMenuVisible(!popupMenuVisible);
   };
 
+  const getActiveKey = () => {
+    const key = pathname.replace('/', '');
+    return [key];
+  };
+
   const menuIcon = !isWide ? (
     <MenuOutlined
       className={styles.menuIcon}
@@ -50,15 +55,15 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
           {intl.formatMessage({ id: 'header.case' })}
         </a>
       ),
-      key: 'demo',
+      key: 'case',
     },
     {
       label: (
-        <a href="" rel="noopener noreferrer">
-          {intl.formatMessage({ id: 'header.eco' })}
+        <a href="/ecosystem" rel="noopener noreferrer">
+          {intl.formatMessage({ id: 'header.ecosystem' })}
         </a>
       ),
-      key: 'eco',
+      key: 'ecosystem',
     },
     {
       label: intl.formatMessage({ id: 'header.assets' }),
@@ -76,7 +81,11 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
         },
         {
           label: (
-            <a href="" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://space.bilibili.com/1196053065/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Demo
             </a>
           ),
@@ -135,7 +144,8 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
 
       <Menu
         className={styles.menu}
-        activeKey={pathname.replace('/', '')}
+        defaultSelectedKeys={['assets']}
+        selectedKeys={getActiveKey()}
         mode="horizontal"
         triggerSubMenuAction={'click'}
         items={menuItems}

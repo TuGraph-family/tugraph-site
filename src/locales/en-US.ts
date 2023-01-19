@@ -1,7 +1,9 @@
 export default {
   'header.home': '首页',
   'header.product': '产品',
-  'header.demo': '案例',
+  'header.case': '案例',
+  'header.ecosystem': '生态',
+  'header.assets': '资源',
   'header.doc': '文档',
   'header.blog': '博客',
   'header.community': '社区',
@@ -9,13 +11,13 @@ export default {
   'footer.productName': 'TuGraph 图数据库',
   'footer.community': '社区',
   'footer.communityName': '哔哩哔哩',
-  'footer.phone': '(+86) 0571-85022088  转分机号 83789993#',
+  'footer.phone': '400-903-0809',
   'home.title': ' TuGraph 首页',
   'home.description':
     'TuGraph,蚂蚁图数据库,蚂蚁图计算,图数据库,图计算,图平台,图数据分析, 分布式数据库, Graph,大数据,关联关系分析,知识图谱,GNN, 图神经网络, Neo4j, GeaGraph, GeaBase, GeaFlow, 费马, 人工智能, big data, graph processing,graph database, graph computing, artificial intelligence',
   'home.banner.slogan': '支付宝万亿业务背后的图数据库',
   'home.banner.description':
-    '高性能图数据库TuGraph由蚂蚁集团和清华大学共同研发，历经蚂蚁万亿级业务的实际场景锤炼，在国际图数据库基准测试中获得性能第一。',
+    '高性能图数据库TuGraph由蚂蚁集团和清华大学共同研发，历经蚂蚁实际业务场景锤炼，在国际图数据库基准测试中获得性能第一。',
   'home.banner.quickStart': '快速上手',
   'home.notice0.tag': '测试报告',
   'home.notice0.title': '蚂蚁图数据库再获 LDBC 权威测试世界第一',
@@ -67,12 +69,12 @@ export default {
   'home.reason.desc3':
     '开发人员可使用主流查询语言、编程语言、接口协议来快速创建应用，快速对接业务系统、融合数据存储，能够与常见开源架构平滑迁移。',
   'home.chooseVersion': '版本选择',
-  'home.version0': 'TuGraph 社区版',
+  'home.version0': '社区版',
   'home.version.desc0':
     '包含TuGraph的全部基本功能，适用于单实例部署。它提供了完备的图数据库基础功能，例如ACID兼容的事务，编程API，配套的相关工具等。它是学习TuGraph和实现小型项目的理想选择。',
   'home.version.startUse': '免费下载',
   'home.function': '功能',
-  'home.version1': 'TuGraph 企业版',
+  'home.version1': '企业版',
   'home.version.desc1':
     '企业版本在TuGraph的基本功能上进行了扩展。例如部署形式包括高可用和分布式，性能提升速度更快的底层存储引擎，功能提升更精细的角色权限控制等。它是商业化解决方案的理想选择。',
   'home.version.contactUs': '联系我们',
@@ -173,7 +175,7 @@ export default {
   'demo.example.solution0':
     '图计算技术正是解决这种复杂金融关系的有效手段。通过构建体系化监控，进一步识别风险全貌，显著提高遏制洗钱、欺诈等恶意金融行为的精准性。TuGraph同时支持OLTP和OLAP，其高吞吐、低延迟的产品特性，能够快速识别和防范金融风险行为，满足日趋严格的防控要求。',
   'demo.example.profit0':
-    '通过图计算技术，2020全年反洗钱风险审理分析效率提升90%，风险识别能力提升了9.4倍，有效的保护了支付宝百万亿交易规模的资金安全。',
+    '帮助2021年支付宝资损率小于千万分之0.098，有效的保护了支付宝百万亿交易规模的资金安全。',
   'demo.example.title1': '某大型能源集团',
   'demo.example.description1': '实现电网状态可视化及实时管理',
   'demo.example.challenge1':
@@ -189,7 +191,7 @@ export default {
   'demo.example.solution2':
     '团伙在申请信用卡时，通常会重复使用一些特定信息。在TuGraph上构建信用卡申请关联图谱，通过产品内置的社区发现等算法挖掘异常申请信息，进而锁定可疑群体团体。',
   'demo.example.profit2':
-    '替代原有的开源计算框架GraphX，运算时间从10小时降至10分钟，并在业务效果上取得突破。有效识别涉及套现、骗贷等违规行为的团伙控制信用卡。',
+    '替代原有的开源计算框架，运算时间从10小时降至10分钟，并在业务效果上取得突破。有效识别涉及套现、骗贷等违规行为的团伙控制信用卡。',
   'demo.example.title3': '证券账户持仓相似性挖掘',
   'demo.example.challenge3':
     '挖掘高相似持仓用户，基于用户持仓数据寻找一段时期内的平均持仓高度相似用户对，后续可进一步用于老鼠仓识别、内幕交易识别以及关联账户分析。',
@@ -218,10 +220,39 @@ export default {
     '利用图计算技术，将业务、数据、任务、输入、输出、负责人等对象抽象为图数据结构的点和边，构建数据资产图谱，支撑智能化的数据血缘管理。',
   'demo.example.profit6':
     '可视化、准确地呈现数据之间的血缘路径，便于用户追踪数据链路状态、进行数仓规范化治理、数据安全权限检查等。',
+  'ecosystem.banner.slogan': '携手合作伙伴共促生态发展',
+  'ecosystem.banner.description':
+    '即刻加入快速增长的图数据库市场，TuGraph为您提供专业的技术、业务和营销支持',
+  'ecosystem.banner.btn': '联系我们',
+  'ecosystem.type.title': '合作伙伴类型',
+  'ecosystem.type.description':
+    '欢迎来自全球的合作伙伴，我们提供多种适合您业务模式的合作伙伴类型',
+  'ecosystem.type0.title': '产品与方案集成伙伴',
+  'ecosystem.type0.description':
+    '具备与TuGraph相集成的整体解决方案或集成产品，可以将集成方案或产品（含TuGraph）整体提供给最终用户。',
+  'ecosystem.type1.title': '产品生态伙伴',
+  'ecosystem.type1.description':
+    '与TuGraph的生态工具、服务器、中间件以及芯片、操作系统等产业生态合作，推动产业发展。',
+  'ecosystem.type2.title': '培训认证伙伴',
+  'ecosystem.type2.description':
+    '为其他用户、合作伙伴及对TuGraph有兴趣的人士提供正规、专业的培训。',
+  'ecosystem.type3.title': '技术服务伙伴',
+  'ecosystem.type3.description':
+    '具备TuGraph产品的交付、实施、运维能力，可以为最终用户提供企业级增值服务。',
+  'ecosystem.type4.title': '经销商合作伙伴',
+  'ecosystem.type4.description':
+    '具备TuGraph产品的销售、售前咨询能力，将TuGraph销售给最终用户。',
+  'ecosystem.support.title': '合作伙伴支持',
+  'ecosystem.support.description': '精选支持资源帮助您构建、营销和销售您的产品',
+  'ecosystem.support0': '全面的产品和服务培训',
+  'ecosystem.support1': '技术赋能',
+  'ecosystem.support2': '重点项目POC支持',
+  'ecosystem.support3': '销售激励及市场推广支持',
   'download.banner.slogan': 'TuGraph v3.3.2',
   'download.banner.description': '最新版本2022.10.20',
   'download.title0': 'TuGraph 社区版下载',
-  'download.title1': 'TuGraph 企业版申请',
+  'download.title1': '存储过程接口文档',
+  'download.title2': 'TuGraph 企业版申请',
   'download.downloadBtn': '立即下载',
   'download.applyText': '免费申请30天试用',
   'download.contactBtn': '联系我们',
@@ -237,14 +268,18 @@ export default {
   'form.item.email': '公司邮箱',
   'form.item.position': '职位',
   'form.item.phone': '手机',
-  'form.submit.info': '接受软件许可权 *',
+  'form.submit.info': '接受软件许可权',
   'form.submit': '提交',
-  'blog.banner.slogan': '最新资讯',
-  'blog.banner.subTitle':
-    '我们将通过官网和微信公众号持续发布最新的产品信息、技术分享、活动要闻等资讯。',
+  'form.tip0':
+    '您提供以上联系信息，即授权蚂蚁集团通过有关TuGraph的产品和服务的通信与您保持联系，以方便回复您的询问或者发送我们的资料等内容，请参阅我们的',
+  'form.rule': '隐私政策',
+  'form.tip1': '以了解更多详情或者您可以选择随时退出。',
+  'blog.banner.slogan': 'Tugraph图数据库解读',
+  'blog.banner.subTitle': '带你了解更多信息',
   'blog.all': '全部',
   'blog.news': '新闻',
   'blog.technology': '技术',
   'blog.total': '共',
   'blog.item': '条',
+  'blog.more': '查看更多',
 };

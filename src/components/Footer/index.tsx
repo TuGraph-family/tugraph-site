@@ -1,10 +1,14 @@
 import React from 'react';
+import { Collapse } from 'antd';
 import { useIntl } from 'umi';
 import { Row, Col, Space, Popover } from 'antd';
+import { RightOutlined } from '@ant-design/icons';
 import { PhoneFilled, MailFilled, EnvironmentFilled } from '@ant-design/icons';
 import { useMedia } from 'react-use';
 
 import styles from './index.less';
+
+const { Panel } = Collapse;
 
 export const Footer = ({ className }: { className?: string }) => {
   const intl = useIntl();
@@ -101,7 +105,7 @@ export const Footer = ({ className }: { className?: string }) => {
           </div>
         </Col>
         <Col span={10}>
-          <div className={styles.textGroup}>
+          <div className={styles.textGroup} id="contactUs">
             <div className={styles.title}>
               {intl.formatMessage({ id: 'home.version.contactUs' })}
             </div>
@@ -155,6 +159,7 @@ export const Footer = ({ className }: { className?: string }) => {
           <a
             href="https://render.alipay.com/p/yuyan/180020010001196791/preview.html?agreementId=AG00000174"
             rel="noopener noreferrer"
+            target="_blank"
           >
             {intl.formatMessage({ id: 'footer.rules' })}
           </a>
@@ -166,13 +171,79 @@ export const Footer = ({ className }: { className?: string }) => {
 
   const mobile = (
     <>
-      <div className={styles.contactInfo} id="contactUs">
-        {intl.formatMessage({ id: 'home.version.contactUs' })}
-        <Row className={styles.iconGroup}>
+      <div className={styles.textGroup}>
+        <Collapse expandIconPosition="end">
+          <Panel
+            header={intl.formatMessage({ id: 'header.product' })}
+            key="product"
+          >
+            <a className={styles.item} href="/product">
+              {intl.formatMessage({ id: 'footer.productName' })}
+            </a>
+            <a
+              className={styles.item}
+              href="/doc?version=V3.3.0&id=10000000001031969"
+            >
+              TuGraph Browser
+            </a>
+            <a
+              className={styles.item}
+              href="/doc?version=V3.3.0&id=10000000001031971"
+            >
+              TuGraph Explorer
+            </a>
+          </Panel>
+          <Panel
+            header={intl.formatMessage({ id: 'header.community' })}
+            key="community"
+          >
+            <a
+              target="_blank"
+              className={styles.item}
+              href="https://github.com/TuGraph-db"
+            >
+              GitHub
+            </a>
+            <a className={styles.item} href="https://gitee.com/tugraph">
+              Gitee
+            </a>
+            <a
+              target="_blank"
+              className={styles.item}
+              href="https://space.bilibili.com/1196053065/"
+            >
+              {intl.formatMessage({ id: 'footer.communityName' })}
+            </a>
+          </Panel>
+          <Panel
+            header={intl.formatMessage({ id: 'home.version.contactUs' })}
+            key="contactUs"
+            id="contactUs"
+          >
+            <div className={styles.item}>
+              <Space size={16}>
+                <PhoneFilled size={12} />
+                {intl.formatMessage({ id: 'footer.phone' })}
+              </Space>
+            </div>
+            <div className={styles.item}>
+              <Space>
+                <MailFilled size={12} />
+                <a href="mailto:tugraph@service.alipay.com">
+                  tugraph@service.alipay.com
+                </a>
+              </Space>
+            </div>
+          </Panel>
+        </Collapse>
+      </div>
+
+      <div className={styles.contactInfo}>
+        <Space size={32} className={styles.iconGroup}>
           {icons.map((item, key) => (
-            <Col span={6} key={key}>
+            <div key={key}>
               {item.url ? (
-                <a href={item.url} rel="noopener noreferrer">
+                <a target="_blank" href={item.url} rel="noopener noreferrer">
                   <img src={item.icon} />
                 </a>
               ) : (
@@ -188,41 +259,52 @@ export const Footer = ({ className }: { className?: string }) => {
                   <img src={item.icon} />
                 </Popover>
               )}
-            </Col>
+            </div>
           ))}
-        </Row>
-        <span>
-          <PhoneFilled style={{ marginRight: '8px' }} />
-          电话：0571-85022088，转分机号 83789993#
-        </span>
-        <Space>
-          <MailFilled />
-          tugraph@service.alipay.com
         </Space>
-        <span>
-          <EnvironmentFilled style={{ marginRight: '8px' }} />
-          {intl.formatMessage({ id: 'footer.addressMobile' })}
-        </span>
       </div>
-      <div className={styles.qrCode}>
-        <img src="https://gw.alipayobjects.com/zos/bmw-prod/b543c652-c2a5-4ff1-90e2-dc6d4077b68e.svg" />
-        <div className={styles.desc}>
-          {intl.formatMessage({ id: 'footer.qrCode.weChart' })}
-        </div>
-        <div className={styles.subDesc}>
-          {intl.formatMessage({ id: 'footer.qrCode.subDescWeChart' })}
-        </div>
-      </div>
+      <Row gutter={20}>
+        <Col span={12}>
+          <Space size={20} className={styles.qrCode}>
+            <img src="https://gw.alipayobjects.com/zos/bmw-prod/b543c652-c2a5-4ff1-90e2-dc6d4077b68e.svg" />
+
+            <div className={styles.group}>
+              <div className={styles.desc}>
+                {intl.formatMessage({ id: 'footer.qrCode.weChart' })}
+              </div>
+              <div className={styles.subDesc}>
+                {intl.formatMessage({
+                  id: 'footer.qrCode.subDescWeChart',
+                })}
+              </div>
+            </div>
+          </Space>
+        </Col>
+        <Col span={12}>
+          <Space size={20} className={styles.qrCode}>
+            <img src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*L9UQSbVwSoMAAAAAAAAAAAAADgOBAQ/original" />
+
+            <div className={styles.group}>
+              <div className={styles.desc}>
+                {intl.formatMessage({ id: 'footer.qrCode.dingTalk' })}
+              </div>
+              <div className={styles.subDesc}>
+                {intl.formatMessage({
+                  id: 'footer.qrCode.subDescWeChart',
+                })}
+              </div>
+            </div>
+          </Space>
+        </Col>
+      </Row>
       <Row className={styles.footerExtraInfo}>
-        <Space size={16}>
-          <a
-            href="https://render.alipay.com/p/yuyan/180020010001196791/preview.html?agreementId=AG00000174"
-            rel="noopener noreferrer"
-          >
-            {intl.formatMessage({ id: 'footer.rules' })}
-          </a>
-          | <div> {intl.formatMessage({ id: 'footer.extraInfo' })}</div>
-        </Space>
+        <a
+          href="https://render.alipay.com/p/yuyan/180020010001196791/preview.html?agreementId=AG00000174"
+          rel="noopener noreferrer"
+        >
+          {intl.formatMessage({ id: 'footer.rules' })}
+        </a>
+        <div> {intl.formatMessage({ id: 'footer.address' })}</div>
       </Row>
     </>
   );

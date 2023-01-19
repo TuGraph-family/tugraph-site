@@ -7,7 +7,7 @@ import { LayoutTemplate } from '@/components/LayoutTemplate';
 import { assetsList, docsList } from '@/data/download';
 import styles from './download.less';
 
-export default function DemoPage() {
+export default function DownloadPage() {
   const intl = useIntl();
   const isWide = useMedia('(min-width: 767.99px)', true);
   const initActiveAssetsVersion = assetsList?.map(

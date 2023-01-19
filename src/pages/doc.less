@@ -7,8 +7,7 @@
   text-align: center;
   border-right: 1px solid #ebedf0;
   padding-top: 40px;
-  max-height: 100vh;
-  height: 100vh;
+  height: 100%;
   overflow-y: auto;
   overflow-x: hidden;
   margin-bottom: 389px;
@@ -84,6 +83,7 @@
   }
 
   img {
+    max-width: 750px;
     width: 100%;
   }
 
@@ -118,7 +118,7 @@
     display: table;
     max-width: 100% !important;
     width: 100%;
-    margin-top: 24px;
+    margin: 24px 0 20px 0;
     table-layout: fixed;
     border: 1px solid rgba(105, 122, 140, 0.1);
 
@@ -177,18 +177,18 @@
 }
 
 @media only screen and (max-width: 931.99px) {
-
   .containerWrapper {
     padding: 32px 24px;
     img {
       width: 100%;
     }
   }
+  .docFooter {
+    margin-left: 0;
+  }
 }
 
 @media only screen and (max-width: 767.99px) {
-
-
   .containerWrapper {
     padding: 32px 24px;
     margin: 0;

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Col, Modal, Row, Space } from 'antd';
+import { Button, Carousel, Col, Modal, Row, Space } from 'antd';
 import cx from 'classnames';
 import JoLPlayer from 'jol-player';
 import { Helmet } from 'react-helmet';
@@ -10,7 +10,7 @@ import {
 } from '@ant-design/icons';
 import { LayoutTemplate } from '@/components/LayoutTemplate';
 import { SubTitle } from '@/components/SubTitle';
-import { useIntl, history } from 'umi';
+import { useIntl } from 'umi';
 import { getReasons } from '@/data/reasons';
 import { getCases } from '@/data/cases';
 import { getVersions } from '@/data/version-feats';
@@ -35,7 +35,7 @@ export default function IndexPage() {
         type="primary"
       >
         <GithubOutlined />
-        GitHub
+        <span className={styles.githubText}>GitHub</span>
       </Button>
       <Button
         className={styles.play}
@@ -50,13 +50,120 @@ export default function IndexPage() {
     </div>
   );
 
+  const pcNoticeWrapper = (
+    <div className={styles.noticeWrapper}>
+      <Row>
+        <Col span={8} className={styles.card}>
+          <div className={styles.tag}>
+            {intl.formatMessage({ id: 'home.notice0.tag' })}
+          </div>
+          <div className={styles.title}>
+            {intl.formatMessage({ id: 'home.notice0.title' })}
+          </div>
+          <div className={styles.desc}>
+            {intl.formatMessage({ id: 'home.notice0.desc' })}
+          </div>
+          <a className="textLink" href="/blog?id=0" target="_blank">
+            {intl.formatMessage({ id: 'home.knowMore' })}
+            <ArrowRightOutlined />
+          </a>
+        </Col>
+        <Col span={8} className={styles.card}>
+          <div className={styles.tag}>
+            {intl.formatMessage({ id: 'home.notice1.tag' })}
+          </div>
+          <div className={styles.title} style={{ width: '244px' }}>
+            {intl.formatMessage({ id: 'home.notice1.title' })}
+          </div>
+          <div className={styles.desc}>
+            {intl.formatMessage({ id: 'home.notice1.desc' })}
+          </div>
+          <a className="textLink" href="/blog?id=3" target="_blank">
+            {intl.formatMessage({ id: 'home.knowMore' })}
+            <ArrowRightOutlined />
+          </a>
+        </Col>
+        <Col span={8} className={styles.card}>
+          <div className={styles.tag}>
+            {intl.formatMessage({ id: 'home.notice2.tag' })}
+          </div>
+          <div className={styles.title}>
+            {intl.formatMessage({ id: 'home.notice2.title' })}
+          </div>
+          <div className={styles.desc}>
+            {intl.formatMessage({ id: 'home.notice2.desc' })}
+          </div>
+          <a
+            className="textLink"
+            target="_blank"
+            href="https://mp.weixin.qq.com/s/h8TR4gn5keqGNEUAd4lBOQ"
+          >
+            {intl.formatMessage({ id: 'home.knowMore' })}
+            <ArrowRightOutlined />
+          </a>
+        </Col>
+      </Row>
+    </div>
+  );
+
+  const mobileNoticeWrapper = (
+    <div className={styles.noticeWrapper}>
+      <Carousel>
+        <div className={styles.card}>
+          <div className={styles.tag}>
+            {intl.formatMessage({ id: 'home.notice0.tag' })}
+          </div>
+          <div className={styles.title}>
+            {intl.formatMessage({ id: 'home.notice0.title' })}
+          </div>
+          <div className={styles.desc}>
+            {intl.formatMessage({ id: 'home.notice0.desc' })}
+          </div>
+          <a className="textLink" href="/blog?id=0" target="_blank">
+            {intl.formatMessage({ id: 'home.knowMore' })}
+            <ArrowRightOutlined />
+          </a>
+        </div>
+        <div className={styles.card}>
+          <div className={styles.tag}>
+            {intl.formatMessage({ id: 'home.notice1.tag' })}
+          </div>
+          <div className={styles.title}>
+            {intl.formatMessage({ id: 'home.notice1.title' })}
+          </div>
+          <div className={styles.desc}>
+            {intl.formatMessage({ id: 'home.notice1.desc' })}
+          </div>
+          <a className="textLink" href="/blog?id=3" target="_blank">
+            {intl.formatMessage({ id: 'home.knowMore' })}
+            <ArrowRightOutlined />
+          </a>
+        </div>
+        <div className={styles.card}>
+          <div className={styles.tag}>
+            {intl.formatMessage({ id: 'home.notice2.tag' })}
+          </div>
+          <div className={styles.title}>
+            {intl.formatMessage({ id: 'home.notice2.title' })}
+          </div>
+          <div className={styles.desc}>
+            {intl.formatMessage({ id: 'home.notice2.desc' })}
+          </div>
+          <a
+            className="textLink"
+            target="_blank"
+            href="https://mp.weixin.qq.com/s/h8TR4gn5keqGNEUAd4lBOQ"
+          >
+            {intl.formatMessage({ id: 'home.knowMore' })}
+            <ArrowRightOutlined />
+          </a>
+        </div>
+      </Carousel>
+    </div>
+  );
+
   const content = (
     <>
-      <img
-        className={styles.bannerImg}
-        src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*hP1DSZ24ZCIAAAAAAAAAAAAADgOBAQ/original"
-        alt="banner"
-      />
       <div className={styles.containerWrapper}>
         <Helmet>
           <title>{intl.formatMessage({ id: 'home.title' })}</title>
@@ -66,114 +173,52 @@ export default function IndexPage() {
           />
         </Helmet>
 
-        <div className={styles.noticeWrapper}>
-          <Row>
-            <Col span={isWide ? 8 : 24} className={styles.card}>
-              <div className={styles.tag}>
-                {intl.formatMessage({ id: 'home.notice0.tag' })}
-              </div>
-              <div className={styles.title}>
-                {intl.formatMessage({ id: 'home.notice0.title' })}
-              </div>
-              <div className={styles.desc}>
-                {intl.formatMessage({ id: 'home.notice0.desc' })}
-              </div>
-              <a className="textLink" href="/blog?id=0" target="_blank">
-                {intl.formatMessage({ id: 'home.knowMore' })}
-                <ArrowRightOutlined />
-              </a>
-            </Col>
-            <Col span={isWide ? 8 : 24} className={styles.card}>
-              <div className={styles.tag}>
-                {intl.formatMessage({ id: 'home.notice1.tag' })}
-              </div>
-              <div className={styles.title}>
-                {intl.formatMessage({ id: 'home.notice1.title' })}
-              </div>
-              <div className={styles.desc}>
-                {intl.formatMessage({ id: 'home.notice1.desc' })}
-              </div>
-              <a className="textLink" href="/blog?id=3" target="_blank">
-                {intl.formatMessage({ id: 'home.knowMore' })}
-                <ArrowRightOutlined />
-              </a>
-            </Col>
-            <Col span={isWide ? 8 : 24} className={styles.card}>
-              <div className={styles.tag}>
-                {intl.formatMessage({ id: 'home.notice2.tag' })}
-              </div>
-              <div className={styles.title}>
-                {intl.formatMessage({ id: 'home.notice2.title' })}
-              </div>
-              <div className={styles.desc}>
-                {intl.formatMessage({ id: 'home.notice2.desc' })}
-              </div>
-              <a
-                className="textLink"
-                target="_blank"
-                href="https://mp.weixin.qq.com/s/h8TR4gn5keqGNEUAd4lBOQ"
-              >
-                {intl.formatMessage({ id: 'home.knowMore' })}
-                <ArrowRightOutlined />
-              </a>
-            </Col>
-          </Row>
-        </div>
+        {isWide ? pcNoticeWrapper : mobileNoticeWrapper}
 
         <SubTitle title={intl.formatMessage({ id: 'home.choseReason' })} />
-        <Row className={styles.reasonCards}>
-          {getReasons(intl)?.map((item, key) => {
-            return (
-              <Col
-                span={isWide ? 12 : 6}
-                className={styles.reasonCardGroup}
-                key={key}
-              >
-                <div className={styles.reasonCard}>
-                  {isWide ? (
-                    <Space size={36}>
+        <div className="maxContainer">
+          <Row className={styles.reasonCards}>
+            {getReasons(intl)?.map((item, key) => {
+              return (
+                <Col
+                  span={isWide ? 12 : 24}
+                  className={styles.reasonCardGroup}
+                  key={key}
+                >
+                  <div className={styles.reasonCard}>
+                    <Space size={24}>
                       <img src={item.icon} />
                       <div className={styles.textGroup}>
                         <div className={styles.title}>{item.title}</div>
                         <div className={styles.desc}>{item.desc}</div>
                       </div>
                     </Space>
-                  ) : (
-                    <>
-                      <img src={item.icon} />
-                      <div className={styles.textGroup}>
-                        <div className={styles.title}>{item.title}</div>
-                        <div className={styles.desc}>{item.desc}</div>
-                      </div>
-                    </>
-                  )}
-                </div>
-              </Col>
-            );
-          })}
-        </Row>
+                  </div>
+                </Col>
+              );
+            })}
+          </Row>
+        </div>
 
         <div className={styles.cases}>
-          <Row>
-            <Col span={6} className={styles.caseGroup}>
-              <div className={styles.title}>
+          <Row className="maxContainer">
+            <Col span={isWide ? 6 : 24} className={styles.caseGroup}>
+              <div className={styles.groupTitle}>
                 {intl.formatMessage({ id: 'home.case.title' })}
               </div>
-              <div className={styles.desc}>
-                {intl.formatMessage({ id: 'home.case.desc0' })}
-              </div>
-              <div className={styles.desc}>
+              <div className={styles.groupDesc}>
+                {intl.formatMessage({ id: 'home.case.desc0' })},
                 {intl.formatMessage({ id: 'home.case.desc1' })}
               </div>
-              {/* <a className={cx('textLink', styles.knowMore)} href="/demo">
-                {intl.formatMessage({ id: 'home.knowMore' })}
-                <ArrowRightOutlined />
-              </a> */}
             </Col>
-            <Col span={18}>
+            <Col span={isWide ? 6 : 24}>
               <Row style={{ margin: '-12px' }}>
                 {getCases(intl)?.map((item, key) => (
-                  <Col span={8} className={styles.cardWrapper} key={key}>
+                  <Col
+                    span={isWide ? 8 : 12}
+                    className={styles.cardWrapper}
+                    key={key}
+                  >
                     <div className={styles.card}>
                       <img src={item.iconUrl} alt="icon" />
                       <div className={styles.title}>{item.title}</div>
@@ -188,42 +233,44 @@ export default function IndexPage() {
         </div>
 
         <SubTitle title={intl.formatMessage({ id: 'home.users' })} />
-        <Row className={styles.users}>
-          <Col span={6}>
-            <img src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*yZnbTbOz1RAAAAAAAAAAAAAADgOBAQ/original" />
-          </Col>
-          <Col span={6}>
-            <img src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*6qfKQo719XQAAAAAAAAAAAAADgOBAQ/original" />
-          </Col>
-          <Col span={6}>
-            <img src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*7szLS7kQW-QAAAAAAAAAAAAADgOBAQ/original" />
-          </Col>
-          <Col span={6}>
-            <img src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*LsymQLEes6wAAAAAAAAAAAAADgOBAQ/original" />
-          </Col>
-          <a className="textLink" href="/demo">
+        {!isWide && (
+          <a className="textLink" href="/case">
             {intl.formatMessage({ id: 'home.moreDemo' })}
             <ArrowRightOutlined />
           </a>
-        </Row>
-
-        {!isWide && (
-          <Button
-            type="primary"
-            block
-            onClick={() => {
-              history.push('/demo');
-            }}
-            className={cx('grayBtn', styles.moreDemo)}
-          >
-            {intl.formatMessage({ id: 'home.moreDemo' })}
-          </Button>
         )}
+        <div className="maxContainer">
+          <Row className={styles.users}>
+            <Col span={isWide ? 6 : 12}>
+              <img src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*yZnbTbOz1RAAAAAAAAAAAAAADgOBAQ/original" />
+            </Col>
+            <Col span={isWide ? 6 : 12}>
+              <img src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*6qfKQo719XQAAAAAAAAAAAAADgOBAQ/original" />
+            </Col>
+            <Col span={isWide ? 6 : 12}>
+              <img src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*7szLS7kQW-QAAAAAAAAAAAAADgOBAQ/original" />
+            </Col>
+            <Col span={isWide ? 6 : 12}>
+              <img src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*LsymQLEes6wAAAAAAAAAAAAADgOBAQ/original" />
+            </Col>
+            {isWide && (
+              <a className="textLink" href="/case">
+                {intl.formatMessage({ id: 'home.moreDemo' })}
+                <ArrowRightOutlined />
+              </a>
+            )}
+          </Row>
+        </div>
 
         <div className={styles.versionsWrapper}>
           <SubTitle title={intl.formatMessage({ id: 'home.chooseVersion' })} />
           <Row className={styles.versions}>
-            <Col span={isWide ? 12 : 24} className={styles.version} key={0}>
+            <Col
+              span={isWide ? 12 : 24}
+              className={styles.version}
+              style={{ paddingRight: '12px' }}
+              key={0}
+            >
               <div className={styles.versionCard}>
                 <div
                   className={cx(styles.title, styles.textAlignLeft, 'boldText')}
@@ -243,7 +290,12 @@ export default function IndexPage() {
                 </Button>
               </div>
             </Col>
-            <Col span={isWide ? 12 : 24} className={styles.version} key={1}>
+            <Col
+              style={{ paddingLeft: '12px' }}
+              span={isWide ? 12 : 24}
+              className={styles.version}
+              key={1}
+            >
               <div className={styles.versionCard}>
                 <div className={styles.title}>
                   {intl.formatMessage({ id: 'home.version1' })}
@@ -263,50 +315,57 @@ export default function IndexPage() {
             </Col>
           </Row>
         </div>
-        <div className={styles.featList}>
-          <Row>
-            <Col
-              span={14}
-              className={cx(styles.title, styles.textAlignLeft, 'boldText')}
-            >
-              {intl.formatMessage({ id: 'home.function' })}
-            </Col>
-            <Col span={5} className={cx(styles.title, 'boldText')}>
-              {intl.formatMessage({ id: 'home.version0' })}
-            </Col>
-            <Col span={5} className={cx(styles.title, 'boldText')}>
-              {intl.formatMessage({ id: 'home.version1' })}
-            </Col>
-          </Row>
-          {getVersions(intl)?.map((item, key) => {
-            return (
-              <Row
-                key={key}
-                className={key % 2 === 1 ? styles.crossRow : styles.baseRow}
+        <div className="maxContainer">
+          <div className={styles.featList}>
+            <Row>
+              <Col
+                span={14}
+                className={cx(styles.title, styles.textAlignLeft, 'boldText')}
               >
-                <Col
-                  span={14}
-                  className={cx(styles.textAlignLeft, styles.text)}
+                {intl.formatMessage({ id: 'home.function' })}
+              </Col>
+              <Col span={5} className={cx(styles.title, 'boldText')}>
+                {isWide
+                  ? `TuGraph ${intl.formatMessage({ id: 'home.version0' })}`
+                  : intl.formatMessage({ id: 'home.version0' })}
+              </Col>
+              <Col span={5} className={cx(styles.title, 'boldText')}>
+                {isWide
+                  ? `TuGraph ${intl.formatMessage({ id: 'home.version1' })}`
+                  : intl.formatMessage({ id: 'home.version1' })}
+              </Col>
+            </Row>
+            {getVersions(intl)?.map((item, key) => {
+              return (
+                <Row
+                  key={key}
+                  className={key % 2 === 1 ? styles.crossRow : styles.baseRow}
                 >
-                  {item.feat}
-                </Col>
-                <Col span={5} className={styles.text}>
-                  {item.community ? <CheckOutlined /> : '-'}
-                </Col>
-                <Col span={5} className={styles.text}>
-                  {item.pro ? <CheckOutlined /> : '-'}
-                </Col>
-              </Row>
-            );
-          })}
+                  <Col
+                    span={14}
+                    className={cx(styles.textAlignLeft, styles.text)}
+                  >
+                    {item.feat}
+                  </Col>
+                  <Col span={5} className={styles.text}>
+                    {item.community ? <CheckOutlined /> : '-'}
+                  </Col>
+                  <Col span={5} className={styles.text}>
+                    {item.pro ? <CheckOutlined /> : '-'}
+                  </Col>
+                </Row>
+              );
+            })}
+          </div>
         </div>
+
         <ApplyForm visible={showApplyForm} setVisible={setShowApplyForm} />
         <Modal
           centered
           bodyStyle={{ padding: 0 }}
           open={showVideo}
           onCancel={() => setShowVideo(false)}
-          width={800}
+          width={isWide ? 800 : '100%'}
           footer={null}
         >
           <div className={styles.videoBtn} onClick={() => setShowVideo(false)}>
@@ -316,8 +375,8 @@ export default function IndexPage() {
             option={{
               videoSrc:
                 'https://gw.alipayobjects.com/os/bmw-prod/2145f227-08f0-435a-abe6-7f503b65da7d.mov',
-              height: isWide ? 450 : 102,
-              width: 800,
+              height: 450,
+              width: isWide ? 800 : '100%',
             }}
           />
         </Modal>
@@ -328,6 +387,8 @@ export default function IndexPage() {
   return (
     <LayoutTemplate
       bannerInfo={{
+        bgIconUrl:
+          'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*SeWxTJnZ4_8AAAAAAAAAAAAADgOBAQ/original',
         slogan: intl.formatMessage({ id: 'home.banner.slogan' }),
         description: intl.formatMessage({ id: 'home.banner.description' }),
         footer: bannerButton,

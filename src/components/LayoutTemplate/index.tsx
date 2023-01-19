@@ -6,8 +6,8 @@ import { Footer } from '@/components/Footer';
 import styles from './index.less';
 
 export interface LayoutProps {
-  bannerInfo: BannerInfoProps;
   content: JSX.Element;
+  bannerInfo?: BannerInfoProps;
 }
 
 export const LayoutTemplate = ({ bannerInfo, content }: LayoutProps) => {
@@ -30,7 +30,7 @@ export const LayoutTemplate = ({ bannerInfo, content }: LayoutProps) => {
   return (
     <div>
       <Header isStick={isStick} />
-      <Banner {...bannerInfo} />
+      {bannerInfo && <Banner {...bannerInfo} />}
       <div className={styles.mainWrapper}>
         <div className={styles.content}>{content}</div>
       </div>

@@ -11,6 +11,7 @@ export default defineConfig({
     { path: '/', component: '@/pages/index' },
     { path: '/product', component: '@/pages/product' },
     { path: '/case', component: '@/pages/case' },
+    { path: '/ecosystem', component: '@/pages/ecosystem' },
     { path: '/doc', component: '@/pages/doc' },
     { path: '/blog', component: '@/pages/blog' },
     { path: '/download', component: '@/pages/download' },

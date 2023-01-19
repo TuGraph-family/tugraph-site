@@ -20,12 +20,17 @@ export const Banner = ({
 }: BannerInfoProps) => {
   const { pathname } = useLocation();
   const isHome = pathname === '/' ? true : false;
+
   const isWide = useMedia('(min-width: 767.99px)', true);
+  let background = `url('https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*399oSYCBVagAAAAAAAAAAAAADgOBAQ/original')`;
+  if (isHome) {
+    background = `url('https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*if0TTLtCrA0AAAAAAAAAAAAADgOBAQ/original')`;
+  }
   return (
     <div
       className={styles.banner}
       style={{
-        backgroundImage: `url('https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*399oSYCBVagAAAAAAAAAAAAADgOBAQ/original')`,
+        backgroundImage: background,
         height: '600px',
         backgroundColor: 'rgba(22,80,255,0.05)',
       }}
@@ -33,19 +38,31 @@ export const Banner = ({
       <div className={styles.containerWrapper}>
         {isWide ? (
           <Row>
-            <Col span={isHome ? 10 : 14}>
-              <div className={styles.slogan}>{slogan}</div>
+            <Col span={isHome ? 10 : 12}>
+              <div
+                style={{ marginTop: isHome ? '80px' : '160px' }}
+                className={styles.slogan}
+              >
+                {slogan}
+              </div>
               {description && (
-                <div className={styles.description}>{description}</div>
+                <div
+                  className={styles.description}
+                  style={{ marginTop: isHome ? '16px' : '8px' }}
+                >
+                  {description}
+                </div>
               )}
               {footer}
             </Col>
+
             {bgIconUrl && (
-              <Col span={isHome ? 14 : 10}>
+              <Col span={isHome ? 14 : 12}>
                 <img
                   className={isWide ? styles.pcIcon : styles.mobileIcon}
                   style={{
-                    margin: isWide ? '40px 0 0 0' : '-24px 80px',
+                    margin: isWide ? '34px 0 0 0' : '-24px 80px',
+                    height: isHome ? '460px' : '375px',
                   }}
                   src={bgIconUrl}
                 />
@@ -58,11 +75,11 @@ export const Banner = ({
             {description && (
               <div className={styles.description}>{description}</div>
             )}
+            {footer}
             <img
               className={isWide ? styles.pcIcon : styles.mobileIcon}
               src={bgIconUrl}
             />
-            {footer}
           </>
         )}
       </div>
