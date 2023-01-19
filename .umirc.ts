@@ -41,7 +41,6 @@ export default defineConfig({
     antd: true,
     baseNavigator: true,
     baseSeparator: '-',
-    default: 'zh-CN',
     title: true,
     useLocalStorage: true,
   },
