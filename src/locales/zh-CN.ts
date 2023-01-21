@@ -98,7 +98,6 @@ export default {
   'home.feat15': '图数据库专家支持服务',
   'home.feat16': '高级Cypher优化器',
   'home.feat17': '属性级别的权限管理',
-  'home.version.download': '下载',
   'home.version.useFree': '30天免费试用',
   'footer.qrCode.weChart': '微信公众号',
   'footer.qrCode.dingTalk': '钉钉交流群',

@@ -103,7 +103,6 @@ export default {
   'home.feat15': 'Graph database expert support services',
   'home.feat16': 'Advanced cypher optimizer',
   'home.feat17': 'Attribute-level permission management',
-  'home.version.download': '下载',
   'home.version.useFree': '30-day Free Trial',
   'footer.qrCode.weChart': 'WeChat',
   'footer.qrCode.dingTalk': 'DingTalk',
@@ -278,7 +277,7 @@ export default {
   'download.applyText': 'Try TuGraph for 30 days',
   'download.contactBtn': 'Contact Us',
   'form.banner.slogan': 'TuGraph 30-day Free Trial',
-  //'form.banner.subTitle': '欢迎使用TuGraph图数据库！',
+  'form.banner.subTitle': '欢迎使用TuGraph图数据库！',
   'form.input.placeholder': 'Input',
   'form.item.situation': '应用场景',
   'form.item.desc':
