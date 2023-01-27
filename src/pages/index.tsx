@@ -93,11 +93,7 @@ export default function IndexPage() {
           <div className={styles.desc}>
             {intl.formatMessage({ id: 'home.notice2.desc' })}
           </div>
-          <a
-            className="textLink"
-            target="_blank"
-            href="https://mp.weixin.qq.com/s/h8TR4gn5keqGNEUAd4lBOQ"
-          >
+          <a className="textLink" target="_blank" href="/blog?id=12">
             {intl.formatMessage({ id: 'home.knowMore' })}
             <ArrowRightOutlined />
           </a>

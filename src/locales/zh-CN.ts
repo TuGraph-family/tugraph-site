@@ -30,9 +30,9 @@ export default {
   'home.notice1.desc':
     '联合国内外科技公司共同参与编写的FinBench，将用于评估金融场景下图数据库的功能和性能表现。',
   'home.notice2.tag': '行业资讯',
-  'home.notice2.title': 'TuGraph获得世界互联网“领先科技成果”奖',
+  'home.notice2.title': 'TuGraph 图数据库登陆阿里云，免费试用进行中',
   'home.notice2.desc':
-    '蚂蚁集团大规模图计算系统TuGraph (原名GeaGraph)凭借图技术重大创新入选奖项。',
+    '用户无需编译部署，只要简单配置云主机即可快速搭建自己的图应用。',
   'home.case.title': '应用场景',
   'home.case.desc0': '数千倍效果提升',
   'home.case.desc1': '助力行业客户打破分析瓶颈',

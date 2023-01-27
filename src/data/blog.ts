@@ -11,6 +11,8 @@ import md08 from '@/doc/08.md';
 import md09 from '@/doc/09.md';
 import md10 from '@/doc/10.md';
 import md11 from '@/doc/11.md';
+import md12 from '@/doc/12.md';
+import md13 from '@/doc/13.md';
 
 // TODO 国际化
 export const blogs = [
@@ -112,6 +114,24 @@ export const blogs = [
     updateDate: '2022-11-27',
     type: 'tech',
     content: md11?.html,
+  },
+  {
+    id: 11,
+    img: 'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*YD5WQZ5OkkUAAAAAAAAAAAAADgOBAQ/original',
+    title: '蚂蚁高性能图数据库 TuGraph-DB 的技术思考与实践',
+    desc: '在近日举行的  DTCC 2022  第十三届中国数据库技术大会-图数据技术与应用创新专场，蚂蚁集团图数据库负责人洪春涛博士分享了蚂蚁高性能图数据库 TuGraph-DB 的技术思考和实践。',
+    updateDate: '2022-12-20',
+    type: 'tech',
+    content: md12?.html,
+  },
+  {
+    id: 12,
+    img: 'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*_H7HSYtXw5sAAAAAAAAAAAAADgOBAQ/original',
+    title: 'TuGraph 图数据库登陆阿里云，免费试用进行中',
+    desc: '蚂蚁集团高性能图数据库 TuGraph 社区版现已在阿里云提供服务。用户无需编译部署，只要简单配置云主机即可快速搭建自己的图应用。',
+    updateDate: '2022-12-25',
+    type: 'news',
+    content: md13?.html,
   },
 ];
 
