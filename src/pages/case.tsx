@@ -98,6 +98,7 @@ export default function DemoPage() {
       <SubTitle title={intl.formatMessage({ id: 'demo.examples' })} />
       {getExamples(intl)?.map((item, key) => (
         <div className={styles.exampleCard} key={key}>
+          <img src={item.img} />
           <div className="maxContainer">
             <div className={styles.textWrapper}>
               <div className={styles.title}>{item.title}</div>

@@ -76,7 +76,10 @@ export default function BlogPage() {
 
   const content = (
     <div
-      className={cx(styles.containerWrapper, isStick ? styles.sticky : null)}
+      className={cx(
+        styles.containerWrapper,
+        isStick && !isWide ? styles.sticky : null,
+      )}
     >
       <div className={styles.listWrapper}>
         <Tabs
@@ -98,9 +101,7 @@ export default function BlogPage() {
                   }}
                 >
                   <Space size={isWide ? 24 : 22}>
-                    <div>
-                      <img src={item.img} alt={item.title} />
-                    </div>
+                    <img src={item.img} alt={item.title} />
                     <div className={styles.textWrapper}>
                       <div className={styles.listTitle}>{item.title}</div>
                       <div className={styles.desc}>{item.desc}</div>
@@ -126,9 +127,7 @@ export default function BlogPage() {
                   }}
                 >
                   <Space size={isWide ? 24 : 22}>
-                    <div>
-                      <img src={item.img} alt={item.title} />
-                    </div>
+                    <img src={item.img} alt={item.title} />
                     <div className={styles.textWrapper}>
                       <div className={styles.listTitle}>{item.title}</div>
                       <div className={styles.desc}>{item.desc}</div>
@@ -154,9 +153,7 @@ export default function BlogPage() {
                   }}
                 >
                   <Space size={isWide ? 24 : 22}>
-                    <div>
-                      <img src={item.img} alt={item.title} />
-                    </div>
+                    <img src={item.img} alt={item.title} />
                     <div className={styles.textWrapper}>
                       <div className={styles.listTitle}>{item.title}</div>
                       <div className={styles.desc}>{item.desc}</div>
@@ -197,18 +194,14 @@ export default function BlogPage() {
     <>
       {!blogDetail ? (
         <LayoutTemplate
-          bannerInfo={
-            !isStick
-              ? {
-                  bgIconUrl:
-                    'https://mdn.alipayobjects.com/mdn/huamei_qcdryc/afts/img/A*sLOlR5lxll8AAAAAAAAAAAAADgOBAQ',
-                  slogan: intl.formatMessage({ id: 'blog.banner.slogan' }),
-                  description: intl.formatMessage({
-                    id: 'blog.banner.subTitle',
-                  }),
-                }
-              : undefined
-          }
+          bannerInfo={{
+            bgIconUrl:
+              'https://mdn.alipayobjects.com/mdn/huamei_qcdryc/afts/img/A*sLOlR5lxll8AAAAAAAAAAAAADgOBAQ',
+            slogan: intl.formatMessage({ id: 'blog.banner.slogan' }),
+            description: intl.formatMessage({
+              id: 'blog.banner.subTitle',
+            }),
+          }}
           content={content}
         />
       ) : (
