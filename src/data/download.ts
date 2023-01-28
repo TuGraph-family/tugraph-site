@@ -1,6 +1,6 @@
 export const assetsList = [
   {
-    name: 'Docker 镜像',
+    name: 'Docker Image',
     assets: [
       {
         label: 'v3.3.2',

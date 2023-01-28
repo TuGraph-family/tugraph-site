@@ -207,7 +207,7 @@ export default function IndexPage() {
                 {intl.formatMessage({ id: 'home.case.desc1' })}
               </div>
             </Col>
-            <Col span={isWide ? 6 : 24}>
+            <Col span={isWide ? 18 : 24}>
               <Row style={{ margin: '-12px' }}>
                 {getCases(intl)?.map((item, key) => (
                   <Col
@@ -264,7 +264,7 @@ export default function IndexPage() {
             <Col
               span={isWide ? 12 : 24}
               className={styles.version}
-              style={{ paddingRight: '12px' }}
+              style={{ paddingRight: isWide ? '12px' : '0' }}
               key={0}
             >
               <div className={styles.versionCard}>
@@ -287,7 +287,7 @@ export default function IndexPage() {
               </div>
             </Col>
             <Col
-              style={{ paddingLeft: '12px' }}
+              style={{ paddingLeft: isWide ? '12px' : '0' }}
               span={isWide ? 12 : 24}
               className={styles.version}
               key={1}

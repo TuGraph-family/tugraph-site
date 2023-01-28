@@ -28,6 +28,7 @@ export const Banner = ({
   }
   return (
     <div
+      id="banner"
       className={styles.banner}
       style={{
         backgroundImage: background,

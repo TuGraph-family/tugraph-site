@@ -23,10 +23,10 @@ export default function DownloadPage() {
       </div>
       {assetsList?.map((item, key) => (
         <Row className={styles.list} key={key}>
-          <Col span={isWide ? 16 : 20} className={styles.listName}>
+          <Col span={16} className={styles.listName}>
             {item.name}
           </Col>
-          <Col className={styles.right} span={isWide ? 4 : 4}>
+          <Col className={styles.right} span={isWide ? 4 : 8}>
             <Select
               className={styles.listVersions}
               onChange={(value) => {
@@ -59,10 +59,10 @@ export default function DownloadPage() {
 
       {docsList?.map((item, key) => (
         <Row className={styles.list} key={key}>
-          <Col span={isWide ? 16 : 20} className={styles.listName}>
+          <Col span={16} className={styles.listName}>
             {item.name}
           </Col>
-          <Col className={styles.right} span={isWide ? 4 : 4}>
+          <Col className={styles.right} span={isWide ? 4 : 8}>
             <Select
               className={styles.listVersions}
               value={item.assets[0].value}
@@ -88,7 +88,7 @@ export default function DownloadPage() {
         {intl.formatMessage({ id: 'download.title2' })}
       </div>
       <Row className={styles.list}>
-        <Col span={isWide ? 20 : 20} className={styles.listName}>
+        <Col span={16} className={styles.listName}>
           {intl.formatMessage({ id: 'download.applyText' })}
         </Col>
         <Col className={styles.right} span={isWide ? 4 : 24}>
