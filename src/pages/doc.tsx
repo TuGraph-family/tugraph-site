@@ -79,6 +79,7 @@ export default function DocPage() {
     history.push(`/doc?version=${currentVersion}&id=${currentCategory}`);
     getDocDetail({ id: currentCategory }).then((res: DocContent) => {
       setContent(res);
+      scrollTo(0, 0);
     });
   }, [currentCategory]);
 
