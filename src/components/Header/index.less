@@ -70,6 +70,10 @@
     .ant-menu-horizontal > .ant-menu-item::after {
       display: none;
     }
+    .ant-menu-horizontal:not(.ant-menu-dark)
+      > .ant-menu-submenu-selected::after {
+      display: none;
+    }
     .ant-menu-item-active {
       color: @primary-color;
       a {

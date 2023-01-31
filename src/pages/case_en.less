@@ -1,0 +1,168 @@
+.containerWrapper {
+  .demoWrapper {
+    background-color: #ffffff;
+    box-shadow: 0 3px 6px -4px rgba(132, 135, 155, 0.12),
+      0 6px 16px 0 rgba(132, 135, 155, 0.08),
+      0 9px 28px 8px rgba(132, 135, 155, 0.05);
+    border-radius: 12px;
+    padding: 24px;
+
+    .demoCards {
+      padding: 12px;
+      .demoCard {
+        padding: 24px;
+        height: 326px;
+        max-width: 362px;
+        background-color: rgba(22, 80, 255, 0.04);
+        border-radius: 12px;
+
+        img {
+          width: 36px;
+          height: 36px;
+        }
+
+        .title {
+          font-weight: 500;
+          font-size: 14px;
+          height: 100%;
+          color: rgba(26, 27, 37, 0.88);
+          letter-spacing: 0;
+          text-align: justify;
+          line-height: 22px;
+        }
+
+        .desc {
+          font-weight: 400;
+          font-size: 14px;
+          color: rgba(26, 27, 37, 0.45);
+          line-height: 22px;
+        }
+
+        .type {
+          font-weight: 500;
+          font-size: 16px;
+          color: rgba(26, 27, 37, 0.88);
+          line-height: 24px;
+          margin: 12px 0 8px 0;
+        }
+      }
+    }
+  }
+
+  .exampleWrapper {
+    background-color: #fff;
+
+    .crossRow {
+      background-color: rgba(22, 80, 255, 0.04);
+    }
+
+    .textWrapper {
+      padding-right: 16px;
+    }
+
+    .exampleCard {
+      margin: 0 -120px;
+      padding: 32px 120px;
+      font-weight: 400;
+      font-size: 14px;
+      color: rgba(26, 27, 37, 0.45);
+      text-align: center;
+      line-height: 22px;
+      text-align: left;
+
+      .title {
+        font-weight: 500;
+        font-size: 20px;
+        color: rgba(26, 27, 37, 0.88);
+        line-height: 28px;
+      }
+
+      .description {
+        margin-bottom: 20px;
+      }
+
+      .subTitle {
+        margin: 16px 0 4px 0;
+        font-weight: 500;
+        font-size: 14px;
+        color: rgba(26, 27, 37, 0.88);
+        line-height: 22px;
+      }
+
+      img {
+        width: 427px;
+        height: 320px;
+        border-radius: 8px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 767.99px) {
+  .containerWrapper {
+    .demoWrapper {
+      transition: all 0.3s;
+      height: 100%;
+      padding: 2vw 4.3vw;
+      .demoCards {
+        margin-bottom: 8px;
+        padding: 0;
+        .demoCard {
+          padding: 0;
+          background: #fff;
+          max-width: 100%;
+          text-align: left;
+          min-height: 10px;
+          margin-bottom: 0px;
+          img {
+            width: 40px;
+            margin-top: 12px;
+          }
+          .type {
+            font-size: 3.7vw;
+            margin-top: 20px;
+          }
+          .title {
+            font-size: 3.2vw;
+          }
+          .desc {
+            margin-top: 20px;
+            font-size: 3.2vw;
+            line-height: 4.8vw;
+          }
+        }
+      }
+    }
+    .exampleWrapper {
+      margin-top: 100px;
+      .exampleCard {
+        margin: 0 0 20px 0;
+        padding: 32px;
+        box-shadow: 0 3px 6px -4px rgba(132, 135, 155, 0.12),
+          0 6px 16px 0 rgba(132, 135, 155, 0.08),
+          0 9px 28px 8px rgba(132, 135, 155, 0.05);
+        border-radius: 12px;
+        font-size: 3.2vw;
+        text-align: justify;
+        line-height: 4.8vw;
+        img {
+          margin: -32px -32px 0 -32px;
+          border-radius: 12px 12px 0 0;
+          width: calc(100vw - 46px);
+          object-fit: cover;
+          height: 48vw;
+        }
+        .textWrapper {
+          .title {
+            font-size: 3.7vw;
+            margin: 24px 0 12px 0;
+          }
+          .subTitle {
+            font-size: 3.2vw;
+            margin: 24px 0 12px 0;
+          }
+        }
+      }
+    }
+  }
+}
