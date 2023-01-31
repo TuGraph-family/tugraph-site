@@ -132,7 +132,11 @@ export default function EcosystemPage() {
               <div className={styles.supportItem}>
                 <Space size={12}>
                   <img
-                    style={lang === 'en-US' ? { marginTop: '-14px' } : {}}
+                    style={
+                      lang === 'en-US'
+                        ? { marginTop: isWide ? '-14px' : '-46px' }
+                        : {}
+                    }
                     src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*DzUBT6XHsoQAAAAAAAAAAAAADgOBAQ/original"
                     alt="icon"
                   />

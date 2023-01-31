@@ -86,7 +86,7 @@ export default function ProductPage() {
             option={{
               videoSrc:
                 'https://gw.alipayobjects.com/os/bmw-prod/2145f227-08f0-435a-abe6-7f503b65da7d.mov',
-              height: 204,
+              height: isWide ? 204 : 266,
               width: isWide ? 362 : '100%',
             }}
           />
@@ -104,7 +104,7 @@ export default function ProductPage() {
             option={{
               videoSrc:
                 'https://gw.alipayobjects.com/os/bmw-prod/c9cd86a4-6bd6-48bb-8926-ef62b3995d0b.mov',
-              height: 204,
+              height: isWide ? 204 : 266,
               width: isWide ? 362 : '100%',
             }}
           />
@@ -122,7 +122,7 @@ export default function ProductPage() {
             option={{
               videoSrc:
                 'https://gw.alipayobjects.com/mdn/rms_fa12c2/afts/file/A*CGu4RqkzzDgAAAAAAAAAAAAAARQnAQ',
-              height: 204,
+              height: isWide ? 204 : 266,
               width: isWide ? 362 : '100%',
             }}
           />

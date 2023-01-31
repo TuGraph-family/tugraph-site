@@ -104,9 +104,7 @@ export default function IndexPage() {
     <div className={styles.noticeWrapper}>
       <Carousel>
         <div className={styles.card}>
-          <div className={styles.tag}>
-            {intl.formatMessage({ id: 'home.notice0.tag' })}
-          </div>
+          <Tag> {intl.formatMessage({ id: 'home.notice0.tag' })}</Tag>
           <div className={styles.title}>
             {intl.formatMessage({ id: 'home.notice0.title' })}
           </div>
@@ -119,9 +117,7 @@ export default function IndexPage() {
           </a>
         </div>
         <div className={styles.card}>
-          <div className={styles.tag}>
-            {intl.formatMessage({ id: 'home.notice1.tag' })}
-          </div>
+          <Tag> {intl.formatMessage({ id: 'home.notice1.tag' })}</Tag>
           <div className={styles.title}>
             {intl.formatMessage({ id: 'home.notice1.title' })}
           </div>
@@ -134,9 +130,7 @@ export default function IndexPage() {
           </a>
         </div>
         <div className={styles.card}>
-          <div className={styles.tag}>
-            {intl.formatMessage({ id: 'home.notice2.tag' })}
-          </div>
+          <Tag> {intl.formatMessage({ id: 'home.notice2.tag' })}</Tag>
           <div className={styles.title}>
             {intl.formatMessage({ id: 'home.notice2.title' })}
           </div>
