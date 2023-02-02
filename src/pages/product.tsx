@@ -5,14 +5,17 @@ import JoLPlayer from 'jol-player';
 import { SubTitle } from '@/components/SubTitle';
 import { useMedia } from 'react-use';
 import { LayoutTemplate } from '@/components/LayoutTemplate';
-import { useIntl } from 'umi';
+import { getLocale, useIntl } from 'umi';
 import { getFeats } from '@/data/feats';
 import cx from 'classnames';
 
-import styles from './product.less';
+import stylesZh from './product.less';
+import stylesEn from './product_en.less';
 
 export default function ProductPage() {
   const intl = useIntl();
+  const lang = getLocale();
+  const styles = lang === 'en-US' ? stylesEn : stylesZh;
   const isWide = useMedia('(min-width: 767.99px)', true);
 
   const pcVideoList = (
@@ -83,7 +86,7 @@ export default function ProductPage() {
             option={{
               videoSrc:
                 'https://gw.alipayobjects.com/os/bmw-prod/2145f227-08f0-435a-abe6-7f503b65da7d.mov',
-              height: 204,
+              height: isWide ? 204 : 266,
               width: isWide ? 362 : '100%',
             }}
           />
@@ -101,7 +104,7 @@ export default function ProductPage() {
             option={{
               videoSrc:
                 'https://gw.alipayobjects.com/os/bmw-prod/c9cd86a4-6bd6-48bb-8926-ef62b3995d0b.mov',
-              height: 204,
+              height: isWide ? 204 : 266,
               width: isWide ? 362 : '100%',
             }}
           />
@@ -119,7 +122,7 @@ export default function ProductPage() {
             option={{
               videoSrc:
                 'https://gw.alipayobjects.com/mdn/rms_fa12c2/afts/file/A*CGu4RqkzzDgAAAAAAAAAAAAAARQnAQ',
-              height: 204,
+              height: isWide ? 204 : 266,
               width: isWide ? 362 : '100%',
             }}
           />
@@ -166,7 +169,7 @@ export default function ProductPage() {
                 key={key}
               >
                 <div className={styles.featCard}>
-                  <Space size={isWide ? 27 : 16}>
+                  <Space size={16}>
                     <img src={item.icon} />
                     <div className={styles.textGroup}>
                       <div className={styles.title}>{item.title}</div>

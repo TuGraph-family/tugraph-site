@@ -88,7 +88,7 @@ export default function DownloadPage() {
         {intl.formatMessage({ id: 'download.title2' })}
       </div>
       <Row className={styles.list}>
-        <Col span={16} className={styles.listName}>
+        <Col span={20} className={styles.listName}>
           {intl.formatMessage({ id: 'download.applyText' })}
         </Col>
         <Col className={styles.right} span={isWide ? 4 : 24}>

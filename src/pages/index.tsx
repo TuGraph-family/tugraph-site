@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Button, Carousel, Col, Modal, Row, Space } from 'antd';
+import { Button, Carousel, Col, Modal, Row, Space, Tag } from 'antd';
 import cx from 'classnames';
+import { getLocale } from 'umi';
 import JoLPlayer from 'jol-player';
 import { Helmet } from 'react-helmet';
 import {
@@ -17,10 +18,13 @@ import { getVersions } from '@/data/version-feats';
 import { useMedia } from 'react-use';
 import { ApplyForm } from '@/components/ApplyForm';
 
-import styles from './index.less';
+import stylesZh from './index.less';
+import stylesEn from './index_en.less';
 
 export default function IndexPage() {
   const intl = useIntl();
+  const lang = getLocale();
+  const styles = lang === 'en-US' ? stylesEn : stylesZh;
   const isWide = useMedia('(min-width: 767.99px)', true);
   const [showApplyForm, setShowApplyForm] = useState(false);
   const [showVideo, setShowVideo] = useState(false);
@@ -54,9 +58,7 @@ export default function IndexPage() {
     <div className={styles.noticeWrapper}>
       <Row>
         <Col span={8} className={styles.card}>
-          <div className={styles.tag}>
-            {intl.formatMessage({ id: 'home.notice0.tag' })}
-          </div>
+          <Tag> {intl.formatMessage({ id: 'home.notice0.tag' })}</Tag>
           <div className={styles.title}>
             {intl.formatMessage({ id: 'home.notice0.title' })}
           </div>
@@ -69,9 +71,7 @@ export default function IndexPage() {
           </a>
         </Col>
         <Col span={8} className={styles.card}>
-          <div className={styles.tag}>
-            {intl.formatMessage({ id: 'home.notice1.tag' })}
-          </div>
+          <Tag> {intl.formatMessage({ id: 'home.notice1.tag' })}</Tag>
           <div className={styles.title} style={{ width: '244px' }}>
             {intl.formatMessage({ id: 'home.notice1.title' })}
           </div>
@@ -84,9 +84,7 @@ export default function IndexPage() {
           </a>
         </Col>
         <Col span={8} className={styles.card}>
-          <div className={styles.tag}>
-            {intl.formatMessage({ id: 'home.notice2.tag' })}
-          </div>
+          <Tag> {intl.formatMessage({ id: 'home.notice2.tag' })}</Tag>
           <div className={styles.title}>
             {intl.formatMessage({ id: 'home.notice2.title' })}
           </div>
@@ -106,9 +104,7 @@ export default function IndexPage() {
     <div className={styles.noticeWrapper}>
       <Carousel>
         <div className={styles.card}>
-          <div className={styles.tag}>
-            {intl.formatMessage({ id: 'home.notice0.tag' })}
-          </div>
+          <Tag> {intl.formatMessage({ id: 'home.notice0.tag' })}</Tag>
           <div className={styles.title}>
             {intl.formatMessage({ id: 'home.notice0.title' })}
           </div>
@@ -121,9 +117,7 @@ export default function IndexPage() {
           </a>
         </div>
         <div className={styles.card}>
-          <div className={styles.tag}>
-            {intl.formatMessage({ id: 'home.notice1.tag' })}
-          </div>
+          <Tag> {intl.formatMessage({ id: 'home.notice1.tag' })}</Tag>
           <div className={styles.title}>
             {intl.formatMessage({ id: 'home.notice1.title' })}
           </div>
@@ -136,9 +130,7 @@ export default function IndexPage() {
           </a>
         </div>
         <div className={styles.card}>
-          <div className={styles.tag}>
-            {intl.formatMessage({ id: 'home.notice2.tag' })}
-          </div>
+          <Tag> {intl.formatMessage({ id: 'home.notice2.tag' })}</Tag>
           <div className={styles.title}>
             {intl.formatMessage({ id: 'home.notice2.title' })}
           </div>
@@ -218,8 +210,16 @@ export default function IndexPage() {
                     <div className={styles.card}>
                       <img src={item.iconUrl} alt="icon" />
                       <div className={styles.title}>{item.title}</div>
-                      <div className={styles.desc}>{item.desc0}</div>
-                      <div className={styles.desc}>{item.desc1}</div>
+                      {lang === 'zh-CN' ? (
+                        <>
+                          <div className={styles.desc}>{item.desc0}</div>
+                          <div className={styles.desc}>{item.desc1}</div>
+                        </>
+                      ) : (
+                        <div
+                          className={styles.desc}
+                        >{`${item.desc0}${item.desc1}`}</div>
+                      )}
                     </div>
                   </Col>
                 ))}

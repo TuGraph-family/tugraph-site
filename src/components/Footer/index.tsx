@@ -31,7 +31,7 @@ export const Footer = ({ className }: { className?: string }) => {
 
   const pc = (
     <>
-      <Row className={styles.containerWrapper}>
+      <Row id="tugraphFooter" className={styles.containerWrapper}>
         <Col span={4}>
           <div className={styles.textGroup}>
             <div className={styles.title}>

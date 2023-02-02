@@ -2,17 +2,20 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import { Carousel, Col, Row, Space } from 'antd';
 import { SubTitle } from '@/components/SubTitle';
-import { useIntl } from 'umi';
+import { getLocale, useIntl } from 'umi';
 import { getDemos } from '@/data/demos';
 import { getExamples } from '@/data/examples';
 import cx from 'classnames';
 import { useMedia } from 'react-use';
 import { LayoutTemplate } from '@/components/LayoutTemplate';
 
-import styles from './case.less';
+import stylesZh from './case.less';
+import stylesEn from './case_en.less';
 
 export default function DemoPage() {
   const intl = useIntl();
+  const lang = getLocale();
+  const styles = lang === 'en-US' ? stylesEn : stylesZh;
   const isWide = useMedia('(min-width: 767.99px)', true);
   const pcDemo = (
     <div className="maxContainer">

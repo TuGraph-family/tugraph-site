@@ -150,7 +150,7 @@ export default {
   'demo.banner.slogan': 'Thousands of Times Improvement',
   'demo.banner.subTitle': 'Help customers break the analytical bottleneck',
   'demo.title0':
-    'Credit Risk Control, Anti-money Laundering, Anti-fraud, Fund Tracking, Marketing Recommendation:',
+    'Credit Risk Control, Anti-money Laundering, Anti-fraud, Fund Tracking, Marketing Recommendation: ',
   'demo.desc0':
     'Expand the dimension of risk characteristics through graph computing technology, and improve risk prevention capabilities such as credit risk control.  Graph computing technology also helps financial institutions to accurately market and expand customers.',
   'demo.type0': 'Financial Services',

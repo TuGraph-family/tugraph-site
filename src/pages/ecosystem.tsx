@@ -1,8 +1,10 @@
 import React from 'react';
-import { useIntl } from 'umi';
+import { getLocale, useIntl } from 'umi';
 import { LayoutTemplate } from '@/components/LayoutTemplate';
 
-import styles from './ecosystem.less';
+import stylesZh from './ecosystem.less';
+import stylesEn from './ecosystem_en.less';
+
 import { Anchor, Col, Row, Space } from 'antd';
 import { useMedia } from 'react-use';
 
@@ -10,6 +12,8 @@ const { Link } = Anchor;
 
 export default function EcosystemPage() {
   const intl = useIntl();
+  const lang = getLocale();
+  const styles = lang === 'en-US' ? stylesEn : stylesZh;
   const isWide = useMedia('(min-width: 767.99px)', true);
   const content = (
     <div className={styles.containerWrapper}>
@@ -24,102 +28,92 @@ export default function EcosystemPage() {
           <Row gutter={isWide ? [24, 24] : [20, 20]}>
             <Col span={isWide ? 12 : 24}>
               <div className={styles.typeItem}>
-                <Space size={12}>
-                  <img
-                    src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*K8-yTqN7GAkAAAAAAAAAAAAADgOBAQ/original"
-                    alt="icon"
-                  />
-                  <div>
-                    <div className={styles.title}>
-                      {intl.formatMessage({ id: 'ecosystem.type0.title' })}
-                    </div>
-                    <div className={styles.description}>
-                      {intl.formatMessage({
-                        id: 'ecosystem.type0.description',
-                      })}
-                    </div>
+                <img
+                  src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*K8-yTqN7GAkAAAAAAAAAAAAADgOBAQ/original"
+                  alt="icon"
+                />
+                <div>
+                  <div className={styles.title}>
+                    {intl.formatMessage({ id: 'ecosystem.type0.title' })}
                   </div>
-                </Space>
+                  <div className={styles.description}>
+                    {intl.formatMessage({
+                      id: 'ecosystem.type0.description',
+                    })}
+                  </div>
+                </div>
               </div>
             </Col>
             <Col span={isWide ? 12 : 24}>
               <div className={styles.typeItem}>
-                <Space size={12}>
-                  <img
-                    src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*Xgn-TIzNoOsAAAAAAAAAAAAADgOBAQ/original"
-                    alt="icon"
-                  />
-                  <div>
-                    <div className={styles.title}>
-                      {intl.formatMessage({ id: 'ecosystem.type1.title' })}
-                    </div>
-                    <div className={styles.description}>
-                      {intl.formatMessage({
-                        id: 'ecosystem.type1.description',
-                      })}
-                    </div>
+                <img
+                  src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*Xgn-TIzNoOsAAAAAAAAAAAAADgOBAQ/original"
+                  alt="icon"
+                />
+                <div>
+                  <div className={styles.title}>
+                    {intl.formatMessage({ id: 'ecosystem.type1.title' })}
                   </div>
-                </Space>
+                  <div className={styles.description}>
+                    {intl.formatMessage({
+                      id: 'ecosystem.type1.description',
+                    })}
+                  </div>
+                </div>
               </div>
             </Col>
             <Col span={isWide ? 8 : 24}>
               <div className={styles.typeItem}>
-                <Space size={12}>
-                  <img
-                    src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*LwOISbSYRcIAAAAAAAAAAAAADgOBAQ/original"
-                    alt="icon"
-                  />
-                  <div>
-                    <div className={styles.title}>
-                      {intl.formatMessage({ id: 'ecosystem.type2.title' })}
-                    </div>
-                    <div className={styles.description}>
-                      {intl.formatMessage({
-                        id: 'ecosystem.type2.description',
-                      })}
-                    </div>
+                <img
+                  src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*LwOISbSYRcIAAAAAAAAAAAAADgOBAQ/original"
+                  alt="icon"
+                />
+                <div>
+                  <div className={styles.title}>
+                    {intl.formatMessage({ id: 'ecosystem.type2.title' })}
                   </div>
-                </Space>
+                  <div className={styles.description}>
+                    {intl.formatMessage({
+                      id: 'ecosystem.type2.description',
+                    })}
+                  </div>
+                </div>
               </div>
             </Col>
             <Col span={isWide ? 8 : 24}>
               <div className={styles.typeItem}>
-                <Space size={12}>
-                  <img
-                    src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*m69zQ7DKKEsAAAAAAAAAAAAADgOBAQ/original"
-                    alt="icon"
-                  />
-                  <div>
-                    <div className={styles.title}>
-                      {intl.formatMessage({ id: 'ecosystem.type3.title' })}
-                    </div>
-                    <div className={styles.description}>
-                      {intl.formatMessage({
-                        id: 'ecosystem.type3.description',
-                      })}
-                    </div>
+                <img
+                  src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*m69zQ7DKKEsAAAAAAAAAAAAADgOBAQ/original"
+                  alt="icon"
+                />
+                <div>
+                  <div className={styles.title}>
+                    {intl.formatMessage({ id: 'ecosystem.type3.title' })}
                   </div>
-                </Space>
+                  <div className={styles.description}>
+                    {intl.formatMessage({
+                      id: 'ecosystem.type3.description',
+                    })}
+                  </div>
+                </div>
               </div>
             </Col>
             <Col span={isWide ? 8 : 24}>
               <div className={styles.typeItem}>
-                <Space size={12}>
-                  <img
-                    src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*4gXuS7ETkj0AAAAAAAAAAAAADgOBAQ/original"
-                    alt="icon"
-                  />
-                  <div>
-                    <div className={styles.title}>
-                      {intl.formatMessage({ id: 'ecosystem.type4.title' })}
-                    </div>
-                    <div className={styles.description}>
-                      {intl.formatMessage({
-                        id: 'ecosystem.type4.description',
-                      })}
-                    </div>
+                <img
+                  src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*4gXuS7ETkj0AAAAAAAAAAAAADgOBAQ/original"
+                  alt="icon"
+                />
+                <div>
+                  <div className={styles.title}>
+                    {intl.formatMessage({ id: 'ecosystem.type4.title' })}
                   </div>
-                </Space>
+                  <div className={styles.description}>
+                    {intl.formatMessage({
+                      id: 'ecosystem.type4.description',
+                    })}
+                  </div>
+                </div>
               </div>
             </Col>
           </Row>
@@ -138,6 +132,11 @@ export default function EcosystemPage() {
               <div className={styles.supportItem}>
                 <Space size={12}>
                   <img
+                    style={
+                      lang === 'en-US'
+                        ? { marginTop: isWide ? '-14px' : '-46px' }
+                        : {}
+                    }
                     src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*DzUBT6XHsoQAAAAAAAAAAAAADgOBAQ/original"
                     alt="icon"
                   />
