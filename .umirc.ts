@@ -31,7 +31,7 @@ export default defineConfig({
       .use('frontmatter-markdown-loader')
       .loader('frontmatter-markdown-loader');
   },
-  ssr: false,
+  ssr: {},
   exportStatic: {},
   fastRefresh: {},
   request: {

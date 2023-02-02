@@ -5,9 +5,8 @@ import JoLPlayer from 'jol-player';
 import { SubTitle } from '@/components/SubTitle';
 import { useMedia } from 'react-use';
 import { LayoutTemplate } from '@/components/LayoutTemplate';
-import { getLocale, useIntl } from 'umi';
+import { getLocale, isBrowser, useIntl } from 'umi';
 import { getFeats } from '@/data/feats';
-import cx from 'classnames';
 
 import stylesZh from './product.less';
 import stylesEn from './product_en.less';
@@ -20,123 +19,127 @@ export default function ProductPage() {
 
   const pcVideoList = (
     <div className={styles.videoWrapper}>
-      <Space size={25}>
-        <div className={styles.card}>
-          <JoLPlayer
-            option={{
-              videoSrc:
-                'https://gw.alipayobjects.com/os/bmw-prod/2145f227-08f0-435a-abe6-7f503b65da7d.mov',
-              height: isWide ? 204 : 102,
-              width: 362,
-            }}
-          />
-          <Space size={12}>
-            <div className={styles.title}>
-              {intl.formatMessage({ id: 'product.video0' })}
-            </div>
-            <div className={styles.tag}>
-              {intl.formatMessage({ id: 'product.videoTime0' })}
-            </div>
-          </Space>
-        </div>
-        <div className={styles.card}>
-          <JoLPlayer
-            option={{
-              videoSrc:
-                'https://gw.alipayobjects.com/os/bmw-prod/c9cd86a4-6bd6-48bb-8926-ef62b3995d0b.mov',
-              height: isWide ? 204 : 102,
-              width: 362,
-            }}
-          />
-          <Space size={12}>
-            <div className={styles.title}>
-              {intl.formatMessage({ id: 'product.video1' })}
-            </div>
-            <div className={styles.tag}>
-              {intl.formatMessage({ id: 'product.videoTime1' })}
-            </div>
-          </Space>
-        </div>
-        <div className={styles.card}>
-          <JoLPlayer
-            option={{
-              videoSrc:
-                'https://gw.alipayobjects.com/mdn/rms_fa12c2/afts/file/A*CGu4RqkzzDgAAAAAAAAAAAAAARQnAQ',
-              height: isWide ? 204 : 102,
-              width: 362,
-            }}
-          />
-          <Space size={12}>
-            <div className={styles.title}>
-              {intl.formatMessage({ id: 'product.video2' })}
-            </div>
-            <div className={styles.tag}>
-              {intl.formatMessage({ id: 'product.videoTime2' })}
-            </div>
-          </Space>
-        </div>
-      </Space>
+      {isBrowser() && (
+        <Space size={25}>
+          <div className={styles.card}>
+            <JoLPlayer
+              option={{
+                videoSrc:
+                  'https://gw.alipayobjects.com/os/bmw-prod/2145f227-08f0-435a-abe6-7f503b65da7d.mov',
+                height: isWide ? 204 : 102,
+                width: 362,
+              }}
+            />
+            <Space size={12}>
+              <div className={styles.title}>
+                {intl.formatMessage({ id: 'product.video0' })}
+              </div>
+              <div className={styles.tag}>
+                {intl.formatMessage({ id: 'product.videoTime0' })}
+              </div>
+            </Space>
+          </div>
+          <div className={styles.card}>
+            <JoLPlayer
+              option={{
+                videoSrc:
+                  'https://gw.alipayobjects.com/os/bmw-prod/c9cd86a4-6bd6-48bb-8926-ef62b3995d0b.mov',
+                height: isWide ? 204 : 102,
+                width: 362,
+              }}
+            />
+            <Space size={12}>
+              <div className={styles.title}>
+                {intl.formatMessage({ id: 'product.video1' })}
+              </div>
+              <div className={styles.tag}>
+                {intl.formatMessage({ id: 'product.videoTime1' })}
+              </div>
+            </Space>
+          </div>
+          <div className={styles.card}>
+            <JoLPlayer
+              option={{
+                videoSrc:
+                  'https://gw.alipayobjects.com/mdn/rms_fa12c2/afts/file/A*CGu4RqkzzDgAAAAAAAAAAAAAARQnAQ',
+                height: isWide ? 204 : 102,
+                width: 362,
+              }}
+            />
+            <Space size={12}>
+              <div className={styles.title}>
+                {intl.formatMessage({ id: 'product.video2' })}
+              </div>
+              <div className={styles.tag}>
+                {intl.formatMessage({ id: 'product.videoTime2' })}
+              </div>
+            </Space>
+          </div>
+        </Space>
+      )}
     </div>
   );
   const mobileVideoList = (
     <div className={styles.videoWrapper}>
-      <Carousel>
-        <div className={styles.card}>
-          <JoLPlayer
-            option={{
-              videoSrc:
-                'https://gw.alipayobjects.com/os/bmw-prod/2145f227-08f0-435a-abe6-7f503b65da7d.mov',
-              height: isWide ? 204 : 266,
-              width: isWide ? 362 : '100%',
-            }}
-          />
-          <div className={styles.videoInfo}>
-            <div className={styles.title}>
-              {intl.formatMessage({ id: 'product.video0' })}
-            </div>
-            <div className={styles.tag}>
-              {intl.formatMessage({ id: 'product.videoTime0' })}
-            </div>
-          </div>
-        </div>
-        <div className={styles.card}>
-          <JoLPlayer
-            option={{
-              videoSrc:
-                'https://gw.alipayobjects.com/os/bmw-prod/c9cd86a4-6bd6-48bb-8926-ef62b3995d0b.mov',
-              height: isWide ? 204 : 266,
-              width: isWide ? 362 : '100%',
-            }}
-          />
-          <div className={styles.videoInfo}>
-            <div className={styles.title}>
-              {intl.formatMessage({ id: 'product.video1' })}
-            </div>
-            <div className={styles.tag}>
-              {intl.formatMessage({ id: 'product.videoTime1' })}
+      {isBrowser() && (
+        <Carousel>
+          <div className={styles.card}>
+            <JoLPlayer
+              option={{
+                videoSrc:
+                  'https://gw.alipayobjects.com/os/bmw-prod/2145f227-08f0-435a-abe6-7f503b65da7d.mov',
+                height: isWide ? 204 : 266,
+                width: isWide ? 362 : '100%',
+              }}
+            />
+            <div className={styles.videoInfo}>
+              <div className={styles.title}>
+                {intl.formatMessage({ id: 'product.video0' })}
+              </div>
+              <div className={styles.tag}>
+                {intl.formatMessage({ id: 'product.videoTime0' })}
+              </div>
             </div>
           </div>
-        </div>
-        <div className={styles.card}>
-          <JoLPlayer
-            option={{
-              videoSrc:
-                'https://gw.alipayobjects.com/mdn/rms_fa12c2/afts/file/A*CGu4RqkzzDgAAAAAAAAAAAAAARQnAQ',
-              height: isWide ? 204 : 266,
-              width: isWide ? 362 : '100%',
-            }}
-          />
+          <div className={styles.card}>
+            <JoLPlayer
+              option={{
+                videoSrc:
+                  'https://gw.alipayobjects.com/os/bmw-prod/c9cd86a4-6bd6-48bb-8926-ef62b3995d0b.mov',
+                height: isWide ? 204 : 266,
+                width: isWide ? 362 : '100%',
+              }}
+            />
+            <div className={styles.videoInfo}>
+              <div className={styles.title}>
+                {intl.formatMessage({ id: 'product.video1' })}
+              </div>
+              <div className={styles.tag}>
+                {intl.formatMessage({ id: 'product.videoTime1' })}
+              </div>
+            </div>
+          </div>
+          <div className={styles.card}>
+            <JoLPlayer
+              option={{
+                videoSrc:
+                  'https://gw.alipayobjects.com/mdn/rms_fa12c2/afts/file/A*CGu4RqkzzDgAAAAAAAAAAAAAARQnAQ',
+                height: isWide ? 204 : 266,
+                width: isWide ? 362 : '100%',
+              }}
+            />
 
-          <div className={styles.videoInfo}>
-            <div className={styles.title}>
-              {intl.formatMessage({ id: 'product.video2' })}
-            </div>
-            <div className={styles.tag}>
-              {intl.formatMessage({ id: 'product.videoTime2' })}
+            <div className={styles.videoInfo}>
+              <div className={styles.title}>
+                {intl.formatMessage({ id: 'product.video2' })}
+              </div>
+              <div className={styles.tag}>
+                {intl.formatMessage({ id: 'product.videoTime2' })}
+              </div>
             </div>
           </div>
-        </div>
-      </Carousel>
+        </Carousel>
+      )}
     </div>
   );
 
@@ -187,7 +190,7 @@ export default function ProductPage() {
         <SubTitle title={intl.formatMessage({ id: 'product.ecosystem' })} />
         <div className="maxContainer">
           <img
-            src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*Fk3USIh9o1MAAAAAAAAAAAAADgOBAQ/original"
+            src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*ysyZSb4--NMAAAAAAAAAAAAADgOBAQ/original"
             alt="ecosystem"
           />
         </div>
