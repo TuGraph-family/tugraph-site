@@ -1,9 +1,8 @@
 import React from 'react';
 import { Collapse } from 'antd';
-import { useIntl } from 'umi';
+import { getLocale, useIntl } from 'umi';
 import { Row, Col, Space, Popover } from 'antd';
-import { RightOutlined } from '@ant-design/icons';
-import { PhoneFilled, MailFilled, EnvironmentFilled } from '@ant-design/icons';
+import { PhoneFilled, MailFilled, SlackOutlined } from '@ant-design/icons';
 import { useMedia } from 'react-use';
 
 import styles from './index.less';
@@ -13,6 +12,7 @@ const { Panel } = Collapse;
 export const Footer = ({ className }: { className?: string }) => {
   const intl = useIntl();
   const isWide = useMedia('(min-width: 767.99px)', true);
+  const lang = getLocale();
 
   const icons = [
     {
@@ -31,7 +31,11 @@ export const Footer = ({ className }: { className?: string }) => {
 
   const pc = (
     <>
-      <Row id="tugraphFooter" className={styles.containerWrapper}>
+      <Row
+        id="tugraphFooter"
+        className={styles.containerWrapper}
+        style={lang === 'en-US' ? { height: '324px' } : {}}
+      >
         <Col span={4}>
           <div className={styles.textGroup}>
             <div className={styles.title}>
@@ -53,32 +57,6 @@ export const Footer = ({ className }: { className?: string }) => {
               TuGraph Explorer
             </a>
           </div>
-          {/* <Space id="contactUs" size={26} className={styles.iconGroup}>
-            {icons.map((item, key) => {
-              return item?.url ? (
-                <a
-                  target="_blank"
-                  key={key}
-                  href={item.url}
-                  rel="noopener noreferrer"
-                >
-                  <img src={item.icon} />
-                </a>
-              ) : (
-                <Popover
-                  key={key}
-                  content={
-                    <img
-                      style={{ width: '200px', height: '200px' }}
-                      src={item.img}
-                    />
-                  }
-                >
-                  <img src={item.icon} />
-                </Popover>
-              );
-            })}
-          </Space> */}
         </Col>
         <Col span={3}>
           <div className={styles.textGroup}>
@@ -102,6 +80,15 @@ export const Footer = ({ className }: { className?: string }) => {
             >
               {intl.formatMessage({ id: 'footer.communityName' })}
             </a>
+            {lang === 'en-US' && (
+              <a
+                target="_blank"
+                className={styles.item}
+                href="https://tugraph.slack.com/join/shared_invite/zt-1hha8nuli-bqdkwn~w4zH1vlk0QvqIfg#/shared-invite/email"
+              >
+                Slack
+              </a>
+            )}
           </div>
         </Col>
         <Col span={10}>
@@ -126,32 +113,34 @@ export const Footer = ({ className }: { className?: string }) => {
           </div>
         </Col>
 
-        <Col span={7}>
-          <Space size={24}>
-            <div className={styles.qrCode}>
-              <img src="https://gw.alipayobjects.com/zos/bmw-prod/b543c652-c2a5-4ff1-90e2-dc6d4077b68e.svg" />
-              <div className={styles.desc}>
-                {intl.formatMessage({ id: 'footer.qrCode.weChart' })}
+        {lang === 'zh-CN' && (
+          <Col span={7}>
+            <Space size={24}>
+              <div className={styles.qrCode}>
+                <img src="https://gw.alipayobjects.com/zos/bmw-prod/b543c652-c2a5-4ff1-90e2-dc6d4077b68e.svg" />
+                <div className={styles.desc}>
+                  {intl.formatMessage({ id: 'footer.qrCode.weChart' })}
+                </div>
+                <div className={styles.subDesc}>
+                  {intl.formatMessage({
+                    id: 'footer.qrCode.subDescWeChart',
+                  })}
+                </div>
               </div>
-              <div className={styles.subDesc}>
-                {intl.formatMessage({
-                  id: 'footer.qrCode.subDescWeChart',
-                })}
+              <div className={styles.qrCode}>
+                <img src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*L9UQSbVwSoMAAAAAAAAAAAAADgOBAQ/original" />
+                <div className={styles.desc}>
+                  {intl.formatMessage({ id: 'footer.qrCode.dingTalk' })}
+                </div>
+                <div className={styles.subDesc}>
+                  {intl.formatMessage({
+                    id: 'footer.qrCode.subDescDingTalk',
+                  })}
+                </div>
               </div>
-            </div>
-            <div className={styles.qrCode}>
-              <img src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*L9UQSbVwSoMAAAAAAAAAAAAADgOBAQ/original" />
-              <div className={styles.desc}>
-                {intl.formatMessage({ id: 'footer.qrCode.dingTalk' })}
-              </div>
-              <div className={styles.subDesc}>
-                {intl.formatMessage({
-                  id: 'footer.qrCode.subDescDingTalk',
-                })}
-              </div>
-            </div>
-          </Space>
-        </Col>
+            </Space>
+          </Col>
+        )}
       </Row>
 
       <Row className={styles.footerExtraInfo}>
@@ -261,42 +250,54 @@ export const Footer = ({ className }: { className?: string }) => {
               )}
             </div>
           ))}
+          {lang === 'en-US' && (
+            <a
+              target="_blank"
+              href="https://tugraph.slack.com/join/shared_invite/zt-1hha8nuli-bqdkwn~w4zH1vlk0QvqIfg#/shared-invite/email"
+              rel="noopener noreferrer"
+            >
+              <SlackOutlined className={styles.slack} />
+            </a>
+          )}
         </Space>
       </div>
-      <Row gutter={20}>
-        <Col span={12}>
-          <Space size={20} className={styles.qrCode}>
-            <img src="https://gw.alipayobjects.com/zos/bmw-prod/b543c652-c2a5-4ff1-90e2-dc6d4077b68e.svg" />
+      {lang === 'zh-CN' && (
+        <Row gutter={20}>
+          <Col span={12}>
+            <Space size={20} className={styles.qrCode}>
+              <img src="https://gw.alipayobjects.com/zos/bmw-prod/b543c652-c2a5-4ff1-90e2-dc6d4077b68e.svg" />
 
-            <div className={styles.group}>
-              <div className={styles.desc}>
-                {intl.formatMessage({ id: 'footer.qrCode.weChart' })}
+              <div className={styles.group}>
+                <div className={styles.desc}>
+                  {intl.formatMessage({ id: 'footer.qrCode.weChart' })}
+                </div>
+                <div className={styles.subDesc}>
+                  {intl.formatMessage({
+                    id: 'footer.qrCode.subDescWeChart',
+                  })}
+                </div>
               </div>
-              <div className={styles.subDesc}>
-                {intl.formatMessage({
-                  id: 'footer.qrCode.subDescWeChart',
-                })}
-              </div>
-            </div>
-          </Space>
-        </Col>
-        <Col span={12}>
-          <Space size={20} className={styles.qrCode}>
-            <img src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*L9UQSbVwSoMAAAAAAAAAAAAADgOBAQ/original" />
+            </Space>
+          </Col>
+          <Col span={12}>
+            <Space size={20} className={styles.qrCode}>
+              <img src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*L9UQSbVwSoMAAAAAAAAAAAAADgOBAQ/original" />
 
-            <div className={styles.group}>
-              <div className={styles.desc}>
-                {intl.formatMessage({ id: 'footer.qrCode.dingTalk' })}
+              <div className={styles.group}>
+                <div className={styles.desc}>
+                  {intl.formatMessage({ id: 'footer.qrCode.dingTalk' })}
+                </div>
+                <div className={styles.subDesc}>
+                  {intl.formatMessage({
+                    id: 'footer.qrCode.subDescWeChart',
+                  })}
+                </div>
               </div>
-              <div className={styles.subDesc}>
-                {intl.formatMessage({
-                  id: 'footer.qrCode.subDescWeChart',
-                })}
-              </div>
-            </div>
-          </Space>
-        </Col>
-      </Row>
+            </Space>
+          </Col>
+        </Row>
+      )}
+
       <Row className={styles.footerExtraInfo}>
         <a
           href="https://render.alipay.com/p/yuyan/180020010001196791/preview.html?agreementId=AG00000174"

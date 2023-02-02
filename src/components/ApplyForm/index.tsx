@@ -1,6 +1,6 @@
 import React, { Dispatch, SetStateAction } from 'react';
 import { Checkbox, Col, Form, Input, Modal, Row, Typography } from 'antd';
-import { useIntl } from 'umi';
+import { getLocale, useIntl } from 'umi';
 import { useMedia } from 'react-use';
 import styles from './index.less';
 
@@ -13,6 +13,7 @@ export const ApplyForm = ({
 }) => {
   const isWide = useMedia('(min-width: 767.99px)', true);
   const intl = useIntl();
+  const lang = getLocale();
   const [form] = Form.useForm();
 
   const onOk = (values: any) => {
@@ -122,9 +123,12 @@ export const ApplyForm = ({
         </Row>
 
         <div className={styles.itemWithTip}>
-          <Typography.Text className={styles.tip} type="secondary">
-            {intl.formatMessage({ id: 'form.item.desc' })}
-          </Typography.Text>
+          {lang === 'zh-CN' && (
+            <Typography.Text className={styles.tip} type="secondary">
+              {intl.formatMessage({ id: 'form.item.desc' })}
+            </Typography.Text>
+          )}
+
           <Form.Item
             label={intl.formatMessage({ id: 'form.item.situation' })}
             name={intl.formatMessage({ id: 'form.item.situation' })}
@@ -137,30 +141,34 @@ export const ApplyForm = ({
             />
           </Form.Item>
         </div>
+        {lang === 'zh-CN' && (
+          <Form.Item
+            name={intl.formatMessage({ id: 'form.submit.info' })}
+            valuePropName="checked"
+            rules={[{ required: true }]}
+          >
+            <Checkbox defaultChecked={false}>
+              {intl.formatMessage({ id: 'form.submit.info' })}
+            </Checkbox>
+          </Form.Item>
+        )}
 
-        <Form.Item
-          name={intl.formatMessage({ id: 'form.submit.info' })}
-          valuePropName="checked"
-          rules={[{ required: true }]}
-        >
-          <Checkbox defaultChecked={false}>
-            {intl.formatMessage({ id: 'form.submit.info' })}
-          </Checkbox>
-        </Form.Item>
-        <div className={styles.footer}>
-          <div className={styles.splitLine} />
-          <Typography.Text className={styles.tip} type="secondary">
-            {intl.formatMessage({ id: 'form.tip0' })}
-            <a
-              href="https://render.alipay.com/p/yuyan/180020010001196791/preview.html?agreementId=AG00000174"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {intl.formatMessage({ id: 'form.rule' })}
-            </a>
-            {intl.formatMessage({ id: 'form.tip1' })}
-          </Typography.Text>
-        </div>
+        {lang === 'zh-CN' && (
+          <div className={styles.footer}>
+            <div className={styles.splitLine} />
+            <Typography.Text className={styles.tip} type="secondary">
+              {intl.formatMessage({ id: 'form.tip0' })}
+              <a
+                href="https://render.alipay.com/p/yuyan/180020010001196791/preview.html?agreementId=AG00000174"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {intl.formatMessage({ id: 'form.rule' })}
+              </a>
+              {intl.formatMessage({ id: 'form.tip1' })}
+            </Typography.Text>
+          </div>
+        )}
       </Form>
     </Modal>
   );
