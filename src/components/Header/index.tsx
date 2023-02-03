@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { useIntl, useLocation } from 'umi';
-import { Menu, Drawer, Collapse } from 'antd';
+import { getLocale, setLocale, useIntl, useLocation } from 'umi';
+import { Menu, Drawer, Collapse, Space } from 'antd';
 import cx from 'classnames';
 import { useMedia } from 'react-use';
 import type { MenuItem } from '@/interface';
@@ -13,8 +13,17 @@ const { Panel } = Collapse;
 export const Header = ({ isStick }: { isStick?: boolean }) => {
   const intl = useIntl();
   const { pathname } = useLocation();
+  const lang = getLocale();
   const isWide = useMedia('(min-width: 767.99px)', true);
   const [popupMenuVisible, setPopupMenuVisible] = useState(false);
+
+  const onToggleLanguage = () => {
+    if (lang === 'en-US') {
+      setLocale('zh-CN');
+    } else {
+      setLocale('en-US');
+    }
+  };
 
   const onTogglePopupMenuVisible = () => {
     setPopupMenuVisible(!popupMenuVisible);
@@ -26,10 +35,17 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
   };
 
   const menuIcon = !isWide ? (
-    <MenuOutlined
-      className={styles.menuIcon}
-      onClick={onTogglePopupMenuVisible}
-    />
+    <Space size={12}>
+      <img
+        src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*0Q-HT4iXkv4AAAAAAAAAAAAADgOBAQ/original"
+        className={styles.languageIcon}
+        onClick={onToggleLanguage}
+      />
+      <MenuOutlined
+        className={styles.menuIcon}
+        onClick={onTogglePopupMenuVisible}
+      />
+    </Space>
   ) : null;
 
   const menuItems: MenuItem[] = [
@@ -131,6 +147,26 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
       ),
       key: 'download',
     },
+    {
+      label: lang === 'zh-CN' ? '简体中文' : 'ENGLISH',
+      key: 'language',
+      icon: (
+        <img
+          src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*0Q-HT4iXkv4AAAAAAAAAAAAADgOBAQ/original"
+          className={styles.languageIcon}
+        />
+      ),
+      children: [
+        {
+          label: <a href="/?lang=zh">简体中文</a>,
+          key: 'Chinese',
+        },
+        {
+          label: <a href="/?lang=en">English</a>,
+          key: 'English',
+        },
+      ],
+    },
   ];
 
   const pc = (
@@ -161,26 +197,18 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
       {menuIcon}
       <Drawer
         width={'100%'}
-        drawerStyle={{
-          backgroundImage: `url("https://gw.alipayobjects.com/mdn/rms_fa12c2/afts/img/A*7iehTZUVjWIAAAAAAAAAAAAAARQnAQ")`,
-          backgroundSize: 'cover',
-          backgroundRepeat: 'no-repeat',
-        }}
         headerStyle={{
           background: 'rgba(0, 0, 0, 0)',
-          color: '#fff',
+          color: 'rgba(0,0,0,0.65)',
           border: 'none',
         }}
-        bodyStyle={{
-          color: '#fff',
-        }}
         title={
-          <img src="https://gw.alipayobjects.com/zos/bmw-prod/b54deb36-47fb-483a-8240-a682fe8348ec.svg" />
+          <img src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*AbamQ5lxv0IAAAAAAAAAAAAADgOBAQ/original" />
         }
         placement="right"
         closable={false}
         extra={<CloseOutlined onClick={() => setPopupMenuVisible(false)} />}
-        visible={popupMenuVisible}
+        open={popupMenuVisible}
       >
         {menuItems?.map((item, key) => {
           if (item?.children) {

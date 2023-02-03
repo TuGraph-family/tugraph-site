@@ -22,8 +22,10 @@ export const Banner = ({
   const isHome = pathname === '/' ? true : false;
 
   const isWide = useMedia('(min-width: 767.99px)', true);
-  let background = `url('https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*399oSYCBVagAAAAAAAAAAAAADgOBAQ/original')`;
-  if (isHome) {
+  let background = isWide
+    ? `url('https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*399oSYCBVagAAAAAAAAAAAAADgOBAQ/original')`
+    : `url('https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*GqvMRZhv6ysAAAAAAAAAAAAADgOBAQ/fmt.webp')`;
+  if (isHome && isWide) {
     background = `url('https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*if0TTLtCrA0AAAAAAAAAAAAADgOBAQ/original')`;
   }
   return (
@@ -78,6 +80,7 @@ export const Banner = ({
             )}
             {footer}
             <img
+              id="tugraphMobileIcon"
               className={isWide ? styles.pcIcon : styles.mobileIcon}
               src={bgIconUrl}
             />

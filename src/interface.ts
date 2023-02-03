@@ -40,4 +40,5 @@ export interface MenuItem {
   label: React.ReactNode;
   key: string;
   children?: MenuItem[];
+  icon?: React.ReactNode;
 }

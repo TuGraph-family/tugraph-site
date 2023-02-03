@@ -69,17 +69,6 @@ body {
     color: rgba(255, 255, 255, 0.89);
   }
 
-  .menuList {
-    font-size: 24px;
-    height: 94px;
-    letter-spacing: 8px;
-    padding: 28px 0;
-    border-bottom: 1px solid #5097fc;
-
-    a {
-      color: #fff;
-    }
-  }
   .ant-modal-mask {
     background-color: rgba(0, 0, 0, 0.65);
   }
@@ -92,11 +81,11 @@ body {
     .slick-dots {
       li {
         margin: 0 -1px;
-        width: 61px;
+        width: 8vw;
       }
       li.slick-active {
         z-index: 999;
-        width: 60px;
+        width: 8vw;
         button {
           background-color: @primary-color;
         }
@@ -473,32 +462,55 @@ body {
   :global {
     .textLink {
       font-size: 3.7vw !important;
+      margin-top: 0 !important;
+    }
+    #tugraphMobileIcon {
+      margin: 7.7vw -16vw;
+      width: 117.2vw;
     }
   }
   .bannerButtons {
+    text-align: center;
     .github {
       margin: 0;
-      margin-right: 5.3vw;
+      margin-right: 1.6vw;
+      width: 29vw;
+      height: 9.6vw;
+      border-radius: 1.1vw;
+      font-size: 3.2vw;
+      .githubText {
+        position: unset;
+        margin-left: 1.1vw;
+      }
+      :global {
+        .anticon-github {
+          font-size: 2.7vw;
+          position: unset;
+        }
+      }
     }
     .play {
-      position: relative;
-      top: 4px;
+      position: unset;
+      img {
+        width: 5.3vw;
+        height: 5.3vw;
+        margin-right: 1.1vw;
+      }
     }
   }
 
   .noticeWrapper {
     transition: all ease 0.3s;
-    margin: 0 0 108px 0 !important;
+    margin: 0 -4.3vw 14.4vw -4.3vw !important;
     .card {
-      min-height: 272px;
-      height: 100%;
-      box-shadow: 0 8px 16px 8px rgba(0, 0, 0, 0.03);
+      padding: 4.3vw !important;
+      min-height: 42.7vw;
       border-radius: 12px;
       text-align: left;
       .title {
         font-size: 3.7vw !important;
         margin: 20px 0 12px 0 !important;
-        height: 80px;
+        height: 10.7vw !important;
       }
       .desc {
         font-size: 3.2vw !important;
@@ -514,23 +526,31 @@ body {
 
   .reasonCardGroup {
     transition: all ease 0.3s;
+    min-height: 0 !important;
     height: 100%;
+    padding: 1.3vw 3.2vw !important;
     .title {
-      font-size: 3.2vw !important;
+      font-size: 3.7vw !important;
     }
     .desc {
       font-size: 2.4vw !important;
       line-height: 3.7vw !important;
+      margin-top: 1.6vw !important;
     }
     .reasonCard {
+      padding: 4.3vw !important;
       img {
         height: 11.7vw !important;
+        margin-top: -10vw !important;
       }
     }
   }
 
   .cases {
-    padding-top: 6.4vw !important;
+    background-image: url('https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*GqvMRZhv6ysAAAAAAAAAAAAADgOBAQ/fmt.webp') !important;
+    padding: 6.4vw 120px !important;
+    margin-top: 12.3vw !important;
+    margin-bottom: 13.3vw !important;
     .groupTitle {
       font-family: AlibabaPuHuiTi_2_85_Bold;
       font-size: 6.4vw;
@@ -543,11 +563,11 @@ body {
       font-size: 3.2vw;
       color: rgba(26, 27, 37, 0.45);
       line-height: 4.8vw;
-      margin: 12px 0 36px;
+      margin: 1.6vw 0 4.8vw;
     }
     .title {
       font-size: 3.7vw !important;
-      margin-bottom: 12px;
+      margin: 2.1vw 0 1.6vw 0 !important;
     }
     .desc {
       font-size: 3.2vw !important;
@@ -555,13 +575,20 @@ body {
     }
 
     .card {
-      height: 400px !important;
-      padding: 32px 24px !important;
+      height: 5.3vw !important;
+      padding: 4.3vw 3.2vw !important;
+      margin: 1.6vw !important;
+      img {
+        height: 6.4vw !important;
+        width: 6.4vw !important;
+      }
     }
   }
-
+  .textLink {
+    margin-top: 0px;
+  }
   .users {
-    margin: 46px 0 110px 0 !important;
+    margin: 6.1vw 0 14.7vw 0 !important;
     img {
       width: 45.5vw !important;
     }
@@ -569,9 +596,13 @@ body {
 
   .versions {
     max-width: 100% !important;
+    margin-bottom: 6.4vw !important;
     .version {
       max-width: 100% !important;
-      margin-bottom: 20px;
+      margin-bottom: 2.7vw;
+      .versionCard {
+        border-radius: 1.6vw !important;
+      }
       .title {
         font-size: 3.7vw !important;
       }
@@ -584,27 +615,37 @@ body {
     :global {
       .lightBtn {
         width: 100% !important;
+        height: 9.1vw;
+        font-size: 3.7vw;
+        border-radius: 1.1vw;
       }
     }
   }
   .featList {
     padding: 0 !important;
+    margin: 0;
     .crossRow {
       border-radius: 0px !important;
     }
     .baseRow,
     .crossRow {
-      height: 74px !important;
-      padding: 20px 0 !important;
+      height: 9.9vw !important;
+      padding: 2.7vw 3.2vw !important;
     }
     .title {
       font-size: 3.2vw !important;
       font-weight: 400 !important;
+      padding: 3.2vw !important;
+    }
+    .textAlignLeft {
+      padding: 3.2vw !important;
+      margin: 0 !important;
     }
     .text {
       font-weight: 400 !important;
-
+      padding: 0 !important;
       color: rgba(26, 27, 37, 0.65) !important;
+      font-size: 3.2vw !important;
       line-height: 4.8vw !important;
     }
   }

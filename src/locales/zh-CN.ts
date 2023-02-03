@@ -7,7 +7,7 @@ export default {
   'header.doc': '文档',
   'header.blog': '博客',
   'header.community': '社区',
-  'header.download': ' 下载',
+  'header.download': '下载',
   'footer.product': '产品',
   'footer.community': '社区',
   'footer.contact': '联系我们',
