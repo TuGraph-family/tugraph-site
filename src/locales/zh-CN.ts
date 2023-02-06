@@ -135,7 +135,7 @@ export default {
   'product.feature.title3': '开箱即用的运维监控平台',
   'product.feature.desc3':
     '数据库实时运维监控展示，支持Docker、CentOS、Ubuntu的一键部署，开箱即用。同时提供了丰富可拓展的接口，支持用户的二次开发，实现系统对接。并支持Prometheus、Grafana等主流开源监控告警工具。',
-  'product.ecosystem': 'TuGraph 生态体系',
+  'product.ecosystem': 'TuGraph 产品架构',
   'demo.title': ' TuGraph 案例',
   'demo.description':
     '图数据库,图计算,图平台,图数据分析, 分布式数据库, Graph,大数据分析,关联关系分析,大数据分析,反洗钱,反欺诈,金融风控,物联网, 设备管理, 国家电网',

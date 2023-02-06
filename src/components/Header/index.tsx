@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { getLocale, setLocale, useIntl, useLocation } from 'umi';
+import { getLocale, history, useIntl, useLocation } from 'umi';
 import { Menu, Drawer, Collapse, Space } from 'antd';
 import cx from 'classnames';
 import { useMedia } from 'react-use';
@@ -19,9 +19,9 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
 
   const onToggleLanguage = () => {
     if (lang === 'en-US') {
-      setLocale('zh-CN');
+      history.push('/?lang=zh');
     } else {
-      setLocale('en-US');
+      history.push('/?lang=en');
     }
   };
 
@@ -202,6 +202,7 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
           color: 'rgba(0,0,0,0.65)',
           border: 'none',
         }}
+        style={{ overflowX: 'hidden' }}
         title={
           <img src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*AbamQ5lxv0IAAAAAAAAAAAAADgOBAQ/original" />
         }
@@ -211,7 +212,9 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
         open={popupMenuVisible}
       >
         {menuItems?.map((item, key) => {
-          if (item?.children) {
+          if (item.key === 'language') {
+            return null;
+          } else if (item?.children) {
             return (
               <Collapse ghost key={key}>
                 <Panel

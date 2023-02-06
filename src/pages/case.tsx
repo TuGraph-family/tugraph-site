@@ -105,7 +105,7 @@ export default function DemoPage() {
           <div className="maxContainer">
             <div className={styles.textWrapper}>
               <div className={styles.title}>{item.title}</div>
-              <div style={{ marginBottom: '20px' }}>{item.description}</div>
+              <div className={styles.description}>{item.description}</div>
 
               <div className={styles.subTitle}>
                 {intl.formatMessage({ id: 'demo.example.challenge' })}

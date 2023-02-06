@@ -88,7 +88,7 @@ export default function ProductPage() {
               option={{
                 videoSrc:
                   'https://gw.alipayobjects.com/os/bmw-prod/2145f227-08f0-435a-abe6-7f503b65da7d.mov',
-                height: isWide ? 204 : 266,
+                height: isWide ? 204 : 266 * (document.body.clientWidth / 750),
                 width: isWide ? 362 : '100%',
               }}
             />

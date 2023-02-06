@@ -25,7 +25,7 @@ export default function EcosystemPage() {
           {intl.formatMessage({ id: 'ecosystem.type.description' })}
         </div>
         <div className={styles.typeWrapper}>
-          <Row gutter={isWide ? [24, 24] : [20, 20]}>
+          <Row gutter={isWide ? [24, 24] : [0, 0]}>
             <Col span={isWide ? 12 : 24}>
               <div className={styles.typeItem}>
                 <img
