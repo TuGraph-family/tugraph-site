@@ -24,11 +24,12 @@
         height: 24px;
         text-align: center;
         width: 68px;
-        padding: 4px 8px;
+        padding: 2px 8px;
         background-color: rgba(0, 0, 0, 0.06);
         border-radius: 4px;
         font-weight: 400;
         font-size: 12px;
+        border: none;
         color: rgba(0, 0, 0, 0.65);
       }
     }
@@ -127,24 +128,46 @@
 
 @media only screen and (max-width: 767.99px) {
   .containerWrapper {
+    transition: all ease 0.3s;
     .videoWrapper {
-      width: 100%;
-      padding: 3.2vw;
+      width: 100vw;
+      margin: -9.2vw -3.2vw 0 -3.2vw;
+      background: none !important;
+      border-radius: 0 !important;
+      box-shadow: none !important;
+      padding: 0 !important;
+      :global {
+        .ant-carousel .slick-dots-bottom {
+          bottom: 5.9vw;
+        }
+      }
+      .card {
+        padding: 3.2vw !important;
+        height: 48.8vw;
+        border-radius: 1.6vw;
+        text-align: left;
+        width: 86.7vw !important;
+        box-shadow: 0 3px 6px -4px rgba(132, 135, 155, 0.12),
+          0 6px 16px 0 rgba(132, 135, 155, 0.08),
+          0 9px 28px 8px rgba(132, 135, 155, 0.05);
+        background: #ffffff;
+        margin: 9.2vw 0;
+        .title {
+          font-size: 3.7vw !important;
+          margin-top: 2.1vw;
+        }
+
+        .tag {
+          margin: 2.3vw 1.6vw !important;
+          font-size: 2.1vw !important;
+          height: 100% !important;
+          padding: 0;
+        }
+      }
     }
     .videoInfo {
       text-align: left;
       display: flex;
-    }
-    .card {
-      .title {
-        font-size: 3.7vw !important;
-      }
-      .tag {
-        height: 6.3vw !important;
-        width: 80px !important;
-        margin: 3.7vw 1.6vw !important;
-        font-size: 2.1vw !important;
-      }
     }
   }
   .introWrapper {

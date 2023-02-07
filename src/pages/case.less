@@ -103,31 +103,53 @@
   .containerWrapper {
     .demoWrapper {
       transition: all 0.3s;
-      height: 100%;
-      padding: 2vw 4.3vw;
+      width: 100vw;
+      margin: -9.2vw -3.2vw -3.6vw -3.2vw;
+      border-radius: 0;
+      box-shadow: none;
+      background: none;
+      padding: 0;
+      :global {
+        .ant-carousel .slick-dots li,
+        .ant-carousel .slick-dots li.slick-active {
+          width: 4vw !important;
+        }
+        .ant-carousel .slick-dots-bottom {
+          bottom: 5.9vw;
+        }
+      }
+
       .demoCards {
-        margin-bottom: 8px;
         padding: 0;
         .demoCard {
           padding: 0;
           background: #fff;
           max-width: 100%;
           text-align: left;
-          min-height: 10px;
-          margin-bottom: 0px;
+          padding: 3.2vw !important;
+          height: 100%;
+          min-height: 42.2vw;
+          border-radius: 1.6vw;
+          text-align: left;
+          width: 86.7vw !important;
+          box-shadow: 0 3px 6px -4px rgba(132, 135, 155, 0.12),
+            0 6px 16px 0 rgba(132, 135, 155, 0.08),
+            0 9px 28px 8px rgba(132, 135, 155, 0.05);
+          background: #ffffff;
+          margin: 9.2vw 0;
           img {
-            width: 40px;
-            margin-top: 12px;
+            width: 5.3vw;
+            margin-top: 1.6vw;
           }
           .type {
             font-size: 3.7vw;
-            margin-top: 20px;
+            margin-top: 2.7vw;
           }
           .title {
             font-size: 3.2vw;
           }
           .desc {
-            margin-top: 20px;
+            margin-top: 2.7vw;
             font-size: 3.2vw;
             line-height: 4.8vw;
           }

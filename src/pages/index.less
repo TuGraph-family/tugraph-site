@@ -79,10 +79,6 @@ body {
   }
 
   .ant-carousel {
-    .slick-dots-bottom {
-      bottom: -23px;
-    }
-
     .slick-dots {
       li {
         margin: 0 -1px;
@@ -499,21 +495,36 @@ body {
 
   .noticeWrapper {
     transition: all ease 0.3s;
-    margin: 0 -4.3vw 14.4vw -4.3vw !important;
+    background: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    margin: -9.2vw -4.3vw 11.7vw -4.3vw !important;
+    :global {
+      .ant-carousel .slick-dots-bottom {
+        bottom: 5.9vw;
+      }
+    }
     .card {
       padding: 4.3vw !important;
-      min-height: 42.7vw;
-      height: 100%;
-      border-radius: 12px;
+      height: 49.7vw;
+      border-radius: 1.6vw;
       text-align: left;
+      width: 86.7vw !important;
+      box-shadow: 0 3px 6px -4px rgba(132, 135, 155, 0.12),
+        0 6px 16px 0 rgba(132, 135, 155, 0.08),
+        0 9px 28px 8px rgba(132, 135, 155, 0.05);
+      background: #ffffff;
+      margin: 9.2vw 0;
+
       .title {
         font-size: 3.7vw !important;
-        margin: 20px 0 12px 0 !important;
+        margin: 3.2vw 0 1.6vw 0 !important;
       }
       .desc {
         font-size: 3.2vw !important;
         text-align: justify;
         line-height: 4.8vw !important;
+        margin-bottom: 5.3vw;
       }
       a {
         margin-top: 5.3vw;
@@ -536,10 +547,15 @@ body {
       margin-top: 1.6vw !important;
     }
     .reasonCard {
+      :global {
+        .ant-space-align-center {
+          align-items: flex-start;
+          gap: 2.7vw !important;
+        }
+      }
       padding: 4.3vw !important;
       img {
         height: 11.7vw !important;
-        margin-top: -10vw !important;
       }
     }
   }

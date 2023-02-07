@@ -28,6 +28,9 @@ export default function IndexPage() {
   const isWide = useMedia('(min-width: 767.99px)', true);
   const [showApplyForm, setShowApplyForm] = useState(false);
   const [showVideo, setShowVideo] = useState(false);
+  const SWIPE_PADDING = isBrowser()
+    ? (48 * document.body.clientWidth) / 750
+    : 24;
 
   const bannerButton = (
     <div className={styles.bannerButtons}>
@@ -102,7 +105,7 @@ export default function IndexPage() {
 
   const mobileNoticeWrapper = (
     <div className={styles.noticeWrapper}>
-      <Carousel>
+      <Carousel centerMode={true} centerPadding={`${SWIPE_PADDING}px`}>
         <div className={styles.card}>
           <Tag> {intl.formatMessage({ id: 'home.notice0.tag' })}</Tag>
           <div className={styles.title}>

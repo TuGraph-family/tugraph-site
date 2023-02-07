@@ -19,9 +19,9 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
 
   const onToggleLanguage = () => {
     if (lang === 'en-US') {
-      history.push('/?lang=zh');
+      window.location.href = `${history?.location?.pathname}?lang=zh`;
     } else {
-      history.push('/?lang=en');
+      window.location.href = `${history?.location?.pathname}?lang=en`;
     }
   };
 

@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { Button, Carousel, Col, Menu, Row, Space } from 'antd';
+import { Carousel, Col, Menu, Row, Space, Tag } from 'antd';
 import { Helmet } from 'react-helmet';
 import JoLPlayer from 'jol-player';
 import { SubTitle } from '@/components/SubTitle';
@@ -16,7 +16,8 @@ export default function ProductPage() {
   const lang = getLocale();
   const styles = lang === 'en-US' ? stylesEn : stylesZh;
   const isWide = useMedia('(min-width: 767.99px)', true);
-
+  const MOBILE_HEIGHT = 266 * (document.body.clientWidth / 750);
+  const SWIPE_PADDING = (40 * document.body.clientWidth) / 750;
   const pcVideoList = (
     <div className={styles.videoWrapper}>
       {isBrowser() && (
@@ -34,9 +35,9 @@ export default function ProductPage() {
               <div className={styles.title}>
                 {intl.formatMessage({ id: 'product.video0' })}
               </div>
-              <div className={styles.tag}>
+              <Tag className={styles.tag}>
                 {intl.formatMessage({ id: 'product.videoTime0' })}
-              </div>
+              </Tag>
             </Space>
           </div>
           <div className={styles.card}>
@@ -52,9 +53,9 @@ export default function ProductPage() {
               <div className={styles.title}>
                 {intl.formatMessage({ id: 'product.video1' })}
               </div>
-              <div className={styles.tag}>
+              <Tag className={styles.tag}>
                 {intl.formatMessage({ id: 'product.videoTime1' })}
-              </div>
+              </Tag>
             </Space>
           </div>
           <div className={styles.card}>
@@ -70,9 +71,9 @@ export default function ProductPage() {
               <div className={styles.title}>
                 {intl.formatMessage({ id: 'product.video2' })}
               </div>
-              <div className={styles.tag}>
+              <Tag className={styles.tag}>
                 {intl.formatMessage({ id: 'product.videoTime2' })}
-              </div>
+              </Tag>
             </Space>
           </div>
         </Space>
@@ -81,65 +82,63 @@ export default function ProductPage() {
   );
   const mobileVideoList = (
     <div className={styles.videoWrapper}>
-      {isBrowser() && (
-        <Carousel>
-          <div className={styles.card}>
-            <JoLPlayer
-              option={{
-                videoSrc:
-                  'https://gw.alipayobjects.com/os/bmw-prod/2145f227-08f0-435a-abe6-7f503b65da7d.mov',
-                height: isWide ? 204 : 266 * (document.body.clientWidth / 750),
-                width: isWide ? 362 : '100%',
-              }}
-            />
-            <div className={styles.videoInfo}>
-              <div className={styles.title}>
-                {intl.formatMessage({ id: 'product.video0' })}
-              </div>
-              <div className={styles.tag}>
-                {intl.formatMessage({ id: 'product.videoTime0' })}
-              </div>
+      <Carousel centerMode={true} centerPadding={`${SWIPE_PADDING}px`}>
+        <div className={styles.card}>
+          <JoLPlayer
+            option={{
+              videoSrc:
+                'https://gw.alipayobjects.com/os/bmw-prod/2145f227-08f0-435a-abe6-7f503b65da7d.mov',
+              height: isWide ? 204 : MOBILE_HEIGHT,
+              width: isWide ? 362 : '100%',
+            }}
+          />
+          <div className={styles.videoInfo}>
+            <div className={styles.title}>
+              {intl.formatMessage({ id: 'product.video0' })}
             </div>
+            <Tag className={styles.tag}>
+              {intl.formatMessage({ id: 'product.videoTime0' })}
+            </Tag>
           </div>
-          <div className={styles.card}>
-            <JoLPlayer
-              option={{
-                videoSrc:
-                  'https://gw.alipayobjects.com/os/bmw-prod/c9cd86a4-6bd6-48bb-8926-ef62b3995d0b.mov',
-                height: isWide ? 204 : 266,
-                width: isWide ? 362 : '100%',
-              }}
-            />
-            <div className={styles.videoInfo}>
-              <div className={styles.title}>
-                {intl.formatMessage({ id: 'product.video1' })}
-              </div>
-              <div className={styles.tag}>
-                {intl.formatMessage({ id: 'product.videoTime1' })}
-              </div>
+        </div>
+        <div className={styles.card}>
+          <JoLPlayer
+            option={{
+              videoSrc:
+                'https://gw.alipayobjects.com/os/bmw-prod/c9cd86a4-6bd6-48bb-8926-ef62b3995d0b.mov',
+              height: isWide ? 204 : MOBILE_HEIGHT,
+              width: isWide ? 362 : '100%',
+            }}
+          />
+          <div className={styles.videoInfo}>
+            <div className={styles.title}>
+              {intl.formatMessage({ id: 'product.video1' })}
             </div>
+            <Tag className={styles.tag}>
+              {intl.formatMessage({ id: 'product.videoTime1' })}
+            </Tag>
           </div>
-          <div className={styles.card}>
-            <JoLPlayer
-              option={{
-                videoSrc:
-                  'https://gw.alipayobjects.com/mdn/rms_fa12c2/afts/file/A*CGu4RqkzzDgAAAAAAAAAAAAAARQnAQ',
-                height: isWide ? 204 : 266,
-                width: isWide ? 362 : '100%',
-              }}
-            />
+        </div>
+        <div className={styles.card}>
+          <JoLPlayer
+            option={{
+              videoSrc:
+                'https://gw.alipayobjects.com/mdn/rms_fa12c2/afts/file/A*CGu4RqkzzDgAAAAAAAAAAAAAARQnAQ',
+              height: isWide ? 204 : MOBILE_HEIGHT,
+              width: isWide ? 362 : '100%',
+            }}
+          />
 
-            <div className={styles.videoInfo}>
-              <div className={styles.title}>
-                {intl.formatMessage({ id: 'product.video2' })}
-              </div>
-              <div className={styles.tag}>
-                {intl.formatMessage({ id: 'product.videoTime2' })}
-              </div>
+          <div className={styles.videoInfo}>
+            <div className={styles.title}>
+              {intl.formatMessage({ id: 'product.video2' })}
             </div>
+            <Tag className={styles.tag}>
+              {intl.formatMessage({ id: 'product.videoTime2' })}
+            </Tag>
           </div>
-        </Carousel>
-      )}
+        </div>
+      </Carousel>
     </div>
   );
 

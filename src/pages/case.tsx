@@ -17,6 +17,7 @@ export default function DemoPage() {
   const lang = getLocale();
   const styles = lang === 'en-US' ? stylesEn : stylesZh;
   const isWide = useMedia('(min-width: 767.99px)', true);
+  const SWIPE_PADDING = (40 * document.body.clientWidth) / 750;
   const pcDemo = (
     <div className="maxContainer">
       <Row wrap={true} className={styles.demoWrapper}>
@@ -35,7 +36,7 @@ export default function DemoPage() {
   );
   const mobileDemo = (
     <div className={styles.demoWrapper}>
-      <Carousel>
+      <Carousel centerMode={true} centerPadding={`${SWIPE_PADDING}px`}>
         {getDemos(intl)?.map((item, key) => (
           <Col span={isWide ? 8 : 24} className={styles.demoCards} key={key}>
             <div className={styles.demoCard}>
