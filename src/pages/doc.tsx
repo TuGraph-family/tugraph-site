@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { useEffect, useMemo } from 'react';
+import { map } from 'lodash';
 import HTMLRenderer from 'react-html-renderer';
-import { history, useLocation } from 'umi';
+import { getLocale, history, setLocale, useLocation } from 'umi';
 import { CategoryItem, DocContent } from '@/interface';
 import { MenuProps, Select, Affix, Anchor, Spin, Space, Drawer } from 'antd';
 import { Layout, Menu } from 'antd';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
-import { useGetDocsInfo } from '@/hooks/useGetDocsInfo';
+import { useGetZHDocsInfo } from '@/hooks/useGetZHDocsInfo';
+import { useGetENDocsInfo } from '@/hooks/useGetENDocsInfo';
 import { useMedia } from 'react-use';
 import moment from 'moment';
 
@@ -20,7 +22,8 @@ const { Option } = Select;
 export default function DocPage() {
   const location = useLocation();
   const isWide = useMedia('(min-width: 767.99px)', true);
-
+  const lang = getLocale();
+  const useGetDocsInfo = lang === 'zh-CN' ? useGetZHDocsInfo : useGetENDocsInfo;
   const { getCategoryList, getVersions, getDocDetail } = useGetDocsInfo();
   const [versions, setVersions] = React.useState([]);
   const [docMenuVisible, setDocMenuVisible] = React.useState<boolean>(false);
@@ -28,6 +31,29 @@ export default function DocPage() {
   const [categoryList, setCategoryList] = React.useState<CategoryItem[]>([]);
   const [currentCategory, setCurrentCategory] = React.useState<string>('');
   const [content, setContent] = React.useState<DocContent>();
+
+  const queryLanguage = useMemo(() => {
+    return location.query;
+  }, [location]);
+
+  useEffect(() => {
+    if (!queryLanguage) {
+      return;
+    }
+    if (
+      queryLanguage === 'zh' ||
+      queryLanguage === 'zh_CN' ||
+      queryLanguage === 'zh-CN'
+    ) {
+      setLocale('zh-CN');
+    } else if (
+      queryLanguage === 'en' ||
+      queryLanguage === 'en_US' ||
+      queryLanguage === 'en-US'
+    ) {
+      setLocale('en-US');
+    }
+  }, [queryLanguage]);
 
   const findFirstChild = (items: CategoryItem[]): string => {
     if (items[0].children?.length > 0) {
@@ -46,7 +72,7 @@ export default function DocPage() {
 
   React.useEffect(() => {
     const { version, id } = location.query;
-    getVersions({ tenant: 0 }).then((res: any) => {
+    getVersions().then((res: any) => {
       setVersions(res.data);
       if (version && id) {
         setCurrentVersion(version);
@@ -84,7 +110,7 @@ export default function DocPage() {
   }, [currentCategory]);
 
   const transformCategoryList = (items: CategoryItem[]): MenuProps['items'] => {
-    return items.map((item: CategoryItem) => {
+    return map(items, (item: CategoryItem) => {
       const children = item?.children || [];
       return {
         key: item.id,
@@ -131,11 +157,14 @@ export default function DocPage() {
                     setCurrentVersion(v);
                   }}
                 >
-                  {versions?.map((version: { branch: string }, index) => (
-                    <Option value={version?.branch} key={index}>
-                      {version?.branch}
-                    </Option>
-                  ))}
+                  {map(
+                    versions,
+                    (version: { branch: string }, index: number) => (
+                      <Option value={version?.branch} key={index}>
+                        {version?.branch}
+                      </Option>
+                    ),
+                  )}
                 </Select>
                 {getCategoryMenu()}
               </Spin>
@@ -159,7 +188,7 @@ export default function DocPage() {
                     value={currentVersion}
                     onChange={(v) => setCurrentVersion(v)}
                   >
-                    {versions?.map((version: { branch: string }, index) => (
+                    {map(versions, (version: { branch: string }, index) => (
                       <Option value={version?.branch} key={index}>
                         {version?.branch}
                       </Option>
@@ -188,7 +217,7 @@ export default function DocPage() {
             className={styles.apiAnchor}
             onChange={onAnchorLinkChange}
           >
-            {content?.anchors?.map((item) => (
+            {map(content?.anchors, (item: { id: string; title: string }) => (
               <Link href={item.id} title={item.title} />
             ))}
           </Anchor>

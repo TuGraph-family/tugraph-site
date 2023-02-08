@@ -158,11 +158,13 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
       ),
       children: [
         {
-          label: <a href="/?lang=zh">简体中文</a>,
+          label: (
+            <a href={`${history?.location?.pathname}?lang=zh`}>简体中文</a>
+          ),
           key: 'Chinese',
         },
         {
-          label: <a href="/?lang=en">English</a>,
+          label: <a href={`${history?.location?.pathname}?lang=en`}>English</a>,
           key: 'English',
         },
       ],
