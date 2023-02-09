@@ -80,15 +80,6 @@ export const Footer = ({ className }: { className?: string }) => {
             >
               {intl.formatMessage({ id: 'footer.communityName' })}
             </a>
-            {lang === 'en-US' && (
-              <a
-                target="_blank"
-                className={styles.item}
-                href="https://tugraph.slack.com/join/shared_invite/zt-1hha8nuli-bqdkwn~w4zH1vlk0QvqIfg#/shared-invite/email"
-              >
-                Slack
-              </a>
-            )}
           </div>
         </Col>
         <Col span={10}>
@@ -97,7 +88,7 @@ export const Footer = ({ className }: { className?: string }) => {
               {intl.formatMessage({ id: 'footer.contact' })}
             </div>
             <div className={styles.item}>
-              <Space size={16}>
+              <Space>
                 <PhoneFilled size={12} />
                 {intl.formatMessage({ id: 'footer.phone' })}
               </Space>
@@ -110,6 +101,23 @@ export const Footer = ({ className }: { className?: string }) => {
                 </a>
               </Space>
             </div>
+            {lang === 'en-US' && (
+              <div className={styles.item}>
+                <Space>
+                  <img
+                    src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*4UUvQbDDRK4AAAAAAAAAAAAADgOBAQ/original"
+                    alt="icon"
+                    style={{ width: 18, marginLeft: -3, marginBottom: 3 }}
+                  />
+                  <a
+                    target="_blank"
+                    href="https://tugraph.slack.com/join/shared_invite/zt-1hha8nuli-bqdkwn~w4zH1vlk0QvqIfg#/shared-invite/email"
+                  >
+                    Slack
+                  </a>
+                </Space>
+              </div>
+            )}
           </div>
         </Col>
 
