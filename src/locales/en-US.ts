@@ -30,10 +30,9 @@ export default {
   'home.notice1.desc':
     'FinBench, which was initiated by Ant Group, will be used to evaluate the performance and functionality of graph databases in financial scenarios.',
   'home.notice2.tag': 'NEWS',
-  'home.notice2.title':
-    'TuGraph Won the Annual Award at the World Internet Conference.',
+  'home.notice2.title': 'Try TuGraph on Alibaba Cloud for Free.',
   'home.notice2.desc':
-    'TuGraph (formerly known as GeaGraph) was selected for the award for its major innovations in graph technology.',
+    'Easily create your own graph database application with simple deployment on Alibaba Cloud.',
   'home.case.title': 'SOLUTIONS',
   'home.case.desc0': 'Thousands of times improvement',
   'home.case.desc1':
