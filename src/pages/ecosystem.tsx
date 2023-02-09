@@ -130,7 +130,7 @@ export default function EcosystemPage() {
           <Row gutter={isWide ? [24, 24] : [20, 20]}>
             <Col span={isWide ? 12 : 24}>
               <div className={styles.supportItem}>
-                <Space size={12}>
+                <Space size={12} align="center">
                   <img
                     style={
                       lang === 'en-US'
@@ -146,7 +146,7 @@ export default function EcosystemPage() {
             </Col>
             <Col span={isWide ? 12 : 24}>
               <div className={styles.supportItem}>
-                <Space size={12}>
+                <Space size={12} align="center">
                   <img
                     src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*pQmRRojVUAYAAAAAAAAAAAAADgOBAQ/original"
                     alt="icon"
@@ -157,7 +157,7 @@ export default function EcosystemPage() {
             </Col>
             <Col span={isWide ? 12 : 24}>
               <div className={styles.supportItem}>
-                <Space size={12}>
+                <Space size={12} align="center">
                   <img
                     src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*wAG-S4qKobUAAAAAAAAAAAAADgOBAQ/original"
                     alt="icon"
@@ -168,7 +168,7 @@ export default function EcosystemPage() {
             </Col>
             <Col span={isWide ? 12 : 24}>
               <div className={styles.supportItem}>
-                <Space size={12}>
+                <Space size={12} align="center">
                   <img
                     src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*jwxvT7iWuY8AAAAAAAAAAAAADgOBAQ/original"
                     alt="icon"
