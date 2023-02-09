@@ -218,7 +218,7 @@ export const Footer = ({ className }: { className?: string }) => {
             id="contactUs"
           >
             <div className={styles.item}>
-              <Space size={16}>
+              <Space>
                 <PhoneFilled size={12} />
                 {intl.formatMessage({ id: 'footer.phone' })}
               </Space>
@@ -231,44 +231,61 @@ export const Footer = ({ className }: { className?: string }) => {
                 </a>
               </Space>
             </div>
+            <div className={styles.item}>
+              <Space>
+                <img
+                  src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*4UUvQbDDRK4AAAAAAAAAAAAADgOBAQ/original"
+                  alt="icon"
+                  style={{ width: 18, marginLeft: -3, marginBottom: 3 }}
+                />
+                <a
+                  target="_blank"
+                  href="https://tugraph.slack.com/join/shared_invite/zt-1hha8nuli-bqdkwn~w4zH1vlk0QvqIfg#/shared-invite/email"
+                >
+                  Slack
+                </a>
+              </Space>
+            </div>
           </Panel>
         </Collapse>
       </div>
 
-      <div className={styles.contactInfo}>
-        <Space size={32} className={styles.iconGroup}>
-          {icons.map((item, key) => (
-            <div key={key}>
-              {item.url ? (
-                <a target="_blank" href={item.url} rel="noopener noreferrer">
-                  <img src={item.icon} />
-                </a>
-              ) : (
-                <Popover
-                  trigger={'click'}
-                  content={
-                    <img
-                      style={{ width: '200px', height: '200px' }}
-                      src={item.img}
-                    />
-                  }
-                >
-                  <img src={item.icon} />
-                </Popover>
-              )}
-            </div>
-          ))}
-          {lang === 'en-US' && (
-            <a
-              target="_blank"
-              href="https://tugraph.slack.com/join/shared_invite/zt-1hha8nuli-bqdkwn~w4zH1vlk0QvqIfg#/shared-invite/email"
-              rel="noopener noreferrer"
-            >
-              <SlackOutlined className={styles.slack} />
-            </a>
-          )}
-        </Space>
-      </div>
+      {lang === 'zh-CN' && (
+        <div className={styles.contactInfo}>
+          <Space size={32} className={styles.iconGroup}>
+            {icons.map((item, key) => (
+              <div key={key}>
+                {item.url ? (
+                  <a target="_blank" href={item.url} rel="noopener noreferrer">
+                    <img src={item.icon} />
+                  </a>
+                ) : (
+                  <Popover
+                    trigger={'click'}
+                    content={
+                      <img
+                        style={{ width: '200px', height: '200px' }}
+                        src={item.img}
+                      />
+                    }
+                  >
+                    <img src={item.icon} />
+                  </Popover>
+                )}
+              </div>
+            ))}
+            {lang === 'en-US' && (
+              <a
+                target="_blank"
+                href="https://tugraph.slack.com/join/shared_invite/zt-1hha8nuli-bqdkwn~w4zH1vlk0QvqIfg#/shared-invite/email"
+                rel="noopener noreferrer"
+              >
+                <SlackOutlined className={styles.slack} />
+              </a>
+            )}
+          </Space>
+        </div>
+      )}
       {lang === 'zh-CN' && (
         <Row gutter={20}>
           <Col span={12}>
