@@ -67,8 +67,8 @@ export default function DemoPage() {
           key={key}
         >
           <div className="maxContainer">
-            <Space size={32}>
-              <div className={styles.textWrapper}>
+            <Space size={32} align="start">
+              <div>
                 <div className={styles.title}>{item.title}</div>
                 <div style={{ marginBottom: '20px' }}>{item.description}</div>
 

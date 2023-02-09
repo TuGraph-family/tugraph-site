@@ -25,5 +25,3 @@ host config for the doc page
 ``` base
 127.0.0.1 www.tugraph.org
 ```
-   
-   
