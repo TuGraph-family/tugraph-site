@@ -2,10 +2,15 @@ import React from 'react';
 import { Collapse } from 'antd';
 import { getLocale, useIntl } from 'umi';
 import { Row, Col, Space, Popover } from 'antd';
-import { PhoneFilled, MailFilled, SlackOutlined } from '@ant-design/icons';
+import Icon, {
+  PhoneFilled,
+  MailFilled,
+  SlackOutlined,
+} from '@ant-design/icons';
 import { useMedia } from 'react-use';
 
 import styles from './index.less';
+import { SlackSvg } from '@/data/slack';
 
 const { Panel } = Collapse;
 
@@ -104,15 +109,8 @@ export const Footer = ({ className }: { className?: string }) => {
             {lang === 'en-US' && (
               <div className={styles.item}>
                 <Space>
-                  <img
-                    src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*4UUvQbDDRK4AAAAAAAAAAAAADgOBAQ/original"
-                    alt="icon"
-                    style={{ width: 18, marginLeft: -3, marginBottom: 3 }}
-                  />
-                  <a
-                    target="_blank"
-                    href="https://tugraph.slack.com/join/shared_invite/zt-1hha8nuli-bqdkwn~w4zH1vlk0QvqIfg#/shared-invite/email"
-                  >
+                  <SlackOutlined size={12} />
+                  <a href="https://tugraph.slack.com/join/shared_invite/zt-1hha8nuli-bqdkwn~w4zH1vlk0QvqIfg#/shared-invite/email">
                     Slack
                   </a>
                 </Space>
@@ -233,11 +231,7 @@ export const Footer = ({ className }: { className?: string }) => {
             </div>
             <div className={styles.item}>
               <Space>
-                <img
-                  src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*4UUvQbDDRK4AAAAAAAAAAAAADgOBAQ/original"
-                  alt="icon"
-                  style={{ width: 18, marginLeft: -3, marginBottom: 3 }}
-                />
+                <SlackOutlined size={12} />
                 <a
                   target="_blank"
                   href="https://tugraph.slack.com/join/shared_invite/zt-1hha8nuli-bqdkwn~w4zH1vlk0QvqIfg#/shared-invite/email"
