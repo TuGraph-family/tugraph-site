@@ -2,15 +2,10 @@ import React from 'react';
 import { Collapse } from 'antd';
 import { getLocale, useIntl } from 'umi';
 import { Row, Col, Space, Popover } from 'antd';
-import Icon, {
-  PhoneFilled,
-  MailFilled,
-  SlackOutlined,
-} from '@ant-design/icons';
+import { PhoneFilled, MailFilled, SlackOutlined } from '@ant-design/icons';
 import { useMedia } from 'react-use';
 
 import styles from './index.less';
-import { SlackSvg } from '@/data/slack';
 
 const { Panel } = Collapse;
 
