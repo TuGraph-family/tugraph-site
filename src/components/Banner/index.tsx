@@ -43,7 +43,7 @@ export const Banner = ({
           <Row>
             <Col span={isHome ? 10 : 12}>
               <div
-                style={{ marginTop: isHome ? '80px' : '160px' }}
+                style={{ marginTop: isHome ? '80px' : '120px' }}
                 className={styles.slogan}
               >
                 {slogan}
@@ -51,7 +51,7 @@ export const Banner = ({
               {description && (
                 <div
                   className={styles.description}
-                  style={{ marginTop: isHome ? '16px' : '8px' }}
+                  style={{ marginTop: isHome ? '16px' : '16px' }}
                 >
                   {description}
                 </div>
