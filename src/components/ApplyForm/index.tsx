@@ -44,6 +44,7 @@ export const ApplyForm = ({
       }}
       okText={intl.formatMessage({ id: 'form.submit' })}
       className={styles.containerWrapper}
+      centered={true}
     >
       <Form
         form={form}
