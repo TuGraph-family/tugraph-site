@@ -10,6 +10,8 @@ import { Footer } from '@/components/Footer';
 import { useGetZHDocsInfo } from '@/hooks/useGetZHDocsInfo';
 import { useGetENDocsInfo } from '@/hooks/useGetENDocsInfo';
 import { useMedia } from 'react-use';
+import { useIntl } from 'umi';
+import { docDetailTranslator, versionListTranslator } from '@/utils';
 import moment from 'moment';
 
 import styles from './doc.less';
@@ -20,6 +22,7 @@ const { Content, Sider } = Layout;
 const { Option } = Select;
 
 export default function DocPage() {
+  const intl = useIntl();
   const location = useLocation();
   const isWide = useMedia('(min-width: 767.99px)', true);
   const lang = getLocale();
@@ -31,7 +34,6 @@ export default function DocPage() {
   const [categoryList, setCategoryList] = React.useState<CategoryItem[]>([]);
   const [currentCategory, setCurrentCategory] = React.useState<string>('');
   const [content, setContent] = React.useState<DocContent>();
-
   const queryLanguage = useMemo(() => {
     return location.query;
   }, [location]);
@@ -54,7 +56,6 @@ export default function DocPage() {
       setLocale('en-US');
     }
   }, [queryLanguage]);
-
   const findFirstChild = (items: CategoryItem[]): string => {
     if (items[0].children?.length > 0) {
       return findFirstChild(items[0].children);
@@ -73,11 +74,15 @@ export default function DocPage() {
   React.useEffect(() => {
     const { version, id } = location.query;
     getVersions().then((res: any) => {
-      setVersions(res.data);
+      const versionList =
+        lang === 'zh-CN'
+          ? versionListTranslator(res?.data)
+          : res?.data?.versionList;
+      setVersions(versionList);
       if (version && id) {
         setCurrentVersion(version);
       } else {
-        setCurrentVersion(res?.data?.[0]?.branch);
+        setCurrentVersion(versionList[0]);
       }
     });
   }, []);
@@ -103,8 +108,8 @@ export default function DocPage() {
       return;
     }
     history.push(`/doc?version=${currentVersion}&id=${currentCategory}`);
-    getDocDetail({ id: currentCategory }).then((res: DocContent) => {
-      setContent(res);
+    getDocDetail({ id: currentCategory }).then((res: any) => {
+      setContent(lang === 'zh-CN' ? res : docDetailTranslator(res?.data));
       scrollTo(0, 0);
     });
   }, [currentCategory]);
@@ -157,14 +162,11 @@ export default function DocPage() {
                     setCurrentVersion(v);
                   }}
                 >
-                  {map(
-                    versions,
-                    (version: { branch: string }, index: number) => (
-                      <Option value={version?.branch} key={index}>
-                        {version?.branch}
-                      </Option>
-                    ),
-                  )}
+                  {map(versions, (version: string, index: number) => (
+                    <Option value={version} key={index}>
+                      {version}
+                    </Option>
+                  ))}
                 </Select>
                 {getCategoryMenu()}
               </Spin>
@@ -188,27 +190,32 @@ export default function DocPage() {
                     value={currentVersion}
                     onChange={(v) => setCurrentVersion(v)}
                   >
-                    {map(versions, (version: { branch: string }, index) => (
-                      <Option value={version?.branch} key={index}>
-                        {version?.branch}
-                      </Option>
-                    ))}
+                    {map(
+                      versions,
+                      (version: { branch: string }, index: number) => (
+                        <Option value={version?.branch} key={index}>
+                          {version?.branch}
+                        </Option>
+                      ),
+                    )}
                   </Select>
                 </Space>
               </div>
             </Spin>
           )}
           <Spin spinning={!!!content}>
-            <h1>{content?.title}</h1>
+            <h1>{content?.title ?? content?.fileName}</h1>
             <div>
-              {content?.updated_at && (
-                <span className={styles.updateTimeLabel}>最后更新时间：</span>
+              {(content?.updated_at ?? content?.docGmtModified) && (
+                <span className={styles.updateTimeLabel}>
+                  {intl.formatMessage({ id: 'doc.update.time' })}
+                </span>
               )}
               <span className={styles.updateTime}>
-                {dateFormat(content?.updated_at)}
+                {dateFormat(content?.updated_at ?? content?.docGmtModified)}
               </span>
             </div>
-            <HTMLRenderer html={content?.body_html} />
+            <HTMLRenderer html={content?.body_html ?? content?.docContent} />
           </Spin>
         </Content>
         {isWide && (
@@ -228,7 +235,7 @@ export default function DocPage() {
           className={styles.docMenu}
           placement={'left'}
           width={'80%'}
-          visible={docMenuVisible}
+          open={docMenuVisible}
           onClose={() => {
             setDocMenuVisible(false);
           }}

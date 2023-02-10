@@ -1,7 +1,7 @@
 import { request } from 'umi';
 import { DOC_HOST_EN } from '@/constant';
 
-const PRODUCT_CODE = 'oceanbase-tugraph-en';
+const PRODUCT_CODE = 'oceanbase-tugraph';
 
 const TENANT = 11;
 

@@ -22,6 +22,7 @@ export default function BlogPage() {
   const intl = useIntl();
   const location = useLocation();
   const lang = getLocale();
+  console.log(lang);
   const getBlogs = lang === 'zh-CN' ? getZHBlogs : getENBlogs;
   const isWide = useMedia('(min-width: 767.99px)', true);
   const [type, setType] = React.useState<string>('all');
