@@ -3,7 +3,8 @@ import { Row, Col } from 'antd';
 import { useMedia } from 'react-use';
 
 import styles from './index.less';
-import { useLocation } from 'umi';
+import { getLocale, useLocation } from 'umi';
+import { ChOrEnStyle } from '@/util';
 
 export interface BannerInfoProps {
   slogan: string;
@@ -20,6 +21,7 @@ export const Banner = ({
 }: BannerInfoProps) => {
   const { pathname } = useLocation();
   const isHome = pathname === '/' ? true : false;
+  const lang = getLocale();
 
   const isWide = useMedia('(min-width: 767.99px)', true);
   let background = isWide
@@ -28,6 +30,7 @@ export const Banner = ({
   if (isHome && isWide) {
     background = `url('https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*if0TTLtCrA0AAAAAAAAAAAAADgOBAQ/original')`;
   }
+
   return (
     <div
       id="banner"
@@ -43,7 +46,9 @@ export const Banner = ({
           <Row>
             <Col span={isHome ? 10 : 12}>
               <div
-                style={{ marginTop: isHome ? '80px' : '160px' }}
+                style={{
+                  marginTop: ChOrEnStyle(lang === 'zh-CN', isHome, 'slogan'),
+                }}
                 className={styles.slogan}
               >
                 {slogan}
@@ -51,7 +56,13 @@ export const Banner = ({
               {description && (
                 <div
                   className={styles.description}
-                  style={{ marginTop: isHome ? '16px' : '8px' }}
+                  style={{
+                    marginTop: ChOrEnStyle(
+                      lang === 'zh-CN',
+                      isHome,
+                      'description',
+                    ),
+                  }}
                 >
                   {description}
                 </div>

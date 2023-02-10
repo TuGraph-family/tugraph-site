@@ -127,6 +127,34 @@
     }
   }
 
+  .MenuList {
+    :global {
+      .ant-menu-inline.ant-menu-root .ant-menu-item,
+      .ant-menu-inline.ant-menu-root .ant-menu-submenu-title {
+        display: flex;
+        font-weight: 500;
+        align-items: center;
+        font-size: 3.7vw;
+        width: 93.6vw;
+        height: 100%;
+        transition: border-color 0.3s, background 0.3s,
+          padding 0.1s cubic-bezier(0.215, 0.61, 0.355, 1);
+        height: 12.8vw;
+        padding: 3.7vw 1vw;
+        font-weight: 500;
+      }
+
+      .ant-menu-inline,
+      .ant-menu-vertical,
+      .ant-menu-vertical-left {
+        border-right: 0;
+      }
+      .ant-menu-sub.ant-menu-inline {
+        background-color: #fff !important;
+      }
+    }
+  }
+
   :global {
     .ant-collapse-ghost > .ant-collapse-item-active {
       height: 100% !important;

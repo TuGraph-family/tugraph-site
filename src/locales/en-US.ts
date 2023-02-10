@@ -30,10 +30,9 @@ export default {
   'home.notice1.desc':
     'FinBench, which was initiated by Ant Group, will be used to evaluate the performance and functionality of graph databases in financial scenarios.',
   'home.notice2.tag': 'NEWS',
-  'home.notice2.title':
-    'TuGraph Won the Annual Award at the World Internet Conference.',
+  'home.notice2.title': 'Try TuGraph on Alibaba Cloud for Free.',
   'home.notice2.desc':
-    'TuGraph (formerly known as GeaGraph) was selected for the award for its major innovations in graph technology.',
+    'Easily create your own graph database application with simple deployment on Alibaba Cloud.',
   'home.case.title': 'SOLUTIONS',
   'home.case.desc0': 'Thousands of times improvement',
   'home.case.desc1':
@@ -143,7 +142,7 @@ export default {
     'Readily Available Operation and Maintenance Monitoring Platform',
   'product.feature.desc3':
     'Real-time operation and maintenance monitoring, supports one-click deployment of Docker, Centos, Ubuntu. At the same time, it provides a rich and extensible interface to support the secondary development of users and realize system integration. And supports mainstream open source monitoring and alarm tools such as Prometheus and Grafana.',
-  'product.ecosystem': 'ARCASESCHITECTURE',
+  'product.ecosystem': 'ARCHITECTURE',
   'demo.title': ' TuGraph Use Cases',
   'demo.description':
     '图数据库,图计算,图平台,图数据分析, 分布式数据库, Graph,大数据分析,关联关系分析,大数据分析,反洗钱,反欺诈,金融风控,物联网, 设备管理, 国家电网',
@@ -152,7 +151,7 @@ export default {
   'demo.title0':
     'Credit Risk Control, Anti-money Laundering, Anti-fraud, Fund Tracking, Marketing Recommendation: ',
   'demo.desc0':
-    'Expand the dimension of risk characteristics through graph computing technology, and improve risk prevention capabilities such as credit risk control.  Graph computing technology also helps financial institutions to accurately market and expand customers.',
+    'Expand the dimension of risk characteristics through graph computing technology, and improve risk prevention capabilities such as credit risk control. Graph computing technology also helps financial institutions to accurately market and expand customers.',
   'demo.type0': 'Financial Services',
   'demo.title1':
     'Marketing Recommendations, Membership and Merchant Services, Community Discovery, Friend Recommendations: ',

@@ -55,7 +55,7 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
           {intl.formatMessage({ id: 'header.home' })}
         </a>
       ),
-      key: '',
+      key: '/',
     },
     {
       label: (
@@ -213,38 +213,13 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
         extra={<CloseOutlined onClick={() => setPopupMenuVisible(false)} />}
         open={popupMenuVisible}
       >
-        {menuItems?.map((item, key) => {
-          if (item.key === 'language') {
-            return null;
-          } else if (item?.children) {
-            return (
-              <Collapse ghost key={key}>
-                <Panel
-                  header={item?.label}
-                  key={key}
-                  className={styles.collapse}
-                >
-                  {item?.children?.map(
-                    (
-                      child: { label: {} | null | undefined },
-                      index: string | number,
-                    ) => (
-                      <div className="menuList" key={index}>
-                        {child?.label}
-                      </div>
-                    ),
-                  )}
-                </Panel>
-              </Collapse>
-            );
-          } else {
-            return (
-              <div className="menuList" key={key}>
-                {item?.label}
-              </div>
-            );
-          }
-        })}
+        <div className={styles.MenuList}>
+          <Menu
+            mode="inline"
+            style={{ width: 256 }}
+            items={menuItems.filter((item) => item.key !== 'language')}
+          />
+        </div>
       </Drawer>
     </>
   );

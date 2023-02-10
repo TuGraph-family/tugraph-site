@@ -171,7 +171,7 @@ export default function ProductPage() {
                 key={key}
               >
                 <div className={styles.featCard}>
-                  <Space size={16}>
+                  <Space size={16} align="start">
                     <img src={item.icon} />
                     <div className={styles.textGroup}>
                       <div className={styles.title}>{item.title}</div>

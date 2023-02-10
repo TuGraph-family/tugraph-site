@@ -34,26 +34,32 @@ export default function IndexPage() {
 
   const bannerButton = (
     <div className={styles.bannerButtons}>
-      <Button
-        className={styles.github}
-        onClick={() => {
-          window.open('https://github.com/TuGraph-db');
-        }}
-        type="primary"
-      >
-        <GithubOutlined />
-        <span className={styles.githubText}>GitHub</span>
-      </Button>
-      <Button
-        className={styles.play}
-        type="text"
-        onClick={() => {
-          setShowVideo(true);
-        }}
-      >
-        <img src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*NyD0T5CdYfMAAAAAAAAAAAAADgOBAQ/original" />
-        {intl.formatMessage({ id: 'home.banner.quickStart' })}
-      </Button>
+      <Space>
+        <Button
+          className={styles.github}
+          onClick={() => {
+            window.open('https://github.com/TuGraph-db');
+          }}
+          type="primary"
+        >
+          <Space>
+            <GithubOutlined />
+            <span className={styles.githubText}>GitHub</span>
+          </Space>
+        </Button>
+        <Button
+          className={styles.play}
+          type="text"
+          onClick={() => {
+            setShowVideo(true);
+          }}
+        >
+          <div className={styles.playContent}>
+            <img src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*NyD0T5CdYfMAAAAAAAAAAAAADgOBAQ/original" />
+            {intl.formatMessage({ id: 'home.banner.quickStart' })}
+          </div>
+        </Button>
+      </Space>
     </div>
   );
 
@@ -177,7 +183,7 @@ export default function IndexPage() {
                   key={key}
                 >
                   <div className={styles.reasonCard}>
-                    <Space size={24}>
+                    <Space size={16} align="start">
                       <img src={item.icon} />
                       <div className={styles.textGroup}>
                         <div className={styles.title}>{item.title}</div>
