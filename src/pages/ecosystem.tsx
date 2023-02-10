@@ -38,7 +38,12 @@ export default function EcosystemPage() {
                     <img src={item.src} alt="icon" />
                     <div>
                       <div className={styles.title}>{item.title}</div>
-                      <div className={styles.desc}>{item.desc}</div>
+                      <div
+                        className={styles.desc}
+                        style={{ color: 'rgba(26, 27, 37, 0.45)' }}
+                      >
+                        {item.desc}
+                      </div>
                     </div>
                   </div>
                 </Col>
