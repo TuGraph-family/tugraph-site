@@ -40,7 +40,7 @@ export default function DemoPage() {
         {getDemos(intl)?.map((item, key) => (
           <Col span={isWide ? 8 : 24} className={styles.demoCards} key={key}>
             <div className={styles.demoCard}>
-              <Space size={12}>
+              <Space size={12} align="center">
                 <img src={item.iconUrl} />
                 <div className={styles.type}>{item.type}</div>
               </Space>

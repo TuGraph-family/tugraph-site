@@ -42,8 +42,10 @@ export default function IndexPage() {
           }}
           type="primary"
         >
-          <GithubOutlined />
-          <span className={styles.githubText}>GitHub</span>
+          <Space>
+            <GithubOutlined />
+            <span className={styles.githubText}>GitHub</span>
+          </Space>
         </Button>
         <Button
           className={styles.play}
