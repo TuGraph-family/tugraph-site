@@ -1,10 +1,15 @@
 import React, { useState } from 'react';
 import { getLocale, history, useIntl, useLocation } from 'umi';
-import { Menu, Drawer, Collapse, Space } from 'antd';
+import { Menu, Drawer, Space, SubMenuProps } from 'antd';
 import cx from 'classnames';
 import { useMedia } from 'react-use';
 import type { MenuItem } from '@/interface';
-import { MenuOutlined, CloseOutlined } from '@ant-design/icons';
+import {
+  MenuOutlined,
+  CloseOutlined,
+  UpOutlined,
+  RightOutlined,
+} from '@ant-design/icons';
 
 import styles from './index.less';
 import { HOST_EN, HOST_ZH } from '@/constant';
@@ -34,7 +39,7 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
   };
 
   const menuIcon = !isWide ? (
-    <Space size={12}>
+    <Space size={24}>
       <img
         src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*0Q-HT4iXkv4AAAAAAAAAAAAADgOBAQ/original"
         className={styles.languageIcon}
@@ -85,12 +90,18 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
       key: 'assets',
       children: [
         {
-          label: <a href="/doc">{intl.formatMessage({ id: 'header.doc' })}</a>,
+          label: (
+            <a href="/doc" style={{ fontWeight: 400 }}>
+              {intl.formatMessage({ id: 'header.doc' })}
+            </a>
+          ),
           key: 'doc',
         },
         {
           label: (
-            <a href="/blog">{intl.formatMessage({ id: 'header.blog' })}</a>
+            <a href="/blog" style={{ fontWeight: 400 }}>
+              {intl.formatMessage({ id: 'header.blog' })}
+            </a>
           ),
           key: 'blog',
         },
@@ -100,6 +111,7 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
               href="https://space.bilibili.com/1196053065/"
               target="_blank"
               rel="noopener noreferrer"
+              style={{ fontWeight: 400 }}
             >
               Demo
             </a>
@@ -118,6 +130,7 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
               href="https://github.com/TuGraph-db"
               target="_blank"
               rel="noopener noreferrer"
+              style={{ fontWeight: 400 }}
             >
               GitHub
             </a>
@@ -130,6 +143,7 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
               href="https://gitee.com/tugraph"
               target="_blank"
               rel="noopener noreferrer"
+              style={{ fontWeight: 400 }}
             >
               Gitee
             </a>
@@ -211,7 +225,12 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
         }
         placement="right"
         closable={false}
-        extra={<CloseOutlined onClick={() => setPopupMenuVisible(false)} />}
+        extra={
+          <CloseOutlined
+            onClick={() => setPopupMenuVisible(false)}
+            style={{ fontSize: '3vw' }}
+          />
+        }
         open={popupMenuVisible}
       >
         <div className={styles.MenuList}>
@@ -219,6 +238,13 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
             mode="inline"
             style={{ width: 256 }}
             items={menuItems.filter((item) => item.key !== 'language')}
+            expandIcon={({ isOpen }) => {
+              if (isOpen) {
+                return <UpOutlined style={{ fontSize: 27.75 }} />;
+              } else {
+                return <RightOutlined style={{ fontSize: 27.75 }} />;
+              }
+            }}
           />
         </div>
       </Drawer>
