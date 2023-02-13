@@ -33,7 +33,7 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
   };
 
   const menuIcon = !isWide ? (
-    <Space size={12}>
+    <Space size={24}>
       <img
         src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*0Q-HT4iXkv4AAAAAAAAAAAAADgOBAQ/original"
         className={styles.languageIcon}

@@ -113,7 +113,7 @@ export default function IndexPage() {
     <div className={styles.noticeWrapper}>
       <Carousel centerMode={true} centerPadding={`${SWIPE_PADDING}px`}>
         <div className={styles.card}>
-          <Tag> {intl.formatMessage({ id: 'home.notice0.tag' })}</Tag>
+          <Tag>{intl.formatMessage({ id: 'home.notice0.tag' })}</Tag>
           <div className={styles.title}>
             {intl.formatMessage({ id: 'home.notice0.title' })}
           </div>
@@ -204,8 +204,8 @@ export default function IndexPage() {
                 {intl.formatMessage({ id: 'home.case.title' })}
               </div>
               <div className={styles.groupDesc}>
-                {intl.formatMessage({ id: 'home.case.desc0' })},
-                {intl.formatMessage({ id: 'home.case.desc1' })}
+                <div>{intl.formatMessage({ id: 'home.case.desc0' })}</div>
+                <div>{intl.formatMessage({ id: 'home.case.desc1' })}</div>
               </div>
             </Col>
             <Col span={isWide ? 18 : 24}>

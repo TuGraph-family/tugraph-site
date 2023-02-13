@@ -101,16 +101,14 @@ export const Footer = ({ className }: { className?: string }) => {
                 </a>
               </Space>
             </div>
-            {lang === 'en-US' && (
-              <div className={styles.item}>
-                <Space>
-                  <SlackOutlined size={12} />
-                  <a href="https://tugraph.slack.com/join/shared_invite/zt-1hha8nuli-bqdkwn~w4zH1vlk0QvqIfg#/shared-invite/email">
-                    Slack
-                  </a>
-                </Space>
-              </div>
-            )}
+            <div className={styles.item}>
+              <Space>
+                <SlackOutlined size={12} />
+                <a href="https://tugraph.slack.com/join/shared_invite/zt-1hha8nuli-bqdkwn~w4zH1vlk0QvqIfg#/shared-invite/email">
+                  Slack
+                </a>
+              </Space>
+            </div>
           </div>
         </Col>
 
