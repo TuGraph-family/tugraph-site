@@ -42,6 +42,7 @@ export default defineConfig({
     baseNavigator: true,
     baseSeparator: '-',
     title: true,
+    default: 'zh-CN',
     useLocalStorage: true,
   },
 });
