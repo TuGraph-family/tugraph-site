@@ -203,9 +203,19 @@ export default function IndexPage() {
               <div className={styles.groupTitle}>
                 {intl.formatMessage({ id: 'home.case.title' })}
               </div>
+
               <div className={styles.groupDesc}>
-                <div>{intl.formatMessage({ id: 'home.case.desc0' })}</div>
-                <div>{intl.formatMessage({ id: 'home.case.desc1' })}</div>
+                {
+                  (isWide ? (
+                    <>
+                      <div>{intl.formatMessage({ id: 'home.case.desc0' })}</div>
+                      <div>{intl.formatMessage({ id: 'home.case.desc1' })}</div>
+                    </>
+                  ) : (
+                    intl.formatMessage({ id: 'home.case.desc0' })
+                  ),
+                  intl.formatMessage({ id: 'home.case.desc1' }))
+                }
               </div>
             </Col>
             <Col span={isWide ? 18 : 24}>
@@ -221,8 +231,10 @@ export default function IndexPage() {
                       <div className={styles.title}>{item.title}</div>
                       {lang === 'zh-CN' ? (
                         <>
-                          <div className={styles.desc}>{item.desc0}</div>
-                          <div className={styles.desc}>{item.desc1}</div>
+                          <div className={styles.desc}>
+                            {item.desc0}
+                            {item.desc1}
+                          </div>
                         </>
                       ) : (
                         <div
@@ -245,7 +257,7 @@ export default function IndexPage() {
           </a>
         )}
         <div className="maxContainer">
-          <Row className={styles.users}>
+          <Row className={styles.users} gutter={20}>
             <Col span={isWide ? 6 : 12}>
               <img src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*yZnbTbOz1RAAAAAAAAAAAAAADgOBAQ/original" />
             </Col>
