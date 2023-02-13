@@ -1,6 +1,7 @@
 import React from 'react';
 import { getLocale, useIntl } from 'umi';
 import { LayoutTemplate } from '@/components/LayoutTemplate';
+import cx from 'classnames';
 
 import stylesZh from './ecosystem.less';
 import stylesEn from './ecosystem_en.less';
@@ -65,16 +66,12 @@ export default function EcosystemPage() {
               return (
                 <Col span={isWide ? item.span : 24}>
                   <div
-                    className={styles.supportItem}
-                    style={
-                      index === 0
-                        ? lang === 'en-US'
-                          ? { paddingTop: isWide ? '15px' : '' }
-                          : {}
-                        : {}
-                    }
+                    className={cx(styles.supportItem, {
+                      [styles.enSupportItemPadding]:
+                        index === 0 && lang === 'en-US',
+                    })}
                   >
-                    <Space size={12} align="center">
+                    <Space size={12} align="center" style={{ height: '100%' }}>
                       <img src={item.src} alt="icon" />
                       <div>{item.support}</div>
                     </Space>
