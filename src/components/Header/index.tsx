@@ -91,7 +91,7 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
       children: [
         {
           label: (
-            <a href="/doc" style={{ fontWeight: 400 }}>
+            <a href="/doc" className={styles.menuChildren}>
               {intl.formatMessage({ id: 'header.doc' })}
             </a>
           ),
@@ -99,7 +99,7 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
         },
         {
           label: (
-            <a href="/blog" style={{ fontWeight: 400 }}>
+            <a href="/blog" className={styles.menuChildren}>
               {intl.formatMessage({ id: 'header.blog' })}
             </a>
           ),
@@ -111,7 +111,7 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
               href="https://space.bilibili.com/1196053065/"
               target="_blank"
               rel="noopener noreferrer"
-              style={{ fontWeight: 400 }}
+              className={styles.menuChildren}
             >
               Demo
             </a>
@@ -130,7 +130,7 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
               href="https://github.com/TuGraph-db"
               target="_blank"
               rel="noopener noreferrer"
-              style={{ fontWeight: 400 }}
+              className={styles.menuChildren}
             >
               GitHub
             </a>
@@ -143,7 +143,7 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
               href="https://gitee.com/tugraph"
               target="_blank"
               rel="noopener noreferrer"
-              style={{ fontWeight: 400 }}
+              className={styles.menuChildren}
             >
               Gitee
             </a>
