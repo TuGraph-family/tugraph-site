@@ -44,7 +44,7 @@ export default function DemoPage() {
                 <img src={item.iconUrl} />
                 <div className={styles.type}>{item.type}</div>
               </Space>
-              <div>
+              <div className={styles.demoContent}>
                 <span className={styles.title}>{item.title}</span>
                 <span className={styles.desc}>{item.desc}</span>
               </div>
