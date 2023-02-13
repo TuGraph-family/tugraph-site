@@ -228,7 +228,7 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
         extra={
           <CloseOutlined
             onClick={() => setPopupMenuVisible(false)}
-            style={{ fontSize: '3vw' }}
+            style={{ fontSize: '3.7vw' }}
           />
         }
         open={popupMenuVisible}
@@ -240,9 +240,9 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
             items={menuItems.filter((item) => item.key !== 'language')}
             expandIcon={({ isOpen }) => {
               if (isOpen) {
-                return <UpOutlined style={{ fontSize: 27.75 }} />;
+                return <UpOutlined style={{ fontSize: '3.7vw' }} />;
               } else {
-                return <RightOutlined style={{ fontSize: 27.75 }} />;
+                return <RightOutlined style={{ fontSize: '3.7vw' }} />;
               }
             }}
           />
