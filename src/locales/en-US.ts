@@ -302,4 +302,5 @@ export default {
   'blog.total': 'Total',
   'blog.item': 'items',
   'blog.more': 'More',
+  'doc.update.time': 'Last Updated：',
 };

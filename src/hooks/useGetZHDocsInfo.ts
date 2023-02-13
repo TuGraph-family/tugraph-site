@@ -2,7 +2,7 @@ import {
   queryCategory,
   queryVersions,
   queryDocDetail,
-} from '../services/DocsController';
+} from '../services/DocsZHController';
 import { useRequest } from 'umi';
 
 export const useGetZHDocsInfo = () => {

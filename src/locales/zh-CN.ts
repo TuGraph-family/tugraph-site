@@ -283,4 +283,5 @@ export default {
   'blog.total': '共',
   'blog.item': '条',
   'blog.more': '查看更多',
+  'doc.update.time': '最后更新时间：',
 };

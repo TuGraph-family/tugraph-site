@@ -8,8 +8,6 @@ import { MenuOutlined, CloseOutlined } from '@ant-design/icons';
 
 import styles from './index.less';
 
-const { Panel } = Collapse;
-
 export const Header = ({ isStick }: { isStick?: boolean }) => {
   const intl = useIntl();
   const { pathname } = useLocation();
