@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useLocation, setLocale } from 'umi';
+import { setLocale, useLocation } from 'umi';
 import { Header } from '../Header';
 import { Banner, BannerInfoProps } from '@/components/Banner';
 import { Footer } from '@/components/Footer';
@@ -22,8 +22,6 @@ export const LayoutTemplate = ({ bannerInfo, content }: LayoutProps) => {
     }
   };
 
-  const { lang } = location.query;
-
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
     return () => {
@@ -31,17 +29,19 @@ export const LayoutTemplate = ({ bannerInfo, content }: LayoutProps) => {
     };
   }, []);
 
-  useEffect(() => {
-    if (!lang) {
-      return;
-    }
-    if (lang === 'zh' || lang === 'zh_CN' || lang === 'zh-CN') {
-      setLocale('zh-CN');
-    } else if (lang === 'en' || lang === 'en_US' || lang === 'en-US') {
-      setLocale('en-US');
-    }
-  }, [lang]);
+  // DEBUG: 为了方便调试，暂时注释掉
+  // const { lang } = location.query;
 
+  // useEffect(() => {
+  //   if (!lang) {
+  //     return;
+  //   }
+  //   if (lang === 'zh' || lang === 'zh_CN' || lang === 'zh-CN') {
+  //     setLocale('zh-CN');
+  //   } else if (lang === 'en' || lang === 'en_US' || lang === 'en-US') {
+  //     setLocale('en-US');
+  //   }
+  // }, [lang]);
   return (
     <div>
       <Header isStick={isStick} />

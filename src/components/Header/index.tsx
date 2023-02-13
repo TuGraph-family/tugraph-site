@@ -7,6 +7,7 @@ import type { MenuItem } from '@/interface';
 import { MenuOutlined, CloseOutlined } from '@ant-design/icons';
 
 import styles from './index.less';
+import { HOST_EN, HOST_ZH } from '@/constant';
 
 export const Header = ({ isStick }: { isStick?: boolean }) => {
   const intl = useIntl();
@@ -17,9 +18,9 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
 
   const onToggleLanguage = () => {
     if (lang === 'en-US') {
-      window.location.href = `${history?.location?.pathname}?lang=zh`;
+      window.location.href = `${HOST_ZH}${history?.location?.pathname}`;
     } else {
-      window.location.href = `${history?.location?.pathname}?lang=en`;
+      window.location.href = `${HOST_EN}${history?.location?.pathname}`;
     }
   };
 
@@ -157,12 +158,14 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
       children: [
         {
           label: (
-            <a href={`${history?.location?.pathname}?lang=zh`}>简体中文</a>
+            <a href={`${HOST_ZH}${history?.location?.pathname}`}>简体中文</a>
           ),
           key: 'Chinese',
         },
         {
-          label: <a href={`${history?.location?.pathname}?lang=en`}>English</a>,
+          label: (
+            <a href={`${HOST_EN}${history?.location?.pathname}`}>English</a>
+          ),
           key: 'English',
         },
       ],
