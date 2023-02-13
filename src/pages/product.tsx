@@ -14,7 +14,7 @@ import stylesEn from './product_en.less';
 export default function ProductPage() {
   const intl = useIntl();
   const lang = getLocale();
-  const styles = lang === 'en-US' ? stylesEn : stylesZh;
+  const styles = lang === 'en' || lang === 'en-US' ? stylesEn : stylesZh;
   const isWide = useMedia('(min-width: 767.99px)', true);
   const MOBILE_HEIGHT = 266 * (document.body.clientWidth / 750);
   const SWIPE_PADDING = (40 * document.body.clientWidth) / 750;

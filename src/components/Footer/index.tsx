@@ -34,7 +34,7 @@ export const Footer = ({ className }: { className?: string }) => {
       <Row
         id="tugraphFooter"
         className={styles.containerWrapper}
-        style={lang === 'en-US' ? { height: '324px' } : {}}
+        style={lang === 'en' || lang === 'en-US' ? { height: '324px' } : {}}
       >
         <Col span={4}>
           <div className={styles.textGroup}>

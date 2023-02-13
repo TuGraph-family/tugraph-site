@@ -22,7 +22,7 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
   const [popupMenuVisible, setPopupMenuVisible] = useState(false);
 
   const onToggleLanguage = () => {
-    if (lang === 'en-US') {
+    if (lang === 'en' || lang === 'en-US') {
       window.location.href = `${HOST_ZH}${history?.location?.pathname}`;
     } else {
       window.location.href = `${HOST_EN}${history?.location?.pathname}`;

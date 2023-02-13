@@ -16,7 +16,7 @@ const { Link } = Anchor;
 export default function EcosystemPage() {
   const intl = useIntl();
   const lang = getLocale();
-  const styles = lang === 'en-US' ? stylesEn : stylesZh;
+  const styles = lang === 'en' || lang === 'en-US' ? stylesEn : stylesZh;
   const isWide = useMedia('(min-width: 767.99px)', true);
   const content = (
     <div className={styles.containerWrapper}>
@@ -68,7 +68,7 @@ export default function EcosystemPage() {
                   <div
                     className={cx(styles.supportItem, {
                       [styles.enSupportItemPadding]:
-                        index === 0 && lang === 'en-US',
+                        index === 0 && lang === 'en',
                     })}
                   >
                     <Space size={12} align="center" style={{ height: '100%' }}>
