@@ -16,7 +16,7 @@ import styles from './doc.less';
 
 const { Link } = Anchor;
 
-const { Content, Sider } = Layout;
+const { Header: LayoutHeader, Footer: LayoutFooter, Content, Sider } = Layout;
 const { Option } = Select;
 
 export default function DocPage() {
@@ -138,12 +138,12 @@ export default function DocPage() {
 
   return (
     <Layout>
-      <div className={styles.headerWrapper}>
+      <LayoutHeader className={styles.headerWrapper}>
         <Header />
-      </div>
-      <Layout style={{ backgroundColor: '#fff' }}>
+      </LayoutHeader>
+      <Layout>
         {isWide && (
-          <Affix offsetTop={0}>
+          <Affix offsetTop={64}>
             <Sider className={styles.sideWrapper} theme="light" width={243}>
               <Spin spinning={!!!currentVersion}>
                 <Select
@@ -172,56 +172,74 @@ export default function DocPage() {
           </Affix>
         )}
 
-        <Content className={styles.containerWrapper}>
-          {!isWide && (
-            <Spin spinning={!!!currentVersion}>
-              <div className={styles.versionWrapper}>
-                <Space size={24}>
-                  <img
-                    onClick={() => {
-                      setDocMenuVisible(true);
-                    }}
-                    src="https://gw.alipayobjects.com/zos/bmw-prod/1236f8bd-ab42-4e2a-a5af-de1bdb8e7266.svg"
-                  />
-                  <Select
-                    className={styles.select}
-                    value={currentVersion}
-                    onChange={(v) => setCurrentVersion(v)}
-                  >
-                    {map(versions, (version: { branch: string }, index) => (
-                      <Option value={version?.branch} key={index}>
-                        {version?.branch}
-                      </Option>
-                    ))}
-                  </Select>
-                </Space>
-              </div>
-            </Spin>
-          )}
-          <Spin spinning={!!!content}>
-            <h1>{content?.title}</h1>
-            <div>
-              {content?.updated_at && (
-                <span className={styles.updateTimeLabel}>最后更新时间：</span>
+        <Content>
+          <Layout>
+            <Content>
+              {!isWide && (
+                <Spin spinning={!!!currentVersion}>
+                  <div className={styles.versionWrapper}>
+                    <Space size={24}>
+                      <img
+                        onClick={() => {
+                          setDocMenuVisible(true);
+                        }}
+                        src="https://gw.alipayobjects.com/zos/bmw-prod/1236f8bd-ab42-4e2a-a5af-de1bdb8e7266.svg"
+                      />
+                      <Select
+                        className={styles.select}
+                        value={currentVersion}
+                        onChange={(v) => setCurrentVersion(v)}
+                      >
+                        {map(
+                          versions,
+                          (
+                            version: { branch: string },
+                            index: React.Key | null | undefined,
+                          ) => (
+                            <Option value={version?.branch} key={index}>
+                              {version?.branch}
+                            </Option>
+                          ),
+                        )}
+                      </Select>
+                    </Space>
+                  </div>
+                </Spin>
               )}
-              <span className={styles.updateTime}>
-                {dateFormat(content?.updated_at)}
-              </span>
-            </div>
-            <HTMLRenderer html={content?.body_html} />
-          </Spin>
+              <Spin spinning={!!!content}>
+                <h1>{content?.title}</h1>
+                <div>
+                  {content?.updated_at && (
+                    <span className={styles.updateTimeLabel}>
+                      最后更新时间：
+                    </span>
+                  )}
+                  <span className={styles.updateTime}>
+                    {dateFormat(content?.updated_at)}
+                  </span>
+                </div>
+                <HTMLRenderer html={content?.body_html} />
+              </Spin>
+              {isWide && (
+                <Anchor
+                  affix={true}
+                  className={styles.apiAnchor}
+                  onChange={onAnchorLinkChange}
+                >
+                  {map(
+                    content?.anchors,
+                    (item: { id: string; title: string }) => (
+                      <Link href={item.id} title={item.title} />
+                    ),
+                  )}
+                </Anchor>
+              )}
+            </Content>
+            <LayoutFooter style={{ padding: 0 }}>
+              <Footer />
+            </LayoutFooter>
+          </Layout>
         </Content>
-        {isWide && (
-          <Anchor
-            affix={true}
-            className={styles.apiAnchor}
-            onChange={onAnchorLinkChange}
-          >
-            {map(content?.anchors, (item: { id: string; title: string }) => (
-              <Link href={item.id} title={item.title} />
-            ))}
-          </Anchor>
-        )}
       </Layout>
       {!isWide && (
         <Drawer
@@ -236,9 +254,6 @@ export default function DocPage() {
           {getCategoryMenu()}
         </Drawer>
       )}
-      <div className={styles.docFooter}>
-        <Footer />
-      </div>
     </Layout>
   );
 }
