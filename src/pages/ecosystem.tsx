@@ -6,7 +6,7 @@ import cx from 'classnames';
 import stylesZh from './ecosystem.less';
 import stylesEn from './ecosystem_en.less';
 
-import { Anchor, Col, Row, Space } from 'antd';
+import { Anchor, Button, Col, Row, Space } from 'antd';
 import { useMedia } from 'react-use';
 import { getPartner } from '@/data/get_partner';
 import { getPartnerReason } from '@/data/get_partner_reason';
@@ -93,14 +93,22 @@ export default function EcosystemPage() {
         slogan: intl.formatMessage({ id: 'ecosystem.banner.slogan' }),
         description: intl.formatMessage({ id: 'ecosystem.banner.description' }),
         footer: (
-          <Anchor affix={false} className={styles.contactBtn}>
+          // <Anchor affix={false} className={styles.contactBtn}>
+          //   <Link
+          //     href="#contactUs"
+          //     title={intl.formatMessage({
+          //       id: 'ecosystem.banner.btn',
+          //     })}
+          //   />
+          // </Anchor>
+          <Button type="primary" className={styles.contactBtn}>
             <Link
               href="#contactUs"
               title={intl.formatMessage({
                 id: 'ecosystem.banner.btn',
               })}
             />
-          </Anchor>
+          </Button>
         ),
       }}
       content={content}
