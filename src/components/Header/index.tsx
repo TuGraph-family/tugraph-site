@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { getLocale, history, useIntl, useLocation } from 'umi';
-import { Menu, Drawer, Space, SubMenuProps } from 'antd';
+import { Menu, Drawer, Space } from 'antd';
 import cx from 'classnames';
 import { useMedia } from 'react-use';
 import type { MenuItem } from '@/interface';
@@ -22,7 +22,7 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
   const [popupMenuVisible, setPopupMenuVisible] = useState(false);
 
   const onToggleLanguage = () => {
-    if (lang === 'en-US') {
+    if (lang === 'en' || lang === 'en-US') {
       window.location.href = `${HOST_ZH}${history?.location?.pathname}`;
     } else {
       window.location.href = `${HOST_EN}${history?.location?.pathname}`;

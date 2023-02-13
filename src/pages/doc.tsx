@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo } from 'react';
 import { map } from 'lodash';
 import HTMLRenderer from 'react-html-renderer';
-import { getLocale, history, setLocale, useLocation } from 'umi';
+import { getLocale, history, useLocation } from 'umi';
 import { CategoryItem, DocContent } from '@/interface';
 import { MenuProps, Select, Affix, Anchor, Spin, Space, Drawer } from 'antd';
 import { Layout, Menu } from 'antd';
@@ -34,28 +34,7 @@ export default function DocPage() {
   const [categoryList, setCategoryList] = React.useState<CategoryItem[]>([]);
   const [currentCategory, setCurrentCategory] = React.useState<string>('');
   const [content, setContent] = React.useState<DocContent>();
-  const queryLanguage = useMemo(() => {
-    return location.query;
-  }, [location]);
 
-  useEffect(() => {
-    if (!queryLanguage) {
-      return;
-    }
-    if (
-      queryLanguage === 'zh' ||
-      queryLanguage === 'zh_CN' ||
-      queryLanguage === 'zh-CN'
-    ) {
-      setLocale('zh-CN');
-    } else if (
-      queryLanguage === 'en' ||
-      queryLanguage === 'en_US' ||
-      queryLanguage === 'en-US'
-    ) {
-      setLocale('en-US');
-    }
-  }, [queryLanguage]);
   const findFirstChild = (items: CategoryItem[]): string => {
     if (items[0].children?.length > 0) {
       return findFirstChild(items[0].children);
@@ -146,7 +125,7 @@ export default function DocPage() {
       <div className={styles.headerWrapper}>
         <Header />
       </div>
-      <Layout>
+      <Layout style={{ background: '#fff' }}>
         {isWide && (
           <Affix offsetTop={0}>
             <Sider className={styles.sideWrapper} theme="light" width={243}>

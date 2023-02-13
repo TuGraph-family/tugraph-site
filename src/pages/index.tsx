@@ -24,7 +24,7 @@ import stylesEn from './index_en.less';
 export default function IndexPage() {
   const intl = useIntl();
   const lang = getLocale();
-  const styles = lang === 'en-US' ? stylesEn : stylesZh;
+  const styles = lang === 'en' || lang === 'en-US' ? stylesEn : stylesZh;
   const isWide = useMedia('(min-width: 767.99px)', true);
   const [showApplyForm, setShowApplyForm] = useState(false);
   const [showVideo, setShowVideo] = useState(false);
