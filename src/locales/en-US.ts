@@ -14,7 +14,6 @@ export default {
   'footer.community': 'Community',
   'footer.communityName': 'bilibili',
   'footer.phone': '400-903-0809',
-  'home.title': ' TuGraph',
   'home.description':
     'TuGraph,蚂蚁图数据库,蚂蚁图计算,图数据库,图计算,图平台,图数据分析, 分布式数据库, Graph,大数据,关联关系分析,知识图谱,GNN, 图神经网络, Neo4j, GeaGraph, GeaBase, GeaFlow, 费马, 人工智能, big data, graph processing,graph database, graph computing, artificial intelligence',
   'home.banner.slogan': 'The Graph Database Behind Alipay',
@@ -113,7 +112,6 @@ export default {
     '9/F, East Tower, Beijing World Financial Center, No.1 East 3rd Ring Middle Road, Chaoyang District, Beijing 100020',
   'footer.addressMobile':
     '9/F, East Tower, Beijing World Financial Center, No.1 East 3rd Ring Middle Road, Chaoyang District, Beijing 100020',
-  'product.title': ' TuGraph Products',
   'product.description':
     'Provides an efficient, easy-to-use and reliable one-stop platform for users to manage and analyze complex and linked data',
   'product.slogan': 'Speedy Open-Sourced Graph Database',
@@ -303,4 +301,11 @@ export default {
   'blog.item': 'items',
   'blog.more': 'More',
   'doc.update.time': 'Last Updated：',
+  'home.title': 'TuGraph the high-performance graph database',
+  'product.title': ' TuGraph Products',
+  'case.title': ' TuGraph Use Cases',
+  'ecosystem.title': ' TuGraph Partners',
+  'doc.title': ' TuGraph Documentation',
+  'blog.title': ' TuGraph Blog',
+  'download.title': ' TuGraph Download',
 };

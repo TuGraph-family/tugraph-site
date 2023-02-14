@@ -4,17 +4,25 @@ export default defineConfig({
   nodeModulesTransform: {
     type: 'none',
   },
-  title: 'TuGraph 高性能图数据库',
+  title: 'Tugraph',
   favicon:
     'https://gw.alipayobjects.com/zos/bmw-prod/6290edfc-e134-4074-a550-079eeba9926d.svg',
   routes: [
     { path: '/', component: '@/pages/index' },
-    { path: '/product', component: '@/pages/product' },
-    { path: '/case', component: '@/pages/case' },
-    { path: '/ecosystem', component: '@/pages/ecosystem' },
-    { path: '/doc', component: '@/pages/doc' },
-    { path: '/blog', component: '@/pages/blog' },
-    { path: '/download', component: '@/pages/download' },
+    { path: '/product', component: '@/pages/product', title: 'product.title' },
+    { path: '/case', component: '@/pages/case', title: 'case.title' },
+    {
+      path: '/ecosystem',
+      component: '@/pages/ecosystem',
+      title: 'ecosystem.title',
+    },
+    { path: '/doc', component: '@/pages/doc', title: 'doc.title' },
+    { path: '/blog', component: '@/pages/blog', title: 'blog.title' },
+    {
+      path: '/download',
+      component: '@/pages/download',
+      title: 'download.title',
+    },
   ],
   theme: {
     'primary-color': 'rgba(22,80,255,1)',
@@ -37,12 +45,13 @@ export default defineConfig({
   request: {
     dataField: '',
   },
+  hash: true,
   locale: {
     antd: true,
     baseNavigator: false,
     baseSeparator: '-',
     title: true,
-    default: 'en-US',
+    default: 'zh-CN',
     useLocalStorage: false,
   },
 });

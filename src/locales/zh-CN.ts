@@ -14,7 +14,6 @@ export default {
   'footer.productName': 'TuGraph 图数据库',
   'footer.communityName': '哔哩哔哩',
   'footer.phone': '400-903-0809',
-  'home.title': ' TuGraph 首页',
   'home.description':
     'TuGraph,蚂蚁图数据库,蚂蚁图计算,图数据库,图计算,图平台,图数据分析, 分布式数据库, Graph,大数据,关联关系分析,知识图谱,GNN, 图神经网络, Neo4j, GeaGraph, GeaBase, GeaFlow, 费马, 人工智能, big data, graph processing,graph database, graph computing, artificial intelligence',
   'home.banner.slogan': '支付宝万亿业务背后的图数据库',
@@ -107,7 +106,6 @@ export default {
   'footer.extraInfo': '© 2022 蚂蚁集团',
   'footer.address': '地址：中国北京朝阳区东三环中路1号环球金融中心东塔9层',
   'footer.addressMobile': '中国北京朝阳区东三环中路1号环球金融中心东塔9层',
-  'product.title': ' TuGraph 产品',
   'product.description':
     '为用户管理和分析复杂关联数据提供了高效、易用、可靠的一站式平台',
   'product.slogan': '极速的开源图数据库TuGraph',
@@ -284,4 +282,11 @@ export default {
   'blog.item': '条',
   'blog.more': '查看更多',
   'doc.update.time': '最后更新时间：',
+  'home.title': 'TuGraph 高性能图数据库',
+  'product.title': ' TuGraph 产品',
+  'case.title': ' TuGraph Use Cases',
+  'ecosystem.title': ' TuGraph Partners',
+  'doc.title': ' TuGraph Documentation',
+  'blog.title': ' TuGraph Blog',
+  'download.title': ' TuGraph Download',
 };
