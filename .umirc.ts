@@ -39,10 +39,10 @@ export default defineConfig({
   },
   locale: {
     antd: true,
-    baseNavigator: true,
+    baseNavigator: false,
     baseSeparator: '-',
     title: true,
     default: 'en-US',
-    useLocalStorage: true,
+    useLocalStorage: false,
   },
 });

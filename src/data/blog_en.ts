@@ -10,6 +10,7 @@ import md07 from '@/doc/en/07.md';
 import md08 from '@/doc/en/08.md';
 import md09 from '@/doc/en/09.md';
 import md10 from '@/doc/en/10.md';
+import md11 from '@/doc/en/11.md';
 
 export const blogs = [
   {
@@ -106,6 +107,15 @@ export const blogs = [
     updateDate: '2022-12-20',
     type: 'tech',
     content: md10?.html,
+  },
+  {
+    id: 10,
+    img: 'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*_H7HSYtXw5sAAAAAAAAAAAAADgOBAQ/original',
+    title: 'TuGraph graph database landed on Alibaba Cloud, free trial',
+    desc: `Ant Group's high-performance graph database TuGraph Community Edition is now available on Alibaba Cloud. Users do not need to compile and deploy by themselves, and can quickly build their own graph applications.`,
+    updateDate: '2022-12-25',
+    type: 'news',
+    content: md11?.html,
   },
 ];
 
