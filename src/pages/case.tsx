@@ -99,7 +99,10 @@ export default function DemoPage() {
 
   const mobileExample = (
     <div className={styles.exampleWrapper}>
-      <SubTitle title={intl.formatMessage({ id: 'demo.examples' })} />
+      <SubTitle
+        title={intl.formatMessage({ id: 'demo.examples' })}
+        className={styles.subTitle}
+      />
       {getExamples(intl)?.map((item, key) => (
         <div className={styles.exampleCard} key={key}>
           <img src={item.img} />
