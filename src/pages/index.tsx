@@ -184,7 +184,10 @@ export default function IndexPage() {
 
         {isWide ? pcNoticeWrapper : mobileNoticeWrapper}
 
-        <SubTitle title={intl.formatMessage({ id: 'home.choseReason' })} />
+        <SubTitle
+          title={intl.formatMessage({ id: 'home.choseReason' })}
+          className={styles.subTitle}
+        />
         <div className="maxContainer">
           <Row className={styles.reasonCards}>
             {getReasons(intl)?.map((item, key) => {
