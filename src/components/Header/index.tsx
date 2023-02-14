@@ -238,6 +238,7 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
             mode="inline"
             style={{ width: 256 }}
             items={menuItems.filter((item) => item.key !== 'language')}
+            selectedKeys={getActiveKey()}
             expandIcon={({ isOpen }) => {
               if (isOpen) {
                 return <UpOutlined style={{ fontSize: '3.7vw' }} />;

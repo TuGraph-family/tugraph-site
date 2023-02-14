@@ -154,7 +154,10 @@ export default function ProductPage() {
 
       {isWide ? pcVideoList : mobileVideoList}
 
-      <SubTitle title={intl.formatMessage({ id: 'product.intro' })} />
+      <SubTitle
+        title={intl.formatMessage({ id: 'product.intro' })}
+        className={styles.subTitle}
+      />
       <div className={styles.introWrapper}>
         <div>{intl.formatMessage({ id: 'product.introduction0' })}</div>
         <div>{intl.formatMessage({ id: 'product.introduction1' })}</div>
