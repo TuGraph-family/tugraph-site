@@ -59,7 +59,7 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
           {intl.formatMessage({ id: 'header.home' })}
         </a>
       ),
-      key: '/',
+      key: '',
     },
     {
       label: (
