@@ -129,6 +129,9 @@
 @media only screen and (max-width: 767.99px) {
   .containerWrapper {
     transition: all ease 0.3s;
+    .subTitle {
+      margin-bottom: 4.8vw !important;
+    }
     .videoWrapper {
       width: 100vw;
       margin: -9.2vw -3.2vw 0 -3.2vw;
@@ -152,22 +155,26 @@
           0 9px 28px 8px rgba(132, 135, 155, 0.05);
         background: #ffffff;
         margin: 9.2vw 0;
-        .title {
-          font-size: 3.7vw !important;
-          margin-top: 1.6vw;
-        }
+        .videoInfo {
+          text-align: left;
+          display: flex;
+          margin-top: 1.6vw !important ;
+          .title {
+            font-size: 3.7vw !important;
+            margin: 0 !important;
+          }
 
-        .tag {
-          margin: 3.5vw 1.6vw !important;
-          font-size: 2.1vw !important;
-          height: 100% !important;
-          padding: 0;
+          .tag {
+            font-size: 2.13vw !important;
+            height: 100% !important;
+            line-height: 3.2vw !important;
+            text-align: center;
+            padding: 0.53vw 2.13vw !important;
+            width: 13.3vw !important;
+            margin-top: 0.56vw !important;
+          }
         }
       }
-    }
-    .videoInfo {
-      text-align: left;
-      display: flex;
     }
   }
   .introWrapper {
@@ -183,10 +190,11 @@
       .title {
         font-size: 3.7vw !important;
         margin-bottom: 0 !important;
+        line-height: 5.3vw !important;
       }
       .desc {
         font-size: 3.2vw !important;
-        text-align: justify !important;
+        text-align: left !important;
         line-height: 4.8vw !important;
         margin-top: 1.6vw !important;
         height: 100% !important;
