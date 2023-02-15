@@ -4,7 +4,7 @@ export default defineConfig({
   nodeModulesTransform: {
     type: 'none',
   },
-  title: 'Tugraph',
+  title: 'site.title',
   favicon:
     'https://gw.alipayobjects.com/zos/bmw-prod/6290edfc-e134-4074-a550-079eeba9926d.svg',
   routes: [
@@ -24,6 +24,15 @@ export default defineConfig({
       title: 'download.title',
     },
   ],
+  scripts: [
+    `var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?e4bea71987c7daae77ee69586aad5bec";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();`,
+  ],
   theme: {
     'primary-color': 'rgba(22,80,255,1)',
   },
@@ -39,7 +48,7 @@ export default defineConfig({
       .use('frontmatter-markdown-loader')
       .loader('frontmatter-markdown-loader');
   },
-  ssr: {},
+  ssr: { mode: 'stream' },
   exportStatic: {},
   fastRefresh: {},
   request: {
@@ -51,7 +60,7 @@ export default defineConfig({
     baseNavigator: false,
     baseSeparator: '-',
     title: true,
-    default: 'zh-CN',
+    default: 'en-US',
     useLocalStorage: false,
   },
 });

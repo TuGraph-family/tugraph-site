@@ -1,7 +1,7 @@
-import React, { useRef, useState } from 'react';
-import { Carousel, Col, Menu, Row, Space, Tag } from 'antd';
+import React from 'react';
+import { Carousel, Col, Row, Space, Tag } from 'antd';
 import { Helmet } from 'react-helmet';
-import JoLPlayer from 'jol-player';
+import JoLPlayer from '@/components/Player';
 import { SubTitle } from '@/components/SubTitle';
 import { useMedia } from 'react-use';
 import { LayoutTemplate } from '@/components/LayoutTemplate';
@@ -16,8 +16,12 @@ export default function ProductPage() {
   const lang = getLocale();
   const styles = lang === 'en' || lang === 'en-US' ? stylesEn : stylesZh;
   const isWide = useMedia('(min-width: 767.99px)', true);
-  const MOBILE_HEIGHT = 266 * (document.body.clientWidth / 750);
-  const SWIPE_PADDING = (40 * document.body.clientWidth) / 750;
+  const MOBILE_HEIGHT = isBrowser()
+    ? 266 * (document.body.clientWidth / 750)
+    : 266;
+  const SWIPE_PADDING = isBrowser()
+    ? (40 * document.body.clientWidth) / 750
+    : 40;
   const pcVideoList = (
     <div className={styles.videoWrapper}>
       {isBrowser() && (

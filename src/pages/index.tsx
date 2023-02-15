@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Button, Carousel, Col, Modal, Row, Space, Tag } from 'antd';
 import cx from 'classnames';
 import { getLocale, isBrowser } from 'umi';
-import JoLPlayer from 'jol-player';
+import JoLPlayer from '@/components/Player';
 import { Helmet } from 'react-helmet';
 import {
   CheckOutlined,
@@ -24,7 +24,7 @@ import stylesEn from './index_en.less';
 export default function IndexPage() {
   const intl = useIntl();
   const lang = getLocale();
-  const styles = lang === 'en' || lang === 'en-US' ? stylesEn : stylesZh;
+  const styles = lang === 'zh-CN' ? stylesZh : stylesEn;
   const isWide = useMedia('(min-width: 767.99px)', true);
   const [showApplyForm, setShowApplyForm] = useState(false);
   const [showVideo, setShowVideo] = useState(false);
@@ -391,16 +391,15 @@ export default function IndexPage() {
           <div className={styles.videoBtn} onClick={() => setShowVideo(false)}>
             X
           </div>
-          {isBrowser() && (
-            <JoLPlayer
-              option={{
-                videoSrc:
-                  'https://gw.alipayobjects.com/os/bmw-prod/2145f227-08f0-435a-abe6-7f503b65da7d.mov',
-                height: 450,
-                width: isWide ? 800 : '100%',
-              }}
-            />
-          )}
+
+          <JoLPlayer
+            option={{
+              videoSrc:
+                'https://gw.alipayobjects.com/os/bmw-prod/2145f227-08f0-435a-abe6-7f503b65da7d.mov',
+              height: 450,
+              width: isWide ? 800 : '100%',
+            }}
+          />
         </Modal>
       </div>
     </>

@@ -282,6 +282,7 @@ export default {
   'blog.item': '条',
   'blog.more': '查看更多',
   'doc.update.time': '最后更新时间：',
+  'site.title': 'TuGraph 高性能图数据库',
   'home.title': 'TuGraph 高性能图数据库',
   'product.title': ' TuGraph 产品',
   'case.title': ' TuGraph Use Cases',
