@@ -141,7 +141,11 @@ export default function IndexPage() {
           <div className={styles.desc}>
             {intl.formatMessage({ id: 'home.notice1.desc' })}
           </div>
-          <a className={styles.learnMore} href="/blog?id=3" target="_blank">
+          <a
+            className={styles.learnMore}
+            href={lang === 'zh-CN' ? `/blog?id=3` : `/blog?id=1`}
+            target="_blank"
+          >
             {intl.formatMessage({ id: 'home.knowMore' })}
             <ArrowRightOutlined />
           </a>
@@ -159,7 +163,7 @@ export default function IndexPage() {
               [styles.lastLearnMore]: lang === 'zh-CN',
             })}
             target="_blank"
-            href="https://mp.weixin.qq.com/s/h8TR4gn5keqGNEUAd4lBOQ"
+            href={lang === 'zh-CN' ? `/blog?id=12` : `/blog?id=10`}
           >
             {intl.formatMessage({ id: 'home.knowMore' })}
             <ArrowRightOutlined />
