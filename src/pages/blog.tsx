@@ -3,7 +3,7 @@ import HTMLRenderer from 'react-html-renderer';
 import { useIntl, history, useLocation, getLocale } from 'umi';
 import { Spin, Pagination, Tabs, Space, Button } from 'antd';
 import { Layout } from 'antd';
-import cx from 'classNames';
+import cx from 'classnames';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { getZHBlogs } from '@/data/blog';

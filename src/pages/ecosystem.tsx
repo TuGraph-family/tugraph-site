@@ -92,14 +92,13 @@ export default function EcosystemPage() {
         slogan: intl.formatMessage({ id: 'ecosystem.banner.slogan' }),
         description: intl.formatMessage({ id: 'ecosystem.banner.description' }),
         footer: (
-          <Button type="primary" className={styles.contactBtn}>
-            <Link
-              href="#contactUs"
-              title={intl.formatMessage({
-                id: 'ecosystem.banner.btn',
-              })}
-            />
-          </Button>
+          <Link
+            className={styles.contactBtn}
+            href="#contactUs"
+            title={intl.formatMessage({
+              id: 'ecosystem.banner.btn',
+            })}
+          />
         ),
       }}
       content={content}
