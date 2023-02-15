@@ -74,11 +74,7 @@ export default function IndexPage() {
           <div className={styles.desc}>
             {intl.formatMessage({ id: 'home.notice0.desc' })}
           </div>
-          <a
-            className={cx(styles.textLink, { [styles.learnMore]: true })}
-            href="/blog?id=0"
-            target="_blank"
-          >
+          <a className={styles.learnMore} href="/blog?id=0" target="_blank">
             {intl.formatMessage({ id: 'home.knowMore' })}
             <ArrowRightOutlined />
           </a>
@@ -91,11 +87,7 @@ export default function IndexPage() {
           <div className={styles.desc}>
             {intl.formatMessage({ id: 'home.notice1.desc' })}
           </div>
-          <a
-            className={cx(styles.textLink, { [styles.learnMore]: true })}
-            href={lang === 'zh-CN' ? `/blog?id=3` : `/blog?id=1`}
-            target="_blank"
-          >
+          <a className={styles.learnMore} href="/blog?id=3" target="_blank">
             {intl.formatMessage({ id: 'home.knowMore' })}
             <ArrowRightOutlined />
           </a>
@@ -108,11 +100,7 @@ export default function IndexPage() {
           <div className={styles.desc}>
             {intl.formatMessage({ id: 'home.notice2.desc' })}
           </div>
-          <a
-            className={cx(styles.textLink, { [styles.learnMore]: true })}
-            target="_blank"
-            href={lang === 'zh-CN' ? `/blog?id=12` : `/blog?id=10`}
-          >
+          <a className={styles.learnMore} target="_blank" href="/blog?id=12">
             {intl.formatMessage({ id: 'home.knowMore' })}
             <ArrowRightOutlined />
           </a>
@@ -132,7 +120,7 @@ export default function IndexPage() {
           <div className={styles.desc}>
             {intl.formatMessage({ id: 'home.notice0.desc' })}
           </div>
-          <a className="textLink" href="/blog?id=0" target="_blank">
+          <a className={styles.learnMore} href="/blog?id=0" target="_blank">
             {intl.formatMessage({ id: 'home.knowMore' })}
             <ArrowRightOutlined />
           </a>
@@ -145,7 +133,7 @@ export default function IndexPage() {
           <div className={styles.desc}>
             {intl.formatMessage({ id: 'home.notice1.desc' })}
           </div>
-          <a className="textLink" href="/blog?id=3" target="_blank">
+          <a className={styles.learnMore} href="/blog?id=3" target="_blank">
             {intl.formatMessage({ id: 'home.knowMore' })}
             <ArrowRightOutlined />
           </a>
@@ -159,7 +147,9 @@ export default function IndexPage() {
             {intl.formatMessage({ id: 'home.notice2.desc' })}
           </div>
           <a
-            className={cx(styles.textLink, { [styles.learnMore]: true })}
+            className={cx(styles.learnMore, {
+              [styles.lastLearnMore]: lang === 'zh-CN',
+            })}
             target="_blank"
             href="https://mp.weixin.qq.com/s/h8TR4gn5keqGNEUAd4lBOQ"
           >
@@ -220,17 +210,17 @@ export default function IndexPage() {
               </div>
 
               <div className={styles.groupDesc}>
-                {
-                  (isWide ? (
-                    <>
-                      <div>{intl.formatMessage({ id: 'home.case.desc0' })}</div>
-                      <div>{intl.formatMessage({ id: 'home.case.desc1' })}</div>
-                    </>
-                  ) : (
-                    intl.formatMessage({ id: 'home.case.desc0' })
-                  ),
-                  intl.formatMessage({ id: 'home.case.desc1' }))
-                }
+                {isWide ? (
+                  <>
+                    <div>{intl.formatMessage({ id: 'home.case.desc0' })}</div>
+                    <div>{intl.formatMessage({ id: 'home.case.desc1' })}</div>
+                  </>
+                ) : (
+                  <>
+                    {intl.formatMessage({ id: 'home.case.desc0' })}
+                    {intl.formatMessage({ id: 'home.case.desc1' })}
+                  </>
+                )}
               </div>
             </Col>
             <Col span={isWide ? 18 : 24}>
@@ -244,12 +234,10 @@ export default function IndexPage() {
                     <div className={styles.card}>
                       <img src={item.iconUrl} alt="icon" />
                       <div className={styles.title}>{item.title}</div>
-                      {lang === 'zh-CN' ? (
+                      {lang === 'zh-CN' && isWide ? (
                         <>
-                          <div className={styles.desc}>
-                            {item.desc0}
-                            {item.desc1}
-                          </div>
+                          <div className={styles.desc}>{item.desc0}</div>
+                          <div className={styles.desc}> {item.desc1}</div>
                         </>
                       ) : (
                         <div
@@ -266,7 +254,7 @@ export default function IndexPage() {
 
         <SubTitle title={intl.formatMessage({ id: 'home.users' })} />
         {!isWide && (
-          <a className="textLink" href="/case">
+          <a className={styles.textLink} href="/case">
             {intl.formatMessage({ id: 'home.moreDemo' })}
             <ArrowRightOutlined />
           </a>
@@ -286,7 +274,7 @@ export default function IndexPage() {
               <img src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*LsymQLEes6wAAAAAAAAAAAAADgOBAQ/original" />
             </Col>
             {isWide && (
-              <a className="textLink" href="/case">
+              <a className={styles.textLink} href="/case">
                 {intl.formatMessage({ id: 'home.moreDemo' })}
                 <ArrowRightOutlined />
               </a>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Collapse } from 'antd';
+import { Collapse, Divider } from 'antd';
 import { getLocale, useIntl } from 'umi';
 import { Row, Col, Space, Popover } from 'antd';
 import { PhoneFilled, MailFilled, SlackOutlined } from '@ant-design/icons';
@@ -311,6 +311,9 @@ export const Footer = ({ className }: { className?: string }) => {
       )}
 
       <Row className={styles.footerExtraInfo}>
+        {lang !== 'zh-CN' && !isWide ? (
+          <Divider className={styles.divider} />
+        ) : null}
         <a
           href="https://render.alipay.com/p/yuyan/180020010001196791/preview.html?agreementId=AG00000174"
           rel="noopener noreferrer"

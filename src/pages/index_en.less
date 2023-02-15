@@ -14,18 +14,6 @@ body {
     margin: auto;
   }
 
-  .textLink {
-    margin-top: 24px;
-    font-weight: 500;
-    font-size: 14px;
-    color: rgba(26, 27, 37, 0.88);
-    display: block;
-
-    span {
-      margin-left: 8px;
-    }
-  }
-
   .lightBtn {
     background: @primary-color;
     border-radius: 8px;
@@ -156,6 +144,18 @@ body {
   }
 }
 
+.textLink {
+  margin-top: 24px;
+  font-weight: 500;
+  font-size: 14px;
+  color: rgba(26, 27, 37, 0.88);
+  display: block;
+
+  span {
+    margin-left: 8px;
+  }
+}
+
 .containerWrapper {
   .noticeWrapper {
     box-shadow: 0px 0px 30px 15px rgba(0, 15, 60, 0.05);
@@ -196,6 +196,18 @@ body {
         font-size: 14px;
         color: rgba(0, 0, 0, 0.45);
         line-height: 22px;
+      }
+
+      .textLink {
+        margin-top: 24px;
+        font-weight: 500;
+        font-size: 14px;
+        color: rgba(26, 27, 37, 0.88);
+        display: block;
+
+        span {
+          margin-left: 8px;
+        }
       }
 
       .learnMore {
@@ -482,11 +494,9 @@ body {
 }
 
 @media only screen and (max-width: 767.99px) {
-  :global {
-    .textLink {
-      font-size: 3.7vw !important;
-      margin-top: 0 !important;
-    }
+  .textLink {
+    font-size: 3.7vw !important;
+    margin-top: 0 !important;
   }
   .subTitle {
     margin-bottom: 4.8vw !important;
@@ -572,6 +582,10 @@ body {
         line-height: 4.8vw !important;
         margin-bottom: 5.3vw;
       }
+      .learnMore {
+        font-size: 3.7vw !important;
+        margin-top: 0 !important;
+      }
       a {
         margin-top: 5.3vw;
       }
@@ -648,9 +662,7 @@ body {
       }
     }
   }
-  .textLink {
-    margin-top: 0px;
-  }
+
   .users {
     margin: 6.1vw 0 14.7vw 0 !important;
     img {

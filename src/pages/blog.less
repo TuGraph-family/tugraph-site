@@ -54,6 +54,11 @@
             font-size: 20px;
             color: rgba(26, 27, 37, 0.88);
             line-height: 28px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
           }
 
           .updateDate {
@@ -72,6 +77,11 @@
             text-align: justify;
             line-height: 22px;
             height: 130px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 6;
+            -webkit-box-orient: vertical;
           }
         }
       }
