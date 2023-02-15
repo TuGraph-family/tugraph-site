@@ -33,7 +33,7 @@ export default {
   'home.notice2.desc':
     'Easily create your own graph database application with simple deployment on Alibaba Cloud.',
   'home.case.title': 'SOLUTIONS',
-  'home.case.desc0': 'Thousands of times improvement',
+  'home.case.desc0': 'Thousands of times improvement ',
   'home.case.desc1':
     'help industry customers break the bottleneck of data analysis.',
   'home.case0.title': 'Financial Services',

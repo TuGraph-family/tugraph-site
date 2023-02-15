@@ -217,7 +217,7 @@ export default function IndexPage() {
                   </>
                 ) : (
                   <>
-                    {intl.formatMessage({ id: 'home.case.desc0' })}{' '}
+                    {intl.formatMessage({ id: 'home.case.desc0' })}
                     {intl.formatMessage({ id: 'home.case.desc1' })}
                   </>
                 )}
