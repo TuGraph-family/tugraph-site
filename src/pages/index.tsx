@@ -87,7 +87,11 @@ export default function IndexPage() {
           <div className={styles.desc}>
             {intl.formatMessage({ id: 'home.notice1.desc' })}
           </div>
-          <a className={styles.learnMore} href="/blog?id=3" target="_blank">
+          <a
+            className={styles.learnMore}
+            href={lang === 'zh-CN' ? `/blog?id=3` : `/blog?id=1`}
+            target="_blank"
+          >
             {intl.formatMessage({ id: 'home.knowMore' })}
             <ArrowRightOutlined />
           </a>
@@ -100,7 +104,11 @@ export default function IndexPage() {
           <div className={styles.desc}>
             {intl.formatMessage({ id: 'home.notice2.desc' })}
           </div>
-          <a className={styles.learnMore} target="_blank" href="/blog?id=12">
+          <a
+            className={styles.learnMore}
+            target="_blank"
+            href={lang === 'zh-CN' ? `/blog?id=12` : `/blog?id=10`}
+          >
             {intl.formatMessage({ id: 'home.knowMore' })}
             <ArrowRightOutlined />
           </a>

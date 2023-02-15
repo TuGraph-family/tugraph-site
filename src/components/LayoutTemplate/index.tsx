@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { setLocale, useLocation } from 'umi';
+import React, { useEffect, useState, useCallback } from 'react';
+import { setLocale, useLocation, isBrowser } from 'umi';
 import { Header } from '../Header';
 import { Banner, BannerInfoProps } from '@/components/Banner';
 import { Footer } from '@/components/Footer';
@@ -14,13 +14,16 @@ export interface LayoutProps {
 export const LayoutTemplate = ({ bannerInfo, content }: LayoutProps) => {
   const location = useLocation();
   const [isStick, setIsStick] = useState<boolean>(false);
-  const handleScroll = (e: Event) => {
+  const handleScroll = useCallback(() => {
+    if (!isBrowser()) {
+      return;
+    }
     if (document.documentElement.scrollTop > 0) {
       setIsStick(true);
     } else {
       setIsStick(false);
     }
-  };
+  }, []);
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
