@@ -16,8 +16,7 @@ export const blogs = [
   {
     id: 0,
     img: 'https://gw.alipayobjects.com/mdn/rms_fa12c2/afts/img/A*AFG0R5M7EA8AAAAAAAAAAAAAARQnAQ',
-    title:
-      'Ant graph database once again won the first place in the authoritative LDBC test',
+    title: 'TuGraph Once Again Won the First Place in the LDBC Test',
     desc: 'The Linked Data Benchmark Committee (LDBC), an international authoritative graph database testing organization, announced the latest results of the industry-wide social network benchmark (LDBC SNB). Ant Group graph database TuGraph broke the official audit test record and once again ranked first in the world.',
     type: 'news',
     updateDate: '2022-08-24',
@@ -27,7 +26,7 @@ export const blogs = [
     id: 1,
     img: 'https://gw.alipayobjects.com/mdn/rms_fa12c2/afts/img/A*KRBPSozDSSAAAAAAAAAAAAAAARQnAQ',
     title:
-      'Ant Group Opens Patents and Jointly Establishes International Financial Graph Database Test Benchmark',
+      'Ant Group Opens Patents and Jointly Establishes International Financial Graph Database Benchmark',
     desc: 'A few days ago, the Linked Data Benchmark Council (LDBC), an international authoritative technical association, announced that it unanimously approved the project approval of the first financial graph database test benchmark "LDBC Financial Benchmark" (hereinafter referred to as FinBench). FinBench was initiated by Ant Group, and domestic and foreign technology companies such as Intel and Haizhi Xingtu jointly participated in the compilation, which is used to evaluate the function and performance of graph databases in financial scenarios. At present, LDBC has set up a special working group to promote the joint construction work, and plans to officially release it by the end of 2022.',
     updateDate: '2022-05-27',
     type: 'news',
@@ -45,7 +44,7 @@ export const blogs = [
   {
     id: 3,
     img: 'https://gw.alipayobjects.com/mdn/rms_fa12c2/afts/img/A*QT2hRbUkNkUAAAAAAAAAAAAAARQnAQ',
-    title: 'Understand graph computing and graph database',
+    title: 'Understand Graph Computing and Graph Database',
     desc: 'We have to face the relationship between people and people, people and things, and things and things around us every day. Simple things and their relationships can be handled by the human brain. But in the face of massive amounts of linked data, it is necessary to use graph computing technology to deal with it.',
     updateDate: '2022-03-23',
     type: 'tech',
@@ -55,7 +54,7 @@ export const blogs = [
     id: 4,
     img: 'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*xMIOSq4QU_UAAAAAAAAAAAAADgOBAQ/original',
     title:
-      'Ant Group has open sourced graph database TuGraph, and estabilished the Graph Computing Open Source Committee',
+      'Ant Group Open Sourced Graph Database TuGraph, and Estabilished the Graph Computing Open Source Committee',
     desc: 'On September 1, at the "New Generation Graph Intelligence Technology Development and Practice Forum" of the 2022 World Artificial Intelligence Conference, Chen Wenguang, head of Ant Group Graph Computing, announced the open-source TuGraph stand-alone version of Ant Group high-performance graph database, and the establishment of the Graph Computing Open Source Technology Committee. Zheng Weimin and Chen Chun, academicians of the Chinese Academy of Engineering, serve as the chairman and vice-chairman respectively, and five well-known experts in the industry serve as committee members.',
     updateDate: '2022-09-01',
     type: 'news',
@@ -73,7 +72,7 @@ export const blogs = [
   {
     id: 6,
     img: 'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*q-6QSJrO7QYAAAAAAAAAAAAADgOBAQ/original',
-    title: 'Technology Review | TuGraph graph analysis engine',
+    title: 'Introduction to TuGraph Graph Analysis Engine',
     desc: 'The graph analysis engine, also known as the graph computing framework, is mainly used for complex graph analysis. It is a technology that can run fast loop iterations on a full dataset. Scenarios include community discovery, gene sequence prediction, importance ranking, etc. Typical algorithms include PageRank, WCC, BFS, LPA, SSSP.',
     updateDate: '2022-10-25',
     type: 'tech',
@@ -82,7 +81,7 @@ export const blogs = [
   {
     id: 7,
     img: 'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*hFSqSq5-zTcAAAAAAAAAAAAADgOBAQ/original',
-    title: 'Financial graph database selection tool "LDBC-FinBench"',
+    title: 'Financial Graph Database Selection Tool "LDBC-FinBench"',
     desc: 'The value of graph computing technology is fully reflected in financial anti-money laundering, risk control, KYC, stock recommendation and other fields. Graph database is the most important basic software of graph computing technology, and its selection plays a decisive role in the final effect of the project',
     updateDate: '2022-11-14',
     type: 'tech',
@@ -91,9 +90,8 @@ export const blogs = [
   {
     id: 8,
     img: 'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*XtLHSp8jd7kAAAAAAAAAAAAADgOBAQ/original',
-    title:
-      'TuGraph open-sourced JAVA client tool TuGraph-OGM, seamlessly connected to the JAVA development ecosystem',
-    desc: 'The TuGraph graph database provides SDK support in multiple languages such as JAVA, C++, and Python, which is convenient for customers to use in various scenarios. The user uses the SDK to send a Cypher request to the TuGraph server, and the server returns the data in the form of JSON. Recently, TuGraph launched a development tool for JAVA client users, TuGraph-OGM (Object Graph Mapping), which provides users with an object operation interface, which is more convenient to use than the Cypher/JSON interface.',
+    title: 'TuGraph Open-sourced Java Client Tool TuGraph-OGM',
+    desc: 'TuGraph provides SDK support in multiple languages such as JAVA, C++, and Python, which is convenient for customers to use in various scenarios. The user uses the SDK to send a Cypher request to the TuGraph server, and the server returns the data in the form of JSON. Recently, TuGraph launched a development tool for JAVA client users, TuGraph-OGM (Object Graph Mapping), which provides users with an object operation interface, which is more convenient to use than the Cypher/JSON interface.',
     updateDate: '2022-11-27',
     type: 'tech',
     content: md09?.html,
@@ -101,8 +99,7 @@ export const blogs = [
   {
     id: 9,
     img: 'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*YD5WQZ5OkkUAAAAAAAAAAAAADgOBAQ/original',
-    title:
-      'Technical thinking and practice of Ant high performance graph database TuGraph-DB',
+    title: `Technical Thinking and Practice of Ant Group's Graph Database`,
     desc: 'At the recently held DTCC 2022 13th China Database Technology Conference-Graph Data Technology and Application Innovation Session, Dr. Hong Chuntao, head of Ant Group’s graph database, shared his technical thinking and practice of TuGraph-DB, an ant’s high-performance graph database.',
     updateDate: '2022-12-20',
     type: 'tech',
@@ -111,7 +108,7 @@ export const blogs = [
   {
     id: 10,
     img: 'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*_H7HSYtXw5sAAAAAAAAAAAAADgOBAQ/original',
-    title: 'TuGraph graph database landed on Alibaba Cloud, free trial',
+    title: 'TuGraph Graph Database Landed on Alibaba Cloud, Free Trial',
     desc: `Ant Group's high-performance graph database TuGraph Community Edition is now available on Alibaba Cloud. Users do not need to compile and deploy by themselves, and can quickly build their own graph applications.`,
     updateDate: '2022-12-25',
     type: 'news',
