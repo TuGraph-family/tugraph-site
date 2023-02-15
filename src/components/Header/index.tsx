@@ -128,7 +128,7 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
         {
           label: (
             <a
-              href="https://github.com/TuGraph-db"
+              href="https://github.com/TuGraph-family"
               target="_blank"
               rel="noopener noreferrer"
               className={styles.menuChildren}

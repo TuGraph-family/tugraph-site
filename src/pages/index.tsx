@@ -38,7 +38,7 @@ export default function IndexPage() {
         <Button
           className={styles.github}
           onClick={() => {
-            window.open('https://github.com/TuGraph-db');
+            window.open('https://github.com/TuGraph-family');
           }}
           type="primary"
         >
