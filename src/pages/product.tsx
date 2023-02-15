@@ -1,30 +1,150 @@
-import React, { useRef, useState } from 'react';
-import { Button, Col, Menu, Row } from 'antd';
+import React from 'react';
+import { Carousel, Col, Row, Space, Tag } from 'antd';
 import { Helmet } from 'react-helmet';
-import type { BannerButtonProps } from '@/components/Banner';
-import JoLPlayer, { JoLPlayerRef } from 'jol-player';
+import JoLPlayer from '@/components/Player';
 import { SubTitle } from '@/components/SubTitle';
 import { useMedia } from 'react-use';
 import { LayoutTemplate } from '@/components/LayoutTemplate';
-import { useIntl } from 'umi';
-import cx from 'classnames';
+import { getLocale, isBrowser, useIntl } from 'umi';
+import { getFeats } from '@/data/feats';
 
-import styles from './product.less';
+import stylesZh from './product.less';
+import stylesEn from './product_en.less';
 
 export default function ProductPage() {
   const intl = useIntl();
+  const lang = getLocale();
+  const styles = lang === 'en' || lang === 'en-US' ? stylesEn : stylesZh;
   const isWide = useMedia('(min-width: 767.99px)', true);
-  const [video, setVideo] = useState<string>(
-    'https://gw.alipayobjects.com/os/bmw-prod/2145f227-08f0-435a-abe6-7f503b65da7d.mov',
+  const MOBILE_HEIGHT = isBrowser()
+    ? 266 * (document.body.clientWidth / 750)
+    : 266;
+  const SWIPE_PADDING = isBrowser()
+    ? (40 * document.body.clientWidth) / 750
+    : 40;
+  const pcVideoList = (
+    <div className={styles.videoWrapper}>
+      {isBrowser() && (
+        <Space size={25}>
+          <div className={styles.card}>
+            <JoLPlayer
+              option={{
+                videoSrc:
+                  'https://gw.alipayobjects.com/os/bmw-prod/2145f227-08f0-435a-abe6-7f503b65da7d.mov',
+                height: isWide ? 204 : 102,
+                width: 362,
+              }}
+            />
+            <Space size={12}>
+              <div className={styles.title}>
+                {intl.formatMessage({ id: 'product.video0' })}
+              </div>
+              <Tag className={styles.tag}>
+                {intl.formatMessage({ id: 'product.videoTime0' })}
+              </Tag>
+            </Space>
+          </div>
+          <div className={styles.card}>
+            <JoLPlayer
+              option={{
+                videoSrc:
+                  'https://gw.alipayobjects.com/os/bmw-prod/c9cd86a4-6bd6-48bb-8926-ef62b3995d0b.mov',
+                height: isWide ? 204 : 102,
+                width: 362,
+              }}
+            />
+            <Space size={12}>
+              <div className={styles.title}>
+                {intl.formatMessage({ id: 'product.video1' })}
+              </div>
+              <Tag className={styles.tag}>
+                {intl.formatMessage({ id: 'product.videoTime1' })}
+              </Tag>
+            </Space>
+          </div>
+          <div className={styles.card}>
+            <JoLPlayer
+              option={{
+                videoSrc:
+                  'https://gw.alipayobjects.com/mdn/rms_fa12c2/afts/file/A*CGu4RqkzzDgAAAAAAAAAAAAAARQnAQ',
+                height: isWide ? 204 : 102,
+                width: 362,
+              }}
+            />
+            <Space size={12}>
+              <div className={styles.title}>
+                {intl.formatMessage({ id: 'product.video2' })}
+              </div>
+              <Tag className={styles.tag}>
+                {intl.formatMessage({ id: 'product.videoTime2' })}
+              </Tag>
+            </Space>
+          </div>
+        </Space>
+      )}
+    </div>
   );
+  const mobileVideoList = (
+    <div className={styles.videoWrapper}>
+      <Carousel centerMode={true} centerPadding={`${SWIPE_PADDING}px`}>
+        <div className={styles.card}>
+          <JoLPlayer
+            option={{
+              videoSrc:
+                'https://gw.alipayobjects.com/os/bmw-prod/2145f227-08f0-435a-abe6-7f503b65da7d.mov',
+              height: isWide ? 204 : MOBILE_HEIGHT,
+              width: isWide ? 362 : '100%',
+            }}
+          />
+          <Space className={styles.videoInfo} align="start">
+            <div className={styles.title}>
+              {intl.formatMessage({ id: 'product.video0' })}
+            </div>
+            <Tag className={styles.tag}>
+              {intl.formatMessage({ id: 'product.videoTime0' })}
+            </Tag>
+          </Space>
+        </div>
+        <div className={styles.card}>
+          <JoLPlayer
+            option={{
+              videoSrc:
+                'https://gw.alipayobjects.com/os/bmw-prod/c9cd86a4-6bd6-48bb-8926-ef62b3995d0b.mov',
+              height: isWide ? 204 : MOBILE_HEIGHT,
+              width: isWide ? 362 : '100%',
+            }}
+          />
+          <Space className={styles.videoInfo} align="start">
+            <div className={styles.title}>
+              {intl.formatMessage({ id: 'product.video1' })}
+            </div>
+            <Tag className={styles.tag}>
+              {intl.formatMessage({ id: 'product.videoTime1' })}
+            </Tag>
+          </Space>
+        </div>
+        <div className={styles.card}>
+          <JoLPlayer
+            option={{
+              videoSrc:
+                'https://gw.alipayobjects.com/mdn/rms_fa12c2/afts/file/A*CGu4RqkzzDgAAAAAAAAAAAAAARQnAQ',
+              height: isWide ? 204 : MOBILE_HEIGHT,
+              width: isWide ? 362 : '100%',
+            }}
+          />
 
-  const buttons: BannerButtonProps[] = [
-    {
-      text: intl.formatMessage({ id: 'product.quickStart' }),
-      url: '#quickStart',
-    },
-  ];
-  const videoRef = useRef<JoLPlayerRef>(null!);
+          <Space className={styles.videoInfo} align="start">
+            <div className={styles.title}>
+              {intl.formatMessage({ id: 'product.video2' })}
+            </div>
+            <Tag className={styles.tag}>
+              {intl.formatMessage({ id: 'product.videoTime2' })}
+            </Tag>
+          </Space>
+        </div>
+      </Carousel>
+    </div>
+  );
 
   const content = (
     <div className={styles.containerWrapper}>
@@ -35,203 +155,56 @@ export default function ProductPage() {
           content={intl.formatMessage({ id: 'product.description' })}
         />
       </Helmet>
-      <div className={styles.banner}>
-        <div className={styles.title}>
-          {intl.formatMessage({ id: 'home.banner.quickStart' })}
-        </div>
-        {isWide ? (
-          <Row>
-            <Col span={16} className={styles.videoContainer}>
-              <JoLPlayer
-                ref={videoRef}
-                option={{
-                  videoSrc: video,
-                  height: 319,
-                }}
-              />
-            </Col>
-            <Col span={8} className={styles.btnGroup}>
-              <Button
-                onClick={() =>
-                  setVideo(
-                    'https://gw.alipayobjects.com/os/bmw-prod/2145f227-08f0-435a-abe6-7f503b65da7d.mov',
-                  )
-                }
-                className={cx(styles.playBtn, 'grayBtn')}
-              >
-                {intl.formatMessage({ id: 'product.banner.playDesc0' })}
-              </Button>
-              <Button
-                onClick={() =>
-                  setVideo(
-                    'https://gw.alipayobjects.com/os/bmw-prod/c9cd86a4-6bd6-48bb-8926-ef62b3995d0b.mov',
-                  )
-                }
-                className={cx(styles.playBtn, 'grayBtn')}
-              >
-                {intl.formatMessage({ id: 'product.banner.playDesc1' })}
-              </Button>
-            </Col>
-          </Row>
-        ) : (
-          <>
-            <Menu
-              mode="horizontal"
-              defaultSelectedKeys={['0']}
-              className={styles.videoMenu}
-            >
-              <Menu.Item
-                onClick={() =>
-                  setVideo(
-                    'https://gw.alipayobjects.com/os/bmw-prod/2145f227-08f0-435a-abe6-7f503b65da7d.mov',
-                  )
-                }
-                key="0"
-              >
-                {intl.formatMessage({ id: 'product.banner.playDesc0' })}
-              </Menu.Item>
-              <Menu.Item
-                onClick={() =>
-                  setVideo(
-                    'https://gw.alipayobjects.com/os/bmw-prod/c9cd86a4-6bd6-48bb-8926-ef62b3995d0b.mov',
-                  )
-                }
-                key="1"
-              >
-                {intl.formatMessage({ id: 'product.banner.playDesc1' })}
-              </Menu.Item>
-            </Menu>
-            <JoLPlayer
-              ref={videoRef}
-              option={{
-                videoSrc: video,
-                height: 240,
-              }}
-            />
-          </>
-        )}
+
+      {isWide ? pcVideoList : mobileVideoList}
+
+      <SubTitle
+        title={intl.formatMessage({ id: 'product.intro' })}
+        className={styles.subTitle}
+      />
+      <div className={styles.introWrapper}>
+        <div>{intl.formatMessage({ id: 'product.introduction0' })}</div>
+        <div>{intl.formatMessage({ id: 'product.introduction1' })}</div>
       </div>
 
-      <div className={styles.reasonWrapper}>
-        <div className={styles.reasonCard}>
-          <div>{intl.formatMessage({ id: 'product.introduction' })}</div>
-          {isWide && (
-            <img src="https://gw.alipayobjects.com/zos/bmw-prod/5eda9000-4c3c-4d30-9378-abfb25b57db3.svg" />
-          )}
-        </div>
-      </div>
-      <SubTitle title={intl.formatMessage({ id: 'product.feature' })} />
-      <Row className={styles.featCards} gutter={[24, 24]}>
-        <Col className={styles.featCard} span={isWide ? 12 : 24}>
-          {isWide && (
-            <img
-              className={styles.bgImg}
-              src="https://gw.alipayobjects.com/zos/bmw-prod/f5a9ce75-c879-4057-9d20-c993ed4e4a47.svg"
-            />
-          )}
-          <div className={styles.title}>
-            {!isWide && (
-              <img
-                className={styles.mobileImg}
-                src="https://gw.alipayobjects.com/zos/bmw-prod/f5a9ce75-c879-4057-9d20-c993ed4e4a47.svg"
-              />
-            )}
-            {intl.formatMessage({ id: 'product.feature.title0' })}
-          </div>
-          <div className={styles.desc}>
-            {intl.formatMessage({ id: 'product.feature.desc0' })}
-          </div>
-        </Col>
-        <Col className={styles.featCard} span={isWide ? 12 : 24}>
-          {isWide && (
-            <img
-              className={styles.bgImg}
-              src="https://gw.alipayobjects.com/zos/bmw-prod/3a398574-536f-4cd2-b12d-5bfdc6e45cc5.svg"
-            />
-          )}
-          <div className={styles.title}>
-            {!isWide && (
-              <img
-                className={styles.mobileImg}
-                src="https://gw.alipayobjects.com/zos/bmw-prod/3a398574-536f-4cd2-b12d-5bfdc6e45cc5.svg"
-              />
-            )}
-            {intl.formatMessage({ id: 'product.feature.title1' })}
-          </div>
-          <div className={styles.desc}>
-            {intl.formatMessage({ id: 'product.feature.desc1' })}
-          </div>
-        </Col>
-
-        <Col className={styles.featCard} span={isWide ? 12 : 24}>
-          {isWide && (
-            <img
-              className={styles.bgImg}
-              src="https://gw.alipayobjects.com/zos/bmw-prod/50eb0393-b8c9-4e23-bdcc-b6983c368b9a.svg"
-            />
-          )}
-          <div className={styles.title}>
-            {!isWide && (
-              <img
-                className={styles.mobileImg}
-                src="https://gw.alipayobjects.com/zos/bmw-prod/50eb0393-b8c9-4e23-bdcc-b6983c368b9a.svg"
-              />
-            )}
-            {intl.formatMessage({ id: 'product.feature.title2' })}
-          </div>
-          <div className={styles.desc}>
-            {intl.formatMessage({ id: 'product.feature.desc2' })}
-          </div>
-        </Col>
-        <Col className={styles.featCard} span={isWide ? 12 : 24}>
-          {isWide && (
-            <img
-              className={styles.bgImg}
-              src="https://gw.alipayobjects.com/zos/bmw-prod/7fef43b0-8b14-4e2d-8f4f-edac2d9dcf28.svg"
-            />
-          )}
-          <div className={styles.title}>
-            {!isWide && (
-              <img
-                className={styles.mobileImg}
-                src="https://gw.alipayobjects.com/zos/bmw-prod/7fef43b0-8b14-4e2d-8f4f-edac2d9dcf28.svg"
-              />
-            )}
-            {intl.formatMessage({ id: 'product.feature.title3' })}
-          </div>
-          <div className={styles.desc}>
-            {intl.formatMessage({ id: 'product.feature.desc3' })}
-          </div>
-        </Col>
-      </Row>
-      <div className={styles.reasonWrapper}>
-        <SubTitle title={intl.formatMessage({ id: 'product.choseReason' })} />
-        <div className={styles.reasonCard}>
-          <div>{intl.formatMessage({ id: 'product.choseReason0' })}</div>
-
-          <div>{intl.formatMessage({ id: 'product.choseReason1' })}</div>
-
-          {isWide && (
-            <img src="https://gw.alipayobjects.com/zos/bmw-prod/5eda9000-4c3c-4d30-9378-abfb25b57db3.svg" />
-          )}
-        </div>
+      <SubTitle
+        title={intl.formatMessage({ id: 'product.feature' })}
+        className={styles.subTitle}
+      />
+      <div className="maxContainer">
+        <Row className={styles.featCards}>
+          {getFeats(intl)?.map((item, key) => {
+            return (
+              <Col
+                span={isWide ? 12 : 24}
+                className={styles.featCardGroup}
+                key={key}
+              >
+                <div className={styles.featCard}>
+                  <Space size={16} align="start">
+                    <img src={item.icon} />
+                    <div className={styles.textGroup}>
+                      <div className={styles.title}>{item.title}</div>
+                      <div className={styles.desc}>{item.desc}</div>
+                    </div>
+                  </Space>
+                </div>
+              </Col>
+            );
+          })}
+        </Row>
       </div>
 
-      <div className={styles.quickStartWrapper}>
+      <div className={styles.ecoWrapper}>
         <SubTitle
-          title={intl.formatMessage({ id: 'product.quickStart' })}
-          style={{ marginTop: 0 }}
+          title={intl.formatMessage({ id: 'product.ecosystem' })}
+          className={styles.subTitleTop}
         />
-        <div id="quickStart" className={styles.quickStart}>
-          <div className={styles.videoWrapper}>
-            <JoLPlayer
-              option={{
-                videoSrc:
-                  'https://gw.alipayobjects.com/mdn/rms_fa12c2/afts/file/A*CGu4RqkzzDgAAAAAAAAAAAAAARQnAQ',
-                height: isWide ? 486 : 220,
-              }}
-            />
-          </div>
+        <div className="maxContainer">
+          <img
+            src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*kt3iT4DKE58AAAAAAAAAAAAADgOBAQ/original"
+            alt="ecosystem"
+          />
         </div>
       </div>
     </div>
@@ -240,12 +213,10 @@ export default function ProductPage() {
   return (
     <LayoutTemplate
       bannerInfo={{
-        buttons,
         bgIconUrl:
-          'https://gw.alipayobjects.com/mdn/rms_fa12c2/afts/img/A*0dYkQpmLLyEAAAAAAAAAAAAAARQnAQ',
-        activeKey: 'product',
-
-        slogan: intl.formatMessage({ id: 'product.banner.slogan' }),
+          'https://mdn.alipayobjects.com/mdn/huamei_qcdryc/afts/img/A*ga9NQ6eVsx4AAAAAAAAAAAAADgOBAQ',
+        slogan: intl.formatMessage({ id: 'product.slogan' }),
+        description: intl.formatMessage({ id: 'product.description' }),
       }}
       content={content}
     />

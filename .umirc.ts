@@ -4,20 +4,37 @@ export default defineConfig({
   nodeModulesTransform: {
     type: 'none',
   },
-  title: 'TuGraph 高性能图数据库',
+  title: 'site.title',
   favicon:
     'https://gw.alipayobjects.com/zos/bmw-prod/6290edfc-e134-4074-a550-079eeba9926d.svg',
   routes: [
     { path: '/', component: '@/pages/index' },
-    { path: '/product', component: '@/pages/product' },
-    { path: '/demo', component: '@/pages/demo' },
-    { path: '/doc', component: '@/pages/doc' },
-    { path: '/blog', component: '@/pages/blog' },
-    { path: '/download', component: '@/pages/download' },
-    { path: '/form', component: '@/pages/form' },
+    { path: '/product', component: '@/pages/product', title: 'product.title' },
+    { path: '/case', component: '@/pages/case', title: 'case.title' },
+    {
+      path: '/ecosystem',
+      component: '@/pages/ecosystem',
+      title: 'ecosystem.title',
+    },
+    { path: '/doc', component: '@/pages/doc', title: 'doc.title' },
+    { path: '/blog', component: '@/pages/blog', title: 'blog.title' },
+    {
+      path: '/download',
+      component: '@/pages/download',
+      title: 'download.title',
+    },
+  ],
+  scripts: [
+    `var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?e4bea71987c7daae77ee69586aad5bec";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();`,
   ],
   theme: {
-    'primary-color': '#1677FF',
+    'primary-color': 'rgba(22,80,255,1)',
   },
   chainWebpack(memo, { env, webpack }) {
     memo.module
@@ -31,18 +48,19 @@ export default defineConfig({
       .use('frontmatter-markdown-loader')
       .loader('frontmatter-markdown-loader');
   },
-  ssr: false,
+  ssr: { mode: 'stream' },
   exportStatic: {},
   fastRefresh: {},
   request: {
     dataField: '',
   },
+  hash: true,
   locale: {
     antd: true,
-    baseNavigator: true,
+    baseNavigator: false,
     baseSeparator: '-',
-    default: 'zh-CN',
     title: true,
-    useLocalStorage: true,
+    default: 'en-US',
+    useLocalStorage: false,
   },
 });

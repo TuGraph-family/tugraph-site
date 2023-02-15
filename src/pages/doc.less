@@ -1,17 +1,19 @@
 .headerWrapper {
-  padding: 0 40px;
+  background-color: #fff;
   box-shadow: 0 2px 8px 0 rgba(240, 241, 242, 0.65);
-  z-index: 9998;
-  transition: all 0.3s;
+  position: sticky;
+  top: 0;
+  transition: all ease 0.3s;
+  z-index: 999;
 }
 
 .sideWrapper {
   text-align: center;
   border-right: 1px solid #ebedf0;
   padding-top: 40px;
-  max-height: 100vh;
-  height: 100vh;
+  height: 100%;
   overflow-y: auto;
+  overflow-x: hidden;
   margin-bottom: 389px;
   position: fixed;
   z-index: 999;
@@ -47,6 +49,7 @@
 }
 
 .containerWrapper {
+  background-color: #fff;
   padding: 40px;
   margin-left: 242px;
 
@@ -84,6 +87,7 @@
   }
 
   img {
+    max-width: 750px;
     width: 100%;
   }
 
@@ -118,7 +122,7 @@
     display: table;
     max-width: 100% !important;
     width: 100%;
-    margin-top: 24px;
+    margin: 24px 0 20px 0;
     table-layout: fixed;
     border: 1px solid rgba(105, 122, 140, 0.1);
 
@@ -172,33 +176,28 @@
   }
 }
 
-@media only screen and (max-width: 1024px) {
-  .headerWrapper {
-    padding: 0 100px;
-    transition: all 0.3s;
+.docFooter {
+  margin-left: 242px;
+  :global {
+    #tugraphFooter {
+      max-width: 958px !important;
+    }
   }
 }
 
 @media only screen and (max-width: 931.99px) {
-  .headerWrapper {
-    padding: 0 70px;
-  }
-
   .containerWrapper {
     padding: 32px 24px;
     img {
       width: 100%;
     }
   }
+  .docFooter {
+    margin-left: 0;
+  }
 }
 
 @media only screen and (max-width: 767.99px) {
-  .headerWrapper {
-    padding: 24px;
-    height: 96px;
-    transition: all 0.3s;
-  }
-
   .containerWrapper {
     padding: 32px 24px;
     margin: 0;

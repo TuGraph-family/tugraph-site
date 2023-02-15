@@ -2,10 +2,10 @@ import {
   queryCategory,
   queryVersions,
   queryDocDetail,
-} from '../services/DocsController';
+} from '../services/DocsENController';
 import { useRequest } from 'umi';
 
-export const useGetDocsInfo = () => {
+export const useGetENDocsInfo = () => {
   const { run: getCategoryList } = useRequest(queryCategory, { manual: true });
   const { run: getVersions } = useRequest(queryVersions, { manual: true });
   const { run: getDocDetail } = useRequest(queryDocDetail, { manual: true });

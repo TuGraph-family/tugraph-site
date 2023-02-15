@@ -1,0 +1,218 @@
+.containerWrapper {
+  max-width: 1200px;
+  margin: auto;
+
+  .cardWrapper {
+    background-color: #ffffff;
+    box-shadow: 0 3px 6px -4px rgba(132, 135, 155, 0.12),
+      0 6px 16px 0 rgba(132, 135, 155, 0.08),
+      0 9px 28px 8px rgba(132, 135, 155, 0.05);
+    border-radius: 12px;
+    padding: 32px;
+    text-align: center;
+
+    .groupTitle,
+    .title {
+      font-family: AlibabaPuHuiTi_2_85_Bold;
+      font-size: 32px;
+      color: rgba(26, 27, 37, 0.88);
+      text-align: center;
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+
+    .groupDescription {
+      font-family: AlibabaPuHuiTi_2_55_Regular;
+      font-size: 14px;
+      color: rgba(26, 27, 37, 0.45);
+      text-align: center;
+      line-height: 22px;
+      margin-bottom: 32px;
+    }
+    .description {
+      font-family: AlibabaPuHuiTi_2_55_Regular;
+      font-size: 14px;
+      color: rgba(26, 27, 37, 0.45);
+      text-align: center;
+      line-height: 22px;
+    }
+  }
+
+  .typeWrapper {
+    .typeItem {
+      height: 100%;
+      background-color: rgba(22, 80, 255, 0.04);
+      border-radius: 12px;
+      padding: 24px;
+      text-align: left;
+      font-family: PingFangSC;
+
+      .title {
+        font-weight: 500;
+        font-size: 16px;
+        color: rgba(26, 27, 37, 0.88);
+        line-height: 24px;
+        margin: 12px 0 8px 0;
+        text-align: left;
+        font-family: PingFangSC;
+      }
+
+      .description {
+        font-weight: 400;
+        font-size: 14px;
+        color: rgba(26, 27, 37, 0.45);
+        letter-spacing: 0;
+        text-align: justify;
+        line-height: 22px;
+        font-family: PingFangSC;
+      }
+    }
+  }
+
+  .enSupportItemPadding {
+    padding: 14px 24px;
+  }
+
+  .supportWrapper {
+    .supportItem {
+      height: 84px;
+      background-color: rgba(22, 80, 255, 0.04);
+      border-radius: 12px;
+      padding: 24px;
+      text-align: left;
+
+      div {
+        font-weight: 500;
+        font-size: 16px;
+        color: rgba(26, 27, 37, 0.88);
+        line-height: 28px;
+      }
+    }
+  }
+}
+
+.contactBtn {
+  height: 48px;
+  width: 160px;
+  background-color: @primary-color;
+  border-radius: 8px;
+  margin-top: 32px;
+  padding: 12px 32px;
+  color: #fff;
+  margin-left: 1px;
+
+  :global {
+    .ant-anchor-link {
+      padding: 0;
+    }
+
+    .ant-anchor-ink::before {
+      display: none;
+    }
+
+    .ant-anchor-link-title {
+      font-weight: 500;
+      font-size: 16px;
+      color: #ffffff;
+      text-align: center;
+      line-height: 24px;
+    }
+  }
+}
+
+@media only screen and (max-width: 767.99px) {
+  .cardWrapper {
+    margin-bottom: 2.7vw !important;
+    padding: 6.4vw 4.3vw 4.3vw 4.3vw !important;
+    .groupTitle {
+      font-size: 6.4vw !important;
+      font-weight: 600 !important;
+      line-height: 9.06vw !important;
+    }
+    .groupDescription {
+      font-size: 3.2vw !important;
+      line-height: 4.8vw !important;
+      margin-top: 2.1vw;
+      margin-bottom: 4.8vw !important;
+      font-family: PingFangSC !important;
+      color: rgba(26, 27, 37, 0.65);
+    }
+    .title {
+      font-size: 3.7vw !important;
+    }
+    .description {
+      font-size: 3.2vw !important;
+      line-height: 4.8vw !important;
+      margin-top: 1.6vw !important;
+    }
+    .typeWrapper {
+      font-family: PingFangSC;
+      :global {
+        .ant-row {
+          row-gap: 2.7vw !important;
+        }
+      }
+      .typeItem {
+        border-radius: 1.6vw !important;
+        height: 100% !important;
+        padding: 4.3vw !important;
+        display: flex;
+        align-items: start;
+        .title {
+          font-size: 3.7vw !important;
+          line-height: 5.3vw !important;
+          margin: 0 !important;
+          font-weight: 500 !important;
+        }
+        img {
+          width: 5.3vw !important;
+          height: 5.3vw !important;
+          margin: 0vw 1.6vw 0 0;
+        }
+        .desc {
+          line-height: 4.8vw !important;
+          font-size: 3.2vw !important;
+          margin-top: 1.6vw !important;
+        }
+        :global {
+          .ant-space-align-center {
+            align-items: flex-start;
+          }
+        }
+      }
+    }
+    .supportWrapper {
+      :global {
+        .ant-row {
+          row-gap: 2.7vw !important;
+        }
+      }
+    }
+    .supportItem {
+      height: 100% !important;
+      border-radius: 1.6vw !important;
+      padding: 4.26vw !important;
+      div {
+        font-size: 3.7vw !important;
+        font-weight: 500 !important;
+        line-height: 5.33vw !important;
+        font-family: PingFangSC !important;
+      }
+      img {
+        width: 5.3vw !important;
+      }
+    }
+  }
+  .contactBtn {
+    height: 100%;
+    width: 29.3vw;
+    height: 9.6vw;
+    border-radius: 8px;
+    margin: 0 auto 7.7vw auto;
+    padding: 1.7vw;
+    a {
+      font-size: 3.2vw !important;
+      font-weight: 500;
+    }
+  }
+}

@@ -1,235 +1,224 @@
 .containerWrapper {
-  .banner,
-  .reasonCard {
+  .videoWrapper {
+    box-shadow: 0px 0px 30px 15px rgba(0, 15, 60, 0.05);
     border-radius: 12px;
-    box-shadow: 0 10px 30px 12px rgba(158, 181, 213, 0.1);
-    border-radius: 12px;
-    background-color: #fff;
-  }
+    padding: 32px;
+    background: #ffffff;
+    width: 1200px;
+    margin: auto;
 
-  .banner {
-    padding: 40px;
-    height: 478px;
-    max-width: 1200px;
-    margin: auto auto 120px auto;
+    .card {
+      video {
+        border-radius: 8px;
+      }
 
-    .title {
-      font-weight: 500;
-      font-size: 24px;
-      color: rgba(0,0,0,0.85);
-      margin-bottom: 32px;
-    }
-
-    .videoContainer {
-      padding-right: 30px;
-    }
-
-    video {
-      border-radius: 8px;
-    }
-
-    .btnGroup {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding-left: 10px;
-
-      .playBtn {
-        margin: 20px 0;
+      .title {
         font-weight: 500;
         font-size: 20px;
-        background-color: #F3F5F8;
-        border: 1px solid #F3F5F8;
-        border-radius: 8px;
-        color: rgba(0,0,0,0.85); 
-        cursor: pointer;
-        height: 70px;
-        width: 362px !important;
+        color: rgba(26, 27, 37, 0.88);
+        margin-top: 16px;
+      }
+
+      .tag {
+        margin-top: 12px;
+        height: 24px;
+        text-align: center;
+        width: 68px;
+        padding: 2px 8px;
+        background-color: rgba(0, 0, 0, 0.06);
+        border-radius: 4px;
+        font-weight: 400;
+        font-size: 12px;
+        border: none;
+        color: rgba(0, 0, 0, 0.65);
       }
     }
+  }
 
-    .videoMenu {
-      margin-bottom: 40px;
-      border-bottom: none;
-    }
+  .introWrapper {
+    font-weight: 400;
+    font-size: 14px;
+    color: rgba(26, 27, 37, 0.65);
+    text-align: center;
+    line-height: 22px;
+    max-width: 1200px;
+    margin: auto;
   }
 
   .featCards {
     display: flex;
     justify-content: center;
-    align-items: center;
     margin: -12px;
 
-    .featCard {
-      min-height: 271px;
-      max-width: 580px;
-      margin: 0 12px;
-      border-radius: 12px;
-      background-color: #ffffff;
-      box-shadow: 0 10px 30px 10px rgba(158, 181, 213, 0.1);
-      padding: 40px 32px !important;
-      text-align: center;
+    .featCardGroup {
+      min-height: 187px;
+      width: 100%;
+      max-width: 1184px;
+      padding: 12px;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .featCard {
+        border-radius: 12px;
+        background-color: rgba(22, 80, 255, 0.04);
+        width: 100%;
+        height: 100%;
+        padding: 32px;
+        margin: auto;
+
+        img {
+          margin-bottom: 71px;
+          width: auto;
+          height: 77px;
+        }
+      }
 
       .title {
         font-weight: 500;
         font-size: 20px;
-        color: rgba(0, 0, 0, 0.85);
-        line-height: 24px;
-        margin: -8px 0 16px 0;
-        background-color: #fff;
+        color: rgba(26, 27, 37, 0.88);
+        line-height: 28px;
+        text-align: left;
+        width: 100%;
+        margin-bottom: 8px;
       }
 
       .desc {
+        font-weight: 400;
         font-size: 14px;
-        color: #697a8c;
+        color: rgba(26, 27, 37, 0.45);
+        text-align: justify;
         line-height: 22px;
+        height: 112px;
       }
     }
   }
 
-  .reasonWrapper {
-    .reasonCard {
+  .ecoWrapper {
+    background-image: url(https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*H1z6QbQW9vMAAAAAAAAAAAAADgOBAQ/original);
+    background-size: cover;
+    margin: 71px -120px -72px -120px;
+    padding: 1px 120px 72px 120px;
+
+    img {
       max-width: 1200px;
-      margin: auto;
-      padding: 80px 56px;
-      position: relative;
-      font-weight: 400;
-      font-size: 20px;
-      color: rgba(51, 51, 51, 0.89);
-      letter-spacing: 1.14px;
-      line-height: 30px;
-
-      img {
-        position: absolute;
-        top: 40px;
-        right: 37px;
-      }
-    }
-  }
-
-  .quickStartWrapper {
-    margin: 60px -120px;
-    padding: 60px 40px;
-    background-color: #F5F7FA;
-
-    .quickStart {
-      display: flex;
-      justify-content: center;
-
-      .videoWrapper {
-        height: 561px;
-        width: 958px;
-        padding: 37px 49px;
-        margin-bottom: 120px;
-
-        video {
-          border-radius: 8px;
-        }
-      }
+      padding: 32px;
+      background-color: #ffffff;
+      box-shadow: 0 3px 6px -4px rgba(132, 135, 155, 0.12),
+        0 6px 16px 0 rgba(132, 135, 155, 0.08),
+        0 9px 28px 8px rgba(132, 135, 155, 0.05);
+      border-radius: 12px;
     }
   }
 }
 
-@media only screen and (max-width: 931.99px) {
-  .containerWrapper {
-    .reasonWrapper {
-      .reasonCard {
-        margin: 32px;
-        padding: 64px 32px;
-        height: auto;
-      }
+:global {
+  .JoL-controller-container {
+    .play-icon {
+      width: 26px !important;
+      height: 26px !important;
     }
+  }
+  .JoL-player-container .tooltip .hover-icon-animate {
+    font-size: 14px !important;
   }
 }
 
 @media only screen and (max-width: 767.99px) {
   .containerWrapper {
-    .banner {
-      padding: 24px;
+    transition: all ease 0.3s;
+    .subTitle {
+      margin-bottom: 4.8vw !important;
     }
-    .banner {
-      margin-bottom: 88px;
-      .btnGroup {
-        margin-top: 32px;
-        width: 100%;
-        display: inline-block;
-
-        button {
-          height: 42px;
-          width: 50%;
-        }
-
-        .left {
-          border-radius: 8px 0 0 8px;
-        }
-
-        .right {
-          border-radius: 0 8px 8px 0;
+    .videoWrapper {
+      width: 100vw;
+      margin: -9.2vw -3.2vw 0 -3.2vw;
+      background: none !important;
+      border-radius: 0 !important;
+      box-shadow: none !important;
+      padding: 0 !important;
+      :global {
+        .ant-carousel .slick-dots-bottom {
+          bottom: 5.9vw;
         }
       }
-    }
+      .card {
+        padding: 3.2vw !important;
+        height: 48.8vw;
+        border-radius: 1.6vw;
+        text-align: left;
+        width: 86.7vw !important;
+        box-shadow: 0 3px 6px -4px rgba(132, 135, 155, 0.12),
+          0 6px 16px 0 rgba(132, 135, 155, 0.08),
+          0 9px 28px 8px rgba(132, 135, 155, 0.05);
+        background: #ffffff;
+        margin: 9.2vw 0;
+        .videoInfo {
+          text-align: left;
+          display: flex;
+          margin-top: 1.6vw !important ;
+          .title {
+            font-size: 3.7vw !important;
+            margin: 0 !important;
+          }
 
-    .featCards {
-      margin: 0 !important;
-      padding: 0 16px;
-      display: block;
-
-      .featCard {
-        margin: 16px auto;
-        padding: 32px 16px !important;
-        height: auto;
-
-        .title {
-          .mobileImg {
-            display: block;
-            width: 100px;
-            height: 100px;
-            margin: 50px auto;
+          .tag {
+            font-size: 2.13vw !important;
+            height: 100% !important;
+            line-height: 3.2vw !important;
+            text-align: center;
+            padding: 0.53vw 2.13vw !important;
+            width: 13.3vw !important;
+            margin-top: 0.56vw !important;
           }
         }
-
-        .bgImg {
-          width: 70px;
-          left: 16px !important;
-          top: 216px !important;
+      }
+    }
+  }
+  .introWrapper {
+    font-size: 3.2vw !important;
+    line-height: 4.8vw !important;
+    margin: 0 0 13.3vw 0 !important;
+  }
+  .featCards {
+    margin-bottom: 13.3vw !important;
+    .featCardGroup {
+      min-height: 0 !important;
+      height: 100% !important;
+      .title {
+        font-size: 3.7vw !important;
+        margin-bottom: 0 !important;
+        line-height: 5.3vw !important;
+      }
+      .desc {
+        font-size: 3.2vw !important;
+        text-align: left !important;
+        line-height: 4.8vw !important;
+        margin-top: 1.6vw !important;
+        height: 100% !important;
+      }
+      .featCard {
+        padding: 4.3vw !important;
+        img {
+          height: 11.73vw !important;
+        }
+        :global {
+          .ant-space-align-center {
+            align-items: flex-start;
+          }
         }
       }
     }
-
-    .reasonWrapper {
-      margin: 120px 0;
-
-      .reasonCard {
-        margin: 0;
-        padding: 0;
-        height: auto;
-        box-shadow: none;
-      }
-    }
-
-    .quickStartWrapper {
-      background-color: #F5F7FA;
-      padding: 32px 16px;
-      margin: 0 -16px;
-    }
-
-    .quickStart {
-      display: block;
-
-      .videoWrapper {
-        width: 100%;
-        padding: 0;
-        height: auto;
-        display: block;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 120px;
-
-        video {
-          border-radius: 6px;
-        }
-      }
+  }
+  .ecoWrapper {
+    margin: 0 -120px -12.9vw -120px !important;
+    padding: 1px 120px 13.3vw 120px !important;
+    img {
+      width: 100% !important;
+      padding: 4.3vw !important;
+      border-radius: 1.6vw !important;
     }
   }
 }

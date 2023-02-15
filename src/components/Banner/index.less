@@ -1,10 +1,9 @@
 .banner {
   background-repeat: no-repeat;
-  background-position-y: -20px; 
+  margin-top: -56px;
   width: 100%;
-  padding: 0 120px;
   background-size: cover;
-  padding: 0 120px;
+  padding: 68px 120px 0 120px;
 
   .containerWrapper {
     max-width: 1200px;
@@ -13,138 +12,67 @@
     flex-direction: column;
     justify-content: center;
 
-    .notice {
-      font-size: 20px;
-      color: rgba(0,0,0,0.65);
-    }
-    
-    .slogan {
-      line-height: 90px;
-      max-width: 614px;
-      font-size: 56px;
-      font-weight: 600;
-      color: #000A1B;
-      margin: 80px 0 0 0;
+    .description {
+      font-family: AlibabaPuHuiTi_2_55_Regular;
+      font-size: 14px;
+      color: rgba(26, 27, 37, 0.65);
+      line-height: 22px;
     }
 
-    .subTitle {
-      font-size: 36px;
-      color: #000A1B;
+    .slogan {
+      line-height: 68px;
+      font-family: AlibabaPuHuiTi_2_95_ExtraBold;
+      max-width: 630px;
+      font-size: 48px;
+      font-weight: 600;
+      color: rgba(26, 27, 37, 0.88);
+    }
+
+    .bannerImg {
+      margin: 55px 0 0 0px;
+      z-index: 998;
+      width: 690px;
     }
 
     .pcIcon {
-      width: 70%;
-      height: auto;
+      width: auto;
+      height: 375px;
     }
-
-    .btnGroup {
-      margin-top: 48px;
-      .primaryBtn {
-        cursor: pointer;
-        border-radius: 8px;
-        width: 180px;
-        height: 48px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background: @primary-color;
-        border-color:  @primary-color;
-        font-size: 14px;
-
-        &:hover {
-          border-color: #40a9ff;
-          background: #40a9ff;
-          transition: all ease 0.3s;
-        }
-
-        :global {
-          .ant-anchor-ink {
-            display: none;
-          }
-
-          .ant-anchor-link {
-            padding: 0;
-          }
-
-          .ant-anchor-link-title:only-child {
-            font-size: 16px;
-            color: rgba(255, 255, 255, 0.89);
-          }
-        }
-      }
-    }
-  }
-}
-
-@media only screen and (max-width: 1024px) {
-  .banner {
-    padding: 0 100px;    
-  }
-}
-
-@media only screen and (max-width: 931.99px) {
-  .banner {
-    padding: 0 64px;
-    justify-content: c;
-    .containerWrapper {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      transition: all .3s;
-    }
-    
-    .slogan {
-      text-align: center;
-      margin: 64px 0;
-      transition: all .3s;
-    }
-    
   }
 }
 
 @media only screen and (max-width: 767.99px) {
   .banner {
-    background: url('https://gw.alipayobjects.com/zos/bmw-prod/0772c82c-b10f-49e9-9355-55a5348bc860.svg') !important;
-    padding: 24px;
+    padding: 6.4vw;
     height: 100% !important;
+    margin-top: -12vw;
 
     .containerWrapper {
       margin: 0;
-      
-      .btnGroup {
-        margin: 24px 0 120px 0;
-
-        .primaryBtn {
-          width: 160px;
-        }
-
-        :global {
-          .grayBtn {
-            width: 160px !important
-          }
-          
-        }
-      }
 
       .slogan {
-        margin: 120px 0 0 0;
+        min-width: 87.2vw;
+        font-size: 7.98vw;
+        line-height: 11.2vw;
+        color: rgba(26, 27, 37, 0.88);
+        font-family: AlibabaPuHuiTi_2_95_ExtraBold;
         text-align: center;
-        font-size: 38px;
-        line-height: 60px;
-        transition: all .3s;
+        margin: 19.7vw 0 0 0;
+        transition: all 0.3s;
       }
-
-      .subTitle {
-        line-height: 0;
-        font-size: 22px;
-        margin-top: 24px;
+      .description {
+        font-size: 4vw;
+        color: rgba(26, 27, 37, 0.65);
+        text-align: center;
+        line-height: 6.4vw;
+        margin-top: 2.1vw;
+        transition: all 0.3s;
+        margin-bottom: 6.4vw;
       }
 
       .mobileIcon {
-        margin: 60px auto;
-        width: 80%;
+        width: 92vw;
+        margin: 0 auto 6.4vw auto;
       }
     }
   }

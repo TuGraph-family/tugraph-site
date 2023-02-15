@@ -1,37 +1,54 @@
 .footer {
-  background: #00122B;
-  height: 389px;
+  background: rgba(1, 19, 43, 1);
+  height: 388px;
   z-index: 9;
 
-  a,
   .contactGroup {
     font-size: 16px;
     font-weight: 400;
-    color: rgba(255,255,255,0.89);
+    color: rgba(255, 255, 255, 0.89);
+  }
+  .slack {
+    font-size: 5.2vw;
+    color: #fff;
+    display: block;
   }
 
   a:hover {
-    color:#1890ff;
+    color: #1890ff;
   }
 
-  .contactGroup {
-    padding: 88px 120px 20px 120px;
+  .containerWrapper {
+    max-width: 1200px;
+    margin: auto;
+    padding: 57px 0 56px 0;
+    .title {
+      font-weight: 500;
+      font-size: 14px;
+      color: #ffffff;
+      line-height: 24px;
+      margin-bottom: 17px;
+    }
+
+    a,
+    .item {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.65);
+      line-height: 22px;
+
+      display: block;
+    }
+
+    .item {
+      margin-top: 12px;
+    }
 
     .iconGroup {
       margin: 36px 0 30px 0;
-      
+
       img {
         cursor: pointer;
       }
-    }
-    
-    .contactInfo {
-      a,
-      div {
-        font-size: 14px;
-        color: rgba(255,255,255,0.65);
-      }
-     
     }
   }
 
@@ -42,32 +59,34 @@
   }
 
   .qrCode {
-    height: 202px;
-    width: 156px;
-    background-color: #01132B;
-    box-shadow: -7px 27px 60px 0 rgb(1 2 30 / 63%);
-    border-radius: 4px;
+    height: 211px;
+    width: 164px;
+    background-color: rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
     padding: 24px;
     text-align: center;
-    
+
     .desc {
       margin-top: 16px;
       font-size: 14px;
-      color: rgba(255,255,255,0.89)
+      color: rgba(255, 255, 255, 0.89);
     }
 
     .subDesc {
       margin-top: 8px;
       font-size: 12px;
-      color: rgba(255,255,255,0.65);
+      color: rgba(255, 255, 255, 0.65);
     }
-    
-  
+
+    img {
+      border-radius: 8px;
+      width: 100px;
+    }
   }
 
   .footerExtraInfo {
-    border-top: 1px solid #353c45;
-    height: 78px;
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
+    height: 64px;
     text-align: center;
     display: flex;
     justify-content: center;
@@ -75,7 +94,7 @@
     a,
     div {
       font-size: 14px;
-      color: rgba(255,255,255,0.65);
+      color: rgba(255, 255, 255, 0.65);
     }
     a {
       text-decoration: underline;
@@ -91,51 +110,131 @@
 
 @media only screen and (max-width: 767.99px) {
   .footer {
-    padding: 80px 24px;
-    color: rgba(255,255,255,0.89);
+    padding: 3.2vw;
+    color: rgba(255, 255, 255, 0.89);
     font-weight: 400;
-    font-size: 16px;
     height: auto;
 
-    .logo {
-      margin-bottom: 76px;
-    }
-    
     .qrCode {
-      text-align: center;
-      height: 100%;
-      padding: 48px;
-      width: 300px;
-      margin: 80px auto;
-      background-color: #01132B;
-      box-shadow: -14px 54px 120px 0 rgba(1,2,30,0.90);
-      border-radius: 8px;
+      height: 19.7vw;
+      text-align: left;
+      padding: 3.2vw;
+      width: 100%;
+      margin: 3.2vw auto;
+      background-color: rgba(255, 255, 255, 0.08);
 
       img {
-        width: 204px;
-        height: 204px;
+        border-radius: 1.1vw;
+        width: 13.3vw;
+        height: 13.3vw;
+      }
+
+      .group {
+        .desc {
+          color: #fff;
+          font-weight: 500;
+          font-size: 3.7vw;
+          width: 19.7vw;
+          height: 5.3vw;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          margin-top: 0px;
+        }
+
+        .subDesc {
+          font-weight: 400;
+          font-size: 2.6vw;
+          color: rgba(255, 255, 255, 0.65);
+          line-height: 4vw;
+          margin-top: 2.6vw;
+          overflow: hidden;
+          width: 19.7vw;
+          height: 4vw;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
       }
     }
-    
+
     .contactInfo {
       margin: 0;
-      display: flex;
-      flex-direction: column;
-      color: rgba(255,255,255,0.85);
-      line-height: 48px;
+      color: #fff;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.25);
 
       img {
-        width: 24px;
+        width: 3.82vw;
         height: auto;
-        margin: 32px 0;
+        margin: 3.2vw 0;
       }
     }
 
     .footerExtraInfo {
-      margin: 0 -24px 40px -24px;
-      padding: 24px;
-      height: 64px;
+      margin: 0;
+      padding: 0;
+      height: auto;
+      border: none;
+      display: block;
+      font-family: PingFangSC;
+      font-weight: 400;
+
+      .divider {
+        height: 1px;
+        background: rgba(255, 255, 255, 0.25);
+      }
+
+      a,
+      div {
+        font-size: 2.22vw;
+        color: rgba(255, 255, 255, 0.65);
+      }
+
+      a {
+        margin-bottom: 1.1vw;
+        display: block;
+      }
     }
 
+    .textGroup {
+      .item {
+        display: block;
+        color: #fff;
+        height: 12.8vw;
+        padding: 4.3vw 5.3vw;
+      }
+
+      :global {
+        .ant-collapse {
+          border-radius: 0;
+          background-color: #01132b;
+          border: none;
+          .ant-collapse-item {
+            border: none;
+            .ant-collapse-header {
+              height: 12.8vw;
+              padding: 3.2vw 0;
+              font-size: 3.7vw;
+              color: #fff;
+              .ant-collapse-arrow {
+                font-size: 3.7vw;
+              }
+            }
+          }
+        }
+        .ant-collapse-content {
+          font-weight: 400;
+          font-size: 3.2vw;
+          color: #fff;
+          background-color: #01132b;
+          border: none;
+          a {
+            color: #fff;
+          }
+          .ant-collapse-content-box {
+            padding: 0;
+          }
+        }
+      }
+    }
   }
 }

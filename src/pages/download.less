@@ -1,61 +1,105 @@
 .containerWrapper {
-  margin-bottom: 120px;
+  max-width: 1200px;
+  margin: auto;
+  background-color: #ffffff;
+  box-shadow: 0 3px 6px -4px rgba(132, 135, 155, 0.12),
+    0 6px 16px 0 rgba(132, 135, 155, 0.08),
+    0 9px 28px 8px rgba(132, 135, 155, 0.05);
   border-radius: 12px;
-  box-shadow: 0 10px 30px 10px rgba(158,181,213,0.10);
-  border-radius: 12px;
-  background-color: #FFFFFF;
-  padding: 40px 80px;
+  padding: 0 32px 16px 32px;
+  overflow: hidden;
+
+  .title {
+    margin: 32px 0 20px 0;
+    font-family: PingFangSC;
+    font-weight: 500;
+    font-size: 20px;
+    color: rgba(26, 27, 37, 0.88);
+  }
+
+  .right {
+    text-align: right;
+  }
 
   .list {
-    height: 130px;
-    font-weight: 500;
-    font-size: 24px;
-    color: #00122B;
     letter-spacing: 0;
     display: flex;
+    padding: 24px 32px;
     align-items: center;
-    border-bottom: 1px solid #f2f2f2;
-    
-    &:last-child {
-      border-bottom: none;
+    height: 80px;
+    background-color: rgba(22, 80, 255, 0.04);
+    border-radius: 8px;
+    margin: 16px 0;
+
+    .listName {
+      font-family: PingFangSC;
+      font-weight: 500;
+      font-size: 16px;
+      color: rgba(26, 27, 37, 0.88);
+    }
+
+    .listVersions {
+      width: 100px;
+      font-weight: 400;
+      font-size: 16px;
+      color: rgba(26, 27, 37, 0.65);
     }
   }
 
   button {
-    width: 175px;
-    height: 40px;
-    font-weight: 500;
-    background-color: @primary-color;
+    height: 32px;
+    width: 100px !important;
+    background-color: rgba(255, 255, 255, 1);
+    border: 1px solid rgba(26, 27, 37, 0.15);
     border-radius: 8px;
-    font-size: 18px;
-    color: rgba(255,255,255,0.89);
-    letter-spacing: 1.03px;
-    text-align: center;
-    line-height: 26px;
+    color: rgba(26, 27, 37, 0.88);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
   }
 }
 
-
 @media only screen and (max-width: 767.99px) {
   .containerWrapper {
-    padding: 40px;
-
+    box-shadow: none;
+    padding: 0 0 13.3vw 0;
+    text-align: left;
+    background: #fff0;
+    margin: 8.8vw -3.2vw -13.3vw -3.2vw;
+    .title {
+      font-size: 3.7vw;
+      margin: 6.4vw 3.2vw 3.2vw 3.2vw;
+    }
     button {
-      height: 42px;
-      font-size: 14px;
-      margin-bottom: 24px;
+      background-color: #fff;
+      height: 9.1vw;
+      width: 100% !important;
+      font-size: 3.7vw;
     }
-    
-    .listName {
-      text-align: left;
-    }
-
-    .listVersion {
-      font-weight: 400;
-      font-size: 24px;
-      color: rgba(0,0,0,0.65);
-      line-height: 54px;
-      text-align: right;
+    .list {
+      height: 100%;
+      margin: 0 3.2vw 2.7vw 3.2vw;
+      padding: 4.3vw;
+      background-color: #fff;
+      box-shadow: 0 3px 6px -4px rgba(132, 135, 155, 0.12),
+        0 6px 16px 0 rgba(132, 135, 155, 0.08),
+        0 9px 28px 8px rgba(132, 135, 155, 0.05);
+      border-radius: 1.1vw;
+      .listName {
+        font-size: 3.7vw;
+        padding-bottom: 3.2vw;
+      }
+      .right {
+        padding-bottom: 3.2vw;
+      }
+      .listVersions {
+        width: 100%;
+      }
+      :global {
+        .ant-select-selection-item {
+          font-size: 3.2vw;
+        }
+      }
     }
   }
 }

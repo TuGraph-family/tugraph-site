@@ -1,19 +1,23 @@
 import React from 'react';
-import { useIntl } from 'umi';
+import { Collapse, Divider } from 'antd';
+import { getLocale, useIntl } from 'umi';
 import { Row, Col, Space, Popover } from 'antd';
-import { PhoneFilled, MailFilled, EnvironmentFilled } from '@ant-design/icons';
+import { PhoneFilled, MailFilled, SlackOutlined } from '@ant-design/icons';
 import { useMedia } from 'react-use';
 
 import styles from './index.less';
 
+const { Panel } = Collapse;
+
 export const Footer = ({ className }: { className?: string }) => {
   const intl = useIntl();
   const isWide = useMedia('(min-width: 767.99px)', true);
+  const lang = getLocale();
 
   const icons = [
     {
       icon: 'https://gw.alipayobjects.com/zos/bmw-prod/5bb7aed7-7b96-4f15-9147-6ba150e5a220.svg',
-      url: 'https://github.com/TuGraph-db',
+      url: 'https://github.com/TuGraph-family',
     },
     {
       icon: 'https://gw.alipayobjects.com/zos/bmw-prod/eba3a225-f8a3-4c56-ad7a-339a60707a49.svg',
@@ -23,63 +27,119 @@ export const Footer = ({ className }: { className?: string }) => {
       icon: 'https://gw.alipayobjects.com/zos/bmw-prod/db10078e-ebc9-4d19-b13a-18d07f327c8c.svg',
       url: 'https://space.bilibili.com/1196053065/',
     },
-    // {
-    //   icon: 'https://gw.alipayobjects.com/zos/bmw-prod/88933248-acee-4d21-9daf-242670675dbc.svg',
-    //   url: 'https://zhuanlan.zhihu.com/p/141047442',
-    // },
   ];
 
   const pc = (
-    <div className={className}>
-      <Row className={styles.contactGroup}>
-        <Col span={21}>
-          <div>{intl.formatMessage({ id: 'home.version.contactUs' })}</div>
-          <Space id="contactUs" size={26} className={styles.iconGroup}>
-            {icons.map((item, key) => {
-              return item?.url ? (
-                <a key={key} href={item.url} rel="noopener noreferrer">
-                  <img src={item.icon} />
-                </a>
-              ) : (
-                <Popover
-                  key={key}
-                  content={
-                    <img
-                      style={{ width: '200px', height: '200px' }}
-                      src={item.img}
-                    />
-                  }
-                >
-                  <img src={item.icon} />
-                </Popover>
-              );
-            })}
-          </Space>
-          <div className={styles.contactInfo}>
-            <Space size={32}>
-              <Space size={16}>
+    <>
+      <Row
+        id="tugraphFooter"
+        className={styles.containerWrapper}
+        style={lang === 'en' || lang === 'en-US' ? { height: '324px' } : {}}
+      >
+        <Col span={4}>
+          <div className={styles.textGroup}>
+            <div className={styles.title}>
+              {intl.formatMessage({ id: 'footer.product' })}
+            </div>
+            <a className={styles.item} href="/product">
+              {intl.formatMessage({ id: 'footer.productName' })}
+            </a>
+            <a
+              className={styles.item}
+              href="/doc?version=V3.3.0&id=10000000001031969"
+            >
+              TuGraph Browser
+            </a>
+            <a
+              className={styles.item}
+              href="/doc?version=V3.3.0&id=10000000001031971"
+            >
+              TuGraph Explorer
+            </a>
+          </div>
+        </Col>
+        <Col span={3}>
+          <div className={styles.textGroup}>
+            <div className={styles.title}>
+              {intl.formatMessage({ id: 'footer.community' })}
+            </div>
+            <a
+              target="_blank"
+              className={styles.item}
+              href="https://github.com/TuGraph-family"
+            >
+              GitHub
+            </a>
+            <a className={styles.item} href="https://gitee.com/tugraph">
+              Gitee
+            </a>
+            <a
+              target="_blank"
+              className={styles.item}
+              href="https://space.bilibili.com/1196053065/"
+            >
+              {intl.formatMessage({ id: 'footer.communityName' })}
+            </a>
+          </div>
+        </Col>
+        <Col span={10}>
+          <div className={styles.textGroup} id="contactUs">
+            <div className={styles.title}>
+              {intl.formatMessage({ id: 'footer.contact' })}
+            </div>
+            <div className={styles.item}>
+              <Space>
                 <PhoneFilled size={12} />
-                电话：0571-85022088，转分机号 83789993#
+                {intl.formatMessage({ id: 'footer.phone' })}
               </Space>
+            </div>
+            <div className={styles.item}>
               <Space>
                 <MailFilled size={12} />
                 <a href="mailto:tugraph@service.alipay.com">
                   tugraph@service.alipay.com
                 </a>
               </Space>
+            </div>
+            <div className={styles.item}>
+              <Space>
+                <SlackOutlined size={12} />
+                <a href="https://tugraph.slack.com/join/shared_invite/zt-1hha8nuli-bqdkwn~w4zH1vlk0QvqIfg#/shared-invite/email">
+                  Slack
+                </a>
+              </Space>
+            </div>
+          </div>
+        </Col>
+
+        {lang === 'zh-CN' && (
+          <Col span={7}>
+            <Space size={24}>
+              <div className={styles.qrCode}>
+                <img src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*6QheTI5TV-gAAAAAAAAAAAAADgOBAQ/original" />
+                <div className={styles.desc}>
+                  {intl.formatMessage({ id: 'footer.qrCode.weChart' })}
+                </div>
+                <div className={styles.subDesc}>
+                  {intl.formatMessage({
+                    id: 'footer.qrCode.subDescWeChart',
+                  })}
+                </div>
+              </div>
+              <div className={styles.qrCode}>
+                <img src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*L9UQSbVwSoMAAAAAAAAAAAAADgOBAQ/original" />
+                <div className={styles.desc}>
+                  {intl.formatMessage({ id: 'footer.qrCode.dingTalk' })}
+                </div>
+                <div className={styles.subDesc}>
+                  {intl.formatMessage({
+                    id: 'footer.qrCode.subDescDingTalk',
+                  })}
+                </div>
+              </div>
             </Space>
-          </div>
-        </Col>
-        <Col span={3} className={styles.qrCode}>
-          <img src="https://gw.alipayobjects.com/zos/bmw-prod/b543c652-c2a5-4ff1-90e2-dc6d4077b68e.svg" />
-          <div className={styles.desc}>
-            {intl.formatMessage({ id: 'footer.qrCode.desc' })}
-          </div>
-          <div className={styles.subDesc}>
-            {intl.formatMessage({ id: 'footer.qrCode.subDesc' })}
-          </div>
-        </Col>
-        <Col span={3} />
+          </Col>
+        )}
       </Row>
 
       <Row className={styles.footerExtraInfo}>
@@ -87,74 +147,180 @@ export const Footer = ({ className }: { className?: string }) => {
           <a
             href="https://render.alipay.com/p/yuyan/180020010001196791/preview.html?agreementId=AG00000174"
             rel="noopener noreferrer"
+            target="_blank"
           >
             {intl.formatMessage({ id: 'footer.rules' })}
           </a>
           | <div> {intl.formatMessage({ id: 'footer.address' })}</div>
         </Space>
       </Row>
-    </div>
+    </>
   );
 
   const mobile = (
     <>
-      <div className={styles.contactInfo} id="contactUs">
-        {intl.formatMessage({ id: 'home.version.contactUs' })}
-        <Row className={styles.iconGroup}>
-          {icons.map((item, key) => (
-            <Col span={6} key={key}>
-              {item.url ? (
-                <a href={item.url} rel="noopener noreferrer">
-                  <img src={item.icon} />
-                </a>
-              ) : (
-                <Popover
-                  trigger={'click'}
-                  content={
-                    <img
-                      style={{ width: '200px', height: '200px' }}
-                      src={item.img}
-                    />
-                  }
-                >
-                  <img src={item.icon} />
-                </Popover>
-              )}
-            </Col>
-          ))}
-        </Row>
-        <span>
-          <PhoneFilled style={{ marginRight: '8px' }} />
-          电话：0571-85022088，转分机号 83789993#
-        </span>
-        <Space>
-          <MailFilled />
-          tugraph@service.alipay.com
-        </Space>
-        <span>
-          <EnvironmentFilled style={{ marginRight: '8px' }} />
-          {intl.formatMessage({ id: 'footer.addressMobile' })}
-        </span>
-      </div>
-      <div className={styles.qrCode}>
-        <img src="https://gw.alipayobjects.com/zos/bmw-prod/b543c652-c2a5-4ff1-90e2-dc6d4077b68e.svg" />
-        <div className={styles.desc}>
-          {intl.formatMessage({ id: 'footer.qrCode.desc' })}
-        </div>
-        <div className={styles.subDesc}>
-          {intl.formatMessage({ id: 'footer.qrCode.subDesc' })}
-        </div>
-      </div>
-      <Row className={styles.footerExtraInfo}>
-        <Space size={16}>
-          <a
-            href="https://render.alipay.com/p/yuyan/180020010001196791/preview.html?agreementId=AG00000174"
-            rel="noopener noreferrer"
+      <div className={styles.textGroup}>
+        <Collapse expandIconPosition="end">
+          <Panel
+            header={intl.formatMessage({ id: 'footer.product' })}
+            key="product"
           >
-            {intl.formatMessage({ id: 'footer.rules' })}
-          </a>
-          | <div> {intl.formatMessage({ id: 'footer.extraInfo' })}</div>
-        </Space>
+            <a className={styles.item} href="/product">
+              {intl.formatMessage({ id: 'footer.productName' })}
+            </a>
+            <a
+              className={styles.item}
+              href="/doc?version=V3.3.0&id=10000000001031969"
+            >
+              TuGraph Browser
+            </a>
+            <a
+              className={styles.item}
+              href="/doc?version=V3.3.0&id=10000000001031971"
+            >
+              TuGraph Explorer
+            </a>
+          </Panel>
+          <Panel
+            header={intl.formatMessage({ id: 'footer.community' })}
+            key="community"
+          >
+            <a
+              target="_blank"
+              className={styles.item}
+              href="https://github.com/TuGraph-family"
+            >
+              GitHub
+            </a>
+            <a className={styles.item} href="https://gitee.com/tugraph">
+              Gitee
+            </a>
+            <a
+              target="_blank"
+              className={styles.item}
+              href="https://space.bilibili.com/1196053065/"
+            >
+              {intl.formatMessage({ id: 'footer.communityName' })}
+            </a>
+          </Panel>
+          <Panel
+            header={intl.formatMessage({ id: 'footer.contact' })}
+            key="contactUs"
+            id="contactUs"
+          >
+            <div className={styles.item}>
+              <Space>
+                <PhoneFilled size={12} />
+                {intl.formatMessage({ id: 'footer.phone' })}
+              </Space>
+            </div>
+            <div className={styles.item}>
+              <Space>
+                <MailFilled size={12} />
+                <a href="mailto:tugraph@service.alipay.com">
+                  tugraph@service.alipay.com
+                </a>
+              </Space>
+            </div>
+            <div className={styles.item}>
+              <Space>
+                <SlackOutlined size={12} />
+                <a
+                  target="_blank"
+                  href="https://tugraph.slack.com/join/shared_invite/zt-1hha8nuli-bqdkwn~w4zH1vlk0QvqIfg#/shared-invite/email"
+                >
+                  Slack
+                </a>
+              </Space>
+            </div>
+          </Panel>
+        </Collapse>
+      </div>
+
+      {lang === 'zh-CN' && (
+        <div className={styles.contactInfo}>
+          <Space size={32} className={styles.iconGroup}>
+            {icons.map((item, key) => (
+              <div key={key}>
+                {item.url ? (
+                  <a target="_blank" href={item.url} rel="noopener noreferrer">
+                    <img src={item.icon} />
+                  </a>
+                ) : (
+                  <Popover
+                    trigger={'click'}
+                    content={
+                      <img
+                        style={{ width: '200px', height: '200px' }}
+                        src={item.img}
+                      />
+                    }
+                  >
+                    <img src={item.icon} />
+                  </Popover>
+                )}
+              </div>
+            ))}
+            {lang === 'en-US' && (
+              <a
+                target="_blank"
+                href="https://tugraph.slack.com/join/shared_invite/zt-1hha8nuli-bqdkwn~w4zH1vlk0QvqIfg#/shared-invite/email"
+                rel="noopener noreferrer"
+              >
+                <SlackOutlined className={styles.slack} />
+              </a>
+            )}
+          </Space>
+        </div>
+      )}
+      {lang === 'zh-CN' && (
+        <Row gutter={20}>
+          <Col span={12}>
+            <Space size={20} className={styles.qrCode}>
+              <img src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*6QheTI5TV-gAAAAAAAAAAAAADgOBAQ/original" />
+
+              <div className={styles.group}>
+                <div className={styles.desc}>
+                  {intl.formatMessage({ id: 'footer.qrCode.weChart' })}
+                </div>
+                <div className={styles.subDesc}>
+                  {intl.formatMessage({
+                    id: 'footer.qrCode.subDescWeChart',
+                  })}
+                </div>
+              </div>
+            </Space>
+          </Col>
+          <Col span={12}>
+            <Space size={20} className={styles.qrCode}>
+              <img src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*L9UQSbVwSoMAAAAAAAAAAAAADgOBAQ/original" />
+
+              <div className={styles.group}>
+                <div className={styles.desc}>
+                  {intl.formatMessage({ id: 'footer.qrCode.dingTalk' })}
+                </div>
+                <div className={styles.subDesc}>
+                  {intl.formatMessage({
+                    id: 'footer.qrCode.subDescWeChart',
+                  })}
+                </div>
+              </div>
+            </Space>
+          </Col>
+        </Row>
+      )}
+
+      <Row className={styles.footerExtraInfo}>
+        {lang !== 'zh-CN' && !isWide ? (
+          <Divider className={styles.divider} />
+        ) : null}
+        <a
+          href="https://render.alipay.com/p/yuyan/180020010001196791/preview.html?agreementId=AG00000174"
+          rel="noopener noreferrer"
+        >
+          {intl.formatMessage({ id: 'footer.rules' })}
+        </a>
+        <div> {intl.formatMessage({ id: 'footer.address' })}</div>
       </Row>
     </>
   );

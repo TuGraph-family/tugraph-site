@@ -1,0 +1,199 @@
+.containerWrapper {
+  .demoWrapper {
+    background-color: #ffffff;
+    box-shadow: 0 3px 6px -4px rgba(132, 135, 155, 0.12),
+      0 6px 16px 0 rgba(132, 135, 155, 0.08),
+      0 9px 28px 8px rgba(132, 135, 155, 0.05);
+    border-radius: 12px;
+    padding: 24px;
+
+    .demoCards {
+      padding: 12px;
+      .demoCard {
+        padding: 24px;
+        min-height: 216px;
+        max-width: 362px;
+        background-color: rgba(22, 80, 255, 0.04);
+        border-radius: 12px;
+
+        img {
+          width: 36px;
+          height: 36px;
+        }
+
+        .title {
+          font-weight: 500;
+          font-size: 14px;
+          color: rgba(26, 27, 37, 0.88);
+          letter-spacing: 0;
+          text-align: justify;
+          line-height: 22px;
+        }
+
+        .desc {
+          font-weight: 400;
+          font-size: 14px;
+          color: rgba(26, 27, 37, 0.45);
+          text-align: justify;
+          line-height: 22px;
+        }
+
+        .type {
+          font-weight: 500;
+          font-size: 16px;
+          color: rgba(26, 27, 37, 0.88);
+          line-height: 24px;
+          margin: 12px 0 8px 0;
+        }
+      }
+    }
+  }
+
+  .exampleWrapper {
+    background-color: #fff;
+
+    .crossRow {
+      background-color: rgba(22, 80, 255, 0.04);
+    }
+
+    .textWrapper {
+      padding-right: 16px;
+    }
+
+    .exampleCard {
+      margin: 0 -120px;
+      padding: 32px 120px;
+      font-weight: 400;
+      font-size: 14px;
+      color: rgba(26, 27, 37, 0.45);
+      text-align: center;
+      line-height: 22px;
+      text-align: left;
+
+      .title {
+        font-weight: 500;
+        font-size: 20px;
+        color: rgba(26, 27, 37, 0.88);
+        line-height: 28px;
+      }
+
+      .description {
+        margin: 20px;
+      }
+
+      .subTitle {
+        margin: 16px 0 4px 0;
+        font-weight: 500;
+        font-size: 14px;
+        color: rgba(26, 27, 37, 0.88);
+        line-height: 22px;
+      }
+
+      img {
+        width: 427px;
+        height: 320px;
+        border-radius: 8px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 767.99px) {
+  .containerWrapper {
+    .demoWrapper {
+      transition: all 0.3s;
+      width: 100vw;
+      margin: -9.2vw -3.2vw -3.6vw -3.2vw;
+      border-radius: 0;
+      box-shadow: none;
+      background: none;
+      padding: 0;
+      :global {
+        .ant-carousel .slick-dots li,
+        .ant-carousel .slick-dots li.slick-active {
+          width: 4vw !important;
+        }
+        .ant-carousel .slick-dots-bottom {
+          bottom: 5.9vw;
+        }
+      }
+
+      .demoCards {
+        padding: 0;
+        .demoCard {
+          background: #fff;
+          max-width: 100%;
+          text-align: left;
+          padding: 4.26vw !important;
+          height: 100%;
+          min-height: 35.9vw;
+          border-radius: 1.6vw;
+          text-align: left;
+          width: 86.7vw !important;
+          box-shadow: 0 3px 6px -4px rgba(132, 135, 155, 0.12),
+            0 6px 16px 0 rgba(132, 135, 155, 0.08),
+            0 9px 28px 8px rgba(132, 135, 155, 0.05);
+          background: #ffffff;
+          margin: 9.2vw 0;
+          img {
+            width: 5.3vw !important;
+            height: 5.3vw !important;
+          }
+          .type {
+            font-size: 3.7vw;
+            line-height: 5.3vw;
+            margin: 0 !important;
+          }
+          .demoContent {
+            margin-top: 1.6vw !important;
+          }
+          .title {
+            font-size: 3.2vw !important;
+            line-height: 4.8vw;
+          }
+          .desc {
+            margin-top: 2.7vw;
+            font-size: 3.2vw;
+            line-height: 4.8vw;
+          }
+        }
+      }
+    }
+    .exampleWrapper {
+      margin: 13.3vw 0 0 0;
+      .exampleCard {
+        margin: 0 0 2.7vw 0;
+        padding: 4.3vw;
+        box-shadow: 0 3px 6px -4px rgba(132, 135, 155, 0.12),
+          0 6px 16px 0 rgba(132, 135, 155, 0.08),
+          0 9px 28px 8px rgba(132, 135, 155, 0.05);
+        border-radius: 1.6vw;
+        font-size: 3.2vw;
+        text-align: justify;
+        line-height: 4.8vw;
+        img {
+          margin: -4.3vw -4.3vw 0 -4.3vw;
+          border-radius: 1.6vw 1.6vw 0 0;
+          width: calc(100vw - 6.4vw);
+          object-fit: cover;
+          height: 48vw;
+        }
+        .textWrapper {
+          .title {
+            font-size: 3.7vw;
+            margin-top: 3.2vw;
+            line-height: 5.3vw;
+          }
+          .description {
+            margin: 1.6vw 0 3.2vw 0;
+          }
+          .subTitle {
+            font-size: 3.2vw;
+            margin: 3.2vw 0 1.6vw 0;
+            line-height: 5.3vw;
+          }
+        }
+      }
+    }
+  }
+}

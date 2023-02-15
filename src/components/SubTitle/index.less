@@ -2,48 +2,24 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 120px 0 32px 0;
-  
-  .subTitle { 
-    font-family:  AlibabaPuHuiTi_2_45_Light;
-    color: rgba(0,0,0,0.85);
-    font-size: 36px;
-    font-weight: 300;
-    position: relative;
+  margin: 72px 0 32px 0;
 
-  }
-      
-  .subTitleBorderContainer {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-top: 16px;
-      
-    .subTitleBorder {
-      background-image: linear-gradient(90deg, rgba(22,222,255,0.50) 0%, #1650FF 51%, rgba(22,222,255,0.50) 100%);
-      height: 1px;
-      width: 92px;
-    }
+  .subTitle {
+    font-family: AlibabaPuHuiTi_2_85_Bold;
+    color: rgba(26, 27, 37, 0.88);
+    font-size: 32px;
+    position: relative;
+    font-weight: 500;
   }
 }
 
 @media only screen and (max-width: 767.99px) {
   .subTitleGroup {
-    margin: 32px 0;
-    
-    .subTitle { 
-        font-size: 32px;
-        color: rgba(0,0,0,0.85);
-        text-align: center;
+    transition: all ease 0.3s;
+    margin: 6.4vw 0 3.2vw 0 !important;
+    .subTitle {
+      font-size: 6.4vw;
+      font-weight: 600;
     }
-
-     .subTitleBorderContainer {
-        margin-top: 16px;
-        
-        .subTitleBorder {
-          width: 32px;
-          height: 3px;
-        }
-     }
   }
 }
