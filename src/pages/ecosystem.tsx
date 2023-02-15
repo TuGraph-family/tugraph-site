@@ -1,19 +1,22 @@
 import React from 'react';
 import { getLocale, useIntl } from 'umi';
 import { LayoutTemplate } from '@/components/LayoutTemplate';
+import cx from 'classnames';
 
 import stylesZh from './ecosystem.less';
 import stylesEn from './ecosystem_en.less';
 
-import { Anchor, Col, Row, Space } from 'antd';
+import { Anchor, Button, Col, Row, Space } from 'antd';
 import { useMedia } from 'react-use';
+import { getPartner } from '@/data/get_partner';
+import { getPartnerReason } from '@/data/get_partner_reason';
 
 const { Link } = Anchor;
 
 export default function EcosystemPage() {
   const intl = useIntl();
   const lang = getLocale();
-  const styles = lang === 'en-US' ? stylesEn : stylesZh;
+  const styles = lang === 'en' || lang === 'en-US' ? stylesEn : stylesZh;
   const isWide = useMedia('(min-width: 767.99px)', true);
   const content = (
     <div className={styles.containerWrapper}>
@@ -25,97 +28,23 @@ export default function EcosystemPage() {
           {intl.formatMessage({ id: 'ecosystem.type.description' })}
         </div>
         <div className={styles.typeWrapper}>
-          <Row gutter={isWide ? [24, 24] : [20, 20]}>
-            <Col span={isWide ? 12 : 24}>
-              <div className={styles.typeItem}>
-                <img
-                  src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*K8-yTqN7GAkAAAAAAAAAAAAADgOBAQ/original"
-                  alt="icon"
-                />
-                <div>
-                  <div className={styles.title}>
-                    {intl.formatMessage({ id: 'ecosystem.type0.title' })}
+          <Row
+            gutter={isWide ? [24, 24] : [0, 0]}
+            className={styles.typeWrapper}
+          >
+            {getPartner(intl).map((item, key) => {
+              return (
+                <Col span={isWide ? item.span : 24} key={key}>
+                  <div className={styles.typeItem}>
+                    <img src={item.src} alt="icon" />
+                    <div>
+                      <div className={styles.title}>{item.title}</div>
+                      <div className={styles.description}>{item.desc}</div>
+                    </div>
                   </div>
-                  <div className={styles.description}>
-                    {intl.formatMessage({
-                      id: 'ecosystem.type0.description',
-                    })}
-                  </div>
-                </div>
-              </div>
-            </Col>
-            <Col span={isWide ? 12 : 24}>
-              <div className={styles.typeItem}>
-                <img
-                  src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*Xgn-TIzNoOsAAAAAAAAAAAAADgOBAQ/original"
-                  alt="icon"
-                />
-                <div>
-                  <div className={styles.title}>
-                    {intl.formatMessage({ id: 'ecosystem.type1.title' })}
-                  </div>
-                  <div className={styles.description}>
-                    {intl.formatMessage({
-                      id: 'ecosystem.type1.description',
-                    })}
-                  </div>
-                </div>
-              </div>
-            </Col>
-            <Col span={isWide ? 8 : 24}>
-              <div className={styles.typeItem}>
-                <img
-                  src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*LwOISbSYRcIAAAAAAAAAAAAADgOBAQ/original"
-                  alt="icon"
-                />
-                <div>
-                  <div className={styles.title}>
-                    {intl.formatMessage({ id: 'ecosystem.type2.title' })}
-                  </div>
-                  <div className={styles.description}>
-                    {intl.formatMessage({
-                      id: 'ecosystem.type2.description',
-                    })}
-                  </div>
-                </div>
-              </div>
-            </Col>
-            <Col span={isWide ? 8 : 24}>
-              <div className={styles.typeItem}>
-                <img
-                  src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*m69zQ7DKKEsAAAAAAAAAAAAADgOBAQ/original"
-                  alt="icon"
-                />
-                <div>
-                  <div className={styles.title}>
-                    {intl.formatMessage({ id: 'ecosystem.type3.title' })}
-                  </div>
-                  <div className={styles.description}>
-                    {intl.formatMessage({
-                      id: 'ecosystem.type3.description',
-                    })}
-                  </div>
-                </div>
-              </div>
-            </Col>
-            <Col span={isWide ? 8 : 24}>
-              <div className={styles.typeItem}>
-                <img
-                  src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*4gXuS7ETkj0AAAAAAAAAAAAADgOBAQ/original"
-                  alt="icon"
-                />
-                <div>
-                  <div className={styles.title}>
-                    {intl.formatMessage({ id: 'ecosystem.type4.title' })}
-                  </div>
-                  <div className={styles.description}>
-                    {intl.formatMessage({
-                      id: 'ecosystem.type4.description',
-                    })}
-                  </div>
-                </div>
-              </div>
-            </Col>
+                </Col>
+              );
+            })}
           </Row>
         </div>
       </div>
@@ -128,55 +57,27 @@ export default function EcosystemPage() {
         </div>
         <div className={styles.supportWrapper}>
           <Row gutter={isWide ? [24, 24] : [20, 20]}>
-            <Col span={isWide ? 12 : 24}>
-              <div className={styles.supportItem}>
-                <Space size={12}>
-                  <img
-                    style={
-                      lang === 'en-US'
-                        ? { marginTop: isWide ? '-14px' : '-46px' }
-                        : {}
-                    }
-                    src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*DzUBT6XHsoQAAAAAAAAAAAAADgOBAQ/original"
-                    alt="icon"
-                  />
-                  <div>{intl.formatMessage({ id: 'ecosystem.support0' })}</div>
-                </Space>
-              </div>
-            </Col>
-            <Col span={isWide ? 12 : 24}>
-              <div className={styles.supportItem}>
-                <Space size={12}>
-                  <img
-                    src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*pQmRRojVUAYAAAAAAAAAAAAADgOBAQ/original"
-                    alt="icon"
-                  />
-                  <div>{intl.formatMessage({ id: 'ecosystem.support1' })}</div>
-                </Space>
-              </div>
-            </Col>
-            <Col span={isWide ? 12 : 24}>
-              <div className={styles.supportItem}>
-                <Space size={12}>
-                  <img
-                    src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*wAG-S4qKobUAAAAAAAAAAAAADgOBAQ/original"
-                    alt="icon"
-                  />
-                  <div>{intl.formatMessage({ id: 'ecosystem.support2' })}</div>
-                </Space>
-              </div>
-            </Col>
-            <Col span={isWide ? 12 : 24}>
-              <div className={styles.supportItem}>
-                <Space size={12}>
-                  <img
-                    src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*jwxvT7iWuY8AAAAAAAAAAAAADgOBAQ/original"
-                    alt="icon"
-                  />
-                  <div>{intl.formatMessage({ id: 'ecosystem.support3' })}</div>
-                </Space>
-              </div>
-            </Col>
+            {getPartnerReason(intl).map((item, index) => {
+              return (
+                <Col span={isWide ? item.span : 24}>
+                  <div
+                    className={cx(styles.supportItem, {
+                      [styles.enSupportItemPadding]:
+                        index === 0 && (lang === 'en' || lang === 'en-US'),
+                    })}
+                  >
+                    <Space
+                      size={12}
+                      align={isWide ? 'center' : 'start'}
+                      style={{ height: '100%' }}
+                    >
+                      <img src={item.src} alt="icon" />
+                      <div>{item.support}</div>
+                    </Space>
+                  </div>
+                </Col>
+              );
+            })}
           </Row>
         </div>
       </div>
@@ -191,14 +92,14 @@ export default function EcosystemPage() {
         slogan: intl.formatMessage({ id: 'ecosystem.banner.slogan' }),
         description: intl.formatMessage({ id: 'ecosystem.banner.description' }),
         footer: (
-          <Anchor affix={false} className={styles.contactBtn}>
+          <Button type="primary" className={styles.contactBtn}>
             <Link
               href="#contactUs"
               title={intl.formatMessage({
                 id: 'ecosystem.banner.btn',
               })}
             />
-          </Anchor>
+          </Button>
         ),
       }}
       content={content}

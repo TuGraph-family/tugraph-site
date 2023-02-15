@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import HTMLRenderer from 'react-html-renderer';
-import { useIntl, history, useLocation } from 'umi';
+import { useIntl, history, useLocation, getLocale } from 'umi';
 import { Spin, Pagination, Tabs, Space, Button } from 'antd';
 import { Layout } from 'antd';
 import cx from 'classNames';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
-import { getBlogs } from '@/data/blog';
+import { getZHBlogs } from '@/data/blog';
+import { getENBlogs } from '@/data/blog_en';
 import { LayoutTemplate } from '@/components/LayoutTemplate';
 import { BlogItem } from '@/interface';
 import { useMedia } from 'react-use';
@@ -20,9 +21,12 @@ const PAGE_SIZE = 7;
 export default function BlogPage() {
   const intl = useIntl();
   const location = useLocation();
-  const initBlogs = getBlogs('');
+  const lang = getLocale();
+  console.log(lang);
+  const getBlogs = lang === 'zh-CN' ? getZHBlogs : getENBlogs;
   const isWide = useMedia('(min-width: 767.99px)', true);
   const [type, setType] = React.useState<string>('all');
+  const initBlogs = getBlogs('');
   const [blogDetail, setBlogDetail] = React.useState<string>();
   const [blogs, setBlogs] = React.useState<BlogItem[]>(initBlogs);
   const [listData, setListData] = React.useState<BlogItem[]>(
@@ -69,10 +73,11 @@ export default function BlogPage() {
   React.useEffect(() => {
     const id = location.query?.id;
     if (!id) {
+      setBlogDetail('');
       return;
     }
     setBlogDetail(blogs?.find((item) => item.id === Number(id))?.content);
-  }, []);
+  }, [location]);
 
   const content = (
     <div

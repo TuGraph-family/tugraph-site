@@ -31,6 +31,8 @@
 
         border-bottom: 1px solid #f1f1f1;
 
+        overflow-y: hidden;
+
         &:last-child {
           border-bottom: none;
         }
@@ -52,6 +54,11 @@
             font-size: 20px;
             color: rgba(26, 27, 37, 0.88);
             line-height: 28px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
           }
 
           .updateDate {
@@ -70,6 +77,11 @@
             text-align: justify;
             line-height: 22px;
             height: 130px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 6;
+            -webkit-box-orient: vertical;
           }
         }
       }
@@ -298,35 +310,52 @@
   }
 
   .containerWrapper {
-    padding-bottom: 64px;
-    padding-top: 70px;
+    padding-top: 9.3vw;
     text-align: center;
 
     .listWrapper {
       padding: 0;
       box-shadow: none;
+      margin-bottom: 0;
+      margin-top: 4.8vw !important;
+
       :global {
         .ant-tabs {
           padding: 0;
         }
+        .ant-tabs-tab {
+          padding: 1.6vw 0;
+        }
+        .ant-tabs-tab + .ant-tabs-tab {
+          margin: 0 0 0 8vw;
+        }
         .ant-tabs-top > .ant-tabs-nav::before {
           border-bottom: none;
+        }
+        .ant-tabs-tab-btn {
+          font-size: 3.7vw;
         }
       }
       .lists {
         .list {
+          :global {
+            .ant-space-align-center {
+              align-items: flex-start;
+              gap: 2.7vw !important;
+            }
+          }
           height: 34.9vw;
           border: none;
-          margin-top: 20px;
+          margin-top: 2.7vw;
           padding: 3.2vw;
           box-shadow: 0 3px 6px -4px rgba(132, 135, 155, 0.12),
             0 6px 16px 0 rgba(132, 135, 155, 0.08),
             0 9px 28px 8px rgba(132, 135, 155, 0.05);
-          border-radius: 12px;
+          border-radius: 1.6vw;
           img {
             height: 21.9vw;
-            margin: 12px 0px;
             width: 29.2vw;
+            border-radius: 1.1vw;
           }
           .textWrapper {
             height: 100%;
@@ -342,7 +371,7 @@
             .desc {
               height: 9.6vw;
               font-size: 3.2vw;
-              text-align: justify;
+              text-align: left;
               margin: 1.6vw 0 2.7vw 0;
               line-height: 4.8vw;
               overflow: hidden;
@@ -361,11 +390,12 @@
       }
     }
     .more {
-      width: 220px;
-      height: 68px;
-      margin: 48px auto 0 auto;
-      border-radius: 8px;
+      width: 29.3vw;
+      height: 9.1vw;
+      margin-top: 6.4vw;
+      border-radius: 1.1vw;
       font-size: 3.7vw;
+      margin-bottom: -6.9vw !important;
     }
   }
   .blogContainerWrapper {

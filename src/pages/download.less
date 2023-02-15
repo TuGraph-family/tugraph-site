@@ -62,31 +62,43 @@
 @media only screen and (max-width: 767.99px) {
   .containerWrapper {
     box-shadow: none;
-    padding: 0;
+    padding: 0 0 13.3vw 0;
     text-align: left;
     background: #fff0;
-    margin: 78px -24px 0 -24px;
+    margin: 8.8vw -3.2vw -13.3vw -3.2vw;
     .title {
       font-size: 3.7vw;
-      margin: 48px 24px 24px 24px;
+      margin: 6.4vw 3.2vw 3.2vw 3.2vw;
     }
     button {
-      height: 68px;
-      width: 100%;
       background-color: #fff;
+      height: 9.1vw;
       width: 100% !important;
       font-size: 3.7vw;
     }
     .list {
-      height: 208px;
-      margin: 0 24px 24px 24px;
+      height: 100%;
+      margin: 0 3.2vw 2.7vw 3.2vw;
+      padding: 4.3vw;
       background-color: #fff;
       box-shadow: 0 3px 6px -4px rgba(132, 135, 155, 0.12),
         0 6px 16px 0 rgba(132, 135, 155, 0.08),
         0 9px 28px 8px rgba(132, 135, 155, 0.05);
-      border-radius: 8px;
+      border-radius: 1.1vw;
       .listName {
         font-size: 3.7vw;
+        padding-bottom: 3.2vw;
+      }
+      .right {
+        padding-bottom: 3.2vw;
+      }
+      .listVersions {
+        width: 100%;
+      }
+      :global {
+        .ant-select-selection-item {
+          font-size: 3.2vw;
+        }
       }
     }
   }

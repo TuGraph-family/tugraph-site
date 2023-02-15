@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "antd": "^4.24.3",
+    "classnames": "^2.3.2",
     "jol-player": "^3.2.0",
     "lodash": "^4.17.21",
     "moment": "^2.29.4",

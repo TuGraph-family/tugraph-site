@@ -14,18 +14,6 @@ body {
     margin: auto;
   }
 
-  .textLink {
-    margin-top: 24px;
-    font-weight: 500;
-    font-size: 14px;
-    color: rgba(26, 27, 37, 0.88);
-    display: block;
-
-    span {
-      margin-left: 8px;
-    }
-  }
-
   .lightBtn {
     background: @primary-color;
     border-radius: 8px;
@@ -69,34 +57,19 @@ body {
     color: rgba(255, 255, 255, 0.89);
   }
 
-  .menuList {
-    font-size: 24px;
-    height: 94px;
-    letter-spacing: 8px;
-    padding: 28px 0;
-    border-bottom: 1px solid #5097fc;
-
-    a {
-      color: #fff;
-    }
-  }
   .ant-modal-mask {
     background-color: rgba(0, 0, 0, 0.65);
   }
 
   .ant-carousel {
-    .slick-dots-bottom {
-      bottom: -23px;
-    }
-
     .slick-dots {
       li {
         margin: 0 -1px;
-        width: 61px;
+        width: 8vw;
       }
       li.slick-active {
         z-index: 999;
-        width: 60px;
+        width: 8vw;
         button {
           background-color: @primary-color;
         }
@@ -159,11 +132,27 @@ body {
     top: 40px;
     padding: 0;
 
+    .playContent {
+      display: flex;
+      align-items: center;
+    }
+
     img {
       width: 24px;
-      height: 24px;
       margin-right: 8px;
     }
+  }
+}
+
+.textLink {
+  margin-top: 24px;
+  font-weight: 500;
+  font-size: 14px;
+  color: rgba(26, 27, 37, 0.88);
+  display: block;
+
+  span {
+    margin-left: 8px;
   }
 }
 
@@ -177,6 +166,9 @@ body {
 
     .card {
       padding: 32px;
+      min-height: 280px;
+      min-width: 377px;
+      position: relative;
       :global {
         .ant-tag {
           font-weight: 400;
@@ -205,6 +197,32 @@ body {
         color: rgba(0, 0, 0, 0.45);
         line-height: 22px;
       }
+
+      .textLink {
+        margin-top: 24px;
+        font-weight: 500;
+        font-size: 14px;
+        color: rgba(26, 27, 37, 0.88);
+        display: block;
+
+        span {
+          margin-left: 8px;
+        }
+      }
+
+      .learnMore {
+        position: absolute;
+        bottom: 32px;
+        margin-top: 24px;
+        font-weight: 500;
+        font-size: 14px;
+        color: rgba(26, 27, 37, 0.88);
+        display: block;
+
+        span {
+          margin-left: 8px;
+        }
+      }
     }
   }
 
@@ -217,13 +235,19 @@ body {
 
     .groupTitle,
     .title {
+      font-family: AlibabaPuHuiTi_2_85_Bold;
       font-size: 32px;
       color: rgba(26, 27, 37, 0.88);
       margin-bottom: 8px;
       font-weight: 500;
     }
 
-    .groupDesc,
+    .groupDesc {
+      font-size: 14px;
+      color: rgba(26, 27, 37, 0.45);
+      padding-right: 32px;
+    }
+
     .desc {
       font-size: 14px;
       color: rgba(26, 27, 37, 0.45);
@@ -273,7 +297,7 @@ body {
     display: flex;
     justify-content: center;
     margin-bottom: 72px;
-    text-align: justify;
+    text-align: left;
     width: 100%;
 
     img {
@@ -343,7 +367,7 @@ body {
         font-weight: 400;
         font-size: 14px;
         color: rgba(26, 27, 37, 0.45);
-        text-align: justify;
+        text-align: left;
         line-height: 22px;
       }
     }
@@ -429,7 +453,7 @@ body {
           text-align: center;
           line-height: 21px;
           margin: 12px 0 24px 0;
-          height: 88px;
+          height: 100px;
         }
       }
     }
@@ -470,41 +494,97 @@ body {
 }
 
 @media only screen and (max-width: 767.99px) {
-  :global {
-    .textLink {
-      font-size: 3.7vw !important;
-    }
+  .textLink {
+    font-size: 3.7vw !important;
+    margin-top: 0 !important;
+  }
+  .subTitle {
+    margin-bottom: 4.8vw !important;
   }
   .bannerButtons {
+    text-align: center;
     .github {
       margin: 0;
-      margin-right: 5.3vw;
+      margin-right: 1.6vw;
+      width: 29vw;
+      height: 9.6vw;
+      border-radius: 1.1vw;
+      font-size: 3.2vw;
+      .githubText {
+        position: unset;
+      }
+      :global {
+        .anticon-github {
+          font-size: 4.8vw;
+          position: unset;
+        }
+      }
     }
     .play {
-      position: relative;
-      top: 4px;
+      position: unset;
+      font-size: 3.73vw;
+      img {
+        width: 5.3vw;
+        height: 5.3vw;
+        margin-right: 1.1vw;
+      }
     }
   }
 
   .noticeWrapper {
     transition: all ease 0.3s;
-    margin: 0 0 108px 0 !important;
+    background: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    margin: -9.2vw -4.3vw 8.3vw -4.3vw !important;
+    :global {
+      .ant-carousel .slick-dots-bottom {
+        bottom: 5.9vw;
+      }
+      .ant-carousel .slick-dots li button {
+        height: 0.8vw;
+      }
+    }
     .card {
-      min-height: 272px;
-      height: 100%;
-      box-shadow: 0 8px 16px 8px rgba(0, 0, 0, 0.03);
-      border-radius: 12px;
+      padding: 4.3vw !important;
+      height: 58.7vw;
+      border-radius: 1.6vw;
       text-align: left;
+      width: 86.7vw !important;
+      box-shadow: 0 3px 6px -4px rgba(132, 135, 155, 0.12),
+        0 6px 16px 0 rgba(132, 135, 155, 0.08),
+        0 9px 28px 8px rgba(132, 135, 155, 0.05);
+      background: #ffffff;
+      margin: 9.2vw 0;
+
+      :global {
+        .ant-tag {
+          height: 4.26vw !important;
+          font-family: PingFangSC;
+          font-weight: 400;
+          font-size: 2.13vw !important;
+          color: rgba(0, 0, 0, 0.65);
+          text-align: center;
+          line-height: 3.2vw !important;
+          padding: 0.53vw 2.13vw !important;
+        }
+      }
+
       .title {
         font-size: 3.7vw !important;
         margin: 20px 0 12px 0 !important;
-        height: 80px;
+        height: 10.7vw !important;
       }
       .desc {
         font-size: 3.2vw !important;
         text-align: left;
         width: 100% !important;
         line-height: 4.8vw !important;
+        margin-bottom: 5.3vw;
+      }
+      .learnMore {
+        font-size: 3.7vw !important;
+        margin-top: 0 !important;
       }
       a {
         margin-top: 5.3vw;
@@ -514,15 +594,27 @@ body {
 
   .reasonCardGroup {
     transition: all ease 0.3s;
+    min-height: 0 !important;
     height: 100%;
     .title {
-      font-size: 3.2vw !important;
+      font-size: 3.7vw !important;
+      margin-bottom: 0 !important;
+      line-height: 5.33vw !important ;
     }
     .desc {
-      font-size: 2.4vw !important;
-      line-height: 3.7vw !important;
+      font-size: 3.2vw !important;
+      line-height: 4.8vw !important;
+      margin-top: 1.6vw !important;
+      text-align: left !important;
     }
     .reasonCard {
+      :global {
+        .ant-space-align-center {
+          align-items: flex-start;
+          gap: 2.7vw !important;
+        }
+      }
+      padding: 4.3vw !important;
       img {
         height: 11.7vw !important;
       }
@@ -530,24 +622,29 @@ body {
   }
 
   .cases {
-    padding-top: 6.4vw !important;
+    background-image: url('https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*GqvMRZhv6ysAAAAAAAAAAAAADgOBAQ/fmt.webp') !important;
+    padding: 6.4vw 120px !important;
+    margin-top: 13.3vw !important;
+    margin-bottom: 13.3vw !important;
     .groupTitle {
-      font-family: AlibabaPuHuiTi_2_85_Bold;
-      font-size: 6.4vw;
-      color: rgba(26, 27, 37, 0.88);
-      text-align: center;
-      font-weight: 600;
+      font-family: AlibabaPuHuiTi_2_85_Bold !important;
+      font-size: 6.4vw !important;
+      color: rgba(26, 27, 37, 0.88) !important;
+      text-align: center !important;
+      font-weight: 600 !important;
+      margin-bottom: 0 !important;
+      line-height: 8.9vw !important;
     }
     .groupDesc {
-      font-family: AlibabaPuHuiTi_2_55_Regular;
-      font-size: 3.2vw;
-      color: rgba(26, 27, 37, 0.45);
-      line-height: 4.8vw;
-      margin: 12px 0 36px;
+      font-family: AlibabaPuHuiTi_2_55_Regular !important;
+      font-size: 3.2vw !important;
+      color: rgba(26, 27, 37, 0.45) !important;
+      line-height: 4.8vw !important;
+      margin: 1.6vw 0 3.2vw !important;
     }
     .title {
       font-size: 3.7vw !important;
-      margin-bottom: 12px;
+      margin: 2.1vw 0 1.6vw 0 !important;
     }
     .desc {
       font-size: 3.2vw !important;
@@ -555,13 +652,19 @@ body {
     }
 
     .card {
-      height: 400px !important;
-      padding: 32px 24px !important;
+      height: 57.6vw !important;
+      padding: 4.255vw !important;
+      margin: 1.6vw !important;
+      border-radius: 1.1vw;
+      img {
+        height: 6.4vw !important;
+        width: 6.4vw !important;
+      }
     }
   }
 
   .users {
-    margin: 46px 0 110px 0 !important;
+    margin: 6.1vw 0 14.7vw 0 !important;
     img {
       width: 45.5vw !important;
     }
@@ -569,9 +672,13 @@ body {
 
   .versions {
     max-width: 100% !important;
+    margin-bottom: 6.4vw !important;
     .version {
       max-width: 100% !important;
-      margin-bottom: 20px;
+      margin-bottom: 2.7vw;
+      .versionCard {
+        border-radius: 1.6vw !important;
+      }
       .title {
         font-size: 3.7vw !important;
       }
@@ -579,33 +686,46 @@ body {
         font-size: 3.2vw !important;
         line-height: 4.8vw !important;
         height: unset !important;
+        margin: 3.2vw 0 5.33vw 0 !important;
       }
     }
     :global {
       .lightBtn {
         width: 100% !important;
+        height: 9.1vw;
+        font-size: 3.7vw;
+        border-radius: 1.1vw;
       }
     }
   }
   .featList {
     padding: 0 !important;
+    margin: 0 0 -6.9vw 0;
     .crossRow {
       border-radius: 0px !important;
     }
     .baseRow,
     .crossRow {
-      height: 74px !important;
-      padding: 20px 0 !important;
+      height: 13.6vw !important;
+      padding: 2.7vw 3.2vw !important;
+      display: flex;
     }
     .title {
       font-size: 3.2vw !important;
       font-weight: 400 !important;
+      padding: 3.2vw !important;
+    }
+    .textAlignLeft {
+      padding: 3.2vw !important;
+      margin: 0 !important;
     }
     .text {
+      align-self: center;
       font-weight: 400 !important;
-
+      padding: 0 !important;
       color: rgba(26, 27, 37, 0.65) !important;
-      line-height: 4.8vw !important;
+      font-size: 3.2vw !important;
+      line-height: 4.26vw !important;
     }
   }
 }

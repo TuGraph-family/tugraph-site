@@ -28,17 +28,17 @@
       color: rgba(26, 27, 37, 0.45);
       text-align: center;
       line-height: 22px;
-      margin-bottom: 32px;
     }
   }
 
   .typeWrapper {
     .typeItem {
-      height: 172px;
+      height: 100%;
       background-color: rgba(22, 80, 255, 0.04);
       border-radius: 12px;
       padding: 24px;
       text-align: left;
+      font-family: PingFangSC;
 
       .title {
         font-weight: 500;
@@ -47,6 +47,7 @@
         line-height: 24px;
         margin: 12px 0 8px 0;
         text-align: left;
+        font-family: PingFangSC;
       }
 
       .description {
@@ -56,8 +57,13 @@
         letter-spacing: 0;
         text-align: justify;
         line-height: 22px;
+        font-family: PingFangSC;
       }
     }
+  }
+
+  .enSupportItemPadding {
+    padding: 14px 24px;
   }
 
   .supportWrapper {
@@ -86,6 +92,7 @@
   margin-top: 32px;
   padding: 12px 32px;
   color: #fff;
+  margin-left: 1px;
 
   :global {
     .ant-anchor-link {
@@ -108,15 +115,19 @@
 
 @media only screen and (max-width: 767.99px) {
   .cardWrapper {
-    margin-bottom: 20px !important;
+    margin-bottom: 2.7vw !important;
+    padding: 6.4vw 4.3vw 4.3vw 4.3vw !important;
     .groupTitle {
-      font-size: 6.4vw;
-      font-weight: 600;
+      font-size: 6.4vw !important;
+      font-weight: 600 !important;
+      line-height: 9.06vw !important;
     }
     .groupDescription {
-      font-size: 24px;
-      line-height: 36px;
-      margin: 16px 0 36px;
+      font-size: 3.2vw !important;
+      line-height: 4.8vw !important;
+      margin-top: 2.1vw;
+      margin-bottom: 4.8vw !important;
+      font-family: PingFangSC !important;
       color: rgba(26, 27, 37, 0.65);
     }
     .title {
@@ -125,17 +136,36 @@
     .description {
       font-size: 3.2vw !important;
       line-height: 4.8vw !important;
-      margin: 12px 0 0 0 !important;
+      margin-top: 1.6vw !important;
     }
     .typeWrapper {
+      font-family: PingFangSC;
+      :global {
+        .ant-row {
+          row-gap: 2.7vw !important;
+        }
+      }
       .typeItem {
+        border-radius: 1.6vw !important;
         height: 100% !important;
-        padding: 32px !important;
+        padding: 4.3vw !important;
         display: flex;
         align-items: start;
+        .title {
+          font-size: 3.7vw !important;
+          line-height: 5.3vw !important;
+          margin: 0 !important;
+          font-weight: 500 !important;
+        }
         img {
-          width: 40px !important;
-          margin: 8px 12px 0 0;
+          width: 5.3vw !important;
+          height: 5.3vw !important;
+          margin: 0vw 1.6vw 0 0;
+        }
+        .desc {
+          line-height: 4.8vw !important;
+          font-size: 3.2vw !important;
+          margin-top: 1.6vw !important;
         }
         :global {
           .ant-space-align-center {
@@ -144,25 +174,38 @@
         }
       }
     }
+    .supportWrapper {
+      :global {
+        .ant-row {
+          row-gap: 2.7vw !important;
+        }
+      }
+    }
     .supportItem {
-      height: 104px !important;
-      padding: 32px !important;
+      height: 100% !important;
+      border-radius: 1.6vw !important;
+      padding: 4.26vw !important;
       div {
         font-size: 3.7vw !important;
+        font-weight: 500 !important;
+        line-height: 5.33vw !important;
+        font-family: PingFangSC !important;
       }
       img {
-        width: 40px !important;
+        width: 5.3vw !important;
       }
     }
   }
   .contactBtn {
-    height: 74px;
-    width: 220px;
+    height: 100%;
+    width: 29.3vw;
+    height: 9.6vw;
     border-radius: 8px;
-    margin-top: 0;
-    padding: 25px;
+    margin: 0 auto 7.7vw auto;
+    padding: 2.7vw;
     a {
       font-size: 3.2vw !important;
+      font-weight: 500;
     }
   }
 }

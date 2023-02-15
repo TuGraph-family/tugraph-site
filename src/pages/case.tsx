@@ -2,7 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import { Carousel, Col, Row, Space } from 'antd';
 import { SubTitle } from '@/components/SubTitle';
-import { getLocale, useIntl } from 'umi';
+import { getLocale, useIntl, isBrowser } from 'umi';
 import { getDemos } from '@/data/demos';
 import { getExamples } from '@/data/examples';
 import cx from 'classnames';
@@ -17,6 +17,9 @@ export default function DemoPage() {
   const lang = getLocale();
   const styles = lang === 'en-US' ? stylesEn : stylesZh;
   const isWide = useMedia('(min-width: 767.99px)', true);
+  const SWIPE_PADDING = isBrowser()
+    ? (40 * document.body.clientWidth) / 750
+    : 40;
   const pcDemo = (
     <div className="maxContainer">
       <Row wrap={true} className={styles.demoWrapper}>
@@ -35,15 +38,15 @@ export default function DemoPage() {
   );
   const mobileDemo = (
     <div className={styles.demoWrapper}>
-      <Carousel>
+      <Carousel centerMode={true} centerPadding={`${SWIPE_PADDING}px`}>
         {getDemos(intl)?.map((item, key) => (
           <Col span={isWide ? 8 : 24} className={styles.demoCards} key={key}>
             <div className={styles.demoCard}>
-              <Space size={12}>
+              <Space size={12} align="center">
                 <img src={item.iconUrl} />
                 <div className={styles.type}>{item.type}</div>
               </Space>
-              <div>
+              <div className={styles.demoContent}>
                 <span className={styles.title}>{item.title}</span>
                 <span className={styles.desc}>{item.desc}</span>
               </div>
@@ -66,8 +69,8 @@ export default function DemoPage() {
           key={key}
         >
           <div className="maxContainer">
-            <Space size={32}>
-              <div className={styles.textWrapper}>
+            <Space size={32} align="start">
+              <div>
                 <div className={styles.title}>{item.title}</div>
                 <div style={{ marginBottom: '20px' }}>{item.description}</div>
 
@@ -98,14 +101,17 @@ export default function DemoPage() {
 
   const mobileExample = (
     <div className={styles.exampleWrapper}>
-      <SubTitle title={intl.formatMessage({ id: 'demo.examples' })} />
+      <SubTitle
+        title={intl.formatMessage({ id: 'demo.examples' })}
+        className={styles.subTitle}
+      />
       {getExamples(intl)?.map((item, key) => (
         <div className={styles.exampleCard} key={key}>
           <img src={item.img} />
           <div className="maxContainer">
             <div className={styles.textWrapper}>
               <div className={styles.title}>{item.title}</div>
-              <div style={{ marginBottom: '20px' }}>{item.description}</div>
+              <div className={styles.description}>{item.description}</div>
 
               <div className={styles.subTitle}>
                 {intl.formatMessage({ id: 'demo.example.challenge' })}

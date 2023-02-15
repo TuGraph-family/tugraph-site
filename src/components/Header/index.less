@@ -10,12 +10,13 @@
   top: 0;
   transition: all ease 0.3s;
 
-  a {
-    height: 32px;
-  }
-
   .menu {
     height: 64px;
+  }
+
+  .languageIcon {
+    width: 24px;
+    margin-right: -8px;
   }
 
   .log {
@@ -38,6 +39,9 @@
       font-weight: 400;
       color: rgba(26, 27, 37, 0.88);
       line-height: 22px;
+    }
+    .ant-menu-horizontal > .ant-menu-submenu::after {
+      display: none;
     }
 
     .ant-menu-item,
@@ -107,16 +111,58 @@
 
 @media only screen and (max-width: 767.99px) {
   .header {
-    height: 88px;
-    padding: 0 24px;
+    height: 11.7vw;
+    padding: 2.7vw 3.2vw;
     transition: all 0.3s;
+    .languageIcon {
+      width: 7.8vw;
+      color: #1a1b25;
+    }
     .menuIcon {
-      font-size: 24px;
-      color: rgba(0, 0, 0, 1);
-      position: absolute;
-      right: 24px;
-      top: 31px;
+      font-size: 4.8vw;
       transition: all 0.3s;
+      color: #1a1b25;
+      opacity: 0.85;
+    }
+    img {
+      width: 21.3vw;
+    }
+  }
+
+  .MenuList {
+    .menuChildren {
+      font-weight: 400;
+    }
+    :global {
+      .ant-menu-inline.ant-menu-root .ant-menu-item,
+      .ant-menu-inline.ant-menu-root .ant-menu-submenu-title {
+        display: flex;
+        font-weight: 500;
+        align-items: center;
+        font-size: 3.7vw;
+        width: 93.6vw;
+        height: 100%;
+        transition: border-color 0.3s, background 0.3s,
+          padding 0.1s cubic-bezier(0.215, 0.61, 0.355, 1);
+        height: 12.8vw;
+        padding: 3.7vw 1vw;
+        font-weight: 500;
+      }
+
+      .ant-menu-inline,
+      .ant-menu-vertical,
+      .ant-menu-vertical-left {
+        border-right: 0;
+      }
+      .ant-menu-sub.ant-menu-inline {
+        background-color: #fff !important;
+      }
+      .ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
+        background-color: #fff !important;
+      }
+      .ant-menu-inline .ant-menu-item::after {
+        border-right: 0 !important;
+      }
     }
   }
 
@@ -125,12 +171,42 @@
       height: 100% !important;
     }
     .ant-drawer-header {
-      padding: 36px 24px;
+      padding: 3.7vw 3.2vw;
+      font-weight: 500;
+      img {
+        width: 21.3vw;
+      }
+    }
+    .ant-drawer-body {
+      padding: 2.1vw 3.2vw;
+      width: 100vw;
+      overflow-x: hidden;
+      .menuList {
+        height: 12.8vw;
+        padding: 3.7vw 1vw;
+        font-weight: 500;
+
+        a {
+          color: rgba(26, 27, 37, 0.88);
+          font-size: 3.7vw;
+        }
+      }
+
+      .ant-collapse-content-active {
+        .ant-collapse-content-box {
+          .menuList {
+            a {
+              font-weight: 400 !important;
+              font-size: 3.2vw !important;
+            }
+          }
+        }
+      }
     }
   }
 
   .collapse {
-    height: 96px;
+    height: 12.8vw;
     :global {
       .ant-collapse-content-box {
         padding: 0 0 0 24px !important;
@@ -138,25 +214,25 @@
 
       .ant-collapse-header {
         padding: 0 !important;
-        border-bottom: 1px solid #5097fc;
+        border-bottom: none;
       }
 
       .ant-collapse-expand-icon {
         position: absolute;
         right: 0px;
-        color: #fff;
-        padding: 30px 0;
+        color: rgba(26, 27, 37, 0.65);
+        padding: 3.7vw 1vw;
         span {
-          font-size: 24px !important;
+          font-size: 2.7vw !important;
         }
       }
 
       .ant-collapse-header-text {
-        font-size: 24px;
-        height: 94px;
-        letter-spacing: 8px;
-        padding: 24px 0;
-        color: #ffffff;
+        font-size: 3.7vw;
+        font-weight: 500;
+        height: 12.8vw;
+        padding: 3.7vw 1vw;
+        color: rgba(26, 27, 37, 0.88);
       }
     }
   }

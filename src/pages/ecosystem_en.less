@@ -21,14 +21,20 @@
       margin-bottom: 8px;
     }
 
-    .groupDescription,
-    .description {
+    .groupDescription {
       font-family: AlibabaPuHuiTi_2_55_Regular;
       font-size: 14px;
       color: rgba(26, 27, 37, 0.45);
       text-align: center;
       line-height: 22px;
       margin-bottom: 32px;
+    }
+    .description {
+      font-family: AlibabaPuHuiTi_2_55_Regular;
+      font-size: 14px;
+      color: rgba(26, 27, 37, 0.45);
+      text-align: left;
+      line-height: 22px;
     }
   }
 
@@ -44,12 +50,12 @@
         font-weight: 500;
         font-size: 16px;
         color: rgba(26, 27, 37, 0.88);
-        line-height: 24px;
         margin: 12px 0 8px 0;
+        line-height: 24px;
         text-align: left;
       }
 
-      .description {
+      .desc {
         font-weight: 400;
         font-size: 14px;
         color: rgba(26, 27, 37, 0.45);
@@ -60,9 +66,13 @@
     }
   }
 
+  .enSupportItemPadding {
+    padding: 14px 24px !important;
+  }
+
   .supportWrapper {
     .supportItem {
-      height: 100%;
+      height: auto;
       background-color: rgba(22, 80, 255, 0.04);
       border-radius: 12px;
       padding: 24px;
@@ -84,6 +94,7 @@
   background-color: @primary-color;
   border-radius: 8px;
   margin-top: 32px;
+  margin-left: 1px;
   padding: 12px 32px;
   color: #fff;
 
@@ -108,59 +119,87 @@
 
 @media only screen and (max-width: 767.99px) {
   .cardWrapper {
-    margin-bottom: 20px !important;
+    margin-bottom: 2.7vw !important;
+    padding: 8vw 4.3vw 4.3vw 4.3vw !important;
     .groupTitle {
-      font-size: 6.4vw;
-      font-weight: 600;
+      font-size: 6.4vw !important;
+      font-weight: 600 !important;
+      line-height: 9.06vw !important;
     }
     .groupDescription {
       font-size: 3.2vw !important;
       line-height: 4.8vw !important;
-      margin: 16px 0 36px;
+      margin-top: 2.1vw;
+      margin-bottom: 4.8vw !important;
       color: rgba(26, 27, 37, 0.65);
     }
     .title {
       font-size: 3.7vw !important;
+      line-height: 5.3vw !important;
+      margin: 0 !important;
     }
     .description {
       font-size: 3.2vw !important;
       line-height: 4.8vw !important;
-      margin: 12px 0 0 0 !important;
+      margin-top: 1.6vw !important;
     }
     .typeWrapper {
+      :global {
+        .ant-row {
+          row-gap: 2.7vw !important;
+        }
+      }
       .typeItem {
+        border-radius: 1.6vw !important;
         height: 100% !important;
-        padding: 32px !important;
+        padding: 4.26vw !important;
         display: flex;
         align-items: start;
         img {
-          width: 40px !important;
-          margin: 8px 12px 0 0;
+          width: 5.3vw !important;
+          margin-right: 1.6vw;
         }
         :global {
           .ant-space-align-center {
             align-items: flex-start;
           }
+          .ant-row {
+            row-gap: 2.7vw !important;
+          }
         }
       }
     }
+    .supportWrapper {
+      :global {
+        .ant-row {
+          row-gap: 2.7vw !important;
+        }
+      }
+    }
+
     .supportItem {
       height: 100% !important;
-      padding: 32px !important;
+      border-radius: 1.6vw !important;
+      padding: 4.26vw !important;
+
       div {
         font-size: 3.7vw !important;
+        line-height: 5.3vw !important;
+      }
+      .title {
+        margin: 0 !important;
       }
       img {
-        width: 40px !important;
+        width: 5.33vw !important;
       }
     }
   }
   .contactBtn {
-    height: 74px;
-    width: 220px;
+    height: 100%;
+    width: 29.3vw;
     border-radius: 8px;
-    margin-top: 0;
-    padding: 25px;
+    margin: 0 auto 7.7vw auto;
+    padding: 2.7vw;
     a {
       font-size: 3.2vw !important;
     }

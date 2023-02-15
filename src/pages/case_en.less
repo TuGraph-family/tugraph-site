@@ -24,17 +24,17 @@
         .title {
           font-weight: 500;
           font-size: 14px;
-          height: 100%;
           color: rgba(26, 27, 37, 0.88);
+          line-height: 24px;
           letter-spacing: 0;
           text-align: justify;
-          line-height: 22px;
         }
 
         .desc {
           font-weight: 400;
           font-size: 14px;
           color: rgba(26, 27, 37, 0.45);
+          text-align: justify;
           line-height: 22px;
         }
 
@@ -42,7 +42,7 @@
           font-weight: 500;
           font-size: 16px;
           color: rgba(26, 27, 37, 0.88);
-          line-height: 24px;
+          line-height: 22px;
           margin: 12px 0 8px 0;
         }
       }
@@ -54,10 +54,6 @@
 
     .crossRow {
       background-color: rgba(22, 80, 255, 0.04);
-    }
-
-    .textWrapper {
-      padding-right: 16px;
     }
 
     .exampleCard {
@@ -78,7 +74,7 @@
       }
 
       .description {
-        margin-bottom: 20px;
+        margin: 20px;
       }
 
       .subTitle {
@@ -100,10 +96,26 @@
 
 @media only screen and (max-width: 767.99px) {
   .containerWrapper {
+    .subTitle {
+      margin-bottom: 4.8vw !important;
+    }
     .demoWrapper {
       transition: all 0.3s;
-      height: 100%;
-      padding: 2vw 4.3vw;
+      width: 100vw;
+      margin: -9.2vw -3.2vw -3.6vw -3.2vw;
+      border-radius: 0;
+      box-shadow: none;
+      background: none;
+      padding: 0;
+      :global {
+        .ant-carousel .slick-dots li,
+        .ant-carousel .slick-dots li.slick-active {
+          width: 4vw !important;
+        }
+        .ant-carousel .slick-dots-bottom {
+          bottom: 5.9vw;
+        }
+      }
       .demoCards {
         margin-bottom: 8px;
         padding: 0;
@@ -112,55 +124,71 @@
           background: #fff;
           max-width: 100%;
           text-align: left;
-          min-height: 10px;
-          margin-bottom: 0px;
+          padding: 4.26vw !important;
+          height: 100%;
+          height: 53.3vw;
+          border-radius: 1.6vw;
+          text-align: left;
+          width: 86.7vw !important;
+          box-shadow: 0 3px 6px -4px rgba(132, 135, 155, 0.12),
+            0 6px 16px 0 rgba(132, 135, 155, 0.08),
+            0 9px 28px 8px rgba(132, 135, 155, 0.05);
+          background: #ffffff;
+          margin: 9.2vw 0;
           img {
-            width: 40px;
-            margin-top: 12px;
+            width: 5.3vw !important;
+            height: 5.3vw !important;
           }
           .type {
             font-size: 3.7vw;
-            margin-top: 20px;
+            line-height: 5.33vw;
+            margin: 0 !important;
           }
           .title {
             font-size: 3.2vw;
-            line-height: 36px;
+            line-height: 5.33vw;
           }
           .desc {
-            margin-top: 20px;
+            margin-top: 2.7vw;
             font-size: 3.2vw;
-            line-height: 36px;
+            line-height: 4.8vw;
+            letter-spacing: 0px;
           }
         }
       }
     }
     .exampleWrapper {
-      margin-top: 100px;
+      margin: 13.3vw 0 0 0;
       .exampleCard {
-        margin: 0 0 20px 0;
-        padding: 32px;
+        margin: 0 0 2.7vw 0;
+        padding: 4.3vw;
         box-shadow: 0 3px 6px -4px rgba(132, 135, 155, 0.12),
           0 6px 16px 0 rgba(132, 135, 155, 0.08),
           0 9px 28px 8px rgba(132, 135, 155, 0.05);
-        border-radius: 12px;
+        border-radius: 1.6vw;
         font-size: 3.2vw;
-        text-align: justify;
+        text-align: left;
         line-height: 4.8vw;
         img {
-          margin: -32px -32px 0 -32px;
-          border-radius: 12px 12px 0 0;
-          width: calc(100vw - 46px);
+          margin: -4.3vw -4.3vw 0 -4.3vw;
+          border-radius: 1.6vw 1.6vw 0 0;
+          width: calc(100vw - 6.4vw);
           object-fit: cover;
           height: 48vw;
         }
         .textWrapper {
           .title {
             font-size: 3.7vw;
-            margin: 24px 0 12px 0;
+            margin-top: 3.2vw;
+            line-height: 5.3vw;
+          }
+          .description {
+            margin: 1.6vw 0 3.2vw 0;
           }
           .subTitle {
             font-size: 3.2vw;
-            margin: 24px 0 12px 0;
+            line-height: 5.06vw;
+            margin: 3.2vw 0 1.6vw 0;
           }
         }
       }

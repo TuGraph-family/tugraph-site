@@ -7,14 +7,13 @@ export default {
   'header.doc': '文档',
   'header.blog': '博客',
   'header.community': '社区',
-  'header.download': ' 下载',
+  'header.download': '下载',
   'footer.product': '产品',
   'footer.community': '社区',
   'footer.contact': '联系我们',
   'footer.productName': 'TuGraph 图数据库',
   'footer.communityName': '哔哩哔哩',
   'footer.phone': '400-903-0809',
-  'home.title': ' TuGraph 首页',
   'home.description':
     'TuGraph,蚂蚁图数据库,蚂蚁图计算,图数据库,图计算,图平台,图数据分析, 分布式数据库, Graph,大数据,关联关系分析,知识图谱,GNN, 图神经网络, Neo4j, GeaGraph, GeaBase, GeaFlow, 费马, 人工智能, big data, graph processing,graph database, graph computing, artificial intelligence',
   'home.banner.slogan': '支付宝万亿业务背后的图数据库',
@@ -107,7 +106,6 @@ export default {
   'footer.extraInfo': '© 2022 蚂蚁集团',
   'footer.address': '地址：中国北京朝阳区东三环中路1号环球金融中心东塔9层',
   'footer.addressMobile': '中国北京朝阳区东三环中路1号环球金融中心东塔9层',
-  'product.title': ' TuGraph 产品',
   'product.description':
     '为用户管理和分析复杂关联数据提供了高效、易用、可靠的一站式平台',
   'product.slogan': '极速的开源图数据库TuGraph',
@@ -135,7 +133,7 @@ export default {
   'product.feature.title3': '开箱即用的运维监控平台',
   'product.feature.desc3':
     '数据库实时运维监控展示，支持Docker、CentOS、Ubuntu的一键部署，开箱即用。同时提供了丰富可拓展的接口，支持用户的二次开发，实现系统对接。并支持Prometheus、Grafana等主流开源监控告警工具。',
-  'product.ecosystem': 'TuGraph 生态体系',
+  'product.ecosystem': 'TuGraph 产品架构',
   'demo.title': ' TuGraph 案例',
   'demo.description':
     '图数据库,图计算,图平台,图数据分析, 分布式数据库, Graph,大数据分析,关联关系分析,大数据分析,反洗钱,反欺诈,金融风控,物联网, 设备管理, 国家电网',
@@ -283,4 +281,13 @@ export default {
   'blog.total': '共',
   'blog.item': '条',
   'blog.more': '查看更多',
+  'doc.update.time': '最后更新时间：',
+  'site.title': 'TuGraph 高性能图数据库',
+  'home.title': 'TuGraph 高性能图数据库',
+  'product.title': ' TuGraph 产品',
+  'case.title': ' TuGraph Use Cases',
+  'ecosystem.title': ' TuGraph Partners',
+  'doc.title': ' TuGraph Documentation',
+  'blog.title': ' TuGraph Blog',
+  'download.title': ' TuGraph Download',
 };

@@ -14,7 +14,6 @@ export default {
   'footer.community': 'Community',
   'footer.communityName': 'bilibili',
   'footer.phone': '400-903-0809',
-  'home.title': ' TuGraph',
   'home.description':
     'TuGraph,蚂蚁图数据库,蚂蚁图计算,图数据库,图计算,图平台,图数据分析, 分布式数据库, Graph,大数据,关联关系分析,知识图谱,GNN, 图神经网络, Neo4j, GeaGraph, GeaBase, GeaFlow, 费马, 人工智能, big data, graph processing,graph database, graph computing, artificial intelligence',
   'home.banner.slogan': 'The Graph Database Behind Alipay',
@@ -30,12 +29,11 @@ export default {
   'home.notice1.desc':
     'FinBench, which was initiated by Ant Group, will be used to evaluate the performance and functionality of graph databases in financial scenarios.',
   'home.notice2.tag': 'NEWS',
-  'home.notice2.title':
-    'TuGraph Won the Annual Award at the World Internet Conference.',
+  'home.notice2.title': 'Try TuGraph on Alibaba Cloud for Free.',
   'home.notice2.desc':
-    'TuGraph (formerly known as GeaGraph) was selected for the award for its major innovations in graph technology.',
+    'Easily create your own graph database application with simple deployment on Alibaba Cloud.',
   'home.case.title': 'SOLUTIONS',
-  'home.case.desc0': 'Thousands of times improvement',
+  'home.case.desc0': 'Thousands of times improvement ',
   'home.case.desc1':
     'help industry customers break the bottleneck of data analysis.',
   'home.case0.title': 'Financial Services',
@@ -114,7 +112,6 @@ export default {
     '9/F, East Tower, Beijing World Financial Center, No.1 East 3rd Ring Middle Road, Chaoyang District, Beijing 100020',
   'footer.addressMobile':
     '9/F, East Tower, Beijing World Financial Center, No.1 East 3rd Ring Middle Road, Chaoyang District, Beijing 100020',
-  'product.title': ' TuGraph Products',
   'product.description':
     'Provides an efficient, easy-to-use and reliable one-stop platform for users to manage and analyze complex and linked data',
   'product.slogan': 'Speedy Open-Sourced Graph Database',
@@ -143,7 +140,7 @@ export default {
     'Readily Available Operation and Maintenance Monitoring Platform',
   'product.feature.desc3':
     'Real-time operation and maintenance monitoring, supports one-click deployment of Docker, Centos, Ubuntu. At the same time, it provides a rich and extensible interface to support the secondary development of users and realize system integration. And supports mainstream open source monitoring and alarm tools such as Prometheus and Grafana.',
-  'product.ecosystem': 'ARCASESCHITECTURE',
+  'product.ecosystem': 'ARCHITECTURE',
   'demo.title': ' TuGraph Use Cases',
   'demo.description':
     '图数据库,图计算,图平台,图数据分析, 分布式数据库, Graph,大数据分析,关联关系分析,大数据分析,反洗钱,反欺诈,金融风控,物联网, 设备管理, 国家电网',
@@ -152,7 +149,7 @@ export default {
   'demo.title0':
     'Credit Risk Control, Anti-money Laundering, Anti-fraud, Fund Tracking, Marketing Recommendation: ',
   'demo.desc0':
-    'Expand the dimension of risk characteristics through graph computing technology, and improve risk prevention capabilities such as credit risk control.  Graph computing technology also helps financial institutions to accurately market and expand customers.',
+    'Expand the dimension of risk characteristics through graph computing technology, and improve risk prevention capabilities such as credit risk control. Graph computing technology also helps financial institutions to accurately market and expand customers.',
   'demo.type0': 'Financial Services',
   'demo.title1':
     'Marketing Recommendations, Membership and Merchant Services, Community Discovery, Friend Recommendations: ',
@@ -303,4 +300,13 @@ export default {
   'blog.total': 'Total',
   'blog.item': 'items',
   'blog.more': 'More',
+  'doc.update.time': 'Last Updated: ',
+  'site.title': 'TuGraph the high-performance graph database',
+  'home.title': 'TuGraph the high-performance graph database',
+  'product.title': ' TuGraph Products',
+  'case.title': ' TuGraph Use Cases',
+  'ecosystem.title': ' TuGraph Partners',
+  'doc.title': ' TuGraph Documentation',
+  'blog.title': ' TuGraph Blog',
+  'download.title': ' TuGraph Download',
 };

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Button, Carousel, Col, Modal, Row, Space, Tag } from 'antd';
 import cx from 'classnames';
-import { getLocale } from 'umi';
-import JoLPlayer from 'jol-player';
+import { getLocale, isBrowser } from 'umi';
+import JoLPlayer from '@/components/Player';
 import { Helmet } from 'react-helmet';
 import {
   CheckOutlined,
@@ -24,33 +24,42 @@ import stylesEn from './index_en.less';
 export default function IndexPage() {
   const intl = useIntl();
   const lang = getLocale();
-  const styles = lang === 'en-US' ? stylesEn : stylesZh;
+  const styles = lang === 'zh-CN' ? stylesZh : stylesEn;
   const isWide = useMedia('(min-width: 767.99px)', true);
   const [showApplyForm, setShowApplyForm] = useState(false);
   const [showVideo, setShowVideo] = useState(false);
+  const SWIPE_PADDING = isBrowser()
+    ? (48 * document.body.clientWidth) / 750
+    : 24;
 
   const bannerButton = (
     <div className={styles.bannerButtons}>
-      <Button
-        className={styles.github}
-        onClick={() => {
-          window.open('https://github.com/TuGraph-db');
-        }}
-        type="primary"
-      >
-        <GithubOutlined />
-        <span className={styles.githubText}>GitHub</span>
-      </Button>
-      <Button
-        className={styles.play}
-        type="text"
-        onClick={() => {
-          setShowVideo(true);
-        }}
-      >
-        <img src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*NyD0T5CdYfMAAAAAAAAAAAAADgOBAQ/original" />
-        {intl.formatMessage({ id: 'home.banner.quickStart' })}
-      </Button>
+      <Space>
+        <Button
+          className={styles.github}
+          onClick={() => {
+            window.open('https://github.com/TuGraph-db');
+          }}
+          type="primary"
+        >
+          <Space>
+            <GithubOutlined />
+            <span className={styles.githubText}>GitHub</span>
+          </Space>
+        </Button>
+        <Button
+          className={styles.play}
+          type="text"
+          onClick={() => {
+            setShowVideo(true);
+          }}
+        >
+          <div className={styles.playContent}>
+            <img src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*NyD0T5CdYfMAAAAAAAAAAAAADgOBAQ/original" />
+            {intl.formatMessage({ id: 'home.banner.quickStart' })}
+          </div>
+        </Button>
+      </Space>
     </div>
   );
 
@@ -65,7 +74,7 @@ export default function IndexPage() {
           <div className={styles.desc}>
             {intl.formatMessage({ id: 'home.notice0.desc' })}
           </div>
-          <a className="textLink" href="/blog?id=0" target="_blank">
+          <a className={styles.learnMore} href="/blog?id=0" target="_blank">
             {intl.formatMessage({ id: 'home.knowMore' })}
             <ArrowRightOutlined />
           </a>
@@ -78,7 +87,11 @@ export default function IndexPage() {
           <div className={styles.desc}>
             {intl.formatMessage({ id: 'home.notice1.desc' })}
           </div>
-          <a className="textLink" href="/blog?id=3" target="_blank">
+          <a
+            className={styles.learnMore}
+            href={lang === 'zh-CN' ? `/blog?id=3` : `/blog?id=1`}
+            target="_blank"
+          >
             {intl.formatMessage({ id: 'home.knowMore' })}
             <ArrowRightOutlined />
           </a>
@@ -91,7 +104,11 @@ export default function IndexPage() {
           <div className={styles.desc}>
             {intl.formatMessage({ id: 'home.notice2.desc' })}
           </div>
-          <a className="textLink" target="_blank" href="/blog?id=12">
+          <a
+            className={styles.learnMore}
+            target="_blank"
+            href={lang === 'zh-CN' ? `/blog?id=12` : `/blog?id=10`}
+          >
             {intl.formatMessage({ id: 'home.knowMore' })}
             <ArrowRightOutlined />
           </a>
@@ -102,16 +119,16 @@ export default function IndexPage() {
 
   const mobileNoticeWrapper = (
     <div className={styles.noticeWrapper}>
-      <Carousel>
+      <Carousel centerMode={true} centerPadding={`${SWIPE_PADDING}px`}>
         <div className={styles.card}>
-          <Tag> {intl.formatMessage({ id: 'home.notice0.tag' })}</Tag>
+          <Tag>{intl.formatMessage({ id: 'home.notice0.tag' })}</Tag>
           <div className={styles.title}>
             {intl.formatMessage({ id: 'home.notice0.title' })}
           </div>
           <div className={styles.desc}>
             {intl.formatMessage({ id: 'home.notice0.desc' })}
           </div>
-          <a className="textLink" href="/blog?id=0" target="_blank">
+          <a className={styles.learnMore} href="/blog?id=0" target="_blank">
             {intl.formatMessage({ id: 'home.knowMore' })}
             <ArrowRightOutlined />
           </a>
@@ -124,7 +141,7 @@ export default function IndexPage() {
           <div className={styles.desc}>
             {intl.formatMessage({ id: 'home.notice1.desc' })}
           </div>
-          <a className="textLink" href="/blog?id=3" target="_blank">
+          <a className={styles.learnMore} href="/blog?id=3" target="_blank">
             {intl.formatMessage({ id: 'home.knowMore' })}
             <ArrowRightOutlined />
           </a>
@@ -138,7 +155,9 @@ export default function IndexPage() {
             {intl.formatMessage({ id: 'home.notice2.desc' })}
           </div>
           <a
-            className="textLink"
+            className={cx(styles.learnMore, {
+              [styles.lastLearnMore]: lang === 'zh-CN',
+            })}
             target="_blank"
             href="https://mp.weixin.qq.com/s/h8TR4gn5keqGNEUAd4lBOQ"
           >
@@ -163,7 +182,10 @@ export default function IndexPage() {
 
         {isWide ? pcNoticeWrapper : mobileNoticeWrapper}
 
-        <SubTitle title={intl.formatMessage({ id: 'home.choseReason' })} />
+        <SubTitle
+          title={intl.formatMessage({ id: 'home.choseReason' })}
+          className={styles.subTitle}
+        />
         <div className="maxContainer">
           <Row className={styles.reasonCards}>
             {getReasons(intl)?.map((item, key) => {
@@ -174,7 +196,7 @@ export default function IndexPage() {
                   key={key}
                 >
                   <div className={styles.reasonCard}>
-                    <Space size={24}>
+                    <Space size={16} align="start">
                       <img src={item.icon} />
                       <div className={styles.textGroup}>
                         <div className={styles.title}>{item.title}</div>
@@ -194,9 +216,19 @@ export default function IndexPage() {
               <div className={styles.groupTitle}>
                 {intl.formatMessage({ id: 'home.case.title' })}
               </div>
+
               <div className={styles.groupDesc}>
-                {intl.formatMessage({ id: 'home.case.desc0' })},
-                {intl.formatMessage({ id: 'home.case.desc1' })}
+                {isWide ? (
+                  <>
+                    <div>{intl.formatMessage({ id: 'home.case.desc0' })}</div>
+                    <div>{intl.formatMessage({ id: 'home.case.desc1' })}</div>
+                  </>
+                ) : (
+                  <>
+                    {intl.formatMessage({ id: 'home.case.desc0' })}
+                    {intl.formatMessage({ id: 'home.case.desc1' })}
+                  </>
+                )}
               </div>
             </Col>
             <Col span={isWide ? 18 : 24}>
@@ -210,10 +242,10 @@ export default function IndexPage() {
                     <div className={styles.card}>
                       <img src={item.iconUrl} alt="icon" />
                       <div className={styles.title}>{item.title}</div>
-                      {lang === 'zh-CN' ? (
+                      {lang === 'zh-CN' && isWide ? (
                         <>
                           <div className={styles.desc}>{item.desc0}</div>
-                          <div className={styles.desc}>{item.desc1}</div>
+                          <div className={styles.desc}> {item.desc1}</div>
                         </>
                       ) : (
                         <div
@@ -230,13 +262,13 @@ export default function IndexPage() {
 
         <SubTitle title={intl.formatMessage({ id: 'home.users' })} />
         {!isWide && (
-          <a className="textLink" href="/case">
+          <a className={styles.textLink} href="/case">
             {intl.formatMessage({ id: 'home.moreDemo' })}
             <ArrowRightOutlined />
           </a>
         )}
         <div className="maxContainer">
-          <Row className={styles.users}>
+          <Row className={styles.users} gutter={20}>
             <Col span={isWide ? 6 : 12}>
               <img src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*yZnbTbOz1RAAAAAAAAAAAAAADgOBAQ/original" />
             </Col>
@@ -250,7 +282,7 @@ export default function IndexPage() {
               <img src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*LsymQLEes6wAAAAAAAAAAAAADgOBAQ/original" />
             </Col>
             {isWide && (
-              <a className="textLink" href="/case">
+              <a className={styles.textLink} href="/case">
                 {intl.formatMessage({ id: 'home.moreDemo' })}
                 <ArrowRightOutlined />
               </a>
@@ -338,15 +370,15 @@ export default function IndexPage() {
                   className={key % 2 === 1 ? styles.crossRow : styles.baseRow}
                 >
                   <Col
-                    span={14}
+                    span={16}
                     className={cx(styles.textAlignLeft, styles.text)}
                   >
                     {item.feat}
                   </Col>
-                  <Col span={5} className={styles.text}>
+                  <Col span={4} className={styles.text}>
                     {item.community ? <CheckOutlined /> : '-'}
                   </Col>
-                  <Col span={5} className={styles.text}>
+                  <Col span={4} className={styles.text}>
                     {item.pro ? <CheckOutlined /> : '-'}
                   </Col>
                 </Row>
@@ -367,6 +399,7 @@ export default function IndexPage() {
           <div className={styles.videoBtn} onClick={() => setShowVideo(false)}>
             X
           </div>
+
           <JoLPlayer
             option={{
               videoSrc:

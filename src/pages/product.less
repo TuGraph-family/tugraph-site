@@ -24,11 +24,12 @@
         height: 24px;
         text-align: center;
         width: 68px;
-        padding: 4px 8px;
+        padding: 2px 8px;
         background-color: rgba(0, 0, 0, 0.06);
         border-radius: 4px;
         font-weight: 400;
         font-size: 12px;
+        border: none;
         color: rgba(0, 0, 0, 0.65);
       }
     }
@@ -125,65 +126,83 @@
   }
 }
 
-@media only screen and (max-width: 931.99px) {
-  .containerWrapper {
-    .reasonWrapper {
-      .reasonCard {
-        margin: 32px;
-        padding: 64px 32px;
-        height: auto;
-      }
-    }
-  }
-}
-
 @media only screen and (max-width: 767.99px) {
   .containerWrapper {
+    transition: all ease 0.3s;
+    .subTitle {
+      margin-bottom: 4.8vw !important;
+    }
     .videoWrapper {
-      width: 100%;
-      height: 275px;
-      padding: 3.2vw;
-      margin: 0 0 100px 0;
-    }
-    .videoInfo {
-      text-align: left;
-      display: flex;
-    }
-    .card {
-      .title {
-        font-size: 3.7vw !important;
+      width: 100vw;
+      margin: -9.2vw -3.2vw 0 -3.2vw;
+      background: none !important;
+      border-radius: 0 !important;
+      box-shadow: none !important;
+      padding: 0 !important;
+      :global {
+        .ant-carousel .slick-dots-bottom {
+          bottom: 5.9vw;
+        }
       }
-      .tag {
-        height: 6.3vw !important;
-        width: 80px !important;
-        margin: 3.7vw 1.6vw !important;
-        font-size: 2.1vw !important;
+      .card {
+        padding: 3.2vw !important;
+        height: 48.8vw;
+        border-radius: 1.6vw;
+        text-align: left;
+        width: 86.7vw !important;
+        box-shadow: 0 3px 6px -4px rgba(132, 135, 155, 0.12),
+          0 6px 16px 0 rgba(132, 135, 155, 0.08),
+          0 9px 28px 8px rgba(132, 135, 155, 0.05);
+        background: #ffffff;
+        margin: 9.2vw 0;
+        .videoInfo {
+          text-align: left;
+          display: flex;
+          margin-top: 1.6vw !important ;
+          .title {
+            font-size: 3.7vw !important;
+            margin: 0 !important;
+          }
+
+          .tag {
+            font-size: 2.13vw !important;
+            height: 100% !important;
+            line-height: 3.2vw !important;
+            text-align: center;
+            padding: 0.53vw 2.13vw !important;
+            width: 13.3vw !important;
+            margin-top: 0.56vw !important;
+          }
+        }
       }
     }
   }
   .introWrapper {
     font-size: 3.2vw !important;
     line-height: 4.8vw !important;
-    margin: 0 0 100px 0 !important;
+    margin: 0 0 13.3vw 0 !important;
   }
   .featCards {
-    margin-bottom: 100px !important;
+    margin-bottom: 13.3vw !important;
     .featCardGroup {
-      padding: 10px !important;
+      min-height: 0 !important;
       height: 100% !important;
       .title {
         font-size: 3.7vw !important;
+        margin-bottom: 0 !important;
+        line-height: 5.3vw !important;
       }
       .desc {
         font-size: 3.2vw !important;
-        text-align: justify !important;
+        text-align: left !important;
         line-height: 4.8vw !important;
-        margin-top: 12px !important;
+        margin-top: 1.6vw !important;
         height: 100% !important;
       }
       .featCard {
+        padding: 4.3vw !important;
         img {
-          height: 88px !important;
+          height: 11.73vw !important;
         }
         :global {
           .ant-space-align-center {
@@ -194,9 +213,12 @@
     }
   }
   .ecoWrapper {
-    margin-bottom: -100px !important;
+    margin: 0 -120px -12.9vw -120px !important;
+    padding: 1px 120px 13.3vw 120px !important;
     img {
       width: 100% !important;
+      padding: 4.3vw !important;
+      border-radius: 1.6vw !important;
     }
   }
 }

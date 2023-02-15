@@ -1,20 +1,19 @@
 import { sortBy } from 'lodash';
 
-import md01 from '@/doc/01.md';
-import md02 from '@/doc/02.md';
-import md03 from '@/doc/03.md';
-import md04 from '@/doc/04.md';
-import md05 from '@/doc/05.md';
-import md06 from '@/doc/06.md';
-import md07 from '@/doc/07.md';
-import md08 from '@/doc/08.md';
-import md09 from '@/doc/09.md';
-import md10 from '@/doc/10.md';
-import md11 from '@/doc/11.md';
-import md12 from '@/doc/12.md';
-import md13 from '@/doc/13.md';
+import md01 from '@/doc/zh/01.md';
+import md02 from '@/doc/zh/02.md';
+import md03 from '@/doc/zh/03.md';
+import md04 from '@/doc/zh/04.md';
+import md05 from '@/doc/zh/05.md';
+import md06 from '@/doc/zh/06.md';
+import md07 from '@/doc/zh/07.md';
+import md08 from '@/doc/zh/08.md';
+import md09 from '@/doc/zh/09.md';
+import md10 from '@/doc/zh/10.md';
+import md11 from '@/doc/zh/11.md';
+import md12 from '@/doc/zh/12.md';
+import md13 from '@/doc/zh/13.md';
 
-// TODO 国际化
 export const blogs = [
   {
     id: 0,
@@ -135,7 +134,7 @@ export const blogs = [
   },
 ];
 
-export const getBlogs = (type: string) => {
+export const getZHBlogs = (type: string) => {
   let list;
   if (!type || type === 'all') {
     list = blogs;

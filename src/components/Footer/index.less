@@ -8,6 +8,11 @@
     font-weight: 400;
     color: rgba(255, 255, 255, 0.89);
   }
+  .slack {
+    font-size: 5.2vw;
+    color: #fff;
+    display: block;
+  }
 
   a:hover {
     color: #1890ff;
@@ -105,32 +110,36 @@
 
 @media only screen and (max-width: 767.99px) {
   .footer {
-    padding: 24px;
+    padding: 3.2vw;
     color: rgba(255, 255, 255, 0.89);
     font-weight: 400;
     height: auto;
 
     .qrCode {
-      text-align: center;
-      height: 148px;
-      padding: 24px;
+      height: 19.7vw;
+      text-align: left;
+      padding: 3.2vw;
       width: 100%;
-      margin: 24px auto;
+      margin: 3.2vw auto;
       background-color: rgba(255, 255, 255, 0.08);
-      border-radius: 12px;
 
       img {
-        width: 13vw;
-        height: 13vw;
+        border-radius: 1.1vw;
+        width: 13.3vw;
+        height: 13.3vw;
       }
 
       .group {
-        height: 102px;
-
         .desc {
           color: #fff;
           font-weight: 500;
           font-size: 3.7vw;
+          width: 19.7vw;
+          height: 5.3vw;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          margin-top: 0px;
         }
 
         .subDesc {
@@ -139,6 +148,11 @@
           color: rgba(255, 255, 255, 0.65);
           line-height: 4vw;
           margin-top: 2.6vw;
+          overflow: hidden;
+          width: 19.7vw;
+          height: 4vw;
+          white-space: nowrap;
+          text-overflow: ellipsis;
         }
       }
     }
@@ -146,14 +160,12 @@
     .contactInfo {
       margin: 0;
       color: #fff;
-      line-height: 48px;
       border-bottom: 1px solid rgba(255, 255, 255, 0.25);
-      height: 85px;
 
       img {
-        width: 24px;
+        width: 3.82vw;
         height: auto;
-        margin: 32px 0;
+        margin: 3.2vw 0;
       }
     }
 
@@ -163,20 +175,32 @@
       height: auto;
       border: none;
       display: block;
+      font-family: PingFangSC;
+      font-weight: 400;
+
+      .divider {
+        height: 1px;
+        background: rgba(255, 255, 255, 0.25);
+      }
+
+      a,
+      div {
+        font-size: 2.22vw;
+        color: rgba(255, 255, 255, 0.65);
+      }
 
       a {
-        margin-bottom: 8px;
+        margin-bottom: 1.1vw;
         display: block;
       }
     }
 
     .textGroup {
-      margin: 0 -24px;
       .item {
         display: block;
         color: #fff;
-        height: 96px;
-        padding: 32px 40px;
+        height: 12.8vw;
+        padding: 4.3vw 5.3vw;
       }
 
       :global {
@@ -187,13 +211,12 @@
           .ant-collapse-item {
             border: none;
             .ant-collapse-header {
-              height: 96px;
-              padding: 24px;
+              height: 12.8vw;
+              padding: 3.2vw 0;
               font-size: 3.7vw;
               color: #fff;
               .ant-collapse-arrow {
                 font-size: 3.7vw;
-                padding: 0px 28px;
               }
             }
           }
@@ -206,6 +229,9 @@
           border: none;
           a {
             color: #fff;
+          }
+          .ant-collapse-content-box {
+            padding: 0;
           }
         }
       }

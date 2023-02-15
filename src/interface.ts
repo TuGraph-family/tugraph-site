@@ -17,14 +17,16 @@ export interface Anchor {
 }
 
 export interface DocContent {
-  body_html: string;
-  editUrl: string;
   id: string;
-  seoDesc: string;
-  slug: string;
-  title: string;
-  updated_at: string;
+  body_html?: string;
+  fileName?: string;
   anchors: Anchor[];
+  docContent?: string;
+  editUrl?: string;
+  seoDesc?: string;
+  docGmtModified?: string;
+  title?: string;
+  updated_at?: string;
 }
 export interface BlogItem {
   id: number;
@@ -40,4 +42,5 @@ export interface MenuItem {
   label: React.ReactNode;
   key: string;
   children?: MenuItem[];
+  icon?: React.ReactNode;
 }

@@ -1,20 +1,33 @@
 import React, { useState } from 'react';
-import { useIntl, useLocation } from 'umi';
-import { Menu, Drawer, Collapse } from 'antd';
+import { getLocale, history, useIntl, useLocation } from 'umi';
+import { Menu, Drawer, Space } from 'antd';
 import cx from 'classnames';
 import { useMedia } from 'react-use';
 import type { MenuItem } from '@/interface';
-import { MenuOutlined, CloseOutlined } from '@ant-design/icons';
+import {
+  MenuOutlined,
+  CloseOutlined,
+  UpOutlined,
+  RightOutlined,
+} from '@ant-design/icons';
 
 import styles from './index.less';
-
-const { Panel } = Collapse;
+import { HOST_EN, HOST_ZH } from '@/constant';
 
 export const Header = ({ isStick }: { isStick?: boolean }) => {
   const intl = useIntl();
   const { pathname } = useLocation();
+  const lang = getLocale();
   const isWide = useMedia('(min-width: 767.99px)', true);
   const [popupMenuVisible, setPopupMenuVisible] = useState(false);
+
+  const onToggleLanguage = () => {
+    if (lang === 'en' || lang === 'en-US') {
+      window.location.href = `${HOST_ZH}${history?.location?.pathname}`;
+    } else {
+      window.location.href = `${HOST_EN}${history?.location?.pathname}`;
+    }
+  };
 
   const onTogglePopupMenuVisible = () => {
     setPopupMenuVisible(!popupMenuVisible);
@@ -26,10 +39,17 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
   };
 
   const menuIcon = !isWide ? (
-    <MenuOutlined
-      className={styles.menuIcon}
-      onClick={onTogglePopupMenuVisible}
-    />
+    <Space size={32}>
+      <img
+        src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*0Q-HT4iXkv4AAAAAAAAAAAAADgOBAQ/original"
+        className={styles.languageIcon}
+        onClick={onToggleLanguage}
+      />
+      <MenuOutlined
+        className={styles.menuIcon}
+        onClick={onTogglePopupMenuVisible}
+      />
+    </Space>
   ) : null;
 
   const menuItems: MenuItem[] = [
@@ -70,12 +90,18 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
       key: 'assets',
       children: [
         {
-          label: <a href="/doc">{intl.formatMessage({ id: 'header.doc' })}</a>,
+          label: (
+            <a href="/doc" className={styles.menuChildren}>
+              {intl.formatMessage({ id: 'header.doc' })}
+            </a>
+          ),
           key: 'doc',
         },
         {
           label: (
-            <a href="/blog">{intl.formatMessage({ id: 'header.blog' })}</a>
+            <a href="/blog" className={styles.menuChildren}>
+              {intl.formatMessage({ id: 'header.blog' })}
+            </a>
           ),
           key: 'blog',
         },
@@ -85,6 +111,7 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
               href="https://space.bilibili.com/1196053065/"
               target="_blank"
               rel="noopener noreferrer"
+              className={styles.menuChildren}
             >
               Demo
             </a>
@@ -103,6 +130,7 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
               href="https://github.com/TuGraph-db"
               target="_blank"
               rel="noopener noreferrer"
+              className={styles.menuChildren}
             >
               GitHub
             </a>
@@ -115,6 +143,7 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
               href="https://gitee.com/tugraph"
               target="_blank"
               rel="noopener noreferrer"
+              className={styles.menuChildren}
             >
               Gitee
             </a>
@@ -130,6 +159,30 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
         </a>
       ),
       key: 'download',
+    },
+    {
+      label: lang === 'zh-CN' ? '简体中文' : 'ENGLISH',
+      key: 'language',
+      icon: (
+        <img
+          src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*0Q-HT4iXkv4AAAAAAAAAAAAADgOBAQ/original"
+          className={styles.languageIcon}
+        />
+      ),
+      children: [
+        {
+          label: (
+            <a href={`${HOST_ZH}${history?.location?.pathname}`}>简体中文</a>
+          ),
+          key: 'Chinese',
+        },
+        {
+          label: (
+            <a href={`${HOST_EN}${history?.location?.pathname}`}>English</a>
+          ),
+          key: 'English',
+        },
+      ],
     },
   ];
 
@@ -161,57 +214,40 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
       {menuIcon}
       <Drawer
         width={'100%'}
-        drawerStyle={{
-          backgroundImage: `url("https://gw.alipayobjects.com/mdn/rms_fa12c2/afts/img/A*7iehTZUVjWIAAAAAAAAAAAAAARQnAQ")`,
-          backgroundSize: 'cover',
-          backgroundRepeat: 'no-repeat',
-        }}
         headerStyle={{
           background: 'rgba(0, 0, 0, 0)',
-          color: '#fff',
+          color: 'rgba(0,0,0,0.65)',
           border: 'none',
         }}
-        bodyStyle={{
-          color: '#fff',
-        }}
+        style={{ overflowX: 'hidden' }}
         title={
-          <img src="https://gw.alipayobjects.com/zos/bmw-prod/b54deb36-47fb-483a-8240-a682fe8348ec.svg" />
+          <img src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*AbamQ5lxv0IAAAAAAAAAAAAADgOBAQ/original" />
         }
         placement="right"
         closable={false}
-        extra={<CloseOutlined onClick={() => setPopupMenuVisible(false)} />}
-        visible={popupMenuVisible}
+        extra={
+          <CloseOutlined
+            onClick={() => setPopupMenuVisible(false)}
+            style={{ fontSize: '3.7vw' }}
+          />
+        }
+        open={popupMenuVisible}
       >
-        {menuItems?.map((item, key) => {
-          if (item?.children) {
-            return (
-              <Collapse ghost key={key}>
-                <Panel
-                  header={item?.label}
-                  key={key}
-                  className={styles.collapse}
-                >
-                  {item?.children?.map(
-                    (
-                      child: { label: {} | null | undefined },
-                      index: string | number,
-                    ) => (
-                      <div className="menuList" key={index}>
-                        {child?.label}
-                      </div>
-                    ),
-                  )}
-                </Panel>
-              </Collapse>
-            );
-          } else {
-            return (
-              <div className="menuList" key={key}>
-                {item?.label}
-              </div>
-            );
-          }
-        })}
+        <div className={styles.MenuList}>
+          <Menu
+            mode="inline"
+            style={{ width: 256 }}
+            items={menuItems.filter((item) => item.key !== 'language')}
+            defaultSelectedKeys={getActiveKey()}
+            expandIcon={({ isOpen }) => {
+              if (isOpen) {
+                return <UpOutlined style={{ fontSize: '3.7vw' }} />;
+              } else {
+                return <RightOutlined style={{ fontSize: '3.7vw' }} />;
+              }
+            }}
+          />
+        </div>
       </Drawer>
     </>
   );
