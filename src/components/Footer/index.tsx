@@ -116,7 +116,7 @@ export const Footer = ({ className }: { className?: string }) => {
           <Col span={7}>
             <Space size={24}>
               <div className={styles.qrCode}>
-                <img src="https://gw.alipayobjects.com/zos/bmw-prod/b543c652-c2a5-4ff1-90e2-dc6d4077b68e.svg" />
+                <img src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*6QheTI5TV-gAAAAAAAAAAAAADgOBAQ/original" />
                 <div className={styles.desc}>
                   {intl.formatMessage({ id: 'footer.qrCode.weChart' })}
                 </div>
@@ -277,7 +277,7 @@ export const Footer = ({ className }: { className?: string }) => {
         <Row gutter={20}>
           <Col span={12}>
             <Space size={20} className={styles.qrCode}>
-              <img src="https://gw.alipayobjects.com/zos/bmw-prod/b543c652-c2a5-4ff1-90e2-dc6d4077b68e.svg" />
+              <img src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*6QheTI5TV-gAAAAAAAAAAAAADgOBAQ/original" />
 
               <div className={styles.group}>
                 <div className={styles.desc}>
