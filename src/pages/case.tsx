@@ -2,7 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import { Carousel, Col, Row, Space } from 'antd';
 import { SubTitle } from '@/components/SubTitle';
-import { getLocale, useIntl } from 'umi';
+import { getLocale, useIntl, isBrowser } from 'umi';
 import { getDemos } from '@/data/demos';
 import { getExamples } from '@/data/examples';
 import cx from 'classnames';
@@ -17,7 +17,9 @@ export default function DemoPage() {
   const lang = getLocale();
   const styles = lang === 'en-US' ? stylesEn : stylesZh;
   const isWide = useMedia('(min-width: 767.99px)', true);
-  const SWIPE_PADDING = (40 * document.body.clientWidth) / 750;
+  const SWIPE_PADDING = isBrowser()
+    ? (40 * document.body.clientWidth) / 750
+    : 40;
   const pcDemo = (
     <div className="maxContainer">
       <Row wrap={true} className={styles.demoWrapper}>

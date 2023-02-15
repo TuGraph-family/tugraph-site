@@ -32,9 +32,9 @@ export default function EcosystemPage() {
             gutter={isWide ? [24, 24] : [0, 0]}
             className={styles.typeWrapper}
           >
-            {getPartner(intl).map((item) => {
+            {getPartner(intl).map((item, key) => {
               return (
-                <Col span={isWide ? item.span : 24}>
+                <Col span={isWide ? item.span : 24} key={key}>
                   <div className={styles.typeItem}>
                     <img src={item.src} alt="icon" />
                     <div>
