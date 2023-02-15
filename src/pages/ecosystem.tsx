@@ -59,7 +59,7 @@ export default function EcosystemPage() {
           <Row gutter={isWide ? [24, 24] : [20, 20]}>
             {getPartnerReason(intl).map((item, index) => {
               return (
-                <Col span={isWide ? item.span : 24}>
+                <Col span={isWide ? item.span : 24} key={index}>
                   <div
                     className={cx(styles.supportItem, {
                       [styles.enSupportItemPadding]:

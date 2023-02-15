@@ -34,7 +34,7 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
   };
 
   const getActiveKey = () => {
-    const key = pathname.replace('/', '');
+    const key = pathname.replace(/\//g, '');
     return [key];
   };
 
