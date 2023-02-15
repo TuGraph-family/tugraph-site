@@ -19,18 +19,6 @@ body {
     margin: auto;
   }
 
-  .textLink {
-    margin-top: 24px;
-    font-weight: 500;
-    font-size: 14px;
-    color: rgba(26, 27, 37, 0.88);
-    display: block;
-
-    span {
-      margin-left: 8px;
-    }
-  }
-
   .lightBtn {
     background: @primary-color;
     border-radius: 8px;
@@ -96,6 +84,18 @@ body {
         opacity: 1;
       }
     }
+  }
+}
+
+.textLink {
+  margin-top: 24px;
+  font-weight: 500;
+  font-size: 14px;
+  color: rgba(26, 27, 37, 0.88);
+  display: block;
+
+  span {
+    margin-left: 8px;
   }
 }
 
@@ -167,6 +167,9 @@ body {
 
     .card {
       padding: 32px;
+      min-height: 270px;
+      position: relative;
+
       :global {
         .ant-tag {
           font-weight: 400;
@@ -193,6 +196,20 @@ body {
         font-size: 14px;
         color: rgba(0, 0, 0, 0.45);
         line-height: 22px;
+      }
+
+      .learnMore {
+        position: absolute;
+        bottom: 32px;
+        margin-top: 24px;
+        font-weight: 500;
+        font-size: 14px;
+        color: rgba(26, 27, 37, 0.88);
+        display: block;
+
+        span {
+          margin-left: 8px;
+        }
       }
     }
   }
@@ -457,12 +474,11 @@ body {
 }
 
 @media only screen and (max-width: 767.99px) {
-  :global {
-    .textLink {
-      font-size: 3.7vw !important;
-      margin-top: 0 !important;
-    }
+  .textLink {
+    font-size: 3.7vw !important;
+    margin-top: 0 !important;
   }
+
   .subTitle {
     margin-bottom: 4.8vw !important;
   }
@@ -547,6 +563,16 @@ body {
         line-height: 4.8vw !important;
         margin-bottom: 5.3vw;
       }
+
+      .learnMore {
+        padding-top: 6.5vw !important ;
+        font-size: 3.7vw !important;
+        margin-top: 0 !important;
+      }
+      .lastLearnMore {
+        padding: 0.5vw !important;
+      }
+
       a {
         margin-top: 5.3vw;
       }
