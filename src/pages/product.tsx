@@ -92,14 +92,14 @@ export default function ProductPage() {
               width: isWide ? 362 : '100%',
             }}
           />
-          <div className={styles.videoInfo}>
+          <Space className={styles.videoInfo} align="start">
             <div className={styles.title}>
               {intl.formatMessage({ id: 'product.video0' })}
             </div>
             <Tag className={styles.tag}>
               {intl.formatMessage({ id: 'product.videoTime0' })}
             </Tag>
-          </div>
+          </Space>
         </div>
         <div className={styles.card}>
           <JoLPlayer
@@ -110,14 +110,14 @@ export default function ProductPage() {
               width: isWide ? 362 : '100%',
             }}
           />
-          <div className={styles.videoInfo}>
+          <Space className={styles.videoInfo} align="start">
             <div className={styles.title}>
               {intl.formatMessage({ id: 'product.video1' })}
             </div>
             <Tag className={styles.tag}>
               {intl.formatMessage({ id: 'product.videoTime1' })}
             </Tag>
-          </div>
+          </Space>
         </div>
         <div className={styles.card}>
           <JoLPlayer
@@ -129,14 +129,14 @@ export default function ProductPage() {
             }}
           />
 
-          <div className={styles.videoInfo}>
+          <Space className={styles.videoInfo} align="start">
             <div className={styles.title}>
               {intl.formatMessage({ id: 'product.video2' })}
             </div>
             <Tag className={styles.tag}>
               {intl.formatMessage({ id: 'product.videoTime2' })}
             </Tag>
-          </div>
+          </Space>
         </div>
       </Carousel>
     </div>
@@ -154,13 +154,19 @@ export default function ProductPage() {
 
       {isWide ? pcVideoList : mobileVideoList}
 
-      <SubTitle title={intl.formatMessage({ id: 'product.intro' })} />
+      <SubTitle
+        title={intl.formatMessage({ id: 'product.intro' })}
+        className={styles.subTitle}
+      />
       <div className={styles.introWrapper}>
         <div>{intl.formatMessage({ id: 'product.introduction0' })}</div>
         <div>{intl.formatMessage({ id: 'product.introduction1' })}</div>
       </div>
 
-      <SubTitle title={intl.formatMessage({ id: 'product.feature' })} />
+      <SubTitle
+        title={intl.formatMessage({ id: 'product.feature' })}
+        className={styles.subTitle}
+      />
       <div className="maxContainer">
         <Row className={styles.featCards}>
           {getFeats(intl)?.map((item, key) => {

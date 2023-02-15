@@ -74,7 +74,11 @@ export default function IndexPage() {
           <div className={styles.desc}>
             {intl.formatMessage({ id: 'home.notice0.desc' })}
           </div>
-          <a className="textLink" href="/blog?id=0" target="_blank">
+          <a
+            className={cx(styles.textLink, { [styles.learnMore]: true })}
+            href="/blog?id=0"
+            target="_blank"
+          >
             {intl.formatMessage({ id: 'home.knowMore' })}
             <ArrowRightOutlined />
           </a>
@@ -87,7 +91,11 @@ export default function IndexPage() {
           <div className={styles.desc}>
             {intl.formatMessage({ id: 'home.notice1.desc' })}
           </div>
-          <a className="textLink" href="/blog?id=3" target="_blank">
+          <a
+            className={cx(styles.textLink, { [styles.learnMore]: true })}
+            href="/blog?id=3"
+            target="_blank"
+          >
             {intl.formatMessage({ id: 'home.knowMore' })}
             <ArrowRightOutlined />
           </a>
@@ -100,7 +108,11 @@ export default function IndexPage() {
           <div className={styles.desc}>
             {intl.formatMessage({ id: 'home.notice2.desc' })}
           </div>
-          <a className="textLink" target="_blank" href="/blog?id=12">
+          <a
+            className={cx(styles.textLink, { [styles.learnMore]: true })}
+            target="_blank"
+            href="/blog?id=12"
+          >
             {intl.formatMessage({ id: 'home.knowMore' })}
             <ArrowRightOutlined />
           </a>
@@ -147,7 +159,7 @@ export default function IndexPage() {
             {intl.formatMessage({ id: 'home.notice2.desc' })}
           </div>
           <a
-            className="textLink"
+            className={cx(styles.textLink, { [styles.learnMore]: true })}
             target="_blank"
             href="https://mp.weixin.qq.com/s/h8TR4gn5keqGNEUAd4lBOQ"
           >
@@ -172,7 +184,10 @@ export default function IndexPage() {
 
         {isWide ? pcNoticeWrapper : mobileNoticeWrapper}
 
-        <SubTitle title={intl.formatMessage({ id: 'home.choseReason' })} />
+        <SubTitle
+          title={intl.formatMessage({ id: 'home.choseReason' })}
+          className={styles.subTitle}
+        />
         <div className="maxContainer">
           <Row className={styles.reasonCards}>
             {getReasons(intl)?.map((item, key) => {

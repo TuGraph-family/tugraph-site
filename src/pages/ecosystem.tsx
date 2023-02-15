@@ -39,12 +39,7 @@ export default function EcosystemPage() {
                     <img src={item.src} alt="icon" />
                     <div>
                       <div className={styles.title}>{item.title}</div>
-                      <div
-                        className={styles.desc}
-                        style={{ color: 'rgba(26, 27, 37, 0.45)' }}
-                      >
-                        {item.desc}
-                      </div>
+                      <div className={styles.description}>{item.desc}</div>
                     </div>
                   </div>
                 </Col>
@@ -68,10 +63,14 @@ export default function EcosystemPage() {
                   <div
                     className={cx(styles.supportItem, {
                       [styles.enSupportItemPadding]:
-                        index === 0 && lang === 'en',
+                        index === 0 && (lang === 'en' || lang === 'en-US'),
                     })}
                   >
-                    <Space size={12} align="center" style={{ height: '100%' }}>
+                    <Space
+                      size={12}
+                      align={isWide ? 'center' : 'start'}
+                      style={{ height: '100%' }}
+                    >
                       <img src={item.src} alt="icon" />
                       <div>{item.support}</div>
                     </Space>
@@ -93,14 +92,6 @@ export default function EcosystemPage() {
         slogan: intl.formatMessage({ id: 'ecosystem.banner.slogan' }),
         description: intl.formatMessage({ id: 'ecosystem.banner.description' }),
         footer: (
-          // <Anchor affix={false} className={styles.contactBtn}>
-          //   <Link
-          //     href="#contactUs"
-          //     title={intl.formatMessage({
-          //       id: 'ecosystem.banner.btn',
-          //     })}
-          //   />
-          // </Anchor>
           <Button type="primary" className={styles.contactBtn}>
             <Link
               href="#contactUs"

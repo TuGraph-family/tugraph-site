@@ -166,6 +166,9 @@ body {
 
     .card {
       padding: 32px;
+      min-height: 280px;
+      min-width: 377px;
+      position: relative;
       :global {
         .ant-tag {
           font-weight: 400;
@@ -193,6 +196,20 @@ body {
         font-size: 14px;
         color: rgba(0, 0, 0, 0.45);
         line-height: 22px;
+      }
+
+      .learnMore {
+        position: absolute;
+        bottom: 32px;
+        margin-top: 24px;
+        font-weight: 500;
+        font-size: 14px;
+        color: rgba(26, 27, 37, 0.88);
+        display: block;
+
+        span {
+          margin-left: 8px;
+        }
       }
     }
   }
@@ -471,6 +488,9 @@ body {
       margin-top: 0 !important;
     }
   }
+  .subTitle {
+    margin-bottom: 4.8vw !important;
+  }
   .bannerButtons {
     text-align: center;
     .github {
@@ -654,6 +674,7 @@ body {
         font-size: 3.2vw !important;
         line-height: 4.8vw !important;
         height: unset !important;
+        margin: 3.2vw 0 5.33vw 0 !important;
       }
     }
     :global {
