@@ -196,7 +196,10 @@ export default function ProductPage() {
       </div>
 
       <div className={styles.ecoWrapper}>
-        <SubTitle title={intl.formatMessage({ id: 'product.ecosystem' })} />
+        <SubTitle
+          title={intl.formatMessage({ id: 'product.ecosystem' })}
+          className={styles.subTitleTop}
+        />
         <div className="maxContainer">
           <img
             src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*ysyZSb4--NMAAAAAAAAAAAAADgOBAQ/original"

@@ -17,7 +17,7 @@ export const Footer = ({ className }: { className?: string }) => {
   const icons = [
     {
       icon: 'https://gw.alipayobjects.com/zos/bmw-prod/5bb7aed7-7b96-4f15-9147-6ba150e5a220.svg',
-      url: 'https://github.com/TuGraph-db',
+      url: 'https://github.com/TuGraph-family',
     },
     {
       icon: 'https://gw.alipayobjects.com/zos/bmw-prod/eba3a225-f8a3-4c56-ad7a-339a60707a49.svg',
@@ -66,7 +66,7 @@ export const Footer = ({ className }: { className?: string }) => {
             <a
               target="_blank"
               className={styles.item}
-              href="https://github.com/TuGraph-db"
+              href="https://github.com/TuGraph-family"
             >
               GitHub
             </a>
@@ -188,7 +188,7 @@ export const Footer = ({ className }: { className?: string }) => {
             <a
               target="_blank"
               className={styles.item}
-              href="https://github.com/TuGraph-db"
+              href="https://github.com/TuGraph-family"
             >
               GitHub
             </a>

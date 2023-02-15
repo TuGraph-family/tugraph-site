@@ -39,13 +39,14 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
   };
 
   const menuIcon = !isWide ? (
-    <Space size={32}>
+    <Space size={24}>
       <img
-        src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*0Q-HT4iXkv4AAAAAAAAAAAAADgOBAQ/original"
+        src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*GN_WSabhJdwAAAAAAAAAAAAADgOBAQ/original"
         className={styles.languageIcon}
         onClick={onToggleLanguage}
       />
-      <MenuOutlined
+      <img
+        src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*d0I2RKJFPd8AAAAAAAAAAAAADgOBAQ/original"
         className={styles.menuIcon}
         onClick={onTogglePopupMenuVisible}
       />
@@ -127,7 +128,7 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
         {
           label: (
             <a
-              href="https://github.com/TuGraph-db"
+              href="https://github.com/TuGraph-family"
               target="_blank"
               rel="noopener noreferrer"
               className={styles.menuChildren}
@@ -165,7 +166,7 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
       key: 'language',
       icon: (
         <img
-          src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*0Q-HT4iXkv4AAAAAAAAAAAAADgOBAQ/original"
+          src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*GN_WSabhJdwAAAAAAAAAAAAADgOBAQ/original"
           className={styles.languageIcon}
         />
       ),
