@@ -84,7 +84,7 @@ export default {
   'home.feat2': '支持多图',
   'home.feat3': '完善的ACID事务处理',
   'home.feat4': '图分析算法',
-  'home.feat5': '基于WWseb客户端的图可视化工具',
+  'home.feat5': '基于Web客户端的图可视化工具',
   'home.feat6': 'OpenCypher图查询语言',
   'home.feat7': '基于 C++/Python/Java的存储过程',
   'home.feat8': '适用于高效图算法开发的Traversal API',
