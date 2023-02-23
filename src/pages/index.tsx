@@ -374,15 +374,15 @@ export default function IndexPage() {
                   className={key % 2 === 1 ? styles.crossRow : styles.baseRow}
                 >
                   <Col
-                    span={16}
+                    span={14}
                     className={cx(styles.textAlignLeft, styles.text)}
                   >
                     {item.feat}
                   </Col>
-                  <Col span={4} className={styles.text}>
+                  <Col span={5} className={styles.text}>
                     {item.community ? <CheckOutlined /> : '-'}
                   </Col>
-                  <Col span={4} className={styles.text}>
+                  <Col span={5} className={styles.text}>
                     {item.pro ? <CheckOutlined /> : '-'}
                   </Col>
                 </Row>
