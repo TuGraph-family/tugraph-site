@@ -200,13 +200,15 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
 
   const pc = (
     <>
-      <a href="/" rel="noopener noreferrer">
-        <img
-          className={styles.log}
-          src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*AbamQ5lxv0IAAAAAAAAAAAAADgOBAQ/original"
-        />
-      </a>
-      {searchInput()}
+      <div className={styles.searchInputStyle}>
+        <a href="/" rel="noopener noreferrer">
+          <img
+            className={styles.log}
+            src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*AbamQ5lxv0IAAAAAAAAAAAAADgOBAQ/original"
+          />
+        </a>
+        {searchInput()}
+      </div>
       <Menu
         className={styles.menu}
         defaultSelectedKeys={['assets']}
