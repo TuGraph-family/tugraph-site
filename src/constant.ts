@@ -8,7 +8,7 @@ export const searchParamsEn = {
   apiKey: 'f4bdd9b83f71b2c95980930921907572',
 };
 export const searchParamsZh = {
-  appId: '',
-  indexName: '',
-  apiKey: '',
+  appId: 'NDSB2X7NZ3',
+  indexName: 'tugraph-antgroup',
+  apiKey: '543db0cadd3173a4b801cd13f89aa996',
 };
