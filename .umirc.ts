@@ -32,6 +32,15 @@ export default defineConfig({
   var s = document.getElementsByTagName("script")[0]; 
   s.parentNode.insertBefore(hm, s);
 })();`,
+    {
+      src: 'https://www.googletagmanager.com/gtag/js?id=AW-11092859162',
+      async: true,
+    },
+    `window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'AW-11092859162');`,
   ],
   theme: {
     'primary-color': 'rgba(22,80,255,1)',
