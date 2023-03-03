@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { getLocale, history, useIntl, useLocation } from 'umi';
+import { DocSearch } from '@docsearch/react';
 import { Menu, Drawer, Space } from 'antd';
 import cx from 'classnames';
 import { useMedia } from 'react-use';
@@ -12,7 +13,8 @@ import {
 } from '@ant-design/icons';
 
 import styles from './index.less';
-import { HOST_EN, HOST_ZH } from '@/constant';
+import { HOST_EN, HOST_ZH, searchParamsEn, searchParamsZh } from '@/constant';
+import '@docsearch/css';
 
 export const Header = ({ isStick }: { isStick?: boolean }) => {
   const intl = useIntl();
@@ -37,9 +39,18 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
     const key = pathname.replace(/\//g, '');
     return [key];
   };
-
+  const searchInput = () => {
+    return (
+      <DocSearch
+        {...(lang === 'en' || lang === 'en-US'
+          ? searchParamsEn
+          : searchParamsZh)}
+      />
+    );
+  };
   const menuIcon = !isWide ? (
     <Space size={24}>
+      {searchInput()}
       <img
         src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*GN_WSabhJdwAAAAAAAAAAAAADgOBAQ/original"
         className={styles.languageIcon}
@@ -189,13 +200,15 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
 
   const pc = (
     <>
-      <a href="/" rel="noopener noreferrer">
-        <img
-          className={styles.log}
-          src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*AbamQ5lxv0IAAAAAAAAAAAAADgOBAQ/original"
-        />
-      </a>
-
+      <div className={styles.searchInputStyle}>
+        <a href="/" rel="noopener noreferrer">
+          <img
+            className={styles.log}
+            src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*AbamQ5lxv0IAAAAAAAAAAAAADgOBAQ/original"
+          />
+        </a>
+        {searchInput()}
+      </div>
       <Menu
         className={styles.menu}
         defaultSelectedKeys={['assets']}
