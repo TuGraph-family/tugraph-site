@@ -20,7 +20,7 @@ export async function queryVersions() {
 /* 获取目录列表 */
 export async function queryCategory(params: { version: string }) {
   return request(
-    `${DOC_HOST_ZH}/api/docs/gitlab/${PRODUCT_CODE}/${params.version}/category/${CATEGORY_ID}`,
+    `${DOC_HOST_ZH}/api/docs/gitlab/${PRODUCT_CODE}/${params.version}/category`,
     {
       method: 'GET',
     },
