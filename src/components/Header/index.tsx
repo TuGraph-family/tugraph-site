@@ -1,22 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { getLocale, history, useIntl, useLocation } from 'umi';
 import { DocSearch } from '@docsearch/react';
 import { Menu, Drawer, Space } from 'antd';
 import cx from 'classnames';
 import { useMedia } from 'react-use';
 import type { MenuItem } from '@/interface';
-import {
-  MenuOutlined,
-  CloseOutlined,
-  UpOutlined,
-  RightOutlined,
-} from '@ant-design/icons';
+import { CloseOutlined, UpOutlined, RightOutlined } from '@ant-design/icons';
 
 import styles from './index.less';
 import { HOST_EN, HOST_ZH, searchParamsEn, searchParamsZh } from '@/constant';
 import '@docsearch/css';
+import AnnouncementBanner from '../AnnouncementBanner';
 
 export const Header = ({ isStick }: { isStick?: boolean }) => {
+  const bannerRef = useRef();
   const intl = useIntl();
   const { pathname } = useLocation();
   const lang = getLocale();
@@ -49,8 +46,17 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
     );
   };
   const menuIcon = !isWide ? (
-    <Space size={24}>
+    <Space size={12}>
       {searchInput()}
+      {lang === 'zh-CN' && (
+        <img
+          src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*E6rZRLlvvDoAAAAAAAAAAAAADgOBAQ/original"
+          className={styles.languageIcon}
+          onClick={() => {
+            bannerRef.current?.onOpenBanner();
+          }}
+        />
+      )}
       <img
         src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*GN_WSabhJdwAAAAAAAAAAAAADgOBAQ/original"
         className={styles.languageIcon}
@@ -263,6 +269,8 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
           />
         </div>
       </Drawer>
+
+      <AnnouncementBanner ref={bannerRef} />
     </>
   );
 
