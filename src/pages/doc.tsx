@@ -168,14 +168,11 @@ export default function DocPage() {
                     value={currentVersion}
                     onChange={(v) => setCurrentVersion(v)}
                   >
-                    {map(
-                      versions,
-                      (version: { branch: string }, index: number) => (
-                        <Option value={version?.branch} key={index}>
-                          {version?.branch}
-                        </Option>
-                      ),
-                    )}
+                    {map(versions, (version: string, index: number) => (
+                      <Option value={version} key={index}>
+                        {version}
+                      </Option>
+                    ))}
                   </Select>
                 </Space>
               </div>
