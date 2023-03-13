@@ -16,9 +16,6 @@
     }
     .ant-drawer-body {
       padding: 0;
-      background: url('https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*_zfVTYYlZYkAAAAAAAAAAAAADgOBAQ/original')
-        no-repeat -270px 0;
-      background-size: auto 100%;
       .anticon-left {
         margin-top: 10px;
         margin-left: 10px;
@@ -62,109 +59,14 @@
     right: 44px;
     &:extend(.carouselBtn);
   }
-  .pcBannerContent {
-    padding: 0 120px;
+  .bannerContainer {
+    position: relative;
     height: 192px;
-    display: flex !important;
-    justify-content: space-between;
-    .pcBannerLogo {
-      width: 134px;
-      height: 20px;
-      margin-top: 12px;
-      overflow: hidden;
-      img {
-        width: 100%;
-        margin-top: 3px;
-      }
-    }
-    .descriptionStyle {
-      height: 47px;
-      margin-top: 20px;
-      line-height: 47px;
-      font-size: 32px;
-      .description {
-        color: rgba(22, 80, 255, 0.88);
-        font-family: 'PuHuiTi95';
-        font-weight: 400;
-        width: 126px;
-        display: inline-block;
-      }
-      .title {
-        color: rgba(26, 27, 37, 0.88);
-        font-family: 'PuHuiTi95';
-        font-weight: 400;
-        width: 414px;
-        display: inline-block;
-      }
-      .btn {
-        height: 32px;
-        width: 106px;
-        font-weight: normal;
-        border-radius: 6px;
-        margin-left: 37px;
-        top: -6px;
-      }
-    }
-    .description1 {
-      display: inline-block;
-      font-size: 16px;
-      margin-top: 4px;
-      .circle {
-        width: 3px;
-        height: 3px;
-        background-color: rgba(26, 27, 37, 1);
-        border-radius: 50%;
-        display: inline-block;
-        margin-right: 7px;
-        margin-bottom: 4px;
-      }
-      span {
-        margin-right: 16px;
-      }
-      img {
-        display: inline-block;
-        margin-top: -5px;
-      }
-    }
-    .time {
-      height: 28px;
-      width: 252px;
-      background-color: rgba(22, 80, 255, 0.06);
-      border-radius: 4px;
-      margin-top: 8px;
-      color: rgba(22, 80, 255, 1);
-      line-height: 28px;
-      padding-left: 7px;
-      display: inline-block;
-    }
-    .description4 {
-      height: 17px;
-      width: 261px;
-      font-family: 'PuHuiTi55';
-      font-size: 12px;
-      color: rgba(26, 27, 37, 0.45);
-      text-align: justify;
-      margin-left: 8px;
-    }
-    .weChatContainer {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      img {
-        margin: 43px 22px 0;
-      }
-      div:nth-of-type(1) {
-        font-weight: 500;
-        color: rgba(26, 27, 37, 0.88);
-        line-height: 22px;
-        margin-top: 4px;
-      }
-      div:nth-of-type(2) {
-        font-weight: 400;
-        line-height: 20px;
-        margin-top: 4px;
-        color: rgba(26, 27, 37, 0.65);
-      }
+    img {
+      position: absolute;
+      left: 50%;
+      height: 100%;
+      transform: translateX(-50%);
     }
   }
 }
@@ -194,61 +96,9 @@
   .bannerModal {
     width: 80vw !important;
     height: 106.6vw;
-    .mobileModalContainer {
-      width: 80vw !important;
-      height: 106.6vw;
-      background: url('https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*Ld4pTobH7PUAAAAAAAAAAAAADgOBAQ/original');
-      background-size: auto 100%;
-      display: flex !important;
-      flex-direction: column;
-      align-items: center;
-      .mobileBannerLogo {
-        width: 26.7vw;
-        height: 4.7vw;
-        margin: 4.7vw 0 6.4vw 0;
-        img {
-          width: 100%;
-          margin-top: 1.7vw;
-        }
-      }
-      .mobileDescription {
-        line-height: 12vw;
-        color: rgba(22, 80, 255, 1);
-        font-family: 'PuHuiTi95';
-        font-size: 8.5vw;
-      }
-      .mobileTitle {
-        line-height: 12vw;
-        color: rgba(26, 27, 37, 0.88);
-        font-family: 'PuHuiTi95';
-        font-size: 8.5vw;
-        margin-bottom: 2.6vw;
-      }
-      .mobileTime {
-        width: 57.5vw;
-        line-height: 6.4vw;
-        background-color: rgba(22, 80, 255, 0.06);
-        border-radius: 0.7vw;
-        color: rgba(22, 80, 255, 1);
-        padding: 0 1.4vw;
-        font-size: 3.2vw;
-        margin-bottom: 6.9vw;
-      }
-      .mobileDescription1 {
-        font-size: 3.7vw;
-        color: rgba(26, 27, 37, 0.88);
-        line-height: 5.3vw;
-        margin-bottom: 2.7vw;
-      }
-      .mobileBtn {
-        width: 42.7vw;
-        border-radius: 1.1vw;
-        margin: 7vw 0 4.5vw 0;
-        height: 9.1vw;
-      }
-      .mobileDescription4 {
-        font-size: 2.6vw;
-        color: rgba(26, 27, 37, 0.45);
+    .mobileContainer {
+      img {
+        height: 106.6vw;
       }
     }
     :global {

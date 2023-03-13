@@ -84,43 +84,13 @@ const AnnouncementBanner = forwardRef((_prop, ref) => {
           </>
         )}
         <Carousel>
-          {getBannerContentList(intl).map((i) => (
-            <div key={i.title} className={styles.pcBannerContent}>
-              <div>
-                <div className={styles.pcBannerLogo}>
-                  <img src={i.logo} />
-                </div>
-                <div className={styles.descriptionStyle}>
-                  <span className={styles.description}>{i.description}</span>
-                  <span className={styles.title}>{i.title}</span>
-                  <Button type="primary" ghost className={styles.btn}>
-                    {i.btnText}
-                    <ArrowRightOutlined />
-                  </Button>
-                </div>
-                <div className={styles.description1}>
-                  <div className={styles.circle} />
-                  <span> {i.description1}</span>
-                </div>
-                <div className={styles.description1}>
-                  <div className={styles.circle} />
-                  <span> {i.description2}</span>
-                </div>
-                <div className={styles.description1}>
-                  <div className={styles.circle} />
-                  <span> {i.description3}</span>
-                  <img src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*bXasQ6Phx6UAAAAAAAAAAAAADgOBAQ/original" />
-                </div>
-                <div>
-                  <div className={styles.time}>{i.registrationTime}</div>
-                  <span className={styles.description4}>{i.description4}</span>
-                </div>
-              </div>
-              <div className={styles.weChatContainer}>
-                <img src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*NEdRS6t1UJUAAAAAAAAAAAAADgOBAQ/original" />
-                <div>{i.weChat}</div>
-                <div>{i.weChatDesc}</div>
-              </div>
+          {getBannerContentList(intl).map((item, index) => (
+            <div key={index} className={styles.bannerContainer}>
+              {window.screen.width !== 1440 ? (
+                <img src={item.pcImg} />
+              ) : (
+                <img src={item.pcImg1920} />
+              )}
             </div>
           ))}
         </Carousel>
@@ -135,23 +105,9 @@ const AnnouncementBanner = forwardRef((_prop, ref) => {
       footer={null}
     >
       <Carousel>
-        {getBannerContentList(intl).map((i) => (
-          <div className={styles.mobileModalContainer} key={i.mobileTitle}>
-            <div className={styles.mobileBannerLogo}>
-              <img src={i.logo} />
-            </div>
-            <div className={styles.mobileDescription}>{i.description}</div>
-            <div className={styles.mobileTitle}>{i.mobileTitle}</div>
-            <div className={styles.mobileTime}>{i.registrationTime}</div>
-            <div className={styles.mobileDescription1}> {i.description1}</div>
-            <div className={styles.mobileDescription1}> {i.description2}</div>
-            <div className={styles.mobileDescription1}> {i.description3}</div>
-            <div>
-              <Button className={styles.mobileBtn} type="primary">
-                {i.btnText}
-              </Button>
-            </div>
-            <div className={styles.mobileDescription4}>{i.description4}</div>
+        {getBannerContentList(intl).map((item, index) => (
+          <div key={index} className={styles.mobileContainer}>
+            <img src={item.mobileImg} />
           </div>
         ))}
       </Carousel>
