@@ -13,6 +13,7 @@ import md10 from '@/doc/zh/10.md';
 import md11 from '@/doc/zh/11.md';
 import md12 from '@/doc/zh/12.md';
 import md13 from '@/doc/zh/13.md';
+import md14 from '@/doc/zh/14.md';
 
 export const blogs = [
   {
@@ -131,6 +132,15 @@ export const blogs = [
     updateDate: '2022-12-25',
     type: 'news',
     content: md13?.html,
+  },
+  {
+    id: 13,
+    img: 'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*gxDmQZQfJ_8AAAAAAAAAAAAADgOBAQ/original',
+    title: 'MeetUp 预告｜图技术应用场景实战',
+    desc: '了解最前沿的实时图计算，图可视化等技术；探索图在不同领域的场景实战；与技术大佬面对面交流',
+    updateDate: '2023-03-21',
+    type: 'news',
+    content: md14?.html,
   },
 ];
 
