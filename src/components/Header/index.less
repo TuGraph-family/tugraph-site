@@ -130,6 +130,38 @@
   .ant-menu-vertical.ant-menu-sub {
     min-width: 96px;
   }
+
+  .ant-popover-arrow {
+    display: none;
+  }
+  .ant-popover-inner {
+    box-shadow: 0 3px 6px -4px rgba(0, 0, 0, 0.12),
+      0 9px 20px 8px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+  }
+}
+
+.popoverContent {
+  width: 308px;
+  height: 170px;
+  padding: 8px 16px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  .popoverTitle {
+    color: rgba(26, 27, 37, 0.88);
+    font-weight: 500;
+    line-height: 32px;
+  }
+  .popoverContainer {
+    color: rgba(26, 27, 37, 0.65);
+    line-height: 32px;
+    cursor: pointer;
+    &:hover {
+      color: rgba(22, 80, 255, 1);
+    }
+  }
 }
 
 .sticky {

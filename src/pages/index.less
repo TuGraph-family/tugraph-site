@@ -179,7 +179,7 @@ body {
     .githubText {
       position: absolute;
       top: 12px;
-      right: 38px;
+      right: 48px;
     }
   }
   .play {
@@ -192,6 +192,16 @@ body {
       height: 24px;
       margin-right: 8px;
     }
+  }
+  .tryout {
+    height: 48px;
+    width: 160px;
+    border: 1px solid rgba(26, 27, 37, 0.25);
+    border-radius: 8px;
+    background-color: transparent;
+    font-weight: 500;
+    margin-top: 32px;
+    font-size: 14px;
   }
 }
 
@@ -502,11 +512,94 @@ body {
       height: 56px;
       padding: 16px 0;
       text-align: center;
+      position: relative;
+    }
+
+    .featDesc {
+      position: absolute;
+      right: -40px;
+      color: rgba(26, 27, 37, 0.65);
+      font-weight: 400;
     }
 
     .crossRow {
       background-color: rgba(22, 80, 255, 0.04);
       border-radius: 8px;
+    }
+
+    .collapseIcon {
+      height: 18px;
+      width: 18px;
+      border: 1.5px solid rgba(26, 27, 37, 0.12);
+      border-radius: 2px;
+      position: relative;
+      margin-left: 28px;
+    }
+
+    :global {
+      .ant-collapse-header {
+        height: 56px;
+        border-radius: 8px;
+        background-color: rgba(22, 80, 255, 0.04);
+        margin-bottom: 4px;
+
+        .ant-collapse-header-text {
+          font-weight: 500;
+          font-size: 16px;
+          color: rgba(26, 27, 37, 0.88);
+          text-align: justify;
+          line-height: 32px;
+        }
+
+        .ant-collapse-expand-icon {
+          margin-top: 7px;
+        }
+
+        .anticon {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+    }
+    .funDesc {
+      margin: 12px 0 0 56px;
+      color: rgba(26, 27, 37, 0.65);
+      line-height: 22px;
+      font-weight: 400;
+      font-size: 14px;
+    }
+  }
+}
+
+.btnIcon {
+  position: absolute;
+  right: 24px;
+  top: 17px;
+  font-size: 14px !important;
+}
+
+.downMenu {
+  :global {
+    .ant-dropdown-menu-item {
+      padding: 5px 60px;
+    }
+  }
+}
+
+:global {
+  .ant-dropdown-menu {
+    border-radius: 8px;
+    .ant-dropdown-menu-item {
+      display: flex;
+      color: rgba(26, 27, 37, 0.88);
+      padding: 5px 39px;
+    }
+    .anticon-github,
+    .anticon-aliyun {
+      font-size: 18px;
+      margin-right: 7px;
     }
   }
 }

@@ -1,5 +1,16 @@
 import React, { useState } from 'react';
-import { Button, Carousel, Col, Modal, Row, Space, Tag } from 'antd';
+import {
+  Button,
+  Carousel,
+  Col,
+  Dropdown,
+  Modal,
+  Row,
+  Space,
+  Tag,
+  Menu,
+  Collapse,
+} from 'antd';
 import cx from 'classnames';
 import { getLocale, isBrowser } from 'umi';
 import JoLPlayer from '@/components/Player';
@@ -8,6 +19,10 @@ import {
   CheckOutlined,
   ArrowRightOutlined,
   GithubOutlined,
+  DownOutlined,
+  AliyunOutlined,
+  PlusOutlined,
+  MinusOutlined,
 } from '@ant-design/icons';
 import { LayoutTemplate } from '@/components/LayoutTemplate';
 import { SubTitle } from '@/components/SubTitle';
@@ -20,6 +35,7 @@ import { ApplyForm } from '@/components/ApplyForm';
 
 import stylesZh from './index.less';
 import stylesEn from './index_en.less';
+import { getTugraphFun } from '@/data/get_tugraph_functions';
 
 export default function IndexPage() {
   const intl = useIntl();
@@ -28,6 +44,7 @@ export default function IndexPage() {
   const isWide = useMedia('(min-width: 767.99px)', true);
   const [showApplyForm, setShowApplyForm] = useState(false);
   const [showVideo, setShowVideo] = useState(false);
+  const [rotate, setRotate] = useState(0);
   const SWIPE_PADDING = isBrowser()
     ? (48 * document.body.clientWidth) / 750
     : 24;
@@ -35,29 +52,41 @@ export default function IndexPage() {
   const bannerButton = (
     <div className={styles.bannerButtons}>
       <Space>
-        <Button
-          className={styles.github}
-          onClick={() => {
-            window.open('https://github.com/TuGraph-family');
-          }}
-          type="primary"
+        <Dropdown
+          overlay={
+            <Menu>
+              <Menu.Item>
+                <GithubOutlined />
+                GitHub
+              </Menu.Item>
+              <Menu.Item>
+                <AliyunOutlined />
+                {intl.formatMessage({ id: 'home.btn.desc1' })}
+              </Menu.Item>
+            </Menu>
+          }
         >
-          <Space>
-            <GithubOutlined />
-            <span className={styles.githubText}>GitHub</span>
-          </Space>
-        </Button>
-        <Button
-          className={styles.play}
-          type="text"
-          onClick={() => {
-            setShowVideo(true);
-          }}
-        >
-          <div className={styles.playContent}>
-            <img src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*NyD0T5CdYfMAAAAAAAAAAAAADgOBAQ/original" />
-            {intl.formatMessage({ id: 'home.banner.quickStart' })}
-          </div>
+          <Button
+            className={styles.github}
+            onClick={() => {
+              window.open('https://github.com/TuGraph-family');
+            }}
+            type="primary"
+            onMouseMove={() => {
+              setRotate(180);
+            }}
+            onMouseLeave={() => {
+              setRotate(0);
+            }}
+          >
+            <span className={styles.githubText}>
+              {intl.formatMessage({ id: 'home.btn.desc' })}
+            </span>
+            <DownOutlined className={styles.btnIcon} rotate={rotate} />
+          </Button>
+        </Dropdown>
+        <Button className={styles.tryout}>
+          {intl.formatMessage({ id: 'home.btn.tryOut' })}
         </Button>
       </Space>
     </div>
@@ -307,19 +336,45 @@ export default function IndexPage() {
                 <div
                   className={cx(styles.title, styles.textAlignLeft, 'boldText')}
                 >
-                  {intl.formatMessage({ id: 'home.version0' })}
+                  {`TuGraph ${intl.formatMessage({ id: 'home.version0' })}`}
+                </div>
+                <div style={{ fontWeight: 500 }}>
+                  {intl.formatMessage({ id: 'home.version0.desc' })}
                 </div>
                 <div className={styles.desc}>
                   {intl.formatMessage({ id: 'home.version.desc0' })}
                 </div>
-                <Button
-                  type="primary"
-                  block
-                  onClick={() => window.location.replace('/download')}
-                  className="lightBtn"
+                <Dropdown
+                  overlay={
+                    <Menu className={styles.downMenu}>
+                      <Menu.Item>
+                        <GithubOutlined />
+                        GitHub
+                      </Menu.Item>
+                      <Menu.Item>
+                        <AliyunOutlined />
+                        {intl.formatMessage({ id: 'home.btn.desc1' })}
+                      </Menu.Item>
+                    </Menu>
+                  }
                 >
-                  {intl.formatMessage({ id: 'home.version.startUse' })}
-                </Button>
+                  <Button
+                    className="lightBtn"
+                    onClick={() => {}}
+                    type="primary"
+                    onMouseMove={() => {
+                      setRotate(180);
+                    }}
+                    onMouseLeave={() => {
+                      setRotate(0);
+                    }}
+                  >
+                    <span className={styles.githubText}>
+                      {intl.formatMessage({ id: 'home.version.startUse' })}
+                    </span>
+                    <DownOutlined className={styles.btnIcon} rotate={rotate} />
+                  </Button>
+                </Dropdown>
               </div>
             </Col>
             <Col
@@ -330,7 +385,10 @@ export default function IndexPage() {
             >
               <div className={styles.versionCard}>
                 <div className={styles.title}>
-                  {intl.formatMessage({ id: 'home.version1' })}
+                  {`TuGraph ${intl.formatMessage({ id: 'home.version1' })}`}
+                </div>
+                <div style={{ fontWeight: 500 }}>
+                  {intl.formatMessage({ id: 'home.version0.desc' })}
                 </div>
                 <div className={styles.desc}>
                   {intl.formatMessage({ id: 'home.version.desc1' })}
@@ -357,37 +415,71 @@ export default function IndexPage() {
                 {intl.formatMessage({ id: 'home.function' })}
               </Col>
               <Col span={5} className={cx(styles.title, 'boldText')}>
-                {isWide
-                  ? `TuGraph ${intl.formatMessage({ id: 'home.version0' })}`
-                  : intl.formatMessage({ id: 'home.version0' })}
+                {isWide ? (
+                  <>
+                    {`TuGraph ${intl.formatMessage({
+                      id: 'home.version0',
+                    })}`}
+                    <span>{intl.formatMessage({ id: 'home.tugrpah.db' })}</span>
+                  </>
+                ) : (
+                  intl.formatMessage({ id: 'home.version0' })
+                )}
               </Col>
               <Col span={5} className={cx(styles.title, 'boldText')}>
-                {isWide
-                  ? `TuGraph ${intl.formatMessage({ id: 'home.version1' })}`
-                  : intl.formatMessage({ id: 'home.version1' })}
+                {isWide ? (
+                  <>
+                    {`TuGraph ${intl.formatMessage({
+                      id: 'home.version1',
+                    })}`}
+                    <span>
+                      {intl.formatMessage({ id: 'home.distributed' })}
+                    </span>
+                  </>
+                ) : (
+                  intl.formatMessage({ id: 'home.version1' })
+                )}
               </Col>
             </Row>
-            {getVersions(intl)?.map((item, key) => {
-              return (
-                <Row
-                  key={key}
-                  className={key % 2 === 1 ? styles.crossRow : styles.baseRow}
-                >
-                  <Col
-                    span={14}
-                    className={cx(styles.textAlignLeft, styles.text)}
-                  >
-                    {item.feat}
-                  </Col>
-                  <Col span={5} className={styles.text}>
-                    {item.community ? <CheckOutlined /> : '-'}
-                  </Col>
-                  <Col span={5} className={styles.text}>
-                    {item.pro ? <CheckOutlined /> : '-'}
-                  </Col>
-                </Row>
-              );
-            })}
+            <Collapse
+              ghost
+              expandIcon={({ isActive }) => {
+                return (
+                  <div className={styles.collapseIcon}>
+                    {isActive ? <MinusOutlined /> : <PlusOutlined />}
+                  </div>
+                );
+              }}
+            >
+              {getTugraphFun(intl)?.map((item, index) => {
+                return (
+                  <Collapse.Panel header={item.title} key={index}>
+                    <Row className={styles.funDesc}>
+                      <Col span={14}>{item.desc}</Col>
+                    </Row>
+                    {item.list.map((i, key) => {
+                      return (
+                        <Row key={key} className={styles.baseRow}>
+                          <Col
+                            span={14}
+                            className={cx(styles.textAlignLeft, styles.text)}
+                          >
+                            {i.feat}
+                          </Col>
+                          <Col span={5} className={styles.text}>
+                            {i.community ? <CheckOutlined /> : '-'}
+                          </Col>
+                          <Col span={5} className={styles.text}>
+                            {i.pro ? <CheckOutlined /> : '-'}
+                          </Col>
+                          <span className={styles.featDesc}>{i.desc}</span>
+                        </Row>
+                      );
+                    })}
+                  </Collapse.Panel>
+                );
+              })}
+            </Collapse>
           </div>
         </div>
 

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { getLocale, history, useIntl, useLocation } from 'umi';
 import { DocSearch } from '@docsearch/react';
-import { Menu, Drawer, Space } from 'antd';
+import { Menu, Drawer, Space, Dropdown, Popover } from 'antd';
 import cx from 'classnames';
 import { useMedia } from 'react-use';
 import type { MenuItem } from '@/interface';
@@ -75,9 +75,32 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
     },
     {
       label: (
-        <a href="/product" rel="noopener noreferrer">
-          {intl.formatMessage({ id: 'header.product' })}
-        </a>
+        <Popover
+          content={
+            <div className={styles.popoverContent}>
+              <div>
+                <div className={styles.popoverTitle}>
+                  {intl.formatMessage({ id: 'header.product.title' })}
+                </div>
+                <div className={styles.popoverContainer}>
+                  {intl.formatMessage({ id: 'header.product.desc' })}
+                </div>
+              </div>
+              <div>
+                <div className={styles.popoverTitle}>
+                  {intl.formatMessage({ id: 'header.product.title1' })}
+                </div>
+                <div className={styles.popoverContainer}>
+                  {intl.formatMessage({ id: 'header.product.desc1' })}
+                </div>
+              </div>
+            </div>
+          }
+        >
+          <a href="/product" rel="noopener noreferrer">
+            {intl.formatMessage({ id: 'header.product' })}
+          </a>
+        </Popover>
       ),
       key: 'product',
     },

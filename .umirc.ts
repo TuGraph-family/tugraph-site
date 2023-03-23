@@ -69,7 +69,7 @@ gtag('config', 'AW-11092859162');`,
     baseNavigator: false,
     baseSeparator: '-',
     title: true,
-    default: 'en-US',
+    default: 'zh-CN',
     useLocalStorage: false,
   },
 });
