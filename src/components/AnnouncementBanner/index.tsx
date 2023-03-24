@@ -20,6 +20,7 @@ import { getBannerContentList } from '@/data/bannerContent';
 const AnnouncementBanner = forwardRef((_prop, ref) => {
   const [showBottomDrawer, setShowBottomDrawer] = useState(false);
   const [showBottomModal, setShowBottomModal] = useState(true);
+  const [isBigPicture, setIsBigPicture] = useState(false);
   const isWide = useMedia('(min-width: 767.99px)', true);
   const intl = useIntl();
   const lang = getLocale();
@@ -31,6 +32,7 @@ const AnnouncementBanner = forwardRef((_prop, ref) => {
       setShowBottomDrawer(true);
       setShowBottomModal(true);
     }
+    setIsBigPicture(window.screen.width === 1440);
   }, []);
   useImperativeHandle(ref, () => ({
     onOpenBanner: onOpenBanner,
@@ -86,7 +88,7 @@ const AnnouncementBanner = forwardRef((_prop, ref) => {
         <Carousel>
           {getBannerContentList(intl).map((item, index) => (
             <div key={index} className={styles.bannerContainer}>
-              {window.screen.width !== 1440 ? (
+              {isBigPicture ? (
                 <img src={item.pcImg} />
               ) : (
                 <img src={item.pcImg1920} />

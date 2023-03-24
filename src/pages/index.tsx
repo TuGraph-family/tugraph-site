@@ -428,7 +428,7 @@ export default function IndexPage() {
         }}
         content={content}
       />
-      {isWide && <AnnouncementBanner />}
+      <AnnouncementBanner />
     </>
   );
 }
