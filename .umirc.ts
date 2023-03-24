@@ -23,6 +23,11 @@ export default defineConfig({
       component: '@/pages/download',
       title: 'download.title',
     },
+    {
+      path: '/overview',
+      component: '@/pages/overview',
+      title: 'product.title',
+    },
   ],
   scripts: [
     `var _hmt = _hmt || [];

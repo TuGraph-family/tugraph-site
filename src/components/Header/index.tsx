@@ -82,7 +82,12 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
                 <div className={styles.popoverTitle}>
                   {intl.formatMessage({ id: 'header.product.title' })}
                 </div>
-                <div className={styles.popoverContainer}>
+                <div
+                  className={styles.popoverContainer}
+                  onClick={() => {
+                    history.push('/product');
+                  }}
+                >
                   {intl.formatMessage({ id: 'header.product.desc' })}
                 </div>
               </div>
@@ -90,19 +95,24 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
                 <div className={styles.popoverTitle}>
                   {intl.formatMessage({ id: 'header.product.title1' })}
                 </div>
-                <div className={styles.popoverContainer}>
+                <div
+                  className={styles.popoverContainer}
+                  onClick={() => {
+                    history.push('/overview');
+                  }}
+                >
                   {intl.formatMessage({ id: 'header.product.desc1' })}
                 </div>
               </div>
             </div>
           }
         >
-          <a href="/product" rel="noopener noreferrer">
+          <a rel="noopener noreferrer">
             {intl.formatMessage({ id: 'header.product' })}
           </a>
         </Popover>
       ),
-      key: 'product',
+      key: pathname === '/product' ? 'product' : 'overview',
     },
     {
       label: (

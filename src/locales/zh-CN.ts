@@ -13,9 +13,14 @@ export default {
   'header.product.desc': 'Tugraph DB Lite 单机版图数据库',
   'header.product.desc1': '概览',
   'footer.product': '产品',
+  'footer.product.title': '社区版',
+  'footer.product.title1': '企业版',
   'footer.community': '社区',
   'footer.contact': '联系我们',
-  'footer.productName': 'TuGraph 图数据库',
+  'footer.productName': 'TuGraph DB Lite 单机图数据库',
+  'footer.productName1': 'TuGraph DB 分布式图数据库',
+  'footer.productName2': 'TuGraph DataFlow 流图计算引擎',
+  'footer.productName3': 'TuGraph Platform 一站式图平台',
   'footer.communityName': '哔哩哔哩',
   'footer.phone': '400-903-0809',
   'home.description':
@@ -163,6 +168,7 @@ export default {
   'product.description':
     '为用户管理和分析复杂关联数据提供了高效、易用、可靠的一站式平台',
   'product.slogan': '极速的开源图数据库TuGraph',
+  'product.overview.slogan': '源于蚂蚁实践的企业级图数据管理平台',
   'product.video0': '快速上手演示',
   'product.videoTime0': '2分39秒',
   'product.video1': '可视化操作演示',
@@ -187,7 +193,22 @@ export default {
   'product.feature.title3': '开箱即用的运维监控平台',
   'product.feature.desc3':
     '数据库实时运维监控展示，支持Docker、CentOS、Ubuntu的一键部署，开箱即用。同时提供了丰富可拓展的接口，支持用户的二次开发，实现系统对接。并支持Prometheus、Grafana等主流开源监控告警工具。',
+  'product.feature.overview.title0': '企业级分布式图数据库',
+  'product.feature.overview.desc0':
+    '金融级分布式图数据库，万亿图数据处理能力，千万顶点/秒的高吞吐率和低延迟，支持分布式事务。主要用于实时图查询，面向有海量并发，需要实时更新、数据可靠性要求高的场景。',
+  'product.feature.overview.title1': '独创的大规模流式图分析',
+  'product.feature.overview.desc1':
+    '业界独有的实时图分析引擎，融合图计算和大数据计算能力。支持万亿级流式图数据，长周期图仿真、时序图计算、图挖掘和流式近线动态图计算。面向既需要做复杂图分析（如子图的计算），又有时效性要求的实时图分析场景。',
+  'product.feature.overview.title2': '灵活易用的一站式图平台',
+  'product.feature.overview.desc2':
+    '一站式图平台，覆盖图探索、图研发、图服务、图运维的完整链路，实现图的全生命周期管理，无代码交互方式支持业务应用。提供可视化、一站式的图操作平台，支持多种类型数据源，快速图构建、图查询、图分析等。是图数据库、图分析引擎的研发控制台。',
+  'product.feature.overview.title3': '金融级高可用性的分布式架构设计',
+  'product.feature.overview.desc3':
+    '支持分布式扩展，千万顶点/秒的高吞吐率、低延迟响应，在蚂蚁集团内部已实现数十万核的在线集群。支持多副本、同城多机房、异地多机房、三地五中心等部署形态。',
+  'product.feature.overview.introduction0':
+    'TuGraph图数据库由蚂蚁集团与清华大学联合研发，构建了一套包含图存储、图计算、图学习、图研发平台的完善的图技术体系，拥有业界领先规模的图集群，解决了图数据分析面临的大数据量、高吞吐率和低延迟等重大挑战，是蚂蚁集团金融风控能力的重要基础设施，显著提升了欺诈洗钱等金融风险的实时识别能力和审理分析效率，并面向金融、工业、政务服务等行业客户。TuGraph源于蚂蚁超过300个业务场景的实践，为业务人员提供图探索、图研发、图服务、图运维的完整图研发链路；具有分布式、多中心、金融级高可用性架构，经受“双十一”等活动的极致系统考验，轻松应对海量业务数据和并发。',
   'product.ecosystem': 'TuGraph 产品架构',
+  'product.overview.ecosystem': '企业版产品架构',
   'demo.title': ' TuGraph 案例',
   'demo.description':
     '图数据库,图计算,图平台,图数据分析, 分布式数据库, Graph,大数据分析,关联关系分析,大数据分析,反洗钱,反欺诈,金融风控,物联网, 设备管理, 国家电网',

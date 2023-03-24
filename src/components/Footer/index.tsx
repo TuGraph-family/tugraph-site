@@ -36,10 +36,10 @@ export const Footer = ({ className }: { className?: string }) => {
         className={styles.containerWrapper}
         style={lang === 'en' || lang === 'en-US' ? { height: '324px' } : {}}
       >
-        <Col span={4}>
+        <Col span={5}>
           <div className={styles.textGroup}>
             <div className={styles.title}>
-              {intl.formatMessage({ id: 'footer.product' })}
+              {intl.formatMessage({ id: 'footer.product.title' })}
             </div>
             <a className={styles.item} href="/product">
               {intl.formatMessage({ id: 'footer.productName' })}
@@ -82,7 +82,7 @@ export const Footer = ({ className }: { className?: string }) => {
             </a>
           </div>
         </Col>
-        <Col span={10}>
+        <Col span={9}>
           <div className={styles.textGroup} id="contactUs">
             <div className={styles.title}>
               {intl.formatMessage({ id: 'footer.contact' })}
