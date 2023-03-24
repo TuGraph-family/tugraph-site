@@ -5,7 +5,7 @@ import React, {
   useImperativeHandle,
 } from 'react';
 import { Button, Carousel, Drawer, Modal, Tooltip } from 'antd';
-import { getLocale } from 'umi';
+import { getLocale, history } from 'umi';
 import {
   LeftOutlined,
   RightOutlined,
@@ -89,9 +89,19 @@ const AnnouncementBanner = forwardRef((_prop, ref) => {
           {getBannerContentList(intl).map((item, index) => (
             <div key={index} className={styles.bannerContainer}>
               {isBigPicture ? (
-                <img src={item.pcImg} />
+                <img
+                  src={item.pcImg}
+                  onClick={() => {
+                    history.push('/blog?id=13');
+                  }}
+                />
               ) : (
-                <img src={item.pcImg1920} />
+                <img
+                  src={item.pcImg1920}
+                  onClick={() => {
+                    history.push('/blog?id=13');
+                  }}
+                />
               )}
             </div>
           ))}
@@ -109,7 +119,12 @@ const AnnouncementBanner = forwardRef((_prop, ref) => {
       <Carousel>
         {getBannerContentList(intl).map((item, index) => (
           <div key={index} className={styles.mobileContainer}>
-            <img src={item.mobileImg} />
+            <img
+              src={item.mobileImg}
+              onClick={() => {
+                history.push('/blog?id=13');
+              }}
+            />
           </div>
         ))}
       </Carousel>
