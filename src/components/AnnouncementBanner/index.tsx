@@ -92,6 +92,8 @@ const AnnouncementBanner = forwardRef((_prop, ref) => {
                 <img
                   src={item.pcImg}
                   onClick={() => {
+                    setShowBottomDrawer(false);
+                    sessionStorage.setItem('isBannerShow', 'false');
                     history.push('/blog?id=13');
                   }}
                 />
@@ -99,6 +101,8 @@ const AnnouncementBanner = forwardRef((_prop, ref) => {
                 <img
                   src={item.pcImg1920}
                   onClick={() => {
+                    setShowBottomDrawer(false);
+                    sessionStorage.setItem('isBannerShow', 'false');
                     history.push('/blog?id=13');
                   }}
                 />
@@ -123,6 +127,8 @@ const AnnouncementBanner = forwardRef((_prop, ref) => {
               src={item.mobileImg}
               onClick={() => {
                 history.push('/blog?id=13');
+                setShowBottomModal(false);
+                sessionStorage.setItem('isBannerShow', 'false');
               }}
             />
           </div>
