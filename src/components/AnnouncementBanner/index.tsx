@@ -32,7 +32,7 @@ const AnnouncementBanner = forwardRef((_prop, ref) => {
       setShowBottomDrawer(true);
       setShowBottomModal(true);
     }
-    setIsBigPicture(window.screen.width === 1440);
+    setIsBigPicture(window.screen.width > 1440);
   }, []);
   useImperativeHandle(ref, () => ({
     onOpenBanner: onOpenBanner,
@@ -40,7 +40,7 @@ const AnnouncementBanner = forwardRef((_prop, ref) => {
   const onOpenBanner = () => {
     setShowBottomModal(true);
   };
-  const pcBanner = lang === 'zh-CN' && (
+  const pcBanner = (
     <>
       <Tooltip
         title={intl.formatMessage({ id: 'home.banner.expandBtnDesc' })}
@@ -88,32 +88,21 @@ const AnnouncementBanner = forwardRef((_prop, ref) => {
         <Carousel>
           {getBannerContentList(intl).map((item, index) => (
             <div key={index} className={styles.bannerContainer}>
-              {isBigPicture ? (
-                <img
-                  src={item.pcImg}
-                  onClick={() => {
-                    setShowBottomDrawer(false);
-                    sessionStorage.setItem('isBannerShow', 'false');
-                    history.push('/blog?id=13');
-                  }}
-                />
-              ) : (
-                <img
-                  src={item.pcImg1920}
-                  onClick={() => {
-                    setShowBottomDrawer(false);
-                    sessionStorage.setItem('isBannerShow', 'false');
-                    history.push('/blog?id=13');
-                  }}
-                />
-              )}
+              <img
+                src={!isBigPicture ? item.pcImg : item.pcImg1920}
+                onClick={() => {
+                  setShowBottomDrawer(false);
+                  sessionStorage.setItem('isBannerShow', 'false');
+                  history.push('/blog?id=13');
+                }}
+              />
             </div>
           ))}
         </Carousel>
       </Drawer>
     </>
   );
-  const mobileBanner = lang === 'zh-CN' && (
+  const mobileBanner = (
     <Modal
       className={styles.bannerModal}
       open={showBottomModal}

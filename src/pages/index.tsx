@@ -428,7 +428,7 @@ export default function IndexPage() {
         }}
         content={content}
       />
-      <AnnouncementBanner />
+      {lang === 'zh-CN' && <AnnouncementBanner />}
     </>
   );
 }

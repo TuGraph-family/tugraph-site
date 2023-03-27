@@ -270,7 +270,7 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
         </div>
       </Drawer>
 
-      <AnnouncementBanner ref={bannerRef} />
+      {lang === 'zh-CN' && <AnnouncementBanner ref={bannerRef} />}
     </>
   );
 
