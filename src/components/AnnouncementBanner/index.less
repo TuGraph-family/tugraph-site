@@ -1,0 +1,154 @@
+.carouselBtn {
+  height: 36px;
+  width: 36px;
+  position: absolute;
+  z-index: 2;
+  top: 78px;
+  background-color: #d8d8d8;
+  cursor: pointer;
+}
+.bottomDrawer {
+  :global {
+    .ant-drawer-content-wrapper {
+      width: 100% !important;
+      height: 192px;
+      top: auto;
+    }
+    .ant-drawer-body {
+      padding: 0;
+      .anticon-left {
+        margin-top: 10px;
+        margin-left: 10px;
+      }
+      .anticon-right {
+        margin-top: 10px;
+        margin-left: 10px;
+      }
+    }
+    .ant-carousel {
+      .slick-dots-bottom {
+        li {
+          width: 24px;
+        }
+        button {
+          height: 4px;
+          background-color: rgba(0, 0, 0, 0.12);
+          border-radius: 2px;
+        }
+        .slick-active {
+          button {
+            background-color: rgba(0, 0, 0, 0.3);
+          }
+        }
+      }
+    }
+  }
+  .closeOutlinedBtn {
+    position: absolute;
+    top: 16px;
+    right: 21px;
+    color: rgba(0, 0, 0, 0.65);
+    cursor: pointer;
+    z-index: 3;
+  }
+  .leftOutlinedBtn {
+    left: 44px;
+    &:extend(.carouselBtn);
+  }
+  .rightOutlinedBtn {
+    right: 44px;
+    &:extend(.carouselBtn);
+  }
+  .bannerContainer {
+    position: relative;
+    height: 192px;
+    img {
+      position: absolute;
+      left: 50%;
+      height: 100%;
+      transform: translateX(-50%);
+      width: 100%;
+    }
+  }
+}
+.expandBtn {
+  position: fixed;
+  padding: 8px;
+  bottom: 80px;
+  right: 0px;
+  height: 40px;
+  width: 40px;
+  background-color: #ffffff;
+  border: 1px solid rgba(26, 27, 37, 0.02);
+  box-shadow: 0 3px 6px -4px rgba(132, 135, 155, 0.14),
+    0 2px 16px 0 rgba(132, 135, 155, 0.1);
+  border-radius: 6px 0 0 6px;
+  color: rgba(26, 27, 37, 0.88);
+  font-size: 12px;
+  cursor: pointer;
+}
+:global {
+  .ant-tooltip-inner {
+    color: rgba(26, 27, 37, 0.88) !important;
+  }
+}
+
+@media only screen and (max-width: 767.99px) {
+  .announcementIcon {
+    width: 6.4vw !important;
+    color: #1a1b25;
+    opacity: 0.88;
+    margin: 0 !important;
+  }
+  .bannerModal {
+    width: 80vw !important;
+    height: 106.6vw;
+    .mobileContainer {
+      img {
+        height: 106.6vw;
+      }
+    }
+    :global {
+      .ant-modal-content {
+        width: 100%;
+        height: 100%;
+        border-radius: 2.1vw;
+        .ant-modal-body {
+          width: 100%;
+          height: 100%;
+          padding: 0;
+          .ant-carousel {
+            width: 100%;
+            height: 100%;
+            .slick-dots-bottom {
+              li {
+                width: 3.2vw;
+              }
+              button {
+                height: 0.53vw;
+                background-color: rgba(255, 255, 255, 0.3);
+                border-radius: 0.26vw;
+              }
+              .slick-active {
+                button {
+                  background-color: rgba(255, 255, 255, 1);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .mobileCarouselContent {
+      width: 100%;
+    }
+    .mobileCloseIcon {
+      font-size: 4.9vw;
+      position: absolute;
+      bottom: -19.5vw;
+      color: rgba(255, 255, 255, 1);
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}

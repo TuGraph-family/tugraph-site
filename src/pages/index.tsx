@@ -32,10 +32,11 @@ import { getCases } from '@/data/cases';
 import { getVersions } from '@/data/version-feats';
 import { useMedia } from 'react-use';
 import { ApplyForm } from '@/components/ApplyForm';
+import { getTugraphFun } from '@/data/get_tugraph_functions';
+import AnnouncementBanner from '@/components/AnnouncementBanner';
 
 import stylesZh from './index.less';
 import stylesEn from './index_en.less';
-import { getTugraphFun } from '@/data/get_tugraph_functions';
 
 export default function IndexPage() {
   const intl = useIntl();
@@ -48,7 +49,6 @@ export default function IndexPage() {
   const SWIPE_PADDING = isBrowser()
     ? (48 * document.body.clientWidth) / 750
     : 24;
-
   const bannerButton = (
     <div className={styles.bannerButtons}>
       <Space>
@@ -508,17 +508,19 @@ export default function IndexPage() {
       </div>
     </>
   );
-
   return (
-    <LayoutTemplate
-      bannerInfo={{
-        bgIconUrl:
-          'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*SeWxTJnZ4_8AAAAAAAAAAAAADgOBAQ/original',
-        slogan: intl.formatMessage({ id: 'home.banner.slogan' }),
-        description: intl.formatMessage({ id: 'home.banner.description' }),
-        footer: bannerButton,
-      }}
-      content={content}
-    />
+    <>
+      <LayoutTemplate
+        bannerInfo={{
+          bgIconUrl:
+            'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*SeWxTJnZ4_8AAAAAAAAAAAAADgOBAQ/original',
+          slogan: intl.formatMessage({ id: 'home.banner.slogan' }),
+          description: intl.formatMessage({ id: 'home.banner.description' }),
+          footer: bannerButton,
+        }}
+        content={content}
+      />
+      <AnnouncementBanner />
+    </>
   );
 }

@@ -157,6 +157,7 @@ export default {
   'home.btn.desc': '社区版体验',
   'home.btn.desc1': '阿里云',
   'home.btn.tryOut': '企业版试用',
+  'home.banner.expandBtnDesc': '公告',
   'footer.qrCode.weChart': '微信公众号',
   'footer.qrCode.dingTalk': '钉钉交流群',
   'footer.qrCode.subDescWeChart': '扫码了解更多资讯',

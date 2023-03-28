@@ -5,16 +5,12 @@ import { Menu, Drawer, Space, Dropdown, Popover } from 'antd';
 import cx from 'classnames';
 import { useMedia } from 'react-use';
 import type { MenuItem } from '@/interface';
-import {
-  MenuOutlined,
-  CloseOutlined,
-  UpOutlined,
-  RightOutlined,
-} from '@ant-design/icons';
+import { CloseOutlined, UpOutlined, RightOutlined } from '@ant-design/icons';
 
 import styles from './index.less';
 import { HOST_EN, HOST_ZH, searchParamsEn, searchParamsZh } from '@/constant';
 import '@docsearch/css';
+import AnnouncementBanner from '../AnnouncementBanner';
 
 export const Header = ({ isStick }: { isStick?: boolean }) => {
   const intl = useIntl();
@@ -49,8 +45,9 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
     );
   };
   const menuIcon = !isWide ? (
-    <Space size={24}>
+    <Space size={12}>
       {searchInput()}
+      <AnnouncementBanner />
       <img
         src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*GN_WSabhJdwAAAAAAAAAAAAADgOBAQ/original"
         className={styles.languageIcon}
