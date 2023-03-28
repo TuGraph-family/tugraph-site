@@ -1,5 +1,14 @@
 import React, { Dispatch, SetStateAction } from 'react';
-import { Checkbox, Col, Form, Input, Modal, Row, Typography } from 'antd';
+import {
+  Checkbox,
+  Col,
+  Form,
+  Input,
+  Modal,
+  Radio,
+  Row,
+  Typography,
+} from 'antd';
 import { getLocale, useIntl } from 'umi';
 import { useMedia } from 'react-use';
 import styles from './index.less';
@@ -36,7 +45,12 @@ export const ApplyForm = ({
   return (
     <Modal
       width={isWide ? 800 : '100%'}
-      title={intl.formatMessage({ id: 'form.banner.slogan' })}
+      title={
+        <>
+          {intl.formatMessage({ id: 'form.banner.slogan' })}
+          <span>{intl.formatMessage({ id: 'form.banner.desc' })}</span>
+        </>
+      }
       open={visible}
       onOk={onOk}
       onCancel={() => {
@@ -57,8 +71,73 @@ export const ApplyForm = ({
         <Row gutter={isWide ? 56 : 24}>
           <Col span={isWide ? 12 : 24}>
             <Form.Item
+              label={intl.formatMessage({ id: 'form.item.need' })}
+              name={intl.formatMessage({ id: 'form.need' })}
+              rules={[{ required: true }]}
+            >
+              <Radio.Group>
+                <Radio value="0">
+                  {intl.formatMessage({ id: 'form.need.value' })}
+                </Radio>
+                <Radio value="1">
+                  {intl.formatMessage({ id: 'form.need.value1' })}
+                </Radio>
+                <Radio value="2">
+                  {intl.formatMessage({ id: 'form.need.value2' })}
+                </Radio>
+                <Radio value="3">
+                  {intl.formatMessage({ id: 'form.need.value3' })}
+                </Radio>
+              </Radio.Group>
+            </Form.Item>
+          </Col>
+        </Row>
+        <Row gutter={isWide ? 56 : 24}>
+          <Col span={isWide ? 12 : 24}>
+            <Form.Item
               label={intl.formatMessage({ id: 'form.item.name' })}
               name={intl.formatMessage({ id: 'form.name' })}
+              rules={[{ required: true }]}
+            >
+              <Input
+                placeholder={intl.formatMessage({
+                  id: 'form.input.placeholder',
+                })}
+              />
+            </Form.Item>
+          </Col>
+          <Col span={isWide ? 12 : 24}>
+            <Form.Item
+              label={intl.formatMessage({ id: 'form.item.phone' })}
+              name={intl.formatMessage({ id: 'form.item.phone' })}
+              rules={[{ required: true }]}
+              required={true}
+            >
+              <Input
+                placeholder={intl.formatMessage({
+                  id: 'form.input.placeholder',
+                })}
+              />
+            </Form.Item>
+          </Col>
+          <Col span={isWide ? 12 : 24}>
+            <Form.Item
+              label={intl.formatMessage({ id: 'form.item.email' })}
+              name={intl.formatMessage({ id: 'form.item.email' })}
+              rules={[{ required: true, type: 'email' }]}
+            >
+              <Input
+                type="email"
+                placeholder={intl.formatMessage({
+                  id: 'form.input.placeholder',
+                })}
+              />
+            </Form.Item>
+          </Col>
+          <Col span={isWide ? 12 : 24}>
+            <Form.Item
+              label={intl.formatMessage({ id: 'form.item.firm' })}
+              name={intl.formatMessage({ id: 'form.item.firm' })}
               rules={[{ required: true }]}
             >
               <Input
@@ -83,38 +162,11 @@ export const ApplyForm = ({
           </Col>
           <Col span={isWide ? 12 : 24}>
             <Form.Item
-              label={intl.formatMessage({ id: 'form.item.firm' })}
-              name={intl.formatMessage({ id: 'form.item.firm' })}
+              label={intl.formatMessage({ id: 'form.item.city' })}
+              name={intl.formatMessage({ id: 'form.item.city' })}
               rules={[{ required: true }]}
             >
               <Input
-                placeholder={intl.formatMessage({
-                  id: 'form.input.placeholder',
-                })}
-              />
-            </Form.Item>
-          </Col>
-          <Col span={isWide ? 12 : 24}>
-            <Form.Item
-              label={intl.formatMessage({ id: 'form.item.phone' })}
-              name={intl.formatMessage({ id: 'form.item.phone' })}
-              rules={[{ required: true }]}
-            >
-              <Input
-                placeholder={intl.formatMessage({
-                  id: 'form.input.placeholder',
-                })}
-              />
-            </Form.Item>
-          </Col>
-          <Col span={isWide ? 12 : 24}>
-            <Form.Item
-              label={intl.formatMessage({ id: 'form.item.email' })}
-              name={intl.formatMessage({ id: 'form.item.email' })}
-              rules={[{ required: true, type: 'email' }]}
-            >
-              <Input
-                type="email"
                 placeholder={intl.formatMessage({
                   id: 'form.input.placeholder',
                 })}
@@ -142,7 +194,7 @@ export const ApplyForm = ({
             />
           </Form.Item>
         </div>
-        {lang === 'zh-CN' && (
+        {/* {lang === 'zh-CN' && (
           <Form.Item
             name={intl.formatMessage({ id: 'form.submit.info' })}
             valuePropName="checked"
@@ -152,7 +204,7 @@ export const ApplyForm = ({
               {intl.formatMessage({ id: 'form.submit.info' })}
             </Checkbox>
           </Form.Item>
-        )}
+        )} */}
 
         {lang === 'zh-CN' && (
           <div className={styles.footer}>
