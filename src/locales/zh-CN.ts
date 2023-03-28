@@ -98,6 +98,7 @@ export default {
   'home.feat16': '高级Cypher优化器',
   'home.feat17': '属性级别的权限管理',
   'home.version.useFree': '30天免费试用',
+  'home.banner.expandBtnDesc': '公告',
   'footer.qrCode.weChart': '微信公众号',
   'footer.qrCode.dingTalk': '钉钉交流群',
   'footer.qrCode.subDescWeChart': '扫码了解更多资讯',
