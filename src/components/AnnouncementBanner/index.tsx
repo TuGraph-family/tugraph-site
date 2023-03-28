@@ -1,9 +1,4 @@
-import React, {
-  useState,
-  useEffect,
-  forwardRef,
-  useImperativeHandle,
-} from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button, Carousel, Drawer, Modal, Tooltip } from 'antd';
 import { getLocale, history } from 'umi';
 import {
@@ -17,7 +12,7 @@ import { useMedia } from 'react-use';
 import { useIntl } from 'umi';
 import styles from './index.less';
 import { getBannerContentList } from '@/data/bannerContent';
-const AnnouncementBanner = forwardRef((_prop, ref) => {
+const AnnouncementBanner = () => {
   const [showBottomDrawer, setShowBottomDrawer] = useState(false);
   const [showBottomModal, setShowBottomModal] = useState(true);
   const [isBigPicture, setIsBigPicture] = useState(false);
@@ -34,13 +29,10 @@ const AnnouncementBanner = forwardRef((_prop, ref) => {
     }
     setIsBigPicture(window.screen.width > 1440);
   }, []);
-  useImperativeHandle(ref, () => ({
-    onOpenBanner: onOpenBanner,
-  }));
   const onOpenBanner = () => {
     setShowBottomModal(true);
   };
-  const pcBanner = (
+  const pcBanner = lang === 'zh-CN' && (
     <>
       <Tooltip
         title={intl.formatMessage({ id: 'home.banner.expandBtnDesc' })}
@@ -102,36 +94,45 @@ const AnnouncementBanner = forwardRef((_prop, ref) => {
       </Drawer>
     </>
   );
-  const mobileBanner = (
-    <Modal
-      className={styles.bannerModal}
-      open={showBottomModal}
-      closable={false}
-      footer={null}
-    >
-      <Carousel>
-        {getBannerContentList(intl).map((item, index) => (
-          <div key={index} className={styles.mobileContainer}>
-            <img
-              src={item.mobileImg}
-              onClick={() => {
-                history.push('/blog?id=13');
-                setShowBottomModal(false);
-                sessionStorage.setItem('isBannerShow', 'false');
-              }}
-            />
-          </div>
-        ))}
-      </Carousel>
-      <CloseOutlined
-        className={styles.mobileCloseIcon}
+  const mobileBanner = lang === 'zh-CN' && (
+    <>
+      <img
+        src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*E6rZRLlvvDoAAAAAAAAAAAAADgOBAQ/original"
+        className={styles.announcementIcon}
         onClick={() => {
-          setShowBottomModal(false);
-          sessionStorage.setItem('isBannerShow', 'false');
+          onOpenBanner();
         }}
       />
-    </Modal>
+      <Modal
+        className={styles.bannerModal}
+        open={showBottomModal}
+        closable={false}
+        footer={null}
+      >
+        <Carousel>
+          {getBannerContentList(intl).map((item, index) => (
+            <div key={index} className={styles.mobileContainer}>
+              <img
+                src={item.mobileImg}
+                onClick={() => {
+                  history.push('/blog?id=13');
+                  setShowBottomModal(false);
+                  sessionStorage.setItem('isBannerShow', 'false');
+                }}
+              />
+            </div>
+          ))}
+        </Carousel>
+        <CloseOutlined
+          className={styles.mobileCloseIcon}
+          onClick={() => {
+            setShowBottomModal(false);
+            sessionStorage.setItem('isBannerShow', 'false');
+          }}
+        />
+      </Modal>
+    </>
   );
   return isWide ? pcBanner : mobileBanner;
-});
+};
 export default AnnouncementBanner;
