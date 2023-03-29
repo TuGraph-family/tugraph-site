@@ -336,6 +336,8 @@ export default {
   'form.banner.subTitle': '欢迎使用TuGraph图数据库！',
   'form.input.placeholder': '请输入',
   'form.item.situation': '应用场景',
+  'form.item.situation.detail':
+    '您计划将本产品应用于什么业务场景和期望达到什么效果，帮助我们更好了解您的需求',
   'form.item.desc':
     '您计划将本产品应用于什么业务场景和期望达到什么效果，帮助我们更好了解您的需求',
   'form.item.need': '我需要',

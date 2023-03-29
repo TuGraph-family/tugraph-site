@@ -54,7 +54,7 @@ export default function IndexPage() {
       <Space>
         <Dropdown
           overlay={
-            <Menu>
+            <Menu className={styles.dropMenu}>
               <Menu.Item>
                 <GithubOutlined />
                 GitHub
@@ -66,12 +66,8 @@ export default function IndexPage() {
             </Menu>
           }
         >
-          <Button
+          <div
             className={styles.github}
-            onClick={() => {
-              window.open('https://github.com/TuGraph-family');
-            }}
-            type="primary"
             onMouseMove={() => {
               setRotate(180);
             }}
@@ -83,9 +79,12 @@ export default function IndexPage() {
               {intl.formatMessage({ id: 'home.btn.desc' })}
             </span>
             <DownOutlined className={styles.btnIcon} rotate={rotate} />
-          </Button>
+          </div>
         </Dropdown>
-        <Button className={styles.tryout}>
+        <Button
+          className={styles.tryout}
+          onClick={() => setShowApplyForm(true)}
+        >
           {intl.formatMessage({ id: 'home.btn.tryOut' })}
         </Button>
       </Space>
@@ -338,7 +337,7 @@ export default function IndexPage() {
                 >
                   {`TuGraph ${intl.formatMessage({ id: 'home.version0' })}`}
                 </div>
-                <div style={{ fontWeight: 500 }}>
+                <div style={{ fontWeight: 500 }} className={styles.versionDesc}>
                   {intl.formatMessage({ id: 'home.version0.desc' })}
                 </div>
                 <div className={styles.desc}>
@@ -358,10 +357,8 @@ export default function IndexPage() {
                     </Menu>
                   }
                 >
-                  <Button
+                  <div
                     className="lightBtn"
-                    onClick={() => {}}
-                    type="primary"
                     onMouseMove={() => {
                       setRotate(180);
                     }}
@@ -369,11 +366,11 @@ export default function IndexPage() {
                       setRotate(0);
                     }}
                   >
-                    <span className={styles.githubText}>
+                    <span className={styles.freeDown}>
                       {intl.formatMessage({ id: 'home.version.startUse' })}
                     </span>
                     <DownOutlined className={styles.btnIcon} rotate={rotate} />
-                  </Button>
+                  </div>
                 </Dropdown>
               </div>
             </Col>
@@ -387,8 +384,8 @@ export default function IndexPage() {
                 <div className={styles.title}>
                   {`TuGraph ${intl.formatMessage({ id: 'home.version1' })}`}
                 </div>
-                <div style={{ fontWeight: 500 }}>
-                  {intl.formatMessage({ id: 'home.version0.desc' })}
+                <div style={{ fontWeight: 500 }} className={styles.versionDesc}>
+                  {intl.formatMessage({ id: 'home.version1.desc' })}
                 </div>
                 <div className={styles.desc}>
                   {intl.formatMessage({ id: 'home.version.desc1' })}
@@ -443,6 +440,7 @@ export default function IndexPage() {
             </Row>
             <Collapse
               ghost
+              defaultActiveKey={[0, 1, 2]}
               expandIcon={({ isActive }) => {
                 return (
                   <div className={styles.collapseIcon}>
@@ -455,7 +453,7 @@ export default function IndexPage() {
                 return (
                   <Collapse.Panel header={item.title} key={index}>
                     <Row className={styles.funDesc}>
-                      <Col span={14}>{item.desc}</Col>
+                      <Col span={24}>{item.desc}</Col>
                     </Row>
                     {item.list.map((i, key) => {
                       return (
@@ -472,7 +470,9 @@ export default function IndexPage() {
                           <Col span={5} className={styles.text}>
                             {i.pro ? <CheckOutlined /> : '-'}
                           </Col>
-                          <span className={styles.featDesc}>{i.desc}</span>
+                          {isWide && (
+                            <span className={styles.featDesc}>{i.desc}</span>
+                          )}
                         </Row>
                       );
                     })}

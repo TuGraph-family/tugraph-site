@@ -74,7 +74,7 @@ gtag('config', 'AW-11092859162');`,
     baseNavigator: false,
     baseSeparator: '-',
     title: true,
-    default: 'zh-CN',
+    default: 'en-US',
     useLocalStorage: false,
   },
 });

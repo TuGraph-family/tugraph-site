@@ -69,11 +69,12 @@ export const ApplyForm = ({
         autoComplete="off"
       >
         <Row gutter={isWide ? 56 : 24}>
-          <Col span={isWide ? 12 : 24}>
+          <Col span={isWide ? (lang === 'zh-CN' ? 12 : 20) : 24}>
             <Form.Item
               label={intl.formatMessage({ id: 'form.item.need' })}
               name={intl.formatMessage({ id: 'form.need' })}
               rules={[{ required: true }]}
+              className={styles.needItem}
             >
               <Radio.Group>
                 <Radio value="0">
@@ -183,7 +184,14 @@ export const ApplyForm = ({
           )}
 
           <Form.Item
-            label={intl.formatMessage({ id: 'form.item.situation' })}
+            label={
+              <>
+                {intl.formatMessage({ id: 'form.item.situation' })}
+                <span className={styles.messageDetail}>
+                  {intl.formatMessage({ id: 'form.item.situation.detail' })}
+                </span>
+              </>
+            }
             name={intl.formatMessage({ id: 'form.item.situation' })}
             rules={[{ required: true }]}
           >

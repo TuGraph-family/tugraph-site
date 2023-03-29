@@ -1,6 +1,7 @@
 import React, { ReactNode } from 'react';
 import { Row, Col } from 'antd';
 import { useMedia } from 'react-use';
+import cx from 'classnames';
 
 import styles from './index.less';
 import { getLocale, useLocation } from 'umi';
@@ -11,6 +12,7 @@ export interface BannerInfoProps {
   bgIconUrl?: string;
   footer?: ReactNode;
   description?: string;
+  sloganClassName?: string;
 }
 
 export const Banner = ({
@@ -18,6 +20,7 @@ export const Banner = ({
   bgIconUrl,
   footer,
   description = '',
+  sloganClassName = '',
 }: BannerInfoProps) => {
   const { pathname } = useLocation();
   const isHome = pathname === '/' ? true : false;
@@ -49,7 +52,7 @@ export const Banner = ({
                 style={{
                   marginTop: ChOrEnStyle(lang === 'zh-CN', isHome, 'slogan'),
                 }}
-                className={styles.slogan}
+                className={cx(styles.slogan, sloganClassName)}
               >
                 {slogan}
               </div>

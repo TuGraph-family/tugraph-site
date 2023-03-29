@@ -69,7 +69,11 @@ export default function OverviewPage() {
         />
         <div className="maxContainer">
           <img
-            src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*uU-7R6VZEr0AAAAAAAAAAAAADgOBAQ/original"
+            src={
+              lang === 'en' || lang === 'en-US'
+                ? 'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*pIZzSKLln6sAAAAAAAAAAAAADgOBAQ/original'
+                : 'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*uU-7R6VZEr0AAAAAAAAAAAAADgOBAQ/original'
+            }
             alt="ecosystem"
           />
         </div>
@@ -82,6 +86,7 @@ export default function OverviewPage() {
         bgIconUrl:
           'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*UN91TpJfDTUAAAAAAAAAAAAADgOBAQ/original',
         slogan: intl.formatMessage({ id: 'product.overview.slogan' }),
+        sloganClassName: styles.slogan,
       }}
       content={content}
     />
