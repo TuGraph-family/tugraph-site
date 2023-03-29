@@ -417,7 +417,7 @@ export default function IndexPage() {
                     {`TuGraph ${intl.formatMessage({
                       id: 'home.version0',
                     })}`}
-                    <span>{intl.formatMessage({ id: 'home.tugrpah.db' })}</span>
+                    <div>{intl.formatMessage({ id: 'home.tugrpah.db' })}</div>
                   </>
                 ) : (
                   intl.formatMessage({ id: 'home.version0' })
@@ -429,9 +429,12 @@ export default function IndexPage() {
                     {`TuGraph ${intl.formatMessage({
                       id: 'home.version1',
                     })}`}
-                    <span>
-                      {intl.formatMessage({ id: 'home.distributed' })}
-                    </span>
+                    <div>{intl.formatMessage({ id: 'home.distributed' })}</div>
+                    <p>
+                      {intl.formatMessage({
+                        id: 'home.three.lines.consistent',
+                      })}
+                    </p>
                   </>
                 ) : (
                   intl.formatMessage({ id: 'home.version1' })
@@ -453,7 +456,7 @@ export default function IndexPage() {
                 return (
                   <Collapse.Panel header={item.title} key={index}>
                     <Row className={styles.funDesc}>
-                      <Col span={24}>{item.desc}</Col>
+                      <Col span={14}>{item.desc}</Col>
                     </Row>
                     {item.list.map((i, key) => {
                       return (

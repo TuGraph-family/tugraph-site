@@ -80,3 +80,108 @@
 .slogan {
   width: 625px;
 }
+
+@media only screen and (max-width: 767.99px) {
+  .containerWrapper {
+    transition: all ease 0.3s;
+    .introSubTitle {
+      margin-top: 20vw !important;
+    }
+    .subTitle {
+      margin-bottom: 4.8vw !important;
+    }
+    .subTitleTop {
+      padding-top: 6.4vw !important;
+    }
+    .videoWrapper {
+      width: 100vw;
+      margin: -9.2vw -3.2vw 0 -3.2vw;
+      background: none !important;
+      border-radius: 0 !important;
+      box-shadow: none !important;
+      padding: 0 !important;
+      :global {
+        .ant-carousel .slick-dots-bottom {
+          bottom: 5.9vw;
+        }
+      }
+      .card {
+        padding: 3.2vw !important;
+        height: 54vw;
+        border-radius: 1.6vw;
+        text-align: left;
+        width: 86.7vw !important;
+        box-shadow: 0 3px 6px -4px rgba(132, 135, 155, 0.12),
+          0 6px 16px 0 rgba(132, 135, 155, 0.08),
+          0 9px 28px 8px rgba(132, 135, 155, 0.05);
+        background: #ffffff;
+        margin: 9.2vw 0;
+        .videoInfo {
+          text-align: left;
+          display: flex;
+          margin-top: 1.6vw !important;
+          .title {
+            font-size: 3.7vw !important;
+            margin: 0 !important;
+            height: 100% !important;
+          }
+
+          .tag {
+            font-size: 2.13vw !important;
+            height: 100% !important;
+            line-height: 3.2vw !important;
+            text-align: center;
+            padding: 1vw 2.13vw !important;
+            width: 13.3vw !important;
+            margin-top: 1.2vw !important;
+          }
+        }
+      }
+    }
+  }
+  .introWrapper {
+    font-size: 3.2vw !important;
+    line-height: 4.8vw !important;
+    margin: 0 0 13.3vw 0 !important;
+  }
+  .featCards {
+    margin-bottom: 13.3vw !important;
+    .featCardGroup {
+      padding: 1.6vw !important;
+      min-height: 0 !important;
+      height: 100% !important;
+      .title {
+        font-size: 3.7vw !important;
+        margin-bottom: 0 !important;
+        line-height: 5.3vw !important;
+      }
+      .desc {
+        font-size: 3.2vw !important;
+        text-align: left !important;
+        line-height: 4.8vw !important;
+        margin-top: 1.6vw !important;
+        height: 100% !important;
+      }
+      .featCard {
+        padding: 4.3vw !important;
+        img {
+          height: 11.73vw !important;
+        }
+        :global {
+          .ant-space-align-center {
+            align-items: flex-start;
+          }
+        }
+      }
+    }
+  }
+  .ecoWrapper {
+    margin: 0 -120px -12.9vw -120px !important;
+    padding: 0 120px 13.3vw 120px !important;
+    img {
+      width: 100% !important;
+      padding: 4.3vw !important;
+      border-radius: 1.6vw !important;
+    }
+  }
+}

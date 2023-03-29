@@ -127,7 +127,7 @@ export const Footer = ({ className }: { className?: string }) => {
                 </div>
               </div>
               <div className={styles.qrCode}>
-                <img src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*L9UQSbVwSoMAAAAAAAAAAAAADgOBAQ/original" />
+                <img src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*-aa5TKbCnBAAAAAAAAAAAAAADgOBAQ/original" />
                 <div className={styles.desc}>
                   {intl.formatMessage({ id: 'footer.qrCode.dingTalk' })}
                 </div>

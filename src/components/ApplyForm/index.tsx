@@ -64,7 +64,7 @@ export const ApplyForm = ({
         form={form}
         name="applyForFree"
         layout={'vertical'}
-        labelCol={{ span: 20 }}
+        labelCol={{ span: 21 }}
         initialValues={{ remember: true }}
         autoComplete="off"
       >
@@ -177,12 +177,6 @@ export const ApplyForm = ({
         </Row>
 
         <div className={styles.itemWithTip}>
-          {lang === 'zh-CN' && (
-            <Typography.Text className={styles.tip} type="secondary">
-              {intl.formatMessage({ id: 'form.item.desc' })}
-            </Typography.Text>
-          )}
-
           <Form.Item
             label={
               <>
@@ -216,7 +210,7 @@ export const ApplyForm = ({
 
         {lang === 'zh-CN' && (
           <div className={styles.footer}>
-            <div className={styles.splitLine} />
+            {/* <div className={styles.splitLine} /> */}
             <Typography.Text className={styles.tip} type="secondary">
               {intl.formatMessage({ id: 'form.tip0' })}
               <a

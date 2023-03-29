@@ -85,8 +85,8 @@ export default {
   'home.chooseVersion': 'CHOOSE EDITION',
   'home.version0': 'Community Edition',
   'home.btn.desc': 'Community Edition',
-  'home.version0.desc': '单实例部署，开源免费，简单快速，小型项目的理想选择',
-  'home.version1.desc': '分布式图库，高可用，高稳定，企业级项目的理想选择',
+  'home.version0.desc': '单实例部署、开源免费、简单快速、小型项目的理想选择',
+  'home.version1.desc': '分布式图平台、高可用、高稳定、企业级项目的理想选',
   'home.version.desc0':
     'The Community Edition contains all the basic functions of TuGraph, suitable for single instance deployment. It provides complete basic graph database functions, such as Transactions (ACID), SDK APIs, and tools. It is ideal for learning TuGraph and implementing small projects.If you need a production-level high-availability cluster architecture, as well as enterprise-level services for graph modeling consultation, installation, deployment, and operation and maintenance, please contact us for commercial support.',
   'home.version.startUse': 'DOWNLOAD',

@@ -71,7 +71,7 @@ export default function OverviewPage() {
           <img
             src={
               lang === 'en' || lang === 'en-US'
-                ? 'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*pIZzSKLln6sAAAAAAAAAAAAADgOBAQ/original'
+                ? 'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*VbGlQ5c7htkAAAAAAAAAAAAADgOBAQ/original'
                 : 'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*uU-7R6VZEr0AAAAAAAAAAAAADgOBAQ/original'
             }
             alt="ecosystem"
@@ -86,7 +86,7 @@ export default function OverviewPage() {
         bgIconUrl:
           'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*UN91TpJfDTUAAAAAAAAAAAAADgOBAQ/original',
         slogan: intl.formatMessage({ id: 'product.overview.slogan' }),
-        sloganClassName: styles.slogan,
+        sloganClassName: styles.sloganTitle,
       }}
       content={content}
     />

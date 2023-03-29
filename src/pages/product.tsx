@@ -202,7 +202,7 @@ export default function ProductPage() {
         />
         <div className="maxContainer">
           <img
-            src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*vcdeRJaJcLwAAAAAAAAAAAAADgOBAQ/original"
+            src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*cw03RpxT13MAAAAAAAAAAAAADgOBAQ/original"
             alt="ecosystem"
           />
         </div>
@@ -217,6 +217,7 @@ export default function ProductPage() {
           'https://mdn.alipayobjects.com/mdn/huamei_qcdryc/afts/img/A*ga9NQ6eVsx4AAAAAAAAAAAAADgOBAQ',
         slogan: intl.formatMessage({ id: 'product.slogan' }),
         description: intl.formatMessage({ id: 'product.description' }),
+        sloganClassName: styles.slogan,
       }}
       content={content}
     />
