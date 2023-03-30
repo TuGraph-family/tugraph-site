@@ -15,7 +15,6 @@ import { getBannerContentList } from '@/data/bannerContent';
 const AnnouncementBanner = () => {
   const [showBottomDrawer, setShowBottomDrawer] = useState(false);
   const [showBottomModal, setShowBottomModal] = useState(true);
-  const [isBigPicture, setIsBigPicture] = useState(false);
   const isWide = useMedia('(min-width: 767.99px)', true);
   const intl = useIntl();
   const lang = getLocale();
@@ -27,7 +26,6 @@ const AnnouncementBanner = () => {
       setShowBottomDrawer(true);
       setShowBottomModal(true);
     }
-    setIsBigPicture(window.screen.width > 1440);
   }, []);
   const onOpenBanner = () => {
     setShowBottomModal(true);
@@ -81,7 +79,7 @@ const AnnouncementBanner = () => {
           {getBannerContentList(intl).map((item, index) => (
             <div key={index} className={styles.bannerContainer}>
               <img
-                src={!isBigPicture ? item.pcImg : item.pcImg1920}
+                src={item.pcImg}
                 onClick={() => {
                   setShowBottomDrawer(false);
                   sessionStorage.setItem('isBannerShow', 'false');

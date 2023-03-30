@@ -55,11 +55,21 @@ export default function IndexPage() {
         <Dropdown
           overlay={
             <Menu className={styles.dropMenu}>
-              <Menu.Item>
+              <Menu.Item
+                onClick={() => {
+                  window.open('https://github.com/TuGraph-family');
+                }}
+              >
                 <GithubOutlined />
                 GitHub
               </Menu.Item>
-              <Menu.Item>
+              <Menu.Item
+                onClick={() => {
+                  window.open(
+                    'https://computenest.console.aliyun.com/user/cn-hangzhou/recommendService',
+                  );
+                }}
+              >
                 <AliyunOutlined />
                 {intl.formatMessage({ id: 'home.btn.desc1' })}
               </Menu.Item>
@@ -346,11 +356,21 @@ export default function IndexPage() {
                 <Dropdown
                   overlay={
                     <Menu className={styles.downMenu}>
-                      <Menu.Item>
+                      <Menu.Item
+                        onClick={() => {
+                          window.open('https://github.com/TuGraph-family');
+                        }}
+                      >
                         <GithubOutlined />
                         GitHub
                       </Menu.Item>
-                      <Menu.Item>
+                      <Menu.Item
+                        onClick={() => {
+                          window.open(
+                            'https://computenest.console.aliyun.com/user/cn-hangzhou/recommendService',
+                          );
+                        }}
+                      >
                         <AliyunOutlined />
                         {intl.formatMessage({ id: 'home.btn.desc1' })}
                       </Menu.Item>
@@ -411,7 +431,7 @@ export default function IndexPage() {
               >
                 {intl.formatMessage({ id: 'home.function' })}
               </Col>
-              <Col span={5} className={cx(styles.title, 'boldText')}>
+              <Col span={4} className={cx(styles.title, 'boldText')}>
                 {isWide ? (
                   <>
                     {`TuGraph ${intl.formatMessage({
@@ -423,7 +443,7 @@ export default function IndexPage() {
                   intl.formatMessage({ id: 'home.version0' })
                 )}
               </Col>
-              <Col span={5} className={cx(styles.title, 'boldText')}>
+              <Col span={3} className={cx(styles.title, 'boldText')}>
                 {isWide ? (
                   <>
                     {`TuGraph ${intl.formatMessage({
@@ -467,15 +487,15 @@ export default function IndexPage() {
                           >
                             {i.feat}
                           </Col>
-                          <Col span={5} className={styles.text}>
+                          <Col span={4} className={styles.text}>
                             {i.community ? <CheckOutlined /> : '-'}
                           </Col>
-                          <Col span={5} className={styles.text}>
+                          <Col span={3} className={styles.text}>
                             {i.pro ? <CheckOutlined /> : '-'}
+                            {isWide && (
+                              <span className={styles.featDesc}>{i.desc}</span>
+                            )}
                           </Col>
-                          {isWide && (
-                            <span className={styles.featDesc}>{i.desc}</span>
-                          )}
                         </Row>
                       );
                     })}

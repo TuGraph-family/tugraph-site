@@ -104,7 +104,10 @@ export const Footer = ({ className }: { className?: string }) => {
             <div className={styles.item}>
               <Space>
                 <SlackOutlined size={12} />
-                <a href="https://tugraph.slack.com/join/shared_invite/zt-1hha8nuli-bqdkwn~w4zH1vlk0QvqIfg#/shared-invite/email">
+                <a
+                  href="https://tugraph.slack.com/join/shared_invite/zt-1hha8nuli-bqdkwn~w4zH1vlk0QvqIfg#/shared-invite/email"
+                  target={'_blank'}
+                >
                   Slack
                 </a>
               </Space>

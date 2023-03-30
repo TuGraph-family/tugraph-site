@@ -73,7 +73,12 @@ export const ApplyForm = ({
             <Form.Item
               label={intl.formatMessage({ id: 'form.item.need' })}
               name={intl.formatMessage({ id: 'form.need' })}
-              rules={[{ required: true }]}
+              rules={[
+                {
+                  required: true,
+                  message: intl.formatMessage({ id: 'form.need.tip' }),
+                },
+              ]}
               className={styles.needItem}
             >
               <Radio.Group>

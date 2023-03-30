@@ -47,6 +47,7 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
   const pcProductMenu: MenuItem = {
     label: (
       <Popover
+        placement="bottom"
         content={
           <div className={styles.popoverContent}>
             <div>

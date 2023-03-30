@@ -457,6 +457,9 @@ body {
           border-radius: 12px;
           background-color: #ffffff;
           text-align: center;
+          .versionDesc {
+            margin: 12px 0 4px 0;
+          }
           .freeDown {
             line-height: 48px;
           }
@@ -478,7 +481,7 @@ body {
           color: rgba(26, 27, 37, 0.65);
           text-align: center;
           line-height: 21px;
-          margin: 12px 0 24px 0;
+          margin: 0 0 24px 0;
           height: 84px;
         }
       }
@@ -497,27 +500,30 @@ body {
       font-weight: 500;
       font-size: 14px;
       text-align: center;
-      color: rgba(26, 27, 37, 0.65);
+      color: rgba(26, 27, 37, 1);
     }
 
     .textAlignLeft {
       text-align: left;
-      padding-left: 56px;
+      padding-left: 40px;
+      color: rgba(26, 27, 37, 0.65);
     }
 
     .baseRow,
     .crossRow {
-      height: 56px;
-      padding: 16px 0;
+      height: 42px;
+      padding: 10px 0;
       text-align: center;
       position: relative;
     }
 
     .featDesc {
       position: absolute;
-      right: -40px;
-      color: rgba(26, 27, 37, 0.65);
+      color: rgba(26, 27, 37, 0.45);
       font-weight: 400;
+      white-space: nowrap;
+      top: 0;
+      left: 95px;
     }
 
     .crossRow {
@@ -531,7 +537,7 @@ body {
       border: 1.5px solid rgba(26, 27, 37, 0.12);
       border-radius: 2px;
       position: relative;
-      margin-left: 28px;
+      margin-left: 4px;
     }
 
     :global {
@@ -562,7 +568,7 @@ body {
       }
     }
     .funDesc {
-      margin: 12px 0 0 56px;
+      margin: 0 0 0 40px;
       color: rgba(26, 27, 37, 0.45);
       line-height: 22px;
       font-weight: 400;
@@ -582,7 +588,15 @@ body {
   border-radius: 8px;
   :global {
     .ant-dropdown-menu-item {
-      padding: 5px 60px;
+      padding: 5px 55px;
+      &:hover {
+        background-color: rgba(22, 80, 255, 0.04);
+        color: #3064ff;
+      }
+      .anticon {
+        font-size: 18px;
+        margin: 0 7px 0 12px;
+      }
     }
   }
 }
@@ -594,6 +608,10 @@ body {
       display: flex;
       color: rgba(26, 27, 37, 0.88);
       padding: 5px 39px;
+      &:hover {
+        background-color: rgba(22, 80, 255, 0.04);
+        color: #3064ff;
+      }
     }
     .anticon-github,
     .anticon-aliyun {
