@@ -83,7 +83,7 @@ const AnnouncementBanner = () => {
                 onClick={() => {
                   setShowBottomDrawer(false);
                   sessionStorage.setItem('isBannerShow', 'false');
-                  history.push('/blog?id=13');
+                  history.push('/blog?id=14');
                 }}
               />
             </div>
@@ -113,7 +113,7 @@ const AnnouncementBanner = () => {
               <img
                 src={item.mobileImg}
                 onClick={() => {
-                  history.push('/blog?id=13');
+                  history.push('/blog?id=14');
                   setShowBottomModal(false);
                   sessionStorage.setItem('isBannerShow', 'false');
                 }}
