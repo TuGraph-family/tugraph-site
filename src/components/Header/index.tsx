@@ -88,41 +88,11 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
   };
   const mobileProductMenu: MenuItem = {
     label: (
-      <a rel="noopener noreferrer">
+      <a href="/product" rel="noopener noreferrer">
         {intl.formatMessage({ id: 'header.product' })}
       </a>
     ),
-    key: 'application',
-    children: [
-      {
-        label: intl.formatMessage({ id: 'header.product.title' }),
-        key: '1',
-        children: [
-          {
-            label: (
-              <a href="/product" rel="noopener noreferrer">
-                {intl.formatMessage({ id: 'header.product.desc' })}
-              </a>
-            ),
-            key: 'product',
-          },
-        ],
-      },
-      {
-        label: intl.formatMessage({ id: 'header.product.title1' }),
-        key: '2',
-        children: [
-          {
-            label: (
-              <a href="/overview" rel="noopener noreferrer">
-                {intl.formatMessage({ id: 'header.product.desc1' })}
-              </a>
-            ),
-            key: 'overview',
-          },
-        ],
-      },
-    ],
+    key: 'product',
   };
   const menuIcon = !isWide ? (
     <Space size={12}>
