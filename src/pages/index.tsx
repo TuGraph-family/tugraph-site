@@ -347,9 +347,15 @@ export default function IndexPage() {
                 >
                   {`TuGraph ${intl.formatMessage({ id: 'home.version0' })}`}
                 </div>
-                <div style={{ fontWeight: 500 }} className={styles.versionDesc}>
-                  {intl.formatMessage({ id: 'home.version0.desc' })}
-                </div>
+                {lang === 'zh-CN' && (
+                  <div
+                    style={{ fontWeight: 500 }}
+                    className={styles.versionDesc}
+                  >
+                    {intl.formatMessage({ id: 'home.version0.desc' })}
+                  </div>
+                )}
+
                 <div className={styles.desc}>
                   {intl.formatMessage({ id: 'home.version.desc0' })}
                 </div>
@@ -404,9 +410,14 @@ export default function IndexPage() {
                 <div className={styles.title}>
                   {`TuGraph ${intl.formatMessage({ id: 'home.version1' })}`}
                 </div>
-                <div style={{ fontWeight: 500 }} className={styles.versionDesc}>
-                  {intl.formatMessage({ id: 'home.version1.desc' })}
-                </div>
+                {lang === 'zh-CN' && (
+                  <div
+                    style={{ fontWeight: 500 }}
+                    className={styles.versionDesc}
+                  >
+                    {intl.formatMessage({ id: 'home.version1.desc' })}
+                  </div>
+                )}
                 <div className={styles.desc}>
                   {intl.formatMessage({ id: 'home.version.desc1' })}
                 </div>
@@ -476,7 +487,7 @@ export default function IndexPage() {
                 return (
                   <Collapse.Panel header={item.title} key={index}>
                     <Row className={styles.funDesc}>
-                      <Col span={14}>{item.desc}</Col>
+                      <Col span={isWide ? 14 : 24}>{item.desc}</Col>
                     </Row>
                     {item.list.map((i, key) => {
                       return (
@@ -543,7 +554,7 @@ export default function IndexPage() {
         }}
         content={content}
       />
-      <AnnouncementBanner />
+      {isWide && <AnnouncementBanner />}
     </>
   );
 }

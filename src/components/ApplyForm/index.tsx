@@ -201,21 +201,9 @@ export const ApplyForm = ({
             />
           </Form.Item>
         </div>
-        {/* {lang === 'zh-CN' && (
-          <Form.Item
-            name={intl.formatMessage({ id: 'form.submit.info' })}
-            valuePropName="checked"
-            rules={[{ required: true }]}
-          >
-            <Checkbox defaultChecked={false}>
-              {intl.formatMessage({ id: 'form.submit.info' })}
-            </Checkbox>
-          </Form.Item>
-        )} */}
 
         {lang === 'zh-CN' && (
           <div className={styles.footer}>
-            {/* <div className={styles.splitLine} /> */}
             <Typography.Text className={styles.tip} type="secondary">
               {intl.formatMessage({ id: 'form.tip0' })}
               <a

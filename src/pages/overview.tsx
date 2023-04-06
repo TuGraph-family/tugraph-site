@@ -71,8 +71,8 @@ export default function OverviewPage() {
           <img
             src={
               lang === 'en' || lang === 'en-US'
-                ? 'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*VbGlQ5c7htkAAAAAAAAAAAAADgOBAQ/original'
-                : 'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*uU-7R6VZEr0AAAAAAAAAAAAADgOBAQ/original'
+                ? 'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*wqMyTZ93ndYAAAAAAAAAAAAADgOBAQ/original'
+                : 'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*z0V4Q7BJpOQAAAAAAAAAAAAADgOBAQ/original'
             }
             alt="ecosystem"
           />

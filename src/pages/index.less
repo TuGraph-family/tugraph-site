@@ -47,9 +47,9 @@ body {
     font-weight: 600;
     color: rgba(26, 27, 37, 0.88);
     div {
-      font-weight: 400;
+      font-weight: 500;
       font-size: 14px;
-      color: rgba(26, 27, 37, 0.45);
+      color: rgba(26, 27, 37, 0.65);
       margin-top: 4px;
     }
 
@@ -483,7 +483,7 @@ body {
           text-align: center;
           line-height: 21px;
           margin: 0 0 24px 0;
-          height: 84px;
+          min-height: 84px;
         }
       }
     }
@@ -827,8 +827,9 @@ body {
         border-radius: 1.6vw !important;
         padding: 4.3vw !important;
         .versionDesc {
-          color: rgba(26, 27, 37, 0.65);
           font-size: 3.2vw;
+          color: rgba(26, 27, 37, 0.88);
+          text-align: center;
         }
       }
       .title {
@@ -839,6 +840,8 @@ body {
         line-height: 4.8vw !important;
         text-align: left !important;
         margin-top: 0.5vw !important;
+        min-height: auto !important;
+        margin-bottom: 5.3vw !important;
       }
     }
     :global {
@@ -882,6 +885,8 @@ body {
     .crossRow {
       height: 9.9vw !important;
       padding: 0 !important;
+      margin-bottom: 4.8vw;
+      height: auto !important;
     }
     .title {
       font-size: 3.2vw !important;
@@ -903,8 +908,8 @@ body {
     .funDesc {
       margin: 2.6vw 0 4.8vw 0 !important;
       font-size: 3.2vw !important;
-      color: rgba(26, 27, 37, 0.65);
       text-align: justify !important;
+      line-height: 4.8vw !important;
     }
 
     :global {
@@ -920,6 +925,10 @@ body {
         }
         .ant-collapse-expand-icon {
           margin-top: -0.3vw !important;
+        }
+        .ant-collapse-content-box {
+          padding-top: 0 !important;
+          padding-bottom: 0 !important;
         }
       }
     }

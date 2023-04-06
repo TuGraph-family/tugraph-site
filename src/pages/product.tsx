@@ -202,7 +202,11 @@ export default function ProductPage() {
         />
         <div className="maxContainer">
           <img
-            src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*cw03RpxT13MAAAAAAAAAAAAADgOBAQ/original"
+            src={
+              lang === 'zh-CN'
+                ? 'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*cw03RpxT13MAAAAAAAAAAAAADgOBAQ/original'
+                : 'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*asJ3RK25DCEAAAAAAAAAAAAADgOBAQ/original'
+            }
             alt="ecosystem"
           />
         </div>

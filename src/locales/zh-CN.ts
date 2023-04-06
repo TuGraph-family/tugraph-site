@@ -87,7 +87,7 @@ export default {
   'home.version.startUse': '免费下载',
   'home.function': '功能',
   'home.function.title1': 'TuGraph DB 图数据库引擎',
-  'home.function.title2': 'TuGraph DataFlow 图计算引擎',
+  'home.function.title2': 'TuGraph Analytics 图计算引擎',
   'home.function.title3': 'TuGraph Platform 一站式图平台',
   'home.function.desc1':
     '分布式企业级图数据库，提供图数据的实时存储和查询能力，主要面向对局部数据的海量并发查询。适用场景：超大数据量的高吞吐率和低延迟，保障业务对事务和数据一致性的要求。',
@@ -112,7 +112,7 @@ export default {
   'home.fun1.feat15': '高可用性支持',
   'home.fun1.feat16': '在线/离线、全量/增量的备份恢复',
   'home.fun1.feat17': '流式图分析',
-  'home.fun1.feat17.desc': '详见TuGraph DataFlow',
+  'home.fun1.feat17.desc': '详见TuGraph Analytics',
   'home.fun1.feat18': '图研发全生命周期管理、离在线一体化',
   'home.fun1.feat18.desc': '详见TuGraph Platform',
   'home.fun1.feat19': '属性级权限管理',

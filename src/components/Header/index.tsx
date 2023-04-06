@@ -87,12 +87,32 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
     key: pathname === '/product' ? 'product' : 'overview',
   };
   const mobileProductMenu: MenuItem = {
-    label: (
-      <a href="/product" rel="noopener noreferrer">
-        {intl.formatMessage({ id: 'header.product' })}
-      </a>
-    ),
-    key: 'product',
+    label: intl.formatMessage({ id: 'header.product' }),
+    key: 'produce',
+    children: [
+      {
+        label: (
+          <>
+            <div>{intl.formatMessage({ id: 'header.product.title' })}</div>
+            <a href="/product" rel="noopener noreferrer">
+              {intl.formatMessage({ id: 'header.product.desc' })}
+            </a>
+          </>
+        ),
+        key: 'product',
+      },
+      {
+        label: (
+          <>
+            <div>{intl.formatMessage({ id: 'header.product.title1' })}</div>
+            <a href="/overview" rel="noopener noreferrer">
+              {intl.formatMessage({ id: 'header.product.desc1' })}
+            </a>
+          </>
+        ),
+        key: 'overview',
+      },
+    ],
   };
   const menuIcon = !isWide ? (
     <Space size={12}>

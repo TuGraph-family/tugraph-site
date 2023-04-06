@@ -31,7 +31,6 @@
       width: 100%;
     }
   }
-
   :global {
     .ant-menu {
       height: 54px;
@@ -193,6 +192,12 @@
   }
 
   .MenuList {
+    .produceMenu {
+      line-height: 12.8vw !important;
+      a {
+        height: 12.8vw !important ;
+      }
+    }
     .menuChildren {
       font-weight: 400;
     }
@@ -225,6 +230,29 @@
       }
       .ant-menu-inline .ant-menu-item::after {
         border-right: 0 !important;
+      }
+      .ant-menu-root {
+        li:nth-of-type(2) {
+          .ant-menu-item {
+            padding-left: 24px !important;
+            height: 25.6vw;
+            line-height: 12.8vw;
+            margin: 0;
+            div {
+              font-weight: 500;
+              font-size: 3.2vw;
+              color: rgba(26, 27, 37, 0.45);
+            }
+            a {
+              font-weight: 400;
+              font-size: 3.2vw;
+              color: rgba(26, 27, 37, 0.88);
+              &:hover {
+                color: #1650ff;
+              }
+            }
+          }
+        }
       }
     }
   }
