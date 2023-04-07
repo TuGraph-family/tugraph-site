@@ -608,6 +608,9 @@ body {
     }
   }
 }
+.slogan {
+  width: 630px;
+}
 
 @media only screen and (max-width: 767.99px) {
   .textLink {
@@ -626,21 +629,24 @@ body {
       height: 10vw;
       border-radius: 1.1vw;
       font-size: 3.2vw;
+      width: 38.7vw;
+      position: relative;
       .githubText {
-        position: unset;
-        line-height: 10vw;
+        position: absolute;
+        top: 2.8vw !important;
+        right: 6.9vw !important;
       }
       .btnIcon {
         font-size: 2.7vw !important;
         right: 3.2vw;
-        top: 3.2vw;
+        top: 3.8vw !important;
       }
     }
 
     .tryout {
       margin: 0;
       margin-right: 3.2vw;
-      width: 32vw;
+      width: 38.7vw;
       height: 10vw;
       border-radius: 1.1vw;
       font-size: 3.2vw;
@@ -833,10 +839,11 @@ body {
 
     .freeDown {
       line-height: 9.1vw !important;
+      left: 31.5vw !important;
     }
     .btnIcon {
       top: 3vw;
-      right: 25vw;
+      left: 37.2vw !important;
     }
   }
 
@@ -844,7 +851,7 @@ body {
     border-radius: 1.1vw;
     :global {
       .ant-dropdown-menu-item {
-        padding: 0 29vw;
+        padding: 0 27vw;
         font-size: 3.6vw;
       }
       .anticon-github,
@@ -863,8 +870,8 @@ body {
     }
     .baseRow,
     .crossRow {
-      height: 13.6vw !important;
-      padding: 2.7vw 3.2vw !important;
+      height: auto !important;
+      padding: 2.4vw 0 !important;
       display: flex;
     }
     .title {
@@ -886,10 +893,11 @@ body {
     }
 
     .funDesc {
-      margin: 2.6vw 0 4.8vw 0 !important;
+      margin: 0 !important;
       font-size: 3.2vw !important;
       color: rgba(26, 27, 37, 0.65);
       text-align: justify !important;
+      line-height: normal !important;
     }
 
     :global {
@@ -918,13 +926,13 @@ body {
     }
   }
   .dropMenu {
-    width: 32vw;
+    width: 38.7vw;
     border-radius: 1.1vw;
     :global {
       .ant-dropdown-menu-item {
         display: flex;
         color: rgba(26, 27, 37, 0.88);
-        padding: 0.5vw 8vw;
+        padding: 0.5vw 4vw;
         font-size: 3.2vw;
       }
       .anticon-github,

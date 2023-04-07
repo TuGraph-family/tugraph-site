@@ -163,7 +163,9 @@ export default function ProductPage() {
         className={styles.subTitle}
       />
       <div className={styles.introWrapper}>
-        <div>{intl.formatMessage({ id: 'product.introduction0' })}</div>
+        <div style={lang !== 'zh-CN' ? { marginBottom: '22px' } : {}}>
+          {intl.formatMessage({ id: 'product.introduction0' })}
+        </div>
         <div>{intl.formatMessage({ id: 'product.introduction1' })}</div>
       </div>
 

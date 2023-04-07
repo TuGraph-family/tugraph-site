@@ -48,7 +48,11 @@ export const ApplyForm = ({
       title={
         <>
           {intl.formatMessage({ id: 'form.banner.slogan' })}
-          <span>{intl.formatMessage({ id: 'form.banner.desc' })}</span>
+          {isWide ? (
+            <span>{intl.formatMessage({ id: 'form.banner.desc' })}</span>
+          ) : (
+            <div>{intl.formatMessage({ id: 'form.banner.desc' })}</div>
+          )}
         </>
       }
       open={visible}
@@ -182,17 +186,35 @@ export const ApplyForm = ({
         </Row>
 
         <div className={styles.itemWithTip}>
+          {!isWide && (
+            <>
+              <Form.Item
+                className={styles.messageLabel}
+                label={intl.formatMessage({ id: 'form.item.situation' })}
+                required={true}
+              />
+              <div className={styles.messageDetail}>
+                {intl.formatMessage({ id: 'form.item.situation.detail' })}
+              </div>
+            </>
+          )}
           <Form.Item
+            className={styles.textLabel}
             label={
               <>
-                {intl.formatMessage({ id: 'form.item.situation' })}
-                <span className={styles.messageDetail}>
-                  {intl.formatMessage({ id: 'form.item.situation.detail' })}
-                </span>
+                {isWide && (
+                  <>
+                    {intl.formatMessage({ id: 'form.item.situation' })}
+                    <span className={styles.messageDetail}>
+                      {intl.formatMessage({ id: 'form.item.situation.detail' })}
+                    </span>
+                  </>
+                )}
               </>
             }
             name={intl.formatMessage({ id: 'form.item.situation' })}
             rules={[{ required: true }]}
+            required={isWide}
           >
             <Input.TextArea
               placeholder={intl.formatMessage({

@@ -32,6 +32,13 @@ export default function OverviewPage() {
         <div>
           {intl.formatMessage({ id: 'product.feature.overview.introduction0' })}
         </div>
+        {lang !== 'zh-CN' && (
+          <div style={{ marginTop: '22px' }}>
+            {intl.formatMessage({
+              id: 'product.feature.overview.introduction1',
+            })}
+          </div>
+        )}
       </div>
 
       <SubTitle
@@ -86,6 +93,7 @@ export default function OverviewPage() {
         bgIconUrl:
           'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*UN91TpJfDTUAAAAAAAAAAAAADgOBAQ/original',
         slogan: intl.formatMessage({ id: 'product.overview.slogan' }),
+        description: intl.formatMessage({ id: 'product.vverview.desc' }),
         sloganClassName: styles.sloganTitle,
       }}
       content={content}

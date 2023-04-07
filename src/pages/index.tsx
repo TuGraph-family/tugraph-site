@@ -345,7 +345,9 @@ export default function IndexPage() {
                 <div
                   className={cx(styles.title, styles.textAlignLeft, 'boldText')}
                 >
-                  {`TuGraph ${intl.formatMessage({ id: 'home.version0' })}`}
+                  {`${isWide ? 'TuGraph ' : ''}${intl.formatMessage({
+                    id: 'home.version0',
+                  })}`}
                 </div>
                 {lang === 'zh-CN' && (
                   <div
@@ -408,7 +410,9 @@ export default function IndexPage() {
             >
               <div className={styles.versionCard}>
                 <div className={styles.title}>
-                  {`TuGraph ${intl.formatMessage({ id: 'home.version1' })}`}
+                  {`${isWide ? 'TuGraph ' : ''} ${intl.formatMessage({
+                    id: 'home.version1',
+                  })}`}
                 </div>
                 {lang === 'zh-CN' && (
                   <div
@@ -437,29 +441,35 @@ export default function IndexPage() {
           <div className={styles.featList}>
             <Row>
               <Col
-                span={14}
+                span={isWide ? 14 : 13}
                 className={cx(styles.title, styles.textAlignLeft, 'boldText')}
               >
                 {intl.formatMessage({ id: 'home.function' })}
               </Col>
-              <Col span={4} className={cx(styles.title, 'boldText')}>
+              <Col
+                span={isWide ? 4 : 5}
+                className={cx(styles.title, 'boldText')}
+              >
                 {isWide ? (
                   <>
-                    {`TuGraph ${intl.formatMessage({
-                      id: 'home.version0',
-                    })}`}
+                    {intl.formatMessage({
+                      id: 'home.version.title1',
+                    })}
                     <div>{intl.formatMessage({ id: 'home.tugrpah.db' })}</div>
                   </>
                 ) : (
                   intl.formatMessage({ id: 'home.version0' })
                 )}
               </Col>
-              <Col span={3} className={cx(styles.title, 'boldText')}>
+              <Col
+                span={isWide ? 4 : 5}
+                className={cx(styles.title, 'boldText')}
+              >
                 {isWide ? (
                   <>
-                    {`TuGraph ${intl.formatMessage({
-                      id: 'home.version1',
-                    })}`}
+                    {intl.formatMessage({
+                      id: 'home.version.title2',
+                    })}
                     <div>{intl.formatMessage({ id: 'home.distributed' })}</div>
                     <p>
                       {intl.formatMessage({
@@ -551,6 +561,7 @@ export default function IndexPage() {
           slogan: intl.formatMessage({ id: 'home.banner.slogan' }),
           description: intl.formatMessage({ id: 'home.banner.description' }),
           footer: bannerButton,
+          sloganClassName: styles.slogan,
         }}
         content={content}
       />

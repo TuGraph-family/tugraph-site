@@ -129,6 +129,8 @@ export default {
   'home.fun3.feat4': '运维中心：离在线一体化的运维中心',
   'home.fun3.feat5': '个人中心：个人数据资产管理中心',
   'home.fun3.feat6': '数据管理：实时&离线等多数据源集成配置',
+  'home.version.title1': ' TuGraph 社区版',
+  'home.version.title2': ' TuGraph 企业版',
   'home.version1': '企业版',
   'home.tugrpah.db': '单机版',
   'home.distributed': '分布式',
