@@ -48,25 +48,28 @@ export default {
     'help industry customers break the bottleneck of data analysis.',
   'home.case0.title': 'Financial Services',
   'home.case0.desc0':
-    'Credit Risk Control, Anti-Money Laundering, Anti-Fraud, ',
-  'home.case0.desc1': 'Fund Tracking, Marketing Recommendation',
+    'Credit Risk Management, Money Tracking, Anti-Money Laundering, Anti-Fraud, Consumer Product ',
+  'home.case0.desc1': 'Marketing',
   'home.case1.title': 'Internet Industry',
   'home.case1.desc0':
-    'Marketing Recommendations, Membership and Merchant Services, ',
-  'home.case1.desc1': 'Community Discovery, Friend Recommendations',
-  'home.case2.title': 'Government',
-  'home.case2.desc0': 'IoT, Smart City, Road Planning,  ',
-  'home.case2.desc1':
-    'Smart Transportation, Trajectory Analysis, Fraud Protection',
+    'Product Marketing, Membership and Merchant Services, Referral ',
+  'home.case1.desc1': 'Marketing, Community Discovery',
+  'home.case2.title': 'Public Sector',
+  'home.case2.desc0':
+    'Smart City, Smart Transportation, Route Planning, IoT, User Behavior ',
+  'home.case2.desc1': 'Analysis, Fraud Detection',
   'home.case3.title': 'Energy & Manufacturing',
-  'home.case3.desc0': 'Power Grid Analysis, Supply Chain Management, ',
-  'home.case3.desc1': 'Equipment Management and Troubleshooting',
+  'home.case3.desc0':
+    'Supply Chain Management,  Power Grid Analysis, Device Management ',
+  'home.case3.desc1': 'and Troubleshooting',
   'home.case4.title': 'Telecommunication',
-  'home.case4.desc0': 'Anti-Harassment, Telecommunication Fraud Protection, ',
-  'home.case4.desc1': 'Operator Operation Analysis, Equipment Maintenance',
+  'home.case4.desc0':
+    'Telecom Fraud Detection, Business Operation Analytics, Anti-Abuse, ',
+  'home.case4.desc1': 'Device Maintenance',
   'home.case5.title': 'General',
-  'home.case5.desc0': 'Data Privacy Protection, Data Governance ',
-  'home.case5.desc1': 'and Data Lineage',
+  'home.case5.desc0':
+    'Data Privacy and Security, Data Governance, Data Lineage, Data ',
+  'home.case5.desc1': 'Change Impact Analysis',
   'home.knowMore': 'Learn more',
   'home.users': 'SELECTED CUSTOMERS',
   'home.moreDemo': 'More use cases',
