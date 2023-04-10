@@ -132,13 +132,13 @@ export default {
   'home.fun2.feat4': 'Long period graph simulation',
   'home.fun2.feat5': 'Time-series graph analytics',
   'home.fun3.feat1':
-    'Exploration: Evaluate business value of graph analytics with experiments and testing.',
+    'Exploration: Evaluate business value of graph analytics with experiments and testing',
   'home.fun3.feat2':
-    'R&D: Full workflow covering development, testing and production.',
-  'home.fun3.feat3': 'Service: Configuring graph algorithms and anlytics.',
-  'home.fun3.feat4': 'Ops: Operating and monitoring center.',
-  'home.fun3.feat5': 'User profile and graph assets management.',
-  'home.fun3.feat6': 'Data management: Multiple data source configuration.',
+    'R&D: Full workflow covering development, testing and production',
+  'home.fun3.feat3': 'Service: Configuring graph algorithms and anlytics',
+  'home.fun3.feat4': 'Ops: Operating and monitoring center',
+  'home.fun3.feat5': 'User profile and graph assets management',
+  'home.fun3.feat6': 'Data management: Multiple data source configuration',
   'home.version.title1': 'Community Edition',
   'home.version.title2': 'Enterprise Edition',
   'home.version1': ' Enterprise Edition',
@@ -172,11 +172,11 @@ export default {
   'footer.rules': 'Privacy Policy',
   'footer.extraInfo': '© 2022 Ant Group',
   'footer.address':
-    '9/F, East Tower, Beijing World Financial Center, No.1 East 3rd Ring Middle Road, Chaoyang District, Beijing 100020',
+    '9th Floor, East Tower, Beijing World Financial Center, No.1 East 3rd Ring Middle Road, Chaoyang District, Beijing 100020',
   'footer.addressMobile':
-    '9/F, East Tower, Beijing World Financial Center, No.1 East 3rd Ring Middle Road, Chaoyang District, Beijing 100020',
+    '9th Floor, East Tower, Beijing World Financial Center, No.1 East 3rd Ring Middle Road, Chaoyang District, Beijing 100020',
   'product.description':
-    'Provides an enterprise-level distributed graph management platform with the only stream graph computing in the industry',
+    'Provides an efficient, easy-to-use and reliable one-stop platform for users to manage and analyze complex and linked data',
   'product.slogan': 'Speedy Open-Sourced Graph Database',
   'product.video0': 'Quick Start',
   'product.videoTime0': '2: 39',

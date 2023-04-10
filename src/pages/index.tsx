@@ -511,7 +511,10 @@ export default function IndexPage() {
                           <Col span={4} className={styles.text}>
                             {i.community ? <CheckOutlined /> : '-'}
                           </Col>
-                          <Col span={3} className={styles.text}>
+                          <Col
+                            span={isWide && lang !== 'zh-CN' ? 4 : 3}
+                            className={styles.text}
+                          >
                             {i.pro ? <CheckOutlined /> : '-'}
                             {isWide && (
                               <span className={styles.featDesc}>{i.desc}</span>

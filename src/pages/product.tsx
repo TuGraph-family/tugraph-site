@@ -207,7 +207,7 @@ export default function ProductPage() {
             src={
               lang === 'zh-CN'
                 ? 'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*cw03RpxT13MAAAAAAAAAAAAADgOBAQ/original'
-                : 'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*asJ3RK25DCEAAAAAAAAAAAAADgOBAQ/original'
+                : 'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*K_LmTbSOmDwAAAAAAAAAAAAADgOBAQ/original'
             }
             alt="ecosystem"
           />
