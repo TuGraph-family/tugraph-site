@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { getLocale, history, useIntl, useLocation } from 'umi';
 import { DocSearch } from '@docsearch/react';
-import { Menu, Drawer, Space } from 'antd';
+import { Menu, Drawer, Space, Dropdown, Popover } from 'antd';
 import cx from 'classnames';
 import { useMedia } from 'react-use';
 import type { MenuItem } from '@/interface';
@@ -44,6 +44,76 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
       />
     );
   };
+  const pcProductMenu: MenuItem = {
+    label: (
+      <Popover
+        placement="bottom"
+        content={
+          <div className={styles.popoverContent}>
+            <div>
+              <div className={styles.popoverTitle}>
+                {intl.formatMessage({ id: 'header.product.title' })}
+              </div>
+              <div
+                className={styles.popoverContainer}
+                onClick={() => {
+                  history.push('/product');
+                }}
+              >
+                {intl.formatMessage({ id: 'header.product.desc' })}
+              </div>
+            </div>
+            <div>
+              <div className={styles.popoverTitle}>
+                {intl.formatMessage({ id: 'header.product.title1' })}
+              </div>
+              <div
+                className={styles.popoverContainer}
+                onClick={() => {
+                  history.push('/overview');
+                }}
+              >
+                {intl.formatMessage({ id: 'header.product.desc1' })}
+              </div>
+            </div>
+          </div>
+        }
+      >
+        <a rel="noopener noreferrer">
+          {intl.formatMessage({ id: 'header.product' })}
+        </a>
+      </Popover>
+    ),
+    key: pathname === '/product' ? 'product' : 'overview',
+  };
+  const mobileProductMenu: MenuItem = {
+    label: intl.formatMessage({ id: 'header.product' }),
+    key: 'produce',
+    children: [
+      {
+        label: (
+          <>
+            <div>{intl.formatMessage({ id: 'header.product.title' })}</div>
+            <a href="/product" rel="noopener noreferrer">
+              {intl.formatMessage({ id: 'header.product.desc' })}
+            </a>
+          </>
+        ),
+        key: 'product',
+      },
+      {
+        label: (
+          <>
+            <div>{intl.formatMessage({ id: 'header.product.title1' })}</div>
+            <a href="/overview" rel="noopener noreferrer">
+              {intl.formatMessage({ id: 'header.product.desc1' })}
+            </a>
+          </>
+        ),
+        key: 'overview',
+      },
+    ],
+  };
   const menuIcon = !isWide ? (
     <Space size={12}>
       {searchInput()}
@@ -70,14 +140,7 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
       ),
       key: '',
     },
-    {
-      label: (
-        <a href="/product" rel="noopener noreferrer">
-          {intl.formatMessage({ id: 'header.product' })}
-        </a>
-      ),
-      key: 'product',
-    },
+    { ...(isWide ? pcProductMenu : mobileProductMenu) },
     {
       label: (
         <a href="/case" rel="noopener noreferrer">

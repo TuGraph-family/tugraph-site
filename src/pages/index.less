@@ -2,46 +2,21 @@ html,
 body {
   scroll-behavior: smooth;
 }
-@font-face {
-  font-family: 'PingFang';
-  src: url('https://mdn.alipayobjects.com/huamei_qcdryc/afts/file/A*FPUaQZ986BkAAAAAAAAAAAAADgOBAQ/PingFang.ttf');
-}
+
 body {
   background: #fff;
-  font-family: 'PingFang';
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Helvetica Neue, Arial, Noto Sans, sans-serif, apple color emoji,
+    segoe ui emoji, Segoe UI Symbol, noto color emoji;
   overflow-x: hidden;
-}
-@font-face {
-  font-family: 'PuHuiTi115';
-  src: url('https://mdn.alipayobjects.com/huamei_qcdryc/afts/file/A*1wy4R6H7s34AAAAAAAAAAAAADgOBAQ/AlibabaPuHuiTi-2-115-Black.ttf');
-}
-@font-face {
-  font-family: 'PuHuiTi105';
-  src: url('https://mdn.alipayobjects.com/huamei_qcdryc/afts/file/A*nvOKQKt_Te8AAAAAAAAAAAAADgOBAQ/AlibabaPuHuiTi-2-105-Heavy.ttf');
 }
 @font-face {
   font-family: 'PuHuiTi85';
   src: url('https://mdn.alipayobjects.com/huamei_qcdryc/afts/file/A*XgxRSo2XyGUAAAAAAAAAAAAADgOBAQ/AlibabaPuHuiTi-2-85-Bold.ttf');
 }
 @font-face {
-  font-family: 'PuHuiTi65';
-  src: url('https://mdn.alipayobjects.com/huamei_qcdryc/afts/file/A*tmFdRrMIGFAAAAAAAAAAAAAADgOBAQ/AlibabaPuHuiTi-2-65-Medium.ttf');
-}
-@font-face {
-  font-family: 'PuHuiTi75';
-  src: url('https://mdn.alipayobjects.com/huamei_qcdryc/afts/file/A*yx8qSYA9K8oAAAAAAAAAAAAADgOBAQ/AlibabaPuHuiTi-2-75-SemiBold.ttf');
-}
-@font-face {
   font-family: 'PuHuiTi55';
   src: url('https://mdn.alipayobjects.com/huamei_qcdryc/afts/file/A*yuf1Toumv2AAAAAAAAAAAAAADgOBAQ/AlibabaPuHuiTi-2-55-Regular.ttf');
-}
-@font-face {
-  font-family: 'PuHuiTi45';
-  src: url('https://mdn.alipayobjects.com/huamei_qcdryc/afts/file/A*GZaSQ4WB-BIAAAAAAAAAAAAADgOBAQ/AlibabaPuHuiTi-2-45-Light.ttf');
-}
-@font-face {
-  font-family: 'PuHuiTi35';
-  src: url('https://mdn.alipayobjects.com/huamei_qcdryc/afts/file/A*Q7h0T5wDmTAAAAAAAAAAAAAADgOBAQ/AlibabaPuHuiTi-2-35-Thin.ttf');
 }
 @font-face {
   font-family: 'PuHuiTi95';
@@ -64,11 +39,28 @@ body {
     height: 48px;
     font-size: 16px;
     color: #fff;
+    display: inline-block;
+    position: relative;
   }
 
   .boldText {
     font-weight: 600;
     color: rgba(26, 27, 37, 0.88);
+    div {
+      font-weight: 500;
+      font-size: 14px;
+      color: rgba(26, 27, 37, 0.65);
+      margin-top: 4px;
+    }
+
+    p {
+      height: 22px;
+      font-weight: 400;
+      font-size: 12px;
+      color: rgba(26, 27, 37, 0.45);
+      line-height: 22px;
+      margin-bottom: 0;
+    }
   }
 
   .grayBtn,
@@ -155,7 +147,7 @@ body {
 .bannerButtons {
   position: relative;
   .github {
-    margin: 32px 24px 0 0;
+    margin: 32px 8px 0 0;
     height: 48px;
     width: 160px;
     background-color: #1650ff;
@@ -163,7 +155,7 @@ body {
     font-weight: 500;
     font-size: 16px;
     position: relative;
-
+    color: #ffffff;
     :global {
       .anticon-github {
         font-size: 20px;
@@ -179,7 +171,7 @@ body {
     .githubText {
       position: absolute;
       top: 12px;
-      right: 38px;
+      right: 48px;
     }
   }
   .play {
@@ -192,6 +184,16 @@ body {
       height: 24px;
       margin-right: 8px;
     }
+  }
+  .tryout {
+    height: 48px;
+    width: 160px;
+    border: 1px solid rgba(26, 27, 37, 0.25);
+    border-radius: 8px;
+    background-color: transparent;
+    font-weight: 500;
+    margin-top: 32px;
+    font-size: 16px;
   }
 }
 
@@ -456,6 +458,15 @@ body {
           border-radius: 12px;
           background-color: #ffffff;
           text-align: center;
+          .versionDesc {
+            margin: 12px 0 4px 0;
+          }
+          .freeDown {
+            line-height: 48px;
+          }
+          .btnIcon {
+            right: 41px;
+          }
         }
 
         .title {
@@ -471,7 +482,8 @@ body {
           color: rgba(26, 27, 37, 0.65);
           text-align: center;
           line-height: 21px;
-          margin: 12px 0 24px 0;
+          margin: 0 0 24px 0;
+          min-height: 84px;
         }
       }
     }
@@ -487,26 +499,137 @@ body {
 
     .text {
       font-weight: 500;
-      font-size: 16px;
+      font-size: 14px;
       text-align: center;
-      color: rgba(26, 27, 37, 0.65);
+      color: rgba(26, 27, 37, 1);
     }
 
     .textAlignLeft {
       text-align: left;
-      padding-left: 56px;
+      padding-left: 40px;
+      color: rgba(26, 27, 37, 0.65);
+      margin-right: 20px;
     }
 
     .baseRow,
     .crossRow {
-      height: 56px;
-      padding: 16px 0;
+      height: 42px;
+      padding: 10px 0;
       text-align: center;
+      position: relative;
+    }
+
+    .featDesc {
+      position: absolute;
+      color: rgba(26, 27, 37, 0.45);
+      font-weight: 400;
+      white-space: nowrap;
+      top: 0;
+      left: 95px;
     }
 
     .crossRow {
       background-color: rgba(22, 80, 255, 0.04);
       border-radius: 8px;
+    }
+
+    .collapseIcon {
+      height: 18px;
+      width: 18px;
+      border: 1.5px solid rgba(26, 27, 37, 0.12);
+      border-radius: 2px;
+      position: relative;
+      margin-left: 4px;
+    }
+
+    :global {
+      .ant-collapse-header {
+        height: 56px;
+        border-radius: 8px;
+        background-color: rgba(22, 80, 255, 0.04);
+        margin-bottom: 4px;
+
+        .ant-collapse-header-text {
+          font-weight: 500;
+          font-size: 16px;
+          color: rgba(26, 27, 37, 0.88);
+          text-align: justify;
+          line-height: 32px;
+        }
+
+        .ant-collapse-expand-icon {
+          margin-top: 7px;
+        }
+
+        .anticon {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+      .ant-collapse-content-box {
+        padding-bottom: 22px !important;
+      }
+    }
+    .funDesc {
+      margin: 0 0 10px 40px;
+      color: rgba(26, 27, 37, 0.45);
+      line-height: 22px;
+      font-weight: 400;
+      font-size: 14px;
+    }
+  }
+}
+
+.btnIcon {
+  position: absolute;
+  right: 26px;
+  top: 17px;
+  font-size: 14px !important;
+}
+
+.downMenu {
+  border-radius: 8px;
+  :global {
+    .ant-dropdown-menu-item {
+      padding: 5px 55px;
+      &:hover {
+        background-color: rgba(22, 80, 255, 0.04);
+        color: #3064ff;
+      }
+      .ant-dropdown-menu-title-content {
+        display: flex;
+        align-items: center;
+      }
+      .anticon {
+        font-size: 18px;
+        margin: 0 7px 0 12px;
+      }
+    }
+  }
+}
+
+.dropMenu {
+  border-radius: 8px;
+  :global {
+    .ant-dropdown-menu-item {
+      display: flex;
+      color: rgba(26, 27, 37, 0.88);
+      padding: 5px 39px;
+      &:hover {
+        background-color: rgba(22, 80, 255, 0.04);
+        color: #3064ff;
+      }
+      .ant-dropdown-menu-title-content {
+        display: flex;
+        align-items: center;
+      }
+    }
+    .anticon-github,
+    .anticon-aliyun {
+      font-size: 18px;
+      margin-right: 7px;
     }
   }
 }
@@ -525,19 +648,27 @@ body {
     .github {
       margin: 0;
       margin-right: 3.2vw;
-      width: 29vw;
-      height: 9.6vw;
+      width: 32vw;
+      height: 10vw;
       border-radius: 1.1vw;
       font-size: 3.2vw;
       .githubText {
         position: unset;
+        line-height: 10vw;
       }
-      :global {
-        .anticon-github {
-          font-size: 4.8vw;
-          position: unset;
-        }
+      .btnIcon {
+        font-size: 2.7vw !important;
+        right: 3.2vw;
+        top: 3.7vw;
       }
+    }
+    .tryout {
+      margin: 0;
+      margin-right: 3.2vw;
+      width: 32vw;
+      height: 10vw;
+      border-radius: 1.1vw;
+      font-size: 3.2vw;
     }
     .play {
       width: 29vw;
@@ -702,6 +833,12 @@ body {
       margin-bottom: 2.7vw;
       .versionCard {
         border-radius: 1.6vw !important;
+        padding: 4.3vw !important;
+        .versionDesc {
+          font-size: 3.2vw;
+          color: rgba(26, 27, 37, 0.88);
+          text-align: center;
+        }
       }
       .title {
         font-size: 3.7vw !important;
@@ -710,6 +847,9 @@ body {
         font-size: 3.2vw !important;
         line-height: 4.8vw !important;
         text-align: left !important;
+        margin-top: 0.5vw !important;
+        min-height: auto !important;
+        margin-bottom: 5.3vw !important;
       }
     }
     :global {
@@ -720,7 +860,31 @@ body {
         border-radius: 1.1vw;
       }
     }
+    .freeDown {
+      line-height: 9.1vw !important;
+      position: absolute;
+      left: 32.5vw;
+    }
+    .btnIcon {
+      top: 3vw;
+      right: 32vw !important;
+    }
   }
+  .downMenu {
+    border-radius: 1.1vw;
+    :global {
+      .ant-dropdown-menu-item {
+        padding: 0 29vw;
+        font-size: 3.6vw;
+      }
+      .anticon-github,
+      .anticon-aliyun {
+        font-size: 3.5vw;
+        margin: 0 1.5vw;
+      }
+    }
+  }
+
   .featList {
     padding: 0 !important;
     margin: 0 0 -6.9vw 0;
@@ -730,12 +894,14 @@ body {
     .baseRow,
     .crossRow {
       height: 9.9vw !important;
-      padding: 2.7vw 3.2vw !important;
+      padding: 0 !important;
+      margin-bottom: 4.8vw;
+      height: auto !important;
     }
     .title {
       font-size: 3.2vw !important;
       font-weight: 400 !important;
-      padding: 3.2vw !important;
+      padding: 3.2vw 0 !important;
     }
     .textAlignLeft {
       padding: 3.2vw !important;
@@ -747,6 +913,58 @@ body {
       color: rgba(26, 27, 37, 0.65) !important;
       font-size: 3.2vw !important;
       line-height: 4.8vw !important;
+    }
+
+    .funDesc {
+      margin: 2.6vw 0 4.8vw 0 !important;
+      font-size: 3.2vw !important;
+      text-align: justify !important;
+      line-height: 4.8vw !important;
+    }
+
+    :global {
+      .ant-collapse-item {
+        .ant-collapse-header {
+          padding: 2.5 3.2vw !important;
+          height: 10vw !important;
+          border-radius: unset !important;
+          .ant-collapse-header-text {
+            font-size: 3.2vw !important;
+            line-height: 1 !important;
+          }
+        }
+        .ant-collapse-expand-icon {
+          margin-top: -1.2vw !important;
+        }
+        .ant-collapse-content-box {
+          padding-top: 0 !important;
+          padding-bottom: 0 !important;
+        }
+      }
+    }
+  }
+  .collapseIcon {
+    margin-left: 0 !important;
+    width: 3.6vw !important;
+    height: 3.6vw !important;
+    span {
+      font-size: 1.8vw !important;
+    }
+  }
+  .dropMenu {
+    width: 32vw;
+    border-radius: 1.1vw;
+    :global {
+      .ant-dropdown-menu-item {
+        display: flex;
+        color: rgba(26, 27, 37, 0.88);
+        padding: 0.5vw 7.9vw;
+        font-size: 3.2vw;
+      }
+      .anticon-github,
+      .anticon-aliyun {
+        font-size: 3.6vw;
+      }
     }
   }
 }

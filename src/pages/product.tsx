@@ -163,7 +163,9 @@ export default function ProductPage() {
         className={styles.subTitle}
       />
       <div className={styles.introWrapper}>
-        <div>{intl.formatMessage({ id: 'product.introduction0' })}</div>
+        <div style={lang !== 'zh-CN' ? { marginBottom: '22px' } : {}}>
+          {intl.formatMessage({ id: 'product.introduction0' })}
+        </div>
         <div>{intl.formatMessage({ id: 'product.introduction1' })}</div>
       </div>
 
@@ -202,7 +204,11 @@ export default function ProductPage() {
         />
         <div className="maxContainer">
           <img
-            src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*vcdeRJaJcLwAAAAAAAAAAAAADgOBAQ/original"
+            src={
+              lang === 'zh-CN'
+                ? 'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*cw03RpxT13MAAAAAAAAAAAAADgOBAQ/original'
+                : 'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*K_LmTbSOmDwAAAAAAAAAAAAADgOBAQ/original'
+            }
             alt="ecosystem"
           />
         </div>
@@ -217,6 +223,7 @@ export default function ProductPage() {
           'https://mdn.alipayobjects.com/mdn/huamei_qcdryc/afts/img/A*ga9NQ6eVsx4AAAAAAAAAAAAADgOBAQ',
         slogan: intl.formatMessage({ id: 'product.slogan' }),
         description: intl.formatMessage({ id: 'product.description' }),
+        sloganClassName: styles.slogan,
       }}
       content={content}
     />

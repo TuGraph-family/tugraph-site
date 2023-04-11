@@ -10,7 +10,7 @@
   }
 
   .footer {
-    margin: 12px 0 32px 0;
+    margin: 8px 0 32px 0;
     .splitLine {
       border-bottom: 1px solid rgba(26, 27, 37, 0.25);
       margin-bottom: 16px;
@@ -19,7 +19,7 @@
 
   .itemWithTip {
     position: relative;
-
+    margin-bottom: 40px;
     .tip {
       font-weight: 400;
       font-size: 14px;
@@ -28,8 +28,27 @@
       top: 32px;
       left: 0;
     }
+    :global {
+      .ant-form-item {
+        margin-bottom: 0;
+      }
+    }
   }
-
+  .messageDetail {
+    height: 20px;
+    font-weight: 400;
+    font-size: 14px;
+    color: rgba(26, 27, 37, 0.45);
+    margin-left: 6px;
+  }
+  .needItem {
+    span {
+      font-weight: 400;
+      font-size: 14px;
+      color: rgba(26, 27, 37, 0.88);
+      line-height: 22px;
+    }
+  }
   :global {
     .ant-modal-header {
       border-radius: 12px;
@@ -41,6 +60,18 @@
       font-weight: 500;
       font-size: 20px;
       color: rgba(26, 27, 37, 0.88);
+      span {
+        height: 20px;
+        width: 308px;
+        font-weight: 400;
+        font-size: 14px;
+        color: rgba(26, 27, 37, 0.65);
+        margin-left: 12px;
+      }
+      div {
+        font-size: 3.2vw !important;
+        color: rgba(26, 27, 37, 0.45);
+      }
     }
 
     .ant-modal-content {
@@ -73,13 +104,6 @@
       margin-top: 8px;
     }
 
-    .ant-form-item-label
-      > label.ant-form-item-required:not(
-        .ant-form-item-required-mark-optional
-      )::before {
-      display: none;
-    }
-
     .ant-form-item-control-input-content {
       .ant-input {
         padding: 16px 24px;
@@ -94,7 +118,6 @@
         width: 100%;
         border: 1px solid rgba(26, 27, 37, 0.25);
         border-radius: 8px;
-        margin-top: 20px;
       }
     }
 
@@ -119,7 +142,18 @@
 @media only screen and (max-width: 767.99px) {
   .containerWrapper {
     padding: 16px;
-
+    :global {
+      .ant-form-item .ant-form-item-label > label {
+        font-size: 3.2vw;
+      }
+      .ant-radio-wrapper-in-form-item {
+        span {
+          font-size: 3.2vw;
+          font-weight: 400;
+          color: rgba(26, 27, 37, 0.88);
+        }
+      }
+    }
     .itemWithTip {
       .tip {
         font-size: 16px;
@@ -127,17 +161,41 @@
         color: rgba(0, 0, 0, 0.45);
         transition: all ease 0.3s;
       }
+      .textLabel {
+        :global {
+          .ant-form-item-label {
+            display: none;
+          }
+        }
+      }
+    }
+    .messageLabel {
+      :global {
+        .ant-form-item-label {
+          padding: 0;
+        }
+        .ant-form-item-control {
+          display: none;
+        }
+      }
+    }
+    .messageDetail {
+      font-size: 2.7vw !important;
     }
 
     .submit {
       width: 100%;
     }
-
     :global {
-      .ant-form-item-control-input-content textarea.ant-input {
-        margin-top: 68px !important;
+      .ant-modal-header {
+        padding: 3.5vw 4.3vw !important;
+        .ant-modal-title {
+          font-size: 3.7vw;
+        }
       }
-
+      .ant-modal-body {
+        padding: 0 4.3vw !important;
+      }
       .ant-input {
         border: 1px solid rgba(0, 0, 0, 0.25) !important;
         border-radius: 8px;

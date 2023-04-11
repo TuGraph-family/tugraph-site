@@ -14,6 +14,7 @@ import md11 from '@/doc/zh/11.md';
 import md12 from '@/doc/zh/12.md';
 import md13 from '@/doc/zh/13.md';
 import md14 from '@/doc/zh/14.md';
+import md15 from '@/doc/zh/15.md';
 
 export const blogs = [
   {
@@ -141,6 +142,15 @@ export const blogs = [
     updateDate: '2023-03-21',
     type: 'news',
     content: md14?.html,
+  },
+  {
+    id: 14,
+    img: 'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*Hx2fSre_NjMAAAAAAAAAAAAADgOBAQ/original',
+    title: '热门活动｜限量免费试用，有奖技术征文，更多互动福利！',
+    desc: '免费试用阿里云端 TuGraph 图数据库，还有 GoPro、filco 键盘、苹果 HomePod mini 等你拿！',
+    updateDate: '2023-03-31',
+    type: 'news',
+    content: md15?.html,
   },
 ];
 

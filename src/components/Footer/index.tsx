@@ -36,10 +36,10 @@ export const Footer = ({ className }: { className?: string }) => {
         className={styles.containerWrapper}
         style={lang === 'en' || lang === 'en-US' ? { height: '324px' } : {}}
       >
-        <Col span={4}>
+        <Col span={5}>
           <div className={styles.textGroup}>
             <div className={styles.title}>
-              {intl.formatMessage({ id: 'footer.product' })}
+              {intl.formatMessage({ id: 'footer.product.title' })}
             </div>
             <a className={styles.item} href="/product">
               {intl.formatMessage({ id: 'footer.productName' })}
@@ -82,7 +82,7 @@ export const Footer = ({ className }: { className?: string }) => {
             </a>
           </div>
         </Col>
-        <Col span={10}>
+        <Col span={9}>
           <div className={styles.textGroup} id="contactUs">
             <div className={styles.title}>
               {intl.formatMessage({ id: 'footer.contact' })}
@@ -104,7 +104,10 @@ export const Footer = ({ className }: { className?: string }) => {
             <div className={styles.item}>
               <Space>
                 <SlackOutlined size={12} />
-                <a href="https://tugraph.slack.com/join/shared_invite/zt-1hha8nuli-bqdkwn~w4zH1vlk0QvqIfg#/shared-invite/email">
+                <a
+                  href="https://tugraph.slack.com/join/shared_invite/zt-1hha8nuli-bqdkwn~w4zH1vlk0QvqIfg#/shared-invite/email"
+                  target={'_blank'}
+                >
                   Slack
                 </a>
               </Space>
@@ -127,7 +130,7 @@ export const Footer = ({ className }: { className?: string }) => {
                 </div>
               </div>
               <div className={styles.qrCode}>
-                <img src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*L9UQSbVwSoMAAAAAAAAAAAAADgOBAQ/original" />
+                <img src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*-aa5TKbCnBAAAAAAAAAAAAAADgOBAQ/original" />
                 <div className={styles.desc}>
                   {intl.formatMessage({ id: 'footer.qrCode.dingTalk' })}
                 </div>

@@ -1,11 +1,9 @@
-@font-face {
-  font-family: 'PingFang';
-  src: url('https://mdn.alipayobjects.com/huamei_qcdryc/afts/file/A*FPUaQZ986BkAAAAAAAAAAAAADgOBAQ/PingFang.ttf');
-}
 body {
   background: #fff;
-  font-family: 'PingFang';
   overflow-x: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Helvetica Neue, Arial, Noto Sans, sans-serif, apple color emoji,
+    segoe ui emoji, Segoe UI Symbol, noto color emoji;
 }
 
 :global {
@@ -30,6 +28,12 @@ body {
   .boldText {
     font-weight: 600;
     color: rgba(26, 27, 37, 0.88);
+    div {
+      font-weight: 500;
+      font-size: 14px;
+      color: rgba(26, 27, 37, 0.65);
+      margin-top: 4px;
+    }
   }
 
   .grayBtn,
@@ -104,9 +108,9 @@ body {
 .bannerButtons {
   position: relative;
   .github {
-    margin: 32px 24px 0 0;
+    margin: 32px 8px 0 0;
     height: 48px;
-    width: 160px;
+    width: 200px;
     background-color: #1650ff;
     border-radius: 8px;
     font-weight: 500;
@@ -128,7 +132,8 @@ body {
     .githubText {
       position: absolute;
       top: 12px;
-      right: 38px;
+      right: 39px;
+      color: #ffffff;
     }
   }
   .play {
@@ -145,6 +150,16 @@ body {
       width: 24px;
       margin-right: 8px;
     }
+  }
+  .tryout {
+    height: 48px;
+    width: 200px;
+    border: 1px solid rgba(26, 27, 37, 0.25);
+    border-radius: 8px;
+    background-color: transparent;
+    font-weight: 500;
+    margin-top: 32px;
+    font-size: 16px;
   }
 }
 
@@ -441,6 +456,14 @@ body {
           border-radius: 12px;
           background-color: #ffffff;
           text-align: center;
+          .freeDown {
+            line-height: 48px;
+            position: absolute;
+            left: 39px;
+          }
+          .btnIcon {
+            right: 36px;
+          }
         }
 
         .title {
@@ -457,7 +480,7 @@ body {
           text-align: center;
           line-height: 21px;
           margin: 12px 0 24px 0;
-          height: 100px;
+          min-height: 154px;
         }
       }
     }
@@ -473,14 +496,16 @@ body {
 
     .text {
       font-weight: 500;
-      font-size: 16px;
+      font-size: 14px;
       text-align: center;
-      color: rgba(26, 27, 37, 0.65);
+      color: #1a1b25;
     }
 
     .textAlignLeft {
       text-align: left;
-      padding-left: 56px;
+      padding-left: 40px;
+      color: rgba(26, 27, 37, 0.65);
+      margin-right: 20px;
     }
 
     .baseRow,
@@ -488,13 +513,119 @@ body {
       height: 56px;
       padding: 16px 0;
       text-align: center;
+      position: relative;
+    }
+
+    .featDesc {
+      position: absolute;
+      color: rgba(26, 27, 37, 0.45);
+      font-weight: 400;
+      white-space: nowrap;
+      top: 0;
+      left: 120px;
     }
 
     .crossRow {
       background-color: rgba(22, 80, 255, 0.04);
       border-radius: 8px;
     }
+
+    .collapseIcon {
+      height: 18px;
+      width: 18px;
+      border: 1.5px solid rgba(26, 27, 37, 0.12);
+      border-radius: 2px;
+      position: relative;
+      margin-left: 9px;
+    }
+
+    :global {
+      .ant-collapse-header {
+        height: 56px;
+        border-radius: 8px;
+        background-color: rgba(22, 80, 255, 0.04);
+        margin-bottom: 4px;
+
+        .ant-collapse-header-text {
+          font-weight: 500;
+          font-size: 16px;
+          color: rgba(26, 27, 37, 0.88);
+          text-align: justify;
+          line-height: 32px;
+        }
+
+        .ant-collapse-expand-icon {
+          margin-top: 7px;
+        }
+
+        .anticon {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+    }
+    .funDesc {
+      margin: 0 0 10px 40px;
+      color: rgba(26, 27, 37, 0.45);
+      line-height: 22px;
+      font-weight: 400;
+      font-size: 14px;
+    }
   }
+}
+
+.btnIcon {
+  position: absolute;
+  right: 20px;
+  top: 17px;
+  font-size: 14px !important;
+  color: #ffffff;
+}
+
+.downMenu {
+  border-radius: 8px;
+  :global {
+    .ant-dropdown-menu-item {
+      padding: 5px 43px;
+      &:hover {
+        background-color: rgba(22, 80, 255, 0.04);
+        color: #3064ff;
+      }
+      .ant-dropdown-menu-title-content {
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+}
+
+.dropMenu {
+  border-radius: 8px;
+  :global {
+    .ant-dropdown-menu-item {
+      display: flex;
+      color: rgba(26, 27, 37, 0.88);
+      padding: 5px 39px;
+      &:hover {
+        background-color: rgba(22, 80, 255, 0.04);
+        color: #3064ff;
+      }
+      .ant-dropdown-menu-title-content {
+        display: flex;
+        align-items: center;
+      }
+    }
+    .anticon-github,
+    .anticon-aliyun {
+      font-size: 18px;
+      margin-right: 7px;
+    }
+  }
+}
+.slogan {
+  width: 630px;
 }
 
 @media only screen and (max-width: 767.99px) {
@@ -510,19 +641,31 @@ body {
     .github {
       margin: 0;
       margin-right: 3.2vw;
-      width: 29vw;
-      height: 9.6vw;
+      width: 32vw;
+      height: 10vw;
       border-radius: 1.1vw;
       font-size: 3.2vw;
+      width: 38.7vw;
+      position: relative;
       .githubText {
-        position: unset;
+        position: absolute;
+        top: 2.8vw !important;
+        right: 6.9vw !important;
       }
-      :global {
-        .anticon-github {
-          font-size: 4.8vw;
-          position: unset;
-        }
+      .btnIcon {
+        font-size: 2.7vw !important;
+        right: 3.2vw;
+        top: 3.8vw !important;
       }
+    }
+
+    .tryout {
+      margin: 0;
+      margin-right: 3.2vw;
+      width: 38.7vw;
+      height: 10vw;
+      border-radius: 1.1vw;
+      font-size: 3.2vw;
     }
     .play {
       position: unset;
@@ -684,6 +827,11 @@ body {
       margin-bottom: 2.7vw;
       .versionCard {
         border-radius: 1.6vw !important;
+        padding: 4.3vw !important;
+        .versionDesc {
+          color: rgba(26, 27, 37, 0.65);
+          font-size: 3.2vw;
+        }
       }
       .title {
         font-size: 3.7vw !important;
@@ -693,6 +841,7 @@ body {
         line-height: 4.8vw !important;
         height: unset !important;
         margin: 3.2vw 0 5.33vw 0 !important;
+        // margin-top: 0.5vw !important;
       }
     }
     :global {
@@ -703,7 +852,32 @@ body {
         border-radius: 1.1vw;
       }
     }
+
+    .freeDown {
+      line-height: 9.1vw !important;
+      left: 31.5vw !important;
+    }
+    .btnIcon {
+      top: 3vw;
+      left: 37.2vw !important;
+    }
   }
+
+  .downMenu {
+    border-radius: 1.1vw;
+    :global {
+      .ant-dropdown-menu-item {
+        padding: 0 27vw;
+        font-size: 3.6vw;
+      }
+      .anticon-github,
+      .anticon-aliyun {
+        font-size: 3.6vw;
+        margin: 0 1.5vw;
+      }
+    }
+  }
+
   .featList {
     padding: 0 !important;
     margin: 0 0 -6.9vw 0;
@@ -712,8 +886,8 @@ body {
     }
     .baseRow,
     .crossRow {
-      height: 13.6vw !important;
-      padding: 2.7vw 3.2vw !important;
+      height: auto !important;
+      padding: 2.4vw 0 !important;
       display: flex;
     }
     .title {
@@ -732,6 +906,55 @@ body {
       color: rgba(26, 27, 37, 0.65) !important;
       font-size: 3.2vw !important;
       line-height: 4.26vw !important;
+    }
+
+    .funDesc {
+      margin: 0 !important;
+      font-size: 3.2vw !important;
+      color: rgba(26, 27, 37, 0.65);
+      text-align: justify !important;
+      line-height: normal !important;
+    }
+
+    :global {
+      .ant-collapse-item {
+        .ant-collapse-header {
+          padding: 2.5 3.2vw !important;
+          height: 10vw !important;
+          border-radius: unset !important;
+          .ant-collapse-header-text {
+            font-size: 3.2vw !important;
+            line-height: 1 !important;
+          }
+        }
+        .ant-collapse-expand-icon {
+          margin-top: -1.2vw !important;
+        }
+      }
+    }
+  }
+  .collapseIcon {
+    margin-left: 0 !important;
+    width: 3.6vw !important;
+    height: 3.6vw !important;
+    span {
+      font-size: 1.8vw !important;
+    }
+  }
+  .dropMenu {
+    width: 38.7vw;
+    border-radius: 1.1vw;
+    :global {
+      .ant-dropdown-menu-item {
+        display: flex;
+        color: rgba(26, 27, 37, 0.88);
+        padding: 0.5vw 4vw;
+        font-size: 3.2vw;
+      }
+      .anticon-github,
+      .anticon-aliyun {
+        font-size: 3.6vw;
+      }
     }
   }
 }

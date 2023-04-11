@@ -1,46 +1,7 @@
 .containerWrapper {
-  .subTitle {
-    margin-bottom: 24px;
+  .introSubTitle {
+    margin-top: 150px;
   }
-
-  .videoWrapper {
-    box-shadow: 0px 0px 30px 15px rgba(0, 15, 60, 0.05);
-    border-radius: 12px;
-    padding: 32px;
-    background: #ffffff;
-    width: 1200px;
-    margin: auto;
-
-    .card {
-      video {
-        border-radius: 8px;
-      }
-
-      .title {
-        font-weight: 500;
-        font-size: 20px;
-        color: rgba(26, 27, 37, 0.88);
-        margin-top: 16px;
-        height: 56px;
-      }
-
-      .tag {
-        position: relative;
-        top: -4px;
-        height: 24px;
-        text-align: center;
-        width: 50px;
-        padding: 2px 8px;
-        background-color: rgba(0, 0, 0, 0.06);
-        border-radius: 4px;
-        font-weight: 400;
-        font-size: 12px;
-        border: none;
-        color: rgba(0, 0, 0, 0.65);
-      }
-    }
-  }
-
   .introWrapper {
     font-weight: 400;
     font-size: 14px;
@@ -50,7 +11,6 @@
     max-width: 1200px;
     margin: auto;
   }
-
   .featCards {
     display: flex;
     justify-content: center;
@@ -75,7 +35,6 @@
         margin: auto;
 
         img {
-          margin-bottom: 71px;
           width: auto;
           height: 77px;
         }
@@ -95,9 +54,8 @@
         font-weight: 400;
         font-size: 14px;
         color: rgba(26, 27, 37, 0.45);
-        line-height: 22px;
-        height: 100%;
         text-align: justify;
+        line-height: 22px;
       }
     }
   }
@@ -120,26 +78,18 @@
   }
 }
 
-:global {
-  .JoL-controller-container {
-    .play-icon {
-      width: 26px !important;
-      height: 26px !important;
-    }
-  }
-  .JoL-player-container .tooltip .hover-icon-animate {
-    font-size: 14px !important;
-  }
+.sloganTitle {
+  width: 500px !important;
 }
 
 @media only screen and (max-width: 767.99px) {
   .containerWrapper {
     transition: all ease 0.3s;
+    .introSubTitle {
+      margin-top: 20vw !important;
+    }
     .subTitle {
       margin-bottom: 4.8vw !important;
-    }
-    .subTitleTop {
-      padding-top: 6.4vw !important;
     }
     .videoWrapper {
       width: 100vw;
@@ -155,7 +105,7 @@
       }
       .card {
         padding: 3.2vw !important;
-        height: 54vw;
+        height: 48.8vw;
         border-radius: 1.6vw;
         text-align: left;
         width: 86.7vw !important;
@@ -167,11 +117,10 @@
         .videoInfo {
           text-align: left;
           display: flex;
-          margin-top: 1.6vw !important;
+          margin-top: 1.6vw !important ;
           .title {
             font-size: 3.7vw !important;
             margin: 0 !important;
-            height: 100% !important;
           }
 
           .tag {
@@ -179,9 +128,9 @@
             height: 100% !important;
             line-height: 3.2vw !important;
             text-align: center;
-            padding: 1vw 2.13vw !important;
+            padding: 0.53vw 2.13vw !important;
             width: 13.3vw !important;
-            margin-top: 1.2vw !important;
+            margin-top: 0.56vw !important;
           }
         }
       }
@@ -195,7 +144,6 @@
   .featCards {
     margin-bottom: 13.3vw !important;
     .featCardGroup {
-      padding: 1.6vw !important;
       min-height: 0 !important;
       height: 100% !important;
       .title {
@@ -225,7 +173,7 @@
   }
   .ecoWrapper {
     margin: 0 -120px -12.9vw -120px !important;
-    padding: 0 120px 13.3vw 120px !important;
+    padding: 1px 120px 13.3vw 120px !important;
     img {
       width: 100% !important;
       padding: 4.3vw !important;
