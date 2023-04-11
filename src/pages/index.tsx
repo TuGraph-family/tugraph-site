@@ -274,7 +274,7 @@ export default function IndexPage() {
               </div>
             </Col>
             <Col span={isWide ? 18 : 24}>
-              <Row style={{ margin: '-12px' }}>
+              <Row style={{ margin: isWide ? '-12px' : '0' }}>
                 {getCases(intl)?.map((item, key) => (
                   <Col
                     span={isWide ? 8 : 12}
@@ -512,7 +512,7 @@ export default function IndexPage() {
                             {i.community ? <CheckOutlined /> : '-'}
                           </Col>
                           <Col
-                            span={isWide && lang !== 'zh-CN' ? 4 : 3}
+                            span={isWide && lang !== 'zh-CN' ? 4 : 5}
                             className={styles.text}
                           >
                             {i.pro ? <CheckOutlined /> : '-'}
@@ -564,7 +564,7 @@ export default function IndexPage() {
           slogan: intl.formatMessage({ id: 'home.banner.slogan' }),
           description: intl.formatMessage({ id: 'home.banner.description' }),
           footer: bannerButton,
-          sloganClassName: styles.slogan,
+          sloganClassName: isWide ? styles.slogan : styles.mobileSlogan,
         }}
         content={content}
       />

@@ -94,7 +94,7 @@ export default function OverviewPage() {
           'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*UN91TpJfDTUAAAAAAAAAAAAADgOBAQ/original',
         slogan: intl.formatMessage({ id: 'product.overview.slogan' }),
         description: intl.formatMessage({ id: 'product.vverview.desc' }),
-        sloganClassName: styles.sloganTitle,
+        sloganClassName: isWide ? styles.sloganTitle : '',
       }}
       content={content}
     />

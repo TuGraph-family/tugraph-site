@@ -7,6 +7,7 @@ import {
   Modal,
   Radio,
   Row,
+  Space,
   Typography,
 } from 'antd';
 import { getLocale, useIntl } from 'umi';
@@ -86,18 +87,20 @@ export const ApplyForm = ({
               className={styles.needItem}
             >
               <Radio.Group>
-                <Radio value="0">
-                  {intl.formatMessage({ id: 'form.need.value' })}
-                </Radio>
-                <Radio value="1">
-                  {intl.formatMessage({ id: 'form.need.value1' })}
-                </Radio>
-                <Radio value="2">
-                  {intl.formatMessage({ id: 'form.need.value2' })}
-                </Radio>
-                <Radio value="3">
-                  {intl.formatMessage({ id: 'form.need.value3' })}
-                </Radio>
+                <Space direction="vertical">
+                  <Radio value="0">
+                    {intl.formatMessage({ id: 'form.need.value' })}
+                  </Radio>
+                  <Radio value="1">
+                    {intl.formatMessage({ id: 'form.need.value1' })}
+                  </Radio>
+                  <Radio value="2">
+                    {intl.formatMessage({ id: 'form.need.value2' })}
+                  </Radio>
+                  <Radio value="3">
+                    {intl.formatMessage({ id: 'form.need.value3' })}
+                  </Radio>
+                </Space>
               </Radio.Group>
             </Form.Item>
           </Col>
