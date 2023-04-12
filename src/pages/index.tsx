@@ -274,7 +274,7 @@ export default function IndexPage() {
               </div>
             </Col>
             <Col span={isWide ? 18 : 24}>
-              <Row style={{ margin: '-12px' }}>
+              <Row style={{ margin: isWide ? '-12px' : '0' }}>
                 {getCases(intl)?.map((item, key) => (
                   <Col
                     span={isWide ? 8 : 12}
@@ -441,13 +441,13 @@ export default function IndexPage() {
           <div className={styles.featList}>
             <Row>
               <Col
-                span={isWide ? 14 : 13}
+                span={isWide ? 14 : 12}
                 className={cx(styles.title, styles.textAlignLeft, 'boldText')}
               >
                 {intl.formatMessage({ id: 'home.function' })}
               </Col>
               <Col
-                span={isWide ? 4 : 5}
+                span={isWide ? 4 : 6}
                 className={cx(styles.title, 'boldText')}
               >
                 {isWide ? (
@@ -458,11 +458,16 @@ export default function IndexPage() {
                     <div>{intl.formatMessage({ id: 'home.tugrpah.db' })}</div>
                   </>
                 ) : (
-                  intl.formatMessage({ id: 'home.version0' })
+                  <>
+                    {intl.formatMessage({ id: 'home.version0' })}
+                    <div className={styles.verDesc}>
+                      {intl.formatMessage({ id: 'home.tugrpah.db' })}
+                    </div>
+                  </>
                 )}
               </Col>
               <Col
-                span={isWide ? 4 : 5}
+                span={isWide ? 4 : 6}
                 className={cx(styles.title, 'boldText')}
               >
                 {isWide ? (
@@ -478,7 +483,12 @@ export default function IndexPage() {
                     </p>
                   </>
                 ) : (
-                  intl.formatMessage({ id: 'home.version1' })
+                  <>
+                    {intl.formatMessage({ id: 'home.version1' })}
+                    <div className={styles.verDesc}>
+                      {intl.formatMessage({ id: 'home.distributed' })}
+                    </div>
+                  </>
                 )}
               </Col>
             </Row>
@@ -503,17 +513,17 @@ export default function IndexPage() {
                       return (
                         <Row key={key} className={styles.baseRow}>
                           <Col
-                            span={14}
+                            span={13}
                             className={cx(styles.textAlignLeft, styles.text)}
                           >
                             {i.feat}
                           </Col>
-                          <Col span={4} className={styles.text}>
+                          <Col span={5} className={styles.text}>
                             {i.community ? <CheckOutlined /> : '-'}
                           </Col>
                           <Col
-                            span={isWide && lang !== 'zh-CN' ? 4 : 3}
-                            className={styles.text}
+                            span={isWide ? 4 : 1}
+                            className={cx(styles.text, styles.textRight)}
                           >
                             {i.pro ? <CheckOutlined /> : '-'}
                             {isWide && (
@@ -564,7 +574,7 @@ export default function IndexPage() {
           slogan: intl.formatMessage({ id: 'home.banner.slogan' }),
           description: intl.formatMessage({ id: 'home.banner.description' }),
           footer: bannerButton,
-          sloganClassName: styles.slogan,
+          sloganClassName: isWide ? styles.slogan : styles.mobileSlogan,
         }}
         content={content}
       />

@@ -97,11 +97,11 @@ export default function BlogPage() {
           <Tabs.TabPane tab={intl.formatMessage({ id: 'blog.all' })} key="all">
             <div className={styles.lists}>
               {listData?.map((item, key) => (
-                <div
+                <a
                   className={styles.list}
                   key={key}
+                  href={`/blog?id=${item.id}`}
                   onClick={() => {
-                    history.push(`/blog?id=${item.id}`);
                     setBlogDetail(item.content);
                   }}
                 >
@@ -113,7 +113,7 @@ export default function BlogPage() {
                       <div className={styles.updateDate}>{item.updateDate}</div>
                     </div>
                   </Space>
-                </div>
+                </a>
               ))}
             </div>
           </Tabs.TabPane>
@@ -123,11 +123,11 @@ export default function BlogPage() {
           >
             <div className={styles.lists}>
               {listData?.map((item, key) => (
-                <div
+                <a
                   className={styles.list}
                   key={key}
+                  href={`/blog?id=${item.id}`}
                   onClick={() => {
-                    history.push(`/blog?id=${item.id}`);
                     setBlogDetail(item.content);
                   }}
                 >
@@ -139,7 +139,7 @@ export default function BlogPage() {
                       <div className={styles.updateDate}>{item.updateDate}</div>
                     </div>
                   </Space>
-                </div>
+                </a>
               ))}
             </div>
           </Tabs.TabPane>
@@ -149,11 +149,11 @@ export default function BlogPage() {
           >
             <div className={styles.lists}>
               {listData?.map((item, key) => (
-                <div
+                <a
                   className={styles.list}
                   key={key}
+                  href={`/blog?id=${item.id}`}
                   onClick={() => {
-                    history.push(`/blog?id=${item.id}`);
                     setBlogDetail(item.content);
                   }}
                 >
@@ -165,7 +165,7 @@ export default function BlogPage() {
                       <div className={styles.updateDate}>{item.updateDate}</div>
                     </div>
                   </Space>
-                </div>
+                </a>
               ))}
             </div>
           </Tabs.TabPane>

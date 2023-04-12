@@ -39,13 +39,13 @@ export default {
   'home.notice2.desc':
     'Easily create your own graph database application with simple deployment on Alibaba Cloud.',
   'home.case.title': 'SOLUTIONS',
-  'home.case.desc0': 'Thousands of times improvement ',
+  'home.case.desc0':
+    'Thousands of times of performance boost, breaking through ',
   'home.btn.tryOut': ' Enterprise Edition',
   'home.tugrpah.db': 'Standalone',
   'home.distributed': 'Distributed',
   'home.three.lines.consistent': 'online/near-line/offline all-in-one',
-  'home.case.desc1':
-    'help industry customers break the bottleneck of data analysis.',
+  'home.case.desc1': 'bottlenecks for  industrial data analysis.',
   'home.case0.title': 'Financial Services',
   'home.case0.desc0':
     'Credit Risk Management, Money Tracking, Anti-Money Laundering, Anti-Fraud, Consumer Product ',
