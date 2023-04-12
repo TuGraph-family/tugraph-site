@@ -223,7 +223,7 @@ TuGraph supports more than 300 applications in the Ant Group, including "Double 
   'product.feature.overview.introduction0': `TuGraph, jointly developed by Ant Group and Tsinghua University, provides a comprehensive system for graph data analysis, including graph storage, graph analytics, graph learning, and a graph exploration platform. It has been deployed with an industry-leading scale of graph cluster, and addresses some major challenges such as hugh data volume, high throughput rate, and low latency. TuGraph serves as a critical infrastructure for Ant Group’s financial risk management capabilities, significantly improving the efficiency of real-time analysis for fraud detection and anti-money laundering. TuGraph has also been adopted by customers in the financial services, energy industry, public sector, and other industries.`,
   'product.feature.overview.introduction1': `TuGraph supports over 300 applications within Ant Group, including "Double 11" — the largest shopping festival in China and in the world. It covers the entire graph R&D life cycle from experimentation and validation to deployment and Ops. TuGraph has a distributed, multi-center, high-availability architecture that provides safe, stable, and reliable services.`,
   'product.overview.ecosystem': 'ARCHITECTURE',
-  'product.vverview.desc':
+  'product.overview.desc':
     'Provides an enterprise-level distributed graph management platform with the only stream graph computing in the industry',
   'demo.title': ' TuGraph Use Cases',
   'demo.description':
