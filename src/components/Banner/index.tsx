@@ -88,7 +88,7 @@ export const Banner = ({
           </Row>
         ) : (
           <>
-            <div className={styles.slogan}>{slogan}</div>
+            <div className={cx(styles.slogan, sloganClassName)}>{slogan}</div>
             {description && (
               <div className={styles.description}>{description}</div>
             )}

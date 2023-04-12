@@ -93,8 +93,8 @@ export default function OverviewPage() {
         bgIconUrl:
           'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*UN91TpJfDTUAAAAAAAAAAAAADgOBAQ/original',
         slogan: intl.formatMessage({ id: 'product.overview.slogan' }),
-        description: intl.formatMessage({ id: 'product.vverview.desc' }),
-        sloganClassName: styles.sloganTitle,
+        description: intl.formatMessage({ id: 'product.overview.desc' }),
+        sloganClassName: isWide ? styles.sloganTitle : '',
       }}
       content={content}
     />
