@@ -81,9 +81,9 @@ export default {
   'home.chooseVersion': '版本选择',
   'home.version0': '社区版',
   'home.version0.desc': '单实例部署、开源免费、简单快速、小型项目的理想选择',
-  'home.version1.desc': '分布式图平台、高可用、高稳定、企业级项目的理想选',
+  'home.version1.desc': '分布式图平台、高可用、高稳定、企业级项目的理想选择',
   'home.version.desc0':
-    '包含 TuGraph 的全部基本功能，适用于单实例部署。它提供了完备的图数据库基础功能，例如 ACID 兼容的事务，编程 API，配套的相关工具等。它是学习 TuGraph 和实现小型项目的理想选择。如需实现生产级高可用集群架构，以及图建模咨询、安装部署和运维的企业级服务，请联系我们获得商业支持。',
+    '适用于单实例部署，它提供了完备的图数据库基础功能，例如 ACID 兼容的事务，编程 API，配套的相关工具等。它是学习 TuGraph 和实现小型项目的理想选择。如需实现生产级高可用集群架构和运维的企业级服务，请联系我们获得商业支持。',
   'home.version.startUse': '免费下载',
   'home.function': '功能',
   'home.function.title1': 'TuGraph DB 图数据库引擎',
