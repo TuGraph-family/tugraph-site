@@ -89,7 +89,7 @@ export default {
   'home.version0': 'Community Edition',
   'home.btn.desc': 'Community Edition',
   'home.version.desc0':
-    'TuGraph Community Edition is suitable for standalone (single-instance) deployment. It includes all essential functionalities such as Transactions (ACID), SDK APIs, and tools, offering complete graph database capabilities. It is optimal for smaller projects and learning purposes. For high-availability cluster architecture at a production level and superior enterprise services for graph modeling consultation, installation, deployment, and operation and maintenance, please contact us for commercial support.',
+    'TuGraph Community Edition is a graph database solution suitable for standalone deployment, providing all essential functionalities for complete graph database capabilities. It is optimal for smaller projects and learning purposes. For users requiring high-availability cluster architecture and enterprise services, we recommend our commercial support services, including consultation, installation, deployment, maintenance, and access to cutting-edge graph modeling technologies. Contact us today to learn more.',
   'home.version.startUse': 'DOWNLOAD',
   'home.function': 'Functionalities',
   'home.function.title1': 'TuGraph DB: Graph Database Engine',
@@ -143,7 +143,7 @@ export default {
   'home.version.title2': 'Enterprise Edition',
   'home.version1': ' Enterprise Edition',
   'home.version.desc1':
-    'TuGraph Enterprise Edition offers comprehensive commercial support features, such as distributed architecture, a one-stop graph platform that covers the entire life cycle from exploration to research, service, operation, and maintenance, online/near-line/offline graph computing engines, and support for multiple data sources, including streaming and big data platforms. It also provides multi-site and multi-center deployment options, making it the ideal choice for commercial solutions.',
+    'TuGraph Enterprise Edition is the ultimate choice for users seeking a comprehensive graph database solution with robust commercial support features. This edition offers a distributed architecture, covering the entire graph database life cycle, from exploration to research, service, operation, and maintenance. It boasts online/near-line/offline graph computing engines, support for multiple data sources, including streaming and big data platforms, and multi-site and multi-center deployment options.',
   'home.version.contactUs': 'FREE TRIAL ',
   'home.btn.desc1': 'Alibaba Cloud',
   'home.feat0': 'Label property graph model',
