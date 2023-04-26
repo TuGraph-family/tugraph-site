@@ -81,7 +81,7 @@ export default {
     'The HTAP graph database meets the millisecond-level complex query in real-time environments and offline analysis, and provides one-stop storage, query, and analysis. It has the ability to process trillion-level graph data, and holds the world record for graph database performance benchmarks.',
   'home.reason2': 'Visual Interactive Interface',
   'home.reason.desc2':
-    'The built-in visual console and management platform are convenient for business users and developers to complete modeling, query and analysis w ith low-code. Nearly 30 built-in graph algorithms in 5 categories, which makes it easy to build efficient applications.',
+    'The built-in visual console and management platform are convenient for business users and developers to complete modeling, query and analysis with low-code. Nearly 30 built-in graph algorithms in 5 categories, which makes it easy to build efficient applications.',
   'home.reason3': 'Scalable Application Development',
   'home.reason.desc3':
     'Developers can use mainstream query languages, programming languages, and interface protocols to quickly create applications, quickly connect to business systems, integrate data storage, and smoothly migrate to common open source frameworks.',
