@@ -1,15 +1,13 @@
-import React from 'react';
-import { getLocale, useIntl } from 'umi';
 import { LayoutTemplate } from '@/components/LayoutTemplate';
+import { getPartner } from '@/data/get_partner';
+import { getPartnerReason } from '@/data/get_partner_reason';
+import { Anchor, Col, Row, Space } from 'antd';
 import cx from 'classnames';
+import { useMedia } from 'react-use';
+import { getLocale, useIntl } from 'umi';
 
 import stylesZh from './ecosystem.less';
 import stylesEn from './ecosystem_en.less';
-
-import { Anchor, Button, Col, Row, Space } from 'antd';
-import { useMedia } from 'react-use';
-import { getPartner } from '@/data/get_partner';
-import { getPartnerReason } from '@/data/get_partner_reason';
 
 const { Link } = Anchor;
 

@@ -28,6 +28,16 @@ export default defineConfig({
       component: '@/pages/overview',
       title: 'product.title',
     },
+    {
+      path: '/platform',
+      component: '@/pages/platform',
+      title: 'platform.title',
+    },
+    {
+      path: '/db',
+      component: '@/pages/platform',
+      title: 'db.title',
+    },
   ],
   scripts: [
     `var _hmt = _hmt || [];

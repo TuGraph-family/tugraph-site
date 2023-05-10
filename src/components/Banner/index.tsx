@@ -1,14 +1,14 @@
-import React, { ReactNode } from 'react';
-import { Row, Col } from 'antd';
-import { useMedia } from 'react-use';
+import { Col, Row } from 'antd';
 import cx from 'classnames';
+import { ReactNode } from 'react';
+import { useMedia } from 'react-use';
 
-import styles from './index.less';
-import { getLocale, useLocation } from 'umi';
 import { ChOrEnStyle } from '@/util';
+import { getLocale, useLocation } from 'umi';
+import styles from './index.less';
 
 export interface BannerInfoProps {
-  slogan: string;
+  slogan: string | ReactNode;
   bgIconUrl?: string;
   footer?: ReactNode;
   description?: string;

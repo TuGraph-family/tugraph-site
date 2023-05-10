@@ -349,7 +349,7 @@ TuGraph supports more than 300 applications in the Ant Group, including "Double 
   'ecosystem.support1': 'Technical Advisory',
   'ecosystem.support2': 'Proof-of-Concept Support',
   'ecosystem.support3': ' Extensive Sales & Marketing Benefits',
-  'download.banner.slogan': 'TuGraph v3.3.2',
+  'download.banner.slogan': 'TuGraph v3.4.0',
   'download.banner.description': 'Latest Release Version2022.10.20',
   'download.title0': 'TuGraph Community Edition',
   'download.title1': 'Procedure API Doc',
@@ -404,4 +404,84 @@ TuGraph supports more than 300 applications in the Ant Group, including "Double 
   'doc.title': ' TuGraph Documentation',
   'blog.title': ' TuGraph Blog',
   'download.title': ' TuGraph Download',
+  'platform.title': 'TuGraph Platform: One-stop Graph Platform',
+  'platform.slog': `One-Stop Graph Platform for Entire R&D Life Cycle `,
+  'platform.mobileSlog': 'One-Stop Graph Platform for Entire R&D Life Cycle ',
+  'platform.slog1': ' ',
+  'platform.descTitle':
+    'One-Stop Platform for Entire Graph R&D Life Cycle with Transactions and Analytics',
+  'platform.descText':
+    'The platform offers exploration, research, service, and ops capabilities throughout the entire graph management life cycle. It is a visual console for DB and Analytics engines, and supports multiple types of data sources (e.g., textual, relational, and streaming). With an interactive approach, users can accumulate business experience without coding.',
+  'platform.proAdvant': 'FEATURES',
+  'platform.advantTitle': 'Life Cycle Coverage',
+  'platform.advantDesc':
+    'One-stop platform: Exploration, R&D, integration, Ops and maintenance',
+  'platform.advantTitle1': 'One-stop Maintenance',
+  'platform.advantDesc1':
+    'Multiple engines management, Ops automation, troubleshooting, monitoring and alerts',
+  'platform.advantTitle2': 'Configurations',
+  'platform.advantDesc2':
+    'Automated configurations including queries, stream computing, analytics, and algorithms',
+  'platform.advantTitle3': 'Standardized R&D',
+  'platform.advantDesc3':
+    'Best R&D practice from Ant Group, from design, development to production',
+  'platform.advantTitle4': 'Quick Exploration',
+  'platform.advantDesc4':
+    'Quick exploration and validation of business values from relational data to graph data',
+  'platform.advantTitle5': 'Black/White Lists',
+  'platform.advantDesc5':
+    'Effective and practical functions to quickly identify suspicious crowds and individuals',
+  'platform.advantTitle6': 'Graphical Interface',
+  'platform.advantDesc6':
+    'Graphical user interfaces for queries, management, and custom templates',
+  'platform.advantTitle7': 'Visualized Analytics',
+  'platform.advantDesc7':
+    'Visualized grouping, aggregation, analytics, algorithms, and configurations in canvas',
+  'platform.advantTitle8': 'Fine-grained Permissions',
+  'platform.advantDesc8':
+    'Data permissions and function permissions on graphs, clusters, users and user groups',
+  'platform.advantTitle9': 'Domain Isolation',
+  'platform.advantDesc9': `Unified platform for different businesses without interference or impacts`,
+  'platform.advantTitle10': 'Microservices',
+  'platform.advantDesc10':
+    'Components available as microservices, flexible assembly and configuration for businesses',
+  'platform.advantTitle11': 'Agile Development',
+  'platform.advantDesc11':
+    'Comprehensive services and APIs, agile development for graph applications',
+  'db.title': 'TuGraph DB: Distributed Graph Database',
+  'db.slog': 'Large-Scale Distributed Graph Database for Enterprises',
+  'db.mobileSlog': 'Large-Scale Distributed Graph Database for Enterprises',
+  'db.descTitle':
+    'Specially for Enterprises: High Availablilty, High Stability and High Performance',
+  'db.descText':
+    'The financial-grade distributed graph database is capable of handling trillion-scale graph data with high throughput rate (tens of millions of nodes per second) and low latency. It supports distributed transactions and is utilized in scenarios that require massive concurrency, real-time query and update, and high data reliability.',
+  'db.proAdvant': 'FEATURES',
+  'db.advantTitle': 'High Availability',
+  'db.advantDesc':
+    'Distributed, financial-grade, multi-site and multi-center deployment, real-world validation',
+  'db.advantTitle1': 'High Stability',
+  'db.advantDesc1':
+    'Serves more than 300 businesses from Ant Group’s practice, incl. more than 10 years of “Double 11” festival',
+  'db.advantTitle2': 'Real Time',
+  'db.advantDesc2':
+    'P999 response in milliseconds for multi-hop queries with high throughput rate, real-time query and update',
+  'db.advantTitle3': 'Security',
+  'db.advantDesc3':
+    'Full/incremental/scheduled backup and restore with NFS/OSS, enterprise-level permission control and domain isolation',
+  'db.advantTitle4': 'ISO Standardization',
+  'db.advantDesc4':
+    'ISO-GQL: ISO standard graph query language, simple and easy to use like SQL',
+  'db.advantTitle5': 'High Scalability',
+  'db.advantDesc5':
+    'Financial-grade architecture, trillion-level online scaling operations with zero business impacts',
+  'db.advantTitle6': 'Ecosystem',
+  'db.advantDesc6':
+    'Seamless migration with major graph databases, and SLS/Kafka/ODPS/CSV/Neo4j etc.',
+  'db.advantTitle7': 'Multiple Subgraphs',
+  'db.advantDesc7':
+    'Shared graph database clusters for multiple businesses, no interference nor awareness',
+  'db.advantTitle8': 'End-to-end Traceability',
+  'db.advantDesc8':
+    'Debug and tracing for distributed programs, queries, DDL statements, execution, and data flow',
+  'db.freeTrial': 'Free Trial',
 };
