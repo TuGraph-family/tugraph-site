@@ -13,6 +13,7 @@ export interface BannerInfoProps {
   footer?: ReactNode;
   description?: string;
   sloganClassName?: string;
+  mobileImgClassName?: string;
 }
 
 export const Banner = ({
@@ -21,6 +22,7 @@ export const Banner = ({
   footer,
   description = '',
   sloganClassName = '',
+  mobileImgClassName = '',
 }: BannerInfoProps) => {
   const { pathname } = useLocation();
   const isHome = pathname === '/' ? true : false;
@@ -103,7 +105,11 @@ export const Banner = ({
                     }
                   : {}
               }
-              className={isWide ? styles.pcIcon : styles.mobileIcon}
+              className={
+                isWide
+                  ? styles.pcIcon
+                  : cx(styles.mobileIcon, mobileImgClassName)
+              }
               src={bgIconUrl}
             />
           </>

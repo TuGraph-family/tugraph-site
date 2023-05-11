@@ -82,6 +82,7 @@ export default function PlatFormPage() {
             {intl.formatMessage({ id: 'db.freeTrial' })}
           </Button>
         ),
+        mobileImgClassName: isWide ? '' : styles.mobileImgClassName,
       }}
       content={content}
     />
