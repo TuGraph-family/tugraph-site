@@ -1,39 +1,37 @@
-import React, { useState } from 'react';
+import AnnouncementBanner from '@/components/AnnouncementBanner';
+import { ApplyForm } from '@/components/ApplyForm';
+import { LayoutTemplate } from '@/components/LayoutTemplate';
+import JoLPlayer from '@/components/Player';
+import { SubTitle } from '@/components/SubTitle';
+import { getCases } from '@/data/cases';
+import { getTugraphFun } from '@/data/get_tugraph_functions';
+import { getReasons } from '@/data/reasons';
+import {
+  AliyunOutlined,
+  ArrowRightOutlined,
+  CheckOutlined,
+  DownOutlined,
+  GithubOutlined,
+  MinusOutlined,
+  PlusOutlined,
+} from '@ant-design/icons';
 import {
   Button,
   Carousel,
   Col,
+  Collapse,
   Dropdown,
+  Menu,
   Modal,
   Row,
   Space,
   Tag,
-  Menu,
-  Collapse,
 } from 'antd';
 import cx from 'classnames';
-import { getLocale, isBrowser } from 'umi';
-import JoLPlayer from '@/components/Player';
+import { useState } from 'react';
 import { Helmet } from 'react-helmet';
-import {
-  CheckOutlined,
-  ArrowRightOutlined,
-  GithubOutlined,
-  DownOutlined,
-  AliyunOutlined,
-  PlusOutlined,
-  MinusOutlined,
-} from '@ant-design/icons';
-import { LayoutTemplate } from '@/components/LayoutTemplate';
-import { SubTitle } from '@/components/SubTitle';
-import { useIntl } from 'umi';
-import { getReasons } from '@/data/reasons';
-import { getCases } from '@/data/cases';
-import { getVersions } from '@/data/version-feats';
 import { useMedia } from 'react-use';
-import { ApplyForm } from '@/components/ApplyForm';
-import { getTugraphFun } from '@/data/get_tugraph_functions';
-import AnnouncementBanner from '@/components/AnnouncementBanner';
+import { getLocale, isBrowser, useIntl } from 'umi';
 
 import stylesZh from './index.less';
 import stylesEn from './index_en.less';
@@ -46,6 +44,7 @@ export default function IndexPage() {
   const [showApplyForm, setShowApplyForm] = useState(false);
   const [showVideo, setShowVideo] = useState(false);
   const [rotate, setRotate] = useState(0);
+  const isCn = lang === 'zh-CN';
   const SWIPE_PADDING = isBrowser()
     ? (48 * document.body.clientWidth) / 750
     : 24;
@@ -441,13 +440,13 @@ export default function IndexPage() {
           <div className={styles.featList}>
             <Row>
               <Col
-                span={isWide ? 14 : 12}
+                span={isWide ? (isCn ? 14 : 12) : 12}
                 className={cx(styles.title, styles.textAlignLeft, 'boldText')}
               >
                 {intl.formatMessage({ id: 'home.function' })}
               </Col>
               <Col
-                span={isWide ? 4 : 6}
+                span={isWide ? (isCn ? 4 : 5) : 6}
                 className={cx(styles.title, 'boldText')}
               >
                 {isWide ? (
@@ -513,7 +512,7 @@ export default function IndexPage() {
                       return (
                         <Row key={key} className={styles.baseRow}>
                           <Col
-                            span={13}
+                            span={isWide && !isCn ? 12 : 13}
                             className={cx(styles.textAlignLeft, styles.text)}
                           >
                             {i.feat}
