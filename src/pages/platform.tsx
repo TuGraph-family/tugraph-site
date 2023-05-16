@@ -59,15 +59,11 @@ export default function PlatFormPage() {
           ? 'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*Le9dRrzyZ6oAAAAAAAAAAAAADgOBAQ/original'
           : 'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*jQuZQJDdVyEAAAAAAAAAAAAADgOBAQ/original',
         slogan: isWide ? (
-          <>
-            {intl.formatMessage({ id: `${pageKey}.slog` })}
-            {isPlatform && (
-              <div>{intl.formatMessage({ id: `${pageKey}.slog1` })}</div>
-            )}
-          </>
+          <>{intl.formatMessage({ id: `${pageKey}.slog` })}</>
         ) : (
           intl.formatMessage({ id: `${pageKey}.mobileSlog` })
         ),
+        description: intl.formatMessage({ id: `${pageKey}.slogdesc` }),
         sloganClassName: isWide
           ? isPlatform
             ? styles.sloganplatTitle
@@ -83,6 +79,7 @@ export default function PlatFormPage() {
           </Button>
         ),
         mobileImgClassName: isWide ? '' : styles.mobileImgClassName,
+        bannerClassName: isWide ? styles.bannerHeigth : '',
       }}
       content={content}
     />
