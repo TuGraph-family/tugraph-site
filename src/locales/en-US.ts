@@ -224,7 +224,7 @@ TuGraph supports more than 300 applications in the Ant Group, including "Double 
   'product.feature.overview.introduction1': `TuGraph supports over 300 applications within Ant Group, including "Double 11" — the largest shopping festival in China and in the world. It covers the entire graph R&D life cycle from experimentation and validation to deployment and Ops. TuGraph has a distributed, multi-center, high-availability architecture that provides safe, stable, and reliable services.`,
   'product.overview.ecosystem': 'ARCHITECTURE',
   'product.overview.desc':
-    'Provides an enterprise-level distributed graph management platform with the only stream graph computing in the industry',
+    'A large-scale enterprise-level graph platform with an innovative streaming graph computing system',
   'demo.title': ' TuGraph Use Cases',
   'demo.description':
     '图数据库,图计算,图平台,图数据分析, 分布式数据库, Graph,大数据分析,关联关系分析,大数据分析,反洗钱,反欺诈,金融风控,物联网, 设备管理, 国家电网',
@@ -407,12 +407,12 @@ TuGraph supports more than 300 applications in the Ant Group, including "Double 
   'platform.title': 'TuGraph Platform: One-stop Graph Platform',
   'platform.slog': `One-Stop Graph Platform for Entire R&D Life Cycle `,
   'platform.mobileSlog': 'One-Stop Graph Platform for Entire R&D Life Cycle ',
-  'platform.slog1': ' ',
-  'platform.descTitle':
-    'One-Stop Platform for Entire Graph R&D Life Cycle with Transactions and Analytics',
+  'platform.slogdesc':
+    'manage online and offline graph data in one visualized platform',
+  'platform.descTitle': 'OVERVIEW',
   'platform.descText':
     'The platform offers exploration, research, service, and ops capabilities throughout the entire graph management life cycle. It is a visual console for DB and Analytics engines, and supports multiple types of data sources (e.g., textual, relational, and streaming). With an interactive approach, users can accumulate business experience without coding.',
-  'platform.proAdvant': 'OVERVIEW',
+  'platform.proAdvant': 'FEATURES',
   'platform.advantTitle': 'Life Cycle Coverage',
   'platform.advantDesc':
     'One-stop platform: Exploration, R&D, integration, Ops and maintenance',
@@ -450,12 +450,13 @@ TuGraph supports more than 300 applications in the Ant Group, including "Double 
     'Comprehensive services and APIs, agile development for graph applications',
   'db.title': 'TuGraph DB: Distributed Graph Database',
   'db.slog': 'Large-Scale Distributed Graph Database for Enterprises',
+  'db.slogdesc':
+    'A high availability, stability, and performance graph database designed for enterprise-level clients',
   'db.mobileSlog': 'Large-Scale Distributed Graph Database for Enterprises',
-  'db.descTitle':
-    'Specially for Enterprises: High Availablilty, High Stability and High Performance',
+  'db.descTitle': 'OVERVIEW',
   'db.descText':
     'The financial-grade distributed graph database is capable of handling trillion-scale graph data with high throughput rate (tens of millions of nodes per second) and low latency. It supports distributed transactions and is utilized in scenarios that require massive concurrency, real-time query and update, and high data reliability.',
-  'db.proAdvant': 'OVERVIEW',
+  'db.proAdvant': 'FEATURES',
   'db.advantTitle': 'High Availability',
   'db.advantDesc':
     'Distributed, financial-grade, multi-site and multi-center deployment, real-world validation',

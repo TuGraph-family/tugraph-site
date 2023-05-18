@@ -79,7 +79,11 @@ export default function PlatFormPage() {
           </Button>
         ),
         mobileImgClassName: isWide ? '' : styles.mobileImgClassName,
-        bannerClassName: isWide ? styles.bannerHeigth : '',
+        bannerClassName: isWide
+          ? pageKey === 'db'
+            ? styles.bannerHeigth
+            : styles.bannerHeigthPlat
+          : '',
       }}
       content={content}
     />
