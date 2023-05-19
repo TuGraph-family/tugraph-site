@@ -1,15 +1,13 @@
-import React from 'react';
-import { useIntl, history, getLocale } from 'umi';
 import { LayoutTemplate } from '@/components/LayoutTemplate';
-import cx from 'classnames';
-import { Anchor, Button, Col, Row, Space } from 'antd';
-import { useMedia } from 'react-use';
-import { getPartner } from '@/data/get_partner';
-import { getPartnerReason } from '@/data/get_partner_reason';
-import { Helmet } from 'react-helmet';
 import { SubTitle } from '@/components/SubTitle';
-import { getFeats, getOverViewFeats } from '@/data/feats';
+import { getOverViewFeats } from '@/data/feats';
+import { Anchor, Button, Col, Row, Space } from 'antd';
+import { useState } from 'react';
+import { Helmet } from 'react-helmet';
+import { useMedia } from 'react-use';
+import { getLocale, useIntl } from 'umi';
 
+import { ApplyForm } from '@/components/ApplyForm';
 import stylesZh from './overview.less';
 import stylesEn from './overview_en.less';
 
@@ -19,6 +17,7 @@ export default function OverviewPage() {
   const lang = getLocale();
   const styles = lang === 'en' || lang === 'en-US' ? stylesEn : stylesZh;
   const isWide = useMedia('(min-width: 767.99px)', true);
+  const [showApplyForm, setShowApplyForm] = useState(false);
   const content = (
     <div className={styles.containerWrapper}>
       <Helmet>
@@ -85,6 +84,7 @@ export default function OverviewPage() {
           />
         </div>
       </div>
+      <ApplyForm visible={showApplyForm} setVisible={setShowApplyForm} />
     </div>
   );
   return (
@@ -95,6 +95,16 @@ export default function OverviewPage() {
         slogan: intl.formatMessage({ id: 'product.overview.slogan' }),
         description: intl.formatMessage({ id: 'product.overview.desc' }),
         sloganClassName: isWide ? styles.sloganTitle : '',
+        bannerClassName: isWide ? styles.bannerHeigth : '',
+        footer: (
+          <Button
+            className={styles.bannerBtn}
+            onClick={() => setShowApplyForm(true)}
+            type="primary"
+          >
+            {intl.formatMessage({ id: 'db.freeTrial' })}
+          </Button>
+        ),
       }}
       content={content}
     />

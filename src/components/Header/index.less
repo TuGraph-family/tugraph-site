@@ -141,8 +141,8 @@
 }
 
 .popoverContent {
-  width: 308px;
-  height: 170px;
+  width: 317px;
+  min-height: 170px;
   padding: 8px 16px;
   box-sizing: border-box;
   display: flex;
@@ -235,8 +235,7 @@
         li:nth-of-type(2) {
           .ant-menu-item {
             padding-left: 24px !important;
-            height: 25.6vw;
-            line-height: 12.8vw;
+            line-height: 6.4vw;
             margin: 0;
             div {
               font-weight: 500;
@@ -251,6 +250,11 @@
                 color: #1650ff;
               }
             }
+          }
+          .ant-menu-item:nth-of-type(1),
+          .ant-menu-item:nth-of-type(2) {
+            height: 25.6vw;
+            line-height: 12.8vw;
           }
         }
       }
