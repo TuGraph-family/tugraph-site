@@ -408,7 +408,7 @@ TuGraph supports more than 300 applications in the Ant Group, including "Double 
   'platform.slog': `One-Stop Graph Platform for Entire R&D Life Cycle `,
   'platform.mobileSlog': 'One-Stop Graph Platform for Entire R&D Life Cycle ',
   'platform.slogdesc':
-    'manage online and offline graph data in one visualized platform',
+    'Manage online and offline graph data in one visualized platform',
   'platform.descTitle': 'OVERVIEW',
   'platform.descText':
     'The platform offers exploration, research, service, and ops capabilities throughout the entire graph management life cycle. It is a visual console for DB and Analytics engines, and supports multiple types of data sources (e.g., textual, relational, and streaming). With an interactive approach, users can accumulate business experience without coding.',
