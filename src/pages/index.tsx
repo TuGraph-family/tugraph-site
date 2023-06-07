@@ -577,7 +577,7 @@ export default function IndexPage() {
         }}
         content={content}
       />
-      {isWide && <AnnouncementBanner />}
+      {isWide && lang === 'zh-CN' && <AnnouncementBanner />}
     </>
   );
 }
