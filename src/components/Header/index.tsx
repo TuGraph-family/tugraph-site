@@ -158,7 +158,7 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
   const menuIcon = !isWide ? (
     <Space size={12}>
       {searchInput()}
-      <AnnouncementBanner />
+      {lang === 'zh-CN' && <AnnouncementBanner />}
       <img
         src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*GN_WSabhJdwAAAAAAAAAAAAADgOBAQ/original"
         className={styles.languageIcon}
