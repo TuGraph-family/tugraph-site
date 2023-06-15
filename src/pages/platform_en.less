@@ -1,0 +1,137 @@
+.containerWrapper {
+  .introSubTitle {
+    margin-top: 150px;
+    text-align: center;
+  }
+  .introWrapper {
+    font-weight: 400;
+    font-size: 14px;
+    color: rgba(26, 27, 37, 0.65);
+    text-align: center;
+    line-height: 22px;
+    max-width: 1200px;
+    margin: auto;
+  }
+  .ecoWrapper {
+    margin: 71px -120px -72px -120px;
+    padding: 1px 120px 72px 120px;
+    background-color: rgba(22, 80, 255, 0.04);
+    .advantRow {
+      gap: 24px;
+    }
+    .advantCol {
+      background-color: rgba(255, 255, 255, 1);
+      text-align: center;
+      border-radius: 12px;
+      width: 379px;
+      padding: 32px;
+      .advantTitle {
+        font-weight: 500;
+        font-size: 16px;
+        color: rgba(0, 0, 0, 0.85);
+        text-align: center;
+        line-height: 24px;
+        margin-top: 16px;
+      }
+      .advantDesc {
+        font-weight: 400;
+        font-size: 14px;
+        color: rgba(0, 0, 0, 0.65);
+        text-align: center;
+        line-height: 22px;
+        margin-top: 8px;
+      }
+    }
+  }
+}
+.bannerBtn {
+  height: 48px;
+  width: 160px;
+  border-radius: 8px;
+  margin-top: 32px;
+  span {
+    font-size: 16px;
+    color: #ffffff;
+  }
+}
+
+.slogandbTitle {
+  width: 567px !important;
+}
+.sloganplatTitle {
+  width: 600px !important;
+}
+.bannerHeigth {
+  height: 600px !important;
+}
+.bannerHeigthPlat {
+  height: 550px !important;
+}
+
+@media only screen and (max-width: 767.99px) {
+  .containerWrapper {
+    transition: all ease 0.3s;
+    .introSubTitle {
+      margin-top: 20vw !important;
+    }
+    .subTitle {
+      margin-top: 3.2vw !important;
+      margin-bottom: 4.8vw !important;
+    }
+  }
+  .introWrapper {
+    font-size: 3.2vw !important;
+    line-height: 4.8vw !important;
+    margin: 0 0 13.3vw 0 !important;
+  }
+
+  .ecoWrapper {
+    margin: 0 -3.2vw -13.3vw -3.2vw !important;
+    padding: 3.2vw 3.2vw 13.3vw 3.2vw !important;
+    img {
+      width: 6.4vw;
+    }
+    .advantRow {
+      gap: 2.6vw !important;
+    }
+    .advantCol {
+      background-color: rgba(255, 255, 255, 1);
+      text-align: center;
+      border-radius: 1.6vw !important;
+      width: 45.5vw !important;
+      padding: 4.3vw !important;
+      .advantTitle {
+        font-weight: 500;
+        font-size: 3.7vw !important;
+        color: rgba(26, 27, 37, 0.88) !important;
+        text-align: center;
+        margin-top: 2.1vw !important;
+      }
+      .advantDesc {
+        font-weight: 400;
+        font-size: 3.2vw !important;
+        color: rgba(26, 27, 37, 0.45) !important;
+        text-align: center;
+        line-height: 4.8vw !important;
+        margin-top: 1.6vw !important;
+        word-wrap: break-word;
+      }
+    }
+  }
+  .bannerBtn {
+    margin-top: 0;
+    position: relative;
+    top: 6.4vw;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+.mobileImgClassName {
+  width: calc(100% + 12.8vw) !important;
+  margin: 12.8vw -6.4vw 6.4vw -6.4vw !important;
+}
+.mobileSolg {
+  min-width: auto !important;
+  width: 100%;
+  padding: 0 2vw;
+}

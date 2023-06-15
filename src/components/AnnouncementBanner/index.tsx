@@ -1,17 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import { Button, Carousel, Drawer, Modal, Tooltip } from 'antd';
-import { getLocale, history } from 'umi';
-import {
-  LeftOutlined,
-  RightOutlined,
-  CloseOutlined,
-  DoubleLeftOutlined,
-  ArrowRightOutlined,
-} from '@ant-design/icons';
-import { useMedia } from 'react-use';
-import { useIntl } from 'umi';
-import styles from './index.less';
 import { getBannerContentList } from '@/data/bannerContent';
+import { CloseOutlined, LeftOutlined, RightOutlined } from '@ant-design/icons';
+import { Carousel, Drawer, Modal, Tooltip } from 'antd';
+import { useEffect, useState } from 'react';
+import { useMedia } from 'react-use';
+import { getLocale, history, useIntl } from 'umi';
+import styles from './index.less';
 const AnnouncementBanner = () => {
   const [showBottomDrawer, setShowBottomDrawer] = useState(false);
   const [showBottomModal, setShowBottomModal] = useState(true);
@@ -30,7 +23,7 @@ const AnnouncementBanner = () => {
   const onOpenBanner = () => {
     setShowBottomModal(true);
   };
-  const pcBanner = lang === 'zh-CN' && (
+  const pcBanner = getBannerContentList(intl).length > 0 && (
     <>
       <Tooltip
         title={intl.formatMessage({ id: 'home.banner.expandBtnDesc' })}
@@ -49,6 +42,7 @@ const AnnouncementBanner = () => {
           />
         </div>
       </Tooltip>
+
       <Drawer
         placement="right"
         open={showBottomDrawer}
@@ -92,7 +86,7 @@ const AnnouncementBanner = () => {
       </Drawer>
     </>
   );
-  const mobileBanner = lang === 'zh-CN' && (
+  const mobileBanner = getBannerContentList(intl).length > 0 && (
     <>
       <img
         src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*E6rZRLlvvDoAAAAAAAAAAAAADgOBAQ/original"
@@ -101,6 +95,7 @@ const AnnouncementBanner = () => {
           onOpenBanner();
         }}
       />
+
       <Modal
         className={styles.bannerModal}
         open={showBottomModal}
