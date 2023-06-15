@@ -1,16 +1,16 @@
-import React, { useState } from 'react';
-import { getLocale, history, useIntl, useLocation } from 'umi';
-import { DocSearch } from '@docsearch/react';
-import { Menu, Drawer, Space, Dropdown, Popover } from 'antd';
-import cx from 'classnames';
-import { useMedia } from 'react-use';
 import type { MenuItem } from '@/interface';
-import { CloseOutlined, UpOutlined, RightOutlined } from '@ant-design/icons';
+import { CloseOutlined, RightOutlined, UpOutlined } from '@ant-design/icons';
+import { DocSearch } from '@docsearch/react';
+import { Drawer, Menu, Popover, Space } from 'antd';
+import cx from 'classnames';
+import { useState } from 'react';
+import { useMedia } from 'react-use';
+import { getLocale, history, useIntl, useLocation } from 'umi';
 
-import styles from './index.less';
 import { HOST_EN, HOST_ZH, searchParamsEn, searchParamsZh } from '@/constant';
 import '@docsearch/css';
 import AnnouncementBanner from '../AnnouncementBanner';
+import styles from './index.less';
 
 export const Header = ({ isStick }: { isStick?: boolean }) => {
   const intl = useIntl();
@@ -44,6 +44,15 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
       />
     );
   };
+  const menuKey = (key: string) => {
+    const productKeys = [
+      { path: '/product', key: 'product' },
+      { path: '/overview', key: 'overview' },
+      { path: '/platform', key: 'platform' },
+      { path: '/db', key: 'db' },
+    ];
+    return productKeys.find((item) => item.path === key)?.key;
+  };
   const pcProductMenu: MenuItem = {
     label: (
       <Popover
@@ -75,6 +84,22 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
               >
                 {intl.formatMessage({ id: 'header.product.desc1' })}
               </div>
+              <div
+                className={styles.popoverContainer}
+                onClick={() => {
+                  history.push('/platform');
+                }}
+              >
+                {intl.formatMessage({ id: 'platform.title' })}
+              </div>
+              <div
+                className={styles.popoverContainer}
+                onClick={() => {
+                  history.push('/db');
+                }}
+              >
+                {intl.formatMessage({ id: 'db.title' })}
+              </div>
             </div>
           </div>
         }
@@ -84,7 +109,7 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
         </a>
       </Popover>
     ),
-    key: pathname === '/product' ? 'product' : 'overview',
+    key: menuKey(pathname),
   };
   const mobileProductMenu: MenuItem = {
     label: intl.formatMessage({ id: 'header.product' }),
@@ -112,12 +137,28 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
         ),
         key: 'overview',
       },
+      {
+        label: (
+          <a href="/platform" rel="noopener noreferrer">
+            {intl.formatMessage({ id: 'platform.title' })}
+          </a>
+        ),
+        key: 'platform',
+      },
+      {
+        label: (
+          <a href="/db" rel="noopener noreferrer">
+            {intl.formatMessage({ id: 'db.title' })}
+          </a>
+        ),
+        key: 'db',
+      },
     ],
   };
   const menuIcon = !isWide ? (
     <Space size={12}>
       {searchInput()}
-      <AnnouncementBanner />
+      {lang === 'zh-CN' && <AnnouncementBanner />}
       <img
         src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*GN_WSabhJdwAAAAAAAAAAAAADgOBAQ/original"
         className={styles.languageIcon}

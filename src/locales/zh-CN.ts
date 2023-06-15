@@ -10,8 +10,8 @@ export default {
   'header.download': '下载',
   'header.product.title': '社区版',
   'header.product.title1': '企业版',
-  'header.product.desc': 'Tugraph DB Lite 单机版图数据库',
-  'header.product.desc1': 'TuGraph图数据管理平台概览',
+  'header.product.desc': 'TuGraph DB Lite 单机版图数据库',
+  'header.product.desc1': 'TuGraph 图数据管理平台概览',
   'footer.product': '产品',
   'footer.product.title': '社区版',
   'footer.product.title1': '企业版',
@@ -172,7 +172,7 @@ export default {
   'product.description':
     '为用户管理和分析复杂关联数据提供了高效、易用、可靠的一站式平台',
   'product.slogan': '极速的开源图数据库TuGraph',
-  'product.overview.slogan': '源于蚂蚁实践的企业级图数据管理平台',
+  'product.overview.slogan': '企业级图数据管理平台',
   'product.video0': '快速上手演示',
   'product.videoTime0': '2分39秒',
   'product.video1': '可视化操作演示',
@@ -213,7 +213,7 @@ export default {
     'TuGraph图数据库由蚂蚁集团与清华大学联合研发，构建了一套包含图存储、图计算、图学习、图研发平台的完善的图技术体系，拥有业界领先规模的图集群，解决了图数据分析面临的大数据量、高吞吐率和低延迟等重大挑战，是蚂蚁集团金融风控能力的重要基础设施，显著提升了欺诈洗钱等金融风险的实时识别能力和审理分析效率，并面向金融、工业、政务服务等行业客户。TuGraph源于蚂蚁超过300个业务场景的实践，为业务人员提供图探索、图研发、图服务、图运维的完整图研发链路；具有分布式、多中心、金融级高可用性架构，经受“双十一”等活动的极致系统考验，轻松应对海量业务数据和并发。',
   'product.ecosystem': 'TuGraph 产品架构',
   'product.overview.ecosystem': '企业版产品架构',
-  'product.overview.desc': ' ',
+  'product.overview.desc': '业界实践的企业级平台，创新式的流式图计算',
   'demo.title': ' TuGraph 案例',
   'demo.description':
     '图数据库,图计算,图平台,图数据分析, 分布式数据库, Graph,大数据分析,关联关系分析,大数据分析,反洗钱,反欺诈,金融风控,物联网, 设备管理, 国家电网',
@@ -379,4 +379,87 @@ export default {
   'doc.title': ' TuGraph Documentation',
   'blog.title': ' TuGraph Blog',
   'download.title': ' TuGraph Download',
+  'platform.title': 'TuGraph Platform 一站式图平台',
+  'platform.slog': `灵活易用的一站式图平台`,
+  'platform.mobileSlog':
+    '灵活易用的一站式图平台，图的全生命周期管理，离在线一体化运维管理',
+  'platform.slogdesc':
+    '为用户管理和分析复杂关联数据提供了高效、易用、可靠的一站式平台',
+  'platform.descTitle': '产品概述',
+  'platform.descText':
+    '蚂蚁自研的一站式图平台，覆盖图探索、图研发、图服务、运维管理的完整链路，实现图的全生命周期管理，以无代码的交互方式沉淀业务经验。支持离线、实时、关系数据库等多种类型的数据源，离在线一体化运维，支持快速图构建、图查询、图分析，提供图数据库引擎、图分析引擎的研发控制台。',
+  'platform.proAdvant': '产品优势',
+  'platform.advantTitle': '全生命周期',
+  'platform.advantDesc':
+    '一站式图平台，从新手探索、熟手研发、二次开发到运维管理的全生命周期管理。',
+  'platform.advantTitle1': '一体化运维',
+  'platform.advantDesc1':
+    '对接离线、在线等多个引擎，提供运维自动化、问题排查、监控告警等能力。',
+  'platform.advantTitle2': '图服务配置',
+  'platform.advantDesc2':
+    '全自动化配置，包括流图计算服务、图算法配置服务、图查询配置服务等等。',
+  'platform.advantTitle3': '标准化研发',
+  'platform.advantDesc3':
+    '源于蚂蚁成熟经验的业务开发流程，从草稿阶段、开发环节到生产发布。',
+  'platform.advantTitle4': '快速图探索',
+  'platform.advantDesc4':
+    '从传统表数据到图数据的实验、测试验证，快速赋能业务的可视化探索。',
+  'platform.advantTitle5': '黑白名单',
+  'platform.advantDesc5':
+    '高效实用的业务功能，快速查找可疑团伙、可信人群，助力业务分析。',
+  'platform.advantTitle6': '可视化查询',
+  'platform.advantDesc6':
+    '提供业务自定义的查询模版，零代码实现图查询配置，积累业务经验。',
+  'platform.advantTitle7': '可视化分析',
+  'platform.advantDesc7':
+    '工具栏、外观等样式配置，画布中分组、聚合，图分析算法展示等，二次开发集成。',
+  'platform.advantTitle8': '精细化权限',
+  'platform.advantDesc8':
+    '基于用户组，灵活管理图数据权限、功能权限，精确到表、集群、名单。',
+  'platform.advantTitle9': '业务域隔离',
+  'platform.advantDesc9':
+    '统一平台支持不同业务场景，业务之间无感知、无影响，做到中台能力。',
+  'platform.advantTitle10': '微服务设计',
+  'platform.advantDesc10':
+    '产品组件以微服务形式可拆可合，根据业务诉求灵活组装配置。',
+  'platform.advantTitle11': '敏捷图应用',
+  'platform.advantDesc11':
+    '图平台提供一站式图服务接口，支持业务系统敏捷搭建图应用。',
+  'db.title': 'TuGraph DB 分布式图数据库',
+  'db.slog': '大规模分布式图数据库',
+  'db.slogdesc': '高可用、高稳定、高性能，为企业级客户服务专研',
+  'db.mobileSlog':
+    '为企业级客户服务而专研，高可用、高稳定、高性能的大规模分布式图数据库',
+  'db.descTitle': '产品概述',
+  'db.descText':
+    '蚂蚁自研的金融级分布式图数据库，高可用、高稳定、高性能，万亿图数据处理能力，千万顶点/秒的高吞吐率和低延迟，为企业级客户服务专研，轻松应对不断变化的业务数据。支持ACID事务处理，保障数据一致性，金融级高可靠。用于实时图查询，面向有海量并发、需要实时更新、数据可靠性要求高的场景，支持强弱一致性。',
+  'db.proAdvant': '产品优势',
+  'db.advantTitle': '高可用',
+  'db.advantDesc':
+    '分布式、多中心、金融级高可用架构，实战验证的多地多中心部署能力。',
+  'db.advantTitle1': '高稳定',
+  'db.advantDesc1':
+    '源于蚂蚁业务实践，服务超过300个业务场景、历经十余年“双十一”锤炼。',
+  'db.advantTitle2': '实时性',
+  'db.advantDesc2':
+    '高吞吐下多跳查询P999毫秒级别响应，实时查询、实时写入、实时更新。',
+  'db.advantTitle3': '安全性',
+  'db.advantDesc3':
+    '支持全量/增量/定时备份，支持NFS、OSS；企业级权限管控、业务域隔离。',
+  'db.advantTitle4': '标准化',
+  'db.advantDesc4':
+    '支持国际标准图查询语言ISO-GQL，类SQL的简单易用，降低图研发门槛。',
+  'db.advantTitle5': '扩展性',
+  'db.advantDesc5':
+    '金融级系统架构，支持万亿级数据规模扩展、在线扩缩容，业务零感知。',
+  'db.advantTitle6': '全生态',
+  'db.advantDesc6':
+    '支持SLS/Kafka/ODPS/CSV/Neo4j等数据源，与主要图数据库无缝迁移。',
+  'db.advantTitle7': '多图',
+  'db.advantDesc7':
+    '多业务共享图数据库集群，互不影响、互不感知，节约资源的同时保障业务安全。',
+  'db.advantTitle8': '全链路',
+  'db.advantDesc8':
+    '分布式调试跟踪，查询语句执行全链路、DDL语句回溯、数据流全程可跟踪。',
+  'db.freeTrial': '企业版试用',
 };
