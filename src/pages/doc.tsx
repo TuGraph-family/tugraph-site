@@ -1,18 +1,28 @@
-import React, { useEffect, useMemo } from 'react';
-import { map } from 'lodash';
-import HTMLRenderer from 'react-html-renderer';
-import { getLocale, history, useLocation } from 'umi';
-import { CategoryItem, DocContent } from '@/interface';
-import { MenuProps, Select, Affix, Anchor, Spin, Space, Drawer } from 'antd';
-import { Layout, Menu } from 'antd';
-import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
-import { useGetZHDocsInfo } from '@/hooks/useGetZHDocsInfo';
+import { Header } from '@/components/Header';
 import { useGetENDocsInfo } from '@/hooks/useGetENDocsInfo';
-import { useMedia } from 'react-use';
-import { useIntl } from 'umi';
+import { useGetZHDocsInfo } from '@/hooks/useGetZHDocsInfo';
+import { CategoryItem, DocContent } from '@/interface';
 import { docDetailTranslator, versionListTranslator } from '@/utils';
+import { ArrowRightOutlined } from '@ant-design/icons';
+import {
+  Affix,
+  Anchor,
+  Drawer,
+  Layout,
+  Menu,
+  MenuProps,
+  Select,
+  Space,
+  Spin,
+  Tag,
+} from 'antd';
+import { map } from 'lodash';
 import moment from 'moment';
+import React from 'react';
+import HTMLRenderer from 'react-html-renderer';
+import { useMedia } from 'react-use';
+import { getLocale, history, useIntl, useLocation } from 'umi';
 
 import styles from './doc.less';
 
@@ -94,15 +104,42 @@ export default function DocPage() {
   }, [currentCategory]);
 
   const transformCategoryList = (items: CategoryItem[]): MenuProps['items'] => {
-    return map(items, (item: CategoryItem) => {
-      const children = item?.children || [];
-      return {
-        key: item.id,
-        label: item.fileName,
-        children:
-          children?.length > 0 ? transformCategoryList(children) : undefined,
-      };
-    });
+    return [
+      ...[
+        !!currentVersion && {
+          key: 'v 3.5.0',
+          label: (
+            <div
+              className={styles.menuTag}
+              onClick={() => {
+                if (lang === 'zh-CN') {
+                  window.open(
+                    'https://tugraph-db.readthedocs.io/zh_CN/latest/1.guide.html',
+                  );
+                } else {
+                  window.open(
+                    'https://tugraph-db.readthedocs.io/en/latest/1.guide.html',
+                  );
+                }
+              }}
+            >
+              <span>{intl.formatMessage({ id: 'doc.menu' })}</span>
+              <Tag>NEW</Tag>
+              <ArrowRightOutlined />
+            </div>
+          ),
+        },
+      ],
+      ...map(items, (item: CategoryItem) => {
+        const children = item?.children || [];
+        return {
+          key: item.id,
+          label: item.fileName,
+          children:
+            children?.length > 0 ? transformCategoryList(children) : undefined,
+        };
+      }),
+    ];
   };
 
   const getCategoryMenu = () => (

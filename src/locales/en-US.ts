@@ -485,4 +485,5 @@ TuGraph supports more than 300 applications in the Ant Group, including "Double 
   'db.advantDesc8':
     'Debug and tracing for distributed programs, queries, DDL statements, execution, and data flow',
   'db.freeTrial': 'Free Trial',
+  'doc.menu': 'Learn about v3.5.0',
 };

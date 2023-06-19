@@ -1,9 +1,7 @@
-import React from 'react';
-import { Collapse, Divider } from 'antd';
-import { getLocale, useIntl } from 'umi';
-import { Row, Col, Space, Popover } from 'antd';
-import { PhoneFilled, MailFilled, SlackOutlined } from '@ant-design/icons';
+import { MailFilled, PhoneFilled, SlackOutlined } from '@ant-design/icons';
+import { Col, Collapse, Divider, Popover, Row, Space } from 'antd';
 import { useMedia } from 'react-use';
+import { getLocale, useIntl } from 'umi';
 
 import styles from './index.less';
 
@@ -46,13 +44,23 @@ export const Footer = ({ className }: { className?: string }) => {
             </a>
             <a
               className={styles.item}
-              href="/doc?version=V3.3.0&id=10000000001031969"
+              href={
+                lang === 'zh-CN'
+                  ? 'https://tugraph-db.readthedocs.io/zh_CN/latest/4.user-guide/1.tugraph-browser.html'
+                  : 'https://tugraph-db.readthedocs.io/en/latest/4.user-guide/1.tugraph-browser.html'
+              }
+              target="_blank"
             >
               TuGraph Browser
             </a>
             <a
               className={styles.item}
-              href="/doc?version=V3.3.0&id=10000000001031971"
+              href={
+                lang === 'zh-CN'
+                  ? 'https://tugraph-db.readthedocs.io/zh_CN/latest/5.developer-manual/5.ecosystem-tools/3.tugraph-explorer.html'
+                  : 'https://tugraph-db.readthedocs.io/en/latest/5.developer-manual/5.ecosystem-tools/3.tugraph-explorer.html'
+              }
+              target="_blank"
             >
               TuGraph Explorer
             </a>

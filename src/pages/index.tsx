@@ -65,7 +65,7 @@ export default function IndexPage() {
               <Menu.Item
                 onClick={() => {
                   window.open(
-                    'https://computenest.console.aliyun.com/user/cn-hangzhou/recommendService',
+                    'https://aliyun-computenest.github.io/quickstart-tugraph/',
                   );
                 }}
               >
@@ -374,7 +374,7 @@ export default function IndexPage() {
                       <Menu.Item
                         onClick={() => {
                           window.open(
-                            'https://computenest.console.aliyun.com/user/cn-hangzhou/recommendService',
+                            'https://aliyun-computenest.github.io/quickstart-tugraph/',
                           );
                         }}
                       >

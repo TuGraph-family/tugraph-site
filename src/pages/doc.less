@@ -184,6 +184,20 @@
     }
   }
 }
+.menuTag {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: rgba(22, 80, 255, 1);
+  :global {
+    .ant-tag {
+      border: none;
+      background: rgba(0, 0, 0, 0.06);
+      color: rgba(0, 0, 0, 0.65);
+      border-radius: 4px;
+    }
+  }
+}
 
 @media only screen and (max-width: 931.99px) {
   .containerWrapper {
@@ -255,6 +269,22 @@
 
       .ant-menu {
         background-color: #fff;
+      }
+    }
+  }
+  .menuTag {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 12px;
+    color: rgba(22, 80, 255, 1);
+    :global {
+      .ant-tag {
+        border: none;
+        background: rgba(0, 0, 0, 0.06);
+        color: rgba(0, 0, 0, 0.65);
+        border-radius: 4px;
+        margin-right: 8px;
       }
     }
   }
