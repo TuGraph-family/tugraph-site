@@ -105,31 +105,6 @@ export default function DocPage() {
 
   const transformCategoryList = (items: CategoryItem[]): MenuProps['items'] => {
     return [
-      ...[
-        !!currentVersion && {
-          key: 'v 3.5.0',
-          label: (
-            <div
-              className={styles.menuTag}
-              onClick={() => {
-                if (lang === 'zh-CN') {
-                  window.open(
-                    'https://tugraph-db.readthedocs.io/zh_CN/latest/1.guide.html',
-                  );
-                } else {
-                  window.open(
-                    'https://tugraph-db.readthedocs.io/en/latest/1.guide.html',
-                  );
-                }
-              }}
-            >
-              <span>{intl.formatMessage({ id: 'doc.menu' })}</span>
-              <Tag>NEW</Tag>
-              <ArrowRightOutlined />
-            </div>
-          ),
-        },
-      ],
       ...map(items, (item: CategoryItem) => {
         const children = item?.children || [];
         return {
@@ -152,7 +127,34 @@ export default function DocPage() {
     />
   );
 
-  const items = transformCategoryList(categoryList);
+  const items = [
+    ...[
+      !!currentVersion && {
+        key: 'v 3.5.0',
+        label: (
+          <div
+            className={styles.menuTag}
+            onClick={() => {
+              if (lang === 'zh-CN') {
+                window.open(
+                  'https://tugraph-db.readthedocs.io/zh_CN/latest/1.guide.html',
+                );
+              } else {
+                window.open(
+                  'https://tugraph-db.readthedocs.io/en/latest/1.guide.html',
+                );
+              }
+            }}
+          >
+            <span>{intl.formatMessage({ id: 'doc.menu' })}</span>
+            <Tag>NEW</Tag>
+            <ArrowRightOutlined />
+          </div>
+        ),
+      },
+    ],
+    ...(transformCategoryList(categoryList) || []),
+  ];
 
   // TODO 锚点滚动
   const onAnchorLinkChange = (activeLink: string) => {};
