@@ -462,4 +462,5 @@ export default {
   'db.advantDesc8':
     '分布式调试跟踪，查询语句执行全链路、DDL语句回溯、数据流全程可跟踪。',
   'db.freeTrial': '企业版试用',
+  'doc.menu': '了解 v3.5.0 版本',
 };
