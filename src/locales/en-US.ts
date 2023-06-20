@@ -345,10 +345,10 @@ TuGraph supports more than 300 applications in the Ant Group, including "Double 
   'ecosystem.support.description':
     'We collaborate with partners and provide enablement resources to help you build, market, and sell your customer offerings.',
   'ecosystem.support0':
-    'Training Programs to Improve the Skills and Knowledge of TuGraph Products and Services',
-  'ecosystem.support1': 'Technical Advisory',
-  'ecosystem.support2': 'Proof-of-Concept Support',
-  'ecosystem.support3': ' Extensive Sales & Marketing Benefits',
+    'Training Programs of TuGraph Products and Services',
+  'ecosystem.support1': 'Technical Advisory of Graph Technologies',
+  'ecosystem.support2': 'On-Premise Project Support',
+  'ecosystem.support3': 'Extensive Sales & Marketing Benefits',
   'download.banner.slogan': 'TuGraph v3.4.0',
   'download.banner.description': 'Latest Release Version2022.10.20',
   'download.title0': 'TuGraph Community Edition',
