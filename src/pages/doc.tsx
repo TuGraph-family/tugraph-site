@@ -123,7 +123,11 @@ export default function DocPage() {
       selectedKeys={[currentCategory]}
       style={{ height: '100%', borderRight: 0 }}
       items={items}
-      onSelect={({ key }) => setCurrentCategory(key)}
+      onSelect={({ key }) => {
+        if (key !== 'v 3.5.0') {
+          setCurrentCategory(key);
+        }
+      }}
     />
   );
 
