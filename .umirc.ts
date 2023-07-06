@@ -1,5 +1,4 @@
 import { defineConfig } from 'umi';
-
 export default defineConfig({
   nodeModulesTransform: {
     type: 'none',
@@ -85,6 +84,6 @@ gtag('config', 'AW-11092859162');`,
     baseSeparator: '-',
     title: true,
     default: 'en-US',
-    useLocalStorage: false,
+    useLocalStorage: true,
   },
 });

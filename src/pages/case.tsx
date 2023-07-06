@@ -1,13 +1,13 @@
-import React from 'react';
-import { Helmet } from 'react-helmet';
-import { Carousel, Col, Row, Space } from 'antd';
+import { LayoutTemplate } from '@/components/LayoutTemplate';
 import { SubTitle } from '@/components/SubTitle';
-import { getLocale, useIntl, isBrowser } from 'umi';
 import { getDemos } from '@/data/demos';
 import { getExamples } from '@/data/examples';
+import { Carousel, Col, Row, Space } from 'antd';
 import cx from 'classnames';
+import { useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet';
 import { useMedia } from 'react-use';
-import { LayoutTemplate } from '@/components/LayoutTemplate';
+import { getLocale, isBrowser, useIntl } from 'umi';
 
 import stylesZh from './case.less';
 import stylesEn from './case_en.less';
@@ -15,7 +15,14 @@ import stylesEn from './case_en.less';
 export default function DemoPage() {
   const intl = useIntl();
   const lang = getLocale();
-  const styles = lang === 'en-US' ? stylesEn : stylesZh;
+  const [styles, setStyles] = useState(stylesZh);
+  useEffect(() => {
+    if (lang === 'en-US') {
+      setStyles(stylesEn);
+    } else {
+      setStyles(stylesZh);
+    }
+  }, [lang]);
   const isWide = useMedia('(min-width: 767.99px)', true);
   const SWIPE_PADDING = isBrowser()
     ? (40 * document.body.clientWidth) / 750

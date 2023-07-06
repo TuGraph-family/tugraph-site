@@ -1,12 +1,12 @@
-import React from 'react';
-import { Carousel, Col, Row, Space, Tag } from 'antd';
-import { Helmet } from 'react-helmet';
+import { LayoutTemplate } from '@/components/LayoutTemplate';
 import JoLPlayer from '@/components/Player';
 import { SubTitle } from '@/components/SubTitle';
-import { useMedia } from 'react-use';
-import { LayoutTemplate } from '@/components/LayoutTemplate';
-import { getLocale, isBrowser, useIntl } from 'umi';
 import { getFeats } from '@/data/feats';
+import { Carousel, Col, Row, Space, Tag } from 'antd';
+import { useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet';
+import { useMedia } from 'react-use';
+import { getLocale, isBrowser, useIntl } from 'umi';
 
 import stylesZh from './product.less';
 import stylesEn from './product_en.less';
@@ -14,7 +14,6 @@ import stylesEn from './product_en.less';
 export default function ProductPage() {
   const intl = useIntl();
   const lang = getLocale();
-  const styles = lang === 'en' || lang === 'en-US' ? stylesEn : stylesZh;
   const isWide = useMedia('(min-width: 767.99px)', true);
   const MOBILE_HEIGHT = isBrowser()
     ? 266 * (document.body.clientWidth / 750)
@@ -22,6 +21,14 @@ export default function ProductPage() {
   const SWIPE_PADDING = isBrowser()
     ? (40 * document.body.clientWidth) / 750
     : 40;
+  const [styles, setStyles] = useState(stylesZh);
+  useEffect(() => {
+    if (lang === 'en-US') {
+      setStyles(stylesEn);
+    } else {
+      setStyles(stylesZh);
+    }
+  }, [lang]);
   const pcVideoList = (
     <div className={styles.videoWrapper}>
       {isBrowser() && (

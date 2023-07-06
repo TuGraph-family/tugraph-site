@@ -5,7 +5,7 @@ import { Drawer, Menu, Popover, Space } from 'antd';
 import cx from 'classnames';
 import { useState } from 'react';
 import { useMedia } from 'react-use';
-import { getLocale, history, useIntl, useLocation } from 'umi';
+import { getLocale, history, setLocale, useIntl, useLocation } from 'umi';
 
 import { HOST_EN, HOST_ZH, searchParamsEn, searchParamsZh } from '@/constant';
 import '@docsearch/css';
@@ -18,7 +18,6 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
   const lang = getLocale();
   const isWide = useMedia('(min-width: 767.99px)', true);
   const [popupMenuVisible, setPopupMenuVisible] = useState(false);
-
   const onToggleLanguage = () => {
     if (lang === 'en' || lang === 'en-US') {
       window.location.href = `${HOST_ZH}${history?.location?.pathname}`;
@@ -204,7 +203,15 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
       children: [
         {
           label: (
-            <a href="/doc" className={styles.menuChildren}>
+            <a
+              href={
+                lang === 'zh-CN'
+                  ? 'https://tugraph-db.readthedocs.io/zh_CN/latest/1.guide.html'
+                  : 'https://tugraph-db.readthedocs.io/en/latest/1.guide.html'
+              }
+              className={styles.menuChildren}
+              target="_blank"
+            >
               {intl.formatMessage({ id: 'header.doc' })}
             </a>
           ),
@@ -285,13 +292,25 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
       children: [
         {
           label: (
-            <a href={`${HOST_ZH}${history?.location?.pathname}`}>简体中文</a>
+            <a
+              onClick={() => {
+                setLocale('zh-CN', false);
+              }}
+            >
+              简体中文
+            </a>
           ),
           key: 'Chinese',
         },
         {
           label: (
-            <a href={`${HOST_EN}${history?.location?.pathname}`}>English</a>
+            <a
+              onClick={() => {
+                setLocale('en-US', false);
+              }}
+            >
+              English
+            </a>
           ),
           key: 'English',
         },

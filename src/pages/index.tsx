@@ -28,7 +28,7 @@ import {
   Tag,
 } from 'antd';
 import cx from 'classnames';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { useMedia } from 'react-use';
 import { getLocale, isBrowser, useIntl } from 'umi';
@@ -39,12 +39,19 @@ import stylesEn from './index_en.less';
 export default function IndexPage() {
   const intl = useIntl();
   const lang = getLocale();
-  const styles = lang === 'zh-CN' ? stylesZh : stylesEn;
+  const [styles, setStyles] = useState(stylesZh);
   const isWide = useMedia('(min-width: 767.99px)', true);
   const [showApplyForm, setShowApplyForm] = useState(false);
   const [showVideo, setShowVideo] = useState(false);
   const [rotate, setRotate] = useState(0);
   const isCn = lang === 'zh-CN';
+  useEffect(() => {
+    if (lang === 'en-US') {
+      setStyles(stylesEn);
+    } else {
+      setStyles(stylesZh);
+    }
+  }, [lang]);
   const SWIPE_PADDING = isBrowser()
     ? (48 * document.body.clientWidth) / 750
     : 24;
