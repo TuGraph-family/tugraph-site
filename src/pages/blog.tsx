@@ -48,13 +48,16 @@ export default function BlogPage() {
   }, []);
 
   useEffect(() => {
-    setBlogs(getBlogs(type));
-  }, [type]);
+    if (lang === 'zh-CN') {
+      setBlogs(getZHBlogs(type));
+    } else {
+      setBlogs(getENBlogs(type));
+    }
+  }, [type, lang]);
 
   useEffect(() => {
     setListData(blogs.slice(0, PAGE_SIZE));
   }, [blogs]);
-
   const onPaginationChange = (page: number) => {
     const start = 0 + (page - 1) * PAGE_SIZE;
     const end = start + PAGE_SIZE;
