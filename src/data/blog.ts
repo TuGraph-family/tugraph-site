@@ -15,6 +15,7 @@ import md12 from '@/doc/zh/12.md';
 import md13 from '@/doc/zh/13.md';
 import md14 from '@/doc/zh/14.md';
 import md15 from '@/doc/zh/15.md';
+import md16 from '@/doc/zh/16.md';
 
 export const blogs = [
   {
@@ -151,6 +152,15 @@ export const blogs = [
     updateDate: '2023-03-31',
     type: 'news',
     content: md15?.html,
+  },
+  {
+    id: 15,
+    img: 'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*Q69RS47A_s4AAAAAAAAAAAAADgOBAQ/original',
+    title: 'ICDM2023 蚂蚁 TuGraph 竞赛',
+    desc: 'ICDM2023 基于预训练模型的社区发现和团伙挖掘大赛',
+    updateDate: '2023-07-19',
+    type: 'news',
+    content: md16?.html,
   },
 ];
 

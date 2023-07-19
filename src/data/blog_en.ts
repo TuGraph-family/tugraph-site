@@ -11,6 +11,7 @@ import md08 from '@/doc/en/08.md';
 import md09 from '@/doc/en/09.md';
 import md10 from '@/doc/en/10.md';
 import md11 from '@/doc/en/11.md';
+import md12 from '@/doc/en/12.md';
 
 export const blogs = [
   {
@@ -113,6 +114,15 @@ export const blogs = [
     updateDate: '2022-12-25',
     type: 'news',
     content: md11?.html,
+  },
+  {
+    id: 11,
+    img: 'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*Q69RS47A_s4AAAAAAAAAAAAADgOBAQ/original',
+    title: 'ICDM2023 Ant TuGraph Competition',
+    desc: `ICDM2023 Community Discovery and Gang Mining Competition Based on Pre-trained Model`,
+    updateDate: '2023-07-19',
+    type: 'news',
+    content: md12?.html,
   },
 ];
 
