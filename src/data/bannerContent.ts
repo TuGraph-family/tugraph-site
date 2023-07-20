@@ -10,8 +10,8 @@ export const getBannerCnContentList = (intl: IntlShape) => [
 export const getBannerEnContentList = (intl: IntlShape) => [
   {
     pcImg:
-      'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*eKGCQo3ndGwAAAAAAAAAAAAADgOBAQ/original',
+      'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*wzGLRIiVREEAAAAAAAAAAAAADgOBAQ/original',
     mobileImg:
-      'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*vJT-RavS3vkAAAAAAAAAAAAADgOBAQ/original',
+      'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*VZg-R7YLE68AAAAAAAAAAAAADgOBAQ/original',
   },
 ];
