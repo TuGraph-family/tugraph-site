@@ -1,4 +1,7 @@
-import { getBannerContentList } from '@/data/bannerContent';
+import {
+  getBannerCnContentList,
+  getBannerEnContentList,
+} from '@/data/bannerContent';
 import { CloseOutlined, LeftOutlined, RightOutlined } from '@ant-design/icons';
 import { Carousel, Drawer, Modal, Tooltip } from 'antd';
 import { useEffect, useState } from 'react';
@@ -11,6 +14,8 @@ const AnnouncementBanner = () => {
   const isWide = useMedia('(min-width: 767.99px)', true);
   const intl = useIntl();
   const lang = getLocale();
+  const getBannerContentList =
+    lang === 'zh-CN' ? getBannerCnContentList : getBannerEnContentList;
   useEffect(() => {
     if (sessionStorage.getItem('isBannerShow')) {
       setShowBottomDrawer(false);
@@ -77,7 +82,7 @@ const AnnouncementBanner = () => {
                 onClick={() => {
                   setShowBottomDrawer(false);
                   sessionStorage.setItem('isBannerShow', 'false');
-                  history.push('/blog?id=14');
+                  history.push(`/blog?id=${lang === 'zh-CN' ? '15' : '11'}`);
                 }}
               />
             </div>
@@ -108,7 +113,7 @@ const AnnouncementBanner = () => {
               <img
                 src={item.mobileImg}
                 onClick={() => {
-                  history.push('/blog?id=14');
+                  history.push(`/blog?id=${lang === 'zh-CN' ? '15' : '11'}`);
                   setShowBottomModal(false);
                   sessionStorage.setItem('isBannerShow', 'false');
                 }}
