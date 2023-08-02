@@ -16,6 +16,9 @@ import md13 from '@/doc/zh/13.md';
 import md14 from '@/doc/zh/14.md';
 import md15 from '@/doc/zh/15.md';
 import md16 from '@/doc/zh/16.md';
+import md17 from '@/doc/zh/17.md';
+import md18 from '@/doc/zh/18.md';
+import md19 from '@/doc/zh/19.md';
 
 export const blogs = [
   {
@@ -161,6 +164,34 @@ export const blogs = [
     updateDate: '2023-07-19',
     type: 'news',
     content: md16?.html,
+  },
+  {
+    id: 16,
+    img: 'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*_7yBSLGLHoQAAAAAAAAAAAAADgOBAQ/original',
+    title: 'Antlr4 社区重大贡献：TuGraph 优化 C++ Target 并发性能提升 10 倍！',
+    desc: 'TuGraph 团队开展了一项令人振奋的优化工作，成功将 Antlr4 C++ target 的并发性能提升超过 10 倍！这一优化方案已被 Antlr4 开源社区热情接纳，将给全球的 Antlr C++生态开发者带来更好的使用体验。',
+    updateDate: '2023-07-19',
+    type: 'tech',
+    content: md17?.html,
+  },
+  {
+    id: 17,
+    img: 'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*0RiSRriImB8AAAAAAAAAAAAADgOBAQ/original',
+    title: '蚂蚁集团公布开源完整版图',
+    desc: '在 2023 中关村论坛上，蚂蚁集团首次公布了开源大图：聚焦数据库、云原生、中间件等基础软件领域，蚂蚁开源了 1600 个仓库、积累了近 100 个社区头部开源项目。',
+    updateDate: '2023-07-19',
+    type: 'news',
+    content: md18?.html,
+  },
+  {
+    id: 18,
+    img: 'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*yEDiQ4zpwEEAAAAAAAAAAAAADgOBAQ/original',
+    title:
+      '2023 开放原子全球开源峰会，蚂蚁图计算平台开源业内首个工业级流图计算引擎',
+    desc: '6 月 11 日，2023 开放原子全球开源峰会在北京开幕。本次峰会以“开源赋能，普惠未来”为主题。在高峰论坛上，蚂蚁技术研究院院长、图计算负责人陈文光宣布开源 TuGraph 图计算平台核心成员——工业级流式图计算引擎 TuGraph Analytics。',
+    updateDate: '2023-07-19',
+    type: 'news',
+    content: md19?.html,
   },
 ];
 
