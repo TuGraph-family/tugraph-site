@@ -112,7 +112,10 @@ export default {
   'home.fun1.feat9': 'Batch import with high performance',
   'home.fun1.feat10': 'Streaming and relational data source',
   'home.fun1.feat11': 'Graph analytics and algorithms',
-  'home.fun1.feat12': 'Major graph query languages (Open Cypher, ISO GQL)',
+  'home.fun1.feat12': 'Major graph query languages (Open Cypher, ISO GQL',
+  'home.fun1.feat12.more': ')',
+  'home.fun1.feat12.tooltip':
+    "The ISO GQL working group is expected to release the query language standard by the end of 2023. TuGraph products support the existing draft version, and the community edition will be released to support the GQL standard at an appropriate time based on the standard's progress.",
   'home.fun1.feat13':
     'Efficient stored procedure (parallel computing in a single task)',
   'home.fun1.feat14': 'Visualized graph management and graph analytics',
@@ -344,8 +347,7 @@ TuGraph supports more than 300 applications in the Ant Group, including "Double 
   'ecosystem.support.title': 'WHY PARTNER WITH TUGRAPH',
   'ecosystem.support.description':
     'We collaborate with partners and provide enablement resources to help you build, market, and sell your customer offerings.',
-  'ecosystem.support0':
-    'Training Programs of TuGraph Products and Services',
+  'ecosystem.support0': 'Training Programs of TuGraph Products and Services',
   'ecosystem.support1': 'Technical Advisory of Graph Technologies',
   'ecosystem.support2': 'On-Premise Project Support',
   'ecosystem.support3': 'Extensive Sales & Marketing Benefits',

@@ -26,6 +26,7 @@ import {
   Row,
   Space,
   Tag,
+  Tooltip,
 } from 'antd';
 import cx from 'classnames';
 import { useState } from 'react';
@@ -515,7 +516,23 @@ export default function IndexPage() {
                             span={isWide && !isCn ? 12 : 13}
                             className={cx(styles.textAlignLeft, styles.text)}
                           >
-                            {i.feat}
+                            {i.featMore ? (
+                              <Tooltip
+                                title={i.featTooltip}
+                                color="#FFFFFF"
+                                placement="topRight"
+                              >
+                                {i.feat}
+                                <sup>{i.featSup}</sup>
+                                {i.featMore}
+                              </Tooltip>
+                            ) : (
+                              <>
+                                {i.feat}
+                                <sup>{i.featSup}</sup>
+                                {i.featMore}
+                              </>
+                            )}
                           </Col>
                           <Col span={5} className={styles.text}>
                             {i.community ? <CheckOutlined /> : '-'}
