@@ -61,6 +61,9 @@ export const getTugraphFun = (intl: IntlShape) => [
       },
       {
         feat: intl.formatMessage({ id: 'home.fun1.feat12' }),
+        featMore: intl.formatMessage({ id: 'home.fun1.feat12.more' }),
+        featSup: '*',
+        featTooltip: intl.formatMessage({ id: 'home.fun1.feat12.tooltip' }),
         community: true,
         pro: true,
       },
