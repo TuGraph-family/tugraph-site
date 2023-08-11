@@ -106,7 +106,10 @@ export default {
   'home.fun1.feat9': '高性能批量导入',
   'home.fun1.feat10': '对接流式数据源、关系型数据源',
   'home.fun1.feat11': '图分析算法',
-  'home.fun1.feat12': '主流图查询语言（OpenCypher、ISO GQL等）',
+  'home.fun1.feat12': '主流图查询语言（OpenCypher、ISO GQL',
+  'home.fun1.feat12.more': '等）',
+  'home.fun1.feat12.tooltip':
+    'ISO GQL工作组最早将于2023年底发布该查询语言标准。TuGraph产品基于现有草案版本予以支持；社区版根据标准进度于适当时间发布支持。',
   'home.fun1.feat13': '高效开发的存储过程（单个任务内并行），支持C++、Python等',
   'home.fun1.feat14': '可视化图管理工具、图研发分析工具',
   'home.fun1.feat15': '高可用性支持',
