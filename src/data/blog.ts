@@ -241,6 +241,15 @@ export const blogs = [
     type: 'news',
     content: md19?.html,
   },
+  {
+    id: 999,
+    img: 'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*c41lRYAbTeYAAAAAAAAAAAAADgOBAQ/original',
+    title: 'ICDM 2023 大赛成绩榜单',
+    desc: '初赛和复赛阶段的评估函数按照 Adjusted rand score(ARI)计算。结果取历史最高分，分数榜单每天（T+1）在网站更新',
+    updateDate: '2023-08-21',
+    type: 'competition',
+    content: md999?.html,
+  },
 ];
 
 export const getZHBlogs = (type: string) => {
