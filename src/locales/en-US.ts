@@ -394,6 +394,7 @@ TuGraph supports more than 300 applications in the Ant Group, including "Double 
   'blog.all': 'All',
   'blog.news': 'News',
   'blog.technology': 'Technology',
+  'blog.competition': 'Competition',
   'blog.total': 'Total',
   'blog.item': 'items',
   'blog.more': 'More',
