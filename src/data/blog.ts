@@ -19,6 +19,7 @@ import md16 from '@/doc/zh/16.md';
 import md17 from '@/doc/zh/17.md';
 import md18 from '@/doc/zh/18.md';
 import md19 from '@/doc/zh/19.md';
+import md999 from '@/doc/zh/999.md';
 
 export const blogs = [
   {
@@ -161,8 +162,8 @@ export const blogs = [
     img: 'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*Q69RS47A_s4AAAAAAAAAAAAADgOBAQ/original',
     title: 'ICDM2023 蚂蚁 TuGraph 竞赛',
     desc: 'ICDM2023 基于预训练模型的社区发现和团伙挖掘大赛',
-    updateDate: '2023-07-19',
-    type: 'news',
+    updateDate: '2023-08-22',
+    type: 'competition',
     content: md16?.html,
   },
   {
@@ -192,6 +193,15 @@ export const blogs = [
     updateDate: '2023-07-19',
     type: 'news',
     content: md19?.html,
+  },
+  {
+    id: 999,
+    img: 'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*c41lRYAbTeYAAAAAAAAAAAAADgOBAQ/original',
+    title: 'ICDM 2023 大赛成绩榜单',
+    desc: '初赛和复赛阶段的评估函数按照 Adjusted rand score(ARI)计算。结果取历史最高分，分数榜单每天（T+1）在网站更新',
+    updateDate: '2023-08-21',
+    type: 'competition',
+    content: md999?.html,
   },
 ];
 
