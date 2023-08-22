@@ -162,7 +162,7 @@ export const blogs = [
     title: 'ICDM2023 蚂蚁 TuGraph 竞赛',
     desc: 'ICDM2023 基于预训练模型的社区发现和团伙挖掘大赛',
     updateDate: '2023-07-19',
-    type: 'news',
+    type: 'competition',
     content: md16?.html,
   },
   {

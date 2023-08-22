@@ -169,6 +169,32 @@ export default function BlogPage() {
               ))}
             </div>
           </Tabs.TabPane>
+          <Tabs.TabPane
+            tab={intl.formatMessage({ id: 'blog.competition' })}
+            key="competition"
+          >
+            <div className={styles.lists}>
+              {listData?.map((item, key) => (
+                <a
+                  className={styles.list}
+                  key={key}
+                  href={`/blog?id=${item.id}`}
+                  onClick={() => {
+                    setBlogDetail(item.content);
+                  }}
+                >
+                  <Space size={isWide ? 24 : 22}>
+                    <img src={item.img} alt={item.title} />
+                    <div className={styles.textWrapper}>
+                      <div className={styles.listTitle}>{item.title}</div>
+                      <div className={styles.desc}>{item.desc}</div>
+                      <div className={styles.updateDate}>{item.updateDate}</div>
+                    </div>
+                  </Space>
+                </a>
+              ))}
+            </div>
+          </Tabs.TabPane>
         </Tabs>
       </div>
       {isWide ? (

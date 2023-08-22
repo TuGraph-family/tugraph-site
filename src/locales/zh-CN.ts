@@ -370,6 +370,7 @@ export default {
   'blog.all': '全部',
   'blog.news': '新闻',
   'blog.technology': '技术',
+  'blog.competition': '竞赛',
   'blog.total': '共',
   'blog.item': '条',
   'blog.more': '查看更多',
