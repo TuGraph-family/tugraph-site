@@ -12,6 +12,7 @@ import md09 from '@/doc/en/09.md';
 import md10 from '@/doc/en/10.md';
 import md11 from '@/doc/en/11.md';
 import md12 from '@/doc/en/12.md';
+import md999 from '@/doc/en/999.md';
 
 export const blogs = [
   {
@@ -120,9 +121,18 @@ export const blogs = [
     img: 'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*Q69RS47A_s4AAAAAAAAAAAAADgOBAQ/original',
     title: 'ICDM2023 Ant TuGraph Competition',
     desc: `ICDM2023 Community Discovery and Gang Mining Competition Based on Pre-trained Model`,
-    updateDate: '2023-07-19',
-    type: 'news',
+    updateDate: '2023-08-23',
+    type: 'competition',
     content: md12?.html,
+  },
+  {
+    id: 999,
+    img: 'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*c41lRYAbTeYAAAAAAAAAAAAADgOBAQ/original',
+    title: 'ICDM 2023 Competition Results List',
+    desc: `The evaluation function of the preliminary and semi-final stage is calculated according to Adjusted rand score (ARI). The result is the highest score in history, and the score list is updated on the website every day (T+1)`,
+    updateDate: '2023-08-22',
+    type: 'competition',
+    content: md999?.html,
   },
 ];
 
