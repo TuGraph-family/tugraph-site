@@ -19,6 +19,7 @@ import md16 from '@/doc/zh/16.md';
 import md17 from '@/doc/zh/17.md';
 import md18 from '@/doc/zh/18.md';
 import md19 from '@/doc/zh/19.md';
+import md20 from '@/doc/zh/20.md';
 import md999 from '@/doc/zh/999.md';
 
 export const blogs = [
@@ -193,6 +194,15 @@ export const blogs = [
     updateDate: '2023-07-19',
     type: 'news',
     content: md19?.html,
+  },
+  {
+    id: 19,
+    img: 'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*0MYSTIu9Yl8AAAAAAAAAAAAADgOBAQ/original',
+    title: '新一代数据底座，来外滩大会解锁图智能前沿技术',
+    desc: '2023 年 9 月 7 日，我们即将迎来一场图智能领域的前沿科技盛会——外滩大会图智能论坛。',
+    updateDate: '2023-08-28',
+    type: 'news',
+    content: md20?.html,
   },
   {
     id: 999,
