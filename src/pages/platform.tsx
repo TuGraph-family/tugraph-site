@@ -2,7 +2,7 @@ import { LayoutTemplate } from '@/components/LayoutTemplate';
 import { SubTitle } from '@/components/SubTitle';
 import { proAdvantDataDb, proAdvantDataPlat } from '@/data/proAdvantData';
 import { Anchor, Button, Col, Row } from 'antd';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useMedia } from 'react-use';
 import { getLocale, useIntl, useLocation } from 'umi';
 
@@ -14,7 +14,6 @@ const { Link } = Anchor;
 export default function PlatFormPage() {
   const intl = useIntl();
   const lang = getLocale();
-  const styles = lang === 'en' || lang === 'en-US' ? stylesEn : stylesZh;
   const { pathname } = useLocation();
   const isPlatform = pathname === '/platform';
   const pageKey = isPlatform ? 'platform' : 'db';
@@ -23,6 +22,14 @@ export default function PlatFormPage() {
     : proAdvantDataDb(intl);
   const isWide = useMedia('(min-width: 767.99px)', true);
   const [showApplyForm, setShowApplyForm] = useState(false);
+  const [styles, setStyles] = useState(stylesZh);
+  useEffect(() => {
+    if (lang === 'en-US') {
+      setStyles(stylesEn);
+    } else {
+      setStyles(stylesZh);
+    }
+  }, [lang]);
   const content = (
     <div className={styles.containerWrapper}>
       <SubTitle
