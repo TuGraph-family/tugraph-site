@@ -3,7 +3,7 @@ export default defineConfig({
   nodeModulesTransform: {
     type: 'none',
   },
-  title: 'TuGraph the high-performance graph database',
+  title: 'TuGraph official website',
   favicon:
     'https://gw.alipayobjects.com/zos/bmw-prod/6290edfc-e134-4074-a550-079eeba9926d.svg',
   routes: [

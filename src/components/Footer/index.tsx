@@ -162,7 +162,15 @@ export const Footer = ({ className }: { className?: string }) => {
           >
             {intl.formatMessage({ id: 'footer.rules' })}
           </a>
-          | <div> {intl.formatMessage({ id: 'footer.address' })}</div>
+          |{' '}
+          <a
+            href="https://beian.miit.gov.cn/"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            {intl.formatMessage({ id: 'footer.filings' })}
+          </a>
+          |<div> {intl.formatMessage({ id: 'footer.address' })}</div>
         </Space>
       </Row>
     </>

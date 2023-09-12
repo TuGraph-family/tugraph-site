@@ -171,6 +171,7 @@ export default {
   'footer.rules': '隐私条款',
   'footer.extraInfo': '© 2022 蚂蚁集团',
   'footer.address': '地址：中国北京朝阳区东三环中路1号环球金融中心东塔9层',
+  'footer.filings': '备案号【京ICP备15032932号-43】',
   'footer.addressMobile': '中国北京朝阳区东三环中路1号环球金融中心东塔9层',
   'product.description':
     '为用户管理和分析复杂关联数据提供了高效、易用、可靠的一站式平台',
@@ -375,8 +376,8 @@ export default {
   'blog.item': '条',
   'blog.more': '查看更多',
   'doc.update.time': '最后更新时间：',
-  'site.title': 'TuGraph 高性能图数据库',
-  'home.title': 'TuGraph 高性能图数据库',
+  'site.title': 'TuGraph 官方网站',
+  'home.title': 'TuGraph 官方网站',
   'product.title': ' TuGraph 产品',
   'case.title': ' TuGraph Use Cases',
   'ecosystem.title': ' TuGraph Partners',

@@ -176,6 +176,7 @@ export default {
   'footer.extraInfo': '© 2022 Ant Group',
   'footer.address':
     '9th Floor, East Tower, Beijing World Financial Center, No.1 East 3rd Ring Middle Road, Chaoyang District, Beijing 100020',
+  'footer.filings': 'Filing No. [Beijing ICP Preparation No. 15032932-43]',
   'footer.addressMobile':
     '9th Floor, East Tower, Beijing World Financial Center, No.1 East 3rd Ring Middle Road, Chaoyang District, Beijing 100020',
   'product.description':
@@ -399,8 +400,8 @@ TuGraph supports more than 300 applications in the Ant Group, including "Double 
   'blog.item': 'items',
   'blog.more': 'More',
   'doc.update.time': 'Last Updated: ',
-  'site.title': 'TuGraph the high-performance graph database',
-  'home.title': 'TuGraph the high-performance graph database',
+  'site.title': 'TuGraph official website',
+  'home.title': 'TuGraph official website',
   'product.title': ' TuGraph Products',
   'case.title': ' TuGraph Use Cases',
   'ecosystem.title': ' TuGraph Partners',
