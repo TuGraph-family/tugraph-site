@@ -1,13 +1,12 @@
+import { ApplyForm } from '@/components/ApplyForm';
 import { LayoutTemplate } from '@/components/LayoutTemplate';
 import { SubTitle } from '@/components/SubTitle';
 import { getOverViewFeats } from '@/data/feats';
 import { Anchor, Button, Col, Row, Space } from 'antd';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { useMedia } from 'react-use';
 import { getLocale, useIntl } from 'umi';
-
-import { ApplyForm } from '@/components/ApplyForm';
 import stylesZh from './overview.less';
 import stylesEn from './overview_en.less';
 
@@ -15,9 +14,16 @@ const { Link } = Anchor;
 export default function OverviewPage() {
   const intl = useIntl();
   const lang = getLocale();
-  const styles = lang === 'en' || lang === 'en-US' ? stylesEn : stylesZh;
   const isWide = useMedia('(min-width: 767.99px)', true);
   const [showApplyForm, setShowApplyForm] = useState(false);
+  const [styles, setStyles] = useState(stylesZh);
+  useEffect(() => {
+    if (lang === 'en-US') {
+      setStyles(stylesEn);
+    } else {
+      setStyles(stylesZh);
+    }
+  }, [lang]);
   const content = (
     <div className={styles.containerWrapper}>
       <Helmet>

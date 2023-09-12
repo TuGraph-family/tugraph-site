@@ -3,6 +3,7 @@ import { getPartner } from '@/data/get_partner';
 import { getPartnerReason } from '@/data/get_partner_reason';
 import { Anchor, Col, Row, Space } from 'antd';
 import cx from 'classnames';
+import { useEffect, useState } from 'react';
 import { useMedia } from 'react-use';
 import { getLocale, useIntl } from 'umi';
 
@@ -14,8 +15,15 @@ const { Link } = Anchor;
 export default function EcosystemPage() {
   const intl = useIntl();
   const lang = getLocale();
-  const styles = lang === 'en' || lang === 'en-US' ? stylesEn : stylesZh;
   const isWide = useMedia('(min-width: 767.99px)', true);
+  const [styles, setStyles] = useState(stylesZh);
+  useEffect(() => {
+    if (lang === 'en-US') {
+      setStyles(stylesEn);
+    } else {
+      setStyles(stylesZh);
+    }
+  }, [lang]);
   const content = (
     <div className={styles.containerWrapper}>
       <div className={styles.cardWrapper} style={{ marginBottom: '40px' }}>

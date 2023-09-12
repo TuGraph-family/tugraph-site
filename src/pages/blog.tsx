@@ -1,16 +1,15 @@
-import React, { useEffect, useState } from 'react';
-import HTMLRenderer from 'react-html-renderer';
-import { useIntl, history, useLocation, getLocale } from 'umi';
-import { Spin, Pagination, Tabs, Space, Button } from 'antd';
-import { Layout } from 'antd';
-import cx from 'classnames';
-import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
+import { Header } from '@/components/Header';
+import { LayoutTemplate } from '@/components/LayoutTemplate';
 import { getZHBlogs } from '@/data/blog';
 import { getENBlogs } from '@/data/blog_en';
-import { LayoutTemplate } from '@/components/LayoutTemplate';
 import { BlogItem } from '@/interface';
+import { Button, Layout, Pagination, Space, Spin, Tabs } from 'antd';
+import cx from 'classnames';
+import React, { useEffect, useState } from 'react';
+import HTMLRenderer from 'react-html-renderer';
 import { useMedia } from 'react-use';
+import { getLocale, useIntl, useLocation } from 'umi';
 
 import styles from './blog.less';
 
@@ -22,7 +21,6 @@ export default function BlogPage() {
   const intl = useIntl();
   const location = useLocation();
   const lang = getLocale();
-  console.log(lang);
   const getBlogs = lang === 'zh-CN' ? getZHBlogs : getENBlogs;
   const isWide = useMedia('(min-width: 767.99px)', true);
   const [type, setType] = React.useState<string>('all');
@@ -50,13 +48,16 @@ export default function BlogPage() {
   }, []);
 
   useEffect(() => {
-    setBlogs(getBlogs(type));
-  }, [type]);
+    if (lang === 'zh-CN') {
+      setBlogs(getZHBlogs(type));
+    } else {
+      setBlogs(getENBlogs(type));
+    }
+  }, [type, lang]);
 
   useEffect(() => {
     setListData(blogs.slice(0, PAGE_SIZE));
   }, [blogs]);
-
   const onPaginationChange = (page: number) => {
     const start = 0 + (page - 1) * PAGE_SIZE;
     const end = start + PAGE_SIZE;
