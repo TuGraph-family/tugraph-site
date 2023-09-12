@@ -157,7 +157,7 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
   };
   const menuIcon = !isWide ? (
     <Space size={12}>
-      {searchInput()}
+      {/* {searchInput()} */}
       <AnnouncementBanner />
       <img
         src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*GN_WSabhJdwAAAAAAAAAAAAADgOBAQ/original"
@@ -308,7 +308,7 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
             src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*AbamQ5lxv0IAAAAAAAAAAAAADgOBAQ/original"
           />
         </a>
-        {searchInput()}
+        {/* {searchInput()} */}
       </div>
       <Menu
         className={styles.menu}
