@@ -12,6 +12,8 @@ export default {
   'header.product.title1': 'Enterprise Edition',
   'header.product.desc': 'TuGraph DB Lite (Standalone)',
   'header.product.desc1': 'TuGraph Overview',
+  'header.product.desc2': 'TuGraph Analytics',
+  'header.product.desc3': 'TuGraph Learn',
   'footer.product.title': 'Community Edition',
   'footer.product.title1': 'Enterprise Edition',
   'footer.product': 'Products',

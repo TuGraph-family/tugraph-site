@@ -12,6 +12,8 @@ export default {
   'header.product.title1': '企业版',
   'header.product.desc': 'TuGraph DB Lite 单机版图数据库',
   'header.product.desc1': 'TuGraph 图数据管理平台概览',
+  'header.product.desc2': 'TuGraph Analytics 实时图计算引擎',
+  'header.product.desc3': 'TuGraph Learn 图学习引擎',
   'footer.product': '产品',
   'footer.product.title': '社区版',
   'footer.product.title1': '企业版',
