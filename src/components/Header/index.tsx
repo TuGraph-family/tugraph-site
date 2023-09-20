@@ -3,7 +3,7 @@ import { CloseOutlined, RightOutlined, UpOutlined } from '@ant-design/icons';
 import { DocSearch } from '@docsearch/react';
 import { Drawer, Menu, Popover, Space } from 'antd';
 import cx from 'classnames';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useMedia } from 'react-use';
 import { getLocale, history, useIntl, useLocation } from 'umi';
 
@@ -70,6 +70,22 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
                 }}
               >
                 {intl.formatMessage({ id: 'header.product.desc' })}
+              </div>
+              <div
+                className={styles.popoverContainer}
+                onClick={() => {
+                  history.push('/product');
+                }}
+              >
+                {intl.formatMessage({ id: 'header.product.desc2' })}
+              </div>
+              <div
+                className={styles.popoverContainer}
+                onClick={() => {
+                  history.push('/product');
+                }}
+              >
+                {intl.formatMessage({ id: 'header.product.desc3' })}
               </div>
             </div>
             <div>
