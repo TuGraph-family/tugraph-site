@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Col, List, Row, Select } from 'antd';
+import { Button, Col, Row, Select } from 'antd';
 import { useIntl } from 'umi';
 import { useMedia } from 'react-use';
 import styles from './download.less';
@@ -14,8 +14,8 @@ export default function DownloadPage() {
 
   const [showApplyForm, setShowApplyForm] = useState(false);
 
-  const DownloadGroupItem = ({ name, action, verison }: DownloadItem) => {
-    const [key, setKey] = useState<any>(verison?.list[0]?.value);
+  const DownloadGroupItem = ({ name, action, version }: DownloadItem) => {
+    const [key, setKey] = useState<any>(version?.list[0]?.value);
     const iconMap = {
       download:
         'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*2jWPR6patl8AAAAAAAAAAAAADgOBAQ/original',
@@ -26,17 +26,17 @@ export default function DownloadPage() {
         <div className={styles.downloadGroupItem}>
           <div className={styles.downloadGroupItemInfo}>
             <div className={styles.downloadGroupItemName}>{name}</div>
-            {verison && (
-              <div className={styles.downloadGroupItemVerison}>
+            {version && (
+              <div className={styles.downloadGroupItemVersion}>
                 <Select
                   value={key}
-                  className={styles.downloadGroupItemVerisonSelect}
+                  className={styles.downloadGroupItemVersionSelect}
                   onChange={(value) => {
                     setKey(value);
                   }}
                   bordered={false}
                 >
-                  {verison.list.map((item: any) => (
+                  {version.list.map((item: any) => (
                     <Select.Option key={item?.value}>
                       {item?.label}
                     </Select.Option>
@@ -103,7 +103,7 @@ export default function DownloadPage() {
                 <DownloadGroupItem
                   key={item?.name}
                   name={item?.name}
-                  verison={{
+                  version={{
                     list: item?.assets,
                   }}
                   action={{
@@ -128,11 +128,10 @@ export default function DownloadPage() {
               name={intl.formatMessage({ id: 'download.applyText' })}
               action={{
                 text: intl.formatMessage({ id: 'download.contactBtn' }),
-                onAction: (key: any) => {
+                onAction: () => {
                   setShowApplyForm(true);
                 },
               }}
-              title={''}
             />
           </>
         }
@@ -147,7 +146,7 @@ export default function DownloadPage() {
                 <DownloadGroupItem
                   key={item?.name}
                   name={item?.name}
-                  verison={{
+                  version={{
                     list: item?.assets,
                   }}
                   action={{

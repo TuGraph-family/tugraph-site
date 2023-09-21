@@ -49,7 +49,7 @@ export interface DownloadItem {
   title?: string;
   subTitle?: string;
   name?: string;
-  verison?: {
+  version?: {
     list: any[];
     value?: string;
   };
