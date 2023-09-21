@@ -44,3 +44,19 @@ export interface MenuItem {
   children?: MenuItem[];
   icon?: React.ReactNode;
 }
+
+export interface DownloadItem {
+  title?: string;
+  subTitle?: string;
+  name?: string;
+  verison?: {
+    list: any[];
+    value?: string;
+  };
+  action?: {
+    icon?: 'download' | 'copy';
+    text: string;
+    onAction: (value: any) => void;
+  };
+  items?: any;
+}

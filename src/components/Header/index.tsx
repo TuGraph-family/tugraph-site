@@ -74,7 +74,7 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
               <div
                 className={styles.popoverContainer}
                 onClick={() => {
-                  history.push('/product');
+                  history.push('/product/analytics');
                 }}
               >
                 {intl.formatMessage({ id: 'header.product.desc2' })}
@@ -82,7 +82,7 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
               <div
                 className={styles.popoverContainer}
                 onClick={() => {
-                  history.push('/product');
+                  history.push('/product/learn');
                 }}
               >
                 {intl.formatMessage({ id: 'header.product.desc3' })}

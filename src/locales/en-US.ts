@@ -12,8 +12,8 @@ export default {
   'header.product.title1': 'Enterprise Edition',
   'header.product.desc': 'TuGraph DB Lite (Standalone)',
   'header.product.desc1': 'TuGraph Overview',
-  'header.product.desc2': 'TuGraph Analytics',
-  'header.product.desc3': 'TuGraph Learn',
+  'header.product.desc2': 'TuGraph Analytics: Streaming Graph Computing Engine',
+  'header.product.desc3': 'TuGraph Learn: Graph Learning Engine',
   'footer.product.title': 'Community Edition',
   'footer.product.title1': 'Enterprise Edition',
   'footer.product': 'Products',
@@ -183,6 +183,12 @@ export default {
   'product.description':
     'Provides an efficient, easy-to-use and reliable one-stop platform for users to manage and analyze complex and linked data',
   'product.slogan': 'Speedy Open-Sourced Graph Database',
+  'product_analytics.description':
+    'Cloud native, stream/batch/graph multi-mode computing, graph/table hybrid processing',
+  'product_learn.description':
+    'Provides native support through TuGraph DB to enable large-scale, high-performance development, training, and inference of graph learning models',
+  'product_learn.slogan': 'High Performance Graph Learning System',
+  'product_analytics.slogan': 'Distributed Realtime Graph Computing Engine',
   'product.video0': 'Quick Start',
   'product.videoTime0': '2: 39',
   'product.video1': 'TuGraph Browser Demo',
@@ -491,4 +497,8 @@ TuGraph supports more than 300 applications in the Ant Group, including "Double 
     'Debug and tracing for distributed programs, queries, DDL statements, execution, and data flow',
   'db.freeTrial': 'Free Trial',
   'doc.menu': 'Learn about v3.5.0',
+  'product_analytics.introfuction':
+    '蚂蚁自研的开源分布式实时图计算引擎，支持万亿级图数据分析能力，实现了图表模型的一体化处理和流、批、图多模态计算，并提供了Exactly Once语义、高可用以及一站式云原生研发部署能力，目前广泛应用于数仓加速、金融风控、知识图谱以及社交网络等场景。',
+  'product_learn.introfuction':
+    'TuGraph图学习是在TuGraph Database的基础上开发的一个图学习框架，继承了图机器学习的能力，使得用户能够使用TuGraph数据库直接进行图学习模型的开发、训练和推理。TuGraph图学习支持Neighbor Sampling、Negative Sampling、Edge Sampling和Random Walk Sampling等多重采样算法，后端支持DGL, PyG, OpenHGNN等多种主流开源图学习框架。用户只需要使用TuGraph支持的子图采样和全图装载的API，即可方便地在主流图学习框架中使用。另外，TuGraph图学习支持编译加速技术，用户只需要一行代码，即可加速图学习的训练和推理性能。',
 };

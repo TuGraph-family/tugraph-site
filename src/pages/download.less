@@ -11,10 +11,11 @@
 
   .title {
     margin: 32px 0 20px 0;
-    font-family: 'PingFang';
-    font-weight: 500;
-    font-size: 20px;
-    color: rgba(26, 27, 37, 0.88);
+    font-family: AlibabaPuHuiTi_2_85_Bold;
+    font-size: 32px;
+    color: rgba(0, 0, 0, 0.85);
+    text-align: center;
+    font-weight: bold;
   }
 
   .right {
@@ -46,17 +47,17 @@
     }
   }
 
-  button {
-    height: 32px;
-    width: 100px !important;
-    background-color: rgba(255, 255, 255, 1);
-    border: 1px solid rgba(26, 27, 37, 0.15);
-    border-radius: 8px;
-    color: rgba(26, 27, 37, 0.88);
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 22px;
-  }
+  // button {
+  //   height: 32px;
+  //   width: 100px !important;
+  //   background-color: rgba(255, 255, 255, 1);
+  //   border: 1px solid rgba(26, 27, 37, 0.15);
+  //   border-radius: 8px;
+  //   color: rgba(26, 27, 37, 0.88);
+  //   font-size: 14px;
+  //   font-weight: 400;
+  //   line-height: 22px;
+  // }
 }
 
 @media only screen and (max-width: 767.99px) {
@@ -98,6 +99,88 @@
       :global {
         .ant-select-selection-item {
           font-size: 3.2vw;
+        }
+      }
+    }
+  }
+}
+
+.downloadGroup {
+  margin-bottom: 44px;
+  .downloadGroupTitle {
+    margin: 32px 0 20px 0;
+    font-family: AlibabaPuHuiTi_2_85_Bold;
+    font-size: 32px;
+    color: rgba(0, 0, 0, 0.85);
+    text-align: center;
+    font-weight: bold;
+    width: 100%;
+  }
+  .downloadGroupSubTitle {
+    font-family: PingFangSC;
+    font-weight: 500;
+    font-size: 20px;
+    color: rgba(26, 27, 37, 0.88);
+    margin-bottom: 16px;
+  }
+  .downloadGroupItem {
+    height: 112px;
+    width: 588;
+    background-color: #ffffff;
+    box-shadow: 0 3px 6px -4px rgba(132, 135, 155, 0.12),
+      0 6px 16px 0 rgba(132, 135, 155, 0.08),
+      0 9px 28px 8px rgba(132, 135, 155, 0.05);
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    padding: 32px;
+    align-items: center;
+    .downloadGroupItemInfo {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      .downloadGroupItemName {
+        margin-right: 8px;
+        font-weight: 500;
+        font-size: 18px;
+        color: rgba(26, 27, 37, 0.88);
+      }
+      .downloadGroupItemVerison {
+        height: 30px;
+        background-color: rgba(0, 0, 0, 0.06);
+        border-radius: 4px;
+        .downloadGroupItemVerisonSelect {
+          :global {
+            .ant-select-selector {
+              background-color: rgba(0, 0, 0, 0.06);
+              border: none;
+              border-radius: 4px;
+              .ant-select-selection-item {
+                font-weight: 400;
+                font-size: 14px;
+                color: rgba(0, 0, 0, 0.65);
+                text-align: center;
+              }
+            }
+          }
+        }
+      }
+    }
+    .downloadGroupItemAction {
+      width: auto;
+      .downloadGroupItemActionButton {
+        height: 48px;
+        width: 128px;
+        border-color: #1650ff;
+        color: #1650ff;
+        border-radius: 6px;
+        font-weight: 500;
+        font-size: 14px;
+        .downloadGroupItemActionButtonIcon {
+          height: 17.5px;
+          display: inline-block;
+          margin-right: 4px;
+          width: 17.5px;
         }
       }
     }
