@@ -79,3 +79,13 @@ export const docsList = [
     ],
   },
 ];
+
+export const iconMap: any = {
+  download:
+    'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*2jWPR6patl8AAAAAAAAAAAAADgOBAQ/original',
+  normal_download:
+    'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*D6XWRKU0PoYAAAAAAAAAAAAADgOBAQ/original',
+  normal_copy:
+    'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*OCWIRL2nlwgAAAAAAAAAAAAADgOBAQ/original',
+  copy: 'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*XqfDRpBwxgYAAAAAAAAAAAAADgOBAQ/original',
+};
