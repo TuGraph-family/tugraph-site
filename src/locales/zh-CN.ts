@@ -479,4 +479,10 @@ export default {
     '分布式调试跟踪，查询语句执行全链路、DDL语句回溯、数据流全程可跟踪。',
   'db.freeTrial': '企业版试用',
   'doc.menu': '了解 v3.5.0 版本',
+  'download.title3': 'TuGraph Analytics 下载',
+  'download.title4': 'TuGraph Learn 下载',
+  'download.copyLinkBtn': '复制地址',
+  'download.imageDownloadAddress': '镜像下载地址',
+  'download.imageDownloadMethod': '镜像下载方式',
+  'download.copySuccess': '复制成功',
 };

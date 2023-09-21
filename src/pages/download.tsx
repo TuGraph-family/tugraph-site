@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { Button, Col, Row, Select } from 'antd';
+import { Button, Col, message, Row, Select } from 'antd';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { useIntl } from 'umi';
 import { useMedia } from 'react-use';
 import styles from './download.less';
 import { ApplyForm } from '@/components/ApplyForm';
 import { LayoutTemplate } from '@/components/LayoutTemplate';
-import { assetsList, docsList } from '@/data/download';
+import { assetsList, docsList, iconMap } from '@/data/download';
 import { DownloadItem } from '@/interface';
 
 export default function DownloadPage() {
@@ -16,21 +17,18 @@ export default function DownloadPage() {
 
   const DownloadGroupItem = ({ name, action, version }: DownloadItem) => {
     const [key, setKey] = useState<any>(version?.list[0]?.value);
-    const iconMap = {
-      download:
-        'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*2jWPR6patl8AAAAAAAAAAAAADgOBAQ/original',
-      copy: 'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*XqfDRpBwxgYAAAAAAAAAAAAADgOBAQ/original',
-    };
+    const [isHover, setIsHover] = useState(false);
+
     return (
       <Col span={isWide ? 12 : 24}>
         <div className={styles.downloadGroupItem}>
           <div className={styles.downloadGroupItemInfo}>
             <div className={styles.downloadGroupItemName}>{name}</div>
             {version && (
-              <div className={styles.downloadGroupItemVersion}>
+              <div className={styles.downloadGroupItemVerison}>
                 <Select
                   value={key}
-                  className={styles.downloadGroupItemVersionSelect}
+                  className={styles.downloadGroupItemVerisonSelect}
                   onChange={(value) => {
                     setKey(value);
                   }}
@@ -47,20 +45,80 @@ export default function DownloadPage() {
           </div>
           <div className={styles.downloadGroupItemAction}>
             <Button
+              onMouseOver={() => {
+                setIsHover(true);
+              }}
+              onMouseLeave={() => {
+                setIsHover(false);
+              }}
               className={styles.downloadGroupItemActionButton}
               onClick={() => {
-                action?.onAction(key);
+                action?.onAction && action?.onAction(key);
               }}
             >
               {action?.icon && (
                 <img
-                  src={`${iconMap[action?.icon || 'download']}`}
+                  src={
+                    isHover
+                      ? `${iconMap[action?.icon || 'download']}`
+                      : iconMap[
+                          `${'normal_' + action?.icon || 'normal_download'}`
+                        ]
+                  }
                   className={styles.downloadGroupItemActionButtonIcon}
                   alt=""
                 />
               )}
               {action?.text}
             </Button>
+          </div>
+        </div>
+      </Col>
+    );
+  };
+
+  const DownloadGroupCopyItem = ({
+    title,
+    link,
+  }: {
+    title: string;
+    link: string;
+  }) => {
+    const [isHover, setIsHover] = useState(false);
+
+    return (
+      <Col span={isWide ? 12 : 24}>
+        <div className={styles.downloadGroupCopyItem}>
+          <div className={styles.downloadGroupCopyItemTitle}>{title}</div>
+          <div className={styles.downloadGroupCopyItemText}>
+            <div className={styles.downloadGroupCopyItemLink}>{link}</div>
+            <div
+              className={styles.downloadGroupCopyItemButton}
+              onMouseOver={() => {
+                setIsHover(true);
+              }}
+              onMouseLeave={() => {
+                setIsHover(false);
+              }}
+            >
+              <img
+                src={isHover ? `${iconMap.copy}` : iconMap.normal_copy}
+                alt=""
+                className={styles.downloadGroupCopyItemButtonIcon}
+              />
+              <CopyToClipboard
+                text={link}
+                onCopy={() => {
+                  message.success(
+                    intl.formatMessage({ id: 'download.copySuccess' }),
+                  );
+                }}
+              >
+                <span className={styles.downloadGroupCopyItemButtonText}>
+                  {intl.formatMessage({ id: 'download.copyLinkBtn' })}
+                </span>
+              </CopyToClipboard>
+            </div>
           </div>
         </div>
       </Col>
@@ -162,87 +220,46 @@ export default function DownloadPage() {
           </>
         }
       />
-      {/* {assetsList?.map((item, key) => (
-        <Row className={styles.list} key={key}>
-          <Col span={16} className={styles.listName}>
-            {item.name}
-          </Col>
-          <Col className={styles.right} span={isWide ? 4 : 8}>
-            <Select
-              className={styles.listVersions}
-              onChange={(value) => {
-                activeVersions[key] = value;
-                const newActiveVersions = [...activeVersions];
-                setActiveVersions(newActiveVersions);
-              }}
-              value={activeVersions[key]}
-              bordered={false}
-              options={item.assets}
+      <DownloadGroup
+        title="TuGraph Analytics"
+        subTitle={intl.formatMessage({ id: 'download.title3' })}
+        items={
+          <>
+            <DownloadGroupCopyItem
+              title={intl.formatMessage({
+                id: 'download.imageDownloadAddress',
+              })}
+              link="https://hub.docker.com/r/tugraph/geaflow-console"
             />
-          </Col>
-
-          <Col className={styles.right} span={isWide ? 4 : 24}>
-            <Button
-              onClick={() => {
-                window.location.href = activeVersions[key];
-              }}
-              block
-            >
-              {intl.formatMessage({ id: 'download.downloadBtn' })}
-            </Button>
-          </Col>
-        </Row>
-      ))} */}
-
-      <div className={styles.title}>
-        {intl.formatMessage({ id: 'download.title1' })}
-      </div>
-
-      {/* {docsList?.map((item, key) => (
-        <Row className={styles.list} key={key}>
-          <Col span={16} className={styles.listName}>
-            {item.name}
-          </Col>
-          <Col className={styles.right} span={isWide ? 4 : 8}>
-            <Select
-              className={styles.listVersions}
-              value={item.assets[0].value}
-              bordered={false}
-              options={item.assets}
+            <DownloadGroupCopyItem
+              title={intl.formatMessage({
+                id: 'download.imageDownloadMethod',
+              })}
+              link="docker pull tugraph/geaflow-console"
             />
-          </Col>
-
-          <Col className={styles.right} span={isWide ? 4 : 24}>
-            <Button
-              onClick={() => {
-                window.location.href = item.assets[0].value;
-              }}
-              block
-            >
-              {intl.formatMessage({ id: 'download.downloadBtn' })}
-            </Button>
-          </Col>
-        </Row>
-      ))} */}
-
-      <div className={styles.title}>
-        {intl.formatMessage({ id: 'download.title2' })}
-      </div>
-      {/* <Row className={styles.list}>
-        <Col span={20} className={styles.listName}>
-          {intl.formatMessage({ id: 'download.applyText' })}
-        </Col>
-        <Col className={styles.right} span={isWide ? 4 : 24}>
-          <Button
-            onClick={() => {
-              setShowApplyForm(true);
-            }}
-            block
-          >
-            {intl.formatMessage({ id: 'download.contactBtn' })}
-          </Button>
-        </Col>
-      </Row> */}
+          </>
+        }
+      />
+      <DownloadGroup
+        title="TuGraph Learn"
+        subTitle={intl.formatMessage({ id: 'download.title4' })}
+        items={
+          <>
+            <DownloadGroupCopyItem
+              title={intl.formatMessage({
+                id: 'download.imageDownloadAddress',
+              })}
+              link="https://hub.docker.com/r/tugraph/tugraph-compile-centos7"
+            />
+            <DownloadGroupCopyItem
+              title={intl.formatMessage({
+                id: 'download.imageDownloadMethod',
+              })}
+              link="docker pull tugraph/tugraph-compile-centos7"
+            />
+          </>
+        }
+      />
       <ApplyForm visible={showApplyForm} setVisible={setShowApplyForm} />
     </div>
   );
