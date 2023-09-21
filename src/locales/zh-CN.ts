@@ -176,7 +176,13 @@ export default {
   'footer.addressMobile': '中国北京朝阳区东三环中路1号环球金融中心东塔9层',
   'product.description':
     '为用户管理和分析复杂关联数据提供了高效、易用、可靠的一站式平台',
+  'product_learn.description':
+    'TuGraph数据库原生支持，使用TuGraph数据库进行大规模高性能的图学习模型的开发、训练和推理',
+  'product_analytics.description':
+    '云原生、分布式、流批图计算能力，图表融合处理',
   'product.slogan': '极速的开源图数据库TuGraph',
+  'product_learn.slogan': '高性能TuGraph图学习系统',
+  'product_analytics.slogan': '分布式实时图计算引擎',
   'product.overview.slogan': '企业级图数据管理平台',
   'product.video0': '快速上手演示',
   'product.videoTime0': '2分39秒',
@@ -185,6 +191,10 @@ export default {
   'product.video2': '3分钟读懂图计算',
   'product.videoTime2': '3分08秒',
   'product.intro': '产品概述',
+  'product_analytics.introfuction':
+    '蚂蚁自研的开源分布式实时图计算引擎，支持万亿级图数据分析能力，实现了图表模型的一体化处理和流、批、图多模态计算，并提供了Exactly Once语义、高可用以及一站式云原生研发部署能力，目前广泛应用于数仓加速、金融风控、知识图谱以及社交网络等场景。',
+  'product_learn.introfuction':
+    'TuGraph图学习是在TuGraph Database的基础上开发的一个图学习框架，继承了图机器学习的能力，使得用户能够使用TuGraph数据库直接进行图学习模型的开发、训练和推理。TuGraph图学习支持Neighbor Sampling、Negative Sampling、Edge Sampling和Random Walk Sampling等多重采样算法，后端支持DGL, PyG, OpenHGNN等多种主流开源图学习框架。用户只需要使用TuGraph支持的子图采样和全图装载的API，即可方便地在主流图学习框架中使用。另外，TuGraph图学习支持编译加速技术，用户只需要一行代码，即可加速图学习的训练和推理性能。',
   'product.introduction0':
     'TuGraph图数据库由蚂蚁集团与清华大学联合研发，构建了一套包含图存储、图计算、图学习、图研发平台的完善的图技术体系，拥有业界领先规模的图集群，解决了图数据分析面临的大数据量、高吞吐率和低延迟等重大挑战，是蚂蚁集团金融风控能力的重要基础设施，显著提升了欺诈洗钱等金融风险的实时识别能力和审理分析效率，并面向金融、工业、政务服务等行业客户。',
   'product.introduction1':

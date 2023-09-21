@@ -1,27 +1,169 @@
 import React, { useState } from 'react';
-import { Button, Col, Row, Select } from 'antd';
-import { ApplyForm } from '@/components/ApplyForm';
+import { Button, Col, List, Row, Select } from 'antd';
 import { useIntl } from 'umi';
 import { useMedia } from 'react-use';
+import styles from './download.less';
+import { ApplyForm } from '@/components/ApplyForm';
 import { LayoutTemplate } from '@/components/LayoutTemplate';
 import { assetsList, docsList } from '@/data/download';
-import styles from './download.less';
+import { DownloadItem } from '@/interface';
 
 export default function DownloadPage() {
   const intl = useIntl();
   const isWide = useMedia('(min-width: 767.99px)', true);
-  const initActiveAssetsVersion = assetsList?.map(
-    (item) => item.assets[0].value,
-  );
-  const [activeVersions, setActiveVersions] = useState(initActiveAssetsVersion);
+
   const [showApplyForm, setShowApplyForm] = useState(false);
+
+  const DownloadGroupItem = ({ name, action, verison }: DownloadItem) => {
+    const [key, setKey] = useState<any>(verison?.list[0]?.value);
+    const iconMap = {
+      download:
+        'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*2jWPR6patl8AAAAAAAAAAAAADgOBAQ/original',
+      copy: 'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*XqfDRpBwxgYAAAAAAAAAAAAADgOBAQ/original',
+    };
+    return (
+      <Col span={isWide ? 12 : 24}>
+        <div className={styles.downloadGroupItem}>
+          <div className={styles.downloadGroupItemInfo}>
+            <div className={styles.downloadGroupItemName}>{name}</div>
+            {verison && (
+              <div className={styles.downloadGroupItemVerison}>
+                <Select
+                  value={key}
+                  className={styles.downloadGroupItemVerisonSelect}
+                  onChange={(value) => {
+                    setKey(value);
+                  }}
+                  bordered={false}
+                >
+                  {verison.list.map((item: any) => (
+                    <Select.Option key={item?.value}>
+                      {item?.label}
+                    </Select.Option>
+                  ))}
+                </Select>
+              </div>
+            )}
+          </div>
+          <div className={styles.downloadGroupItemAction}>
+            <Button
+              className={styles.downloadGroupItemActionButton}
+              onClick={() => {
+                action?.onAction(key);
+              }}
+            >
+              {action?.icon && (
+                <img
+                  src={`${iconMap[action?.icon || 'download']}`}
+                  className={styles.downloadGroupItemActionButtonIcon}
+                  alt=""
+                />
+              )}
+              {action?.text}
+            </Button>
+          </div>
+        </div>
+      </Col>
+    );
+  };
+
+  const DownloadGroup = ({
+    title = 'TuGraph-DB',
+    subTitle = 'TuGraph社区版下载',
+    items = null,
+  }: DownloadItem) => {
+    return (
+      <div className={styles.downloadGroup}>
+        {title && (
+          <Row>
+            <Col span={24} className={styles.downloadGroupTitle}>
+              {title}
+            </Col>
+          </Row>
+        )}
+        <Row>
+          <Col span={24} className={styles.downloadGroupSubTitle}>
+            {subTitle}
+          </Col>
+        </Row>
+        <Row gutter={[24, { xs: 8, sm: 16, md: 24, lg: 32 }]}>{items}</Row>
+      </div>
+    );
+  };
 
   const content = (
     <div className={styles.containerWrapper}>
-      <div className={styles.title}>
-        {intl.formatMessage({ id: 'download.title0' })}
-      </div>
-      {assetsList?.map((item, key) => (
+      <DownloadGroup
+        title="TuGraph-DB"
+        subTitle={intl.formatMessage({ id: 'download.title0' })}
+        items={
+          <>
+            {assetsList.map((item) => {
+              return (
+                <DownloadGroupItem
+                  key={item?.name}
+                  name={item?.name}
+                  verison={{
+                    list: item?.assets,
+                  }}
+                  action={{
+                    text: intl.formatMessage({ id: 'download.downloadBtn' }),
+                    icon: 'download',
+                    onAction: (key: any) => {
+                      window.location.href = key;
+                    },
+                  }}
+                />
+              );
+            })}
+          </>
+        }
+      />
+      <DownloadGroup
+        title=""
+        subTitle={intl.formatMessage({ id: 'download.title2' })}
+        items={
+          <>
+            <DownloadGroupItem
+              name={intl.formatMessage({ id: 'download.applyText' })}
+              action={{
+                text: intl.formatMessage({ id: 'download.contactBtn' }),
+                onAction: (key: any) => {
+                  setShowApplyForm(true);
+                },
+              }}
+              title={''}
+            />
+          </>
+        }
+      />
+      <DownloadGroup
+        title=""
+        subTitle={intl.formatMessage({ id: 'download.title1' })}
+        items={
+          <>
+            {docsList.map((item) => {
+              return (
+                <DownloadGroupItem
+                  key={item?.name}
+                  name={item?.name}
+                  verison={{
+                    list: item?.assets,
+                  }}
+                  action={{
+                    text: intl.formatMessage({ id: 'download.downloadBtn' }),
+                    icon: 'download',
+                    onAction: (key: any) => {
+                      window.location.href = key;
+                    },
+                  }}
+                />
+              );
+            })}
+          </>
+        }
+      />
+      {/* {assetsList?.map((item, key) => (
         <Row className={styles.list} key={key}>
           <Col span={16} className={styles.listName}>
             {item.name}
@@ -51,13 +193,13 @@ export default function DownloadPage() {
             </Button>
           </Col>
         </Row>
-      ))}
+      ))} */}
 
       <div className={styles.title}>
         {intl.formatMessage({ id: 'download.title1' })}
       </div>
 
-      {docsList?.map((item, key) => (
+      {/* {docsList?.map((item, key) => (
         <Row className={styles.list} key={key}>
           <Col span={16} className={styles.listName}>
             {item.name}
@@ -82,12 +224,12 @@ export default function DownloadPage() {
             </Button>
           </Col>
         </Row>
-      ))}
+      ))} */}
 
       <div className={styles.title}>
         {intl.formatMessage({ id: 'download.title2' })}
       </div>
-      <Row className={styles.list}>
+      {/* <Row className={styles.list}>
         <Col span={20} className={styles.listName}>
           {intl.formatMessage({ id: 'download.applyText' })}
         </Col>
@@ -101,7 +243,7 @@ export default function DownloadPage() {
             {intl.formatMessage({ id: 'download.contactBtn' })}
           </Button>
         </Col>
-      </Row>
+      </Row> */}
       <ApplyForm visible={showApplyForm} setVisible={setShowApplyForm} />
     </div>
   );
