@@ -4,11 +4,11 @@ import { getLocale, isBrowser, useIntl } from 'umi';
 import { Helmet } from 'react-helmet';
 
 import { useMedia } from 'react-use';
+import { Col, Row, Space } from 'antd';
 import stylesZh from './product_learn.less';
 import stylesEn from './product_learn_en.less';
 import { LayoutTemplate } from '@/components/LayoutTemplate';
 import { SubTitle } from '@/components/SubTitle';
-import { Col, Row, Space } from 'antd';
 import { getFeats } from '@/data/feats1';
 
 const Root = () => {
