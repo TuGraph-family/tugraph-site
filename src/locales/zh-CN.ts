@@ -485,4 +485,32 @@ export default {
   'download.imageDownloadAddress': '镜像下载地址',
   'download.imageDownloadMethod': '镜像下载方式/命令',
   'download.copySuccess': '复制成功',
+  'product_analytics.feature.title0': '动态图计算',
+  'product_analytics.feature.desc0':
+    '业内率先支持动态图分析的工业级图计算引擎，提升图计算结果的实时性。',
+  'product_analytics.feature.title1': '图表混合处理',
+  'product_analytics.feature.desc1':
+    '采用SQL+GQL的融合分析语言，提供图模型和表模型的混合数据处理能力。',
+  'product_analytics.feature.title2': '统一流批图',
+  'product_analytics.feature.desc2':
+    '基于Cycle的事件驱动调度机制，统一了流计算、批处理、图计算模型。',
+  'product_analytics.feature.title3': '云原生部署',
+  'product_analytics.feature.desc3':
+    '支持K8S等多种执行环境，提供图任务研发管理工具，更适合云上快速部署。',
+  'product_analytics.feature.title4': '图原生存储',
+  'product_analytics.feature.desc4':
+    '提供面向图的原生存储系统，支持高性能读写和计算下推能力。敬请期待……',
+  'product_analytics.feature.title5': '交互式图分析',
+  'product_analytics.feature.desc5':
+    '提供图数据的交互式访问和实时分析能力，快速接入BI分析和可视化工具。敬请期待……',
+  'product_learn.feature.title0': '支持大规模数据',
+  'product_learn.feature.desc0':
+    '基于TuGraph图数据库开发的图学习，数据可导入图数据库以外存储，支持更大规模的数据。',
+  'product_learn.feature.title1': '原生TuGraph数据库支持',
+  'product_learn.feature.desc1':
+    'TuGraph数据库原生支持图学习的训练和推理，避免用户使用多条系统来回切换。',
+  'product_learn.feature.title2': '无缝迁移',
+  'product_learn.feature.desc2': '后端支持主流图学习框架，用户学习成本低。',
+  'product_learn.feature.title3': '高性能',
+  'product_learn.feature.desc3': 'TuGraph图学习具有高性能、高可操作性等特点。',
 };
