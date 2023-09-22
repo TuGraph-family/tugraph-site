@@ -7,10 +7,10 @@ import React, { useState } from 'react';
 import { useMedia } from 'react-use';
 import { getLocale, history, useIntl, useLocation } from 'umi';
 
-import { HOST_EN, HOST_ZH, searchParamsEn, searchParamsZh } from '@/constant';
 import '@docsearch/css';
 import AnnouncementBanner from '../AnnouncementBanner';
 import styles from './index.less';
+import { HOST_EN, HOST_ZH, searchParamsEn, searchParamsZh } from '@/constant';
 
 export const Header = ({ isStick }: { isStick?: boolean }) => {
   const intl = useIntl();
@@ -132,9 +132,12 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
     key: 'produce',
     children: [
       {
+        label: <div>{intl.formatMessage({ id: 'header.product.title' })}</div>,
+        key: '',
+      },
+      {
         label: (
           <>
-            <div>{intl.formatMessage({ id: 'header.product.title' })}</div>
             <a href="/product" rel="noopener noreferrer">
               {intl.formatMessage({ id: 'header.product.desc' })}
             </a>
@@ -145,7 +148,28 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
       {
         label: (
           <>
-            <div>{intl.formatMessage({ id: 'header.product.title1' })}</div>
+            <a href="/product/analytics" rel="noopener noreferrer">
+              {intl.formatMessage({ id: 'header.product.desc2' })}
+            </a>
+          </>
+        ),
+        key: 'product/analytics',
+      },
+      {
+        label: (
+          <a href="/product/learn" rel="noopener noreferrer">
+            {intl.formatMessage({ id: 'header.product.desc3' })}
+          </a>
+        ),
+        key: 'product/learn',
+      },
+      {
+        label: <div>{intl.formatMessage({ id: 'header.product.title1' })}</div>,
+        key: '',
+      },
+      {
+        label: (
+          <>
             <a href="/overview" rel="noopener noreferrer">
               {intl.formatMessage({ id: 'header.product.desc1' })}
             </a>
@@ -373,9 +397,8 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
             expandIcon={({ isOpen }) => {
               if (isOpen) {
                 return <UpOutlined style={{ fontSize: '3.7vw' }} />;
-              } else {
-                return <RightOutlined style={{ fontSize: '3.7vw' }} />;
               }
+              return <RightOutlined style={{ fontSize: '3.7vw' }} />;
             }}
           />
         </div>
