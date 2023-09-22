@@ -10,6 +10,16 @@ export default defineConfig({
   routes: [
     { path: '/', component: '@/pages/index' },
     { path: '/product', component: '@/pages/product', title: 'product.title' },
+    {
+      path: '/product/learn',
+      component: '@/pages/product_learn',
+      title: 'product.title',
+    },
+    {
+      path: '/product/analytics',
+      component: '@/pages/product_analytics',
+      title: 'product.title',
+    },
     { path: '/case', component: '@/pages/case', title: 'case.title' },
     {
       path: '/ecosystem',

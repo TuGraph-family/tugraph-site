@@ -31,6 +31,11 @@ const Root = () => {
           content={intl.formatMessage({ id: 'product_learn.description' })}
         />
       </Helmet>
+      <div
+        style={{
+          paddingTop: '80px',
+        }}
+      />
       <SubTitle
         title={intl.formatMessage({ id: 'product.intro' })}
         className={styles.subTitle}
@@ -78,8 +83,8 @@ const Root = () => {
           <img
             src={
               lang === 'zh-CN'
-                ? 'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*cw03RpxT13MAAAAAAAAAAAAADgOBAQ/original'
-                : 'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*K_LmTbSOmDwAAAAAAAAAAAAADgOBAQ/original'
+                ? 'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*2TuZSYCq8egAAAAAAAAAAAAADgOBAQ/original'
+                : 'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*2TuZSYCq8egAAAAAAAAAAAAADgOBAQ/original'
             }
             alt="ecosystem"
           />
