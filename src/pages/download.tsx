@@ -19,16 +19,71 @@ export default function DownloadPage() {
     const [key, setKey] = useState<any>(version?.list[0]?.value);
     const [isHover, setIsHover] = useState(false);
 
-    return (
-      <Col span={isWide ? 12 : 24}>
-        <div className={styles.downloadGroupItem}>
-          <div className={styles.downloadGroupItemInfo}>
-            <div className={styles.downloadGroupItemName}>{name}</div>
+    const webItem = (
+      <div className={styles.downloadGroupItem}>
+        <div className={styles.downloadGroupItemInfo}>
+          <div className={styles.downloadGroupItemName}>{name}</div>
+          {version && (
+            <div className={styles.downloadGroupItemVerison}>
+              <Select
+                value={key}
+                className={styles.downloadGroupItemVerisonSelect}
+                onChange={(value) => {
+                  setKey(value);
+                }}
+                bordered={false}
+              >
+                {version.list.map((item: any) => (
+                  <Select.Option key={item?.value}>{item?.label}</Select.Option>
+                ))}
+              </Select>
+            </div>
+          )}
+        </div>
+        <div className={styles.downloadGroupItemAction}>
+          <Button
+            onMouseOver={() => {
+              setIsHover(true);
+            }}
+            onMouseOut={() => {
+              setIsHover(false);
+            }}
+            className={styles.downloadGroupItemActionButton}
+            onClick={() => {
+              if (action?.onAction) {
+                action?.onAction(key);
+              }
+            }}
+          >
+            {action?.icon && (
+              <img
+                src={
+                  isHover
+                    ? `${iconMap[action?.icon || 'download']}`
+                    : iconMap[
+                        `${'normal_' + action?.icon || 'normal_download'}`
+                      ]
+                }
+                className={styles.downloadGroupItemActionButtonIcon}
+                alt=""
+              />
+            )}
+            {action?.text}
+          </Button>
+        </div>
+      </div>
+    );
+
+    const pmdItem = (
+      <div className={styles.pmdDownloadGroupItem}>
+        <div className={styles.top}>
+          <div className={styles.name}>{name}</div>
+          <div className={styles.verison}>
             {version && (
-              <div className={styles.downloadGroupItemVerison}>
+              <div className={styles.selectWrap}>
                 <Select
                   value={key}
-                  className={styles.downloadGroupItemVerisonSelect}
+                  className={styles.select}
                   onChange={(value) => {
                     setKey(value);
                   }}
@@ -43,38 +98,42 @@ export default function DownloadPage() {
               </div>
             )}
           </div>
-          <div className={styles.downloadGroupItemAction}>
-            <Button
-              onMouseOver={() => {
-                setIsHover(true);
-              }}
-              onMouseLeave={() => {
-                setIsHover(false);
-              }}
-              className={styles.downloadGroupItemActionButton}
-              onClick={() => {
-                action?.onAction && action?.onAction(key);
-              }}
-            >
-              {action?.icon && (
-                <img
-                  src={
-                    isHover
-                      ? `${iconMap[action?.icon || 'download']}`
-                      : iconMap[
-                          `${'normal_' + action?.icon || 'normal_download'}`
-                        ]
-                  }
-                  className={styles.downloadGroupItemActionButtonIcon}
-                  alt=""
-                />
-              )}
-              {action?.text}
-            </Button>
-          </div>
         </div>
-      </Col>
+        <div className={styles.bottom}>
+          <Button
+            onMouseOver={() => {
+              setIsHover(true);
+            }}
+            onMouseOut={() => {
+              setIsHover(false);
+            }}
+            className={styles.button}
+            onClick={() => {
+              if (action?.onAction) {
+                action?.onAction(key);
+              }
+            }}
+          >
+            {action?.icon && (
+              <img
+                src={
+                  isHover
+                    ? `${iconMap[action?.icon || 'download']}`
+                    : iconMap[
+                        `${'normal_' + action?.icon || 'normal_download'}`
+                      ]
+                }
+                className={styles.downloadGroupItemActionButtonIcon}
+                alt=""
+              />
+            )}
+            {action?.text}
+          </Button>
+        </div>
+      </div>
     );
+
+    return <Col span={isWide ? 12 : 24}> {isWide ? webItem : pmdItem}</Col>;
   };
 
   const DownloadGroupCopyItem = ({
@@ -86,43 +145,64 @@ export default function DownloadPage() {
   }) => {
     const [isHover, setIsHover] = useState(false);
 
-    return (
-      <Col span={isWide ? 12 : 24}>
-        <div className={styles.downloadGroupCopyItem}>
-          <div className={styles.downloadGroupCopyItemTitle}>{title}</div>
-          <div className={styles.downloadGroupCopyItemText}>
-            <div className={styles.downloadGroupCopyItemLink}>{link}</div>
-            <div
-              className={styles.downloadGroupCopyItemButton}
-              onMouseOver={() => {
-                setIsHover(true);
-              }}
-              onMouseLeave={() => {
-                setIsHover(false);
+    const webItem = (
+      <div className={styles.downloadGroupCopyItem}>
+        <div className={styles.downloadGroupCopyItemTitle}>{title}</div>
+        <div className={styles.downloadGroupCopyItemText}>
+          <div className={styles.downloadGroupCopyItemLink}>{link}</div>
+          <div
+            className={styles.downloadGroupCopyItemButton}
+            onMouseOver={() => {
+              setIsHover(true);
+            }}
+            onMouseOut={() => {
+              setIsHover(false);
+            }}
+          >
+            <img
+              src={isHover ? `${iconMap.copy}` : iconMap.normal_copy}
+              alt=""
+              className={styles.downloadGroupCopyItemButtonIcon}
+            />
+            <CopyToClipboard
+              text={link}
+              onCopy={() => {
+                message.success(
+                  intl.formatMessage({ id: 'download.copySuccess' }),
+                );
               }}
             >
-              <img
-                src={isHover ? `${iconMap.copy}` : iconMap.normal_copy}
-                alt=""
-                className={styles.downloadGroupCopyItemButtonIcon}
-              />
-              <CopyToClipboard
-                text={link}
-                onCopy={() => {
-                  message.success(
-                    intl.formatMessage({ id: 'download.copySuccess' }),
-                  );
-                }}
-              >
-                <span className={styles.downloadGroupCopyItemButtonText}>
-                  {intl.formatMessage({ id: 'download.copyLinkBtn' })}
-                </span>
-              </CopyToClipboard>
-            </div>
+              <span className={styles.downloadGroupCopyItemButtonText}>
+                {intl.formatMessage({ id: 'download.copyLinkBtn' })}
+              </span>
+            </CopyToClipboard>
           </div>
         </div>
-      </Col>
+      </div>
     );
+
+    const pmdItem = (
+      <div className={styles.pwdDownloadGroupCopyItem}>
+        <div className={styles.top}>{title}</div>
+        <div className={styles.middle}>{link}</div>
+        <div className={styles.bottom}>
+          <CopyToClipboard
+            text={link}
+            onCopy={() => {
+              message.success(
+                intl.formatMessage({ id: 'download.copySuccess' }),
+              );
+            }}
+          >
+            <span className={styles.buttonText}>
+              {intl.formatMessage({ id: 'download.copyLinkBtn' })}
+            </span>
+          </CopyToClipboard>
+        </div>
+      </div>
+    );
+
+    return <Col span={isWide ? 12 : 24}>{isWide ? webItem : pmdItem}</Col>;
   };
 
   const DownloadGroup = ({
