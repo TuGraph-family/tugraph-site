@@ -107,6 +107,7 @@
 
 .downloadGroup {
   margin-bottom: 44px;
+  padding: 0 24px;
   .downloadGroupTitle {
     margin: 32px 0 20px 0;
     font-family: AlibabaPuHuiTi_2_85_Bold;
@@ -125,7 +126,7 @@
   }
   .downloadGroupCopyItem {
     display: flex;
-    width: 588;
+    width: 100%;
     background-color: #ffffff;
     box-shadow: 0 3px 6px -4px rgba(132, 135, 155, 0.12),
       0 6px 16px 0 rgba(132, 135, 155, 0.08),
@@ -174,7 +175,7 @@
   }
   .downloadGroupItem {
     height: 112px;
-    width: 588;
+    width: 100%;
     background-color: #ffffff;
     box-shadow: 0 3px 6px -4px rgba(132, 135, 155, 0.12),
       0 6px 16px 0 rgba(132, 135, 155, 0.08),
@@ -237,6 +238,115 @@
           margin-right: 4px;
           width: 17.5px;
         }
+      }
+    }
+  }
+  .pmdDownloadGroupItem {
+    height: auto;
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0 3px 6px -4px rgba(132, 135, 155, 0.12),
+      0 6px 16px 0 rgba(132, 135, 155, 0.08),
+      0 9px 28px 8px rgba(132, 135, 155, 0.05);
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+    align-items: center;
+    flex-direction: column;
+    .top {
+      width: 100%;
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 18px;
+      .name {
+        font-weight: 500;
+        font-size: 18px;
+        color: rgba(26, 27, 37, 0.88);
+      }
+      .selectWrap {
+        .select {
+          :global {
+            .ant-select {
+              color: rgba(26, 27, 37, 0.65);
+            }
+            .ant-select-selector {
+              .ant-select-selection-item {
+                font-weight: 400;
+                font-size: 14px;
+                color: rgba(26, 27, 37, 0.65);
+                text-align: center;
+                height: 34px;
+              }
+            }
+          }
+        }
+      }
+    }
+    .bottom {
+      width: 100%;
+      .button {
+        width: 100%;
+        height: 34px;
+        border: 1px solid rgba(26, 27, 37, 0.15);
+        border-radius: 4px;
+        font-weight: 500;
+        font-size: 14px;
+        color: rgba(26, 27, 37, 0.88);
+        &:hover {
+          border-color: #1650ff;
+          color: #1650ff;
+        }
+      }
+    }
+  }
+  .pwdDownloadGroupCopyItem {
+    height: auto;
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0 3px 6px -4px rgba(132, 135, 155, 0.12),
+      0 6px 16px 0 rgba(132, 135, 155, 0.08),
+      0 9px 28px 8px rgba(132, 135, 155, 0.05);
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+    align-items: center;
+    flex-direction: column;
+    .top {
+      font-weight: 500;
+      font-size: 18px;
+      color: rgba(26, 27, 37, 0.88);
+      width: 100%;
+      text-align: left;
+      margin-bottom: 12px;
+    }
+    .middle {
+      width: 100%;
+      font-weight: 400;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-size: 12px;
+      color: rgba(26, 27, 37, 0.65);
+      text-align: left;
+      margin-bottom: 12px;
+    }
+    .bottom {
+      border: 1px solid rgba(26, 27, 37, 0.15);
+      border-radius: 4px;
+      width: 100%;
+      cursor: pointer;
+      text-align: center;
+      height: 34px;
+      .buttonText {
+        font-size: 14px;
+        line-height: 34px;
+      }
+      &:hover {
+        border-color: #1650ff;
+        color: #1650ff;
       }
     }
   }
