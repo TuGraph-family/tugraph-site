@@ -211,7 +211,12 @@ export default function DownloadPage() {
     items = null,
   }: DownloadItem) => {
     return (
-      <div className={styles.downloadGroup}>
+      <div
+        className={styles.downloadGroup}
+        style={{
+          padding: isWide ? '0' : '0 24px',
+        }}
+      >
         {title && (
           <Row>
             <Col span={24} className={styles.downloadGroupTitle}>
@@ -230,7 +235,12 @@ export default function DownloadPage() {
   };
 
   const content = (
-    <div className={styles.containerWrapper}>
+    <div
+      className={styles.containerWrapper}
+      style={{
+        padding: isWide ? '0' : 'padding: 0 32px 16px 32px;',
+      }}
+    >
       <DownloadGroup
         title="TuGraph-DB"
         subTitle={intl.formatMessage({ id: 'download.title0' })}
