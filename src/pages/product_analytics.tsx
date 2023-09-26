@@ -16,12 +16,7 @@ const Root = () => {
   const lang = getLocale();
   const isWide = useMedia('(min-width: 767.99px)', true);
   const styles = lang === 'en' || lang === 'en-US' ? stylesEn : stylesZh;
-  const MOBILE_HEIGHT = isBrowser()
-    ? 266 * (document.body.clientWidth / 750)
-    : 266;
-  const SWIPE_PADDING = isBrowser()
-    ? (40 * document.body.clientWidth) / 750
-    : 40;
+
   const content = (
     <div className={styles.containerWrapper}>
       <Helmet>
@@ -96,7 +91,7 @@ const Root = () => {
     <LayoutTemplate
       bannerInfo={{
         bgIconUrl:
-          'https://mdn.alipayobjects.com/mdn/huamei_qcdryc/afts/img/A*ga9NQ6eVsx4AAAAAAAAAAAAADgOBAQ',
+          'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*o1FHQ4FhcuEAAAAAAAAAAAAADgOBAQ/original',
         slogan: intl.formatMessage({ id: 'product_analytics.slogan' }),
         description: intl.formatMessage({
           id: 'product_analytics.description',
