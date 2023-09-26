@@ -16,6 +16,7 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
   const intl = useIntl();
   const { pathname } = useLocation();
   const lang = getLocale();
+  const isZH = lang === 'zh-CN';
   const isWide = useMedia('(min-width: 767.99px)', true);
   const [popupMenuVisible, setPopupMenuVisible] = useState(false);
 
@@ -33,7 +34,7 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
 
   const getActiveKey = () => {
     const key = pathname.replace(/\//g, '');
-    return [key];
+    return [key || 'home'];
   };
   const searchInput = () => {
     return (
@@ -133,7 +134,7 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
     children: [
       {
         label: <div>{intl.formatMessage({ id: 'header.product.title' })}</div>,
-        key: '',
+        key: 'productTitle',
       },
       {
         label: (
@@ -153,7 +154,7 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
             </a>
           </>
         ),
-        key: 'product/analytics',
+        key: 'productAnalytics',
       },
       {
         label: (
@@ -161,11 +162,11 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
             {intl.formatMessage({ id: 'header.product.desc3' })}
           </a>
         ),
-        key: 'product/learn',
+        key: 'productLearn',
       },
       {
         label: <div>{intl.formatMessage({ id: 'header.product.title1' })}</div>,
-        key: '',
+        key: 'productTitle1',
       },
       {
         label: (
@@ -219,7 +220,7 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
           {intl.formatMessage({ id: 'header.home' })}
         </a>
       ),
-      key: '',
+      key: 'home',
     },
     { ...(isWide ? pcProductMenu : mobileProductMenu) },
     {
@@ -239,17 +240,66 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
       key: 'ecosystem',
     },
     {
-      label: intl.formatMessage({ id: 'header.assets' }),
-      key: 'assets',
+      label: intl.formatMessage({ id: 'header.doc' }),
+      key: 'documentation',
       children: [
         {
           label: (
-            <a href="/doc" className={styles.menuChildren}>
-              {intl.formatMessage({ id: 'header.doc' })}
+            <a
+              href={
+                isZH
+                  ? 'https://tugraph-db.readthedocs.io/zh_CN/latest/1.guide.html'
+                  : 'https://tugraph-db.readthedocs.io/en/latest/1.guide.html'
+              }
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.menuChildren}
+            >
+              {intl.formatMessage({ id: 'header.product.desc' })}
             </a>
           ),
-          key: 'doc',
+          key: 'documentationDb',
         },
+        {
+          label: (
+            <a
+              href={
+                isZH
+                  ? 'https://tugraph-analytics.readthedocs.io/en/latest/docs-cn/introduction/'
+                  : 'https://tugraph-analytics.readthedocs.io/en/latest/'
+              }
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.menuChildren}
+            >
+              {intl.formatMessage({ id: 'header.product.desc2' })}
+            </a>
+          ),
+          key: 'documentationAnalytics',
+        },
+        {
+          label: (
+            <a
+              href={
+                isZH
+                  ? 'https://tugraph-db.readthedocs.io/zh_CN/latest/5.developer-manual/6.interface/5.learn/index.html'
+                  : 'https://tugraph-db.readthedocs.io/en/latest/5.developer-manual/6.interface/5.learn/index.html'
+              }
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.menuChildren}
+            >
+              {intl.formatMessage({ id: 'header.product.desc3' })}
+            </a>
+          ),
+          key: 'documentationLearn',
+        },
+      ],
+    },
+    {
+      label: intl.formatMessage({ id: 'header.assets' }),
+      key: 'assets',
+      children: [
         {
           label: (
             <a href="/blog" className={styles.menuChildren}>
