@@ -206,7 +206,7 @@ export default function DownloadPage() {
   };
 
   const DownloadGroup = ({
-    title = 'TuGraph-DB',
+    title = 'TuGraph DB',
     subTitle = 'TuGraph社区版下载',
     items = null,
   }: DownloadItem) => {
@@ -242,7 +242,7 @@ export default function DownloadPage() {
       }}
     >
       <DownloadGroup
-        title="TuGraph-DB"
+        title="TuGraph DB"
         subTitle={intl.formatMessage({ id: 'download.title0' })}
         items={
           <>
@@ -360,7 +360,7 @@ export default function DownloadPage() {
         bgIconUrl:
           'https://mdn.alipayobjects.com/mdn/huamei_qcdryc/afts/img/A*QaKQRqje18MAAAAAAAAAAAAADgOBAQ',
         slogan: intl.formatMessage({ id: 'download.banner.slogan' }),
-        description: intl.formatMessage({ id: 'download.banner.description' }),
+        description: '',
       }}
       content={content}
     />
