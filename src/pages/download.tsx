@@ -23,7 +23,7 @@ export default function DownloadPage() {
       <div className={styles.downloadGroupItem}>
         <div className={styles.downloadGroupItemInfo}>
           <div className={styles.downloadGroupItemName}>{name}</div>
-          {version && version.list.length && (
+          {version && version?.list?.length ? (
             <div className={styles.downloadGroupItemVerison}>
               <Select
                 value={key}
@@ -38,7 +38,7 @@ export default function DownloadPage() {
                 ))}
               </Select>
             </div>
-          )}
+          ) : null}
         </div>
         <div className={styles.downloadGroupItemAction}>
           <Button
