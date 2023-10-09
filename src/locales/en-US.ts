@@ -29,9 +29,9 @@ export default {
     'TuGraph is a high-performance graph database jointly developed by Ant Group and Tsinghua University. It has been applied to Ant Group’s trillion-scale business, and has achieved the top-ranking performance in LDBC-SNB, a globally-recognized benchmark test, surpassing competing solutions.',
   'home.banner.quickStart': 'Quick Start',
   'home.notice0.tag': 'BENCHMARK',
-  'home.notice0.title': 'TuGraph Ranks World No.1 in LDBC SNB Test.',
+  'home.notice0.title': 'TuGraph Named a Leader in the IDC MarketScape',
   'home.notice0.desc':
-    'LDBC announced the latest test results of the LDBC Social Network Benchmark, and TuGraph once again broke the official audit record.',
+    'TuGraph has been named as a Leader in the IDC MarketScape: China Graph Database 2023 Vendor Assessment.',
   'home.notice1.tag': 'NEWS',
   'home.notice1.title': 'Leading the Project of LDBC Finbench.',
   'home.notice1.desc':

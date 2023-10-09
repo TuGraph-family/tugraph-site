@@ -316,7 +316,7 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
               rel="noopener noreferrer"
               className={styles.menuChildren}
             >
-              Demo
+              {isZH ? '视频' : 'Video'}
             </a>
           ),
           key: 'demo',

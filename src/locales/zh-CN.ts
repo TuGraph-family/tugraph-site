@@ -11,7 +11,7 @@ export default {
   'header.product.title': '社区版',
   'header.product.title1': '企业版',
   'header.product.desc': 'TuGraph DB Lite 单机版图数据库',
-  'header.product.desc1': 'TuGraph 图数据管理平台概览',
+  'header.product.desc1': 'TuGraph 企业版概览',
   'header.product.desc2': 'TuGraph Analytics 实时图计算引擎',
   'header.product.desc3': 'TuGraph Learn 图学习引擎',
   'footer.product': '产品',
@@ -32,9 +32,9 @@ export default {
     '高性能图数据库TuGraph由蚂蚁集团和清华大学共同研发，历经蚂蚁实际业务场景锤炼，在国际图数据库基准测试中获得性能第一。',
   'home.banner.quickStart': '快速上手',
   'home.notice0.tag': '测试报告',
-  'home.notice0.title': '蚂蚁图数据库再获 LDBC 权威测试世界第一',
+  'home.notice0.title': '蚂蚁集团TuGraph跻身中国图数据库市场“领导者”象限',
   'home.notice0.desc':
-    '国际权威图数据库测试机构LDBC公布了LDBC SNB最新结果，TuGraph再次打破官方审计测试纪录。',
+    'IDC发布了最新的市场研究报告《IDC MarketScape：中国图数据库市场厂商评估，2023》。蚂蚁集团自研的企业级图数据管理平台TuGraph跻身"领导者"象限。',
   'home.notice1.tag': '行业资讯',
   'home.notice1.title': '领导立项全球金融图数据库测试基准',
   'home.notice1.desc':
@@ -180,8 +180,8 @@ export default {
     'TuGraph数据库原生支持，使用TuGraph数据库进行大规模高性能的图学习模型的开发、训练和推理',
   'product_analytics.description':
     '云原生、分布式、流批图计算能力，图表融合处理',
-  'product.slogan': '极速的开源图数据库TuGraph',
-  'product_learn.slogan': '高性能TuGraph图学习系统',
+  'product.slogan': '极速的开源图数据库',
+  'product_learn.slogan': '高性能图学习系统',
   'product_analytics.slogan': '分布式实时图计算引擎',
   'product.overview.slogan': '企业级图数据管理平台',
   'product.video0': '快速上手演示',
@@ -226,10 +226,10 @@ export default {
     '支持分布式扩展，千万顶点/秒的高吞吐率、低延迟响应，在蚂蚁集团内部已实现数十万核的在线集群。支持多副本、同城多机房、异地多机房、三地五中心等部署形态。',
   'product.feature.overview.introduction0':
     'TuGraph图数据库由蚂蚁集团与清华大学联合研发，构建了一套包含图存储、图计算、图学习、图研发平台的完善的图技术体系，拥有业界领先规模的图集群，解决了图数据分析面临的大数据量、高吞吐率和低延迟等重大挑战，是蚂蚁集团金融风控能力的重要基础设施，显著提升了欺诈洗钱等金融风险的实时识别能力和审理分析效率，并面向金融、工业、政务服务等行业客户。TuGraph源于蚂蚁超过300个业务场景的实践，为业务人员提供图探索、图研发、图服务、图运维的完整图研发链路；具有分布式、多中心、金融级高可用性架构，经受“双十一”等活动的极致系统考验，轻松应对海量业务数据和并发。',
-  'product.ecosystem': 'TuGraph 产品架构',
+  'product.ecosystem': '产品架构',
   'product.overview.ecosystem': '企业版产品架构',
   'product.overview.desc': '业界实践的企业级平台，创新式的流式图计算',
-  'demo.title': ' TuGraph 案例',
+  'demo.title': ' 案例',
   'demo.description':
     '图数据库,图计算,图平台,图数据分析, 分布式数据库, Graph,大数据分析,关联关系分析,大数据分析,反洗钱,反欺诈,金融风控,物联网, 设备管理, 国家电网',
   'demo.banner.slogan': '数千倍效果提升',
