@@ -364,7 +364,7 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
       key: 'download',
     },
     {
-      label: lang === 'zh-CN' ? '简体中文' : 'ENGLISH',
+      label: lang === 'zh-CN' ? '中' : 'EN',
       key: 'language',
       icon: (
         <img
