@@ -16,10 +16,6 @@ export const assetsList = [
   //   ],
   // },
   {
-    name: 'Latest Version',
-    assets: [],
-  },
-  {
     name: 'CentOS',
     assets: [
       {
