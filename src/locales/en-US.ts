@@ -4,7 +4,7 @@ export default {
   'header.case': 'USE CASES',
   'header.ecosystem': 'PARTNERS',
   'header.assets': 'RESOURCES',
-  'header.doc': 'DOC',
+  'header.doc': 'DOCS',
   'header.blog': 'Blog',
   'header.community': 'COMMUNITY',
   'header.download': ' DOWNLOAD',
