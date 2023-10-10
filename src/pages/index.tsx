@@ -114,7 +114,7 @@ export default function IndexPage() {
           </div>
           <a
             className={styles.learnMore}
-            href="https://mp.weixin.qq.com/s/Lug9JjM-W1VAKNEZSyz57Q"
+            href={`/blog?id=1000`}
             target="_blank"
             rel="noreferrer"
           >
@@ -173,7 +173,7 @@ export default function IndexPage() {
           <div className={styles.desc}>
             {intl.formatMessage({ id: 'home.notice0.desc' })}
           </div>
-          <a className={styles.learnMore} href="/blog?id=0" target="_blank">
+          <a className={styles.learnMore} href="/blog?id=1000" target="_blank">
             {intl.formatMessage({ id: 'home.knowMore' })}
             <ArrowRightOutlined />
           </a>

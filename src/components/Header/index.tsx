@@ -51,8 +51,256 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
       { path: '/overview', key: 'overview' },
       { path: '/platform', key: 'platform' },
       { path: '/db', key: 'db' },
+      { path: '/docs', key: 'docs' },
+      { path: '/assets', key: 'assets' },
     ];
     return productKeys.find((item) => item.path === key)?.key;
+  };
+  const pcAssetsMenu: MenuItem = {
+    label: (
+      <Popover
+        placement="bottom"
+        content={
+          <div className={styles.popoverContent}>
+            <div>
+              <div
+                className={styles.popoverContainer}
+                onClick={() => {
+                  history.push('/blog');
+                }}
+              >
+                {intl.formatMessage({ id: 'header.blog' })}
+              </div>
+              <div
+                className={styles.popoverContainer}
+                onClick={() => {
+                  window.open(
+                    isZH
+                      ? 'https://space.bilibili.com/1196053065/'
+                      : 'https://space.bilibili.com/1196053065/',
+                  );
+                }}
+              >
+                {isZH ? '视频' : 'Video'}
+              </div>
+            </div>
+            <div></div>
+          </div>
+        }
+      >
+        <a rel="noopener noreferrer">
+          {intl.formatMessage({ id: 'header.assets' })}
+        </a>
+      </Popover>
+    ),
+    key: menuKey(pathname),
+  };
+  const mobileAssetsMenu: MenuItem = {
+    label: intl.formatMessage({ id: 'header.assets' }),
+    key: 'assets',
+    children: [
+      {
+        label: (
+          <>
+            <a href={'/blog'} rel="noopener noreferrer">
+              {intl.formatMessage({ id: 'header.blog' })}
+            </a>
+          </>
+        ),
+        key: 'blog',
+      },
+      {
+        label: (
+          <>
+            <a
+              href={
+                isZH
+                  ? 'https://space.bilibili.com/1196053065/'
+                  : 'https://space.bilibili.com/1196053065/'
+              }
+              rel="noopener noreferrer"
+            >
+              {isZH ? '视频' : 'Video'}
+            </a>
+          </>
+        ),
+        key: 'video',
+      },
+    ],
+  };
+  const pcCommunityMenu: MenuItem = {
+    label: (
+      <Popover
+        placement="bottom"
+        content={
+          <div className={styles.popoverContent}>
+            <div>
+              <div
+                className={styles.popoverContainer}
+                onClick={() => {
+                  window.open('https://github.com/TuGraph-family');
+                }}
+              >
+                Github
+              </div>
+              <div
+                className={styles.popoverContainer}
+                onClick={() => {
+                  window.open('https://gitee.com/tugraph');
+                }}
+              >
+                Gitee
+              </div>
+            </div>
+            <div></div>
+          </div>
+        }
+      >
+        <a rel="noopener noreferrer">
+          {intl.formatMessage({ id: 'header.community' })}
+        </a>
+      </Popover>
+    ),
+    key: menuKey(pathname),
+  };
+  const mobileCommunityMenu: MenuItem = {
+    label: intl.formatMessage({ id: 'header.community' }),
+    key: 'community',
+    children: [
+      {
+        label: (
+          <>
+            <a
+              href={'https://github.com/TuGraph-family'}
+              rel="noopener noreferrer"
+            >
+              Github
+            </a>
+          </>
+        ),
+        key: 'github',
+      },
+      {
+        label: (
+          <>
+            <a href={'https://gitee.com/tugraph'} rel="noopener noreferrer">
+              Gitee
+            </a>
+          </>
+        ),
+        key: 'gitee',
+      },
+    ],
+  };
+  const pcDocsMenu: MenuItem = {
+    label: (
+      <Popover
+        placement="bottom"
+        content={
+          <div className={styles.popoverContent}>
+            <div>
+              <div
+                className={styles.popoverContainer}
+                onClick={() => {
+                  window.open(
+                    isZH
+                      ? 'https://tugraph-db.readthedocs.io/zh_CN/latest/1.guide.html'
+                      : 'https://tugraph-db.readthedocs.io/en/latest/1.guide.html',
+                  );
+                }}
+              >
+                {intl.formatMessage({ id: 'header.product.desc' })}
+              </div>
+              <div
+                className={styles.popoverContainer}
+                onClick={() => {
+                  window.open(
+                    isZH
+                      ? 'https://tugraph-analytics.readthedocs.io/en/latest/docs-cn/introduction/'
+                      : 'https://tugraph-analytics.readthedocs.io/en/latest/',
+                  );
+                }}
+              >
+                {intl.formatMessage({ id: 'header.product.desc2' })}
+              </div>
+              <div
+                className={styles.popoverContainer}
+                onClick={() => {
+                  window.open(
+                    isZH
+                      ? 'https://tugraph-db.readthedocs.io/zh_CN/latest/5.developer-manual/6.interface/5.learn/index.html'
+                      : 'https://tugraph-db.readthedocs.io/en/latest/5.developer-manual/6.interface/5.learn/index.html',
+                  );
+                }}
+              >
+                {intl.formatMessage({ id: 'header.product.desc3' })}
+              </div>
+            </div>
+            <div></div>
+          </div>
+        }
+      >
+        <a rel="noopener noreferrer">
+          {intl.formatMessage({ id: 'header.doc' })}
+        </a>
+      </Popover>
+    ),
+    key: menuKey(pathname),
+  };
+  const mobileDocsMenu: MenuItem = {
+    label: intl.formatMessage({ id: 'header.doc' }),
+    key: 'docs',
+    children: [
+      {
+        label: (
+          <>
+            <a
+              href={
+                isZH
+                  ? 'https://tugraph-db.readthedocs.io/zh_CN/latest/1.guide.html'
+                  : 'https://tugraph-db.readthedocs.io/en/latest/1.guide.html'
+              }
+              rel="noopener noreferrer"
+            >
+              {intl.formatMessage({ id: 'header.product.desc' })}
+            </a>
+          </>
+        ),
+        key: 'product',
+      },
+      {
+        label: (
+          <>
+            <a
+              href={
+                isZH
+                  ? 'https://tugraph-analytics.readthedocs.io/en/latest/docs-cn/introduction/'
+                  : 'https://tugraph-analytics.readthedocs.io/en/latest/'
+              }
+              rel="noopener noreferrer"
+            >
+              {intl.formatMessage({ id: 'header.product.desc2' })}
+            </a>
+          </>
+        ),
+        key: 'productAnalytics',
+      },
+      {
+        label: (
+          <a
+            href={
+              isZH
+                ? 'https://tugraph-db.readthedocs.io/zh_CN/latest/5.developer-manual/6.interface/5.learn/index.html'
+                : 'https://tugraph-db.readthedocs.io/en/latest/5.developer-manual/6.interface/5.learn/index.html'
+            }
+            rel="noopener noreferrer"
+          >
+            {intl.formatMessage({ id: 'header.product.desc3' })}
+          </a>
+        ),
+        key: 'productLearn',
+      },
+    ],
   };
   const pcProductMenu: MenuItem = {
     label: (
@@ -239,122 +487,9 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
       ),
       key: 'ecosystem',
     },
-    {
-      label: intl.formatMessage({ id: 'header.doc' }),
-      key: 'documentation',
-      children: [
-        {
-          label: (
-            <a
-              href={
-                isZH
-                  ? 'https://tugraph-db.readthedocs.io/zh_CN/latest/1.guide.html'
-                  : 'https://tugraph-db.readthedocs.io/en/latest/1.guide.html'
-              }
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.menuChildren}
-            >
-              {intl.formatMessage({ id: 'header.product.desc' })}
-            </a>
-          ),
-          key: 'documentationDb',
-        },
-        {
-          label: (
-            <a
-              href={
-                isZH
-                  ? 'https://tugraph-analytics.readthedocs.io/en/latest/docs-cn/introduction/'
-                  : 'https://tugraph-analytics.readthedocs.io/en/latest/'
-              }
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.menuChildren}
-            >
-              {intl.formatMessage({ id: 'header.product.desc2' })}
-            </a>
-          ),
-          key: 'documentationAnalytics',
-        },
-        {
-          label: (
-            <a
-              href={
-                isZH
-                  ? 'https://tugraph-db.readthedocs.io/zh_CN/latest/5.developer-manual/6.interface/5.learn/index.html'
-                  : 'https://tugraph-db.readthedocs.io/en/latest/5.developer-manual/6.interface/5.learn/index.html'
-              }
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.menuChildren}
-            >
-              {intl.formatMessage({ id: 'header.product.desc3' })}
-            </a>
-          ),
-          key: 'documentationLearn',
-        },
-      ],
-    },
-    {
-      label: intl.formatMessage({ id: 'header.assets' }),
-      key: 'assets',
-      children: [
-        {
-          label: (
-            <a href="/blog" className={styles.menuChildren}>
-              {intl.formatMessage({ id: 'header.blog' })}
-            </a>
-          ),
-          key: 'blog',
-        },
-        {
-          label: (
-            <a
-              href="https://space.bilibili.com/1196053065/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.menuChildren}
-            >
-              {isZH ? '视频' : 'Video'}
-            </a>
-          ),
-          key: 'demo',
-        },
-      ],
-    },
-    {
-      label: intl.formatMessage({ id: 'header.community' }),
-      key: 'community',
-      children: [
-        {
-          label: (
-            <a
-              href="https://github.com/TuGraph-family"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.menuChildren}
-            >
-              GitHub
-            </a>
-          ),
-          key: 'GitHub',
-        },
-        {
-          label: (
-            <a
-              href="https://gitee.com/tugraph"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.menuChildren}
-            >
-              Gitee
-            </a>
-          ),
-          key: 'Gitee',
-        },
-      ],
-    },
+    { ...(isWide ? pcDocsMenu : mobileDocsMenu) },
+    { ...(isWide ? pcAssetsMenu : mobileAssetsMenu) },
+    { ...(isWide ? pcCommunityMenu : mobileCommunityMenu) },
     {
       label: (
         <a href="/download" rel="noopener noreferrer">
