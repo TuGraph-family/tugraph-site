@@ -1,13 +1,13 @@
-import {
-  getBannerCnContentList,
-  getBannerEnContentList,
-} from '@/data/bannerContent';
 import { CloseOutlined, LeftOutlined, RightOutlined } from '@ant-design/icons';
 import { Carousel, Drawer, Modal, Tooltip } from 'antd';
 import { useEffect, useState } from 'react';
 import { useMedia } from 'react-use';
 import { getLocale, history, useIntl } from 'umi';
 import styles from './index.less';
+import {
+  getBannerCnContentList,
+  getBannerEnContentList,
+} from '@/data/bannerContent';
 const AnnouncementBanner = () => {
   const [showBottomDrawer, setShowBottomDrawer] = useState(false);
   const [showBottomModal, setShowBottomModal] = useState(true);
@@ -82,7 +82,9 @@ const AnnouncementBanner = () => {
                 onClick={() => {
                   setShowBottomDrawer(false);
                   sessionStorage.setItem('isBannerShow', 'false');
-                  history.push(`/blog?id=${lang === 'zh-CN' ? '15' : '11'}`);
+                  history.push(
+                    `/blog?id=${lang === 'zh-CN' ? '1000' : '1000'}`,
+                  );
                 }}
               />
             </div>
