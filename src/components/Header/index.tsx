@@ -3,7 +3,7 @@ import { CloseOutlined, RightOutlined, UpOutlined } from '@ant-design/icons';
 import { DocSearch } from '@docsearch/react';
 import { Drawer, Menu, Popover, Space } from 'antd';
 import cx from 'classnames';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useMedia } from 'react-use';
 import { getLocale, history, useIntl, useLocation } from 'umi';
 
@@ -53,6 +53,8 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
       { path: '/db', key: 'db' },
       { path: '/docs', key: 'docs' },
       { path: '/assets', key: 'assets' },
+      { path: '/community', key: 'community' },
+      { path: '/blog', key: 'blog' },
     ];
     return productKeys.find((item) => item.path === key)?.key;
   };
@@ -60,6 +62,7 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
     label: (
       <Popover
         placement="bottom"
+        overlayClassName={styles?.popoverMin}
         content={
           <div className={styles.popoverContent}>
             <div>
@@ -93,7 +96,7 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
         </a>
       </Popover>
     ),
-    key: menuKey(pathname),
+    key: 'assets',
   };
   const mobileAssetsMenu: MenuItem = {
     label: intl.formatMessage({ id: 'header.assets' }),
@@ -132,6 +135,7 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
     label: (
       <Popover
         placement="bottom"
+        overlayClassName={styles?.popoverMin}
         content={
           <div className={styles.popoverContent}>
             <div>
@@ -161,7 +165,7 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
         </a>
       </Popover>
     ),
-    key: menuKey(pathname),
+    key: 'community',
   };
   const mobileCommunityMenu: MenuItem = {
     label: intl.formatMessage({ id: 'header.community' }),
@@ -196,6 +200,7 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
     label: (
       <Popover
         placement="bottom"
+        overlayClassName={styles?.popoverMin}
         content={
           <div className={styles.popoverContent}>
             <div>
@@ -245,7 +250,7 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
         </a>
       </Popover>
     ),
-    key: menuKey(pathname),
+    key: 'docs',
   };
   const mobileDocsMenu: MenuItem = {
     label: intl.formatMessage({ id: 'header.doc' }),
@@ -306,6 +311,7 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
     label: (
       <Popover
         placement="bottom"
+        overlayClassName={styles?.popoverMin}
         content={
           <div className={styles.popoverContent}>
             <div>
@@ -590,7 +596,11 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
       </Drawer>
     </>
   );
-
+  useEffect(() => {
+    if (pathname && document) {
+      document.documentElement.scrollTop = 0;
+    }
+  }, [pathname]);
   return (
     <div className={cx(styles.header, isStick ? styles.sticky : null)}>
       {isWide ? pc : mobile}
