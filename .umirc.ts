@@ -11,12 +11,12 @@ export default defineConfig({
     { path: '/', component: '@/pages/index' },
     { path: '/product', component: '@/pages/product', title: 'product.title' },
     {
-      path: '/product/learn',
+      path: '/learn',
       component: '@/pages/product_learn',
       title: 'product.title',
     },
     {
-      path: '/product/analytics',
+      path: '/analytics',
       component: '@/pages/product_analytics',
       title: 'product.title',
     },
@@ -94,7 +94,7 @@ gtag('config', 'AW-11092859162');`,
     baseNavigator: false,
     baseSeparator: '-',
     title: true,
-    default: 'en-US',
+    default: 'zh-CN',
     useLocalStorage: false,
   },
 });
