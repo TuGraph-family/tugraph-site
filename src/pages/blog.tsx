@@ -4,15 +4,14 @@ import { useIntl, history, useLocation, getLocale } from 'umi';
 import { Spin, Pagination, Tabs, Space, Button } from 'antd';
 import { Layout } from 'antd';
 import cx from 'classnames';
+import { useMedia } from 'react-use';
+import styles from './blog.less';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { getZHBlogs } from '@/data/blog';
 import { getENBlogs } from '@/data/blog_en';
 import { LayoutTemplate } from '@/components/LayoutTemplate';
 import { BlogItem } from '@/interface';
-import { useMedia } from 'react-use';
-
-import styles from './blog.less';
 
 const { Content } = Layout;
 
@@ -22,7 +21,6 @@ export default function BlogPage() {
   const intl = useIntl();
   const location = useLocation();
   const lang = getLocale();
-  console.log(lang);
   const getBlogs = lang === 'zh-CN' ? getZHBlogs : getENBlogs;
   const isWide = useMedia('(min-width: 767.99px)', true);
   const [type, setType] = React.useState<string>('all');
@@ -243,7 +241,7 @@ export default function BlogPage() {
 
           <Layout>
             <Content className={styles.blogContainerWrapper}>
-              <Spin spinning={!!!blogDetail}>
+              <Spin spinning={!blogDetail}>
                 <div className={styles.blogContainer}>
                   <HTMLRenderer html={blogDetail} />
                 </div>

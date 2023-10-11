@@ -284,7 +284,7 @@ export default function DownloadPage() {
           </>
         }
       />
-      <DownloadGroup
+      {/* <DownloadGroup
         title=""
         subTitle={intl.formatMessage({ id: 'download.title1' })}
         items={
@@ -309,7 +309,7 @@ export default function DownloadPage() {
             })}
           </>
         }
-      />
+      /> */}
       <DownloadGroup
         title="TuGraph Analytics"
         subTitle={intl.formatMessage({ id: 'download.title3' })}

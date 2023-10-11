@@ -140,9 +140,9 @@ export const blogs = [
     title: 'TuGraph Named a Leader in the IDC MarketScape',
     desc: 'TuGraph has been named as a Leader in the IDC MarketScape: China Graph Database 2023 Vendor Assessment.',
     type: 'news',
-    updateDate: '2022-07-17',
+    updateDate: '2023-07-17',
     content: idc.html,
-    id: 1001,
+    id: 1000,
   },
 ];
 
