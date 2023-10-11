@@ -51,12 +51,13 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
       { path: '/overview', key: 'overview' },
       { path: '/platform', key: 'platform' },
       { path: '/db', key: 'db' },
-      { path: '/docs', key: 'docs' },
-      { path: '/assets', key: 'assets' },
-      { path: '/community', key: 'community' },
-      { path: '/blog', key: 'blog' },
+      { path: '/learn', key: 'learn' },
+      { path: '/analytics', key: 'analytics' },
     ];
     return productKeys.find((item) => item.path === key)?.key;
+  };
+  const menuKeyIncludes = (key: string, value: any[]) => {
+    return value.find((item) => item.path === key)?.key;
   };
   const pcAssetsMenu: MenuItem = {
     label: (
@@ -96,7 +97,16 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
         </a>
       </Popover>
     ),
-    key: 'assets',
+    key: menuKeyIncludes(pathname, [
+      {
+        path: '/blog',
+        key: 'blog',
+      },
+      {
+        path: '/video',
+        key: 'video',
+      },
+    ]),
   };
   const mobileAssetsMenu: MenuItem = {
     label: intl.formatMessage({ id: 'header.assets' }),
@@ -329,7 +339,7 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
               <div
                 className={styles.popoverContainer}
                 onClick={() => {
-                  history.push('/product/analytics');
+                  history.push('analytics');
                 }}
               >
                 {intl.formatMessage({ id: 'header.product.desc2' })}
@@ -337,7 +347,7 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
               <div
                 className={styles.popoverContainer}
                 onClick={() => {
-                  history.push('/product/learn');
+                  history.push('learn');
                 }}
               >
                 {intl.formatMessage({ id: 'header.product.desc3' })}
@@ -384,7 +394,7 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
   };
   const mobileProductMenu: MenuItem = {
     label: intl.formatMessage({ id: 'header.product' }),
-    key: 'produce',
+    key: menuKey(pathname),
     children: [
       {
         label: <div>{intl.formatMessage({ id: 'header.product.title' })}</div>,
@@ -403,20 +413,20 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
       {
         label: (
           <>
-            <a href="/product/analytics" rel="noopener noreferrer">
+            <a href="/analytics" rel="noopener noreferrer">
               {intl.formatMessage({ id: 'header.product.desc2' })}
             </a>
           </>
         ),
-        key: 'productAnalytics',
+        key: 'analytics',
       },
       {
         label: (
-          <a href="/product/learn" rel="noopener noreferrer">
+          <a href="/learn" rel="noopener noreferrer">
             {intl.formatMessage({ id: 'header.product.desc3' })}
           </a>
         ),
-        key: 'productLearn',
+        key: 'learn',
       },
       {
         label: <div>{intl.formatMessage({ id: 'header.product.title1' })}</div>,
