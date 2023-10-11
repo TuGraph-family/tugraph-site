@@ -219,7 +219,7 @@ export const blogs = [
     title: '蚂蚁集团TuGraph跻身中国图数据库市场“领导者”象限',
     desc: 'IDC发布了最新的市场研究报告《IDC MarketScape：中国图数据库市场厂商评估，2023》。蚂蚁集团自研的企业级图数据管理平台TuGraph跻身"领导者"象限。',
     type: 'news',
-    updateDate: '2022-07-17',
+    updateDate: '2023-07-17',
     id: 1000,
     content: idc?.html,
   },
