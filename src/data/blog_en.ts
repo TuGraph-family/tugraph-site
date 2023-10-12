@@ -13,6 +13,7 @@ import md10 from '@/doc/en/10.md';
 import md11 from '@/doc/en/11.md';
 import md12 from '@/doc/en/12.md';
 import md999 from '@/doc/en/999.md';
+import idc from '@/doc/en/IDC.md';
 
 export const blogs = [
   {
@@ -133,6 +134,15 @@ export const blogs = [
     updateDate: '2023-08-22',
     type: 'competition',
     content: md999?.html,
+  },
+  {
+    img: 'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*sW1XTJ-Xu1AAAAAAAAAAAAAADgOBAQ/original',
+    title: 'TuGraph Named a Leader in the IDC MarketScape',
+    desc: 'TuGraph has been named as a Leader in the IDC MarketScape: China Graph Database 2023 Vendor Assessment.',
+    type: 'news',
+    updateDate: '2023-07-17',
+    content: idc.html,
+    id: 1000,
   },
 ];
 

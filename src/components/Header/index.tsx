@@ -3,19 +3,20 @@ import { CloseOutlined, RightOutlined, UpOutlined } from '@ant-design/icons';
 import { DocSearch } from '@docsearch/react';
 import { Drawer, Menu, Popover, Space } from 'antd';
 import cx from 'classnames';
-import { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useMedia } from 'react-use';
 import { getLocale, history, useIntl, useLocation } from 'umi';
 
-import { HOST_EN, HOST_ZH, searchParamsEn, searchParamsZh } from '@/constant';
 import '@docsearch/css';
 import AnnouncementBanner from '../AnnouncementBanner';
 import styles from './index.less';
+import { HOST_EN, HOST_ZH, searchParamsEn, searchParamsZh } from '@/constant';
 
 export const Header = ({ isStick }: { isStick?: boolean }) => {
   const intl = useIntl();
   const { pathname } = useLocation();
   const lang = getLocale();
+  const isZH = lang === 'zh-CN';
   const isWide = useMedia('(min-width: 767.99px)', true);
   const [popupMenuVisible, setPopupMenuVisible] = useState(false);
 
@@ -33,7 +34,7 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
 
   const getActiveKey = () => {
     const key = pathname.replace(/\//g, '');
-    return [key];
+    return [key || 'home'];
   };
   const searchInput = () => {
     return (
@@ -50,13 +51,277 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
       { path: '/overview', key: 'overview' },
       { path: '/platform', key: 'platform' },
       { path: '/db', key: 'db' },
+      { path: '/learn', key: 'learn' },
+      { path: '/analytics', key: 'analytics' },
     ];
     return productKeys.find((item) => item.path === key)?.key;
+  };
+  const menuKeyIncludes = (key: string, value: any[]) => {
+    return value.find((item) => item.path === key)?.key;
+  };
+  const pcAssetsMenu: MenuItem = {
+    label: (
+      <Popover
+        placement="bottom"
+        overlayClassName={styles?.popoverMin}
+        content={
+          <div className={styles.popoverContent}>
+            <div>
+              <div
+                className={styles.popoverContainer}
+                onClick={() => {
+                  history.push('/blog');
+                }}
+              >
+                {intl.formatMessage({ id: 'header.blog' })}
+              </div>
+              <div
+                className={styles.popoverContainer}
+                onClick={() => {
+                  window.open(
+                    isZH
+                      ? 'https://space.bilibili.com/1196053065/'
+                      : 'https://space.bilibili.com/1196053065/',
+                  );
+                }}
+              >
+                {isZH ? '视频' : 'Video'}
+              </div>
+            </div>
+            <div></div>
+          </div>
+        }
+      >
+        <a rel="noopener noreferrer">
+          {intl.formatMessage({ id: 'header.assets' })}
+        </a>
+      </Popover>
+    ),
+    key: menuKeyIncludes(pathname, [
+      {
+        path: '/blog',
+        key: 'blog',
+      },
+      {
+        path: '/video',
+        key: 'video',
+      },
+    ]),
+  };
+  const mobileAssetsMenu: MenuItem = {
+    label: intl.formatMessage({ id: 'header.assets' }),
+    key: 'assets',
+    children: [
+      {
+        label: (
+          <>
+            <a href={'/blog'} rel="noopener noreferrer">
+              {intl.formatMessage({ id: 'header.blog' })}
+            </a>
+          </>
+        ),
+        key: 'blog',
+      },
+      {
+        label: (
+          <>
+            <a
+              href={
+                isZH
+                  ? 'https://space.bilibili.com/1196053065/'
+                  : 'https://space.bilibili.com/1196053065/'
+              }
+              rel="noopener noreferrer"
+            >
+              {isZH ? '视频' : 'Video'}
+            </a>
+          </>
+        ),
+        key: 'video',
+      },
+    ],
+  };
+  const pcCommunityMenu: MenuItem = {
+    label: (
+      <Popover
+        placement="bottom"
+        overlayClassName={styles?.popoverMin}
+        content={
+          <div className={styles.popoverContent}>
+            <div>
+              <div
+                className={styles.popoverContainer}
+                onClick={() => {
+                  window.open('https://github.com/TuGraph-family');
+                }}
+              >
+                Github
+              </div>
+              <div
+                className={styles.popoverContainer}
+                onClick={() => {
+                  window.open('https://gitee.com/tugraph');
+                }}
+              >
+                Gitee
+              </div>
+            </div>
+            <div></div>
+          </div>
+        }
+      >
+        <a rel="noopener noreferrer">
+          {intl.formatMessage({ id: 'header.community' })}
+        </a>
+      </Popover>
+    ),
+    key: 'community',
+  };
+  const mobileCommunityMenu: MenuItem = {
+    label: intl.formatMessage({ id: 'header.community' }),
+    key: 'community',
+    children: [
+      {
+        label: (
+          <>
+            <a
+              href={'https://github.com/TuGraph-family'}
+              rel="noopener noreferrer"
+            >
+              Github
+            </a>
+          </>
+        ),
+        key: 'github',
+      },
+      {
+        label: (
+          <>
+            <a href={'https://gitee.com/tugraph'} rel="noopener noreferrer">
+              Gitee
+            </a>
+          </>
+        ),
+        key: 'gitee',
+      },
+    ],
+  };
+  const pcDocsMenu: MenuItem = {
+    label: (
+      <Popover
+        placement="bottom"
+        overlayClassName={styles?.popoverMin}
+        content={
+          <div className={styles.popoverContent}>
+            <div>
+              <div
+                className={styles.popoverContainer}
+                onClick={() => {
+                  window.open(
+                    isZH
+                      ? 'https://tugraph-db.readthedocs.io/zh_CN/latest/1.guide.html'
+                      : 'https://tugraph-db.readthedocs.io/en/latest/1.guide.html',
+                  );
+                }}
+              >
+                {intl.formatMessage({ id: 'header.product.desc' })}
+              </div>
+              <div
+                className={styles.popoverContainer}
+                onClick={() => {
+                  window.open(
+                    isZH
+                      ? 'https://tugraph-analytics.readthedocs.io/en/latest/docs-cn/introduction/'
+                      : 'https://tugraph-analytics.readthedocs.io/en/latest/',
+                  );
+                }}
+              >
+                {intl.formatMessage({ id: 'header.product.desc2' })}
+              </div>
+              <div
+                className={styles.popoverContainer}
+                onClick={() => {
+                  window.open(
+                    isZH
+                      ? 'https://tugraph-db.readthedocs.io/zh_CN/latest/5.developer-manual/6.interface/5.learn/index.html'
+                      : 'https://tugraph-db.readthedocs.io/en/latest/5.developer-manual/6.interface/5.learn/index.html',
+                  );
+                }}
+              >
+                {intl.formatMessage({ id: 'header.product.desc3' })}
+              </div>
+            </div>
+            <div></div>
+          </div>
+        }
+      >
+        <a rel="noopener noreferrer">
+          {intl.formatMessage({ id: 'header.doc' })}
+        </a>
+      </Popover>
+    ),
+    key: 'docs',
+  };
+  const mobileDocsMenu: MenuItem = {
+    label: intl.formatMessage({ id: 'header.doc' }),
+    key: 'docs',
+    children: [
+      {
+        label: (
+          <>
+            <a
+              href={
+                isZH
+                  ? 'https://tugraph-db.readthedocs.io/zh_CN/latest/1.guide.html'
+                  : 'https://tugraph-db.readthedocs.io/en/latest/1.guide.html'
+              }
+              rel="noopener noreferrer"
+            >
+              {intl.formatMessage({ id: 'header.product.desc' })}
+            </a>
+          </>
+        ),
+        key: 'product',
+      },
+      {
+        label: (
+          <>
+            <a
+              href={
+                isZH
+                  ? 'https://tugraph-analytics.readthedocs.io/en/latest/docs-cn/introduction/'
+                  : 'https://tugraph-analytics.readthedocs.io/en/latest/'
+              }
+              rel="noopener noreferrer"
+            >
+              {intl.formatMessage({ id: 'header.product.desc2' })}
+            </a>
+          </>
+        ),
+        key: 'productAnalytics',
+      },
+      {
+        label: (
+          <a
+            href={
+              isZH
+                ? 'https://tugraph-db.readthedocs.io/zh_CN/latest/5.developer-manual/6.interface/5.learn/index.html'
+                : 'https://tugraph-db.readthedocs.io/en/latest/5.developer-manual/6.interface/5.learn/index.html'
+            }
+            rel="noopener noreferrer"
+          >
+            {intl.formatMessage({ id: 'header.product.desc3' })}
+          </a>
+        ),
+        key: 'productLearn',
+      },
+    ],
   };
   const pcProductMenu: MenuItem = {
     label: (
       <Popover
         placement="bottom"
+        overlayClassName={styles?.popoverMin}
         content={
           <div className={styles.popoverContent}>
             <div>
@@ -70,6 +335,22 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
                 }}
               >
                 {intl.formatMessage({ id: 'header.product.desc' })}
+              </div>
+              <div
+                className={styles.popoverContainer}
+                onClick={() => {
+                  history.push('analytics');
+                }}
+              >
+                {intl.formatMessage({ id: 'header.product.desc2' })}
+              </div>
+              <div
+                className={styles.popoverContainer}
+                onClick={() => {
+                  history.push('learn');
+                }}
+              >
+                {intl.formatMessage({ id: 'header.product.desc3' })}
               </div>
             </div>
             <div>
@@ -113,12 +394,15 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
   };
   const mobileProductMenu: MenuItem = {
     label: intl.formatMessage({ id: 'header.product' }),
-    key: 'produce',
+    key: menuKey(pathname),
     children: [
+      {
+        label: <div>{intl.formatMessage({ id: 'header.product.title' })}</div>,
+        key: 'productTitle',
+      },
       {
         label: (
           <>
-            <div>{intl.formatMessage({ id: 'header.product.title' })}</div>
             <a href="/product" rel="noopener noreferrer">
               {intl.formatMessage({ id: 'header.product.desc' })}
             </a>
@@ -129,7 +413,28 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
       {
         label: (
           <>
-            <div>{intl.formatMessage({ id: 'header.product.title1' })}</div>
+            <a href="/analytics" rel="noopener noreferrer">
+              {intl.formatMessage({ id: 'header.product.desc2' })}
+            </a>
+          </>
+        ),
+        key: 'analytics',
+      },
+      {
+        label: (
+          <a href="/learn" rel="noopener noreferrer">
+            {intl.formatMessage({ id: 'header.product.desc3' })}
+          </a>
+        ),
+        key: 'learn',
+      },
+      {
+        label: <div>{intl.formatMessage({ id: 'header.product.title1' })}</div>,
+        key: 'productTitle1',
+      },
+      {
+        label: (
+          <>
             <a href="/overview" rel="noopener noreferrer">
               {intl.formatMessage({ id: 'header.product.desc1' })}
             </a>
@@ -179,7 +484,7 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
           {intl.formatMessage({ id: 'header.home' })}
         </a>
       ),
-      key: '',
+      key: 'home',
     },
     { ...(isWide ? pcProductMenu : mobileProductMenu) },
     {
@@ -198,73 +503,9 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
       ),
       key: 'ecosystem',
     },
-    {
-      label: intl.formatMessage({ id: 'header.assets' }),
-      key: 'assets',
-      children: [
-        {
-          label: (
-            <a href="/doc" className={styles.menuChildren}>
-              {intl.formatMessage({ id: 'header.doc' })}
-            </a>
-          ),
-          key: 'doc',
-        },
-        {
-          label: (
-            <a href="/blog" className={styles.menuChildren}>
-              {intl.formatMessage({ id: 'header.blog' })}
-            </a>
-          ),
-          key: 'blog',
-        },
-        {
-          label: (
-            <a
-              href="https://space.bilibili.com/1196053065/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.menuChildren}
-            >
-              Demo
-            </a>
-          ),
-          key: 'demo',
-        },
-      ],
-    },
-    {
-      label: intl.formatMessage({ id: 'header.community' }),
-      key: 'community',
-      children: [
-        {
-          label: (
-            <a
-              href="https://github.com/TuGraph-family"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.menuChildren}
-            >
-              GitHub
-            </a>
-          ),
-          key: 'GitHub',
-        },
-        {
-          label: (
-            <a
-              href="https://gitee.com/tugraph"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.menuChildren}
-            >
-              Gitee
-            </a>
-          ),
-          key: 'Gitee',
-        },
-      ],
-    },
+    { ...(isWide ? pcDocsMenu : mobileDocsMenu) },
+    { ...(isWide ? pcAssetsMenu : mobileAssetsMenu) },
+    { ...(isWide ? pcCommunityMenu : mobileCommunityMenu) },
     {
       label: (
         <a href="/download" rel="noopener noreferrer">
@@ -274,7 +515,7 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
       key: 'download',
     },
     {
-      label: lang === 'zh-CN' ? '简体中文' : 'ENGLISH',
+      label: lang === 'zh-CN' ? '中' : 'EN',
       key: 'language',
       icon: (
         <img
@@ -357,16 +598,19 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
             expandIcon={({ isOpen }) => {
               if (isOpen) {
                 return <UpOutlined style={{ fontSize: '3.7vw' }} />;
-              } else {
-                return <RightOutlined style={{ fontSize: '3.7vw' }} />;
               }
+              return <RightOutlined style={{ fontSize: '3.7vw' }} />;
             }}
           />
         </div>
       </Drawer>
     </>
   );
-
+  useEffect(() => {
+    if (pathname && document) {
+      document.documentElement.scrollTop = 0;
+    }
+  }, [pathname]);
   return (
     <div className={cx(styles.header, isStick ? styles.sticky : null)}>
       {isWide ? pc : mobile}

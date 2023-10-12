@@ -4,7 +4,7 @@ export default {
   'header.case': 'USE CASES',
   'header.ecosystem': 'PARTNERS',
   'header.assets': 'RESOURCES',
-  'header.doc': 'Documentation',
+  'header.doc': 'DOCS',
   'header.blog': 'Blog',
   'header.community': 'COMMUNITY',
   'header.download': ' DOWNLOAD',
@@ -12,6 +12,8 @@ export default {
   'header.product.title1': 'Enterprise Edition',
   'header.product.desc': 'TuGraph DB Lite (Standalone)',
   'header.product.desc1': 'TuGraph Overview',
+  'header.product.desc2': 'TuGraph Analytics: Streaming Graph Computing Engine',
+  'header.product.desc3': 'TuGraph Learn: Graph Learning Engine',
   'footer.product.title': 'Community Edition',
   'footer.product.title1': 'Enterprise Edition',
   'footer.product': 'Products',
@@ -27,9 +29,9 @@ export default {
     'TuGraph is a high-performance graph database jointly developed by Ant Group and Tsinghua University. It has been applied to Ant Group’s trillion-scale business, and has achieved the top-ranking performance in LDBC-SNB, a globally-recognized benchmark test, surpassing competing solutions.',
   'home.banner.quickStart': 'Quick Start',
   'home.notice0.tag': 'BENCHMARK',
-  'home.notice0.title': 'TuGraph Ranks World No.1 in LDBC SNB Test.',
+  'home.notice0.title': 'TuGraph Named a Leader in the IDC MarketScape',
   'home.notice0.desc':
-    'LDBC announced the latest test results of the LDBC Social Network Benchmark, and TuGraph once again broke the official audit record.',
+    'TuGraph has been named as a Leader in the IDC MarketScape: China Graph Database 2023 Vendor Assessment.',
   'home.notice1.tag': 'NEWS',
   'home.notice1.title': 'Leading the Project of LDBC Finbench.',
   'home.notice1.desc':
@@ -89,7 +91,7 @@ export default {
   'home.version0': 'Community Edition',
   'home.btn.desc': 'Community Edition',
   'home.version.desc0':
-    'TuGraph Community Edition is a graph database solution suitable for standalone deployment, providing all essential functionalities for complete graph database capabilities. It is optimal for smaller projects and learning purposes. For users requiring high-availability cluster architecture and enterprise services, we recommend our commercial support services, including consultation, installation, deployment, maintenance, and access to cutting-edge graph modeling technologies. Contact us today to learn more.',
+    'TuGraph DB Community Edition is a graph database solution suitable for standalone deployment, providing all essential functionalities for complete graph database capabilities. It is optimal for smaller projects and learning purposes. For users requiring high-availability cluster architecture and enterprise services, we recommend our commercial support services, including consultation, installation, deployment, maintenance, and access to cutting-edge graph modeling technologies. Contact us today to learn more.',
   'home.version.startUse': 'DOWNLOAD',
   'home.function': 'Functionalities',
   'home.function.title1': 'TuGraph DB: Graph Database Engine',
@@ -146,7 +148,7 @@ export default {
   'home.version.title2': 'Enterprise Edition',
   'home.version1': ' Enterprise Edition',
   'home.version.desc1':
-    'TuGraph Enterprise Edition is the ultimate choice for users seeking a comprehensive graph database solution with robust commercial support features. This edition offers a distributed architecture, covering the entire graph database life cycle, from exploration to research, service, operation, and maintenance. It boasts online/near-line/offline graph computing engines, support for multiple data sources, including streaming and big data platforms, and multi-site and multi-center deployment options.',
+    'TuGraph DB Enterprise Edition is the ultimate choice for users seeking a comprehensive graph database solution with robust commercial support features. This edition offers a distributed architecture, covering the entire graph database life cycle, from exploration to research, service, operation, and maintenance. It boasts online/near-line/offline graph computing engines, support for multiple data sources, including streaming and big data platforms, and multi-site and multi-center deployment options.',
   'home.version.contactUs': 'FREE TRIAL ',
   'home.btn.desc1': 'Alibaba Cloud',
   'home.feat0': 'Label property graph model',
@@ -181,6 +183,12 @@ export default {
   'product.description':
     'Provides an efficient, easy-to-use and reliable one-stop platform for users to manage and analyze complex and linked data',
   'product.slogan': 'Speedy Open-Sourced Graph Database',
+  'product_analytics.description':
+    'Cloud native, stream/batch/graph multi-mode computing, graph/table hybrid processing',
+  'product_learn.description':
+    'Provides native support through TuGraph DB to enable large-scale, high-performance development, training, and inference of graph learning models',
+  'product_learn.slogan': 'High Performance Graph Learning System',
+  'product_analytics.slogan': 'Distributed Real-Time Graph Computing Engine',
   'product.video0': 'Quick Start',
   'product.videoTime0': '2: 39',
   'product.video1': 'TuGraph Browser Demo',
@@ -351,13 +359,13 @@ TuGraph supports more than 300 applications in the Ant Group, including "Double 
   'ecosystem.support1': 'Technical Advisory of Graph Technologies',
   'ecosystem.support2': 'On-Premise Project Support',
   'ecosystem.support3': 'Extensive Sales & Marketing Benefits',
-  'download.banner.slogan': 'TuGraph v3.4.0',
-  'download.banner.description': 'Latest Release Version2022.10.20',
-  'download.title0': 'TuGraph Community Edition',
-  'download.title1': 'Procedure API Doc',
-  'download.title2': 'TuGraph Enterprise Edition',
+  'download.banner.slogan': 'Download TuGraph',
+  'download.banner.description': '',
+  'download.title0': 'TuGraph DB Community Edition',
+  'download.title1': 'Stored Procedure API Documentation',
+  'download.title2': 'TuGraph DB Enterprise Edition',
   'download.downloadBtn': 'Download',
-  'download.applyText': 'Try TuGraph for 30 days',
+  'download.applyText': 'Free Trial',
   'download.contactBtn': 'Contact Us',
   'form.banner.slogan': 'FREE TRIAL ',
   'form.banner.desc': 'with high performance and professional support',
@@ -370,10 +378,11 @@ TuGraph supports more than 300 applications in the Ant Group, including "Double 
   'form.item.need': 'I would like to',
   'form.need.tip': 'Please select',
   'form.need': 'would',
-  'form.need.value': 'Request a free trial of TuGraph Enterprise Edition.',
+  'form.need.value': 'Request a free trial of TuGraph DB Enterprise Edition.',
   'form.need.value1':
-    'Request a meeting or demonstration to discuss TuGraph Enterprise Edition.',
-  'form.need.value2': 'Inquire about the price of TuGraph Enterprise Edition.',
+    'Request a meeting or demonstration to discuss TuGraph DB Enterprise Edition.',
+  'form.need.value2':
+    'Inquire about the price of TuGraph DB Enterprise Edition.',
   'form.need.value3': 'Become a partner of TuGraph.',
   'form.item.name': 'Name',
   'form.name': 'Name',
@@ -489,4 +498,44 @@ TuGraph supports more than 300 applications in the Ant Group, including "Double 
     'Debug and tracing for distributed programs, queries, DDL statements, execution, and data flow',
   'db.freeTrial': 'Free Trial',
   'doc.menu': 'Learn about v3.5.0',
+  'product_analytics.introfuction':
+    'The open-source distributed real-time graph computing engine developed by Ant Group, supports graph analytics on trillion-scale data. It supports unified processing on graph and tabular data models, as well as multi-mode computing including stream computing, batch processing, and graph computing. It provides exactly-once semantics, high availability, one-stop cloud-native development and deployment. It is widely used for data warehouse acceleration, financial risk management, knowledge graphs, social networks, and many more scenarios.',
+  'product_learn.introfuction':
+    'TuGraph Learn is a graph learning framework developed on top of TuGraph DB. It empowers users to efficiently develop, train, and deploy graph learning models. The framework provides various sampling algorithms including neighbor, negative, edge, and random walk sampling to optimize model training. TuGraph Learn supports integration with popular open-source frameworks like DGL, PyG, and OpenHGNN. Through high-performance compiler optimizations, TuGraph Learn accelerates model development and inference with minimal coding effort.',
+  'download.title3': 'TuGraph Analytics Download',
+  'download.title4': 'TuGraph Learn Download',
+  'download.copyLinkBtn': 'Copy',
+  'download.imageDownloadAddress': 'Official docker images',
+  'download.imageDownloadMethod': 'Pull the latest image',
+  'download.copySuccess': 'Copied',
+  'product_analytics.feature.title0': 'Dynamic Graph Computing',
+  'product_analytics.feature.desc0':
+    'Supporting dynamic graph analytics and improving real-time performance of graph computing results.',
+  'product_analytics.feature.title1': 'Hybrid Graph/Table Processing',
+  'product_analytics.feature.desc1':
+    'Providing the capability to process hybrid graph and tabular data models by a fusion language (SQL + GQL).',
+  'product_analytics.feature.title2': 'Unified Stream/Batch/Graph Computing',
+  'product_analytics.feature.desc2':
+    'Supporting unified stream computing, batch processing and graph computing by cycle-based and event-driven scheduling mechanisms.',
+  'product_analytics.feature.title3': 'Cloud Native Deployment',
+  'product_analytics.feature.desc3':
+    'Supporting multiple execution environments like kubernetes, and providing graph job development tools and rapid deployment on clouds.',
+  'product_analytics.feature.title4': 'Graph Native State',
+  'product_analytics.feature.desc4':
+    'Providing a native graph oriented storage system, supporting high-performance I/O and computation pushdown. (Coming soon)',
+  'product_analytics.feature.title5': 'Interactive Graph Analysis',
+  'product_analytics.feature.desc5':
+    'Enabling interactive real-time analytics of graph data, allowing rapid integration with business intelligence and visualization tools. (Coming soon)',
+  'product_learn.feature.title0': 'Large-Scale Data',
+  'product_learn.feature.desc0':
+    'Supports large-scale graph data and workloads by leveraging native graph database technologies.',
+  'product_learn.feature.title1': 'Native Support Through TuGraph DB',
+  'product_learn.feature.desc1':
+    'Unified architecture avoids switching across multiple systems for graph learning.',
+  'product_learn.feature.title2': 'Seamless Migration',
+  'product_learn.feature.desc2':
+    'Supports popular graph learning frameworks, and lowers the learning curve for modeling and deployment.',
+  'product_learn.feature.title3': 'High Performance',
+  'product_learn.feature.desc3':
+    'High performance and high operability framework.',
 };

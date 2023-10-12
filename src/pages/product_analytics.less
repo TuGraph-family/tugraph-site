@@ -1,0 +1,148 @@
+.containerWrapper {
+  padding-top: 72px;
+
+  .introWrapper {
+    font-weight: 400;
+    font-size: 14px;
+    color: rgba(26, 27, 37, 0.65);
+    text-align: center;
+    line-height: 22px;
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  .featCards {
+    display: flex;
+    justify-content: center;
+    margin: -12px;
+
+    .featCardGroup {
+      min-height: 187px;
+      width: 100%;
+      max-width: 1184px;
+      padding: 12px;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .featCard {
+        border-radius: 12px;
+        background-color: rgba(22, 80, 255, 0.04);
+        width: 100%;
+        height: 100%;
+        padding: 32px;
+        margin: auto;
+
+        img {
+          width: auto;
+          height: 77px;
+        }
+      }
+
+      .title {
+        font-weight: 500;
+        font-size: 20px;
+        color: rgba(26, 27, 37, 0.88);
+        line-height: 28px;
+        text-align: left;
+        width: 100%;
+        margin-bottom: 8px;
+      }
+
+      .desc {
+        font-weight: 400;
+        font-size: 14px;
+        color: rgba(26, 27, 37, 0.45);
+        text-align: justify;
+        line-height: 22px;
+        height: auto;
+      }
+    }
+  }
+
+  .ecoWrapper {
+    background-image: url(https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*H1z6QbQW9vMAAAAAAAAAAAAADgOBAQ/original);
+    background-size: cover;
+    margin: 71px -120px -72px -120px;
+    padding: 1px 120px 72px 120px;
+
+    img {
+      max-width: 1200px;
+      padding: 32px;
+      background-color: #ffffff;
+      box-shadow: 0 3px 6px -4px rgba(132, 135, 155, 0.12),
+        0 6px 16px 0 rgba(132, 135, 155, 0.08),
+        0 9px 28px 8px rgba(132, 135, 155, 0.05);
+      border-radius: 12px;
+    }
+  }
+}
+.slogan {
+  width: 625px;
+  margin-top: 100px !important;
+}
+:global {
+  .JoL-controller-container {
+    .play-icon {
+      width: 26px !important;
+      height: 26px !important;
+    }
+  }
+  .JoL-player-container .tooltip .hover-icon-animate {
+    font-size: 14px !important;
+  }
+}
+
+@media only screen and (max-width: 767.99px) {
+  .containerWrapper {
+    transition: all ease 0.3s;
+    .subTitle {
+      margin-bottom: 4.8vw !important;
+    }
+  }
+  .introWrapper {
+    font-size: 3.2vw !important;
+    line-height: 4.8vw !important;
+    margin: 0 0 13.3vw 0 !important;
+  }
+  .featCards {
+    margin-bottom: 13.3vw !important;
+    .featCardGroup {
+      min-height: 0 !important;
+      height: 100% !important;
+      .title {
+        font-size: 3.7vw !important;
+        margin-bottom: 0 !important;
+        line-height: 5.3vw !important;
+      }
+      .desc {
+        font-size: 3.2vw !important;
+        text-align: left !important;
+        line-height: 4.8vw !important;
+        margin-top: 1.6vw !important;
+        height: 100% !important;
+      }
+      .featCard {
+        padding: 4.3vw !important;
+        img {
+          height: 11.73vw !important;
+        }
+        :global {
+          .ant-space-align-center {
+            align-items: flex-start;
+          }
+        }
+      }
+    }
+  }
+  .ecoWrapper {
+    margin: 0 -120px -12.9vw -120px !important;
+    padding: 1px 120px 13.3vw 120px !important;
+    img {
+      width: 100% !important;
+      padding: 4.3vw !important;
+      border-radius: 1.6vw !important;
+    }
+  }
+}

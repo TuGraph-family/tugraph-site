@@ -21,6 +21,7 @@ import md18 from '@/doc/zh/18.md';
 import md19 from '@/doc/zh/19.md';
 import md20 from '@/doc/zh/20.md';
 import md999 from '@/doc/zh/999.md';
+import idc from '@/doc/zh/IDC.md';
 
 export const blogs = [
   {
@@ -212,6 +213,15 @@ export const blogs = [
     updateDate: '2023-08-21',
     type: 'competition',
     content: md999?.html,
+  },
+  {
+    img: 'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*sW1XTJ-Xu1AAAAAAAAAAAAAADgOBAQ/original',
+    title: '蚂蚁集团TuGraph跻身中国图数据库市场“领导者”象限',
+    desc: 'IDC发布了最新的市场研究报告《IDC MarketScape：中国图数据库市场厂商评估，2023》。蚂蚁集团自研的企业级图数据管理平台TuGraph跻身"领导者"象限。',
+    type: 'news',
+    updateDate: '2023-07-17',
+    id: 1000,
+    content: idc?.html,
   },
 ];
 

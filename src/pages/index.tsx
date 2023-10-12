@@ -1,11 +1,3 @@
-import AnnouncementBanner from '@/components/AnnouncementBanner';
-import { ApplyForm } from '@/components/ApplyForm';
-import { LayoutTemplate } from '@/components/LayoutTemplate';
-import JoLPlayer from '@/components/Player';
-import { SubTitle } from '@/components/SubTitle';
-import { getCases } from '@/data/cases';
-import { getTugraphFun } from '@/data/get_tugraph_functions';
-import { getReasons } from '@/data/reasons';
 import {
   AliyunOutlined,
   ArrowRightOutlined,
@@ -36,6 +28,14 @@ import { getLocale, isBrowser, useIntl } from 'umi';
 
 import stylesZh from './index.less';
 import stylesEn from './index_en.less';
+import { getReasons } from '@/data/reasons';
+import { getTugraphFun } from '@/data/get_tugraph_functions';
+import { getCases } from '@/data/cases';
+import { SubTitle } from '@/components/SubTitle';
+import JoLPlayer from '@/components/Player';
+import { LayoutTemplate } from '@/components/LayoutTemplate';
+import { ApplyForm } from '@/components/ApplyForm';
+import AnnouncementBanner from '@/components/AnnouncementBanner';
 
 export default function IndexPage() {
   const intl = useIntl();
@@ -112,7 +112,12 @@ export default function IndexPage() {
           <div className={styles.desc}>
             {intl.formatMessage({ id: 'home.notice0.desc' })}
           </div>
-          <a className={styles.learnMore} href="/blog?id=0" target="_blank">
+          <a
+            className={styles.learnMore}
+            href={`/blog?id=1000`}
+            target="_blank"
+            rel="noreferrer"
+          >
             {intl.formatMessage({ id: 'home.knowMore' })}
             <ArrowRightOutlined />
           </a>
@@ -129,6 +134,7 @@ export default function IndexPage() {
             className={styles.learnMore}
             href={lang === 'zh-CN' ? `/blog?id=3` : `/blog?id=1`}
             target="_blank"
+            rel="noreferrer"
           >
             {intl.formatMessage({ id: 'home.knowMore' })}
             <ArrowRightOutlined />
@@ -146,6 +152,7 @@ export default function IndexPage() {
             className={styles.learnMore}
             target="_blank"
             href={lang === 'zh-CN' ? `/blog?id=12` : `/blog?id=10`}
+            rel="noreferrer"
           >
             {intl.formatMessage({ id: 'home.knowMore' })}
             <ArrowRightOutlined />
@@ -166,7 +173,7 @@ export default function IndexPage() {
           <div className={styles.desc}>
             {intl.formatMessage({ id: 'home.notice0.desc' })}
           </div>
-          <a className={styles.learnMore} href="/blog?id=0" target="_blank">
+          <a className={styles.learnMore} href="/blog?id=1000" target="_blank">
             {intl.formatMessage({ id: 'home.knowMore' })}
             <ArrowRightOutlined />
           </a>
@@ -183,6 +190,7 @@ export default function IndexPage() {
             className={styles.learnMore}
             href={lang === 'zh-CN' ? `/blog?id=3` : `/blog?id=1`}
             target="_blank"
+            rel="noreferrer"
           >
             {intl.formatMessage({ id: 'home.knowMore' })}
             <ArrowRightOutlined />
@@ -202,6 +210,7 @@ export default function IndexPage() {
             })}
             target="_blank"
             href={lang === 'zh-CN' ? `/blog?id=12` : `/blog?id=10`}
+            rel="noreferrer"
           >
             {intl.formatMessage({ id: 'home.knowMore' })}
             <ArrowRightOutlined />

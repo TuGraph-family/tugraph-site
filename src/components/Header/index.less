@@ -1,3 +1,12 @@
+.popoverMin {
+  width: auto;
+  :global {
+    .ant-popover-inner-content {
+      padding: 0;
+    }
+  }
+}
+
 .header {
   padding: 0 120px;
   z-index: 999;
@@ -141,8 +150,8 @@
 }
 
 .popoverContent {
-  width: 317px;
-  min-height: 170px;
+  width: auto;
+  min-height: auto;
   padding: 8px 16px;
   box-sizing: border-box;
   display: flex;
@@ -251,11 +260,11 @@
               }
             }
           }
-          .ant-menu-item:nth-of-type(1),
-          .ant-menu-item:nth-of-type(2) {
-            height: 25.6vw;
-            line-height: 12.8vw;
-          }
+          // .ant-menu-item:nth-of-type(1),
+          // .ant-menu-item:nth-of-type(2) {
+          //   height: 25.6vw;
+          //   line-height: 12.8vw;
+          // }
         }
       }
     }

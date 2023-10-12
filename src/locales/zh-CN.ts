@@ -11,7 +11,9 @@ export default {
   'header.product.title': '社区版',
   'header.product.title1': '企业版',
   'header.product.desc': 'TuGraph DB Lite 单机版图数据库',
-  'header.product.desc1': 'TuGraph 图数据管理平台概览',
+  'header.product.desc1': 'TuGraph 企业版概览',
+  'header.product.desc2': 'TuGraph Analytics 实时图计算引擎',
+  'header.product.desc3': 'TuGraph Learn 图学习引擎',
   'footer.product': '产品',
   'footer.product.title': '社区版',
   'footer.product.title1': '企业版',
@@ -30,9 +32,9 @@ export default {
     '高性能图数据库TuGraph由蚂蚁集团和清华大学共同研发，历经蚂蚁实际业务场景锤炼，在国际图数据库基准测试中获得性能第一。',
   'home.banner.quickStart': '快速上手',
   'home.notice0.tag': '测试报告',
-  'home.notice0.title': '蚂蚁图数据库再获 LDBC 权威测试世界第一',
+  'home.notice0.title': '蚂蚁集团TuGraph跻身中国图数据库市场“领导者”象限',
   'home.notice0.desc':
-    '国际权威图数据库测试机构LDBC公布了LDBC SNB最新结果，TuGraph再次打破官方审计测试纪录。',
+    'IDC发布了最新的市场研究报告《IDC MarketScape：中国图数据库市场厂商评估，2023》。蚂蚁集团自研的企业级图数据管理平台TuGraph跻身"领导者"象限。',
   'home.notice1.tag': '行业资讯',
   'home.notice1.title': '领导立项全球金融图数据库测试基准',
   'home.notice1.desc':
@@ -174,7 +176,13 @@ export default {
   'footer.addressMobile': '中国北京朝阳区东三环中路1号环球金融中心东塔9层',
   'product.description':
     '为用户管理和分析复杂关联数据提供了高效、易用、可靠的一站式平台',
-  'product.slogan': '极速的开源图数据库TuGraph',
+  'product_learn.description':
+    'TuGraph数据库原生支持，使用TuGraph数据库进行大规模高性能的图学习模型的开发、训练和推理',
+  'product_analytics.description':
+    '云原生、分布式、流批图计算能力，图表融合处理',
+  'product.slogan': '极速的开源图数据库',
+  'product_learn.slogan': '高性能图学习系统',
+  'product_analytics.slogan': '分布式实时图计算引擎',
   'product.overview.slogan': '企业级图数据管理平台',
   'product.video0': '快速上手演示',
   'product.videoTime0': '2分39秒',
@@ -183,6 +191,10 @@ export default {
   'product.video2': '3分钟读懂图计算',
   'product.videoTime2': '3分08秒',
   'product.intro': '产品概述',
+  'product_analytics.introfuction':
+    '蚂蚁自研的开源分布式实时图计算引擎，支持万亿级图数据分析能力，实现了图表模型的一体化处理和流、批、图多模态计算，并提供了Exactly Once语义、高可用以及一站式云原生研发部署能力，目前广泛应用于数仓加速、金融风控、知识图谱以及社交网络等场景。',
+  'product_learn.introfuction':
+    'TuGraph图学习是在TuGraph Database的基础上开发的一个图学习框架，继承了图机器学习的能力，使得用户能够使用TuGraph数据库直接进行图学习模型的开发、训练和推理。TuGraph图学习支持Neighbor Sampling、Negative Sampling、Edge Sampling和Random Walk Sampling等多重采样算法，后端支持DGL, PyG, OpenHGNN等多种主流开源图学习框架。用户只需要使用TuGraph支持的子图采样和全图装载的API，即可方便地在主流图学习框架中使用。另外，TuGraph图学习支持编译加速技术，用户只需要一行代码，即可加速图学习的训练和推理性能。',
   'product.introduction0':
     'TuGraph图数据库由蚂蚁集团与清华大学联合研发，构建了一套包含图存储、图计算、图学习、图研发平台的完善的图技术体系，拥有业界领先规模的图集群，解决了图数据分析面临的大数据量、高吞吐率和低延迟等重大挑战，是蚂蚁集团金融风控能力的重要基础设施，显著提升了欺诈洗钱等金融风险的实时识别能力和审理分析效率，并面向金融、工业、政务服务等行业客户。',
   'product.introduction1':
@@ -214,10 +226,10 @@ export default {
     '支持分布式扩展，千万顶点/秒的高吞吐率、低延迟响应，在蚂蚁集团内部已实现数十万核的在线集群。支持多副本、同城多机房、异地多机房、三地五中心等部署形态。',
   'product.feature.overview.introduction0':
     'TuGraph图数据库由蚂蚁集团与清华大学联合研发，构建了一套包含图存储、图计算、图学习、图研发平台的完善的图技术体系，拥有业界领先规模的图集群，解决了图数据分析面临的大数据量、高吞吐率和低延迟等重大挑战，是蚂蚁集团金融风控能力的重要基础设施，显著提升了欺诈洗钱等金融风险的实时识别能力和审理分析效率，并面向金融、工业、政务服务等行业客户。TuGraph源于蚂蚁超过300个业务场景的实践，为业务人员提供图探索、图研发、图服务、图运维的完整图研发链路；具有分布式、多中心、金融级高可用性架构，经受“双十一”等活动的极致系统考验，轻松应对海量业务数据和并发。',
-  'product.ecosystem': 'TuGraph 产品架构',
+  'product.ecosystem': '产品架构',
   'product.overview.ecosystem': '企业版产品架构',
   'product.overview.desc': '业界实践的企业级平台，创新式的流式图计算',
-  'demo.title': ' TuGraph 案例',
+  'demo.title': ' 案例',
   'demo.description':
     '图数据库,图计算,图平台,图数据分析, 分布式数据库, Graph,大数据分析,关联关系分析,大数据分析,反洗钱,反欺诈,金融风控,物联网, 设备管理, 国家电网',
   'demo.banner.slogan': '数千倍效果提升',
@@ -330,13 +342,13 @@ export default {
   'ecosystem.support1': '深入的图技术赋能',
   'ecosystem.support2': '重点项目全面支持',
   'ecosystem.support3': '销售激励及市场推广支持',
-  'download.banner.slogan': 'TuGraph v3.4.0',
-  'download.banner.description': '最新版本2023.03.11',
+  'download.banner.slogan': 'Download TuGraph',
+  'download.banner.description': '',
   'download.title0': 'TuGraph 社区版下载',
   'download.title1': '存储过程接口文档',
   'download.title2': 'TuGraph 企业版申请',
   'download.downloadBtn': '立即下载',
-  'download.applyText': '免费申请30天试用',
+  'download.applyText': '免费申请试用',
   'download.contactBtn': '联系我们',
   'form.banner.slogan': '联系我们',
   'form.banner.desc': '高可用、高稳定、高性能、大规模、专业服务支持',
@@ -467,4 +479,38 @@ export default {
     '分布式调试跟踪，查询语句执行全链路、DDL语句回溯、数据流全程可跟踪。',
   'db.freeTrial': '企业版试用',
   'doc.menu': '了解 v3.5.0 版本',
+  'download.title3': 'TuGraph Analytics 下载',
+  'download.title4': 'TuGraph Learn 下载',
+  'download.copyLinkBtn': '复制',
+  'download.imageDownloadAddress': '镜像下载地址',
+  'download.imageDownloadMethod': '镜像下载方式/命令',
+  'download.copySuccess': '复制成功',
+  'product_analytics.feature.title0': '动态图计算',
+  'product_analytics.feature.desc0':
+    '业内率先支持动态图分析的工业级图计算引擎，提升图计算结果的实时性。',
+  'product_analytics.feature.title1': '图表混合处理',
+  'product_analytics.feature.desc1':
+    '采用SQL+GQL的融合分析语言，提供图模型和表模型的混合数据处理能力。',
+  'product_analytics.feature.title2': '统一流批图',
+  'product_analytics.feature.desc2':
+    '基于Cycle的事件驱动调度机制，统一了流计算、批处理、图计算模型。',
+  'product_analytics.feature.title3': '云原生部署',
+  'product_analytics.feature.desc3':
+    '支持K8S等多种执行环境，提供图任务研发管理工具，更适合云上快速部署。',
+  'product_analytics.feature.title4': '图原生存储',
+  'product_analytics.feature.desc4':
+    '提供面向图的原生存储系统，支持高性能读写和计算下推能力。敬请期待……',
+  'product_analytics.feature.title5': '交互式图分析',
+  'product_analytics.feature.desc5':
+    '提供图数据的交互式访问和实时分析能力，快速接入BI分析和可视化工具。敬请期待……',
+  'product_learn.feature.title0': '支持大规模数据',
+  'product_learn.feature.desc0':
+    '基于TuGraph图数据库开发的图学习，数据可导入图数据库以外存储，支持更大规模的数据。',
+  'product_learn.feature.title1': '原生TuGraph数据库支持',
+  'product_learn.feature.desc1':
+    'TuGraph数据库原生支持图学习的训练和推理，避免用户使用多条系统来回切换。',
+  'product_learn.feature.title2': '无缝迁移',
+  'product_learn.feature.desc2': '后端支持主流图学习框架，用户学习成本低。',
+  'product_learn.feature.title3': '高性能',
+  'product_learn.feature.desc3': 'TuGraph图学习具有高性能、高可操作性等特点。',
 };
