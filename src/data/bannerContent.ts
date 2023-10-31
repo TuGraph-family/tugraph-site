@@ -8,10 +8,10 @@ export const getBannerCnContentList = (intl: IntlShape) => [
   },
 ];
 export const getBannerEnContentList = (intl: IntlShape) => [
-  {
-    pcImg:
-      'https://mdn.alipayobjects.com/huamei_2dxjn8/afts/img/A*MhtgQJHk8soAAAAAAAAAAAAADrR-AQ/original',
-    mobileImg:
-      'https://mdn.alipayobjects.com/huamei_2dxjn8/afts/img/A*mb5dTZkyyG8AAAAAAAAAAAAADrR-AQ/original',
-  },
+  // {
+  //   pcImg:
+  //     'https://mdn.alipayobjects.com/huamei_2dxjn8/afts/img/A*MhtgQJHk8soAAAAAAAAAAAAADrR-AQ/original',
+  //   mobileImg:
+  //     'https://mdn.alipayobjects.com/huamei_2dxjn8/afts/img/A*mb5dTZkyyG8AAAAAAAAAAAAADrR-AQ/original',
+  // },
 ];
