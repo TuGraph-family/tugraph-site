@@ -1,8 +1,10 @@
-import { CloseOutlined, LeftOutlined, RightOutlined } from '@ant-design/icons';
 import { Carousel, Drawer, Modal, Tooltip } from 'antd';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useMedia } from 'react-use';
 import { getLocale, history, useIntl } from 'umi';
+
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { CloseOutlined, LeftOutlined, RightOutlined } from '@ant-design/icons';
 import styles from './index.less';
 import {
   getBannerCnContentList,
@@ -75,20 +77,22 @@ const AnnouncementBanner = () => {
           </>
         )}
         <Carousel>
-          {getBannerContentList(intl).map((item, index) => (
-            <div key={index} className={styles.bannerContainer}>
-              <img
-                src={item.pcImg}
-                onClick={() => {
-                  setShowBottomDrawer(false);
-                  sessionStorage.setItem('isBannerShow', 'false');
-                  history.push(
-                    `/blog?id=${lang === 'zh-CN' ? '1000' : '1000'}`,
-                  );
-                }}
-              />
-            </div>
-          ))}
+          {getBannerContentList(intl)?.length
+            ? getBannerContentList(intl).map((item, index) => (
+                <div key={index} className={styles.bannerContainer}>
+                  <img
+                    src={item.pcImg}
+                    onClick={() => {
+                      setShowBottomDrawer(false);
+                      sessionStorage.setItem('isBannerShow', 'false');
+                      history.push(
+                        `/blog?id=${lang === 'zh-CN' ? '1000' : '1000'}`,
+                      );
+                    }}
+                  />
+                </div>
+              ))
+            : null}
         </Carousel>
       </Drawer>
     </>
