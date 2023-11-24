@@ -22,6 +22,7 @@ import md19 from '@/doc/zh/19.md';
 import md20 from '@/doc/zh/20.md';
 import md999 from '@/doc/zh/999.md';
 import idc from '@/doc/zh/IDC.md';
+import md1124 from '@/doc/zh/1124.md';
 
 export const blogs = [
   {
@@ -222,6 +223,24 @@ export const blogs = [
     updateDate: '2023-07-17',
     id: 1000,
     content: idc?.html,
+  },
+  {
+    img: 'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*sW1XTJ-Xu1AAAAAAAAAAAAAADgOBAQ/original',
+    title: '蚂蚁集团TuGraph跻身中国图数据库市场“领导者”象限',
+    desc: 'IDC发布了最新的市场研究报告《IDC MarketScape：中国图数据库市场厂商评估，2023》。蚂蚁集团自研的企业级图数据管理平台TuGraph跻身"领导者"象限。',
+    type: 'news',
+    updateDate: '2023-07-17',
+    id: 1000,
+    content: idc?.html,
+  },
+  {
+    img: 'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*orRjQqKgMcMAAAAAAAAAAAAADgOBAQ/original',
+    title: '语雀 X TuGraph 开源社区：图计算开启数据探索之旅',
+    desc: '语雀联合TuGraph 开源社区举办"图计算开启数据探索之旅"主题征文比赛 ',
+    type: 'news',
+    updateDate: '2023-11-24',
+    id: 1124,
+    content: md1124.html,
   },
 ];
 
