@@ -499,10 +499,10 @@ export default {
     '支持K8S等多种执行环境，提供图任务研发管理工具，更适合云上快速部署。',
   'product_analytics.feature.title4': '图原生存储',
   'product_analytics.feature.desc4':
-    '提供面向图的原生存储系统，支持高性能读写和计算下推能力。敬请期待……',
+    '提供面向图的原生存储系统，支持高性能读写和计算下推能力。',
   'product_analytics.feature.title5': '交互式图分析',
   'product_analytics.feature.desc5':
-    '提供图数据的交互式访问和实时分析能力，快速接入BI分析和可视化工具。敬请期待……',
+    '提供图数据的交互式访问和实时分析能力，快速接入BI分析和可视化工具。',
   'product_learn.feature.title0': '支持大规模数据',
   'product_learn.feature.desc0':
     '基于TuGraph图数据库开发的图学习，数据可导入图数据库以外存储，支持更大规模的数据。',

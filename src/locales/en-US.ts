@@ -520,12 +520,12 @@ TuGraph supports more than 300 applications in the Ant Group, including "Double 
   'product_analytics.feature.title3': 'Cloud Native Deployment',
   'product_analytics.feature.desc3':
     'Supporting multiple execution environments like kubernetes, and providing graph job development tools and rapid deployment on clouds.',
-  'product_analytics.feature.title4': 'Graph Native State',
+  'product_analytics.feature.title4': 'Native Graph Storage',
   'product_analytics.feature.desc4':
-    'Providing a native graph oriented storage system, supporting high-performance I/O and computation pushdown. (Coming soon)',
+    'Providing a native graph oriented storage system, supporting high-performance I/O and computation pushdown.',
   'product_analytics.feature.title5': 'Interactive Graph Analysis',
   'product_analytics.feature.desc5':
-    'Enabling interactive real-time analytics of graph data, allowing rapid integration with business intelligence and visualization tools. (Coming soon)',
+    'Enabling interactive real-time analytics of graph data, allowing rapid integration with business intelligence and visualization tools. ',
   'product_learn.feature.title0': 'Large-Scale Data',
   'product_learn.feature.desc0':
     'Supports large-scale graph data and workloads by leveraging native graph database technologies.',
