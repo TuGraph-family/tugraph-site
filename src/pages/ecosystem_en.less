@@ -1,7 +1,6 @@
 .containerWrapper {
   max-width: 1200px;
   margin: auto;
-
   .cardWrapper {
     background-color: #ffffff;
     box-shadow: 0 3px 6px -4px rgba(132, 135, 155, 0.12),
@@ -10,7 +9,24 @@
     border-radius: 12px;
     padding: 32px;
     text-align: center;
-
+    .iconWrap {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      align-items: center;
+      padding: 0 40px;
+      margin-bottom: 24px;
+      & .imgBox {
+        width: 282px;
+        margin: 16px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        & img {
+          display: block;
+        }
+      }
+    }
     .groupTitle,
     .title {
       font-family: 'PuHuiTi85';

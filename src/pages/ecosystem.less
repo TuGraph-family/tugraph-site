@@ -10,7 +10,67 @@
     border-radius: 12px;
     padding: 32px;
     text-align: center;
+    .iconWrap {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      align-items: center;
+      padding: 0 120px;
+      margin-bottom: 24px;
+      & img {
+        width: 282px;
+        height: 64px;
+        display: block;
+      }
+    }
+    .groupTitle,
+    .title {
+      font-family: 'PuHuiTi85';
+      font-size: 32px;
+      color: rgba(26, 27, 37, 0.88);
+      text-align: center;
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
 
+    .groupDescription {
+      font-family: 'PuHuiTi55';
+      font-size: 14px;
+      color: rgba(26, 27, 37, 0.45);
+      text-align: center;
+      line-height: 22px;
+      margin-bottom: 32px;
+    }
+    .description {
+      font-family: 'PuHuiTi55';
+      font-size: 14px;
+      color: rgba(26, 27, 37, 0.45);
+      text-align: center;
+      line-height: 22px;
+    }
+  }
+  .wrapper {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 32px;
+    text-align: center;
+    .iconWrap {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-bottom: 24px;
+      & .imgBox {
+        width: 282px;
+        margin: 16px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        & img {
+          display: block;
+        }
+      }
+    }
     .groupTitle,
     .title {
       font-family: 'PuHuiTi85';

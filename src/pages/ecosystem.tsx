@@ -1,13 +1,15 @@
-import { LayoutTemplate } from '@/components/LayoutTemplate';
-import { getPartner } from '@/data/get_partner';
-import { getPartnerReason } from '@/data/get_partner_reason';
 import { Anchor, Col, Row, Space } from 'antd';
 import cx from 'classnames';
 import { useMedia } from 'react-use';
 import { getLocale, useIntl } from 'umi';
+import React from 'react';
 
 import stylesZh from './ecosystem.less';
 import stylesEn from './ecosystem_en.less';
+import { getPartnerReason } from '@/data/get_partner_reason';
+import { getPartner } from '@/data/get_partner';
+import { LayoutTemplate } from '@/components/LayoutTemplate';
+import { logoList } from '@/constant';
 
 const { Link } = Anchor;
 
@@ -18,7 +20,7 @@ export default function EcosystemPage() {
   const isWide = useMedia('(min-width: 767.99px)', true);
   const content = (
     <div className={styles.containerWrapper}>
-      <div className={styles.cardWrapper} style={{ marginBottom: '40px' }}>
+      <div className={styles.cardWrapper} style={{ marginBottom: 40 }}>
         <div className={styles.groupTitle}>
           {intl.formatMessage({ id: 'ecosystem.type.title' })}
         </div>
@@ -46,7 +48,7 @@ export default function EcosystemPage() {
           </Row>
         </div>
       </div>
-      <div className={styles.cardWrapper}>
+      <div className={styles.wrapper} style={{ marginBottom: 40 }}>
         <div className={styles.groupTitle}>
           {intl.formatMessage({ id: 'ecosystem.support.title' })}
         </div>
@@ -77,6 +79,27 @@ export default function EcosystemPage() {
               );
             })}
           </Row>
+        </div>
+      </div>
+      <div className={styles.wrapper}>
+        <div className={styles.groupTitle}>
+          {intl.formatMessage({ id: 'ecosystem.support.title1' })}
+        </div>
+        <div className={styles.iconWrap}>
+          {logoList.map((item) => {
+            return (
+              <div className={styles.imgBox} key={item?.icon}>
+                <img
+                  src={item.icon}
+                  alt=""
+                  style={{
+                    width: item?.width,
+                    height: item?.height,
+                  }}
+                />
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>

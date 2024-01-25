@@ -12,3 +12,48 @@ export const searchParamsZh = {
   indexName: 'tugraph-antgroup',
   apiKey: '543db0cadd3173a4b801cd13f89aa996',
 };
+
+export const logoList = [
+  {
+    icon: 'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*ZitfSJCOJ2IAAAAAAAAAAAAADgOBAQ/original',
+    link: '',
+    desc: '',
+    width: 240,
+    height: 'auto',
+  },
+  {
+    icon: 'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*a59ORbMH124AAAAAAAAAAAAADgOBAQ/original',
+    link: '',
+    desc: '',
+    width: 'auto',
+    height: 48,
+  },
+  {
+    icon: 'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*Zdk2TbE8ISUAAAAAAAAAAAAADgOBAQ/original',
+    link: '',
+    desc: '',
+    width: 240,
+    height: 'auto',
+  },
+  {
+    icon: 'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*sfaARYA5mUoAAAAAAAAAAAAADgOBAQ/original',
+    link: '',
+    desc: '',
+    width: 282,
+    height: 'auto',
+  },
+  {
+    icon: 'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*FeyeQ5lzFoYAAAAAAAAAAAAADgOBAQ/original',
+    link: '',
+    desc: '',
+    width: 282,
+    height: 'auto',
+  },
+  {
+    icon: 'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*mKFCRIZkBxcAAAAAAAAAAAAADgOBAQ/original',
+    link: '',
+    desc: '',
+    width: 282,
+    height: 'auto',
+  },
+];

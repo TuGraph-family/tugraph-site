@@ -353,6 +353,7 @@ TuGraph supports more than 300 applications in the Ant Group, including "Double 
   'ecosystem.type4.description':
     'Sell TuGraph to end users, with sales and pre-sales consulting capabilities.E.g., Resellers and Distributors.',
   'ecosystem.support.title': 'WHY PARTNER WITH TUGRAPH',
+  'ecosystem.support.title1': 'PARTNER',
   'ecosystem.support.description':
     'We collaborate with partners and provide enablement resources to help you build, market, and sell your customer offerings.',
   'ecosystem.support0': 'Training Programs of TuGraph Products and Services',
@@ -538,4 +539,5 @@ TuGraph supports more than 300 applications in the Ant Group, including "Double 
   'product_learn.feature.title3': 'High Performance',
   'product_learn.feature.desc3':
     'High performance and high operability framework.',
+  'home.banner.expandBtnDesc': 'Notice',
 };

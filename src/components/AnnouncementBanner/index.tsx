@@ -1,4 +1,4 @@
-import { Carousel, Drawer, Modal, Tooltip } from 'antd';
+import { Button, Carousel, Drawer, Modal, Tooltip } from 'antd';
 import React, { useEffect, useState } from 'react';
 import { useMedia } from 'react-use';
 import { getLocale, history, useIntl } from 'umi';
@@ -30,73 +30,93 @@ const AnnouncementBanner = () => {
   const onOpenBanner = () => {
     setShowBottomModal(true);
   };
-  const pcBanner = getBannerContentList(intl).length > 0 && (
-    <>
-      <Tooltip
-        title={intl.formatMessage({ id: 'home.banner.expandBtnDesc' })}
-        color="#FFFFFF"
-        placement="left"
-      >
-        <div
-          className={styles.expandBtn}
-          onClick={() => {
-            setShowBottomDrawer(true);
-          }}
-        >
-          <img
-            src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*WjEsS552EJAAAAAAAAAAAAAADgOBAQ/original"
-            alt=""
-          />
-        </div>
-      </Tooltip>
-
-      <Drawer
-        placement="right"
-        open={showBottomDrawer}
-        mask={false}
-        height="192"
-        closable={false}
-        className={styles.bottomDrawer}
-      >
-        <div className={styles.closeOutlinedBtn}>
-          <CloseOutlined
-            onClick={() => {
-              setShowBottomDrawer(false);
-              sessionStorage.setItem('isBannerShow', 'false');
-            }}
-          />
-        </div>
-        {getBannerContentList(intl).length > 1 && (
+  const PCBanner = () => {
+    return (
+      <div>
+        {getBannerContentList(intl).length === 0 ? (
           <>
-            <div className={styles.leftOutlinedBtn}>
-              <LeftOutlined />
-            </div>
-            <div className={styles.rightOutlinedBtn}>
-              <RightOutlined />
-            </div>
+            <Tooltip
+              title={intl.formatMessage({ id: 'home.banner.expandBtnDesc' })}
+              color="#FFFFFF"
+              placement="left"
+            >
+              <div
+                className={styles.expandBtn}
+                onClick={() => {
+                  setShowBottomDrawer(true);
+                }}
+              >
+                <img
+                  src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*WjEsS552EJAAAAAAAAAAAAAADgOBAQ/original"
+                  alt=""
+                />
+              </div>
+            </Tooltip>
+
+            <Drawer
+              placement="right"
+              open={showBottomDrawer}
+              mask={false}
+              height="192"
+              closable={false}
+              className={styles.bottomDrawer}
+            >
+              <div className={styles.closeOutlinedBtn}>
+                <CloseOutlined
+                  onClick={() => {
+                    setShowBottomDrawer(false);
+                    sessionStorage.setItem('isBannerShow', 'false');
+                  }}
+                />
+              </div>
+              {getBannerContentList(intl).length > 1 && (
+                <>
+                  <div className={styles.leftOutlinedBtn}>
+                    <LeftOutlined />
+                  </div>
+                  <div className={styles.rightOutlinedBtn}>
+                    <RightOutlined />
+                  </div>
+                </>
+              )}
+              <Carousel>
+                {getBannerContentList(intl)?.length
+                  ? getBannerContentList(intl).map((item, index) => (
+                      <div key={index} className={styles.bannerContainer}>
+                        <img
+                          src={item.pcImg}
+                          onClick={() => {
+                            setShowBottomDrawer(false);
+                            sessionStorage.setItem('isBannerShow', 'false');
+                            history.push(
+                              `/blog?id=${lang === 'zh-CN' ? '1000' : '1000'}`,
+                            );
+                          }}
+                        />
+                      </div>
+                    ))
+                  : null}
+              </Carousel>
+            </Drawer>
           </>
-        )}
-        <Carousel>
-          {getBannerContentList(intl)?.length
-            ? getBannerContentList(intl).map((item, index) => (
-                <div key={index} className={styles.bannerContainer}>
-                  <img
-                    src={item.pcImg}
-                    onClick={() => {
-                      setShowBottomDrawer(false);
-                      sessionStorage.setItem('isBannerShow', 'false');
-                      history.push(
-                        `/blog?id=${lang === 'zh-CN' ? '1000' : '1000'}`,
-                      );
-                    }}
-                  />
-                </div>
-              ))
-            : null}
-        </Carousel>
-      </Drawer>
-    </>
-  );
+        ) : null}
+        <div>
+          <div
+            className={styles.githubBtn}
+            onClick={() => {
+              window.open('https://github.com/TuGraph-family');
+            }}
+          >
+            <img
+              src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*071VR4u64DwAAAAAAAAAAAAADgOBAQ/original"
+              className={styles.githubIcon}
+            />
+          </div>
+        </div>
+      </div>
+    );
+  };
+
   const mobileBanner = getBannerContentList(intl).length > 0 && (
     <>
       <img
@@ -137,6 +157,6 @@ const AnnouncementBanner = () => {
       </Modal>
     </>
   );
-  return isWide ? pcBanner : mobileBanner;
+  return isWide ? <PCBanner /> : mobileBanner;
 };
 export default AnnouncementBanner;
