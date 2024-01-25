@@ -33,7 +33,7 @@ const AnnouncementBanner = () => {
   const PCBanner = () => {
     return (
       <div>
-        {getBannerContentList(intl).length === 0 ? (
+        {getBannerContentList(intl).length > 0 ? (
           <>
             <Tooltip
               title={intl.formatMessage({ id: 'home.banner.expandBtnDesc' })}
