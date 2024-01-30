@@ -25,6 +25,7 @@ import { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { useMedia } from 'react-use';
 import { getLocale, isBrowser, useIntl } from 'umi';
+import React from 'react';
 
 import stylesZh from './index.less';
 import stylesEn from './index_en.less';
@@ -260,7 +261,6 @@ export default function IndexPage() {
             })}
           </Row>
         </div>
-
         <div className={styles.cases}>
           <Row className="maxContainer">
             <Col span={isWide ? 6 : 24} className={styles.caseGroup}>

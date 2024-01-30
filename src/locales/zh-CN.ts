@@ -337,6 +337,7 @@ export default {
   'ecosystem.type4.description':
     '具备TuGraph产品的销售、售前咨询能力，将TuGraph销售给最终用户。',
   'ecosystem.support.title': '合作伙伴支持',
+  'ecosystem.support.title1': '合作伙伴',
   'ecosystem.support.description': '精选支持资源帮助您构建、营销和销售您的产品',
   'ecosystem.support0': '体系化产品和服务培训',
   'ecosystem.support1': '深入的图技术赋能',

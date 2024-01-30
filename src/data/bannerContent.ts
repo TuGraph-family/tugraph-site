@@ -1,11 +1,11 @@
 import { IntlShape } from 'react-intl';
 export const getBannerCnContentList = (intl: IntlShape) => [
-  {
-    pcImg:
-      'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*slpNTb7WUScAAAAAAAAAAAAADgOBAQ/original',
-    mobileImg:
-      'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*L5zxRqBkdp0AAAAAAAAAAAAADgOBAQ/original',
-  },
+  // {
+  //   pcImg:
+  //     'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*slpNTb7WUScAAAAAAAAAAAAADgOBAQ/original',
+  //   mobileImg:
+  //     'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*L5zxRqBkdp0AAAAAAAAAAAAADgOBAQ/original',
+  // },
 ];
 export const getBannerEnContentList = (intl: IntlShape) => [
   // {

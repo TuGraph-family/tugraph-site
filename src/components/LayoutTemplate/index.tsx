@@ -1,10 +1,10 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { setLocale, useLocation, isBrowser } from 'umi';
 import { Header } from '../Header';
+import GithubButton from '../githubButton';
+import styles from './index.less';
 import { Banner, BannerInfoProps } from '@/components/Banner';
 import { Footer } from '@/components/Footer';
-
-import styles from './index.less';
 
 export interface LayoutProps {
   content: JSX.Element;

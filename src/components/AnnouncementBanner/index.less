@@ -76,19 +76,24 @@
 .expandBtn {
   position: fixed;
   padding: 8px;
-  bottom: 80px;
-  right: 0px;
+  bottom: 264px;
+  right: 16px;
   height: 40px;
   width: 40px;
   background-color: #ffffff;
   border: 1px solid rgba(26, 27, 37, 0.02);
-  box-shadow: 0 3px 6px -4px rgba(132, 135, 155, 0.14),
-    0 2px 16px 0 rgba(132, 135, 155, 0.1);
-  border-radius: 6px 0 0 6px;
+  box-shadow: 0px 9px 28px 8px rgba(0, 10, 26, 0.05),
+    0px 6px 16px 0px rgba(0, 10, 26, 0.08),
+    0px 3px 6px -4px rgba(0, 10, 26, 0.12);
+  border-radius: 50%;
   color: rgba(26, 27, 37, 0.88);
   font-size: 12px;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
 :global {
   .ant-tooltip-inner {
     color: rgba(26, 27, 37, 0.88) !important;
