@@ -1,24 +1,22 @@
 .containerWrapper {
   max-width: 1200px;
   margin: auto;
-  .cardWrapper {
+  .wrapper {
     background-color: #ffffff;
-    box-shadow: 0 3px 6px -4px rgba(132, 135, 155, 0.12),
-      0 6px 16px 0 rgba(132, 135, 155, 0.08),
-      0 9px 28px 8px rgba(132, 135, 155, 0.05);
     border-radius: 12px;
-    padding: 32px;
     text-align: center;
+
     .iconWrap {
       display: flex;
       justify-content: space-around;
       flex-wrap: wrap;
       align-items: center;
-      padding: 0 40px;
       margin-bottom: 24px;
+      padding-top: 24px;
       & .imgBox {
-        width: 282px;
-        margin: 16px;
+        width: 384px;
+        margin-bottom: 16px;
+        min-height: 84px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -35,6 +33,44 @@
       text-align: center;
       font-weight: 500;
       margin-bottom: 8px;
+    }
+    .groupTitle {
+      padding-top: 40px;
+    }
+    .groupDescription {
+      font-family: 'PuHuiTi55';
+      font-size: 14px;
+      color: rgba(26, 27, 37, 0.45);
+      text-align: center;
+      line-height: 22px;
+      margin-bottom: 32px;
+    }
+    .description {
+      font-family: 'PuHuiTi55';
+      font-size: 14px;
+      color: rgba(26, 27, 37, 0.45);
+      text-align: center;
+      line-height: 22px;
+    }
+  }
+  .cardWrapper {
+    background-color: #ffffff;
+    box-shadow: 0 3px 6px -4px rgba(132, 135, 155, 0.12),
+      0 6px 16px 0 rgba(132, 135, 155, 0.08),
+      0 9px 28px 8px rgba(132, 135, 155, 0.05);
+    border-radius: 12px;
+    padding: 32px;
+    text-align: center;
+
+    .groupTitle,
+    .title {
+      font-family: 'PuHuiTi85';
+      font-size: 32px;
+      color: rgba(26, 27, 37, 0.88);
+      text-align: center;
+      font-weight: 500;
+      margin-bottom: 8px;
+      padding-top: 40px;
     }
 
     .groupDescription {

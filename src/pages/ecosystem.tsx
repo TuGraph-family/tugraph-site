@@ -21,7 +21,7 @@ export default function EcosystemPage() {
   const content = (
     <div className={styles.containerWrapper}>
       <div className={styles.cardWrapper} style={{ marginBottom: 40 }}>
-        <div className={styles.groupTitle}>
+        <div className={styles.groupTitle} style={{ paddingTop: 0 }}>
           {intl.formatMessage({ id: 'ecosystem.type.title' })}
         </div>
         <div className={styles.groupDescription}>
@@ -95,6 +95,7 @@ export default function EcosystemPage() {
                   style={{
                     width: item?.width,
                     height: item?.height,
+                    padding: isWide ? 'auto' : ' 0 12px',
                   }}
                 />
               </div>

@@ -261,7 +261,6 @@ export default function IndexPage() {
             })}
           </Row>
         </div>
-
         <div className={styles.cases}>
           <Row className="maxContainer">
             <Col span={isWide ? 6 : 24} className={styles.caseGroup}>

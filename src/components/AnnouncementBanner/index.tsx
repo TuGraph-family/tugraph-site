@@ -26,7 +26,10 @@ const AnnouncementBanner = () => {
       setShowBottomDrawer(true);
       setShowBottomModal(true);
     }
+    setShowBottomModal(true);
+    setShowBottomDrawer(true);
   }, []);
+
   const onOpenBanner = () => {
     setShowBottomModal(true);
   };

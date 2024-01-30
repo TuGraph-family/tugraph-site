@@ -10,19 +10,6 @@
     border-radius: 12px;
     padding: 32px;
     text-align: center;
-    .iconWrap {
-      display: flex;
-      justify-content: space-around;
-      flex-wrap: wrap;
-      align-items: center;
-      padding: 0 120px;
-      margin-bottom: 24px;
-      & img {
-        width: 282px;
-        height: 64px;
-        display: block;
-      }
-    }
     .groupTitle,
     .title {
       font-family: 'PuHuiTi85';
@@ -31,6 +18,9 @@
       text-align: center;
       font-weight: 500;
       margin-bottom: 8px;
+    }
+    .groupTitle {
+      padding-top: 40px;
     }
 
     .groupDescription {
@@ -52,17 +42,19 @@
   .wrapper {
     background-color: #ffffff;
     border-radius: 12px;
-    padding: 32px;
     text-align: center;
+
     .iconWrap {
       display: flex;
       justify-content: space-around;
       flex-wrap: wrap;
       align-items: center;
       margin-bottom: 24px;
+      padding-top: 24px;
       & .imgBox {
-        width: 282px;
-        margin: 16px;
+        width: 384px;
+        margin-bottom: 16px;
+        min-height: 84px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -80,7 +72,9 @@
       font-weight: 500;
       margin-bottom: 8px;
     }
-
+    .groupTitle {
+      padding-top: 40px;
+    }
     .groupDescription {
       font-family: 'PuHuiTi55';
       font-size: 14px;
@@ -181,6 +175,14 @@
 }
 
 @media only screen and (max-width: 767.99px) {
+  .wrapper {
+    .groupTitle {
+      font-size: 6.4vw !important;
+      font-weight: 600 !important;
+      line-height: 9.06vw !important;
+      padding-top: 2.7vw !important;
+    }
+  }
   .cardWrapper {
     margin-bottom: 2.7vw !important;
     padding: 6.4vw 4.3vw 4.3vw 4.3vw !important;

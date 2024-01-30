@@ -9,6 +9,7 @@ import { getLocale, history, useIntl, useLocation } from 'umi';
 
 import '@docsearch/css';
 import AnnouncementBanner from '../AnnouncementBanner';
+import GithubButton from '../githubButton';
 import styles from './index.less';
 import { HOST_EN, HOST_ZH, searchParamsEn, searchParamsZh } from '@/constant';
 
@@ -611,9 +612,13 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
       document.documentElement.scrollTop = 0;
     }
   }, [pathname]);
+
   return (
-    <div className={cx(styles.header, isStick ? styles.sticky : null)}>
-      {isWide ? pc : mobile}
-    </div>
+    <>
+      {isWide ? <GithubButton offset={208} /> : null}
+      <div className={cx(styles.header, isStick ? styles.sticky : null)}>
+        {isWide ? pc : mobile}
+      </div>
+    </>
   );
 };
