@@ -330,7 +330,8 @@ export default function IndexPage() {
                 style={{
                   ...(isCn
                     ? {
-                        height: 59,
+                        height: 44,
+                        marginTop: 7,
                       }
                     : {
                         transform: 'scale(.5)',
