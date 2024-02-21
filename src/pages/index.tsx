@@ -321,7 +321,23 @@ export default function IndexPage() {
         <div className="maxContainer">
           <Row className={styles.users} gutter={20}>
             <Col span={isWide ? 6 : 12}>
-              <img src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*yZnbTbOz1RAAAAAAAAAAAAAADgOBAQ/original" />
+              <img
+                src={
+                  isCn
+                    ? 'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*XsI4QYzHC7wAAAAAAAAAAAAADgOBAQ/original'
+                    : 'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*tZzVTLe-dogAAAAAAAAAAAAADgOBAQ/original'
+                }
+                style={{
+                  ...(isCn
+                    ? {
+                        height: 59,
+                      }
+                    : {
+                        transform: 'scale(.5)',
+                        marginTop: -4,
+                      }),
+                }}
+              />
             </Col>
             <Col span={isWide ? 6 : 12}>
               <img src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*6qfKQo719XQAAAAAAAAAAAAADgOBAQ/original" />
