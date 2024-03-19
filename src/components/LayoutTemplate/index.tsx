@@ -5,6 +5,8 @@ import GithubButton from '../githubButton';
 import styles from './index.less';
 import { Banner, BannerInfoProps } from '@/components/Banner';
 import { Footer } from '@/components/Footer';
+import { getSearch } from '@/util';
+import { DEFAULT_LOCAL } from '@/constant';
 
 export interface LayoutProps {
   content: JSX.Element;
@@ -13,6 +15,10 @@ export interface LayoutProps {
 
 export const LayoutTemplate = ({ bannerInfo, content }: LayoutProps) => {
   const location = useLocation();
+  const { search } = location;
+  useEffect(() => {
+    setLocale(getSearch(search)?.lang || DEFAULT_LOCAL, false);
+  }, [search]);
   const [isStick, setIsStick] = useState<boolean>(false);
   const handleScroll = useCallback(() => {
     if (!isBrowser()) {
