@@ -1,7 +1,9 @@
 export const DOC_HOST_ZH = 'https://webapi.oceanbase.com';
 export const DOC_HOST_EN = 'https://wan-api.oceanbase.com';
-export const HOST_ZH = 'https://tugraph.antgroup.com';
-export const HOST_EN = 'https://www.tugraph.org';
+export const HOST_ZH = 'https://tugraph.tech?lang=zh-CN';
+export const HOST_EN = 'https://tugraph.tech?lang=en-US';
+export const ZH_SITE = 'https://tugraph.antgroup.com';
+export const EN_SITE = 'https://www.tugraph.org';
 export const searchParamsEn = {
   appId: 'EZGAVAOMAN',
   indexName: 'tugraph',
@@ -57,3 +59,5 @@ export const logoList = [
     height: 84,
   },
 ];
+export const DEFAULT_LOCAL = 'zh-CN';
+export const MATCH_LOCAL_SEARCH_REG = /[\\?]?([a-zA-Z0-9]+)=([0-9A-Z\-a-z]+)/g;
