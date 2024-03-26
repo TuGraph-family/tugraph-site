@@ -24,7 +24,7 @@ import cx from 'classnames';
 import { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { useMedia } from 'react-use';
-import { getLocale, isBrowser, useIntl } from 'umi';
+import { isBrowser, useIntl, useLocation } from 'umi';
 import React from 'react';
 
 import stylesZh from './index.less';
@@ -37,10 +37,14 @@ import JoLPlayer from '@/components/Player';
 import { LayoutTemplate } from '@/components/LayoutTemplate';
 import { ApplyForm } from '@/components/ApplyForm';
 import AnnouncementBanner from '@/components/AnnouncementBanner';
+import { getSearch } from '@/util';
 
 export default function IndexPage() {
   const intl = useIntl();
-  const lang = getLocale();
+  const location = useLocation();
+  const { search } = location;
+  const lang = getSearch(search)?.lang || 'zh-CN';
+
   const styles = lang === 'zh-CN' ? stylesZh : stylesEn;
   const isWide = useMedia('(min-width: 767.99px)', true);
   const [showApplyForm, setShowApplyForm] = useState(false);
