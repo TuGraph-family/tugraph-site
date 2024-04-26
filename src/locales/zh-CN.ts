@@ -171,6 +171,7 @@ export default {
   'footer.qrCode.subDescWeChart': '扫码了解更多资讯',
   'footer.qrCode.subDescDingTalk': '微信扫码加入',
   'footer.rules': '隐私条款',
+  'footer.copyright': '京ICP备15032932号-43',
   'footer.extraInfo': '© 2022 蚂蚁集团',
   'footer.address': '地址：中国北京朝阳区东三环中路1号环球金融中心东塔9层',
   'footer.addressMobile': '中国北京朝阳区东三环中路1号环球金融中心东塔9层',

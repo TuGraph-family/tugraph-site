@@ -19,6 +19,7 @@ export default {
   'footer.product': 'Products',
   'footer.contact': 'Contact',
   'footer.productName': 'TuGraph DB Lite (Standalone)',
+  'footer.copyright': '京ICP备15032932号-43',
   'footer.community': 'Community',
   'footer.communityName': 'bilibili',
   'footer.phone': '400-903-0809',
