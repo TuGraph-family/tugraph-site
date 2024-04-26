@@ -50,6 +50,7 @@ export const Footer = ({ className }: { className?: string }) => {
                   : 'https://tugraph-db.readthedocs.io/en/latest/4.user-guide/1.tugraph-browser.html'
               }
               target="_blank"
+              rel="noreferrer"
             >
               TuGraph Browser
             </a>
@@ -61,6 +62,7 @@ export const Footer = ({ className }: { className?: string }) => {
                   : 'https://tugraph-db.readthedocs.io/en/latest/5.developer-manual/5.ecosystem-tools/3.tugraph-explorer.html'
               }
               target="_blank"
+              rel="noreferrer"
             >
               TuGraph Explorer
             </a>
@@ -75,6 +77,7 @@ export const Footer = ({ className }: { className?: string }) => {
               target="_blank"
               className={styles.item}
               href="https://github.com/TuGraph-family"
+              rel="noreferrer"
             >
               GitHub
             </a>
@@ -85,6 +88,7 @@ export const Footer = ({ className }: { className?: string }) => {
               target="_blank"
               className={styles.item}
               href="https://space.bilibili.com/1196053065/"
+              rel="noreferrer"
             >
               {intl.formatMessage({ id: 'footer.communityName' })}
             </a>
@@ -115,6 +119,7 @@ export const Footer = ({ className }: { className?: string }) => {
                 <a
                   href="https://tugraph.slack.com/join/shared_invite/zt-1hha8nuli-bqdkwn~w4zH1vlk0QvqIfg#/shared-invite/email"
                   target={'_blank'}
+                  rel="noreferrer"
                 >
                   Slack
                 </a>
@@ -155,6 +160,14 @@ export const Footer = ({ className }: { className?: string }) => {
 
       <Row className={styles.footerExtraInfo}>
         <Space size={16}>
+          <a
+            href="https://beian.miit.gov.cn"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            {intl.formatMessage({ id: 'footer.copyright' })}
+          </a>
+          |
           <a
             href="https://render.alipay.com/p/yuyan/180020010001196791/preview.html?agreementId=AG00000174"
             rel="noopener noreferrer"
@@ -200,6 +213,7 @@ export const Footer = ({ className }: { className?: string }) => {
               target="_blank"
               className={styles.item}
               href="https://github.com/TuGraph-family"
+              rel="noreferrer"
             >
               GitHub
             </a>
@@ -210,6 +224,7 @@ export const Footer = ({ className }: { className?: string }) => {
               target="_blank"
               className={styles.item}
               href="https://space.bilibili.com/1196053065/"
+              rel="noreferrer"
             >
               {intl.formatMessage({ id: 'footer.communityName' })}
             </a>
@@ -239,6 +254,7 @@ export const Footer = ({ className }: { className?: string }) => {
                 <a
                   target="_blank"
                   href="https://tugraph.slack.com/join/shared_invite/zt-1hha8nuli-bqdkwn~w4zH1vlk0QvqIfg#/shared-invite/email"
+                  rel="noreferrer"
                 >
                   Slack
                 </a>
@@ -325,6 +341,13 @@ export const Footer = ({ className }: { className?: string }) => {
         {lang !== 'zh-CN' && !isWide ? (
           <Divider className={styles.divider} />
         ) : null}
+        <a
+          href="https://beian.miit.gov.cn"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          {intl.formatMessage({ id: 'footer.copyright' })}
+        </a>
         <a
           href="https://render.alipay.com/p/yuyan/180020010001196791/preview.html?agreementId=AG00000174"
           rel="noopener noreferrer"
