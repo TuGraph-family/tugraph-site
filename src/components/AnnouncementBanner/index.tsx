@@ -103,19 +103,6 @@ const AnnouncementBanner = () => {
             </Drawer>
           </>
         ) : null}
-        <div>
-          <div
-            className={styles.githubBtn}
-            onClick={() => {
-              window.open('https://github.com/TuGraph-family');
-            }}
-          >
-            <img
-              src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*071VR4u64DwAAAAAAAAAAAAADgOBAQ/original"
-              className={styles.githubIcon}
-            />
-          </div>
-        </div>
       </div>
     );
   };
