@@ -101,7 +101,7 @@ export default function BlogPage() {
                 <a
                   className={styles.list}
                   key={key}
-                  href={`/blog?id=${item.id}`}
+                  href={`/blog?id=${item.id}&lang=${lang}`}
                   onClick={() => {
                     setBlogDetail(item.content);
                   }}
@@ -127,7 +127,7 @@ export default function BlogPage() {
                 <a
                   className={styles.list}
                   key={key}
-                  href={`/blog?id=${item.id}`}
+                  href={`/blog?id=${item.id}&lang=${lang}`}
                   onClick={() => {
                     setBlogDetail(item.content);
                   }}
@@ -153,7 +153,7 @@ export default function BlogPage() {
                 <a
                   className={styles.list}
                   key={key}
-                  href={`/blog?id=${item.id}`}
+                  href={`/blog?id=${item.id}&lang=${lang}`}
                   onClick={() => {
                     setBlogDetail(item.content);
                   }}
@@ -179,7 +179,7 @@ export default function BlogPage() {
                 <a
                   className={styles.list}
                   key={key}
-                  href={`/blog?id=${item.id}`}
+                  href={`/blog?id=${item.id}&lang=${lang}`}
                   onClick={() => {
                     setBlogDetail(item.content);
                   }}
