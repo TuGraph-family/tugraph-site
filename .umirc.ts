@@ -1,3 +1,4 @@
+import { DEFAULT_LOCAL } from './src/constant';
 import { defineConfig } from 'umi';
 
 export default defineConfig({
@@ -94,7 +95,7 @@ gtag('config', 'AW-11092859162');`,
     baseNavigator: false,
     baseSeparator: '-',
     title: true,
-    default: 'en-US',
+    default: DEFAULT_LOCAL,
     useLocalStorage: false,
   },
 });

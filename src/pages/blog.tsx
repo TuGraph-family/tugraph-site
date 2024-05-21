@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import HTMLRenderer from 'react-html-renderer';
-import { useIntl, history, useLocation, getLocale } from 'umi';
+import { useIntl, useLocation } from 'umi';
 import { Spin, Pagination, Tabs, Space, Button } from 'antd';
 import { Layout } from 'antd';
 import cx from 'classnames';
@@ -12,6 +12,8 @@ import { getZHBlogs } from '@/data/blog';
 import { getENBlogs } from '@/data/blog_en';
 import { LayoutTemplate } from '@/components/LayoutTemplate';
 import { BlogItem } from '@/interface';
+import { getSearch } from '@/util';
+import { DEFAULT_LOCAL } from '@/constant';
 
 const { Content } = Layout;
 
@@ -20,7 +22,8 @@ const PAGE_SIZE = 7;
 export default function BlogPage() {
   const intl = useIntl();
   const location = useLocation();
-  const lang = getLocale();
+  const { search } = location;
+  const lang = getSearch(search)?.lang || DEFAULT_LOCAL;
   const getBlogs = lang === 'zh-CN' ? getZHBlogs : getENBlogs;
   const isWide = useMedia('(min-width: 767.99px)', true);
   const [type, setType] = React.useState<string>('all');

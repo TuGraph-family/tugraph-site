@@ -22,6 +22,7 @@ import md19 from '@/doc/zh/19.md';
 import md20 from '@/doc/zh/20.md';
 import md999 from '@/doc/zh/999.md';
 import idc from '@/doc/zh/IDC.md';
+import md888 from '@/doc/zh/888.md';
 
 export const blogs = [
   {
@@ -222,6 +223,15 @@ export const blogs = [
     updateDate: '2023-07-17',
     id: 1000,
     content: idc?.html,
+  },
+  {
+    id: 888,
+    img: 'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*BLo1QZwId_0AAAAAAAAAAAAADgOBAQ/original',
+    title: '2024 开源之夏已开启',
+    desc: '欢迎报名 TuGraph 项目，赢取万元奖金',
+    updateDate: '2024-04-30',
+    type: 'competition',
+    content: md888?.html,
   },
 ];
 

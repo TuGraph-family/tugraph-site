@@ -10,9 +10,11 @@ import {
   Space,
   Typography,
 } from 'antd';
-import { getLocale, useIntl } from 'umi';
+import { useIntl, useLocation } from 'umi';
 import { useMedia } from 'react-use';
 import styles from './index.less';
+import { getSearch } from '@/util';
+import { DEFAULT_LOCAL } from '@/constant';
 
 export const ApplyForm = ({
   visible = false,
@@ -22,13 +24,14 @@ export const ApplyForm = ({
   setVisible: Dispatch<SetStateAction<boolean>>;
 }) => {
   const isWide = useMedia('(min-width: 767.99px)', true);
+  const { search } = useLocation();
   const intl = useIntl();
-  const lang = getLocale();
+  const lang = getSearch(search)?.lang || DEFAULT_LOCAL;
   const [form] = Form.useForm();
 
   const onOk = (values: any) => {
     form.validateFields().then((values) => {
-      let body = [];
+      const body = [];
       for (const [key, value] of Object.entries(values)) {
         body.push(`${key}: ${value}`);
       }

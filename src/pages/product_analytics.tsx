@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { getLocale, isBrowser, useIntl } from 'umi';
+import { useIntl, useLocation } from 'umi';
 import { Helmet } from 'react-helmet';
 
 import { useMedia } from 'react-use';
@@ -10,10 +10,13 @@ import stylesEn from './product_analytics_en.less';
 import { LayoutTemplate } from '@/components/LayoutTemplate';
 import { SubTitle } from '@/components/SubTitle';
 import { getFeats } from '@/data/feats2';
+import { getSearch } from '@/util';
+import { DEFAULT_LOCAL } from '@/constant';
 
 const Root = () => {
   const intl = useIntl();
-  const lang = getLocale();
+  const { search } = useLocation();
+  const lang = getSearch(search)?.lang || DEFAULT_LOCAL;
   const isWide = useMedia('(min-width: 767.99px)', true);
   const styles = lang === 'en' || lang === 'en-US' ? stylesEn : stylesZh;
 

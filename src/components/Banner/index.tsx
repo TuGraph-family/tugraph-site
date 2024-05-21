@@ -2,10 +2,12 @@ import { Col, Row } from 'antd';
 import cx from 'classnames';
 import { ReactNode } from 'react';
 import { useMedia } from 'react-use';
+import { useLocation } from 'umi';
+import styles from './index.less';
+import { getSearch } from '@/util';
+import { DEFAULT_LOCAL } from '@/constant';
 
 import { ChOrEnStyle } from '@/util';
-import { getLocale, useLocation } from 'umi';
-import styles from './index.less';
 
 export interface BannerInfoProps {
   slogan: string | ReactNode;
@@ -26,9 +28,9 @@ export const Banner = ({
   mobileImgClassName = '',
   bannerClassName = '',
 }: BannerInfoProps) => {
-  const { pathname } = useLocation();
-  const isHome = pathname === '/' ? true : false;
-  const lang = getLocale();
+  const { pathname, search } = useLocation();
+  const isHome = pathname === '/';
+  const lang = getSearch(search)?.lang || DEFAULT_LOCAL;
 
   const isWide = useMedia('(min-width: 767.99px)', true);
   let background = isWide

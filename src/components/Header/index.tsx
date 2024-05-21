@@ -18,7 +18,7 @@ import {
   searchParamsEn,
   searchParamsZh,
 } from '@/constant';
-import { getSearch } from '@/util';
+import { getSearch, goLinkAt, historyPushLinkAt } from '@/util';
 
 export const Header = ({ isStick }: { isStick?: boolean }) => {
   const intl = useIntl();
@@ -27,12 +27,14 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
   const isZH = lang === 'zh-CN';
   const isWide = useMedia('(min-width: 767.99px)', true);
   const [popupMenuVisible, setPopupMenuVisible] = useState(false);
+  const zhSite = `${window.location.origin}${history?.location?.pathname}?lang=zh-CN`;
+  const enSite = `${window.location.origin}${history?.location?.pathname}?lang=en-US`;
 
   const onToggleLanguage = () => {
     if (lang === 'en' || lang === 'en-US') {
-      window.location.href = `${HOST_ZH}${history?.location?.pathname}`;
+      window.location.href = zhSite;
     } else {
-      window.location.href = `${HOST_EN}${history?.location?.pathname}`;
+      window.location.href = enSite;
     }
   };
 
@@ -78,7 +80,7 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
               <div
                 className={styles.popoverContainer}
                 onClick={() => {
-                  history.push('/blog');
+                  history.push(historyPushLinkAt('/blog'));
                 }}
               >
                 {intl.formatMessage({ id: 'header.blog' })}
@@ -339,7 +341,7 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
               <div
                 className={styles.popoverContainer}
                 onClick={() => {
-                  history.push('/product');
+                  history.push(historyPushLinkAt('/product'));
                 }}
               >
                 {intl.formatMessage({ id: 'header.product.desc' })}
@@ -347,7 +349,7 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
               <div
                 className={styles.popoverContainer}
                 onClick={() => {
-                  history.push('analytics');
+                  history.push(historyPushLinkAt('/analytics'));
                 }}
               >
                 {intl.formatMessage({ id: 'header.product.desc2' })}
@@ -355,7 +357,7 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
               <div
                 className={styles.popoverContainer}
                 onClick={() => {
-                  history.push('learn');
+                  history.push(historyPushLinkAt('/learn'));
                 }}
               >
                 {intl.formatMessage({ id: 'header.product.desc3' })}
@@ -368,7 +370,7 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
               <div
                 className={styles.popoverContainer}
                 onClick={() => {
-                  history.push('/overview');
+                  history.push(historyPushLinkAt('/overview'));
                 }}
               >
                 {intl.formatMessage({ id: 'header.product.desc1' })}
@@ -376,7 +378,7 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
               <div
                 className={styles.popoverContainer}
                 onClick={() => {
-                  history.push('/platform');
+                  history.push(historyPushLinkAt('/platform'));
                 }}
               >
                 {intl.formatMessage({ id: 'platform.title' })}
@@ -384,7 +386,7 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
               <div
                 className={styles.popoverContainer}
                 onClick={() => {
-                  history.push('/db');
+                  history.push(historyPushLinkAt('/db'));
                 }}
               >
                 {intl.formatMessage({ id: 'db.title' })}
@@ -488,7 +490,7 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
   const menuItems: MenuItem[] = [
     {
       label: (
-        <a href="/" rel="noopener noreferrer">
+        <a href={goLinkAt('/')} rel="noopener noreferrer">
           {intl.formatMessage({ id: 'header.home' })}
         </a>
       ),
@@ -497,7 +499,7 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
     { ...(isWide ? pcProductMenu : mobileProductMenu) },
     {
       label: (
-        <a href="/case" rel="noopener noreferrer">
+        <a href={goLinkAt('/case')} rel="noopener noreferrer">
           {intl.formatMessage({ id: 'header.case' })}
         </a>
       ),
@@ -505,7 +507,7 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
     },
     {
       label: (
-        <a href="/ecosystem" rel="noopener noreferrer">
+        <a href={goLinkAt('/ecosystem')} rel="noopener noreferrer">
           {intl.formatMessage({ id: 'header.ecosystem' })}
         </a>
       ),
@@ -516,7 +518,7 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
     { ...(isWide ? pcCommunityMenu : mobileCommunityMenu) },
     {
       label: (
-        <a href="/download" rel="noopener noreferrer">
+        <a href={goLinkAt('/download')} rel="noopener noreferrer">
           {intl.formatMessage({ id: 'header.download' })}
         </a>
       ),
@@ -533,15 +535,11 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
       ),
       children: [
         {
-          label: (
-            <a href={`${HOST_ZH}${history?.location?.pathname}`}>简体中文</a>
-          ),
+          label: <a href={zhSite}>简体中文</a>,
           key: 'Chinese',
         },
         {
-          label: (
-            <a href={`${HOST_EN}${history?.location?.pathname}`}>English</a>
-          ),
+          label: <a href={enSite}>English</a>,
           key: 'English',
         },
       ],
@@ -551,7 +549,7 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
   const pc = (
     <>
       <div className={styles.searchInputStyle}>
-        <a href="/" rel="noopener noreferrer">
+        <a href={goLinkAt('/')} rel="noopener noreferrer">
           <img
             className={styles.log}
             src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*AbamQ5lxv0IAAAAAAAAAAAAADgOBAQ/original"
@@ -572,7 +570,7 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
 
   const mobile = (
     <>
-      <a href="/" rel="noopener noreferrer">
+      <a href={goLinkAt('/')} rel="noopener noreferrer">
         <img src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*AbamQ5lxv0IAAAAAAAAAAAAADgOBAQ/original" />
       </a>
       {menuIcon}

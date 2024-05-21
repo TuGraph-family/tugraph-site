@@ -1,20 +1,22 @@
-import { LayoutTemplate } from '@/components/LayoutTemplate';
-import { SubTitle } from '@/components/SubTitle';
-import { getOverViewFeats } from '@/data/feats';
-import { Anchor, Button, Col, Row, Space } from 'antd';
+import { Button, Col, Row, Space } from 'antd';
 import { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { useMedia } from 'react-use';
-import { getLocale, useIntl } from 'umi';
+import { useIntl, useLocation } from 'umi';
 
-import { ApplyForm } from '@/components/ApplyForm';
 import stylesZh from './overview.less';
 import stylesEn from './overview_en.less';
+import { ApplyForm } from '@/components/ApplyForm';
+import { getOverViewFeats } from '@/data/feats';
+import { SubTitle } from '@/components/SubTitle';
+import { LayoutTemplate } from '@/components/LayoutTemplate';
+import { DEFAULT_LOCAL } from '@/constant';
+import { getSearch } from '@/util';
 
-const { Link } = Anchor;
 export default function OverviewPage() {
   const intl = useIntl();
-  const lang = getLocale();
+  const { search } = useLocation();
+  const lang = getSearch(search)?.lang || DEFAULT_LOCAL;
   const styles = lang === 'en' || lang === 'en-US' ? stylesEn : stylesZh;
   const isWide = useMedia('(min-width: 767.99px)', true);
   const [showApplyForm, setShowApplyForm] = useState(false);
