@@ -11,12 +11,19 @@ import '@docsearch/css';
 import AnnouncementBanner from '../AnnouncementBanner';
 import GithubButton from '../githubButton';
 import styles from './index.less';
-import { HOST_EN, HOST_ZH, searchParamsEn, searchParamsZh } from '@/constant';
+import {
+  DEFAULT_LOCAL,
+  HOST_EN,
+  HOST_ZH,
+  searchParamsEn,
+  searchParamsZh,
+} from '@/constant';
+import { getSearch } from '@/util';
 
 export const Header = ({ isStick }: { isStick?: boolean }) => {
   const intl = useIntl();
-  const { pathname } = useLocation();
-  const lang = getLocale();
+  const { pathname, search } = useLocation();
+  const lang = getSearch(search)?.lang || getLocale() || DEFAULT_LOCAL;
   const isZH = lang === 'zh-CN';
   const isWide = useMedia('(min-width: 767.99px)', true);
   const [popupMenuVisible, setPopupMenuVisible] = useState(false);
