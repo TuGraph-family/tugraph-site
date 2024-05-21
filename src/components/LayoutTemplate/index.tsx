@@ -16,6 +16,7 @@ export const LayoutTemplate = ({ bannerInfo, content }: LayoutProps) => {
   const location = useLocation();
   const { search } = location;
   useEffect(() => {
+    setLocale(getSearch(search)?.lang || DEFAULT_LOCAL, false);
     const href = window?.location?.href;
     if (href.includes(ZH_SITE)) {
       window.location.href = HOST_ZH;
