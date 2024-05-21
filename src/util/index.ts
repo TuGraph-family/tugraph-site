@@ -29,8 +29,8 @@ export const getSearch = (search: string) => {
 
 export const goLinkAt = (path: string) => {
   const { origin, search } = window.location;
-  const curSearch = search || `?lang=${DEFAULT_LOCAL}`;
-  return `${origin}${path}${curSearch}`;
+  const curSearch = getSearch(search);
+  return `${origin}${path}?lang=${curSearch?.lang || DEFAULT_LOCAL}`;
 };
 
 export const historyPushLinkAt = (path: string) => {
