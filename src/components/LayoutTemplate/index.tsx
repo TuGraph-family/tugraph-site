@@ -23,7 +23,6 @@ export const LayoutTemplate = ({ bannerInfo, content }: LayoutProps) => {
     if (href.includes(EN_SITE)) {
       window.location.href = HOST_EN;
     }
-    setLocale(getSearch(search)?.lang || DEFAULT_LOCAL, false);
   }, [search]);
   const [isStick, setIsStick] = useState<boolean>(false);
   const handleScroll = useCallback(() => {

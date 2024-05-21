@@ -5,7 +5,7 @@ import { Drawer, Menu, Popover, Space } from 'antd';
 import cx from 'classnames';
 import React, { useEffect, useState } from 'react';
 import { useMedia } from 'react-use';
-import { getLocale, history, useIntl, useLocation } from 'umi';
+import { history, useIntl, useLocation } from 'umi';
 
 import '@docsearch/css';
 import AnnouncementBanner from '../AnnouncementBanner';
@@ -23,7 +23,7 @@ import { getSearch } from '@/util';
 export const Header = ({ isStick }: { isStick?: boolean }) => {
   const intl = useIntl();
   const { pathname, search } = useLocation();
-  const lang = getSearch(search)?.lang || getLocale() || DEFAULT_LOCAL;
+  const lang = getSearch(search)?.lang || DEFAULT_LOCAL;
   const isZH = lang === 'zh-CN';
   const isWide = useMedia('(min-width: 767.99px)', true);
   const [popupMenuVisible, setPopupMenuVisible] = useState(false);
