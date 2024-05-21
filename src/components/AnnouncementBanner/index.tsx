@@ -1,7 +1,7 @@
-import { Button, Carousel, Drawer, Modal, Tooltip } from 'antd';
+import { Carousel, Drawer, Modal, Tooltip } from 'antd';
 import React, { useEffect, useState } from 'react';
 import { useMedia } from 'react-use';
-import { getLocale, history, useIntl } from 'umi';
+import { useLocation, history, useIntl } from 'umi';
 
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { CloseOutlined, LeftOutlined, RightOutlined } from '@ant-design/icons';
@@ -10,12 +10,15 @@ import {
   getBannerCnContentList,
   getBannerEnContentList,
 } from '@/data/bannerContent';
+import { getSearch } from '@/util';
+import { DEFAULT_LOCAL } from '@/constant';
 const AnnouncementBanner = () => {
   const [showBottomDrawer, setShowBottomDrawer] = useState(false);
   const [showBottomModal, setShowBottomModal] = useState(true);
   const isWide = useMedia('(min-width: 767.99px)', true);
   const intl = useIntl();
-  const lang = getLocale();
+  const { search } = useLocation();
+  const lang = getSearch(search)?.lang || DEFAULT_LOCAL;
   const getBannerContentList =
     lang === 'zh-CN' ? getBannerCnContentList : getBannerEnContentList;
   useEffect(() => {
@@ -92,7 +95,7 @@ const AnnouncementBanner = () => {
                             setShowBottomDrawer(false);
                             sessionStorage.setItem('isBannerShow', 'false');
                             history.push(
-                              `/blog?id=${lang === 'zh-CN' ? '1000' : '1000'}`,
+                              `/blog?id=${lang === 'zh-CN' ? '888' : '888'}`,
                             );
                           }}
                         />

@@ -1,19 +1,21 @@
 import React from 'react';
 import { Carousel, Col, Row, Space, Tag } from 'antd';
 import { Helmet } from 'react-helmet';
-import JoLPlayer from '@/components/Player';
-import { SubTitle } from '@/components/SubTitle';
 import { useMedia } from 'react-use';
-import { LayoutTemplate } from '@/components/LayoutTemplate';
-import { getLocale, isBrowser, useIntl } from 'umi';
-import { getFeats } from '@/data/feats';
-
+import { isBrowser, useIntl, useLocation } from 'umi';
 import stylesZh from './product.less';
 import stylesEn from './product_en.less';
+import JoLPlayer from '@/components/Player';
+import { SubTitle } from '@/components/SubTitle';
+import { LayoutTemplate } from '@/components/LayoutTemplate';
+import { getFeats } from '@/data/feats';
+import { getSearch } from '@/util';
+import { DEFAULT_LOCAL } from '@/constant';
 
 export default function ProductPage() {
   const intl = useIntl();
-  const lang = getLocale();
+  const { search } = useLocation();
+  const lang = getSearch(search)?.lang || DEFAULT_LOCAL;
   const styles = lang === 'en' || lang === 'en-US' ? stylesEn : stylesZh;
   const isWide = useMedia('(min-width: 767.99px)', true);
   const MOBILE_HEIGHT = isBrowser()

@@ -1,19 +1,21 @@
-import { LayoutTemplate } from '@/components/LayoutTemplate';
-import { SubTitle } from '@/components/SubTitle';
-import { proAdvantDataDb, proAdvantDataPlat } from '@/data/proAdvantData';
-import { Anchor, Button, Col, Row } from 'antd';
+import { Button, Col, Row } from 'antd';
 import { useState } from 'react';
 import { useMedia } from 'react-use';
-import { getLocale, useIntl, useLocation } from 'umi';
+import { useIntl, useLocation } from 'umi';
 
-import { ApplyForm } from '@/components/ApplyForm';
 import stylesZh from './platform.less';
 import stylesEn from './platform_en.less';
+import { ApplyForm } from '@/components/ApplyForm';
+import { proAdvantDataDb, proAdvantDataPlat } from '@/data/proAdvantData';
+import { SubTitle } from '@/components/SubTitle';
+import { LayoutTemplate } from '@/components/LayoutTemplate';
+import { getSearch } from '@/util';
+import { DEFAULT_LOCAL } from '@/constant';
 
-const { Link } = Anchor;
 export default function PlatFormPage() {
   const intl = useIntl();
-  const lang = getLocale();
+  const { search } = useLocation();
+  const lang = getSearch(search)?.lang || DEFAULT_LOCAL;
   const styles = lang === 'en' || lang === 'en-US' ? stylesEn : stylesZh;
   const { pathname } = useLocation();
   const isPlatform = pathname === '/platform';

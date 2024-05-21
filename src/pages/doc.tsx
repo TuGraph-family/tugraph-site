@@ -1,9 +1,3 @@
-import { Footer } from '@/components/Footer';
-import { Header } from '@/components/Header';
-import { useGetENDocsInfo } from '@/hooks/useGetENDocsInfo';
-import { useGetZHDocsInfo } from '@/hooks/useGetZHDocsInfo';
-import { CategoryItem, DocContent } from '@/interface';
-import { docDetailTranslator, versionListTranslator } from '@/utils';
 import { ArrowRightOutlined } from '@ant-design/icons';
 import {
   Affix,
@@ -22,9 +16,17 @@ import moment from 'moment';
 import React from 'react';
 import HTMLRenderer from 'react-html-renderer';
 import { useMedia } from 'react-use';
-import { getLocale, history, useIntl, useLocation } from 'umi';
+import { history, useIntl, useLocation } from 'umi';
 
 import styles from './doc.less';
+import { docDetailTranslator, versionListTranslator } from '@/utils';
+import { CategoryItem, DocContent } from '@/interface';
+import { useGetZHDocsInfo } from '@/hooks/useGetZHDocsInfo';
+import { useGetENDocsInfo } from '@/hooks/useGetENDocsInfo';
+import { Header } from '@/components/Header';
+import { Footer } from '@/components/Footer';
+import { DEFAULT_LOCAL } from '@/constant';
+import { getSearch } from '@/util';
 
 const { Link } = Anchor;
 
@@ -35,7 +37,8 @@ export default function DocPage() {
   const intl = useIntl();
   const location = useLocation();
   const isWide = useMedia('(min-width: 767.99px)', true);
-  const lang = getLocale();
+  const { search } = location;
+  const lang = getSearch(search)?.lang || DEFAULT_LOCAL;
   const useGetDocsInfo = lang === 'zh-CN' ? useGetZHDocsInfo : useGetENDocsInfo;
   const { getCategoryList, getVersions, getDocDetail } = useGetDocsInfo();
   const [versions, setVersions] = React.useState([]);
@@ -48,9 +51,8 @@ export default function DocPage() {
   const findFirstChild = (items: CategoryItem[]): string => {
     if (items[0].children?.length > 0) {
       return findFirstChild(items[0].children);
-    } else {
-      return items[0].id;
     }
+    return items[0].id;
   };
 
   const dateFormat = (dateString?: string) => {
@@ -172,7 +174,7 @@ export default function DocPage() {
         {isWide && (
           <Affix offsetTop={0}>
             <Sider className={styles.sideWrapper} theme="light" width={243}>
-              <Spin spinning={!!!currentVersion}>
+              <Spin spinning={!currentVersion}>
                 <Select
                   style={{
                     width: '180px',
@@ -197,7 +199,7 @@ export default function DocPage() {
         )}
         <Content className={styles.containerWrapper}>
           {!isWide && (
-            <Spin spinning={!!!currentVersion}>
+            <Spin spinning={!currentVersion}>
               <div className={styles.versionWrapper}>
                 <Space size={24}>
                   <img
@@ -221,7 +223,7 @@ export default function DocPage() {
               </div>
             </Spin>
           )}
-          <Spin spinning={!!!content}>
+          <Spin spinning={!content}>
             <h1>{content?.title ?? content?.fileName}</h1>
             <div>
               {(content?.updated_at ?? content?.docGmtModified) && (

@@ -1,20 +1,23 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { Carousel, Col, Row, Space } from 'antd';
-import { SubTitle } from '@/components/SubTitle';
-import { getLocale, useIntl, isBrowser } from 'umi';
-import { getDemos } from '@/data/demos';
-import { getExamples } from '@/data/examples';
+import { useIntl, isBrowser, useLocation } from 'umi';
 import cx from 'classnames';
 import { useMedia } from 'react-use';
-import { LayoutTemplate } from '@/components/LayoutTemplate';
 
 import stylesZh from './case.less';
 import stylesEn from './case_en.less';
+import { LayoutTemplate } from '@/components/LayoutTemplate';
+import { getExamples } from '@/data/examples';
+import { getDemos } from '@/data/demos';
+import { SubTitle } from '@/components/SubTitle';
+import { DEFAULT_LOCAL } from '@/constant';
+import { getSearch } from '@/util';
 
 export default function DemoPage() {
   const intl = useIntl();
-  const lang = getLocale();
+  const { search } = useLocation();
+  const lang = getSearch(search)?.lang || DEFAULT_LOCAL;
   const styles = lang === 'en-US' ? stylesEn : stylesZh;
   const isWide = useMedia('(min-width: 767.99px)', true);
   const SWIPE_PADDING = isBrowser()

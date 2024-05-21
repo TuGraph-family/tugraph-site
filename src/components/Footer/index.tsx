@@ -1,16 +1,19 @@
 import { MailFilled, PhoneFilled, SlackOutlined } from '@ant-design/icons';
 import { Col, Collapse, Divider, Popover, Row, Space } from 'antd';
 import { useMedia } from 'react-use';
-import { getLocale, useIntl } from 'umi';
+import { useIntl, useLocation } from 'umi';
 
 import styles from './index.less';
+import { DEFAULT_LOCAL } from '@/constant';
+import { getSearch } from '@/util';
 
 const { Panel } = Collapse;
 
 export const Footer = ({ className }: { className?: string }) => {
   const intl = useIntl();
   const isWide = useMedia('(min-width: 767.99px)', true);
-  const lang = getLocale();
+  const { search } = useLocation();
+  const lang = getSearch(search)?.lang || DEFAULT_LOCAL;
 
   const icons = [
     {
