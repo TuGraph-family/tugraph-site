@@ -1,5 +1,5 @@
-import { DEFAULT_LOCAL } from './src/constant';
 import { defineConfig } from 'umi';
+import { DEFAULT_LOCAL } from './src/constant';
 
 export default defineConfig({
   nodeModulesTransform: {
@@ -52,21 +52,27 @@ export default defineConfig({
   ],
   scripts: [
     `var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?e4bea71987c7daae77ee69586aad5bec";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();`,
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?e4bea71987c7daae77ee69586aad5bec";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();`,
     {
       src: 'https://www.googletagmanager.com/gtag/js?id=AW-11092859162',
       async: true,
     },
     `window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-
-gtag('config', 'AW-11092859162');`,
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-11092859162');`,
+    `var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?9452f06d5325a3907efec5619d9f2392";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();`
   ],
   theme: {
     'primary-color': 'rgba(22,80,255,1)',
