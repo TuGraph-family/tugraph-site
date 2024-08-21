@@ -36,6 +36,7 @@ export interface BlogItem {
   updateDate: string;
   content: string;
   type: string;
+  isLink?: boolean;
 }
 
 export interface MenuItem {

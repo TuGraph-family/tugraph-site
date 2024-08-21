@@ -1,9 +1,9 @@
+import { useRequest } from 'umi';
 import {
   queryCategory,
-  queryVersions,
   queryDocDetail,
+  queryVersions,
 } from '../services/DocsENController';
-import { useRequest } from 'umi';
 
 export const useGetENDocsInfo = () => {
   const { run: getCategoryList } = useRequest(queryCategory, { manual: true });

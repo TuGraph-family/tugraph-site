@@ -72,7 +72,7 @@ export default defineConfig({
       hm.src = "https://hm.baidu.com/hm.js?9452f06d5325a3907efec5619d9f2392";
       var s = document.getElementsByTagName("script")[0]; 
       s.parentNode.insertBefore(hm, s);
-    })();`
+    })();`,
   ],
   theme: {
     'primary-color': 'rgba(22,80,255,1)',
@@ -89,7 +89,6 @@ export default defineConfig({
       .use('frontmatter-markdown-loader')
       .loader('frontmatter-markdown-loader');
   },
-  ssr: { mode: 'stream' },
   exportStatic: {},
   fastRefresh: {},
   request: {

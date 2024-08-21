@@ -14,6 +14,7 @@ export default {
   'header.product.desc1': 'TuGraph 企业版概览',
   'header.product.desc2': 'TuGraph Analytics 实时图计算引擎',
   'header.product.desc3': 'TuGraph Learn 图学习引擎',
+  'header.product.desc4': 'OSGraph 开源图谱关系洞察工具',
   'footer.product': '产品',
   'footer.product.title': '社区版',
   'footer.product.title1': '企业版',
@@ -139,6 +140,7 @@ export default {
   'home.version1': '企业版',
   'home.tugrpah.db': '单机版',
   'home.distributed': '分布式',
+  'home.highAvailability': '高可用',
   'home.three.lines.consistent': '离近在-三线一致',
   'home.version.desc1':
     '企业版本对商业化功能支持更加完善，包括分布式集群架构，覆盖探索、研发、服务、运维全生命周期的一站式图平台，在线、近线、离线的图计算引擎，支持流式、大数据类数据源，多地多中心的部署形态等。是商业化解决方案的理想选择。',

@@ -3,22 +3,16 @@ import { CloseOutlined, RightOutlined, UpOutlined } from '@ant-design/icons';
 import { DocSearch } from '@docsearch/react';
 import { Drawer, Menu, Popover, Space } from 'antd';
 import cx from 'classnames';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useMedia } from 'react-use';
 import { history, useIntl, useLocation } from 'umi';
 
+import { DEFAULT_LOCAL, searchParamsEn, searchParamsZh } from '@/constant';
+import { getSearch, goLinkAt, historyPushLinkAt } from '@/util';
 import '@docsearch/css';
 import AnnouncementBanner from '../AnnouncementBanner';
 import GithubButton from '../githubButton';
 import styles from './index.less';
-import {
-  DEFAULT_LOCAL,
-  HOST_EN,
-  HOST_ZH,
-  searchParamsEn,
-  searchParamsZh,
-} from '@/constant';
-import { getSearch, goLinkAt, historyPushLinkAt } from '@/util';
 
 export const Header = ({ isStick }: { isStick?: boolean }) => {
   const intl = useIntl();
@@ -361,6 +355,14 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
                 }}
               >
                 {intl.formatMessage({ id: 'header.product.desc3' })}
+              </div>
+              <div
+                className={styles.popoverContainer}
+                onClick={() => {
+                  window.open('https://osgraph.com/');
+                }}
+              >
+                {intl.formatMessage({ id: 'header.product.desc4' })}
               </div>
             </div>
             <div>
