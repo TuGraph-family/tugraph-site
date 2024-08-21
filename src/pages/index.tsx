@@ -25,19 +25,18 @@ import { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { useMedia } from 'react-use';
 import { isBrowser, useIntl, useLocation } from 'umi';
-import React from 'react';
 
+import AnnouncementBanner from '@/components/AnnouncementBanner';
+import { ApplyForm } from '@/components/ApplyForm';
+import { LayoutTemplate } from '@/components/LayoutTemplate';
+import JoLPlayer from '@/components/Player';
+import { SubTitle } from '@/components/SubTitle';
+import { getCases } from '@/data/cases';
+import { getTugraphFun } from '@/data/get_tugraph_functions';
+import { getReasons } from '@/data/reasons';
+import { getSearch } from '@/util';
 import stylesZh from './index.less';
 import stylesEn from './index_en.less';
-import { getReasons } from '@/data/reasons';
-import { getTugraphFun } from '@/data/get_tugraph_functions';
-import { getCases } from '@/data/cases';
-import { SubTitle } from '@/components/SubTitle';
-import JoLPlayer from '@/components/Player';
-import { LayoutTemplate } from '@/components/LayoutTemplate';
-import { ApplyForm } from '@/components/ApplyForm';
-import AnnouncementBanner from '@/components/AnnouncementBanner';
-import { getSearch } from '@/util';
 
 export default function IndexPage() {
   const intl = useIntl();
@@ -486,6 +485,11 @@ export default function IndexPage() {
                       id: 'home.version.title1',
                     })}
                     <div>{intl.formatMessage({ id: 'home.tugrpah.db' })}</div>
+                    <p>
+                      {intl.formatMessage({
+                        id: 'home.highAvailability',
+                      })}
+                    </p>
                   </>
                 ) : (
                   <>

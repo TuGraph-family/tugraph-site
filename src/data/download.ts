@@ -19,6 +19,11 @@ export const assetsList = [
     name: 'CentOS',
     assets: [
       {
+        label: 'v4.3.2',
+        value:
+          'https://tugraph-web.oss-cn-beijing.aliyuncs.com/tugraph/tugraph-4.3.2/tugraph-4.3.2-1.el8.x86_64.rpm',
+      },
+      {
         label: 'v4.0.1',
         value:
           'https://tugraph-web.oss-cn-beijing.aliyuncs.com/tugraph/tugraph-4.0.1/tugraph-4.0.1-1.el7.x86_64.rpm',
@@ -33,36 +38,16 @@ export const assetsList = [
         value:
           'https://tugraph-web.oss-cn-beijing.aliyuncs.com/tugraph/tugraph-3.6.0/tugraph-3.6.0-1.el7.x86_64.rpm',
       },
-      {
-        label: 'v3.5.1',
-        value:
-          'https://tugraph-web.oss-cn-beijing.aliyuncs.com/tugraph/tugraph-3.5.1/tugraph-3.5.1-1.el7.x86_64.rpm',
-      },
-      {
-        label: 'v3.5.0',
-        value:
-          'https://tugraph-web.oss-cn-beijing.aliyuncs.com/tugraph/tugraph-3.5.0/tugraph-3.5.0-1.el7.x86_64.rpm',
-      },
-      {
-        label: 'v3.4.0',
-        value:
-          'https://tugraph-web.oss-cn-beijing.aliyuncs.com/tugraph/tugraph-3.4.0/TuGraph-3.4.0-1.el7.x86_64.rpm',
-      },
-      {
-        label: 'v3.3.2',
-        value:
-          'https://tugraph-web.oss-cn-beijing.aliyuncs.com/tugraph/tugraph-3.3.2/TuGraph-3.3.2-1.el7.x86_64.rpm',
-      },
-      {
-        label: 'v3.3.0',
-        value:
-          'https://tugraph-web.oss-cn-beijing.aliyuncs.com/tugraph/tugraph-3.3.0/TuGraph-3.3.0-1.el7.x86_64.rpm',
-      },
     ],
   },
   {
     name: 'Ubuntu',
     assets: [
+      {
+        label: 'v4.3.2',
+        value:
+          'https://tugraph-web.oss-cn-beijing.aliyuncs.com/tugraph/tugraph-4.3.2/tugraph-4.3.2-1.x86_64.deb',
+      },
       {
         label: 'v4.0.1',
         value:
@@ -77,31 +62,6 @@ export const assetsList = [
         label: 'v3.6.0',
         value:
           'https://tugraph-web.oss-cn-beijing.aliyuncs.com/tugraph/tugraph-3.6.0/tugraph-3.6.0-1.x86_64.deb',
-      },
-      {
-        label: 'v3.5.1',
-        value:
-          'https://tugraph-web.oss-cn-beijing.aliyuncs.com/tugraph/tugraph-3.5.1/tugraph-3.5.1-1.x86_64.deb',
-      },
-      {
-        label: 'v3.5.0',
-        value:
-          'https://tugraph-web.oss-cn-beijing.aliyuncs.com/tugraph/tugraph-3.5.0/tugraph-3.5.0-1.x86_64.deb',
-      },
-      {
-        label: 'v3.4.0',
-        value:
-          'https://tugraph-web.oss-cn-beijing.aliyuncs.com/tugraph/tugraph-3.4.0/TuGraph-3.4.0-1.x86_64.deb',
-      },
-      {
-        label: 'v3.3.2',
-        value:
-          'https://tugraph-web.oss-cn-beijing.aliyuncs.com/tugraph/tugraph-3.3.2/TuGraph-3.3.2-1.x86_64.deb',
-      },
-      {
-        label: 'v3.3.0',
-        value:
-          'https://tugraph-web.oss-cn-beijing.aliyuncs.com/tugraph/tugraph-3.3.0/TuGraph-3.3.0-1.x86_64.deb',
       },
     ],
   },

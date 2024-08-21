@@ -1,19 +1,18 @@
-import React, { useEffect, useState } from 'react';
-import HTMLRenderer from 'react-html-renderer';
-import { useIntl, useLocation } from 'umi';
-import { Spin, Pagination, Tabs, Space, Button } from 'antd';
-import { Layout } from 'antd';
-import cx from 'classnames';
-import { useMedia } from 'react-use';
-import styles from './blog.less';
-import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
+import { Header } from '@/components/Header';
+import { LayoutTemplate } from '@/components/LayoutTemplate';
+import { DEFAULT_LOCAL } from '@/constant';
 import { getZHBlogs } from '@/data/blog';
 import { getENBlogs } from '@/data/blog_en';
-import { LayoutTemplate } from '@/components/LayoutTemplate';
 import { BlogItem } from '@/interface';
 import { getSearch } from '@/util';
-import { DEFAULT_LOCAL } from '@/constant';
+import { Button, Layout, Pagination, Space, Spin, Tabs } from 'antd';
+import cx from 'classnames';
+import React, { useEffect, useState } from 'react';
+import HTMLRenderer from 'react-html-renderer';
+import { useMedia } from 'react-use';
+import { useIntl, useLocation } from 'umi';
+import styles from './blog.less';
 
 const { Content } = Layout;
 
@@ -78,7 +77,15 @@ export default function BlogPage() {
       return;
     }
     setBlogDetail(blogs?.find((item) => item.id === Number(id))?.content);
-  }, [location]);
+  }, []);
+
+  const jumpToArticle = (article: BlogItem) => {
+    if (article.isLink) {
+      window.open(article.content, '_blank');
+    } else {
+      window.open(`/blog?id=${article.id}&lang=${lang}`);
+    }
+  };
 
   const content = (
     <div
@@ -101,9 +108,8 @@ export default function BlogPage() {
                 <a
                   className={styles.list}
                   key={key}
-                  href={`/blog?id=${item.id}&lang=${lang}`}
                   onClick={() => {
-                    setBlogDetail(item.content);
+                    jumpToArticle(item);
                   }}
                 >
                   <Space size={isWide ? 24 : 22}>
@@ -127,9 +133,8 @@ export default function BlogPage() {
                 <a
                   className={styles.list}
                   key={key}
-                  href={`/blog?id=${item.id}&lang=${lang}`}
                   onClick={() => {
-                    setBlogDetail(item.content);
+                    jumpToArticle(item);
                   }}
                 >
                   <Space size={isWide ? 24 : 22}>
@@ -155,7 +160,7 @@ export default function BlogPage() {
                   key={key}
                   href={`/blog?id=${item.id}&lang=${lang}`}
                   onClick={() => {
-                    setBlogDetail(item.content);
+                    jumpToArticle(item);
                   }}
                 >
                   <Space size={isWide ? 24 : 22}>
@@ -181,7 +186,7 @@ export default function BlogPage() {
                   key={key}
                   href={`/blog?id=${item.id}&lang=${lang}`}
                   onClick={() => {
-                    setBlogDetail(item.content);
+                    jumpToArticle(item);
                   }}
                 >
                   <Space size={isWide ? 24 : 22}>
