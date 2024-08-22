@@ -86,10 +86,10 @@ export default function BlogPage() {
 
   const jumpToArticle = (article: BlogItem) => {
     if (article.isLink) {
-      tracertBPos('b106257');
+      tracertBPos('b106257', { title: article.title });
       window.open(article.content, '_blank');
     } else {
-      tracertBPos('b106258');
+      tracertBPos('b106258', { title: article.title });
       window.open(`/blog?id=${article.id}&lang=${lang}`);
     }
   };

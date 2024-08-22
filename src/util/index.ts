@@ -40,7 +40,7 @@ export const historyPushLinkAt = (path: string) => {
 };
 
 /** 蚂蚁埋点 - 手动 */
-export const tracertBPos = (bPos: string) => {
+export const tracertBPos = (bPos: string, options?: Record<string, any>) => {
   window?.Tracert.call?.('set', {
     spmBPos: bPos,
     bizType: 'common',
@@ -48,5 +48,5 @@ export const tracertBPos = (bPos: string) => {
     autoLogPv: false,
     ifRouterNeedPv: false,
   });
-  window.Tracert?.call?.('logPv');
+  window.Tracert?.call?.('logPv', options || {});
 };

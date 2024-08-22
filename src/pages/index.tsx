@@ -56,7 +56,6 @@ export default function IndexPage() {
 
   /** 首页埋点 */
   useEffect(() => {
-    console.log('12345');
     tracertBPos('b106229');
   }, []);
 
