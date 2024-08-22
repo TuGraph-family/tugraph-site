@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import { useIntl, useLocation } from 'umi';
 import { Helmet } from 'react-helmet';
@@ -10,7 +10,7 @@ import stylesEn from './product_analytics_en.less';
 import { LayoutTemplate } from '@/components/LayoutTemplate';
 import { SubTitle } from '@/components/SubTitle';
 import { getFeats } from '@/data/feats2';
-import { getSearch } from '@/util';
+import { getSearch, tracertBPos } from '@/util';
 import { DEFAULT_LOCAL } from '@/constant';
 
 const Root = () => {
@@ -19,6 +19,11 @@ const Root = () => {
   const lang = getSearch(search)?.lang || DEFAULT_LOCAL;
   const isWide = useMedia('(min-width: 767.99px)', true);
   const styles = lang === 'en' || lang === 'en-US' ? stylesEn : stylesZh;
+
+  /** TuGraph DB Lite 单机版图数据库 */
+  useEffect(() => {
+    tracertBPos('b106246');
+  }, []);
 
   const content = (
     <div className={styles.containerWrapper}>

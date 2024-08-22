@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import { useIntl, useLocation } from 'umi';
 import { Helmet } from 'react-helmet';
@@ -10,7 +10,7 @@ import stylesEn from './product_learn_en.less';
 import { LayoutTemplate } from '@/components/LayoutTemplate';
 import { SubTitle } from '@/components/SubTitle';
 import { getFeats } from '@/data/feats1';
-import { getSearch } from '@/util';
+import { getSearch, tracertBPos } from '@/util';
 import { DEFAULT_LOCAL } from '@/constant';
 
 const Root = () => {
@@ -19,6 +19,12 @@ const Root = () => {
   const lang = getSearch(search)?.lang || DEFAULT_LOCAL;
   const isWide = useMedia('(min-width: 767.99px)', true);
   const styles = lang === 'en' || lang === 'en-US' ? stylesEn : stylesZh;
+
+  /** TuGraph Learn 图学习引擎 */
+  useEffect(() => {
+    tracertBPos('b106247');
+  }, []);
+
   const content = (
     <div className={styles.containerWrapper}>
       <Helmet>

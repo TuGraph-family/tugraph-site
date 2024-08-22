@@ -6,6 +6,7 @@ import cx from 'classnames';
 import { useEffect, useState } from 'react';
 import { useMedia } from 'react-use';
 import { history, useIntl, useLocation } from 'umi';
+import { Link } from 'react-router-dom';
 
 import { DEFAULT_LOCAL, searchParamsEn, searchParamsZh } from '@/constant';
 import { getSearch, goLinkAt, historyPushLinkAt } from '@/util';
@@ -491,27 +492,21 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
 
   const menuItems: MenuItem[] = [
     {
-      label: (
-        <a href={goLinkAt('/')} rel="noopener noreferrer">
-          {intl.formatMessage({ id: 'header.home' })}
-        </a>
-      ),
+      label: <Link to="/">{intl.formatMessage({ id: 'header.home' })}</Link>,
       key: 'home',
     },
     { ...(isWide ? pcProductMenu : mobileProductMenu) },
     {
       label: (
-        <a href={goLinkAt('/case')} rel="noopener noreferrer">
-          {intl.formatMessage({ id: 'header.case' })}
-        </a>
+        <Link to="/case">{intl.formatMessage({ id: 'header.case' })}</Link>
       ),
       key: 'case',
     },
     {
       label: (
-        <a href={goLinkAt('/ecosystem')} rel="noopener noreferrer">
+        <Link to="/ecosystem">
           {intl.formatMessage({ id: 'header.ecosystem' })}
-        </a>
+        </Link>
       ),
       key: 'ecosystem',
     },
@@ -520,9 +515,9 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
     { ...(isWide ? pcCommunityMenu : mobileCommunityMenu) },
     {
       label: (
-        <a href={goLinkAt('/download')} rel="noopener noreferrer">
+        <Link to="/download">
           {intl.formatMessage({ id: 'header.download' })}
-        </a>
+        </Link>
       ),
       key: 'download',
     },

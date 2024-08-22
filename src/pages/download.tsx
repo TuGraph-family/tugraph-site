@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button, Col, message, Row, Select } from 'antd';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { useIntl } from 'umi';
@@ -8,12 +8,18 @@ import { ApplyForm } from '@/components/ApplyForm';
 import { LayoutTemplate } from '@/components/LayoutTemplate';
 import { assetsList, docsList, iconMap } from '@/data/download';
 import { DownloadItem } from '@/interface';
+import { tracertBPos } from '@/util';
 
 export default function DownloadPage() {
   const intl = useIntl();
   const isWide = useMedia('(min-width: 767.99px)', true);
 
   const [showApplyForm, setShowApplyForm] = useState(false);
+
+  /** 下载埋点 */
+  useEffect(() => {
+    tracertBPos('b106235');
+  }, []);
 
   const DownloadGroupItem = ({ name, action, version }: DownloadItem) => {
     const [key, setKey] = useState<any>(version?.list[0]?.value);

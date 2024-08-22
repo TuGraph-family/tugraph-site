@@ -21,7 +21,7 @@ import {
   Tooltip,
 } from 'antd';
 import cx from 'classnames';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { useMedia } from 'react-use';
 import { isBrowser, useIntl, useLocation } from 'umi';
@@ -34,7 +34,7 @@ import { SubTitle } from '@/components/SubTitle';
 import { getCases } from '@/data/cases';
 import { getTugraphFun } from '@/data/get_tugraph_functions';
 import { getReasons } from '@/data/reasons';
-import { getSearch } from '@/util';
+import { getSearch, tracertBPos } from '@/util';
 import stylesZh from './index.less';
 import stylesEn from './index_en.less';
 
@@ -53,6 +53,12 @@ export default function IndexPage() {
   const SWIPE_PADDING = isBrowser()
     ? (48 * document.body.clientWidth) / 750
     : 24;
+
+  /** 首页埋点 */
+  useEffect(() => {
+    tracertBPos('b106229');
+  }, []);
+
   const bannerButton = (
     <div className={styles.bannerButtons}>
       <Space>

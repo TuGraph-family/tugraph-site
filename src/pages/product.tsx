@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Carousel, Col, Row, Space, Tag } from 'antd';
 import { Helmet } from 'react-helmet';
 import { useMedia } from 'react-use';
@@ -9,7 +9,7 @@ import JoLPlayer from '@/components/Player';
 import { SubTitle } from '@/components/SubTitle';
 import { LayoutTemplate } from '@/components/LayoutTemplate';
 import { getFeats } from '@/data/feats';
-import { getSearch } from '@/util';
+import { getSearch, tracertBPos } from '@/util';
 import { DEFAULT_LOCAL } from '@/constant';
 
 export default function ProductPage() {
@@ -24,6 +24,12 @@ export default function ProductPage() {
   const SWIPE_PADDING = isBrowser()
     ? (40 * document.body.clientWidth) / 750
     : 40;
+
+  /** TuGraph DB Lite 单机版图数据库 */
+  useEffect(() => {
+    tracertBPos('b106230');
+  }, []);
+
   const pcVideoList = (
     <div className={styles.videoWrapper}>
       {isBrowser() && (
