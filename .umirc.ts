@@ -50,12 +50,18 @@ export default defineConfig({
       title: 'db.title',
     },
   ],
+  metas: [
+    {
+      name: 'data-aspm',
+      content: 'a4609',
+    },
+  ],
   scripts: [
     `var _hmt = _hmt || [];
     (function() {
       var hm = document.createElement("script");
       hm.src = "https://hm.baidu.com/hm.js?e4bea71987c7daae77ee69586aad5bec";
-      var s = document.getElementsByTagName("script")[0]; 
+      var s = document.getElementsByTagName("script")[0];
       s.parentNode.insertBefore(hm, s);
     })();`,
     {
@@ -70,9 +76,20 @@ export default defineConfig({
     (function() {
       var hm = document.createElement("script");
       hm.src = "https://hm.baidu.com/hm.js?9452f06d5325a3907efec5619d9f2392";
-      var s = document.getElementsByTagName("script")[0]; 
+      var s = document.getElementsByTagName("script")[0];
       s.parentNode.insertBefore(hm, s);
     })();`,
+    {
+      src: 'https://ur.alipay.com/tracert_a4609.js',
+      async: true,
+    },
+    `window.TracertCmdCache=window.TracertCmdCache||[];
+    var t=window.Tracert || {_isRenderInit:!0,call:function(){window.TracertCmdCache.push(arguments)}},
+    f=["call","start","config","logPv","info","err","click","expo","pageName","pageState","time","timeEnd","parse","checkExpo","stringify","report","set","before"];
+    for(let i=0;i<f.length;i++){(function(fn){t[fn]=function(){var a=[],l=arguments.length;for (var j=0;j<l;j++) {a.push(arguments[j])}a.unshift(fn);
+    window.TracertCmdCache.push(a)}})(f[i])}
+    window.Tracert=t;window._to=window._to||{};
+    window.Tracert.start({});`,
   ],
   theme: {
     'primary-color': 'rgba(22,80,255,1)',
