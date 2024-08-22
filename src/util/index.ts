@@ -38,3 +38,15 @@ export const historyPushLinkAt = (path: string) => {
   const curSearch = getSearch(search);
   return `${path}?lang=${curSearch?.lang || DEFAULT_LOCAL}`;
 };
+
+/** 蚂蚁埋点 - 手动 */
+export const tracertBPos = (bPos: string) => {
+  window?.Tracert.call?.('set', {
+    spmBPos: bPos,
+    bizType: 'common',
+    autoExpo: false,
+    autoLogPv: false,
+    ifRouterNeedPv: false,
+  });
+  window.Tracert?.call?.('logPv');
+};

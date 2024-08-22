@@ -1,5 +1,5 @@
 import { Button, Col, Row } from 'antd';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useMedia } from 'react-use';
 import { useIntl, useLocation } from 'umi';
 
@@ -9,7 +9,7 @@ import { ApplyForm } from '@/components/ApplyForm';
 import { proAdvantDataDb, proAdvantDataPlat } from '@/data/proAdvantData';
 import { SubTitle } from '@/components/SubTitle';
 import { LayoutTemplate } from '@/components/LayoutTemplate';
-import { getSearch } from '@/util';
+import { getSearch, tracertBPos } from '@/util';
 import { DEFAULT_LOCAL } from '@/constant';
 
 export default function PlatFormPage() {
@@ -25,6 +25,12 @@ export default function PlatFormPage() {
     : proAdvantDataDb(intl);
   const isWide = useMedia('(min-width: 767.99px)', true);
   const [showApplyForm, setShowApplyForm] = useState(false);
+
+  /** TuGraph 一站式图平台、大规模分布式图数据库 */
+  useEffect(() => {
+    isPlatform ? tracertBPos('b106249') : tracertBPos('b106256');
+  }, []);
+
   const content = (
     <div className={styles.containerWrapper}>
       <SubTitle

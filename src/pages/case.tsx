@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import { Carousel, Col, Row, Space } from 'antd';
 import { useIntl, isBrowser, useLocation } from 'umi';
@@ -12,7 +12,7 @@ import { getExamples } from '@/data/examples';
 import { getDemos } from '@/data/demos';
 import { SubTitle } from '@/components/SubTitle';
 import { DEFAULT_LOCAL } from '@/constant';
-import { getSearch } from '@/util';
+import { getSearch, tracertBPos } from '@/util';
 
 export default function DemoPage() {
   const intl = useIntl();
@@ -23,6 +23,12 @@ export default function DemoPage() {
   const SWIPE_PADDING = isBrowser()
     ? (40 * document.body.clientWidth) / 750
     : 40;
+
+  /** 案例埋点 */
+  useEffect(() => {
+    tracertBPos('b106231');
+  }, []);
+
   const pcDemo = (
     <div className="maxContainer">
       <Row wrap={true} className={styles.demoWrapper}>

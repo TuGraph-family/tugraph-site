@@ -1,5 +1,5 @@
 import { Button, Col, Row, Space } from 'antd';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import { useMedia } from 'react-use';
 import { useIntl, useLocation } from 'umi';
@@ -11,7 +11,7 @@ import { getOverViewFeats } from '@/data/feats';
 import { SubTitle } from '@/components/SubTitle';
 import { LayoutTemplate } from '@/components/LayoutTemplate';
 import { DEFAULT_LOCAL } from '@/constant';
-import { getSearch } from '@/util';
+import { getSearch, tracertBPos } from '@/util';
 
 export default function OverviewPage() {
   const intl = useIntl();
@@ -20,6 +20,12 @@ export default function OverviewPage() {
   const styles = lang === 'en' || lang === 'en-US' ? stylesEn : stylesZh;
   const isWide = useMedia('(min-width: 767.99px)', true);
   const [showApplyForm, setShowApplyForm] = useState(false);
+
+  /** TuGraph 企业版概览 */
+  useEffect(() => {
+    tracertBPos('b106248');
+  }, []);
+
   const content = (
     <div className={styles.containerWrapper}>
       <Helmet>

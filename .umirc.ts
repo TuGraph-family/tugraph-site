@@ -50,12 +50,6 @@ export default defineConfig({
       title: 'db.title',
     },
   ],
-  metas: [
-    {
-      name: 'data-aspm',
-      content: 'a4609',
-    },
-  ],
   scripts: [
     `var _hmt = _hmt || [];
     (function() {
@@ -83,12 +77,9 @@ export default defineConfig({
       src: 'https://ur.alipay.com/tracert_a4609.js',
       async: true,
     },
-    `window.TracertCmdCache=window.TracertCmdCache||[];
-    var t=window.Tracert || {_isRenderInit:!0,call:function(){window.TracertCmdCache.push(arguments)}},
-    f=["call","start","config","logPv","info","err","click","expo","pageName","pageState","time","timeEnd","parse","checkExpo","stringify","report","set","before"];
-    for(let i=0;i<f.length;i++){(function(fn){t[fn]=function(){var a=[],l=arguments.length;for (var j=0;j<l;j++) {a.push(arguments[j])}a.unshift(fn);
-    window.TracertCmdCache.push(a)}})(f[i])}
-    window.Tracert=t;window._to=window._to||{};
+    ` window.TracertCmdCache=window.TracertCmdCache||[]
+    ;var t=window.Tracert||{_isRenderInit:!0,call:function(){window.TracertCmdCache.push(arguments)}},f=["call","start","config","logPv","info","err","click","expo","pageName","pageState","time","timeEnd","parse","checkExpo","stringify","report","set","before"];for(let i=0;i<f.length;i++){(function(fn){t[fn]=function(){var a=[],l=arguments.length;for (var j=0;j<l;j++) {a.push(arguments[j])}a.unshift(fn);window.TracertCmdCache.push(a)}})(f[i])}window.Tracert=t;
+    window._to={autoLogPv:false};
     window.Tracert.start({});`,
   ],
   theme: {

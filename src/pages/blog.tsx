@@ -5,7 +5,7 @@ import { DEFAULT_LOCAL } from '@/constant';
 import { getZHBlogs } from '@/data/blog';
 import { getENBlogs } from '@/data/blog_en';
 import { BlogItem } from '@/interface';
-import { getSearch } from '@/util';
+import { getSearch, tracertBPos } from '@/util';
 import { Button, Layout, Pagination, Space, Spin, Tabs } from 'antd';
 import cx from 'classnames';
 import React, { useEffect, useState } from 'react';
@@ -57,6 +57,11 @@ export default function BlogPage() {
     setListData(blogs.slice(0, PAGE_SIZE));
   }, [blogs]);
 
+  /** Blog埋点 */
+  useEffect(() => {
+    tracertBPos('b106234');
+  }, []);
+
   const onPaginationChange = (page: number) => {
     const start = 0 + (page - 1) * PAGE_SIZE;
     const end = start + PAGE_SIZE;
@@ -81,8 +86,10 @@ export default function BlogPage() {
 
   const jumpToArticle = (article: BlogItem) => {
     if (article.isLink) {
+      tracertBPos('b106257');
       window.open(article.content, '_blank');
     } else {
+      tracertBPos('b106258');
       window.open(`/blog?id=${article.id}&lang=${lang}`);
     }
   };
@@ -111,6 +118,7 @@ export default function BlogPage() {
                   onClick={() => {
                     jumpToArticle(item);
                   }}
+                  data-aspm={item.isLink ? 'c375857' : 'c375858'}
                 >
                   <Space size={isWide ? 24 : 22}>
                     <img src={item.img} alt={item.title} />

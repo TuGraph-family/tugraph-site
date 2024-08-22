@@ -2,7 +2,7 @@ import { Anchor, Col, Row, Space } from 'antd';
 import cx from 'classnames';
 import { useMedia } from 'react-use';
 import { useIntl, useLocation } from 'umi';
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import stylesZh from './ecosystem.less';
 import stylesEn from './ecosystem_en.less';
@@ -10,7 +10,7 @@ import { getPartnerReason } from '@/data/get_partner_reason';
 import { getPartner } from '@/data/get_partner';
 import { LayoutTemplate } from '@/components/LayoutTemplate';
 import { DEFAULT_LOCAL, logoList } from '@/constant';
-import { getSearch } from '@/util';
+import { getSearch, tracertBPos } from '@/util';
 
 const { Link } = Anchor;
 
@@ -20,6 +20,12 @@ export default function EcosystemPage() {
   const lang = getSearch(search)?.lang || DEFAULT_LOCAL;
   const styles = lang === 'en' || lang === 'en-US' ? stylesEn : stylesZh;
   const isWide = useMedia('(min-width: 767.99px)', true);
+
+  /** 生态埋点 */
+  useEffect(() => {
+    tracertBPos('b106232');
+  }, []);
+
   const content = (
     <div className={styles.containerWrapper}>
       <div className={styles.cardWrapper} style={{ marginBottom: 40 }}>
