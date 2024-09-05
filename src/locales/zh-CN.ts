@@ -84,7 +84,7 @@ export default {
   'home.chooseVersion': '版本选择',
   'home.version0': '社区版',
   'home.version0.desc': '单实例部署、开源免费、简单快速、小型项目的理想选择',
-  'home.version1.desc': '分布式图平台、高可用、高稳定、企业级项目的理想选择',
+  'home.version1.desc': '分布式、高可用、高稳定、企业级项目的理想选择',
   'home.version.desc0':
     '适用于单实例部署，它提供了完备的图数据库基础功能，例如 ACID 兼容的事务，编程 API，配套的相关工具等。它是学习 TuGraph 和实现小型项目的理想选择。如需实现生产级高可用集群架构和运维的企业级服务，请联系我们获得商业支持。',
   'home.version.startUse': '免费下载',
@@ -97,7 +97,7 @@ export default {
   'home.function.desc2':
     '提供图数据的交互式分析计算能力，超大规模图的全图迭代计算，流式近线动态图计算能力。在业界首次构建了流图融合的动态计算能力，通过流图融合动态的特性。',
   'home.function.desc3':
-    '可视化、一站式的图研发运维平台，提供离线图探索、图研发、图服务、运维管理等离在线一体化图核心能力，实现图的全生命周期管理。',
+    '可视化、一站式的图研发运维平台，提供图构建、图研发、图服务能力，实现图的全生命周期管理。',
   'home.fun1.feat1': '属性图模型',
   'home.fun1.feat2': '实时增删查改',
   'home.fun1.feat3': '多重图（点间允许多重边）',
@@ -143,7 +143,7 @@ export default {
   'home.highAvailability': '高可用',
   'home.three.lines.consistent': '离近在-三线一致',
   'home.version.desc1':
-    '企业版本对商业化功能支持更加完善，包括分布式集群架构，覆盖探索、研发、服务、运维全生命周期的一站式图平台，在线、近线、离线的图计算引擎，支持流式、大数据类数据源，多地多中心的部署形态等。是商业化解决方案的理想选择。',
+    '企业版本对商业化功能支持更加完善，包括分布式集群架构，覆盖图构建、研发、服务、运维全生命周期的一站式图平台，在线、离线的图计算引擎，支持流式、大数据类数据源，多地多中心的部署形态等。是商业化解决方案的理想选择。',
   'home.version.contactUs': '联系我们',
   'home.feat0': '标签属性图模型',
   'home.feat1': '动态模型变更',
@@ -346,7 +346,7 @@ export default {
   'ecosystem.support1': '深入的图技术赋能',
   'ecosystem.support2': '重点项目全面支持',
   'ecosystem.support3': '销售激励及市场推广支持',
-  'download.banner.slogan': 'Download TuGraph',
+  'download.banner.slogan': '下载 TuGraph',
   'download.banner.description': '',
   'download.title0': 'TuGraph 社区版下载',
   'download.title1': '存储过程接口文档',

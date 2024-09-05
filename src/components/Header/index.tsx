@@ -248,8 +248,8 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
                 onClick={() => {
                   window.open(
                     isZH
-                      ? 'https://tugraph-db.readthedocs.io/zh_CN/latest/5.developer-manual/6.interface/5.learn/index.html'
-                      : 'https://tugraph-db.readthedocs.io/en/latest/5.developer-manual/6.interface/5.learn/index.html',
+                      ? 'https://tugraph-db.readthedocs.io/zh-cn/latest/9.olap&procedure/3.learn/1.tutorial.html'
+                      : 'https://tugraph-db.readthedocs.io/en/latest/9.olap&procedure/3.learn/1.tutorial.html',
                   );
                 }}
               >
@@ -310,8 +310,8 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
           <a
             href={
               isZH
-                ? 'https://tugraph-db.readthedocs.io/zh_CN/latest/5.developer-manual/6.interface/5.learn/index.html'
-                : 'https://tugraph-db.readthedocs.io/en/latest/5.developer-manual/6.interface/5.learn/index.html'
+                ? 'https://tugraph-db.readthedocs.io/zh-cn/latest/9.olap&procedure/3.learn/1.tutorial.html'
+                : 'https://tugraph-db.readthedocs.io/en/latest/9.olap&procedure/3.learn/1.tutorial.html'
             }
             rel="noopener noreferrer"
           >
