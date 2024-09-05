@@ -89,8 +89,8 @@ export const getTugraphFun = (intl: IntlShape) => [
       },
       {
         feat: intl.formatMessage({ id: 'home.fun1.feat17' }),
-        community: false,
-        pro: true,
+        community: true,
+        pro: false,
         desc: intl.formatMessage({ id: 'home.fun1.feat17.desc' }),
       },
       {
@@ -122,28 +122,28 @@ export const getTugraphFun = (intl: IntlShape) => [
     list: [
       {
         feat: intl.formatMessage({ id: 'home.fun2.feat1' }),
-        community: false,
-        pro: true,
+        community: true,
+        pro: false,
       },
       {
         feat: intl.formatMessage({ id: 'home.fun2.feat2' }),
-        community: false,
-        pro: true,
+        community: true,
+        pro: false,
       },
       {
         feat: intl.formatMessage({ id: 'home.fun2.feat3' }),
-        community: false,
-        pro: true,
+        community: true,
+        pro: false,
       },
       {
         feat: intl.formatMessage({ id: 'home.fun2.feat4' }),
-        community: false,
-        pro: true,
+        community: true,
+        pro: false,
       },
       {
         feat: intl.formatMessage({ id: 'home.fun2.feat5' }),
-        community: false,
-        pro: true,
+        community: true,
+        pro: false,
       },
     ],
   },
@@ -151,11 +151,6 @@ export const getTugraphFun = (intl: IntlShape) => [
     title: intl.formatMessage({ id: 'home.function.title3' }),
     desc: intl.formatMessage({ id: 'home.function.desc3' }),
     list: [
-      {
-        feat: intl.formatMessage({ id: 'home.fun3.feat1' }),
-        community: false,
-        pro: true,
-      },
       {
         feat: intl.formatMessage({ id: 'home.fun3.feat2' }),
         community: false,
