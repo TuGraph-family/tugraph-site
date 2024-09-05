@@ -141,7 +141,7 @@ export default {
   'home.tugrpah.db': '单机版',
   'home.distributed': '分布式',
   'home.highAvailability': '高可用',
-  'home.three.lines.consistent': '离近在-三线一致',
+  'home.three.lines.consistent': '离在线一体',
   'home.version.desc1':
     '企业版本对商业化功能支持更加完善，包括分布式集群架构，覆盖图构建、研发、服务、运维全生命周期的一站式图平台，在线、离线的图计算引擎，支持流式、大数据类数据源，多地多中心的部署形态等。是商业化解决方案的理想选择。',
   'home.version.contactUs': '联系我们',

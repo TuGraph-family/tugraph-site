@@ -49,7 +49,7 @@ export default {
   'home.tugrpah.db': 'Standalone',
   'home.distributed': 'Distributed',
   'home.highAvailability': 'High Availability',
-  'home.three.lines.consistent': 'online/near-line/offline all-in-one',
+  'home.three.lines.consistent': 'online/offline all-in-one',
   'home.case.desc1': 'bottlenecks for  industrial data analysis.',
   'home.case0.title': 'Financial Services',
   'home.case0.desc0':
@@ -151,7 +151,7 @@ export default {
   'home.version.title2': 'Enterprise Edition',
   'home.version1': ' Enterprise Edition',
   'home.version.desc1':
-    'TuGraph DB Enterprise Edition is the ultimate choice for users seeking a comprehensive graph database solution with robust commercial support features. This edition offers a distributed architecture, covering the entire graph database life cycle, from exploration to research, service, operation, and maintenance. It boasts online/near-line/offline graph computing engines, support for multiple data sources, including streaming and big data platforms, and multi-site and multi-center deployment options.',
+    'TuGraph DB Enterprise Edition is the ultimate choice for users seeking a comprehensive graph database solution with robust commercial support features. This edition offers a distributed architecture, covering the entire graph database life cycle, from exploration to research, service, operation, and maintenance. It boasts online/offline graph computing engines, support for multiple data sources, including streaming and big data platforms, and multi-site and multi-center deployment options.',
   'home.version.contactUs': 'FREE TRIAL ',
   'home.btn.desc1': 'Alibaba Cloud',
   'home.feat0': 'Label property graph model',
