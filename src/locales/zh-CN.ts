@@ -30,7 +30,7 @@ export default {
     'TuGraph,蚂蚁图数据库,蚂蚁图计算,图数据库,图计算,图平台,图数据分析, 分布式数据库, Graph,大数据,关联关系分析,知识图谱,GNN, 图神经网络, Neo4j, GeaGraph, GeaBase, GeaFlow, 费马, 人工智能, big data, graph processing,graph database, graph computing, artificial intelligence',
   'home.banner.slogan': '支付宝万亿业务背后的分布式图数据库',
   'home.banner.description':
-    '高性能图数据库TuGraph由蚂蚁集团和清华大学共同研发，历经蚂蚁实际业务场景锤炼，在国际图数据库基准测试中获得性能第一。',
+    '高性能图数据库TuGraph由蚂蚁集团和清华大学共同研发，历经蚂蚁50万核图计算集群和300+实际业务场景锤炼，在国际图数据库基准测试中多次获得性能第一。',
   'home.banner.quickStart': '快速上手',
   'home.notice0.tag': '测试报告',
   'home.notice0.title': '蚂蚁集团TuGraph跻身中国图数据库市场“领导者”象限',

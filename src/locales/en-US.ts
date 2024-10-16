@@ -28,7 +28,7 @@ export default {
     'TuGraph,蚂蚁图数据库,蚂蚁图计算,图数据库,图计算,图平台,图数据分析, 分布式数据库, Graph,大数据,关联关系分析,知识图谱,GNN, 图神经网络, Neo4j, GeaGraph, GeaBase, GeaFlow, 费马, 人工智能, big data, graph processing,graph database, graph computing, artificial intelligence',
   'home.banner.slogan': 'The Distributed Graph Database Behind Alipay',
   'home.banner.description':
-    'TuGraph is a high-performance graph database jointly developed by Ant Group and Tsinghua University. It has been applied to Ant Group’s trillion-scale business, and has achieved the top-ranking performance in LDBC-SNB, a globally-recognized benchmark test, surpassing competing solutions.',
+    "TuGraph is a high-performance graph database jointly developed by Ant Group and Tsinghua University. It has been rigorously tested in Ant Group's 500,000-core graph computing cluster and over 300 real-world business scenarios, and has achieved the top-ranking performance in LDBC-SNB, a globally-recognized benchmark test, surpassing competing solutions.",
   'home.banner.quickStart': 'Quick Start',
   'home.notice0.tag': 'BENCHMARK',
   'home.notice0.title': 'TuGraph Named a Leader in the IDC MarketScape',
@@ -48,8 +48,7 @@ export default {
   'home.btn.tryOut': ' Enterprise Edition',
   'home.tugrpah.db': 'Standalone',
   'home.distributed': 'Distributed',
-  'home.highAvailability': 'High Availability',
-  'home.three.lines.consistent': 'online/offline all-in-one',
+  'home.three.lines.consistent': 'online/near-line/offline all-in-one',
   'home.case.desc1': 'bottlenecks for  industrial data analysis.',
   'home.case0.title': 'Financial Services',
   'home.case0.desc0':
@@ -151,7 +150,7 @@ export default {
   'home.version.title2': 'Enterprise Edition',
   'home.version1': ' Enterprise Edition',
   'home.version.desc1':
-    'TuGraph DB Enterprise Edition is the ultimate choice for users seeking a comprehensive graph database solution with robust commercial support features. This edition offers a distributed architecture, covering the entire graph database life cycle, from exploration to research, service, operation, and maintenance. It boasts online/offline graph computing engines, support for multiple data sources, including streaming and big data platforms, and multi-site and multi-center deployment options.',
+    'TuGraph DB Enterprise Edition is the ultimate choice for users seeking a comprehensive graph database solution with robust commercial support features. This edition offers a distributed architecture, covering the entire graph database life cycle, from exploration to research, service, operation, and maintenance. It boasts online/near-line/offline graph computing engines, support for multiple data sources, including streaming and big data platforms, and multi-site and multi-center deployment options.',
   'home.version.contactUs': 'FREE TRIAL ',
   'home.btn.desc1': 'Alibaba Cloud',
   'home.feat0': 'Label property graph model',
