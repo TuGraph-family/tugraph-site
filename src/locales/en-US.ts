@@ -542,4 +542,5 @@ TuGraph supports more than 300 applications in the Ant Group, including "Double 
   'product_learn.feature.desc3':
     'High performance and high operability framework.',
   'home.banner.expandBtnDesc': 'Notice',
+  'docs.title': 'Docs',
 };

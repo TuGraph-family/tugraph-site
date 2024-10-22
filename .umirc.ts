@@ -49,6 +49,16 @@ export default defineConfig({
       component: '@/pages/platform',
       title: 'db.title',
     },
+    {
+      path: '/docs/*',
+      component: '@/pages/docs',
+      title: 'docs.title',
+    },
+    {
+      path: '/docs',
+      component: '@/pages/docs',
+      title: 'docs.title',
+    },
   ],
   scripts: [
     `var _hmt = _hmt || [];

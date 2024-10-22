@@ -517,4 +517,5 @@ export default {
   'product_learn.feature.desc2': '后端支持主流图学习框架，用户学习成本低。',
   'product_learn.feature.title3': '高性能',
   'product_learn.feature.desc3': 'TuGraph图学习具有高性能、高可操作性等特点。',
+  'docs.title': '文档',
 };

@@ -15,21 +15,45 @@ import AnnouncementBanner from '../AnnouncementBanner';
 import GithubButton from '../githubButton';
 import styles from './index.less';
 
-export const Header = ({ isStick }: { isStick?: boolean }) => {
+export const Header = ({
+  isStick,
+  currentUrl,
+}: {
+  isStick?: boolean;
+  currentUrl?: { pathname: string; hash: string };
+}) => {
   const intl = useIntl();
   const { pathname, search } = useLocation();
   const lang = getSearch(search)?.lang || DEFAULT_LOCAL;
   const isZH = lang === 'zh-CN';
   const isWide = useMedia('(min-width: 767.99px)', true);
   const [popupMenuVisible, setPopupMenuVisible] = useState(false);
-  const zhSite = `${window.location.origin}${history?.location?.pathname}?lang=zh-CN`;
-  const enSite = `${window.location.origin}${history?.location?.pathname}?lang=en-US`;
+
+  const toggleLanguage = (url: string, language: 'zh' | 'en') => {
+    const format = url.replace(/\/(zh|en)\//, () => {
+      return `/${language}/`;
+    });
+    return format;
+  };
+
+  const zhSite = currentUrl
+    ? `${window.location.origin}${toggleLanguage(
+        currentUrl.pathname,
+        'zh',
+      )}?lang=zh-CN${currentUrl?.hash}`
+    : `${window.location.origin}${history?.location?.pathname}?lang=zh-CN`;
+  const enSite = currentUrl
+    ? `${window.location.origin}${toggleLanguage(
+        currentUrl.pathname,
+        'en',
+      )}?lang=en-US${currentUrl?.hash}`
+    : `${window.location.origin}${history?.location?.pathname}?lang=en-US`;
 
   const onToggleLanguage = () => {
     if (lang === 'en' || lang === 'en-US') {
-      window.location.href = zhSite;
+      window.location.href = toggleLanguage(zhSite, 'zh');
     } else {
-      window.location.href = enSite;
+      window.location.href = toggleLanguage(enSite, 'en');
     }
   };
 
@@ -260,7 +284,7 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
           </div>
         }
       >
-        <a rel="noopener noreferrer">
+        <a href="/docs" rel="noopener noreferrer">
           {intl.formatMessage({ id: 'header.doc' })}
         </a>
       </Popover>
