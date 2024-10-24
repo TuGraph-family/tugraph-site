@@ -8,7 +8,7 @@ import { useMedia } from 'react-use';
 import { history, useIntl, useLocation } from 'umi';
 import { Link } from 'react-router-dom';
 
-import { DEFAULT_LOCAL, searchParamsEn, searchParamsZh } from '@/constant';
+import { DEFAULT_LOCAL } from '@/constant';
 import { getSearch, goLinkAt, historyPushLinkAt } from '@/util';
 import '@docsearch/css';
 import AnnouncementBanner from '../AnnouncementBanner';
@@ -65,12 +65,44 @@ export const Header = ({
     const key = pathname.replace(/\//g, '');
     return [key || 'home'];
   };
+
+  const getCurrentLanguage = () => {
+    const segments = pathname.split('/');
+    return ['zh', 'en'].find((lang) => segments.includes(lang)) || 'en';
+  };
+
+  const getVersionFromUrl = () => {
+    const versionRegex = /\/(\d+\.\d+\.\d+)\//;
+
+    // 在路由中搜索版本号
+    const match = pathname.match(versionRegex);
+
+    // 如果找到版本号，返回它，否则返回默认版本号 '4-5-0'
+    return match ? match[1].replace(/\./g, '-') : '4-5-0';
+  };
+
   const searchInput = () => {
     return (
       <DocSearch
-        {...(lang === 'en' || lang === 'en-US'
-          ? searchParamsEn
-          : searchParamsZh)}
+        {...{
+          apiKey: '829a7e48ddbd6916e159c003391543a0',
+          indexName: 'zhongyunwanio',
+          appId: 'DGYVABHR0M',
+          searchParameters: {
+            facetFilters: [
+              `docusaurus_tag:docs-${getVersionFromUrl()}_${getCurrentLanguage()}-current`,
+            ],
+          },
+          transformItems: (items) => {
+            return items.map((item) => {
+              // 在这里修改 URL。例如，将路径中的 `/docs/` 替换为 `/`
+              return {
+                ...item,
+                url: '/docs' + item?.url?.split('/tugraph-db')[1] ?? '',
+              };
+            });
+          },
+        }}
       />
     );
   };

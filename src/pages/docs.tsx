@@ -74,7 +74,6 @@ const Docs: React.FC = () => {
           width: '100%',
           height: 'calc(100vh - 56px)',
           border: 'none',
-          padding: '0 120px',
         }}
       />
     </div>
