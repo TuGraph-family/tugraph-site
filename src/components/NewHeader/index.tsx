@@ -246,12 +246,7 @@ export const NewHeader = ({ isStick }: { isStick?: boolean }) => {
       </div>
       <div className={styles.menuList}>
         <div className={cx(styles.menuItem, styles.mainMenuProduct)}>
-          <div
-            className={styles.mainMenu}
-            onClick={() => {
-              history.push(historyPushLinkAt('/new/product'));
-            }}
-          >
+          <div className={styles.mainMenu}>
             {intl.formatMessage({ id: 'header.product' })}
           </div>
           <div className={styles.subMenuProduct}>{rederProductSubMenu()}</div>
