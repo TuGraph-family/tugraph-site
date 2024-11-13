@@ -59,6 +59,10 @@ export default defineConfig({
       component: '@/pages/docs',
       title: 'docs.title',
     },
+    {
+      path: '/new',
+      component: '@/pages/new-pages/Home',
+    },
   ],
   scripts: [
     `var _hmt = _hmt || [];
