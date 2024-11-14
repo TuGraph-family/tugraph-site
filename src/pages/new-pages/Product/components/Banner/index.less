@@ -15,17 +15,12 @@
   }
 
   .titleText {
-    text-align: center;
     color: #292d3b;
     font-size: 48px;
     font-weight: 300;
   }
 
   .descriptionText {
-    margin: 0 auto;
-    width: 530px;
-    text-align: center;
-    text-align: center;
     color: #768191;
     font-size: 14px;
     line-height: 22px;
@@ -33,16 +28,12 @@
 
   .buttonContainer {
     display: flex;
-    flex-direction: row;
-    align-items: stretch;
     margin-top: 40px;
-    margin-right: 440px;
-    margin-left: 426px;
   }
 
-  .communityEditionButton {
-    flex: 1;
-    min-width: 160px;
+  .communityEditionButton,
+  .enterpriseConsultationButton {
+    width: 146px;
     height: 48px;
     border-color: #b2c3f6;
     background-color: #2e5dfe;
@@ -71,9 +62,6 @@
   }
 
   .enterpriseConsultationButton {
-    flex: 1;
-    min-width: 158px;
-    height: 46px;
     border-color: #e2e4e8;
     background-color: #f2f6fa;
     color: #545762;
@@ -142,52 +130,26 @@
       0px 3px 6px -4px #84879b1f;
     padding: 20px;
     position: relative;
+
+    .videoDesc {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 16px;
+
+      .videoName {
+        font-size: 20px;
+        color: #2a3662;
+        letter-spacing: -0.5;
+        opacity: 0.96;
+      }
+
+      .videoLength {
+        font-size: 14px;
+        color: #2e5dfe;
+        line-height: 20px;
+        font-weight: 700;
+      }
+    }
   }
-}
-
-.featureImg {
-  width: 170px;
-  height: 170px;
-  position: absolute;
-  top: 0;
-  left: 194px;
-  z-index: -2;
-}
-
-.featureArrow {
-  width: 50px;
-  height: 46px;
-  position: absolute;
-  top: 17px;
-  right: 15px;
-  z-index: -1;
-}
-
-.benchmarkFeature {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  padding: 15px 168px 45px 18px;
-  border: solid 1px #e9edf3;
-  background-color: #f7f9fc;
-}
-
-.featureCategory {
-  display: block;
-  align-self: flex-start;
-  white-space: nowrap;
-  color: #2e5dfe;
-  font-size: 16px;
-  line-height: 20px;
-  margin-bottom: 11px;
-}
-
-.featureContent {
-  & > div {
-    font-size: 24px;
-    color: #1c2442;
-    letter-spacing: -1.7;
-  }
-
-  margin-bottom: 34px;
 }

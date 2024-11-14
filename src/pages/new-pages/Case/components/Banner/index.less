@@ -3,7 +3,7 @@
   // margin-top: -68px;
   width: 100vw;
   background-size: cover;
-  padding: 159px 0 0;
+  padding: 142px 0 0;
   margin: 0 -120px;
   position: relative;
 
@@ -15,68 +15,15 @@
   }
 
   .titleText {
-    text-align: center;
     color: #292d3b;
     font-size: 48px;
     font-weight: 300;
   }
 
   .descriptionText {
-    margin: 0 auto;
-    width: 530px;
-    text-align: center;
-    text-align: center;
     color: #768191;
     font-size: 14px;
     line-height: 22px;
-  }
-
-  .buttonContainer {
-    display: flex;
-    flex-direction: row;
-    align-items: stretch;
-    margin-top: 40px;
-    margin-right: 440px;
-    margin-left: 426px;
-  }
-
-  .communityEditionButton {
-    flex: 1;
-    min-width: 160px;
-    height: 48px;
-    border-color: #b2c3f6;
-    background-color: #2e5dfe;
-    margin-right: 16px;
-  }
-
-  .buttonContent {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .communityEditionLabel {
-    white-space: nowrap;
-    color: #e6ebff;
-    font-size: 16px;
-  }
-
-  .arrowIcon {
-    width: 14px;
-    height: 14px;
-    margin-left: 6px;
-    color: #fff;
-    font-size: 14px;
-  }
-
-  .enterpriseConsultationButton {
-    flex: 1;
-    min-width: 158px;
-    height: 46px;
-    border-color: #e2e4e8;
-    background-color: #f2f6fa;
-    color: #545762;
   }
 }
 
@@ -133,61 +80,29 @@
   gap: 16px;
 
   .featureSectionItem {
-    width: 384px;
-    height: fix-content;
+    width: 187px;
+    height: 157px;
     background-color: rgba(255, 255, 255, 0.3);
     backdrop-filter: blur(50px);
     border-radius: 12px;
     box-shadow: 0px 9px 28px 8px #84879b0d, 0px 6px 16px 0px #84879b14,
       0px 3px 6px -4px #84879b1f;
-    padding: 20px;
     position: relative;
+    overflow: hidden;
+
+    .fieldImg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .fieldName {
+      width: 100%;
+      text-align: center;
+      position: absolute;
+      bottom: 24px;
+      font-size: 18px;
+      color: #131415;
+      font-weight: 500;
+    }
   }
-}
-
-.featureImg {
-  width: 170px;
-  height: 170px;
-  position: absolute;
-  top: 0;
-  left: 194px;
-  z-index: -2;
-}
-
-.featureArrow {
-  width: 50px;
-  height: 46px;
-  position: absolute;
-  top: 17px;
-  right: 15px;
-  z-index: -1;
-}
-
-.benchmarkFeature {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  padding: 15px 168px 45px 18px;
-  border: solid 1px #e9edf3;
-  background-color: #f7f9fc;
-}
-
-.featureCategory {
-  display: block;
-  align-self: flex-start;
-  white-space: nowrap;
-  color: #2e5dfe;
-  font-size: 16px;
-  line-height: 20px;
-  margin-bottom: 11px;
-}
-
-.featureContent {
-  & > div {
-    font-size: 24px;
-    color: #1c2442;
-    letter-spacing: -1.7;
-  }
-
-  margin-bottom: 34px;
 }

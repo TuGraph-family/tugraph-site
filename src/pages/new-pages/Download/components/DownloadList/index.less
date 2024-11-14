@@ -1,0 +1,91 @@
+.downloadList {
+  .downloadItem {
+    margin-bottom: 64px;
+
+    .title {
+      font-family: Roboto-Bold;
+      font-size: 32px;
+      color: #292d3b;
+      line-height: 40px;
+      text-align: center;
+      font-weight: 700;
+      margin-bottom: 40px;
+    }
+
+    .typeList {
+      display: flex;
+      justify-content: space-between;
+
+      .typeItem {
+        width: 584px;
+        height: fix-content;
+        background: #f4f6f8;
+        border-radius: 12px;
+        padding: 20px;
+
+        .typeItemTitle {
+          font-family: Roboto-Medium;
+          font-size: 16px;
+          color: #292d3b;
+          line-height: 24px;
+          font-weight: 500;
+          margin: 0 12px 12px 0;
+        }
+      }
+
+      .typeItemFlex {
+        display: flex;
+        align-items: center;
+
+        .typeItemTitle {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+.typeItemSelect {
+  width: 0;
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+
+  .select {
+    width: 120px;
+  }
+
+  .downloadBtn {
+    width: 100px;
+    height: 32px;
+    border: 1px solid #2e5dfe;
+    border-radius: 16px;
+    display: flex;
+    gap: 4px;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    color: #2e5dfe;
+    line-height: 22px;
+
+    &:hover {
+      background: #2e5dfe14;
+    }
+  }
+}
+
+.typeItemCopy {
+  height: 42px;
+  background: #ffffff;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 12px;
+
+  .buttonText {
+    font-size: 14px;
+    color: #2e5dfe;
+    line-height: 22px;
+  }
+}
