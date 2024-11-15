@@ -11,15 +11,15 @@
 }
 
 .header {
+  height: fit-content;
   padding: 0 120px;
   z-index: 999;
-  height: 66px;
   width: 100%;
   position: sticky;
   top: 0;
-  transition: all ease 0.3s;
-  background-color: rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(50px);
+  -webkit-backdrop-filter: blur(50px);
+  transition: all 0.5s linear;
 }
 
 .headerBox {
@@ -116,7 +116,7 @@
         content: '';
         width: 10px;
         height: 10px;
-        background-color: @bg-color;
+        background-color: rgb(217, 225, 234);
         border: 1px solid transparent;
         border-color: #3f537123 #3f537123 transparent transparent;
         position: absolute;
@@ -130,32 +130,6 @@
     &:hover > .mainMenu::after {
       bottom: -6px;
     }
-
-    .subMenuProduct,
-    .subMenuCommunity {
-      position: absolute;
-      top: 200%;
-      left: 0;
-      width: 100vw;
-      height: 311px;
-      background-color: rgba(255, 255, 255, 0.8);
-      backdrop-filter: blur(10px);
-      display: none;
-      opacity: 0;
-      transition: all 2s linear;
-    }
-  }
-
-  .mainMenuProduct:hover > .subMenuProduct {
-    display: block;
-    transform: translateY(-66px);
-    opacity: 1;
-  }
-
-  .mainMenuCommunity:hover > .subMenuCommunity {
-    display: block;
-    top: 100%;
-    opacity: 1;
   }
 }
 
@@ -240,220 +214,10 @@
   }
 }
 
-// .menuList {
-//   display: flex;
-
-//   &>div {
-//     background: red;
-//   }
-// }
-
-.sticky {
-  background: rgba(255, 255, 255, 0.88);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
+.subMenuCommunity,
+.subMenuProduct {
+  margin: 0 -120px;
+  width: 100vw;
+  height: 0;
+  overflow: hidden;
 }
-
-// @media only screen and (max-width: 767.99px) {
-//   .header {
-//     height: 11.7vw;
-//     padding: 2.7vw 3.2vw;
-//     transition: all 0.3s;
-
-//     .languageIcon {
-//       width: 6.4vw;
-//       color: #1a1b25;
-//       opacity: 0.88;
-//       margin: 0 !important;
-//     }
-
-//     .menuIcon {
-//       width: 6.4vw;
-//       transition: all 0.3s;
-//       color: #1a1b25;
-//       opacity: 0.85;
-//     }
-
-//     img {
-//       width: 21.3vw;
-//     }
-//   }
-
-//   .MenuList {
-//     .produceMenu {
-//       line-height: 12.8vw !important;
-
-//       a {
-//         height: 12.8vw !important;
-//       }
-//     }
-
-//     .menuChildren {
-//       font-weight: 400;
-//     }
-
-//     :global {
-
-//       .ant-menu-inline.ant-menu-root .ant-menu-item,
-//       .ant-menu-inline.ant-menu-root .ant-menu-submenu-title {
-//         display: flex;
-//         font-weight: 500;
-//         align-items: center;
-//         font-size: 3.7vw;
-//         width: 93.6vw;
-//         height: 100%;
-//         transition: border-color 0.3s, background 0.3s,
-//           padding 0.1s cubic-bezier(0.215, 0.61, 0.355, 1);
-//         height: 12.8vw;
-//         padding: 3.7vw 1vw;
-//         font-weight: 500;
-//       }
-
-//       .ant-menu-inline,
-//       .ant-menu-vertical,
-//       .ant-menu-vertical-left {
-//         border-right: 0;
-//       }
-
-//       .ant-menu-sub.ant-menu-inline {
-//         background-color: #fff !important;
-//       }
-
-//       .ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
-//         background-color: #fff !important;
-//       }
-
-//       .ant-menu-inline .ant-menu-item::after {
-//         border-right: 0 !important;
-//       }
-
-//       .ant-menu-root {
-//         li:nth-of-type(2) {
-//           .ant-menu-item {
-//             padding-left: 24px !important;
-//             line-height: 6.4vw;
-//             margin: 0;
-
-//             div {
-//               font-weight: 500;
-//               font-size: 3.2vw;
-//               color: rgba(26, 27, 37, 0.45);
-//             }
-
-//             a {
-//               font-weight: 400;
-//               font-size: 3.2vw;
-//               color: rgba(26, 27, 37, 0.88);
-
-//               &:hover {
-//                 color: #1650ff;
-//               }
-//             }
-//           }
-
-//           // .ant-menu-item:nth-of-type(1),
-//           // .ant-menu-item:nth-of-type(2) {
-//           //   height: 25.6vw;
-//           //   line-height: 12.8vw;
-//           // }
-//         }
-//       }
-//     }
-//   }
-
-//   :global {
-//     .ant-collapse-ghost>.ant-collapse-item-active {
-//       height: 100% !important;
-//     }
-
-//     .ant-drawer-header {
-//       padding: 3.7vw 3.2vw;
-//       font-weight: 500;
-
-//       img {
-//         width: 21.3vw;
-//       }
-//     }
-
-//     .ant-drawer-body {
-//       padding: 2.1vw 3.2vw;
-//       width: 100vw;
-//       overflow-x: hidden;
-
-//       .menuList {
-//         height: 12.8vw;
-//         padding: 3.7vw 1vw;
-//         font-weight: 500;
-
-//         a {
-//           color: rgba(26, 27, 37, 0.88);
-//           font-size: 3.7vw;
-//         }
-//       }
-
-//       .ant-collapse-content-active {
-//         .ant-collapse-content-box {
-//           .menuList {
-//             a {
-//               font-weight: 400 !important;
-//               font-size: 3.2vw !important;
-//             }
-//           }
-//         }
-//       }
-//     }
-
-//     .DocSearch-Button {
-//       margin-right: auto !important;
-//       width: auto !important;
-//       background-color: transparent !important;
-
-//       .DocSearch-Search-Icon {
-//         color: #1c1e21 !important;
-//         width: 4.5vw !important;
-//       }
-//     }
-
-//     .DocSearch-Form {
-//       margin-top: 11.7vw !important;
-//     }
-
-//     .DocSearch-Cancel {
-//       margin-top: 9vw;
-//     }
-//   }
-
-//   .collapse {
-//     height: 12.8vw;
-
-//     :global {
-//       .ant-collapse-content-box {
-//         padding: 0 0 0 24px !important;
-//       }
-
-//       .ant-collapse-header {
-//         padding: 0 !important;
-//         border-bottom: none;
-//       }
-
-//       .ant-collapse-expand-icon {
-//         position: absolute;
-//         right: 0px;
-//         color: rgba(26, 27, 37, 0.65);
-//         padding: 3.7vw 1vw;
-
-//         span {
-//           font-size: 2.7vw !important;
-//         }
-//       }
-
-//       .ant-collapse-header-text {
-//         font-size: 3.7vw;
-//         font-weight: 500;
-//         height: 12.8vw;
-//         padding: 3.7vw 1vw;
-//         color: rgba(26, 27, 37, 0.88);
-//       }
-//     }
-//   }
-// }

@@ -81,8 +81,20 @@ export default defineConfig({
       component: '@/pages/new-pages/Download',
     },
     {
-      path: '/new/blogList',
-      component: '@/pages/new-pages/BlogList',
+      path: '/new/blog/list',
+      component: '@/pages/new-pages/Blog/list',
+    },
+    {
+      path: '/new/blog/info',
+      component: '@/pages/new-pages/Blog/info',
+    },
+    {
+      path: '/new/activity/list',
+      component: '@/pages/new-pages/Activity/list',
+    },
+    {
+      path: '/new/activity/info',
+      component: '@/pages/new-pages/Activity/info',
     },
   ],
   scripts: [
