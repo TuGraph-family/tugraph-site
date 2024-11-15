@@ -59,9 +59,30 @@ export default defineConfig({
       component: '@/pages/docs',
       title: 'docs.title',
     },
+    // new pages
     {
       path: '/new',
       component: '@/pages/new-pages/Home',
+    },
+    {
+      path: '/new/product',
+      component: '@/pages/new-pages/Product',
+    },
+    {
+      path: '/new/case',
+      component: '@/pages/new-pages/Case',
+    },
+    {
+      path: '/new/partners',
+      component: '@/pages/new-pages/Partners',
+    },
+    {
+      path: '/new/download',
+      component: '@/pages/new-pages/Download',
+    },
+    {
+      path: '/new/blogList',
+      component: '@/pages/new-pages/BlogList',
     },
   ],
   scripts: [

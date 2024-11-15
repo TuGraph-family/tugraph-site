@@ -50,7 +50,7 @@ export const NewLayout = ({ bannerInfo, content }: LayoutProps) => {
     <div>
       <AdBox />
       <NewHeader isStick={isStick} />
-      <NewBanner slogan="TuGraph" />
+      {/* <NewBanner slogan="TuGraph" /> */}
       <div className={styles.mainWrapper}>
         <div className={styles.content}>{content}</div>
       </div>
