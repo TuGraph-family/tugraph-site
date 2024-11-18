@@ -1,15 +1,81 @@
-import { Button, Calendar } from 'antd';
+import { Button, Calendar, Space, Tooltip } from 'antd';
 import cx from 'classnames';
 import { ReactNode } from 'react';
 import { useLocation } from 'umi';
 import styles from './index.less';
-import { ArrowRightOutlined } from '@ant-design/icons';
+import {
+  ArrowRightOutlined,
+  CaretLeftOutlined,
+  CaretRightOutlined,
+} from '@ant-design/icons';
+import moment from 'moment';
 
 const Banner = () => {
   const { pathname, search } = useLocation();
 
   let background =
     'url(https://mdn.alipayobjects.com/huamei_p63okt/afts/img/An4uTrsTiyUAAAAAAAAAAAAADh8WAQFr/original)';
+
+  const data = {
+    startTime: '2024-11-12',
+    endTime: '2024-11-22',
+  };
+
+  const cellRender: any = (current) => {
+    console.log(current, 'lkm'); // if (info.type === 'date') return dateCellRender(current); // if (info.type === 'month') return monthCellRender(current);
+    const today = moment().format('YYYY-MM-DD');
+
+    const startOfDayStartDate = moment(data.startTime).endOf('day');
+    const startOfDayEndDate = moment(data.endTime).startOf('day');
+
+    const isToDay = moment(current._d).isSame(moment(), 'day');
+    const isBetween =
+      moment(current._d).isSameOrAfter(startOfDayStartDate) &&
+      moment(current._d).isSameOrBefore(startOfDayEndDate);
+    const isStartandEnd =
+      moment(current._d).format('YYYY-MM-DD') === data.startTime ||
+      moment(current._d).format('YYYY-MM-DD') === data.endTime;
+
+    console.log(
+      'isBetween',
+      moment(current._d).format('YYYY-MM-DD'),
+      isStartandEnd,
+    );
+
+    return (
+      <div
+        className={cx(
+          styles.fullCell,
+          isToDay ? styles.today : '',
+          isBetween ? styles.between : '',
+          isStartandEnd ? styles.startandend : '',
+        )}
+      >
+        {moment(current._d).format('DD')}
+      </div>
+    );
+  };
+  const headerRender = ({ value, onChange }) => {
+    const month = value.month();
+
+    const changeMonth = (newMonth) => {
+      const now = value.clone().month(newMonth);
+      onChange(now);
+    };
+    return (
+      <div className={styles.calendarHeader}>
+        <CaretLeftOutlined
+          className={styles.left}
+          onClick={() => changeMonth(month - 1)}
+        />
+        <div className={styles.month}>{month + 1}月</div>
+        <CaretRightOutlined
+          className={styles.right}
+          onClick={() => changeMonth(month + 1)}
+        />
+      </div>
+    );
+  };
 
   return (
     <div
@@ -51,9 +117,12 @@ const Banner = () => {
           </div>
         </div>
 
-        <div className={styles.bannerRight}>
-          <Calendar fullscreen={false} />
-        </div>
+        <Calendar
+          className={styles.activityCalendar}
+          fullscreen={false}
+          dateFullCellRender={cellRender}
+          headerRender={headerRender}
+        />
       </div>
     </div>
   );

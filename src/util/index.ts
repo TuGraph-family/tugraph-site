@@ -50,3 +50,15 @@ export const tracertBPos = (bPos: string, options?: Record<string, any>) => {
   });
   window.Tracert?.call?.('logPv', options || {});
 };
+
+// 锚点特殊字符处理
+export const slugify = (text?: string) => {
+  if (!text) {
+    return '';
+  }
+  return text
+    .toLowerCase()
+    .replace(/[^a-z0-9\u4e00-\u9fa5 -]/g, '') // Remove all non-word chars
+    .replace(/\s+/g, '-') // Replace spaces with -
+    .replace(/-+/g, '-'); // Replace multiple - with single -
+};

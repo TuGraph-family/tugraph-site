@@ -47,12 +47,34 @@
       }
     }
 
-    .bannerRight {
+    .activityCalendar {
       width: 274px;
       height: 244px;
       background: #ffffffb3;
       border-radius: 12px;
       overflow: hidden;
+      padding: 16px;
+
+      .calendarHeader {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 15px;
+
+        .month {
+          font-family: Roboto-Medium;
+          font-size: 20px;
+          color: #292d3b;
+          line-height: 28px;
+          font-weight: 500;
+        }
+
+        .left,
+        .right {
+          font-size: 20px;
+          color: #768191;
+        }
+      }
     }
   }
 }
@@ -137,4 +159,37 @@
       background-color: #ccc;
     }
   }
+}
+
+.fullCell {
+  width: 24px;
+  height: 24px;
+  text-align: center;
+  line-height: 24px;
+  // margin: 0 12px;
+  font-size: 12px;
+}
+
+.today {
+  position: relative;
+
+  &::after {
+    content: '';
+    width: 4px;
+    height: 4px;
+    background: #2e5dfe;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-2px);
+  }
+}
+
+.startandend {
+  background: #2e5dfe;
+}
+
+.between {
+  background: #2e5dfe1a;
 }
