@@ -1,6 +1,7 @@
 import { Button, Col, Row } from 'antd';
+import { motion } from 'framer-motion';
 import cx from 'classnames';
-import { ReactNode } from 'react';
+import { useState, ReactNode } from 'react';
 import { useMedia } from 'react-use';
 import { useLocation } from 'umi';
 import styles from './index.less';
