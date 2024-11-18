@@ -1,7 +1,7 @@
 import { historyPushLinkAt } from '@/util';
 import styles from './index.less';
-import { ClockCircleOutlined, TagOutlined } from '@ant-design/icons';
 import { history } from 'umi';
+import FooterInfo from '@/pages/new-pages/Blog/list/components/FooterInfo';
 
 const BlogItem = () => {
   return (
@@ -19,20 +19,7 @@ const BlogItem = () => {
           2:1 战胜英格兰队，以7场连胜的成绩成为本届欧洲杯冠军。TuGraph
           团队开发的“智猜足球”小工具（https://football.tugraph.tech）也准确预测了这场胜利✌️
         </div>
-        <div className={styles.blogItemFooter}>
-          <div>
-            <div className={styles.avatar}></div>
-            <div>发布作者</div>
-          </div>
-          <div>
-            <TagOutlined className={styles.icon} />
-            <div>竞赛</div>
-          </div>
-          <div>
-            <ClockCircleOutlined className={styles.icon} />
-            <div> 2024-07-16 09:02</div>
-          </div>
-        </div>
+        <FooterInfo />
       </div>
     </div>
   );
