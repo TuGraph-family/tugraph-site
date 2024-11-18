@@ -39,6 +39,11 @@
     width: 122px;
     height: 24px;
     margin-right: 40px;
+
+    &:hover {
+      cursor: pointer;
+      opacity: 0.8;
+    }
   }
 }
 
@@ -98,6 +103,10 @@
   margin-top: -66px;
   height: 66px;
 
+  .menuItem {
+    cursor: pointer;
+  }
+
   .menuItem,
   .mainMenuCase,
   .mainMenuProduct {
@@ -129,6 +138,14 @@
 
     &:hover > .mainMenu::after {
       bottom: -6px;
+    }
+  }
+
+  .menuItemSelect {
+    .mainMenu {
+      &::after {
+        bottom: -6px;
+      }
     }
   }
 }
@@ -219,5 +236,7 @@
   margin: 0 -120px;
   width: 100vw;
   height: 0;
+  opacity: 0;
   overflow: hidden;
+  transition: all 0.4s ease;
 }

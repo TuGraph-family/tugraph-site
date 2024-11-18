@@ -1,7 +1,8 @@
 import React from 'react';
 import { Button } from 'antd';
-import styles from './index.less';
 import { ArrowRightOutlined } from '@ant-design/icons';
+
+import styles from './index.less';
 
 const Version = () => {
   return (

@@ -23,6 +23,27 @@ export const NewHeader = ({ isStick }: { isStick?: boolean }) => {
   const isZH = lang === 'zh-CN';
   const isWide = useMedia('(min-width: 767.99px)', true);
   const [popupMenuVisible, setPopupMenuVisible] = useState(false);
+  const [selectMenuItem, setSelectMenuItem] = useState<string>(() => {
+    /** 匹配路由，初始化所选择的菜单栏 */
+    function captureRouteLevel(url: string, level: number) {
+      try {
+        const pathname = new URL(url).pathname;
+        const segments = pathname.split('/').filter(Boolean);
+        if (segments.length >= level) {
+          const pathKey = segments[level - 1];
+          return ['blog', 'activity', 'video'].includes(pathKey)
+            ? 'study'
+            : pathKey;
+        } else {
+          return '';
+        }
+      } catch (error) {
+        console.error('Invalid URL');
+        return '';
+      }
+    }
+    return captureRouteLevel(location.href, 2);
+  });
 
   const zhSite = `${window.location.origin}${history?.location?.pathname}?lang=zh-CN`;
   const enSite = `${window.location.origin}${history?.location?.pathname}?lang=en-US`;
@@ -112,7 +133,7 @@ export const NewHeader = ({ isStick }: { isStick?: boolean }) => {
       <div className={styles.productSubMenu}>
         {list?.map((item) => {
           return (
-            <div className={styles.productSubMenuVersion}>
+            <div className={styles.productSubMenuVersion} key={item.title}>
               <div className={styles.productSubMenuTitle}>{item.title}</div>
               {item.subMenu?.map((subItem) => {
                 return (
@@ -196,11 +217,12 @@ export const NewHeader = ({ isStick }: { isStick?: boolean }) => {
 
         {list.map((item) => {
           return (
-            <div className={styles.subMenuCol}>
+            <div className={styles.subMenuCol} key={item.title}>
               <div className={styles.subMenuTitle}>{item.title}</div>
               {item.subMenu.map((subItem) => {
                 return (
                   <div
+                    key={subItem.label}
                     onClick={() => {
                       if (subItem?.path) {
                         history.push(historyPushLinkAt(subItem?.path));
@@ -227,32 +249,46 @@ export const NewHeader = ({ isStick }: { isStick?: boolean }) => {
     const mainWrapper = document.getElementById('mainWrapper');
 
     if (subMenuDom && mainWrapper) {
-      subMenuDom.style.height = type === 'move' ? '311px' : '0';
-      mainWrapper.style.marginTop = type === 'move' ? '-377px' : '-66px';
+      mainWrapper.style.transition = 'all 0.4s ease';
+
+      if (type === 'move') {
+        subMenuDom.style.opacity = '1';
+        subMenuDom.style.height = '321px';
+        mainWrapper.style.marginTop = '-387px';
+      } else {
+        subMenuDom.style.opacity = '0';
+        subMenuDom.style.height = '0';
+        mainWrapper.style.marginTop = '-66px';
+      }
     }
   };
 
   const renderMenu = () => {
     const menuList = [
       {
+        key: 'product',
         label: intl.formatMessage({ id: 'header.product' }),
         path: '/new/product',
         onMouseMove: () => onHover('subMenuProduct', 'move'),
         onMouseLeave: () => onHover('subMenuProduct', 'leave'),
       },
       {
+        key: 'case',
         label: '客户案例',
         path: '/new/case',
       },
       {
+        key: 'partners',
         label: '合作伙伴',
         path: '/new/partners',
       },
       {
+        key: 'docs',
         label: '文档',
       },
 
       {
+        key: 'study',
         label: '学习与社区',
         onMouseMove: () => onHover('subMenuCommunity', 'move'),
         onMouseLeave: () => onHover('subMenuCommunity', 'leave'),
@@ -262,12 +298,16 @@ export const NewHeader = ({ isStick }: { isStick?: boolean }) => {
     return (
       <div className={styles.menuList}>
         {menuList.map((item) => {
-          const { path, label, ...props } = item || {};
+          const { path, label, key, ...props } = item || {};
           return (
             <div
-              className={styles.menuItem}
+              key={key}
+              className={`${styles.menuItem}${
+                key === selectMenuItem ? ' ' + styles.menuItemSelect : ''
+              }`}
               onClick={() => {
                 if (path) {
+                  setSelectMenuItem(item?.label);
                   history.push(historyPushLinkAt(path));
                 }
               }}

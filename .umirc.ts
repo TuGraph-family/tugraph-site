@@ -143,6 +143,12 @@ export default defineConfig({
       .test(/\.md$/)
       .use('frontmatter-markdown-loader')
       .loader('frontmatter-markdown-loader');
+    memo.module
+      .rule('mjs')
+      .test(/\.mjs$/)
+      .include.add(/node_modules/)
+      .end()
+      .type('javascript/auto');
   },
   exportStatic: {},
   fastRefresh: {},
