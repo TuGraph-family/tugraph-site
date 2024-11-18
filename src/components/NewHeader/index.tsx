@@ -14,6 +14,7 @@ import '@docsearch/css';
 import AnnouncementBanner from '../AnnouncementBanner';
 import GithubButton from '../githubButton';
 import styles from './index.less';
+import { doc } from 'prettier';
 
 export const NewHeader = ({ isStick }: { isStick?: boolean }) => {
   const intl = useIntl();
@@ -153,6 +154,7 @@ export const NewHeader = ({ isStick }: { isStick?: boolean }) => {
         subMenu: [
           {
             label: '博客',
+            path: '/new/blog/list',
           },
           {
             label: '视频',
@@ -162,6 +164,7 @@ export const NewHeader = ({ isStick }: { isStick?: boolean }) => {
           },
           {
             label: '活动',
+            path: '/new/activity/list',
           },
         ],
       },
@@ -176,6 +179,7 @@ export const NewHeader = ({ isStick }: { isStick?: boolean }) => {
           },
           {
             label: '下载中心',
+            path: '/new/download',
           },
           {
             label: '白皮书与行业报告',
@@ -195,7 +199,17 @@ export const NewHeader = ({ isStick }: { isStick?: boolean }) => {
             <div className={styles.subMenuCol}>
               <div className={styles.subMenuTitle}>{item.title}</div>
               {item.subMenu.map((subItem) => {
-                return <div>{subItem.label}</div>;
+                return (
+                  <div
+                    onClick={() => {
+                      if (subItem?.path) {
+                        history.push(historyPushLinkAt(subItem?.path));
+                      }
+                    }}
+                  >
+                    {subItem.label}
+                  </div>
+                );
               })}
             </div>
           );
@@ -204,19 +218,71 @@ export const NewHeader = ({ isStick }: { isStick?: boolean }) => {
     );
   };
 
-  const items = [
-    {
-      label: <a href={zhSite}>简体中文</a>,
-      key: 'Chinese',
-    },
-    {
-      label: <a href={enSite}>English</a>,
-      key: 'English',
-    },
-  ];
+  const handleLangClick = () => {
+    window.location.href = lang === 'zh-CN' ? enSite : zhSite;
+  };
+
+  const onHover = (id: string, type: 'move' | 'leave') => {
+    const subMenuDom = document.getElementById(id);
+    const mainWrapper = document.getElementById('mainWrapper');
+
+    if (subMenuDom && mainWrapper) {
+      subMenuDom.style.height = type === 'move' ? '311px' : '0';
+      mainWrapper.style.marginTop = type === 'move' ? '-377px' : '-66px';
+    }
+  };
+
+  const renderMenu = () => {
+    const menuList = [
+      {
+        label: intl.formatMessage({ id: 'header.product' }),
+        path: '/new/product',
+        onMouseMove: () => onHover('subMenuProduct', 'move'),
+        onMouseLeave: () => onHover('subMenuProduct', 'leave'),
+      },
+      {
+        label: '客户案例',
+        path: '/new/case',
+      },
+      {
+        label: '合作伙伴',
+        path: '/new/partners',
+      },
+      {
+        label: '文档',
+      },
+
+      {
+        label: '学习与社区',
+        onMouseMove: () => onHover('subMenuCommunity', 'move'),
+        onMouseLeave: () => onHover('subMenuCommunity', 'leave'),
+      },
+    ];
+
+    return (
+      <div className={styles.menuList}>
+        {menuList.map((item) => {
+          const { path, label, ...props } = item || {};
+          return (
+            <div
+              className={styles.menuItem}
+              onClick={() => {
+                if (path) {
+                  history.push(historyPushLinkAt(path));
+                }
+              }}
+              {...props}
+            >
+              <div className={styles.mainMenu}>{label}</div>
+            </div>
+          );
+        })}
+      </div>
+    );
+  };
 
   return (
-    <div className={styles.header}>
+    <div className={styles.header} id="Head">
       <div className={styles.headerBox}>
         <div className={styles.headerLeft}>
           <a href={goLinkAt('/new')} rel="noopener noreferrer">
@@ -228,52 +294,36 @@ export const NewHeader = ({ isStick }: { isStick?: boolean }) => {
         </div>
         <div className={styles.headerRight}>
           {searchInput()}
-          <Dropdown menu={{ items }} placement="bottom" arrow>
-            <div className={styles.lang}>
-              <img
-                src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*GN_WSabhJdwAAAAAAAAAAAAADgOBAQ/original"
-                className={styles.languageIcon}
-              />
-              <div className={styles.languageText}>
-                {lang === 'zh-CN' ? '中' : 'EN'}
-              </div>
+          <div className={styles.lang} onClick={handleLangClick}>
+            <img
+              src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*GN_WSabhJdwAAAAAAAAAAAAADgOBAQ/original"
+              className={styles.languageIcon}
+            />
+            <div className={styles.languageText}>
+              {lang === 'zh-CN' ? '中' : 'EN'}
             </div>
-          </Dropdown>
+          </div>
           <div className={styles.loginBtn}>
             {lang === 'zh-CN' ? '登录' : 'login'}
           </div>
         </div>
       </div>
-      <div className={styles.menuList}>
-        <div className={cx(styles.menuItem, styles.mainMenuProduct)}>
-          <div className={styles.mainMenu}>
-            {intl.formatMessage({ id: 'header.product' })}
-          </div>
-          <div className={styles.subMenuProduct}>{rederProductSubMenu()}</div>
-        </div>
-        <div className={styles.menuItem}>
-          <div className={styles.mainMenu}>
-            {intl.formatMessage({ id: 'header.case' })}
-          </div>
-        </div>
-        <div className={styles.menuItem}>
-          <div className={styles.mainMenu}>
-            {intl.formatMessage({ id: 'header.ecosystem' })}
-          </div>
-        </div>
-        <div className={styles.menuItem}>
-          <div className={styles.mainMenu}>
-            {intl.formatMessage({ id: 'header.doc' })}
-          </div>
-        </div>
-        <div className={cx(styles.menuItem, styles.mainMenuCommunity)}>
-          <div className={styles.mainMenu}>
-            {intl.formatMessage({ id: 'header.community' })}
-          </div>
-          <div className={styles.subMenuCommunity}>
-            {renderCommunitySubMenu()}
-          </div>
-        </div>
+      {renderMenu()}
+      <div
+        className={styles.subMenuProduct}
+        id="subMenuProduct"
+        onMouseMove={() => onHover('subMenuProduct', 'move')}
+        onMouseLeave={() => onHover('subMenuProduct', 'leave')}
+      >
+        {rederProductSubMenu()}
+      </div>
+      <div
+        className={styles.subMenuCommunity}
+        id="subMenuCommunity"
+        onMouseMove={() => onHover('subMenuCommunity', 'move')}
+        onMouseLeave={() => onHover('subMenuCommunity', 'leave')}
+      >
+        {renderCommunitySubMenu()}
       </div>
     </div>
   );

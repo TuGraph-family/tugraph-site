@@ -1,9 +1,8 @@
 import { Button } from 'antd';
 import cx from 'classnames';
-import { ReactNode } from 'react';
 import { useLocation } from 'umi';
 import styles from './index.less';
-import { ArrowRightOutlined } from '@ant-design/icons';
+import SwitchTab from '@/components/SwitchTab';
 
 export interface BannerInfoProps {
   type?: string;
@@ -62,24 +61,6 @@ const Banner = ({ type, onChangeType, tag, onChangeTag }: BannerInfoProps) => {
     );
   };
 
-  const renderTag = () => {
-    return (
-      <div className={styles.tagList}>
-        {tagList.map((item) => (
-          <div
-            className={cx(
-              styles.tagItem,
-              item.value === tag ? styles.tagActived : '',
-            )}
-            onClick={() => onChangeTag?.(item.value)}
-          >
-            {item.label}
-          </div>
-        ))}
-      </div>
-    );
-  };
-
   return (
     <div
       id="banner"
@@ -100,7 +81,7 @@ const Banner = ({ type, onChangeType, tag, onChangeTag }: BannerInfoProps) => {
       <div className={styles.footerAction}>
         {renderType()}
 
-        {renderTag()}
+        <SwitchTab options={tagList} current={tag} onChange={onChangeTag} />
       </div>
     </div>
   );

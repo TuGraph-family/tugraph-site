@@ -1,8 +1,14 @@
+import { historyPushLinkAt } from '@/util';
 import styles from './index.less';
 import { ClockCircleOutlined, TagOutlined } from '@ant-design/icons';
+import { history } from 'umi';
+
 const BlogItem = () => {
   return (
-    <div className={styles.blogItem}>
+    <div
+      className={styles.blogItem}
+      onClick={() => history.push(historyPushLinkAt('/new/blog/info'))}
+    >
       <img src="" alt="" className={styles.blogItemImg} />
       <div className={styles.blogItemContent}>
         <div className={styles.blogItemTitle}>

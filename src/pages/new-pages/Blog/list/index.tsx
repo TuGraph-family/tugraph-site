@@ -1,6 +1,6 @@
 import { NewLayout } from '@/components/NewLayout';
-import Banner from '@/pages/new-pages/BlogList/components/Banner';
-import BlogItem from '@/pages/new-pages/BlogList/components/BlogItem';
+import Banner from '@/pages/new-pages/Blog/list/components/Banner';
+import BlogItem from '@/pages/new-pages/Blog/list/components/BlogItem';
 import { Pagination } from 'antd';
 import { useState } from 'react';
 
@@ -21,6 +21,7 @@ const BlogList = () => {
             tag={tag}
             onChangeTag={onChangeTag}
           />
+          <BlogItem />
           <BlogItem />
           <div
             style={{
