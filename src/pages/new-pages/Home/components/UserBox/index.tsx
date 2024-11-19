@@ -1,7 +1,12 @@
+import React, { useState } from 'react';
 import { ArrowRightOutlined } from '@ant-design/icons';
+import { motion } from 'framer-motion';
 import styles from './index.less';
 
-const UserBox = () => {
+const UserBox: React.FC = () => {
+  const [isHover, setIsHover] = useState<boolean>(false);
+  console.log('isHover:', isHover);
+
   return (
     <div className={styles.userBox}>
       <div className={styles.title}>代表用户</div>
@@ -28,8 +33,19 @@ const UserBox = () => {
         />
       </div>
       <div className={styles.moreCasesText}>
-        <span>更多案例</span>
-        <ArrowRightOutlined className={styles.arrowIcon} />
+        <span
+          className={styles.moreCasesSpan}
+          onMouseEnter={() => setIsHover(true)}
+          onMouseLeave={() => setIsHover(false)}
+        >
+          <span>更多案例</span>
+          <motion.span
+            animate={{ left: isHover ? 6 : 0 }}
+            style={{ position: 'relative' }}
+          >
+            <ArrowRightOutlined className={styles.arrowIcon} />
+          </motion.span>
+        </span>
       </div>
     </div>
   );
