@@ -175,7 +175,7 @@ export const NewHeader = ({ isStick }: { isStick?: boolean }) => {
         subMenu: [
           {
             label: '博客',
-            path: '/new/blog/list',
+            path: '/blog/list',
           },
           {
             label: '视频',
@@ -185,7 +185,7 @@ export const NewHeader = ({ isStick }: { isStick?: boolean }) => {
           },
           {
             label: '活动',
-            path: '/new/activity/list',
+            path: '/activity/list',
           },
         ],
       },
@@ -200,7 +200,7 @@ export const NewHeader = ({ isStick }: { isStick?: boolean }) => {
           },
           {
             label: '下载中心',
-            path: '/new/download',
+            path: '/download',
           },
           {
             label: '白皮书与行业报告',
@@ -268,23 +268,24 @@ export const NewHeader = ({ isStick }: { isStick?: boolean }) => {
       {
         key: 'product',
         label: intl.formatMessage({ id: 'header.product' }),
-        path: '/new/product',
+        path: '/product',
         onMouseMove: () => onHover('subMenuProduct', 'move'),
         onMouseLeave: () => onHover('subMenuProduct', 'leave'),
       },
       {
         key: 'case',
         label: '客户案例',
-        path: '/new/case',
+        path: '/case',
       },
       {
         key: 'partners',
         label: '合作伙伴',
-        path: '/new/partners',
+        path: '/partners',
       },
       {
         key: 'docs',
         label: '文档',
+        path: '/docs',
       },
 
       {
@@ -325,7 +326,7 @@ export const NewHeader = ({ isStick }: { isStick?: boolean }) => {
     <div className={styles.header} id="Head">
       <div className={styles.headerBox}>
         <div className={styles.headerLeft}>
-          <a href={goLinkAt('/new')} rel="noopener noreferrer">
+          <a href={goLinkAt('/')} rel="noopener noreferrer">
             <img
               className={styles.log}
               src="https://mdn.alipayobjects.com/huamei_p63okt/afts/img/V8XITL_lpf4AAAAAAAAAAAAADh8WAQFr/original"
