@@ -1,6 +1,5 @@
 import { SubTitle } from '@/components/SubTitle';
 import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
 const Introduction = () => {
   const markdown = `
   # Hello, world!

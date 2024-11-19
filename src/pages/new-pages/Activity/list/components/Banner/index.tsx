@@ -17,14 +17,11 @@ const Banner = () => {
     'url(https://mdn.alipayobjects.com/huamei_p63okt/afts/img/An4uTrsTiyUAAAAAAAAAAAAADh8WAQFr/original)';
 
   const data = {
-    startTime: '2024-11-12',
-    endTime: '2024-11-22',
+    startTime: '2024-11-25',
+    endTime: '2024-11-30',
   };
 
   const cellRender: any = (current) => {
-    console.log(current, 'lkm'); // if (info.type === 'date') return dateCellRender(current); // if (info.type === 'month') return monthCellRender(current);
-    const today = moment().format('YYYY-MM-DD');
-
     const startOfDayStartDate = moment(data.startTime).endOf('day');
     const startOfDayEndDate = moment(data.endTime).startOf('day');
 
@@ -42,17 +39,33 @@ const Banner = () => {
       isStartandEnd,
     );
 
-    return (
-      <div
-        className={cx(
-          styles.fullCell,
-          isToDay ? styles.today : '',
-          isBetween ? styles.between : '',
-          isStartandEnd ? styles.startandend : '',
-        )}
-      >
+    return !(isBetween || isStartandEnd) ? (
+      <div className={cx(styles.fullCell, isToDay ? styles.today : '')}>
         {moment(current._d).format('DD')}
       </div>
+    ) : (
+      <Tooltip
+        placement="topLeft"
+        color="white"
+        title={
+          <Space>
+            <a href="">活动1</a>
+            <a href="">活动1</a>
+            <a href="">活动2</a>
+          </Space>
+        }
+      >
+        <div
+          className={cx(
+            styles.fullCell,
+            isToDay ? styles.today : '',
+            isBetween ? styles.between : '',
+            isStartandEnd ? styles.startandend : '',
+          )}
+        >
+          {moment(current._d).format('DD')}
+        </div>
+      </Tooltip>
     );
   };
   const headerRender = ({ value, onChange }) => {
