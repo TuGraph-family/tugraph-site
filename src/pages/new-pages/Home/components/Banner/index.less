@@ -1,8 +1,7 @@
 .banner {
   background-repeat: no-repeat;
-  // margin-top: -68px;
   width: 100vw;
-  background-size: cover;
+  background-size: 100% 100%;
   padding: 159px 0 0;
   margin: 0 -120px;
   position: relative;
@@ -33,66 +32,15 @@
   }
 
   .buttonContainer {
-    display: flex;
-    flex-direction: row;
-    align-items: stretch;
-    margin-top: 40px;
-    margin-right: 440px;
-    margin-left: 426px;
-  }
-
-  .communityEditionButton {
-    flex: 1;
-    min-width: 160px;
+    width: 336px;
     height: 48px;
-    border-color: #b2c3f6;
-    background-color: #2e5dfe;
-    margin-right: 16px;
-  }
-
-  .buttonContent {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+    align-items: stretch;
+    margin: 40px auto 0;
+    gap: 16px;
 
-    &:hover {
-      cursor: pointer;
-      opacity: 0.8;
-
-      .arrowIcon {
-        transform: translateX(10px);
-      }
-    }
-  }
-
-  .communityEditionLabel {
-    white-space: nowrap;
-    color: #e6ebff;
-    font-size: 16px;
-  }
-
-  .arrowIcon {
-    width: 14px;
-    height: 14px;
-    margin-left: 6px;
-    color: #fff;
-    font-size: 14px;
-    position: relative;
-    transition: transform 0.3s ease;
-  }
-
-  .enterpriseConsultationButton {
-    flex: 1;
-    min-width: 158px;
-    height: 46px;
-    border-color: #e2e4e8;
-    background-color: #f2f6fa;
-    color: #545762;
-
-    &:hover {
-      cursor: pointer;
-      opacity: 0.8;
+    & > button {
+      flex: 1;
     }
   }
 }
@@ -208,11 +156,9 @@
 }
 
 .featureContent {
-  & > div {
-    font-size: 24px;
-    color: #1c2442;
-    letter-spacing: -1.7;
-  }
-
+  width: 211px;
+  font-size: 24px;
+  color: #1c2442;
+  letter-spacing: -1.7;
   margin-bottom: 34px;
 }
