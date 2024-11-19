@@ -157,6 +157,14 @@
       0px 3px 6px -4px #84879b1f;
     padding: 20px;
     position: relative;
+    cursor: pointer;
+
+    &:hover {
+      .featureArrow {
+        top: 7px;
+        right: 5px;
+      }
+    }
   }
 }
 
@@ -170,12 +178,14 @@
 }
 
 .featureArrow {
+  display: inline-block;
   width: 50px;
   height: 46px;
   position: absolute;
   top: 17px;
   right: 15px;
   z-index: -1;
+  transition: all 0.3s ease;
 }
 
 .benchmarkFeature {
