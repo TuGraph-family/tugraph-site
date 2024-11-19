@@ -7,7 +7,7 @@ const ActivityCard = () => {
   return (
     <div
       className={styles.activityCard}
-      onClick={() => history.push(historyPushLinkAt('/new/activity/info'))}
+      onClick={() => history.push(historyPushLinkAt('/activity/info'))}
     >
       <div className={styles.activityImg}>
         <div className={styles.activityTag}>报名中</div>

@@ -98,32 +98,32 @@ export const NewHeader = ({ isStick }: { isStick?: boolean }) => {
   const rederProductSubMenu = () => {
     const list = [
       {
-        title: '社区版',
+        title: intl.formatMessage({ id: 'header.product.title' }),
         subMenu: [
           {
-            label: 'TuGraph DB 社区版',
-            desc: '这里是说明文案。。。',
+            label: intl.formatMessage({ id: 'header.product.desc1' }),
+            desc: intl.formatMessage({ id: 'header.product.desc1.1' }),
           },
           {
-            label: 'TuGraph Analytics 实时图计算引擎',
-            desc: '这里是说明文案。。。',
+            label: intl.formatMessage({ id: 'header.product.desc2' }),
+            desc: intl.formatMessage({ id: 'header.product.desc2.1' }),
           },
           {
-            label: 'TuGraph Leran 图学习引擎',
-            desc: '这里是说明文案。。。',
+            label: intl.formatMessage({ id: 'header.product.desc3' }),
+            desc: intl.formatMessage({ id: 'header.product.desc3.1' }),
           },
         ],
       },
       {
-        title: '企业版',
+        title: intl.formatMessage({ id: 'header.product.title1' }),
         subMenu: [
           {
-            label: 'TuGraph 企业版',
-            desc: '这里是说明文案。。。',
+            label: intl.formatMessage({ id: 'header.product.desc4' }),
+            desc: intl.formatMessage({ id: 'header.product.desc4.1' }),
           },
           {
-            label: 'TuGraph Cloud 版',
-            desc: '这里是说明文案。。。',
+            label: intl.formatMessage({ id: 'header.product.desc5' }),
+            desc: intl.formatMessage({ id: 'header.product.desc5.1' }),
           },
         ],
       },
@@ -157,53 +157,53 @@ export const NewHeader = ({ isStick }: { isStick?: boolean }) => {
   const renderCommunitySubMenu = () => {
     const list = [
       {
-        title: '学习',
+        title: intl.formatMessage({ id: 'header.learning.title' }),
         subMenu: [
           {
-            label: '校企合作',
+            label: intl.formatMessage({ id: 'header.learning.cooperate' }),
           },
           {
-            label: '培训课程',
+            label: intl.formatMessage({ id: 'header.learning.course' }),
           },
           {
-            label: '培训认证',
+            label: intl.formatMessage({ id: 'header.learning.training' }),
           },
         ],
       },
       {
-        title: '社区',
+        title: intl.formatMessage({ id: 'header.community.title' }),
         subMenu: [
           {
-            label: '博客',
-            path: '/new/blog/list',
+            label: intl.formatMessage({ id: 'header.community.blog' }),
+            path: '/blog/list',
           },
           {
-            label: '视频',
+            label: intl.formatMessage({ id: 'header.community.video' }),
           },
           {
-            label: '论坛',
+            label: intl.formatMessage({ id: 'header.community.forum' }),
           },
           {
-            label: '活动',
-            path: '/new/activity/list',
+            label: intl.formatMessage({ id: 'header.community.activity' }),
+            path: '/activity/list',
           },
         ],
       },
       {
-        title: '资源',
+        title: intl.formatMessage({ id: 'header.assets.title' }),
         subMenu: [
           {
-            label: 'GITHUB',
+            label: intl.formatMessage({ id: 'header.assets.github' }),
           },
           {
-            label: 'GITEE',
+            label: intl.formatMessage({ id: 'header.assets.gitee' }),
           },
           {
-            label: '下载中心',
-            path: '/new/download',
+            label: intl.formatMessage({ id: 'header.assets.download' }),
+            path: '/download',
           },
           {
-            label: '白皮书与行业报告',
+            label: intl.formatMessage({ id: 'header.assets.report' }),
           },
         ],
       },
@@ -212,7 +212,9 @@ export const NewHeader = ({ isStick }: { isStick?: boolean }) => {
       <div className={styles.communitySubMenu}>
         <div className={styles.subMenuBanner}>
           <div className={styles.bannerTitle}>OSGraph</div>
-          <div className={styles.bannerDesc}>开源图谱关系洞察工具</div>
+          <div className={styles.bannerDesc}>
+            {intl.formatMessage({ id: 'header.osGraph.desc' })}
+          </div>
         </div>
 
         {list.map((item) => {
@@ -268,28 +270,29 @@ export const NewHeader = ({ isStick }: { isStick?: boolean }) => {
       {
         key: 'product',
         label: intl.formatMessage({ id: 'header.product' }),
-        path: '/new/product',
+        path: '/product',
         onMouseMove: () => onHover('subMenuProduct', 'move'),
         onMouseLeave: () => onHover('subMenuProduct', 'leave'),
       },
       {
         key: 'case',
-        label: '客户案例',
-        path: '/new/case',
+        label: intl.formatMessage({ id: 'header.case' }),
+        path: '/case',
       },
       {
         key: 'partners',
-        label: '合作伙伴',
-        path: '/new/partners',
+        label: intl.formatMessage({ id: 'header.ecosystem' }),
+        path: '/partners',
       },
       {
-        key: 'docs',
-        label: '文档',
+        key: 'doc',
+        label: intl.formatMessage({ id: 'header.doc' }),
+        path: '/doc',
       },
 
       {
-        key: 'study',
-        label: '学习与社区',
+        key: 'community',
+        label: intl.formatMessage({ id: 'header.community' }),
         onMouseMove: () => onHover('subMenuCommunity', 'move'),
         onMouseLeave: () => onHover('subMenuCommunity', 'leave'),
       },
@@ -325,7 +328,7 @@ export const NewHeader = ({ isStick }: { isStick?: boolean }) => {
     <div className={styles.header} id="Head">
       <div className={styles.headerBox}>
         <div className={styles.headerLeft}>
-          <a href={goLinkAt('/new')} rel="noopener noreferrer">
+          <a href={goLinkAt('/')} rel="noopener noreferrer">
             <img
               className={styles.log}
               src="https://mdn.alipayobjects.com/huamei_p63okt/afts/img/V8XITL_lpf4AAAAAAAAAAAAADh8WAQFr/original"

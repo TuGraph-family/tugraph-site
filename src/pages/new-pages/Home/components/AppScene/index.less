@@ -1,232 +1,130 @@
-.applicationScenariosWrapper {
-  display: flex;
-  flex-direction: column;
-  margin-right: 2px;
-  padding: 76px 180px 92px;
+.appWrapper {
+  margin: 0 -120px;
   background-color: #fff;
+  text-align: center;
+  padding-bottom: 97px;
 }
 
-.applicationSceneTitle {
+.appTitle {
   color: #292d3b;
   font-size: 30px;
-  margin: 0 auto;
-  padding-bottom: 18px;
+  padding: 76px 0;
 }
 
-.governmentSectorWrapper {
-  display: flex;
-  flex: 1;
-  flex-direction: row;
-  margin: 0 auto;
+.appContent {
+  margin: auto;
+  width: 823px;
+  height: 623px;
+  position: relative;
+
+  .fieldCard {
+    border-radius: 14.4px;
+    position: absolute;
+    background-color: #ccc;
+
+    .tag {
+      width: 90px;
+      height: 34px;
+      background: #2f365315;
+      border-radius: 7.2px;
+      font-size: 14px;
+      color: #8280a9;
+      text-align: center;
+      font-weight: 500;
+      opacity: 0.7;
+      position: absolute;
+      line-height: 34px;
+      bottom: -50px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  .placeholder1 {
+    width: 68px;
+    height: 68px;
+    background-image: linear-gradient(143deg, #4a59aa 14%, #23336e 89%);
+    border: 3.6px solid;
+    border-image: linear-gradient(140deg, #9eacf0 4%, #29315e 97%);
+    border-image-slice: 1;
+    border-radius: 14.39999961853027px;
+    opacity: 0.1;
+    filter: blur(3px);
+    position: absolute;
+    top: 42px;
+    left: 202px;
+  }
+
+  .placeholder2 {
+    width: 50px;
+    height: 50px;
+    background-image: linear-gradient(143deg, #4a59aa 14%, #23336e 89%);
+    border: 3.6px solid;
+    border-image: linear-gradient(140deg, #9eacf0 4%, #29315e 97%);
+    border-image-slice: 1;
+    border-radius: 12px;
+    opacity: 0.1;
+    filter: blur(3px);
+    position: absolute;
+    top: 410px;
+    left: 110px;
+  }
+
+  .placeholder3 {
+    width: 50px;
+    height: 50px;
+    background-image: linear-gradient(162deg, #394771 12%, #20294a 88%);
+    border: 3.6px solid;
+    border-image: linear-gradient(140deg, #c0c4d6 4%, #615b93 97%);
+    border-image-slice: 1;
+    border-radius: 8px;
+    opacity: 0.1;
+    filter: blur(17px);
+    position: absolute;
+    top: 284px;
+    right: 170px;
+  }
 }
 
-.industrialSectorWrapper {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 78px;
+.popoverInfo {
+  backdrop-filter: blur(30px);
+  border-radius: 12px;
+  width: 400px;
+  overflow: hidden;
+  background: #ffffff88;
+  border: 3px solid #f0f0f0;
+  border-radius: 12px;
+  padding: 0;
+
+  :global {
+    .ant-popover-inner {
+      background-color: transparent;
+    }
+
+    .ant-popover-inner-content {
+      padding: 24px;
+    }
+  }
 }
 
-.generalSectorWrapper {
-  display: flex;
-  flex-direction: column;
-  width: 236px;
-  height: 300px;
-  margin-right: 20px;
-  margin-left: 10px;
-  padding: 52px 68px 5px 2px;
-}
+.popoverContent {
+  .field {
+    font-size: 16px;
+    color: #292d3b;
+    line-height: 24px;
+    font-weight: 500;
+  }
 
-.governmentImage {
-  flex-shrink: 0;
-  width: 88px;
-  height: 88px;
-  margin-left: 78px;
-  border-radius: 2px;
-}
+  .scene {
+    font-size: 13px;
+    color: #545762;
+    line-height: 22px;
+    margin: 4px 0 16px;
+  }
 
-.governmentDescriptionWrapper {
-  flex: 0 0 auto;
-  align-self: flex-start;
-  width: 132px;
-  height: 134px;
-  margin-top: 20px;
-  border: solid 4px #f4f3f7;
-  border-radius: 16px;
-  background-color: #eaeaed;
-}
-
-.governmentButton {
-  align-self: flex-start;
-  width: 92px;
-  height: 35px;
-  margin-top: 10px;
-  margin-left: 32px;
-  background-color: #eaeaed;
-  color: #a1a0be;
-}
-
-.financialSectorWrapper {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  min-width: 266px;
-  margin-top: 20px;
-}
-
-.industrialImage {
-  flex-shrink: 0;
-  width: 68px;
-  height: 68px;
-  margin-top: 60px;
-  border-radius: 2px;
-}
-
-.tagWrapper {
-  display: flex;
-  flex-direction: column;
-  align-self: center;
-}
-
-.industrialDescriptionWrapper {
-  flex: 0 0 auto;
-  width: 108px;
-  height: 106px;
-  border: solid 4px #f4f3f7;
-  border-radius: 16px;
-  background-color: #eaeaed;
-}
-
-.industrialTag {
-  align-self: center;
-  margin-top: 15px;
-  margin-left: 2px;
-  background-color: #eaeaed;
-  white-space: nowrap;
-  color: #a1a0be;
-  font-size: 14px;
-}
-
-.telecomSectorWrapper {
-  display: flex;
-  flex-direction: column;
-  margin-top: 74px;
-  margin-left: 46px;
-}
-
-.telecomDescriptionWrapper {
-  flex: 0 0 auto;
-  align-self: flex-start;
-  width: 170px;
-  height: 168px;
-  border: solid 4px #eff0f6;
-  border-radius: 16px;
-  background-color: #ebecf3;
-  cursor: pointer;
-}
-
-.financialButton {
-  display: flex;
-  align-items: center;
-  align-self: flex-start;
-  justify-content: center;
-  width: 94px;
-  height: 36px;
-  margin-top: 15px;
-  margin-left: 36px;
-  background-color: #eaeaed;
-  color: #a1a0be;
-}
-
-.generalImage {
-  flex-shrink: 0;
-  width: 118px;
-  height: 122px;
-  margin-left: 150px;
-  border-radius: 2px;
-}
-
-.tagDescriptionWrapper {
-  flex: 0 0 auto;
-  align-self: flex-start;
-  width: 106px;
-  height: 106px;
-  border: solid 1px #f4f3f7;
-  border-radius: 16px;
-  background-color: #eaeaed;
-  cursor: pointer;
-}
-
-.generalTag {
-  align-self: flex-start;
-  margin-top: 18px;
-  margin-left: 20px;
-  background-color: #eaeaed;
-  white-space: nowrap;
-  color: #a1a0be;
-  font-size: 14px;
-}
-
-.internetSectorWrapper {
-  display: flex;
-  flex-direction: column;
-  margin-top: 38px;
-  margin-bottom: 62px;
-  margin-left: 18px;
-}
-
-.internetImageWrapper {
-  display: flex;
-  flex-direction: row;
-}
-
-.internetDescriptionWrapper {
-  flex: 0 0 auto;
-  width: 108px;
-  height: 108px;
-  margin-top: 76px;
-  border: solid 4px #f4f3f7;
-  border-radius: 16px;
-  background-color: #eaeaed;
-}
-
-.telecomImage {
-  flex-shrink: 0;
-  width: 84px;
-  height: 84px;
-  margin-bottom: 102px;
-  margin-left: 15px;
-  border-radius: 2px;
-}
-
-.internetButton {
-  align-self: flex-start;
-  max-width: 78px;
-  width: 80px;
-  height: 30px;
-  margin-top: 16px;
-  margin-left: 15px;
-  background-color: #eaeaed;
-  color: #a1a0be;
-}
-
-.internetTagWrapper {
-  flex: 0 0 auto;
-  align-self: flex-start;
-  width: 130px;
-  height: 130px;
-  margin-top: 80px;
-  margin-left: 16px;
-  border: solid 4px #f4f3f7;
-  border-radius: 16px;
-  background-color: #eaeaed;
-}
-
-.internetTag {
-  align-self: flex-start;
-  margin-top: 18px;
-  margin-left: 38px;
-  background-color: #eaeaed;
-  white-space: nowrap;
-  color: #a1a0be;
-  font-size: 14px;
+  .illustrate {
+    font-size: 13px;
+    color: #768191;
+    line-height: 22px;
+  }
 }

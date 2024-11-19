@@ -7,7 +7,7 @@ const BlogItem = () => {
   return (
     <div
       className={styles.blogItem}
-      onClick={() => history.push(historyPushLinkAt('/new/blog/info'))}
+      onClick={() => history.push(historyPushLinkAt('/blog/info'))}
     >
       <img src="" alt="" className={styles.blogItemImg} />
       <div className={styles.blogItemContent}>
