@@ -14,9 +14,13 @@ import '@docsearch/css';
 import AnnouncementBanner from '../AnnouncementBanner';
 import GithubButton from '../githubButton';
 import styles from './index.less';
-import { doc } from 'prettier';
+import { motion } from 'framer-motion';
 
-export const NewHeader = ({ isStick }: { isStick?: boolean }) => {
+export const NewHeader = ({
+  currentUrl,
+}: {
+  currentUrl?: { pathname: string; hash: string };
+}) => {
   const intl = useIntl();
   const { pathname, search } = useLocation();
   const lang = getSearch(search)?.lang || DEFAULT_LOCAL;
@@ -42,11 +46,28 @@ export const NewHeader = ({ isStick }: { isStick?: boolean }) => {
         return '';
       }
     }
-    return captureRouteLevel(location.href, 2);
+    return captureRouteLevel(location.href, 1);
   });
 
-  const zhSite = `${window.location.origin}${history?.location?.pathname}?lang=zh-CN`;
-  const enSite = `${window.location.origin}${history?.location?.pathname}?lang=en-US`;
+  const toggleLanguage = (url: string, language: 'zh' | 'en') => {
+    const format = url.replace(/\/(zh|en)\//, () => {
+      return `/${language}/`;
+    });
+    return format;
+  };
+
+  const zhSite = currentUrl
+    ? `${window.location.origin}${toggleLanguage(
+        currentUrl.pathname,
+        'zh',
+      )}?lang=zh-CN${currentUrl?.hash}`
+    : `${window.location.origin}${history?.location?.pathname}?lang=zh-CN`;
+  const enSite = currentUrl
+    ? `${window.location.origin}${toggleLanguage(
+        currentUrl.pathname,
+        'en',
+      )}?lang=en-US${currentUrl?.hash}`
+    : `${window.location.origin}${history?.location?.pathname}?lang=en-US`;
 
   const getCurrentLanguage = () => {
     const segments = pathname.split('/');
@@ -95,7 +116,7 @@ export const NewHeader = ({ isStick }: { isStick?: boolean }) => {
     }
   }, [pathname]);
 
-  const rederProductSubMenu = () => {
+  const rederProductAndDocSubMenu = (isDoc = false) => {
     const list = [
       {
         title: intl.formatMessage({ id: 'header.product.title' }),
@@ -103,31 +124,42 @@ export const NewHeader = ({ isStick }: { isStick?: boolean }) => {
           {
             label: intl.formatMessage({ id: 'header.product.desc1' }),
             desc: intl.formatMessage({ id: 'header.product.desc1.1' }),
+            productPath: '/product/db',
+            docPath: '/docs',
           },
           {
             label: intl.formatMessage({ id: 'header.product.desc2' }),
             desc: intl.formatMessage({ id: 'header.product.desc2.1' }),
+            productPath: '/product/analytics',
+            docPath: '/docs',
           },
           {
             label: intl.formatMessage({ id: 'header.product.desc3' }),
             desc: intl.formatMessage({ id: 'header.product.desc3.1' }),
+            productPath: '/product/learn',
+            docPath: '/docs',
           },
         ],
       },
-      {
+    ];
+
+    if (!isDoc) {
+      list.push({
         title: intl.formatMessage({ id: 'header.product.title1' }),
         subMenu: [
           {
             label: intl.formatMessage({ id: 'header.product.desc4' }),
             desc: intl.formatMessage({ id: 'header.product.desc4.1' }),
+            productPath: '/product/enterprise',
           },
           {
             label: intl.formatMessage({ id: 'header.product.desc5' }),
             desc: intl.formatMessage({ id: 'header.product.desc5.1' }),
+            productPath: '/product/clound',
           },
         ],
-      },
-    ];
+      });
+    }
 
     return (
       <div className={styles.productSubMenu}>
@@ -137,7 +169,16 @@ export const NewHeader = ({ isStick }: { isStick?: boolean }) => {
               <div className={styles.productSubMenuTitle}>{item.title}</div>
               {item.subMenu?.map((subItem) => {
                 return (
-                  <div className={styles.productSubMenuItem}>
+                  <div
+                    className={styles.productSubMenuItem}
+                    onClick={() =>
+                      history.push(
+                        historyPushLinkAt(
+                          isDoc ? subItem.docPath : subItem.productPath,
+                        ),
+                      )
+                    }
+                  >
                     <div className={styles.productSubMenuItemLabel}>
                       {subItem.label}
                     </div>
@@ -270,7 +311,6 @@ export const NewHeader = ({ isStick }: { isStick?: boolean }) => {
       {
         key: 'product',
         label: intl.formatMessage({ id: 'header.product' }),
-        path: '/product',
         onMouseMove: () => onHover('subMenuProduct', 'move'),
         onMouseLeave: () => onHover('subMenuProduct', 'leave'),
       },
@@ -285,9 +325,10 @@ export const NewHeader = ({ isStick }: { isStick?: boolean }) => {
         path: '/partners',
       },
       {
-        key: 'doc',
+        key: 'docs',
         label: intl.formatMessage({ id: 'header.doc' }),
-        path: '/doc',
+        onMouseMove: () => onHover('subMenuDocs', 'move'),
+        onMouseLeave: () => onHover('subMenuDocs', 'leave'),
       },
 
       {
@@ -358,7 +399,7 @@ export const NewHeader = ({ isStick }: { isStick?: boolean }) => {
         onMouseMove={() => onHover('subMenuProduct', 'move')}
         onMouseLeave={() => onHover('subMenuProduct', 'leave')}
       >
-        {rederProductSubMenu()}
+        {rederProductAndDocSubMenu()}
       </div>
       <div
         className={styles.subMenuCommunity}
@@ -367,6 +408,14 @@ export const NewHeader = ({ isStick }: { isStick?: boolean }) => {
         onMouseLeave={() => onHover('subMenuCommunity', 'leave')}
       >
         {renderCommunitySubMenu()}
+      </div>
+      <div
+        className={styles.subMenuDocs}
+        id="subMenuDocs"
+        onMouseMove={() => onHover('subMenuDocs', 'move')}
+        onMouseLeave={() => onHover('subMenuDocs', 'leave')}
+      >
+        {rederProductAndDocSubMenu(true)}
       </div>
     </div>
   );

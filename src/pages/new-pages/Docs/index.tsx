@@ -8,6 +8,8 @@ import { setLocale, useLocation } from 'umi';
 import { NewLayout } from '@/components/NewLayout';
 import { getSearch } from '@/util';
 import { DEFAULT_LOCAL } from '@/constant';
+import { NewHeader } from '@/components/NewHeader';
+import styles from './index.less';
 
 const Docs: React.FC = () => {
   const location = useLocation();
@@ -60,8 +62,14 @@ const Docs: React.FC = () => {
   }, []);
 
   return (
-    <NewLayout
-      content={
+    <div>
+      <NewHeader
+        currentUrl={{
+          pathname: '/docs' + iframeUrl.split('#')[0],
+          hash: iframeUrl.split('#')[1] ? '#' + iframeUrl.split('#')[1] : '',
+        }}
+      />
+      <div className={styles.container}>
         <iframe
           ref={iframeRef}
           src={solidIframeUrl}
@@ -73,8 +81,8 @@ const Docs: React.FC = () => {
             border: 'none',
           }}
         />
-      }
-    />
+      </div>
+    </div>
   );
 };
 

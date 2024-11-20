@@ -65,7 +65,7 @@ export default defineConfig({
       component: '@/pages/new-pages/Home',
     },
     {
-      path: '/product',
+      path: '/product/*',
       component: '@/pages/new-pages/Product',
       title: 'product.title',
     },

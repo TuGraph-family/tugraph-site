@@ -130,7 +130,7 @@ const AppScene = () => {
             key={item.className}
             initial={{ scale: 0 }}
             animate={{ scale: inView ? 1 : 0 }}
-            transition={{ duration: 3 }}
+            transition={{ duration: 1.5 }}
           >
             <Popover
               overlayClassName={styles.popoverInfo}
@@ -141,7 +141,7 @@ const AppScene = () => {
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: inView ? 1 : 0 }}
-                  transition={{ delay: 3 }}
+                  transition={{ delay: 1.5 }}
                 >
                   <div className={styles.tag}>{item.field}</div>
                 </motion.div>
@@ -155,7 +155,7 @@ const AppScene = () => {
             key={item}
             initial={{ scale: 0 }}
             animate={{ scale: inView ? 1 : 0 }}
-            transition={{ duration: 3 }}
+            transition={{ duration: 1.5 }}
           >
             <div className={styles[item]}></div>
           </motion.div>

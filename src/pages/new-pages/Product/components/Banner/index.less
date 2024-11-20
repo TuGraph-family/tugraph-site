@@ -45,6 +45,17 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
+
+    .arrowIcon {
+      transition: all 0.3s ease-in-out;
+    }
+
+    &:hover {
+      .arrowIcon {
+        transform: translateX(5px);
+      }
+    }
   }
 
   .communityEditionLabel {
@@ -65,6 +76,7 @@
     border-color: #e2e4e8;
     background-color: #f2f6fa;
     color: #545762;
+    cursor: pointer;
   }
 }
 
@@ -113,12 +125,13 @@
 .featureSection {
   position: absolute;
   bottom: 0;
-  transform: translateY(50%);
-  margin: 0 120px;
+  left: 50%;
+  transform: translate(-50%, 50%);
   display: flex;
   flex-direction: row;
   align-items: stretch;
   gap: 16px;
+  cursor: pointer;
 
   .featureSectionItem {
     width: 384px;
