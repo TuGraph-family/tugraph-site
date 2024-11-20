@@ -4,14 +4,6 @@
   background-size: cover;
   padding: 56px 120px;
 
-  .userDemoTitle {
-    font-size: 32px;
-    color: #293e60e0;
-    text-align: center;
-    font-weight: 700;
-    margin-bottom: 56px;
-  }
-
   .demoList {
     height: 399px;
     display: flex;
@@ -22,6 +14,7 @@
       height: 330px;
       background: #ffffff;
       border-radius: 16px;
+      cursor: pointer;
     }
 
     .demoItem:nth-child(even) {
@@ -31,11 +24,30 @@
   }
 
   .more {
-    text-align: center;
+    width: 146px;
+    height: 48px;
     font-size: 16px;
-    color: #131415;
-    line-height: 24px;
+    font-size: 16px;
+    color: #ffffffe0;
     font-weight: 500;
-    margin-top: 51px;
+    background: #2e5dfe;
+    border-radius: 24px;
+    margin: 51px auto 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+
+    .arrowIcon {
+      font-size: 11px;
+      transition: all 0.3s;
+    }
+
+    &:hover {
+      .arrowIcon {
+        transform: translateX(5px);
+      }
+    }
   }
 }

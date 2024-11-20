@@ -2,6 +2,7 @@ import { useIntl, useLocation } from 'umi';
 import styles from './index.less';
 import { getSearch } from '@/util';
 import { DEFAULT_LOCAL } from '@/constant';
+import { SubTitle } from '@/components/SubTitle';
 
 const Architecture = () => {
   const intl = useIntl();
@@ -11,9 +12,11 @@ const Architecture = () => {
   return (
     <div>
       <div className={styles.ecoWrapper}>
-        <div className={styles.subTitleTop}>
-          {intl.formatMessage({ id: 'product.ecosystem' })}
-        </div>
+        <SubTitle
+          title={intl.formatMessage({ id: 'product.ecosystem' })}
+          style={{ margin: '56px 0 32px' }}
+        />
+
         <div className="maxContainer">
           <img
             src={

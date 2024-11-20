@@ -152,24 +152,28 @@
 
 .productSubMenu {
   width: 100%;
-  padding: 45px 282px 0;
+  padding: 45px 0 0 282px;
   display: flex;
-
-  .productSubMenuVersion:first-child {
-    margin-right: 97px;
-  }
+  gap: 44px;
 
   .productSubMenuTitle {
     font-size: 14px;
     color: @secondary-color;
     line-height: 22px;
     font-weight: 500;
-    margin-bottom: 16px;
+    padding-left: 8px;
+    margin-bottom: 8px;
   }
 
   .productSubMenuItem {
-    margin-bottom: 24px;
+    margin-bottom: 8px;
     cursor: pointer;
+    border-radius: 8px;
+    padding: 8px;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.15);
+    }
 
     .productSubMenuItemLabel {
       font-size: 14px;
@@ -194,13 +198,20 @@
   .subMenuBanner {
     width: 262px;
     height: 164px;
-    margin-right: 89px;
-    background: #dfe5ee;
+    background: url('https://mdn.alipayobjects.com/huamei_p63okt/afts/img/F3RxQqX-5lcAAAAAAAAAAAAADh8WAQFr/fmt.webp');
+    background-size: cover;
     border: 1px solid #c4ceda;
     border-radius: 12px;
     padding: 23px 22px;
     color: #1a1b25e0;
     cursor: pointer;
+    transition: all 0.3s;
+
+    &:hover {
+      transform: translate(5px, -5px);
+      box-shadow: 0px 9px 28px 8px #84879b0d, 0px 6px 16px 0px #84879b14,
+        0px 3px 6px -4px #84879b1f;
+    }
 
     .bannerTitle {
       font-size: 24px;
@@ -217,7 +228,7 @@
   }
 
   .subMenuCol {
-    margin-right: 172px;
+    margin-left: 89px;
 
     & > div {
       font-size: 14px;
@@ -235,7 +246,8 @@
 }
 
 .subMenuCommunity,
-.subMenuProduct {
+.subMenuProduct,
+.subMenuDocs {
   margin: 0 -120px;
   width: 100vw;
   height: 0;

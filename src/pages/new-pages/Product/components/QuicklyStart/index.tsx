@@ -1,6 +1,8 @@
 import { Badge, Button } from 'antd';
 import styles from './index.less';
 import { ArrowRightOutlined } from '@ant-design/icons';
+import { SubTitle } from '@/components/SubTitle';
+import FadeInSection from '@/components/FadeInSection';
 
 const QuickStart = () => {
   const list = [
@@ -30,36 +32,41 @@ const QuickStart = () => {
 
   return (
     <div className={styles.lastSectionContainer}>
-      <div className={styles.title}>快速上手</div>
+      <SubTitle title="快速上手" style={{ margin: '55px 0 29px' }} />
 
-      <div className={styles.stepList}>
-        {list?.map((item) => {
-          return (
-            <div key={item.stepKey} className={styles.step}>
-              <div className={styles.stepNumber}>{item.stepKey}</div>
-              <ArrowRightOutlined className={styles.stepIcon} />
-              <div className={styles.stepTitle}>{item.title}</div>
-              <ul>
-                {item.descList?.map((desc) => (
-                  <li key={desc}>{desc}</li>
-                ))}
-                <li>
-                  参考《环境准备》确保您的软硬件环境满足要求下载 TuGraph DB
-                </li>
-              </ul>
-            </div>
-          );
-        })}
-      </div>
-      <Button
-        type="primary"
-        size="large"
-        shape="round"
-        className={styles.startGuideButton}
-      >
-        <span className={styles.buttonTextQuickStart}>快速上手</span>
-        <ArrowRightOutlined className={styles.arrowRightIcon} />
-      </Button>
+      <FadeInSection>
+        <div className={styles.stepList}>
+          {list?.map((item) => {
+            return (
+              <div key={item.stepKey} className={styles.step}>
+                <div className={styles.stepNumber}>{item.stepKey}</div>
+                <ArrowRightOutlined className={styles.stepIcon} />
+                <div className={styles.stepTitle}>{item.title}</div>
+                <ul>
+                  {item.descList?.map((desc) => (
+                    <li key={desc}>{desc}</li>
+                  ))}
+                  <li>
+                    参考《环境准备》确保您的软硬件环境满足要求下载 TuGraph DB
+                  </li>
+                </ul>
+              </div>
+            );
+          })}
+        </div>
+      </FadeInSection>
+
+      <FadeInSection>
+        <Button
+          type="primary"
+          size="large"
+          shape="round"
+          className={styles.startGuideButton}
+        >
+          <span className={styles.buttonTextQuickStart}>快速上手</span>
+          <ArrowRightOutlined className={styles.arrowRightIcon} />
+        </Button>
+      </FadeInSection>
     </div>
   );
 };
