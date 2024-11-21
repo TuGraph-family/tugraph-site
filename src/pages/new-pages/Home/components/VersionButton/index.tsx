@@ -14,6 +14,7 @@ import {
   AliyunOutlined,
   DownOutlined,
   GithubOutlined,
+  UpOutlined,
   VerticalAlignBottomOutlined,
 } from '@ant-design/icons';
 
@@ -30,6 +31,7 @@ const VersionButton: React.FC<IVersionButtonProps> = ({
   ...props
 }) => {
   const [open, setOpen] = useState(false);
+  const [visible, setVisible] = useState(false);
   const [form] = Form.useForm();
 
   const items = [
@@ -58,6 +60,7 @@ const VersionButton: React.FC<IVersionButtonProps> = ({
           menu={{ items }}
           overlayClassName={styles.communityDropdown}
           trigger={['click']}
+          onOpenChange={(visible) => setVisible(visible)}
         >
           <Button
             type="primary"
@@ -68,7 +71,11 @@ const VersionButton: React.FC<IVersionButtonProps> = ({
             {...props}
           >
             社区版体验
-            <DownOutlined className={styles.arrowIcon} />
+            {visible ? (
+              <UpOutlined className={styles.arrowIcon} />
+            ) : (
+              <DownOutlined className={styles.arrowIcon} />
+            )}
           </Button>
         </Dropdown>
       ) : (

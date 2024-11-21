@@ -1,39 +1,17 @@
-import { Button } from 'antd';
-import cx from 'classnames';
-import { ReactNode } from 'react';
-import { useLocation } from 'umi';
 import styles from './index.less';
-import { ArrowRightOutlined } from '@ant-design/icons';
-import JoLPlayer from '@/components/Player';
+import FadeInSection from '@/components/FadeInSection';
+import { IntlShape } from 'react-intl';
+import { getDemos } from '@/data/demos';
+import { motion } from 'framer-motion';
 
-export interface BannerInfoProps {
-  slogan?: string | ReactNode;
-  bgIconUrl?: string;
-  footer?: ReactNode;
-  description?: string;
-  sloganClassName?: string;
-  mobileImgClassName?: string;
-  bannerClassName?: string;
-}
-
-const Banner = ({
-  slogan,
-  bgIconUrl,
-  footer,
-  description = '',
-  sloganClassName = '',
-  mobileImgClassName = '',
-  bannerClassName = '',
-}: BannerInfoProps) => {
-  const { pathname, search } = useLocation();
-
+const Banner = ({ intl }: { intl: IntlShape }) => {
   let background =
     'url(https://mdn.alipayobjects.com/huamei_p63okt/afts/img/An4uTrsTiyUAAAAAAAAAAAAADh8WAQFr/original)';
 
   return (
     <div
       id="banner"
-      className={cx(styles.banner, bannerClassName)}
+      className={styles.banner}
       style={{
         backgroundImage: background,
         height: '381px',
@@ -41,60 +19,32 @@ const Banner = ({
       }}
     >
       <div className={styles.databaseTitleSection}>
-        <span className={styles.titleText}>数千倍效果提升 </span>
-        <span className={styles.descriptionText}>
-          助力各行业客户打破分析瓶颈
-        </span>
+        <FadeInSection>
+          <span className={styles.titleText}>
+            {intl.formatMessage({ id: 'home.case.desc0' })}
+          </span>
+        </FadeInSection>
+        <FadeInSection>
+          <span className={styles.descriptionText}>
+            {intl.formatMessage({ id: 'home.case.desc1' })}
+          </span>
+        </FadeInSection>
       </div>
       <div className={styles.featureSection}>
-        <div className={styles.featureSectionItem}>
-          <img
-            src="https://lark-app.oss-cn-beijing.aliyuncs.com/fecodex/fallback-images/04.jpeg"
-            alt=""
-            className={styles.fieldImg}
-          />
-          <div className={styles.fieldName}>电信领域</div>
-        </div>
-        <div className={styles.featureSectionItem}>
-          <img
-            src="https://lark-app.oss-cn-beijing.aliyuncs.com/fecodex/fallback-images/04.jpeg"
-            alt=""
-            className={styles.fieldImg}
-          />
-          <div className={styles.fieldName}>电信领域</div>
-        </div>{' '}
-        <div className={styles.featureSectionItem}>
-          <img
-            src="https://lark-app.oss-cn-beijing.aliyuncs.com/fecodex/fallback-images/04.jpeg"
-            alt=""
-            className={styles.fieldImg}
-          />
-          <div className={styles.fieldName}>电信领域</div>
-        </div>{' '}
-        <div className={styles.featureSectionItem}>
-          <img
-            src="https://lark-app.oss-cn-beijing.aliyuncs.com/fecodex/fallback-images/04.jpeg"
-            alt=""
-            className={styles.fieldImg}
-          />
-          <div className={styles.fieldName}>电信领域</div>
-        </div>{' '}
-        <div className={styles.featureSectionItem}>
-          <img
-            src="https://lark-app.oss-cn-beijing.aliyuncs.com/fecodex/fallback-images/04.jpeg"
-            alt=""
-            className={styles.fieldImg}
-          />
-          <div className={styles.fieldName}>电信领域</div>
-        </div>{' '}
-        <div className={styles.featureSectionItem}>
-          <img
-            src="https://lark-app.oss-cn-beijing.aliyuncs.com/fecodex/fallback-images/04.jpeg"
-            alt=""
-            className={styles.fieldImg}
-          />
-          <div className={styles.fieldName}>电信领域</div>
-        </div>
+        {getDemos(intl)?.map((item, key) => (
+          <FadeInSection key={key}>
+            <motion.div whileHover={{ y: -10 }}>
+              <div className={styles.featureSectionItem}>
+                <img
+                  src="https://lark-app.oss-cn-beijing.aliyuncs.com/fecodex/fallback-images/04.jpeg"
+                  alt=""
+                  className={styles.fieldImg}
+                />
+                <div className={styles.fieldName}>{item.type}</div>
+              </div>
+            </motion.div>
+          </FadeInSection>
+        ))}
       </div>
     </div>
   );

@@ -1,18 +1,12 @@
-import type { MenuItem } from '@/interface';
-import { CloseOutlined, RightOutlined, UpOutlined } from '@ant-design/icons';
 import { DocSearch } from '@docsearch/react';
-import { Drawer, Dropdown, Menu, Popover, Space } from 'antd';
-import cx from 'classnames';
 import { useEffect, useState } from 'react';
 import { useMedia } from 'react-use';
 import { history, useIntl, useLocation } from 'umi';
-import { Link } from 'react-router-dom';
 
 import { DEFAULT_LOCAL } from '@/constant';
 import { getSearch, goLinkAt, historyPushLinkAt } from '@/util';
 import '@docsearch/css';
-import AnnouncementBanner from '../AnnouncementBanner';
-import GithubButton from '../githubButton';
+
 import styles from './index.less';
 import { motion } from 'framer-motion';
 
@@ -21,12 +15,14 @@ export const NewHeader = ({
 }: {
   currentUrl?: { pathname: string; hash: string };
 }) => {
+  let time: any = null;
   const intl = useIntl();
   const { pathname, search } = useLocation();
   const lang = getSearch(search)?.lang || DEFAULT_LOCAL;
   const isZH = lang === 'zh-CN';
   const isWide = useMedia('(min-width: 767.99px)', true);
-  const [popupMenuVisible, setPopupMenuVisible] = useState(false);
+  const [subVisibleKey, setSubVisibleKey] = useState('');
+  const [show, setShow] = useState(true);
   const [selectMenuItem, setSelectMenuItem] = useState<string>(() => {
     /** 匹配路由，初始化所选择的菜单栏 */
     function captureRouteLevel(url: string, level: number) {
@@ -117,27 +113,27 @@ export const NewHeader = ({
   }, [pathname]);
 
   const rederProductAndDocSubMenu = (isDoc = false) => {
-    const list = [
+    const list: any = [
       {
         title: intl.formatMessage({ id: 'header.product.title' }),
         subMenu: [
           {
             label: intl.formatMessage({ id: 'header.product.desc1' }),
-            desc: intl.formatMessage({ id: 'header.product.desc1.1' }),
+            desc: intl.formatMessage({ id: 'home.version0.desc' }),
             productPath: '/product/db',
-            docPath: '/docs',
+            docPath: '/docs/db',
           },
           {
             label: intl.formatMessage({ id: 'header.product.desc2' }),
-            desc: intl.formatMessage({ id: 'header.product.desc2.1' }),
+            desc: intl.formatMessage({ id: 'product_analytics.description' }),
             productPath: '/product/analytics',
-            docPath: '/docs',
+            docPath: '/docs/analytics',
           },
           {
             label: intl.formatMessage({ id: 'header.product.desc3' }),
-            desc: intl.formatMessage({ id: 'header.product.desc3.1' }),
+            desc: intl.formatMessage({ id: 'product_learn.description' }),
             productPath: '/product/learn',
-            docPath: '/docs',
+            docPath: '/docs/learn',
           },
         ],
       },
@@ -149,12 +145,12 @@ export const NewHeader = ({
         subMenu: [
           {
             label: intl.formatMessage({ id: 'header.product.desc4' }),
-            desc: intl.formatMessage({ id: 'header.product.desc4.1' }),
+            desc: intl.formatMessage({ id: 'product_enterprise.description' }),
             productPath: '/product/enterprise',
           },
           {
             label: intl.formatMessage({ id: 'header.product.desc5' }),
-            desc: intl.formatMessage({ id: 'header.product.desc5.1' }),
+            desc: intl.formatMessage({ id: 'product_clound.description' }),
             productPath: '/product/clound',
           },
         ],
@@ -171,13 +167,18 @@ export const NewHeader = ({
                 return (
                   <div
                     className={styles.productSubMenuItem}
-                    onClick={() =>
+                    onClick={() => {
                       history.push(
                         historyPushLinkAt(
                           isDoc ? subItem.docPath : subItem.productPath,
                         ),
-                      )
-                    }
+                      );
+                      setShow(false);
+                      time = setTimeout(() => {
+                        setShow(true);
+                        clearTimeout(time);
+                      }, 500);
+                    }}
                   >
                     <div className={styles.productSubMenuItemLabel}>
                       {subItem.label}
@@ -291,19 +292,7 @@ export const NewHeader = ({
     const subMenuDom = document.getElementById(id);
     const mainWrapper = document.getElementById('mainWrapper');
 
-    if (subMenuDom && mainWrapper) {
-      mainWrapper.style.transition = 'all 0.4s ease';
-
-      if (type === 'move') {
-        subMenuDom.style.opacity = '1';
-        subMenuDom.style.height = '321px';
-        mainWrapper.style.marginTop = '-387px';
-      } else {
-        subMenuDom.style.opacity = '0';
-        subMenuDom.style.height = '0';
-        mainWrapper.style.marginTop = '-66px';
-      }
-    }
+    setSubVisibleKey(type === 'move' ? id : '');
   };
 
   const renderMenu = () => {
@@ -313,6 +302,7 @@ export const NewHeader = ({
         label: intl.formatMessage({ id: 'header.product' }),
         onMouseMove: () => onHover('subMenuProduct', 'move'),
         onMouseLeave: () => onHover('subMenuProduct', 'leave'),
+        path: '/product/db',
       },
       {
         key: 'case',
@@ -329,6 +319,7 @@ export const NewHeader = ({
         label: intl.formatMessage({ id: 'header.doc' }),
         onMouseMove: () => onHover('subMenuDocs', 'move'),
         onMouseLeave: () => onHover('subMenuDocs', 'leave'),
+        path: '/docs',
       },
 
       {
@@ -365,58 +356,74 @@ export const NewHeader = ({
     );
   };
 
+  const subMenuList = [
+    {
+      menuKeys: 'subMenuProduct',
+      constent: rederProductAndDocSubMenu(),
+    },
+    {
+      menuKeys: 'subMenuCommunity',
+      constent: renderCommunitySubMenu(),
+    },
+    {
+      menuKeys: 'subMenuDocs',
+      constent: rederProductAndDocSubMenu(true),
+    },
+  ];
+
+  const renderSubMenu = () => {
+    return (
+      <>
+        {subMenuList.map((item) => (
+          <motion.div
+            key={item.menuKeys}
+            className={styles[item.menuKeys]}
+            initial={{ height: 0, zIndex: 500 }}
+            animate={{
+              height: subVisibleKey === item.menuKeys ? 321 : 0,
+              zIndex: 900,
+            }}
+            whileHover={{ height: show ? 321 : 0, zIndex: 900 }}
+            transition={{ duration: 0.5 }}
+          >
+            {item.constent}
+          </motion.div>
+        ))}
+      </>
+    );
+  };
+
   return (
-    <div className={styles.header} id="Head">
-      <div className={styles.headerBox}>
-        <div className={styles.headerLeft}>
-          <a href={goLinkAt('/')} rel="noopener noreferrer">
-            <img
-              className={styles.log}
-              src="https://mdn.alipayobjects.com/huamei_p63okt/afts/img/V8XITL_lpf4AAAAAAAAAAAAADh8WAQFr/original"
-            />
-          </a>
-        </div>
-        <div className={styles.headerRight}>
-          {searchInput()}
-          <div className={styles.lang} onClick={handleLangClick}>
-            <img
-              src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*GN_WSabhJdwAAAAAAAAAAAAADgOBAQ/original"
-              className={styles.languageIcon}
-            />
-            <div className={styles.languageText}>
-              {lang === 'zh-CN' ? '中' : 'EN'}
+    <>
+      <div className={styles.header} id="Head">
+        <div className={styles.headerBox}>
+          <div className={styles.headerLeft}>
+            <a href={goLinkAt('/')} rel="noopener noreferrer">
+              <img
+                className={styles.log}
+                src="https://mdn.alipayobjects.com/huamei_p63okt/afts/img/V8XITL_lpf4AAAAAAAAAAAAADh8WAQFr/original"
+              />
+            </a>
+          </div>
+          <div className={styles.headerRight}>
+            {/* {searchInput()} */}
+            <div className={styles.lang} onClick={handleLangClick}>
+              <img
+                src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*GN_WSabhJdwAAAAAAAAAAAAADgOBAQ/original"
+                className={styles.languageIcon}
+              />
+              <div className={styles.languageText}>
+                {lang === 'zh-CN' ? '中' : 'EN'}
+              </div>
             </div>
-          </div>
-          <div className={styles.loginBtn}>
-            {lang === 'zh-CN' ? '登录' : 'login'}
+            {/* <div className={styles.loginBtn}>
+              {lang === 'zh-CN' ? '登录' : 'login'}
+            </div> */}
           </div>
         </div>
+        {renderMenu()}
       </div>
-      {renderMenu()}
-      <div
-        className={styles.subMenuProduct}
-        id="subMenuProduct"
-        onMouseMove={() => onHover('subMenuProduct', 'move')}
-        onMouseLeave={() => onHover('subMenuProduct', 'leave')}
-      >
-        {rederProductAndDocSubMenu()}
-      </div>
-      <div
-        className={styles.subMenuCommunity}
-        id="subMenuCommunity"
-        onMouseMove={() => onHover('subMenuCommunity', 'move')}
-        onMouseLeave={() => onHover('subMenuCommunity', 'leave')}
-      >
-        {renderCommunitySubMenu()}
-      </div>
-      <div
-        className={styles.subMenuDocs}
-        id="subMenuDocs"
-        onMouseMove={() => onHover('subMenuDocs', 'move')}
-        onMouseLeave={() => onHover('subMenuDocs', 'leave')}
-      >
-        {rederProductAndDocSubMenu(true)}
-      </div>
-    </div>
+      {renderSubMenu()}
+    </>
   );
 };

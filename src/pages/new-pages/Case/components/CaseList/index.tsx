@@ -1,5 +1,9 @@
+import { SubTitle } from '@/components/SubTitle';
 import styles from './index.less';
-
+import { IntlShape } from 'react-intl';
+import { getDemos } from '@/data/demos';
+import { getExamples } from '@/data/examples';
+import FadeInSection from '@/components/FadeInSection';
 const list = [
   {
     title: '蚂蚁集团',
@@ -23,37 +27,56 @@ const list = [
   },
 ];
 
-const CaseList = () => {
+const CaseList = ({ intl }: { intl: IntlShape }) => {
   return (
     <div className={styles.caseList}>
-      <div className={styles.title}>客户案例</div>
+      <SubTitle title={intl.formatMessage({ id: 'demo.examples' })} />
       <div>
-        {list.map((item) => {
+        {getExamples(intl).map((item, key) => {
           return (
-            <div className={styles.caseItem}>
+            <div className={styles.caseItem} key={key}>
               <div className={styles.caseContent}>
-                <div className={styles.caseTitle}>{item.title}</div>
-                {item?.desc ? (
-                  <div className={styles.caseDesc}>{item.desc}</div>
-                ) : null}
+                <FadeInSection>
+                  <div className={styles.caseTitle}>{item.title}</div>
+                </FadeInSection>
+                <FadeInSection>
+                  {item?.description ? (
+                    <div className={styles.caseDesc}>{item.description}</div>
+                  ) : null}
+                </FadeInSection>
 
-                <div>
-                  <div className={styles.subTitle}>业务挑战</div>
-                  <div className={styles.explanation}>{item.challenge}</div>
-                </div>
-                <div>
-                  <div className={styles.subTitle}>解决方案</div>
-                  <div className={styles.explanation}>{item.plan}</div>
-                </div>
-                <div>
-                  <div className={styles.subTitle}>业务成效</div>
-                  <div className={styles.explanation}>{item.score}</div>
-                </div>
+                <FadeInSection>
+                  <div>
+                    <div className={styles.subTitle}>
+                      {intl.formatMessage({ id: 'demo.example.challenge' })}
+                    </div>
+                    <div className={styles.explanation}>{item.challenge}</div>
+                  </div>
+                </FadeInSection>
+                <FadeInSection>
+                  <div>
+                    <div className={styles.subTitle}>
+                      {intl.formatMessage({ id: 'demo.example.solution' })}
+                    </div>
+                    <div className={styles.explanation}>{item.solution}</div>
+                  </div>
+                </FadeInSection>
+                <FadeInSection>
+                  <div>
+                    <div className={styles.subTitle}>
+                      {intl.formatMessage({ id: 'demo.example.profit' })}
+                    </div>
+                    <div className={styles.explanation}>{item.profit}</div>
+                  </div>
+                </FadeInSection>
               </div>
 
-              <div className={styles.caseImg}>
-                <img src={item.img} alt="" />
-              </div>
+              <FadeInSection>
+                <div
+                  className={styles.caseImg}
+                  style={{ backgroundImage: `url(${item?.img})` }}
+                />
+              </FadeInSection>
             </div>
           );
         })}
