@@ -23,18 +23,33 @@ const Docs: React.FC = () => {
   };
 
   const [iframeUrl, setIframeUrl] = useState<string>(() => {
-    if (['/docs', '/docs/'].includes(location.pathname)) {
-      window.history.pushState({}, '', '/docs/zh/4.5.0/guide');
-      return '/zh/4.5.0/guide';
+    const docsType = location.pathname.split('/')[2];
+    if (
+      ['/docs/tugraph-db', '/docs/tugraph-analytics'].includes(
+        location.pathname,
+      )
+    ) {
+      const pathname =
+        docsType === 'tugraph-db' ? '/zh/4.5.0/guide' : '/zh/introduction';
+
+      window.history.pushState({}, '', `/docs/${docsType}/${pathname}`);
+      return pathname;
     }
 
-    return removePrefixFromPath(location.pathname + location.hash, '/docs');
+    return removePrefixFromPath(
+      location.pathname + location.hash,
+      `/docs/${docsType}`,
+    );
   });
 
-  console.log('iframeUrl:', iframeUrl);
-
   const [solidIframeUrl] = useState<string>(() => {
-    return `https://zhongyunwan.github.io/tugraph-db${iframeUrl}`;
+    const docsType = location.pathname.split('/')[2];
+    const origin =
+      docsType === 'tugraph-db'
+        ? 'https://zhongyunwan.github.io'
+        : 'https://liukaiming-alipay.github.io';
+
+    return `${origin}/${docsType}${iframeUrl}`;
   });
 
   const iframeRef = useRef<HTMLIFrameElement>(null);
@@ -45,10 +60,7 @@ const Docs: React.FC = () => {
 
     const handleReceiveMessage = (event: MessageEvent) => {
       if (event?.data?.path) {
-        const formatPath = removePrefixFromPath(
-          event?.data?.path,
-          '/tugraph-db',
-        );
+        const formatPath = removePrefixFromPath(event?.data?.path, '');
         setIframeUrl(formatPath);
         window.history.pushState({}, '', '/docs' + formatPath);
       }

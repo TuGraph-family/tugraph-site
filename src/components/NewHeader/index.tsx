@@ -121,13 +121,13 @@ export const NewHeader = ({
             label: intl.formatMessage({ id: 'header.product.desc1' }),
             desc: intl.formatMessage({ id: 'home.version0.desc' }),
             productPath: '/product/db',
-            docPath: '/docs/db',
+            docPath: '/docs/tugraph-db',
           },
           {
             label: intl.formatMessage({ id: 'header.product.desc2' }),
             desc: intl.formatMessage({ id: 'product_analytics.description' }),
             productPath: '/product/analytics',
-            docPath: '/docs/analytics',
+            docPath: '/docs/tugraph-analytics',
           },
           {
             label: intl.formatMessage({ id: 'header.product.desc3' }),
@@ -319,7 +319,7 @@ export const NewHeader = ({
         label: intl.formatMessage({ id: 'header.doc' }),
         onMouseMove: () => onHover('subMenuDocs', 'move'),
         onMouseLeave: () => onHover('subMenuDocs', 'leave'),
-        path: '/docs',
+        path: '/docs/tugraph-db',
       },
 
       {
