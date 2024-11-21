@@ -1,60 +1,80 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import FadeInSection from '@/components/FadeInSection';
 import styles from './index.less';
+import { SubTitle } from '@/components/SubTitle';
+import { motion, useScroll } from 'framer-motion';
 
 const WhyChoose: React.FC = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const list = [
+    {
+      title: '蚂蚁自有业务驱动与验证',
+      content:
+        'TuGraph历经蚂蚁集团万亿级业务锤炼，截止目前TuGraph已应用于蚂蚁内部300多个场景，包括全图风控、反洗钱、反欺诈、保险知识图谱、花呗图谱、会员服务、蚂蚁森林、新春五福等业务场景。',
+      img: 'https://lark-app.oss-cn-beijing.aliyuncs.com/fecodex/fallback-images/04.jpeg',
+    },
+    {
+      title: '完整高性能的图技术栈',
+      content:
+        'TuGraph提供完整、高性能的图技术栈，实现了完整的在线、近线、离线三线一体的图计算，满足从毫秒级到小时级不同时效性要求的场景需求，多次获得国际图数据库性能基准测试LDBC-SNB第一名。',
+      img: 'https://lark-app.oss-cn-beijing.aliyuncs.com/fecodex/fallback-images/04.jpeg',
+    },
+    {
+      title: '金融级的高可用能力',
+      content:
+        '支持在线分布式扩展，千万顶点/秒的高吞吐率、低延迟响应，可串行化的隔离级别，支持多副本、同城多机房、异地多机房等部署形态，可支持RPO=0，RTO<30s，保障业务连续性。',
+      img: 'https://lark-app.oss-cn-beijing.aliyuncs.com/fecodex/fallback-images/04.jpeg',
+    },
+    {
+      title: '自主可控、兼容性强',
+      content:
+        '蚂蚁集团、清华大学联合自主研发，兼容国产化服务器及操作系统，支持国际标准化图查询语言，兼容主流图查询语言。',
+      img: 'https://lark-app.oss-cn-beijing.aliyuncs.com/fecodex/fallback-images/04.jpeg',
+    },
+    {
+      title: '完整、可扩展的应用开发',
+      content:
+        '开发人员可使用主流查询语言、编程语言、接口协议来快速创建应用，快速对接业务系统、融合数据存储，能够与常见开源架构平滑迁移。',
+      img: 'https://lark-app.oss-cn-beijing.aliyuncs.com/fecodex/fallback-images/04.jpeg',
+    },
+  ];
+
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ['start 25%', 'end end'],
+  });
+
   return (
-    <div className={styles.featureContainer}>
+    <div className={styles.featureContainer} ref={containerRef}>
       <div className={styles.featureDescriptionWrapper}>
-        <FadeInSection>
-          <div className={styles.tuGraphTitle}>为什么选择TuGraph</div>
-        </FadeInSection>
-        <FadeInSection>
-          <span className={styles.reliabilityAndSecurityDesign}>
-            高可靠性和安全性设计
-          </span>
-          <span className={styles.dataComplianceAndProtection}>
-            源自蚂蚁集团的数据计算和分析要求，满足用户合规、审计、访问控制等要求。具备金融级高可用性、可串行化隔离级别，超越灾备标准最高级（6级），实现业务系统不间断运行，保护数据不丢失
-          </span>
-        </FadeInSection>
-        <FadeInSection>
-          <span className={styles.businessPerformanceOptimization}>
-            优化企业业务性能
-          </span>
-          <span className={styles.realTimeAndOfflineAnalysis}>
-            HTAP图数据库，满足实时环境(如实时审核或推荐）和离线分析
-          </span>
-          <span className={styles.millisecondQuerySupport}>
-            （如审计）的毫秒级复杂查询需求，一站式存储、查询、分析。具备
-          </span>
-          <span className={styles.trillionDataHandling}>
-            万亿级图数据处理能力，图数据库性能基准测试世界纪录保持者
-          </span>
-        </FadeInSection>
-        <FadeInSection>
-          <span className={styles.intuitiveDataManager}>直观的数据管理</span>
-          <span className={styles.easyModelingAndQuery}>
-            方便业务和开发人员低代码完
-          </span>
-          <span className={styles.graphAlgorithmIntegration}>
-            成建模、查询和分析;内置5大类近30种图分析算法，轻松
-          </span>
-          <span className={styles.efficientApplicationBuilding}>
-            搭建高效的场景应用
-          </span>
-        </FadeInSection>
-        <FadeInSection>
-          <span className={styles.comprehensiveDevelopmentSupport}>
-            完整且可扩展的应用开发
-          </span>
-          <span className={styles.rapidApplicationCreation}>
-            开发人员可使用主流查询语言、编程语言、接口协议来快速创建
-          </span>
-          <span className={styles.trillionDataHandling}>
-            应用，快速对接业务系统、融合数据存储，能够与常见开源架构
-          </span>
-          <span className={styles.smoothMigrationCapability}>平滑迁移</span>
-        </FadeInSection>
+        <SubTitle title="为什么选择TuGraph" />
+
+        <div className={styles.lineContet}>
+          {list.map((item) => (
+            <div className={styles.lineContetItem}>
+              <FadeInSection>
+                <div className={styles.lineContetBox}>
+                  <img
+                    src={item?.img}
+                    alt=""
+                    className={styles.lineContetImg}
+                  />
+                  <div className={styles.lineContetTitle}>{item.title}</div>
+                  <div className={styles.lineContetDesc}>{item.content}</div>
+                </div>
+              </FadeInSection>
+            </div>
+          ))}
+          <div className={styles.line}>
+            <motion.div
+              className={styles.progress}
+              style={{
+                scaleY: scrollYProgress,
+                originY: 0,
+              }}
+            />
+          </div>
+        </div>
       </div>
     </div>
   );

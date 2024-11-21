@@ -5,12 +5,14 @@ import styles from './index.less';
 import { ArrowRightOutlined } from '@ant-design/icons';
 import JoLPlayer from '@/components/Player';
 import FadeInSection from '@/components/FadeInSection';
+import { IntlShape } from 'react-intl';
 
 export interface IBannerProps {
   type: string;
+  intl: IntlShape;
 }
 
-const Banner = ({ type }: IBannerProps) => {
+const Banner = ({ type, intl }: IBannerProps) => {
   const { pathname, search } = useLocation();
 
   let background =
@@ -18,8 +20,8 @@ const Banner = ({ type }: IBannerProps) => {
 
   const banners = {
     db: {
-      title: 'TuGraph DB 社区版',
-      desc: '单实例部署、开源免费、简单快速、中小型项目的理想选择',
+      title: intl.formatMessage({ id: 'header.product.desc1' }),
+      desc: intl.formatMessage({ id: 'home.version0.desc' }),
       btn: (
         <FadeInSection>
           <div className={styles.buttonContainer}>
@@ -46,16 +48,16 @@ const Banner = ({ type }: IBannerProps) => {
       ),
     },
     analytics: {
-      title: 'TuGraph Analytics 实时图计算引擎',
-      desc: '云原生、流/批/图多模计算、图/表混合处理',
+      title: intl.formatMessage({ id: 'header.product.desc2' }),
+      desc: intl.formatMessage({ id: 'product_analytics.description' }),
     },
     learn: {
-      title: 'TuGraph Leran 图学习引擎',
-      desc: '通过 TuGraph DB 提供原生支持，实现图学习模型的大规模、高性能开发、训练和推理',
+      title: intl.formatMessage({ id: 'header.product.desc3' }),
+      desc: intl.formatMessage({ id: 'product_learn.description' }),
     },
     enterprise: {
-      title: 'TuGraph 企业版',
-      desc: '分布式、高可用、高稳定性、企业级项目的理想选择',
+      title: intl.formatMessage({ id: 'header.product.desc4' }),
+      desc: intl.formatMessage({ id: 'product_enterprise.description' }),
       btn: (
         <FadeInSection>
           <div className={styles.buttonContainer}>
@@ -75,8 +77,8 @@ const Banner = ({ type }: IBannerProps) => {
       ),
     },
     clound: {
-      title: 'TuGraph Cloud 版',
-      desc: '基于阿里云构建，自动化部署，快速上线',
+      title: intl.formatMessage({ id: 'header.product.desc5' }),
+      desc: intl.formatMessage({ id: 'product_clound.description' }),
       btn: (
         <FadeInSection>
           <div className={styles.buttonContainer}>
@@ -115,25 +117,23 @@ const Banner = ({ type }: IBannerProps) => {
   ];
   const renderVideo = () => {
     return type === 'db' ? (
-      <FadeInSection>
-        <div className={styles.featureSection}>
-          {videoList.map((item) => (
-            <div className={styles.featureSectionItem}>
-              <JoLPlayer
-                option={{
-                  videoSrc: item.url,
-                  height: 191,
-                  width: 345,
-                }}
-              />
-              <div className={styles.videoDesc}>
-                <div className={styles.videoName}>快速上手</div>
-                <div className={styles.videoLength}>{item.length}</div>
-              </div>
+      <div className={styles.featureSection}>
+        {videoList.map((item) => (
+          <div className={styles.featureSectionItem}>
+            <JoLPlayer
+              option={{
+                videoSrc: item.url,
+                height: 191,
+                width: 345,
+              }}
+            />
+            <div className={styles.videoDesc}>
+              <div className={styles.videoName}>快速上手</div>
+              <div className={styles.videoLength}>{item.length}</div>
             </div>
-          ))}
-        </div>
-      </FadeInSection>
+          </div>
+        ))}
+      </div>
     ) : null;
   };
 

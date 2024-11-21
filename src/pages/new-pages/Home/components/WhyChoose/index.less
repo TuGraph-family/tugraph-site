@@ -10,18 +10,9 @@
   display: flex;
   flex-direction: column;
   width: 1440px;
-  height: 1172px;
+  // height: ;
   padding: 49px 250px 140px 242px;
   margin: auto;
-}
-
-.tuGraphTitle {
-  align-self: center;
-  margin-right: 16px;
-  margin-left: 16px;
-  color: #292d3b;
-  font-size: 30px;
-  text-align: center;
 }
 
 .reliabilityAndSecurityDesign {
@@ -135,4 +126,87 @@
   white-space: nowrap;
   color: #768191;
   font-size: 14px;
+}
+
+.lineContet {
+  padding-top: 200px;
+  position: relative;
+
+  .lineContetItem {
+    display: flex;
+    height: 104px;
+    margin-bottom: 87px;
+
+    .lineContetBox {
+      width: 434px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      position: relative;
+      cursor: pointer;
+
+      .lineContetImg {
+        position: absolute;
+        top: -188px;
+        left: 123px;
+        width: 312px;
+        height: 172px;
+        margin: 0;
+      }
+
+      .lineContetTitle {
+        font-size: 20px;
+        color: #292d3b;
+        line-height: 28px;
+        text-align: right;
+        font-weight: 500;
+        margin: 16px 0 10px;
+      }
+
+      .lineContetDesc {
+        font-size: 14px;
+        color: #768191;
+        line-height: 22px;
+        text-align: right;
+      }
+    }
+
+    &:nth-child(even) {
+      justify-content: flex-end;
+
+      .lineContetImg {
+        left: 0;
+      }
+
+      .lineContetBox {
+        align-items: flex-start;
+      }
+
+      .lineContetTitle,
+      .lineContetDesc {
+        text-align: left;
+      }
+    }
+  }
+
+  .line {
+    width: 2px;
+    height: 100%;
+    background-image: linear-gradient(
+      180deg,
+      #e8ecf5 0%,
+      #d9dbde 60%,
+      #e1e4ef 100%
+    );
+    border-image-slice: 1;
+    position: absolute;
+    left: 50%;
+    top: 0;
+
+    .progress {
+      width: 100%;
+      height: 100%;
+      background-color: red;
+    }
+  }
 }
