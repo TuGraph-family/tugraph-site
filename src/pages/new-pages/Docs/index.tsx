@@ -5,7 +5,6 @@
 
 import React, { useRef, useEffect, useState } from 'react';
 import { setLocale, useLocation } from 'umi';
-import { NewLayout } from '@/components/NewLayout';
 import { getSearch } from '@/util';
 import { DEFAULT_LOCAL } from '@/constant';
 import { NewHeader } from '@/components/NewHeader';
@@ -15,41 +14,28 @@ const Docs: React.FC = () => {
   const location = useLocation();
   const { search } = location;
 
-  const removePrefixFromPath = (path: string, prefix: string) => {
-    if (path.startsWith(prefix)) {
+  const removePrefixFromPath = (path: string, prefix?: string) => {
+    if (prefix && path.startsWith(prefix)) {
       return path.slice(prefix.length);
     }
     return path;
   };
 
-  const [iframeUrl, setIframeUrl] = useState<string>(() => {
-    const docsType = location.pathname.split('/')[2];
-    if (
-      ['/docs/tugraph-db', '/docs/tugraph-analytics'].includes(
-        location.pathname,
-      )
-    ) {
-      const pathname =
-        docsType === 'tugraph-db' ? '/zh/4.5.0/guide' : '/zh/introduction';
-
-      window.history.pushState({}, '', `/docs/${docsType}/${pathname}`);
-      return pathname;
+  const [iframeUrl] = useState<string>(() => {
+    if (['/docs', '/docs/'].includes(location.pathname)) {
+      window.history.pushState({}, '', '/docs/tugraph-db/zh/4.5.0/guide');
+      return '/tugraph-db/zh/4.5.0/guide';
     }
 
-    return removePrefixFromPath(
-      location.pathname + location.hash,
-      `/docs/${docsType}`,
-    );
+    return removePrefixFromPath(location.pathname + location.hash, '/docs');
   });
 
-  const [solidIframeUrl] = useState<string>(() => {
-    const docsType = location.pathname.split('/')[2];
-    const origin =
-      docsType === 'tugraph-db'
-        ? 'https://zhongyunwan.github.io'
-        : 'https://liukaiming-alipay.github.io';
+  console.log('iframeUrl:', iframeUrl);
 
-    return `${origin}/${docsType}${iframeUrl}`;
+  const [solidIframeUrl] = useState<string>(() => {
+    return iframeUrl.includes('/tugraph-analytics')
+      ? `https://liukaiming-alipay.github.io${iframeUrl}`
+      : `https://zhongyunwan.github.io${iframeUrl}`;
   });
 
   const iframeRef = useRef<HTMLIFrameElement>(null);
@@ -60,8 +46,7 @@ const Docs: React.FC = () => {
 
     const handleReceiveMessage = (event: MessageEvent) => {
       if (event?.data?.path) {
-        const formatPath = removePrefixFromPath(event?.data?.path, '');
-        setIframeUrl(formatPath);
+        const formatPath = removePrefixFromPath(event?.data?.path);
         window.history.pushState({}, '', '/docs' + formatPath);
       }
     };

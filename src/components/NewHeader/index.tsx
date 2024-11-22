@@ -319,7 +319,7 @@ export const NewHeader = ({
         label: intl.formatMessage({ id: 'header.doc' }),
         onMouseMove: () => onHover('subMenuDocs', 'move'),
         onMouseLeave: () => onHover('subMenuDocs', 'leave'),
-        path: '/docs/tugraph-db',
+        path: '/docs/tugraph-db/zh/4.5.0/guide',
       },
 
       {
