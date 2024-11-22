@@ -2,7 +2,7 @@ import { DocSearch } from '@docsearch/react';
 import { useEffect, useState } from 'react';
 import { useMedia } from 'react-use';
 import { history, useIntl, useLocation } from 'umi';
-
+import cx from 'classnames';
 import { DEFAULT_LOCAL } from '@/constant';
 import { getSearch, goLinkAt, historyPushLinkAt } from '@/util';
 import '@docsearch/css';
@@ -31,8 +31,8 @@ export const NewHeader = ({
         const segments = pathname.split('/').filter(Boolean);
         if (segments.length >= level) {
           const pathKey = segments[level - 1];
-          return ['blog', 'activity', 'video'].includes(pathKey)
-            ? 'study'
+          return ['blog', 'activity', 'download'].includes(pathKey)
+            ? 'community'
             : pathKey;
         } else {
           return '';
@@ -221,6 +221,7 @@ export const NewHeader = ({
           },
           {
             label: intl.formatMessage({ id: 'header.community.video' }),
+            url: 'https://space.bilibili.com/1196053065/',
           },
           {
             label: intl.formatMessage({ id: 'header.community.forum' }),
@@ -236,9 +237,11 @@ export const NewHeader = ({
         subMenu: [
           {
             label: intl.formatMessage({ id: 'header.assets.github' }),
+            url: 'https://github.com/TuGraph-family',
           },
           {
             label: intl.formatMessage({ id: 'header.assets.gitee' }),
+            url: 'https://gitee.com/tugraph',
           },
           {
             label: intl.formatMessage({ id: 'header.assets.download' }),
@@ -252,7 +255,12 @@ export const NewHeader = ({
     ];
     return (
       <div className={styles.communitySubMenu}>
-        <div className={styles.subMenuBanner}>
+        <div
+          className={styles.subMenuBanner}
+          onClick={() => {
+            window.open('https://osgraph.com/');
+          }}
+        >
           <div className={styles.bannerTitle}>OSGraph</div>
           <div className={styles.bannerDesc}>
             {intl.formatMessage({ id: 'header.osGraph.desc' })}
@@ -270,6 +278,9 @@ export const NewHeader = ({
                     onClick={() => {
                       if (subItem?.path) {
                         history.push(historyPushLinkAt(subItem?.path));
+                      }
+                      if (subItem?.url) {
+                        window.open(subItem?.url);
                       }
                     }}
                   >
@@ -289,9 +300,6 @@ export const NewHeader = ({
   };
 
   const onHover = (id: string, type: 'move' | 'leave') => {
-    const subMenuDom = document.getElementById(id);
-    const mainWrapper = document.getElementById('mainWrapper');
-
     setSubVisibleKey(type === 'move' ? id : '');
   };
 
@@ -337,9 +345,12 @@ export const NewHeader = ({
           return (
             <div
               key={key}
-              className={`${styles.menuItem}${
-                key === selectMenuItem ? ' ' + styles.menuItemSelect : ''
-              }`}
+              className={cx(
+                styles.menuItem,
+                key === selectMenuItem && !subVisibleKey
+                  ? styles.menuItemSelect
+                  : '',
+              )}
               onClick={() => {
                 if (path) {
                   setSelectMenuItem(item?.label);

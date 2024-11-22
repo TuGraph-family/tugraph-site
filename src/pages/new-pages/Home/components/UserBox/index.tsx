@@ -3,6 +3,8 @@ import { ArrowRightOutlined } from '@ant-design/icons';
 import { motion } from 'framer-motion';
 import styles from './index.less';
 import FadeInSection from '@/components/FadeInSection';
+import { history } from 'umi';
+import { historyPushLinkAt } from '@/util';
 
 const UserBox: React.FC = () => {
   const [isHover, setIsHover] = useState<boolean>(false);
@@ -39,7 +41,12 @@ const UserBox: React.FC = () => {
         </div>
       </FadeInSection>
       <FadeInSection>
-        <div className={styles.moreCasesText}>
+        <div
+          className={styles.moreCasesText}
+          onClick={() => {
+            history.push(historyPushLinkAt('/case'));
+          }}
+        >
           <span
             className={styles.moreCasesSpan}
             onMouseEnter={() => setIsHover(true)}

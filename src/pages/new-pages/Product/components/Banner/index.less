@@ -27,14 +27,17 @@
   }
 
   .buttonContainer {
+    width: fit-content;
+    height: 48px;
     display: flex;
     margin-top: 40px;
+    gap: 16px;
   }
 
   .communityEditionButton,
   .enterpriseConsultationButton {
-    width: 146px;
-    height: 48px;
+    min-width: 146px;
+    height: 100%;
     border-color: #b2c3f6;
     background-color: #2e5dfe;
     margin-right: 16px;
@@ -77,46 +80,6 @@
     background-color: #f2f6fa;
     color: #545762;
     cursor: pointer;
-  }
-}
-
-@media only screen and (max-width: 767.99px) {
-  .banner {
-    padding: 6.4vw;
-    height: 100% !important;
-    margin-top: -12vw;
-    overflow-x: hidden;
-
-    .containerWrapper {
-      margin: 0;
-
-      .slogan {
-        min-width: 87.2vw;
-        font-size: 7.98vw;
-        max-width: 100%;
-        line-height: 11.2vw;
-        color: rgba(26, 27, 37, 0.88);
-        font-family: 'PuHuiTi95';
-        text-align: center;
-        margin: 19.7vw 0 0 0;
-        transition: all 0.3s;
-      }
-
-      .description {
-        font-size: 4vw;
-        color: rgba(26, 27, 37, 0.65);
-        text-align: center;
-        line-height: 6.4vw;
-        margin-top: 2.1vw;
-        transition: all 0.3s;
-        margin-bottom: 6.4vw;
-      }
-
-      .mobileIcon {
-        width: 100%;
-        margin: 0 auto 6.4vw auto;
-      }
-    }
   }
 }
 

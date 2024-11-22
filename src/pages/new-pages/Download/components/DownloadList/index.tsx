@@ -1,59 +1,27 @@
-import CopyToClipboard from 'react-copy-to-clipboard';
 import styles from './index.less';
-import { Select } from 'antd';
-import { DownloadOutlined, CopyOutlined } from '@ant-design/icons';
-import cx from 'classnames';
+import { IntlShape } from 'react-intl';
+import { assetsList } from '@/data/download';
+import DownAndCopyItem from '@/pages/new-pages/Download/components/DownAndCopyItem';
 
-const DownLoadList = () => {
+const DownLoadList = ({ intl }: { intl: IntlShape }) => {
   const downlist = [
     {
       title: 'TuGraph DB',
-      typeList: [
-        {
-          type: 'CentOS',
-          options: [
-            {
-              label: 'v4.0.0',
-              value: 'v4.0.0',
-            },
-            {
-              label: 'v4.0.1',
-              value: 'v4.0.1',
-            },
-            {
-              label: 'v4.0.2',
-              value: 'v4.0.2',
-            },
-          ],
-        },
-        {
-          type: 'Ubuntu',
-          options: [
-            {
-              label: 'v4.0.0',
-              value: 'v4.0.0',
-            },
-            {
-              label: 'v4.0.1',
-              value: 'v4.0.1',
-            },
-            {
-              label: 'v4.0.2',
-              value: 'v4.0.2',
-            },
-          ],
-        },
-      ],
+      typeList: assetsList,
     },
     {
       title: 'TuGraph Analytics',
       typeList: [
         {
-          type: '镜像下载地址',
+          name: intl.formatMessage({
+            id: 'download.imageDownloadAddress',
+          }),
           content: 'https://hub.docker.com/r/tugraph/geaflow-console',
         },
         {
-          type: '下载方式/命令',
+          name: intl.formatMessage({
+            id: 'download.imageDownloadMethod',
+          }),
           content: 'docker pull tugraph/geaflow-console',
         },
       ],
@@ -62,11 +30,15 @@ const DownLoadList = () => {
       title: 'TuGraph Learn',
       typeList: [
         {
-          type: '镜像下载地址',
+          name: intl.formatMessage({
+            id: 'download.imageDownloadAddress',
+          }),
           content: 'https://hub.docker.com/r/tugraph/geaflow-console',
         },
         {
-          type: '下载方式/命令',
+          name: intl.formatMessage({
+            id: 'download.imageDownloadMethod',
+          }),
           content: 'docker pull tugraph/geaflow-console',
         },
       ],
@@ -82,39 +54,31 @@ const DownLoadList = () => {
             <div className={styles.typeList}>
               {item.typeList.map((typeItem) => {
                 return (
-                  <div
-                    className={cx(
-                      styles.typeItem,
-                      typeItem?.options ? styles.typeItemFlex : '',
-                    )}
-                  >
-                    <div className={styles.typeItemTitle}>{typeItem.type}</div>
+                  <div className={styles.typeItem}>
+                    <div
+                      className={typeItem?.assets ? styles.typeItemFlex : ''}
+                    >
+                      <div className={styles.typeItemTitle}>
+                        {typeItem.name}
+                      </div>
 
-                    {typeItem?.options ? (
-                      <div className={styles.typeItemSelect}>
-                        <Select
-                          options={typeItem.options}
-                          className={styles.select}
+                      {typeItem?.assets ? (
+                        <DownAndCopyItem
+                          type="down"
+                          intl={intl}
+                          options={typeItem.assets}
                         />
-                        <div className={styles.downloadBtn}>
-                          <DownloadOutlined />
-                          立即下载
-                        </div>
-                      </div>
-                    ) : (
-                      <div className={styles.typeItemCopy}>
-                        <div>{typeItem?.content}</div>
-                        <CopyToClipboard
-                          text={typeItem?.content}
-                          onCopy={() => {}}
-                        >
-                          <div className={styles.buttonText}>
-                            <CopyOutlined />
-                            复制
-                          </div>
-                        </CopyToClipboard>
-                      </div>
-                    )}
+                      ) : (
+                        <DownAndCopyItem
+                          type="copy"
+                          intl={intl}
+                          link={typeItem?.content}
+                        />
+                      )}
+                    </div>
+                    <div className={styles.fileDesc}>
+                      这是该内容的简短说明，这是该内容的简短说明，文本在两行以内，这是该内容的简短说明，这是该内容的简短说明，文本在两行以内
+                    </div>
                   </div>
                 );
               })}

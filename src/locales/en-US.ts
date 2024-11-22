@@ -51,29 +51,24 @@ export default {
   'home.three.lines.consistent': 'online/near-line/offline all-in-one',
   'home.case.desc1': 'bottlenecks for  industrial data analysis.',
   'home.case0.title': 'Financial Services',
-  'home.case0.desc0':
-    'Credit Risk Management, Money Tracking, Anti-Money Laundering, Anti-Fraud, Consumer Product ',
-  'home.case0.desc1': 'Marketing',
+  'home.case0.desc':
+    'Credit Risk Management, Money Tracking, Anti-Money Laundering, Anti-Fraud, Consumer Product,Marketing ',
   'home.case1.title': 'Internet Industry',
-  'home.case1.desc0':
-    'Product Marketing, Membership and Merchant Services, Referral ',
-  'home.case1.desc1': 'Marketing, Community Discovery',
+  'home.case1.desc':
+    'Product Marketing, Membership and Merchant Services, Referral,Marketing, Community Discovery ',
   'home.case2.title': 'Public Sector',
-  'home.case2.desc0':
-    'Smart City, Smart Transportation, Route Planning, IoT, User Behavior ',
-  'home.case2.desc1': 'Analysis, Fraud Detection',
+  'home.case2.desc':
+    'Smart City, Smart Transportation, Route Planning, IoT, User Behavior,Analysis, Fraud Detection ',
   'home.case3.title': 'Energy & Manufacturing',
-  'home.case3.desc0':
-    'Supply Chain Management,  Power Grid Analysis, Device Management ',
-  'home.case3.desc1': 'and Troubleshooting',
+  'home.case3.desc':
+    'Supply Chain Management,  Power Grid Analysis, Device Management and Troubleshooting ',
   'home.case4.title': 'Telecommunication',
-  'home.case4.desc0':
-    'Telecom Fraud Detection, Business Operation Analytics, Anti-Abuse, ',
-  'home.case4.desc1': 'Device Maintenance',
+  'home.case4.desc':
+    'Telecom Fraud Detection, Business Operation Analytics, Anti-Abuse, Device Maintenance',
   'home.case5.title': 'General',
-  'home.case5.desc0':
-    'Data Privacy and Security, Data Governance, Data Lineage, Data ',
-  'home.case5.desc1': 'Change Impact Analysis',
+  'home.case5.desc':
+    'Data Privacy and Security, Data Governance, Data Lineage, Data Change Impact Analysis',
+  'home.case6.title': 'artificial intelligence field',
   'home.knowMore': 'Learn more',
   'home.users': 'SELECTED CUSTOMERS',
   'home.moreDemo': 'More use cases',

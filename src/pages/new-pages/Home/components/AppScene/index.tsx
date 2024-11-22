@@ -1,12 +1,11 @@
-import React from 'react';
-import { Button, Popover, Tag } from 'antd';
+import { Popover } from 'antd';
 import { motion } from 'framer-motion';
 import FadeInSection from '@/components/FadeInSection';
 import styles from './index.less';
 import { useInView } from 'react-intersection-observer';
-import cx from 'classnames';
+import { IntlShape } from 'react-intl';
 
-const AppScene = () => {
+const AppScene = ({ intl }: { intl: IntlShape }) => {
   const [ref, inView] = useInView({
     triggerOnce: true, // 确保动画只触发一次
     threshold: 0.5, // 在元素至少有 x% 可见时触发动画
@@ -14,8 +13,8 @@ const AppScene = () => {
 
   const SCENE_LIST = [
     {
-      field: '政务领域',
-      scene: '物联网、智慧城市、道路规划、智能交通、轨迹分析、反诈',
+      field: intl.formatMessage({ id: 'home.case0.title' }),
+      scene: intl.formatMessage({ id: 'home.case0.desc' }),
       illustrate:
         '在物联网时代，图模型通过构建人、位置、事件、物的关系网络，实现智能交通、道路规划、平安城市、钓鱼网站识别等智慧场景。',
       style: {
@@ -27,8 +26,8 @@ const AppScene = () => {
       className: 'government',
     },
     {
-      field: '金融领域',
-      scene: '信贷风控、反洗钱、反欺诈、资金追踪、营销推荐',
+      field: intl.formatMessage({ id: 'home.case1.title' }),
+      scene: intl.formatMessage({ id: 'home.case1.desc' }),
       illustrate:
         '通过图技术拓展风险特征维度，提升反洗钱、反欺诈、信贷风控等风险防范能力；基于丰富的关联关系和图技术，帮助金融机构精准营销和拓客。',
       style: {
@@ -40,8 +39,8 @@ const AppScene = () => {
       className: 'finance',
     },
     {
-      field: '电信领域',
-      scene: '防骚扰、电信诈骗防范、运营商经营分析、设备维护',
+      field: intl.formatMessage({ id: 'home.case2.title' }),
+      scene: intl.formatMessage({ id: 'home.case2.desc' }),
       illustrate:
         '电信运营商可通过图计算技术，在通信网络上进行骚扰电话分析和阻断，除此之外，电信设备也可以使用图模型进行管理。',
       style: {
@@ -53,8 +52,8 @@ const AppScene = () => {
       className: 'telecommunications',
     },
     {
-      field: '工业领域',
-      scene: '电网分析、供应链管理、设备管理、故障诊断',
+      field: intl.formatMessage({ id: 'home.case3.title' }),
+      scene: intl.formatMessage({ id: 'home.case3.desc' }),
       illustrate:
         '图模型强大的表达力擅长展示复杂去且快速变化的事物关系，极其适合在工业领域来管理复杂且快速变化的库存、供应链关系，并推动智能化创新制造。',
       style: {
@@ -66,8 +65,8 @@ const AppScene = () => {
       className: 'industry',
     },
     {
-      field: '互联网领域',
-      scene: '营销推荐、会与及商家服务',
+      field: intl.formatMessage({ id: 'home.case4.title' }),
+      scene: intl.formatMessage({ id: 'home.case4.desc' }),
       illustrate:
         '通过图基数按技术实现商品智能推荐，在保障用户体验的同时，提升商家营销效果、甄别无效投放，提高会员服务质量，保护商家利益。',
       style: {
@@ -78,8 +77,22 @@ const AppScene = () => {
       },
       className: 'internet',
     },
+
     {
-      field: '人工智能领域',
+      field: intl.formatMessage({ id: 'home.case5.title' }),
+      scene: intl.formatMessage({ id: 'home.case5.desc' }),
+      illustrate:
+        '利用图模型找到图数据之间的关联关系，更容易分析数据的流转过程，建立数据链路，进而梳理数据依赖，权限并提升质量。',
+      style: {
+        width: '110px',
+        height: '110px',
+        top: '468px',
+        left: '312px',
+      },
+      className: 'Universal',
+    },
+    {
+      field: intl.formatMessage({ id: 'home.case6.title' }),
       scene: '',
       illustrate:
         '通过图（Graph）+人工智能（AI）的配套工具和方案，实现GraphRAG、多智能体平台、智能助手等，为企业大模型落地、智能化升级提供新动能。',
@@ -90,19 +103,6 @@ const AppScene = () => {
         right: '214px',
       },
       className: 'Artificial',
-    },
-    {
-      field: '通用领域',
-      scene: '隐私保护、数据治理及数据血缘',
-      illustrate:
-        '利用图模型找到图数据之间的关联关系，更容易分析数据的流转过程，建立数据链路，进而梳理数据依赖，权限并提升质量。',
-      style: {
-        width: '110px',
-        height: '110px',
-        top: '468px',
-        left: '312px',
-      },
-      className: 'Universal',
     },
   ];
 
@@ -121,7 +121,9 @@ const AppScene = () => {
   return (
     <div className={styles.appWrapper}>
       <FadeInSection threshold={0.5}>
-        <div className={styles.appTitle}>应用场景</div>
+        <div className={styles.appTitle}>
+          {intl.formatMessage({ id: 'home.case.title' })}
+        </div>
       </FadeInSection>
 
       <div className={styles.appContent} ref={ref}>

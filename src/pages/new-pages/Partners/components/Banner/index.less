@@ -3,7 +3,7 @@
   // margin-top: -68px;
   width: 100vw;
   background-size: cover;
-  padding: 142px 0 0;
+  padding: 179px 0 0;
   margin: 0 -120px;
   position: relative;
 
@@ -55,42 +55,40 @@
   }
 }
 
-@media only screen and (max-width: 767.99px) {
-  .banner {
-    padding: 6.4vw;
-    height: 100% !important;
-    margin-top: -12vw;
-    overflow-x: hidden;
+.bannerFooter {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  position: absolute;
+  bottom: 0;
+  transform: translateY(50%);
 
-    .containerWrapper {
-      margin: 0;
+  .typeItem {
+    width: 221px;
+    height: 238px;
+    padding: 36px 24px;
+    background: #ffffff85;
+    border-radius: 12px;
+    opacity: 0.59;
+    box-shadow: 0px 9px 28px 8px #84879b0d, 0px 6px 16px 0px #84879b14,
+      0px 3px 6px -4px #84879b1f;
 
-      .slogan {
-        min-width: 87.2vw;
-        font-size: 7.98vw;
-        max-width: 100%;
-        line-height: 11.2vw;
-        color: rgba(26, 27, 37, 0.88);
-        font-family: 'PuHuiTi95';
-        text-align: center;
-        margin: 19.7vw 0 0 0;
-        transition: all 0.3s;
-      }
+    .title {
+      font-size: 20px;
+      color: #292d3b;
+      line-height: 28px;
+      opacity: 0.96;
+      text-align: center;
+      margin-bottom: 12px;
+      letter-spacing: -0.9px;
+    }
 
-      .description {
-        font-size: 4vw;
-        color: rgba(26, 27, 37, 0.65);
-        text-align: center;
-        line-height: 6.4vw;
-        margin-top: 2.1vw;
-        transition: all 0.3s;
-        margin-bottom: 6.4vw;
-      }
-
-      .mobileIcon {
-        width: 100%;
-        margin: 0 auto 6.4vw auto;
-      }
+    .description {
+      font-size: 14px;
+      color: #768191;
+      line-height: 22px;
+      text-align: justify;
     }
   }
 }

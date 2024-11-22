@@ -1,11 +1,13 @@
 import { Button } from 'antd';
 import cx from 'classnames';
-import { useLocation } from 'umi';
+import { useLocation, history } from 'umi';
 import styles from './index.less';
 import { ArrowRightOutlined } from '@ant-design/icons';
 import JoLPlayer from '@/components/Player';
 import FadeInSection from '@/components/FadeInSection';
 import { IntlShape } from 'react-intl';
+import MainButton from '@/components/MainButton';
+import { historyPushLinkAt } from '@/util';
 
 export interface IBannerProps {
   type: string;
@@ -25,21 +27,19 @@ const Banner = ({ type, intl }: IBannerProps) => {
       btn: (
         <FadeInSection>
           <div className={styles.buttonContainer}>
-            <Button
-              type="primary"
-              size="large"
-              shape="round"
-              className={styles.communityEditionButton}
-            >
-              <div className={styles.buttonContent}>
-                <span className={styles.communityEditionLabel}>开始体验</span>
-                <ArrowRightOutlined className={styles.arrowIcon} />
-              </div>
-            </Button>
+            <MainButton
+              style={{ height: 48 }}
+              type="experience"
+              btnText={intl.formatMessage({ id: 'home.btn.desc' })}
+            />
+
             <Button
               size="large"
               shape="round"
               className={styles.enterpriseConsultationButton}
+              onClick={() => {
+                history.push(historyPushLinkAt('/docs/tugraph-db'));
+              }}
             >
               查看文档
             </Button>
@@ -61,17 +61,11 @@ const Banner = ({ type, intl }: IBannerProps) => {
       btn: (
         <FadeInSection>
           <div className={styles.buttonContainer}>
-            <Button
-              type="primary"
-              size="large"
-              shape="round"
-              className={styles.communityEditionButton}
-            >
-              <div className={styles.buttonContent}>
-                <span className={styles.communityEditionLabel}>联系我们</span>
-                <ArrowRightOutlined className={styles.arrowIcon} />
-              </div>
-            </Button>
+            <MainButton
+              style={{ height: 48 }}
+              type="connect"
+              btnText={intl.formatMessage({ id: 'footer.contact' })}
+            />
           </div>
         </FadeInSection>
       ),
@@ -82,17 +76,11 @@ const Banner = ({ type, intl }: IBannerProps) => {
       btn: (
         <FadeInSection>
           <div className={styles.buttonContainer}>
-            <Button
-              type="primary"
-              size="large"
-              shape="round"
-              className={styles.communityEditionButton}
-            >
-              <div className={styles.buttonContent}>
-                <span className={styles.communityEditionLabel}>联系我们</span>
-                <ArrowRightOutlined className={styles.arrowIcon} />
-              </div>
-            </Button>
+            <MainButton
+              style={{ height: 48 }}
+              type="connect"
+              btnText={intl.formatMessage({ id: 'footer.contact' })}
+            />
           </div>
         </FadeInSection>
       ),
