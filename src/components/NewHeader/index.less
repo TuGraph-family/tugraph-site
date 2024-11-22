@@ -129,6 +129,19 @@
       overflow-y: hidden;
       position: relative;
 
+      &::before {
+        content: '';
+        width: 4px;
+        height: 4px;
+        background: #3e5270;
+        border-radius: 50%;
+        position: absolute;
+        bottom: 15px;
+        left: 50%;
+        transform: translate(-50%, 0);
+        opacity: 0;
+      }
+
       &::after {
         content: '';
         width: 10px;
@@ -144,13 +157,23 @@
       }
     }
 
-    &:hover > .mainMenu::after {
-      bottom: -6px;
+    &:hover {
+      .mainMenu::before {
+        opacity: 1;
+      }
+
+      .mainMenu::after {
+        bottom: -6px;
+      }
     }
   }
 
   .menuItemSelect {
     .mainMenu {
+      &::before {
+        opacity: 1;
+      }
+
       &::after {
         bottom: -6px;
       }
@@ -190,6 +213,7 @@
     }
 
     .productSubMenuItemDesc {
+      max-width: 540px;
       font-size: 14px;
       color: @secondary-color;
       line-height: 22px;

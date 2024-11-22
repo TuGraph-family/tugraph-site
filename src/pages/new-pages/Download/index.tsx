@@ -1,15 +1,17 @@
 import { NewLayout } from '@/components/NewLayout';
 import Banner from '@/pages/new-pages/Download/components/Banner';
-import styles from './index.less';
+
 import DownLoadList from '@/pages/new-pages/Download/components/DownloadList';
+import { useIntl } from 'umi';
 
 const DownLoad = () => {
+  const intl = useIntl();
   return (
     <NewLayout
       content={
         <>
-          <Banner />
-          <DownLoadList />
+          <Banner intl={intl} />
+          <DownLoadList intl={intl} />
         </>
       }
     />

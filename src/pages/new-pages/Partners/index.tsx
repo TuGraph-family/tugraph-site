@@ -2,20 +2,19 @@ import { NewLayout } from '@/components/NewLayout';
 import Banner from '@/pages/new-pages/Partners/components/Banner';
 import PartnersCase from '@/pages/new-pages/Partners/components/PartnersCase';
 import PartnersSupport from '@/pages/new-pages/Partners/components/PartnersSupport';
-import PartnersType from '@/pages/new-pages/Partners/components/PartnersType';
+import { useIntl } from 'umi';
 
 const Partners = () => {
+  const intl = useIntl();
   return (
     <NewLayout
       content={
         <>
-          <Banner />
+          <Banner intl={intl} />
 
-          <PartnersType />
+          <PartnersSupport intl={intl} />
 
-          <PartnersSupport />
-
-          <PartnersCase />
+          <PartnersCase intl={intl} />
         </>
       }
     />

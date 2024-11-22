@@ -1,12 +1,11 @@
 import { motion } from 'framer-motion';
-import { useIntl, useLocation } from 'umi';
+
 import styles from './index.less';
 import FadeInSection from '@/components/FadeInSection';
-import VersionButton from '@/pages/new-pages/Home/components/VersionButton';
+import MainButton from '@/components/MainButton';
+import { IntlShape } from 'react-intl';
 
-const Banner = () => {
-  const intl = useIntl();
-
+const Banner = ({ intl }: { intl: IntlShape }) => {
   let background =
     'url(https://mdn.alipayobjects.com/huamei_p63okt/afts/img/An4uTrsTiyUAAAAAAAAAAAAADh8WAQFr/original)';
 
@@ -47,12 +46,18 @@ const Banner = () => {
           <span className={styles.titleText}>
             {intl.formatMessage({ id: 'home.banner.slogan' })}
           </span>
-          <span className={styles.descriptionText}>
-            {intl.formatMessage({ id: 'home.banner.description' })}
-          </span>
+          <span className={styles.descriptionText}>{}</span>
           <div className={styles.buttonContainer}>
-            <VersionButton type="experience" style={{ height: 48 }} />
-            <VersionButton type="consult" style={{ height: 48 }} />
+            <MainButton
+              type="experience"
+              style={{ height: 48 }}
+              btnText={intl.formatMessage({ id: 'home.btn.desc' })}
+            />
+            <MainButton
+              type="consult"
+              style={{ height: 48 }}
+              btnText={intl.formatMessage({ id: 'home.btn.tryOut' })}
+            />
           </div>
         </div>
       </FadeInSection>

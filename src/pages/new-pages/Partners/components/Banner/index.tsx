@@ -4,18 +4,11 @@ import { ReactNode } from 'react';
 import { useLocation } from 'umi';
 import styles from './index.less';
 import { ArrowRightOutlined } from '@ant-design/icons';
+import { IntlShape } from 'react-intl';
+import FadeInSection from '@/components/FadeInSection';
+import { getPartner } from '@/data/get_partner';
 
-export interface BannerInfoProps {
-  slogan?: string | ReactNode;
-  bgIconUrl?: string;
-  footer?: ReactNode;
-  description?: string;
-  sloganClassName?: string;
-  mobileImgClassName?: string;
-  bannerClassName?: string;
-}
-
-const Banner = ({ bannerClassName = '' }: BannerInfoProps) => {
+const Banner = ({ intl }: { intl: IntlShape }) => {
   const { pathname, search } = useLocation();
 
   let background =
@@ -24,18 +17,26 @@ const Banner = ({ bannerClassName = '' }: BannerInfoProps) => {
   return (
     <div
       id="banner"
-      className={cx(styles.banner, bannerClassName)}
+      className={styles.banner}
       style={{
         backgroundImage: background,
-        height: '381px',
+        height: '633px',
         backgroundColor: 'rgba(22,80,255,0.05)',
       }}
     >
       <div className={styles.databaseTitleSection}>
-        <span className={styles.titleText}>携手合作伙伴共促生态发展 </span>
-        <span className={styles.descriptionText}>
-          即刻加入快速增长的图数据库市场，TuGraph为您提供专业的技术、业务和营销支持
-        </span>
+        <FadeInSection>
+          <span className={styles.titleText}>
+            {intl.formatMessage({ id: 'ecosystem.banner.slogan' })}{' '}
+          </span>
+        </FadeInSection>
+
+        <FadeInSection>
+          <span className={styles.descriptionText}>
+            {intl.formatMessage({ id: 'ecosystem.banner.description' })}
+          </span>
+        </FadeInSection>
+
         <div className={styles.buttonContainer}>
           <Button
             type="primary"
@@ -49,6 +50,17 @@ const Banner = ({ bannerClassName = '' }: BannerInfoProps) => {
             </div>
           </Button>
         </div>
+      </div>
+
+      <div className={styles.bannerFooter}>
+        {getPartner(intl).map((item, key) => {
+          return (
+            <div className={styles.typeItem} key={key}>
+              <div className={styles.title}>{item.title}</div>
+              <div className={styles.description}>{item.desc}</div>
+            </div>
+          );
+        })}
       </div>
     </div>
   );

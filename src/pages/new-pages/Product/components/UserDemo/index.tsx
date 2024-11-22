@@ -3,6 +3,8 @@ import styles from './index.less';
 import { ArrowRightOutlined } from '@ant-design/icons';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { historyPushLinkAt } from '@/util';
+import { history } from 'umi';
 
 const UserDemo = () => {
   const [ref, inView] = useInView({
@@ -43,7 +45,12 @@ const UserDemo = () => {
           <div className={styles.demoItem}></div>
         </motion.div>
       </div>
-      <div className={styles.more}>
+      <div
+        className={styles.more}
+        onClick={() => {
+          history.push(historyPushLinkAt('/case'));
+        }}
+      >
         <span>更多案例</span>
         <ArrowRightOutlined className={styles.arrowIcon} />
       </div>
