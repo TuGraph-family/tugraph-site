@@ -127,12 +127,10 @@ const Banner = ({ type, intl }: IBannerProps) => {
 
   return (
     <div
-      id="banner"
       className={styles.banner}
       style={{
         backgroundImage: background,
-        height: '618px',
-        backgroundColor: 'rgba(22,80,255,0.05)',
+        height: '567px',
       }}
     >
       <div className={styles.databaseTitleSection}>

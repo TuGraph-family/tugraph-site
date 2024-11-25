@@ -15,7 +15,7 @@ const Banner = ({ type, onChangeType, tag, onChangeTag }: BannerInfoProps) => {
   const { pathname, search } = useLocation();
 
   let background =
-    'url(https://mdn.alipayobjects.com/huamei_p63okt/afts/img/An4uTrsTiyUAAAAAAAAAAAAADh8WAQFr/original)';
+    'url(https://mdn.alipayobjects.com/huamei_p63okt/afts/img/tW0oRbTxuhcAAAAAAAAAAAAADh8WAQFr/original)';
 
   const typeList = [
     {
@@ -62,26 +62,31 @@ const Banner = ({ type, onChangeType, tag, onChangeTag }: BannerInfoProps) => {
   };
 
   return (
-    <div
-      id="banner"
-      className={styles.banner}
-      style={{
-        backgroundImage: background,
-        height: '376px',
-        backgroundColor: 'rgba(22,80,255,0.05)',
-      }}
-    >
-      <div className={styles.databaseTitleSection}>
-        <span className={styles.titleText}>博客 </span>
-        <span className={styles.descriptionText}>
-          查阅技术解析，参考实践经验；开启技术博客，共享你的知识锦囊
-        </span>
-      </div>
+    <div className={styles.bannerBox}>
+      <div
+        className={styles.banner}
+        style={{
+          backgroundImage: background,
+          height: '310px',
+        }}
+      >
+        <div className={styles.databaseTitleSection}>
+          <div className={styles.titleText}>博客 </div>
+          <div className={styles.descriptionText}>
+            查阅技术解析，参考实践经验；开启技术博客，共享你的知识锦囊
+          </div>
+        </div>
 
-      <div className={styles.footerAction}>
-        {renderType()}
+        <img
+          src="https://mdn.alipayobjects.com/huamei_p63okt/afts/img/waurSaiuoHcAAAAAAAAAAAAADh8WAQFr/fmt.avif"
+          alt=""
+          className={styles.icon}
+        />
 
-        <SwitchTab options={tagList} current={tag} onChange={onChangeTag} />
+        <div className={styles.footerAction}>
+          {renderType()}
+          <SwitchTab options={tagList} current={tag} onChange={onChangeTag} />
+        </div>
       </div>
     </div>
   );

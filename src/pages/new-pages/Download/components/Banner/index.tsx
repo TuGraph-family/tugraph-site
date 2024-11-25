@@ -10,7 +10,6 @@ const Banner = ({ intl }: { intl: IntlShape }) => {
   return (
     <div className={styles.bannerBox}>
       <div
-        id="banner"
         className={styles.banner}
         style={{
           backgroundImage: background,
@@ -18,12 +17,12 @@ const Banner = ({ intl }: { intl: IntlShape }) => {
         }}
       >
         <div className={styles.databaseTitleSection}>
-          <span className={styles.titleText}>
+          <div className={styles.titleText}>
             {intl.formatMessage({ id: 'download.title' })}{' '}
-          </span>
-          <span className={styles.descriptionText}>
+          </div>
+          <div className={styles.descriptionText}>
             {intl.formatMessage({ id: 'download.desc' })}
-          </span>
+          </div>
         </div>
 
         <img
