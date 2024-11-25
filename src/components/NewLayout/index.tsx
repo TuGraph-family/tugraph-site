@@ -6,15 +6,14 @@ import { Banner, BannerInfoProps } from '@/components/Banner';
 import { getSearch } from '@/util';
 import { DEFAULT_LOCAL, EN_SITE, HOST_EN, HOST_ZH, ZH_SITE } from '@/constant';
 import { NewFooter } from '@/components/NewFooter';
-import { NewBanner } from '@/components/NewBanner';
 import AdBox from '@/components/AdBox';
 
 export interface LayoutProps {
   content: JSX.Element;
-  bannerInfo?: BannerInfoProps;
+  isFooter?: boolean;
 }
 
-export const NewLayout = ({ bannerInfo, content }: LayoutProps) => {
+export const NewLayout = ({ isFooter = true, content }: LayoutProps) => {
   const location = useLocation();
   const { search } = location;
   useEffect(() => {
@@ -50,11 +49,10 @@ export const NewLayout = ({ bannerInfo, content }: LayoutProps) => {
     <div>
       {/* <AdBox /> */}
       <NewHeader />
-      {/* <NewBanner slogan="TuGraph" /> */}
       <div className={styles.mainWrapper}>
         <div className={styles.content}>{content}</div>
       </div>
-      <NewFooter />
+      {isFooter ? <NewFooter /> : null}
     </div>
   );
 };

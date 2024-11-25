@@ -1,7 +1,7 @@
 import { DocSearch } from '@docsearch/react';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { useMedia } from 'react-use';
-import { history, useIntl, useLocation } from 'umi';
+import { history, isBrowser, useIntl, useLocation } from 'umi';
 import cx from 'classnames';
 import { DEFAULT_LOCAL } from '@/constant';
 import { getSearch, goLinkAt, historyPushLinkAt } from '@/util';
@@ -404,9 +404,31 @@ export const NewHeader = ({
     );
   };
 
+  const [isStick, setIsStick] = useState<boolean>(false);
+  const handleScroll = useCallback(() => {
+    if (!isBrowser()) {
+      return;
+    }
+    if (document.documentElement.scrollTop > 66) {
+      setIsStick(true);
+    } else {
+      setIsStick(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <>
-      <div className={styles.header} id="Head">
+      <div
+        className={cx(styles.header, isStick ? styles.sticky : null)}
+        id="Head"
+      >
         <div className={styles.headerBox}>
           <div className={styles.headerLeft}>
             <a href={goLinkAt('/')} rel="noopener noreferrer">

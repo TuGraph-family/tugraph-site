@@ -42,12 +42,10 @@ export const Banner = ({
 
   return (
     <div
-      id="banner"
       className={cx(styles.banner, bannerClassName)}
       style={{
         backgroundImage: background,
         height: '600px',
-        backgroundColor: 'rgba(22,80,255,0.05)',
       }}
     >
       <div className={styles.containerWrapper}>

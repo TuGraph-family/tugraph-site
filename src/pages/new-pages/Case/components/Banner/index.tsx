@@ -10,12 +10,10 @@ const Banner = ({ intl }: { intl: IntlShape }) => {
 
   return (
     <div
-      id="banner"
       className={styles.banner}
       style={{
         backgroundImage: background,
-        height: '381px',
-        backgroundColor: 'rgba(22,80,255,0.05)',
+        height: '561px',
       }}
     >
       <div className={styles.databaseTitleSection}>

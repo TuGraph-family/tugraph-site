@@ -73,8 +73,8 @@ const Docs: React.FC = () => {
           title="Docusaurus Docs"
           style={{
             width: '100%',
-            height: 'calc(100vh - 66px)',
-            marginTop: '66px',
+            height: 'calc(100vh - 84px)',
+            marginTop: '18px',
             border: 'none',
           }}
         />

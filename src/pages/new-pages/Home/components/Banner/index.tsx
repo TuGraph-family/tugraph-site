@@ -33,20 +33,20 @@ const Banner = ({ intl }: { intl: IntlShape }) => {
 
   return (
     <div
-      id="banner"
       className={styles.banner}
       style={{
         backgroundImage: background,
-        height: '618px',
-        backgroundColor: 'rgba(22,80,255,0.05)',
+        height: '551px',
       }}
     >
       <FadeInSection>
         <div className={styles.databaseTitleSection}>
-          <span className={styles.titleText}>
+          <div className={styles.titleText}>
             {intl.formatMessage({ id: 'home.banner.slogan' })}
-          </span>
-          <span className={styles.descriptionText}>{}</span>
+          </div>
+          <div className={styles.descriptionText}>
+            {intl.formatMessage({ id: 'home.banner.description' })}
+          </div>
           <div className={styles.buttonContainer}>
             <MainButton
               type="experience"

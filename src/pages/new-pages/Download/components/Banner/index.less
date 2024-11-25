@@ -1,46 +1,42 @@
 .bannerBox {
-  margin: 0 -120px;
-  height: 346px;
+  height: fit-content;
   background-image: linear-gradient(
     180deg,
     #d4dfea 0%,
-    #d4dfea 293px,
+    #d4dfea 65%,
     #e8e9ee00 100%
   );
-  padding-top: 66px;
+  margin: 0 -120px;
+}
 
-  .banner {
-    background-repeat: no-repeat;
-    width: 100vw;
-    background-size: 100% 100%;
-    position: relative;
-    display: flex;
+.banner {
+  background-repeat: no-repeat;
+  width: 100vw;
+  background-size: 100% 100%;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
 
-    .databaseTitleSection {
-      display: flex;
-      flex-direction: column;
-      width: 1436px;
-      padding: 68px 0 0 120px;
-    }
+  .databaseTitleSection {
+    padding-top: 62px;
+    margin-left: 120px;
+  }
 
-    .titleText {
-      color: #292d3b;
-      font-size: 48px;
-      font-weight: 300;
-    }
+  .titleText {
+    color: #292d3b;
+    font-size: 48px;
+    font-weight: 300;
+  }
 
-    .descriptionText {
-      width: 672px;
-      font-size: 16px;
-      color: #768191;
-      line-height: 24px;
-      margin-top: 16px;
-    }
+  .descriptionText {
+    width: 672px;
+    font-size: 16px;
+    color: #768191;
+    line-height: 24px;
+    margin-top: 16px;
+  }
 
-    .icon {
-      width: 300px;
-      height: 300px;
-      margin-right: 175px;
-    }
+  .icon {
+    margin: 14px 175px 0 0;
   }
 }

@@ -33,6 +33,7 @@ TuGraph 已被成熟应用于安全风控、信贷风控、知识图谱、数据
           <InfoRight markdown={markdown} />
         </div>
       }
+      isFooter={false}
     />
   );
 };
