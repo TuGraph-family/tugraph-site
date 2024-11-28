@@ -16,7 +16,7 @@ const Architecture = ({ type, intl }: { type: string; intl: IntlShape }) => {
     learn:
       'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*4AiPRowHYgsAAAAAAAAAAAAADgOBAQ/original',
     enterprise:
-      'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*z0V4Q7BJpOQAAAAAAAAAAAAADgOBAQ/original',
+      'https://mdn.alipayobjects.com/huamei_p63okt/afts/img/1UsMQ6JeN4MAAAAAAAAAAAAADh8WAQFr/original',
   };
 
   const IMG_SRC_EN = {
@@ -26,23 +26,21 @@ const Architecture = ({ type, intl }: { type: string; intl: IntlShape }) => {
     learn:
       'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*4AiPRowHYgsAAAAAAAAAAAAADgOBAQ/original',
     enterprise:
-      'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*wqMyTZ93ndYAAAAAAAAAAAAADgOBAQ/original',
+      'https://mdn.alipayobjects.com/huamei_p63okt/afts/img/-aMcSLup2D0AAAAAAAAAAAAADh8WAQFr/original',
   };
 
   return (
-    <div>
-      <div className={styles.ecoWrapper}>
-        <SubTitle
-          title={intl.formatMessage({ id: 'product.ecosystem' })}
-          style={{ margin: '56px 0 32px' }}
-        />
+    <div className={styles.ecoWrapper}>
+      <SubTitle
+        title={intl.formatMessage({ id: 'product.ecosystem' })}
+        style={{ margin: '56px 0 32px' }}
+      />
 
-        <div className="maxContainer">
-          <img
-            src={lang === 'zh-CN' ? IMG_SRC_ZH[type] : IMG_SRC_EN[type]}
-            alt="ecosystem"
-          />
-        </div>
+      <div className={styles.maxContainer}>
+        <img
+          src={lang === 'zh-CN' ? IMG_SRC_ZH[type] : IMG_SRC_EN[type]}
+          alt="ecosystem"
+        />
       </div>
     </div>
   );

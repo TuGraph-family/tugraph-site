@@ -3,20 +3,23 @@ import { useMemo } from 'react';
 import { remark } from 'remark';
 import parse from 'remark-parse';
 import styles from './index.less';
-import { slugify } from '@/util';
+import { historyPushLinkAt, slugify } from '@/util';
+import { history } from 'umi';
 
 const { Link } = Anchor;
 
-const InfoRight = ({ markdown }: { markdown?: string }) => {
+const InfoRight = ({
+  detail,
+  list,
+}: {
+  detail?: API.BlogDetailVO;
+  list?: API.BlogListVO[];
+}) => {
   const headings = useMemo(() => {
     const headings: any = [];
 
-    const tree = remark().use(parse).parse(markdown);
+    const tree = remark().use(parse).parse(detail?.content);
 
-    console.log(
-      tree?.children?.filter((node) => node.type === 'heading'),
-      'lkmlkm',
-    );
     tree?.children
       ?.filter((node) => node.type === 'heading')
       .forEach((node) => {
@@ -45,7 +48,7 @@ const InfoRight = ({ markdown }: { markdown?: string }) => {
       });
 
     return headings;
-  }, [markdown]);
+  }, [detail]);
 
   const renderLink = (item: any) => {
     if (item?.text) {
@@ -63,32 +66,30 @@ const InfoRight = ({ markdown }: { markdown?: string }) => {
     return null;
   };
 
-  const testData = [
-    {
-      title: '论文解读｜GRAG: Graph Retrieval-Augmented Generation',
-      href: '',
-    },
-    {
-      title: '论文解读｜GRAG: Graph Retrieval-Augmented Generation',
-      href: '',
-    },
-    {
-      title: '论文解读｜GRAG: Graph Retrieval-Augmented Generation',
-      href: '',
-    },
-  ];
-
   return (
     <div className={styles.InfoRight}>
-      <Anchor className={styles.blogAnchor}>
+      <Anchor
+        className={styles.blogAnchor}
+        affix={false}
+        getContainer={() => document?.getElementById('blog-content') || window}
+        offsetTop={100}
+        targetOffset={100}
+      >
         {headings?.map((item: any) => {
           return renderLink(item);
         })}
       </Anchor>
       <div className={styles.newest}>
         <div className={styles.newestTitle}>最新博客</div>
-        {testData?.map((item) => (
-          <div className={styles.newestItem}>{item.title}</div>
+        {list?.map((item) => (
+          <div
+            className={styles.newestItem}
+            onClick={() =>
+              history.push(historyPushLinkAt(`/blog/info/${item.id}`))
+            }
+          >
+            {item.title}
+          </div>
         ))}
       </div>
       <img src="" alt="" className={styles.bannerImg} />

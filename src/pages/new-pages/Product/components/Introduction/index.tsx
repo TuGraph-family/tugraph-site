@@ -12,7 +12,7 @@ const Introduction = ({ type, intl }: { type: string; intl: IntlShape }) => {
           type: '特性',
           title: intl.formatMessage({ id: 'product.feature.title0' }),
           desc: intl.formatMessage({ id: 'product.feature.desc0' }),
-          img: 'https://lark-app.oss-cn-beijing.aliyuncs.com/fecodex/fallback-images/04.jpeg',
+          img: 'https://mdn.alipayobjects.com/huamei_p63okt/afts/img/9u-MTL-YQDAAAAAAAAAAAAAADh8WAQFr/original',
           span: 16,
         },
         {
@@ -31,7 +31,7 @@ const Introduction = ({ type, intl }: { type: string; intl: IntlShape }) => {
           type: '特性',
           title: intl.formatMessage({ id: 'product.feature.title3' }),
           desc: intl.formatMessage({ id: 'product.feature.desc3' }),
-          img: 'https://lark-app.oss-cn-beijing.aliyuncs.com/fecodex/fallback-images/04.jpeg',
+          img: 'https://mdn.alipayobjects.com/huamei_p63okt/afts/img/QHv2TYUyUesAAAAAAAAAAAAADh8WAQFr/original',
           span: 16,
         },
       ],
@@ -115,7 +115,7 @@ const Introduction = ({ type, intl }: { type: string; intl: IntlShape }) => {
           type: '特性',
           title: intl.formatMessage({ id: 'product.feature.overview.title0' }),
           desc: intl.formatMessage({ id: 'product.feature.overview.desc0' }),
-          img: 'https://lark-app.oss-cn-beijing.aliyuncs.com/fecodex/fallback-images/04.jpeg',
+          img: 'https://mdn.alipayobjects.com/huamei_p63okt/afts/img/9u-MTL-YQDAAAAAAAAAAAAAADh8WAQFr/original',
           span: 16,
         },
         {
@@ -134,7 +134,7 @@ const Introduction = ({ type, intl }: { type: string; intl: IntlShape }) => {
           type: '特性',
           title: intl.formatMessage({ id: 'product.feature.overview.title3' }),
           desc: intl.formatMessage({ id: 'product.feature.overview.desc3' }),
-          img: 'https://lark-app.oss-cn-beijing.aliyuncs.com/fecodex/fallback-images/04.jpeg',
+          img: 'https://mdn.alipayobjects.com/huamei_p63okt/afts/img/QHv2TYUyUesAAAAAAAAAAAAADh8WAQFr/original',
           span: 16,
         },
       ],
@@ -174,34 +174,34 @@ const Introduction = ({ type, intl }: { type: string; intl: IntlShape }) => {
   return (
     <div
       className={styles.container}
-      style={{
-        paddingTop: type === 'db' ? 160 : 0,
-      }}
+      style={type === 'db' ? { paddingTop: 160 } : { marginTop: -127 }}
     >
-      <SubTitle title={intl.formatMessage({ id: 'product.intro' })} />
-      <FadeInSection>
-        <div className={styles.desc}>{data.desc}</div>
-      </FadeInSection>
-      <FadeInSection>
-        <div className={styles.featureContainer}>
-          <Row gutter={[24, 24]} className={styles.contentBoxAll}>
-            {data.list?.map((item) => (
-              <Col span={item?.span}>
-                <div className={styles.contentBox}>
-                  <div className={styles.intlText}>
-                    <div className={styles.type}>{item?.type}</div>
-                    <div className={styles.title}>{item?.title}</div>
-                    <div className={styles.descContent}>{item?.desc} </div>
+      <div>
+        <SubTitle title={intl.formatMessage({ id: 'product.intro' })} />
+        <FadeInSection>
+          <div className={styles.desc}>{data.desc}</div>
+        </FadeInSection>
+        <FadeInSection>
+          <div className={styles.featureContainer}>
+            <Row gutter={[24, 24]} className={styles.contentBoxAll}>
+              {data.list?.map((item) => (
+                <Col span={item?.span}>
+                  <div className={styles.contentBox}>
+                    <div className={styles.intlText}>
+                      <div className={styles.type}>{item?.type}</div>
+                      <div className={styles.title}>{item?.title}</div>
+                      <div className={styles.descContent}>{item?.desc} </div>
+                    </div>
+                    {item?.img ? (
+                      <img src={item?.img} className={styles.featureImage} />
+                    ) : null}
                   </div>
-                  {item?.img ? (
-                    <img src={item?.img} className={styles.featureImage} />
-                  ) : null}
-                </div>
-              </Col>
-            ))}
-          </Row>
-        </div>
-      </FadeInSection>
+                </Col>
+              ))}
+            </Row>
+          </div>
+        </FadeInSection>
+      </div>
     </div>
   );
 };

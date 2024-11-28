@@ -11,9 +11,14 @@ import AdBox from '@/components/AdBox';
 export interface LayoutProps {
   content: JSX.Element;
   isFooter?: boolean;
+  currentUrl?: { pathname: string; hash: string };
 }
 
-export const NewLayout = ({ isFooter = true, content }: LayoutProps) => {
+export const NewLayout = ({
+  isFooter = true,
+  content,
+  currentUrl,
+}: LayoutProps) => {
   const location = useLocation();
   const { search } = location;
   useEffect(() => {
@@ -48,9 +53,12 @@ export const NewLayout = ({ isFooter = true, content }: LayoutProps) => {
   return (
     <div>
       {/* <AdBox /> */}
-      <NewHeader />
+      <NewHeader currentUrl={currentUrl} />
       <div className={styles.mainWrapper}>
-        <div className={styles.content}>{content}</div>
+        <div className={styles.content}>
+          <div className={styles.headerBg} />
+          {content}
+        </div>
       </div>
       {isFooter ? <NewFooter /> : null}
     </div>

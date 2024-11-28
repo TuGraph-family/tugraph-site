@@ -1,13 +1,25 @@
-.banner {
-  background-repeat: no-repeat;
+.bannerBox {
   width: 100vw;
-  background-size: cover;
+  background-repeat: no-repeat;
+  background-size: 100% 380px;
   margin: 0 -120px;
   position: relative;
+}
+
+.banner {
+  width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
 
   .databaseTitleSection {
-    padding-top: 119px;
-    margin-left: 120px;
+    padding-top: 95px;
+  }
+
+  .icon {
+    width: 343px;
+    height: 318px;
+    margin: 35px 119px 0 0;
   }
 
   .titleText {
@@ -23,42 +35,20 @@
   }
 
   .buttonContainer {
-    display: flex;
+    width: fit-content;
     margin-top: 40px;
-  }
-
-  .communityEditionButton {
-    width: 146px;
-    height: 48px;
-    border-color: #b2c3f6;
-    background-color: #2e5dfe;
-    margin-right: 16px;
-  }
-
-  .buttonContent {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .arrowIcon {
-    width: 14px;
-    height: 14px;
-    margin-left: 6px;
-    color: #fff;
-    font-size: 14px;
   }
 }
 
 .bannerFooter {
+  display: none;
   width: 100%;
   display: flex;
   justify-content: center;
   gap: 24px;
   position: absolute;
   bottom: 0;
-  transform: translateY(50%);
+  transform: translateY(161px);
 
   .typeItem {
     width: 221px;

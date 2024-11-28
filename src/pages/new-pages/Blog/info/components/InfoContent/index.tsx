@@ -1,23 +1,24 @@
 import FooterInfo from '@/pages/new-pages/Blog/list/components/FooterInfo';
-import { Breadcrumb } from 'antd';
+import { Breadcrumb, Divider } from 'antd';
 import ReactMarkdown from 'react-markdown';
 import styles from './index.less';
 import rehypeSlug from 'rehype-slug';
-import { slugify } from '@/util';
+import { historyPushLinkAt, slugify } from '@/util';
+import { history } from 'umi';
 
-const InfoContent = ({ markdown }: { markdown?: string }) => {
+const InfoContent = ({ detail }: { detail?: API.BlogDetailVO }) => {
   return (
     <div className={styles.InfoContent}>
       <Breadcrumb>
         <Breadcrumb.Item>
-          <a href="./list">文档</a>
+          <a onClick={() => history.push(historyPushLinkAt('/blog/list'))}>
+            博客
+          </a>
         </Breadcrumb.Item>
-        <Breadcrumb.Item>博客</Breadcrumb.Item>
+        <Breadcrumb.Item>详情</Breadcrumb.Item>
       </Breadcrumb>
-      <div className={styles.InfoContentTitle}>
-        上万次模型训练，TuGraph准确预测西班牙欧洲杯决赛夺冠
-      </div>
-      <FooterInfo />
+      <div className={styles.InfoContentTitle}>{detail?.title}</div>
+      <FooterInfo time={detail?.updateTime} creatorName={detail?.creatorName} />
       <div className={styles.InfoContentText}>
         <ReactMarkdown
           rehypePlugins={[rehypeSlug]}
@@ -41,8 +42,41 @@ const InfoContent = ({ markdown }: { markdown?: string }) => {
             ),
           }}
         >
-          {markdown}
+          {detail?.content || ''}
         </ReactMarkdown>
+      </div>
+
+      <div className={styles.footer}>
+        {detail?.lastCommentId ? (
+          <div
+            className={styles.lastBtn}
+            onClick={() =>
+              history.push(
+                historyPushLinkAt(`/blog/info/${detail?.lastCommentId}`),
+              )
+            }
+          >
+            <div>上一篇</div>
+            <div className={styles.title}>{detail?.lastCommentTitle}</div>
+          </div>
+        ) : (
+          <div />
+        )}
+        {detail?.nextCommentId ? (
+          <div
+            className={styles.nextBtn}
+            onClick={() =>
+              history.push(
+                historyPushLinkAt(`/blog/info/${detail?.nextCommentId}`),
+              )
+            }
+          >
+            <div>下一篇</div>
+            <div className={styles.title}>{detail?.nextCommentTitle}</div>
+          </div>
+        ) : (
+          <div />
+        )}
       </div>
     </div>
   );

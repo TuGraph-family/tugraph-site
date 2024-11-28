@@ -1,19 +1,29 @@
+import moment from 'moment';
 import styles from './index.less';
 import { ClockCircleOutlined, TagOutlined } from '@ant-design/icons';
-const FooterInfo = () => {
+
+interface IProps {
+  creatorName?: string;
+  tag?: string[];
+  time?: string;
+}
+const FooterInfo = ({ creatorName, tag, time }: IProps) => {
   return (
     <div className={styles.blogItemFooter}>
       <div>
         <div className={styles.avatar}></div>
-        <div>发布作者</div>
+        <div>{creatorName}</div>
       </div>
-      <div>
-        <TagOutlined className={styles.icon} />
-        <div>竞赛</div>
-      </div>
+      {tag?.length ? (
+        <div>
+          <TagOutlined className={styles.icon} />
+          <div>{tag?.join('、')}</div>
+        </div>
+      ) : null}
+
       <div>
         <ClockCircleOutlined className={styles.icon} />
-        <div> 2024-07-16 09:02</div>
+        <div>{moment(time).format('YYYY-MM-DD HH:mm:ss')}</div>
       </div>
     </div>
   );

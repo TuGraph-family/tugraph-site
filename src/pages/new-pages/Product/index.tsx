@@ -22,8 +22,8 @@ const Product = () => {
           {type !== 'clound' ? <Architecture type={type} intl={intl} /> : null}
           {type === 'db' ? (
             <>
-              <UserDemo />
-              <QuickStart />
+              <UserDemo intl={intl} />
+              <QuickStart intl={intl} />
             </>
           ) : null}
         </>

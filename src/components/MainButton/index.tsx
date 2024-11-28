@@ -93,11 +93,11 @@ const MainButton: React.FC<IMainButtonProps> = ({
               {...props}
             >
               {btnText}
-              {visible ? (
-                <UpOutlined className={styles.arrowIcon} />
-              ) : (
-                <DownOutlined className={styles.arrowIcon} />
-              )}
+              {/* {visible ? ( */}
+              <UpOutlined
+                className={styles.arrowIcon}
+                style={{ transform: `rotateZ(${visible ? 0 : 180}deg)` }}
+              />
             </Button>
           </Dropdown>
         );

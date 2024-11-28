@@ -9,6 +9,7 @@ import { getSearch } from '@/util';
 import { DEFAULT_LOCAL } from '@/constant';
 import { NewHeader } from '@/components/NewHeader';
 import styles from './index.less';
+import { NewLayout } from '@/components/NewLayout';
 
 const Docs: React.FC = () => {
   const location = useLocation();
@@ -22,9 +23,16 @@ const Docs: React.FC = () => {
   };
 
   const [iframeUrl] = useState<string>(() => {
-    if (['/docs', '/docs/'].includes(location.pathname)) {
-      window.history.pushState({}, '', '/docs/tugraph-db/zh/4.5.0/guide');
-      return '/tugraph-db/zh/4.5.0/guide';
+    if (
+      ['/docs/tugraph-db', '/docs/tugraph-analytics'].includes(
+        location.pathname,
+      )
+    ) {
+      const docType = location.pathname.split('/')[2];
+      const docPath =
+        docType === 'tugraph-db' ? '/zh/4.5.0/guide' : '/zh/introduction/';
+      window.history.pushState({}, '', `${location.pathname + docPath}`);
+      return `/${docType + docPath}`;
     }
 
     return removePrefixFromPath(location.pathname + location.hash, '/docs');
@@ -59,27 +67,28 @@ const Docs: React.FC = () => {
   }, []);
 
   return (
-    <div>
-      <NewHeader
-        currentUrl={{
-          pathname: '/docs' + iframeUrl.split('#')[0],
-          hash: iframeUrl.split('#')[1] ? '#' + iframeUrl.split('#')[1] : '',
-        }}
-      />
-      <div className={styles.container}>
-        <iframe
-          ref={iframeRef}
-          src={solidIframeUrl}
-          title="Docusaurus Docs"
-          style={{
-            width: '100%',
-            height: 'calc(100vh - 84px)',
-            marginTop: '18px',
-            border: 'none',
-          }}
-        />
-      </div>
-    </div>
+    <NewLayout
+      currentUrl={{
+        pathname: '/docs' + iframeUrl.split('#')[0],
+        hash: iframeUrl.split('#')[1] ? '#' + iframeUrl.split('#')[1] : '',
+      }}
+      isFooter={false}
+      content={
+        <div className={styles.container}>
+          <iframe
+            ref={iframeRef}
+            src={solidIframeUrl}
+            title="Docusaurus Docs"
+            style={{
+              width: '100%',
+              height: 'calc(100vh - 84px)',
+              marginTop: '18px',
+              border: 'none',
+            }}
+          />
+        </div>
+      }
+    />
   );
 };
 

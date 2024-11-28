@@ -1,14 +1,23 @@
 .blogItem {
   padding: 28px 0 30px;
-  border-bottom: 1xp solid #ebeef3;
+  border-bottom: 1px solid #ebeef3;
   display: flex;
+  cursor: pointer;
 
   .blogItemImg {
-    width: 240px;
+    min-width: 240px;
     height: 160px;
     border-radius: 16px;
-    background-color: red;
+    // background-color: red;
     margin-right: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
   }
 
   .blogItemContent {
@@ -20,12 +29,22 @@
       font-size: 20px;
       color: #292d3b;
       font-weight: 500;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     .blogItemDesc {
       font-size: 14px;
       color: #545762;
       line-height: 22px;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
   }
 }

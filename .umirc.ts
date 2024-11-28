@@ -99,7 +99,7 @@ export default defineConfig({
       title: 'blog.title',
     },
     {
-      path: '/blog/info',
+      path: '/blog/info/*',
       component: '@/pages/new-pages/Blog/info',
     },
     {

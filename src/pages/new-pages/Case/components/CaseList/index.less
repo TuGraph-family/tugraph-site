@@ -1,62 +1,73 @@
 .caseList {
+  background-color: #fff;
   padding-top: 169px;
   margin: 0 -120px;
 
-  .caseItem {
-    padding: 48px 120px;
-    display: flex;
-    align-items: center;
-    gap: 40px;
+  .caseItemBox {
+    padding: 48px 0;
 
-    .caseImg {
-      background-size: cover;
-      width: 440px;
-      height: 280px;
-      border-radius: 16px;
-    }
+    .caseItem {
+      width: 1200px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      flex-direction: row-reverse;
+      justify-content: flex-end;
 
-    .caseContent {
-      flex: 1;
-
-      .caseTitle {
-        font-family: AlibabaPuHuiTiM;
-        font-size: 20px;
-        color: #293e60;
-        line-height: 28px;
-        margin-bottom: 4px;
+      .caseImg {
+        background-size: cover;
+        width: 440px;
+        height: 280px;
+        border-radius: 16px;
       }
 
-      .caseDesc {
-        font-size: 14px;
-        color: #293e6073;
-        line-height: 22px;
-        text-align: justify;
-        margin-bottom: 20px;
-      }
+      .caseContent {
+        flex: 1;
 
-      .subTitle {
-        font-size: 14px;
-        color: #293e60;
-        line-height: 22px;
-        font-weight: 500;
-        margin-bottom: 4px;
-      }
+        .caseTitle {
+          font-family: AlibabaPuHuiTiM;
+          font-size: 20px;
+          color: #293e60;
+          line-height: 28px;
+          margin-bottom: 4px;
+        }
 
-      .explanation {
-        font-family: PingFangSC-Regular;
-        font-size: 14px;
-        color: #545762;
-        text-align: justify;
-        line-height: 22px;
-        margin-bottom: 38px;
+        .caseDesc {
+          font-size: 14px;
+          color: #293e6073;
+          line-height: 22px;
+          text-align: justify;
+          margin-bottom: 20px;
+        }
+
+        .subTitle {
+          font-size: 14px;
+          color: #293e60;
+          line-height: 22px;
+          font-weight: 500;
+          margin-bottom: 4px;
+        }
+
+        .explanation {
+          font-family: PingFangSC-Regular;
+          font-size: 14px;
+          color: #545762;
+          text-align: justify;
+          line-height: 22px;
+          margin-bottom: 38px;
+        }
       }
     }
   }
 
-  .caseItem:nth-child(even) {
-    flex-direction: row-reverse;
+  .caseItemBox:nth-child(even) {
     background-image: url('https://mdn.alipayobjects.com/huamei_p63okt/afts/img/DdvESa5TfhQAAAAAAAAAAAAADh8WAQFr/original');
     background-size: cover;
-    justify-content: flex-end;
+
+    .caseItem {
+      flex-direction: row;
+      justify-content: flex-start;
+    }
   }
 }
