@@ -1,7 +1,6 @@
 import { SubTitle } from '@/components/SubTitle';
 import styles from './index.less';
 import { IntlShape } from 'react-intl';
-import { getDemos } from '@/data/demos';
 import { getExamples } from '@/data/examples';
 import FadeInSection from '@/components/FadeInSection';
 
