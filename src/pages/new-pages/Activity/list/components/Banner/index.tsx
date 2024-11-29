@@ -1,37 +1,35 @@
 import { Button, Calendar, Space, Tooltip } from 'antd';
 import cx from 'classnames';
-import { ReactNode } from 'react';
-import { useLocation } from 'umi';
+import { history } from 'umi';
 import styles from './index.less';
-import {
-  ArrowRightOutlined,
-  CaretLeftOutlined,
-  CaretRightOutlined,
-} from '@ant-design/icons';
+import { CaretLeftOutlined, CaretRightOutlined } from '@ant-design/icons';
 import moment from 'moment';
+import { ActivityWayOptionsEnum } from '@/constant';
+import { historyPushLinkAt } from '@/util';
+import { useEffect } from 'react';
+import { useActivity } from '@/hooks/useActivity';
 
 const Banner = () => {
-  const { pathname, search } = useLocation();
+  const { getLastActicity, lastDetial } = useActivity();
 
   let background =
     'url(https://mdn.alipayobjects.com/huamei_p63okt/afts/img/mWlxRYlT07oAAAAAAAAAAAAADh8WAQFr/fmt.avif)';
 
-  const data = {
-    startTime: '2024-11-25',
-    endTime: '2024-11-30',
-  };
-
+  useEffect(() => {
+    getLastActicity();
+  }, []);
   const cellRender: any = (current) => {
-    const startOfDayStartDate = moment(data.startTime).endOf('day');
-    const startOfDayEndDate = moment(data.endTime).startOf('day');
+    const startOfDayStartDate = moment(lastDetial?.startTime).endOf('day');
+    const startOfDayEndDate = moment(lastDetial?.endTime).startOf('day');
 
     const isToDay = moment(current._d).isSame(moment(), 'day');
     const isBetween =
       moment(current._d).isSameOrAfter(startOfDayStartDate) &&
       moment(current._d).isSameOrBefore(startOfDayEndDate);
-    const isStartandEnd =
-      moment(current._d).format('YYYY-MM-DD') === data.startTime ||
-      moment(current._d).format('YYYY-MM-DD') === data.endTime;
+    const isStartandEnd = [
+      moment(lastDetial?.startTime).format('YYYY-MM-DD'),
+      moment(lastDetial?.endTime).format('YYYY-MM-DD'),
+    ].includes(moment(current._d).format('YYYY-MM-DD'));
 
     console.log(
       'isBetween',
@@ -49,9 +47,15 @@ const Banner = () => {
         color="white"
         title={
           <Space>
-            <a href="">活动1</a>
-            <a href="">活动1</a>
-            <a href="">活动2</a>
+            <a
+              onClick={() =>
+                history.push(
+                  historyPushLinkAt('/activity/info/' + lastDetial?.id),
+                )
+              }
+            >
+              {lastDetial?.title}
+            </a>
           </Space>
         }
       >
@@ -71,6 +75,7 @@ const Banner = () => {
   const headerRender = ({ value, onChange }) => {
     const month = value.month();
 
+    // onChange(11);
     const changeMonth = (newMonth) => {
       const now = value.clone().month(newMonth);
       onChange(now);
@@ -102,36 +107,55 @@ const Banner = () => {
         <div className={styles.bannerContent}>
           <div className={styles.bannerLeft}>
             <div>
-              <div className={styles.avtivityTitle}>
-                新一代数据底座，来外滩大会解锁图智能前沿技术
-              </div>
+              <div className={styles.avtivityTitle}>{lastDetial?.title}</div>
               <div className={styles.avtivityInfo}>
                 <div className={styles.InfoItem}>
                   <div className={styles.InfoItemLabel}>活动类型：</div>
-                  <div className={styles.InfoItemVal}>线下活动</div>
+                  <div className={styles.InfoItemVal}>
+                    {ActivityWayOptionsEnum[lastDetial?.activityWay]}
+                  </div>
                 </div>
                 <div className={styles.InfoItem}>
                   <div className={styles.InfoItemLabel}>活动时间：</div>
                   <div className={styles.InfoItemVal}>
-                    2024-09-07～2024-09-09
+                    {lastDetial?.startTime
+                      ? moment(lastDetial.startTime).format(
+                          'YYYY-MM-DD HH:mm:ss',
+                        )
+                      : ''}
+                    ～
+                    {lastDetial?.endTime
+                      ? moment(lastDetial.endTime).format('YYYY-MM-DD HH:mm:ss')
+                      : ''}
                   </div>
                 </div>
                 <div className={styles.InfoItem}>
-                  <div className={styles.InfoItemLabel}>活动地点：</div>
+                  <div className={styles.InfoItemLabel}>
+                    {' '}
+                    {ActivityWayOptionsEnum[lastDetial?.activityWay]}：
+                  </div>
                   <div className={styles.InfoItemVal}>
-                    上海·黄浦区世博园区(黄浦区龙华东路68号) C7 场馆
+                    {lastDetial?.activityWay === 'ONLINE'
+                      ? lastDetial?.activityChannel
+                      : lastDetial?.address}
                   </div>
                 </div>
               </div>
             </div>
             <div className={styles.footer}>
-              <Button className={cx(styles.mainBtn, true ? styles.ending : '')}>
-                立即报名
-              </Button>
+              {lastDetial?.registrationUrl ? (
+                <Button
+                  onClick={() => window.open(lastDetial?.registrationUrl)}
+                  className={cx(styles.mainBtn)}
+                >
+                  立即报名
+                </Button>
+              ) : null}
             </div>
           </div>
 
           <Calendar
+            value={moment(lastDetial?.startTime)}
             className={styles.activityCalendar}
             fullscreen={false}
             dateFullCellRender={cellRender}

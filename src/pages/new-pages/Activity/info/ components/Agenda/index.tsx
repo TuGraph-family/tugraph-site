@@ -1,7 +1,8 @@
 import { SubTitle } from '@/components/SubTitle';
 import styles from './index.less';
+import moment from 'moment';
 
-const Agenda = () => {
+const Agenda = ({ list }: { list?: API.ActivityProcessVO[] }) => {
   const agendaList = [
     {
       time: '14:00～14:10',
@@ -37,22 +38,39 @@ const Agenda = () => {
     return (
       <div className={styles.agendaList}>
         <div className={styles.Col}>
-          {agendaList.map((item) => {
-            return <div className={styles.agendaTime}>{item.time}</div>;
-          })}
-        </div>
-        <div className={styles.Col}>
-          {agendaList.map((item) => {
-            return <div className={styles.agendaStep}> {item.Step}</div>;
-          })}
-        </div>
-        <div className={styles.Col}>
-          {agendaList.map((item) => {
+          {list?.map((item) => {
             return (
-              <div>
-                {item.memberList.map((member) => {
+              <div className={styles.agendaTime}>
+                {item?.processStartTime
+                  ? moment(item?.processStartTime).format('YYYY-MM-DD HH:mm')
+                  : null}
+                ~
+                {item?.processEndTime
+                  ? moment(item?.processEndTime).format('YYYY-MM-DD HH:mm')
+                  : null}
+              </div>
+            );
+          })}
+        </div>
+        <div className={styles.Col}>
+          {list?.map((item) => {
+            return (
+              <div key={item?.id} className={styles.agendaStep}>
+                {' '}
+                {item?.processSubject}
+              </div>
+            );
+          })}
+        </div>
+        <div className={styles.Col}>
+          {list?.map((item) => {
+            return (
+              <div key={item?.id}>
+                {item?.guest?.map((member) => {
                   return (
-                    <div className={styles.memberItemName}>{member.name}</div>
+                    <div key={member?.id} className={styles.memberItemName}>
+                      {member?.name}
+                    </div>
                   );
                 })}
               </div>
@@ -60,12 +78,14 @@ const Agenda = () => {
           })}
         </div>
         <div className={styles.Col}>
-          {agendaList.map((item) => {
+          {list?.map((item) => {
             return (
               <div>
-                {item.memberList.map((member) => {
+                {item?.guest?.map((member) => {
                   return (
-                    <div className={styles.memberItemDesc}>{member.desc}</div>
+                    <div key={member.id} className={styles.memberItemDesc}>
+                      {member?.position}
+                    </div>
                   );
                 })}
               </div>
@@ -77,7 +97,7 @@ const Agenda = () => {
   };
 
   return (
-    <div>
+    <div className={styles.agenda}>
       <SubTitle title="活动议程" />
       {renderList()}
     </div>

@@ -2,29 +2,55 @@ import { historyPushLinkAt } from '@/util';
 import styles from './index.less';
 import { EnvironmentOutlined, PlaySquareOutlined } from '@ant-design/icons';
 import { history } from 'umi';
+import { ActivityWayOptionsEnum } from '@/constant';
+import moment from 'moment';
+import ActivityTag from '@/pages/new-pages/Activity/components/ActivityTag';
 
-const ActivityCard = () => {
+const ActivityCard = ({ detail }: { detail: API.ActivityListVO }) => {
+  const isOnline = detail?.activityWay === 'ONLINE';
+
   return (
     <div
       className={styles.activityCard}
-      onClick={() => history.push(historyPushLinkAt('/activity/info'))}
+      onClick={() =>
+        history.push(historyPushLinkAt('/activity/info/' + detail?.id))
+      }
     >
-      <div className={styles.activityImg}>
-        <div className={styles.activityTag}>报名中</div>
+      <div
+        className={styles.activityImg}
+        style={{ backgroundImage: `url(${detail?.frontCoverImage?.url})` }}
+      >
+        <ActivityTag status={detail?.activityState} />
       </div>
       <div className={styles.activityInfo}>
         <div className={styles.activityTitle}>
-          <div className={styles.title}>
-            新一代数据底座，来外滩大会解锁图啊啊啊啊啊asides
-          </div>
-          <div className={styles.tag}>含资料</div>
+          <div className={styles.title}>{detail?.title}</div>
+          {detail?.activityResourceFlag ? (
+            <div className={styles.tag}>含资料</div>
+          ) : null}
         </div>
-        <div className={styles.activityTime}>时间：2024-09-07～2024-09-09</div>
+        <div className={styles.activityTime}>
+          时间：
+          {detail?.startTime
+            ? moment(detail.startTime).format('YYYY-MM-DD HH:mm:ss')
+            : ''}
+          ～
+          {detail?.endTime
+            ? moment(detail.endTime).format('YYYY-MM-DD HH:mm:ss')
+            : ''}
+        </div>
         <div className={styles.activityLocation}>
-          线下活动｜ <PlaySquareOutlined />
-          上海·黄浦世博园撒打算大撒打算大撒打算大撒打算大
+          {ActivityWayOptionsEnum[detail?.activityWay]}｜{' '}
+          {isOnline ? <PlaySquareOutlined /> : <EnvironmentOutlined />}{' '}
+          {isOnline
+            ? detail?.activityChannel
+            : `${detail?.province}·${detail?.address}`}
         </div>
-        <div className={styles.btn}>立即报名</div>
+        <div className={styles.btn}>
+          {detail?.activityState === 'REGISTRATION_DURING'
+            ? '立即报名'
+            : '查看详情'}
+        </div>
       </div>
     </div>
   );

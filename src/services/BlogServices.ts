@@ -1,6 +1,5 @@
+import { HOST } from '@/constant';
 import { request } from 'umi';
-
-const HOST = 'http://47.108.139.230:6688';
 
 /* 获取版本列表 */
 /** 博客列表

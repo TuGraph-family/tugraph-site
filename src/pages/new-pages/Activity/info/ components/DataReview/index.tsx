@@ -1,52 +1,65 @@
 import { SubTitle } from '@/components/SubTitle';
 import {
   DownloadOutlined,
+  FileImageOutlined,
   FileSearchOutlined,
   FileWordFilled,
   PlayCircleFilled,
 } from '@ant-design/icons';
 import styles from './index.less';
 
-const DataReview = () => {
-  const dataLst = [
-    {
-      type: 'file',
-      title: '货拉拉大数据存储实战揭秘：解锁物流行业数据潜能',
-      url: 'https://gw.alipayobjects.com/os/bmw-prod/2145f227-08f0-435a-abe6-7f503b65da7d.mov',
-    },
-    {
-      type: 'video',
-      title: '货拉拉大数据存储实战揭秘：解锁物流行业数据潜能',
-      url: 'https://gw.alipayobjects.com/os/bmw-prod/2145f227-08f0-435a-abe6-7f503b65da7d.mov',
-    },
-    {
-      type: 'file',
-      title: '货拉拉大数据存储实战揭秘：解锁物流行业数据潜能',
-      url: 'https://gw.alipayobjects.com/os/bmw-prod/2145f227-08f0-435a-abe6-7f503b65da7d.mov',
-    },
-  ];
+const DataReview = ({ list }: { list?: API.ActivityResourceVO[] }) => {
+  const renderIcon = (type?: string) => {
+    switch (type) {
+      case 'FILE':
+        return <FileWordFilled className={styles.icon} />;
+      case 'VIDEO':
+        return <PlayCircleFilled className={styles.icon} />;
+      case 'PHOTO':
+        return <FileImageOutlined className={styles.icon} />;
+      default:
+        return null;
+    }
+  };
+
+  const renderBtn = (type?: string, url?: string) => {
+    switch (type) {
+      case 'FILE':
+        return (
+          <a className={styles.dataLink} href={url} target="_blank">
+            <FileSearchOutlined />
+            下载文件
+          </a>
+        );
+      case 'VIDEO':
+        return (
+          <a className={styles.dataLink} href={url} target="_blank">
+            <FileSearchOutlined />
+            查看视频
+          </a>
+        );
+      case 'PHOTO':
+        return (
+          <a className={styles.dataLink} href={url} target="_blank">
+            <FileSearchOutlined />
+            查看图片
+          </a>
+        );
+      default:
+        return null;
+    }
+  };
 
   const renderDataList = () => {
     return (
       <div className={styles.dataList}>
-        {dataLst.map((item) => {
+        {list?.map((item: API.ActivityResourceVO) => {
           return (
-            <div className={styles.dataItem}>
-              {item.type === 'file' ? (
-                <FileWordFilled className={styles.icon} />
-              ) : (
-                <PlayCircleFilled className={styles.icon} />
-              )}
+            <div className={styles.dataItem} key={item?.id}>
+              {renderIcon(item?.type)}
               <div>
-                <div className={styles.dataTitle}>{item.title}</div>
-                <a className={styles.dataLink} href={item.url} target="">
-                  {item.type === 'file' ? (
-                    <DownloadOutlined />
-                  ) : (
-                    <FileSearchOutlined />
-                  )}
-                  {item.type === 'file' ? '下载文件' : '查看资料'}
-                </a>
+                <div className={styles.dataTitle}>{item?.name}</div>
+                {renderBtn(item?.type, item?.url)}
               </div>
             </div>
           );

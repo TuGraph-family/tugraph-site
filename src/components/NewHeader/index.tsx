@@ -201,15 +201,15 @@ export const NewHeader = ({
       {
         title: intl.formatMessage({ id: 'header.learning.title' }),
         subMenu: [
-          {
-            label: intl.formatMessage({ id: 'header.learning.cooperate' }),
-          },
+          // {
+          //   label: intl.formatMessage({ id: 'header.learning.cooperate' }),
+          // },
           {
             label: intl.formatMessage({ id: 'header.learning.course' }),
           },
-          {
-            label: intl.formatMessage({ id: 'header.learning.training' }),
-          },
+          // {
+          //   label: intl.formatMessage({ id: 'header.learning.training' }),
+          // },
         ],
       },
       {
@@ -247,9 +247,9 @@ export const NewHeader = ({
             label: intl.formatMessage({ id: 'header.assets.download' }),
             path: '/download',
           },
-          {
-            label: intl.formatMessage({ id: 'header.assets.report' }),
-          },
+          // {
+          //   label: intl.formatMessage({ id: 'header.assets.report' }),
+          // },
         ],
       },
     ];
