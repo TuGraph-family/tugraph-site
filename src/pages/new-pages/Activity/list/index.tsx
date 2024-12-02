@@ -4,28 +4,87 @@ import Banner from '@/pages/new-pages/Activity/list/components/Banner';
 import FilterCard from '@/pages/new-pages/Activity/list/components/FilterCard';
 import styles from './index.less';
 import { Pagination } from 'antd';
+import { useActivity } from '@/hooks/useActivity';
+import { useImmer } from 'use-immer';
+import { useEffect } from 'react';
 const ActivityList = () => {
-  const dataList = new Array(10).fill(1);
+  const [state, setState] = useImmer<any>({
+    activityWayEnum: 'all',
+    activityStateEnum: 'all',
+    activityResourceFlag: 'all',
+    current: 1,
+    pageSize: 12,
+  });
+
+  const {
+    activityWayEnum,
+    activityStateEnum,
+    activityResourceFlag,
+    current,
+    pageSize,
+  } = state;
+
+  const updateFilter = (key: string, val: string) => {
+    setState((draft) => {
+      draft[key] = val;
+    });
+  };
+
+  const { getList, list, total } = useActivity();
+
+  const onChangePage = (page: number, pageSize: number) => {
+    setState((draft) => {
+      draft.current = page;
+      draft.pageSize = pageSize;
+    });
+  };
+
+  useEffect(() => {
+    getList({
+      current,
+      size: pageSize,
+      activityStatusEnum: 'PUBLISHED',
+      activityStateEnum:
+        activityStateEnum === 'all' ? undefined : activityStateEnum,
+      activityResourceFlag:
+        activityResourceFlag === 'all' ? undefined : activityResourceFlag,
+      activityWayEnum: activityWayEnum === 'all' ? undefined : activityWayEnum,
+    });
+  }, [
+    current,
+    pageSize,
+    activityStateEnum,
+    activityWayEnum,
+    activityResourceFlag,
+  ]);
 
   return (
     <NewLayout
+      isFooter={false}
       content={
         <>
           <Banner />
-          <FilterCard />
+          <FilterCard
+            activityWayEnum={activityWayEnum}
+            activityStateEnum={activityStateEnum}
+            activityResourceFlag={activityResourceFlag}
+            updateFilter={updateFilter}
+          />
           <div className={styles.activityList}>
-            {dataList.map(() => (
-              <ActivityCard />
+            {list?.map((item) => (
+              <ActivityCard key={item?.id} detail={item} />
             ))}
           </div>
-          <div
-            style={{
-              display: 'flex',
-              justifyContent: 'flex-end',
-              marginBottom: 40,
-            }}
-          >
-            <Pagination defaultCurrent={1} total={50} />
+          <div className={styles.pagination}>
+            {total < 10 ? (
+              <Pagination
+                current={current}
+                pageSize={pageSize}
+                total={total}
+                showSizeChanger={false}
+                onChange={onChangePage}
+              />
+            ) : null}
           </div>
         </>
       }

@@ -1,6 +1,7 @@
 .lastSectionContainer {
-  padding: 56px 0 30px;
-  text-align: center;
+  background-color: #fff;
+  margin: 0 -120px;
+  overflow: hidden;
 
   .title {
     font-size: 32px;
@@ -10,22 +11,29 @@
   }
 
   .stepList {
-    width: 100%;
-    height: 247px;
+    background: url('https://mdn.alipayobjects.com/huamei_p63okt/afts/img/IY8QQ5B4zycAAAAAAAAAAAAADh8WAQFr/original');
+    background-size: cover;
+    width: 1202px;
+    height: 278px;
+    margin: auto;
     display: flex;
 
     .step {
-      border: 1px solid #00000014;
-      padding: 33px 0 0 30px;
+      padding: 65px 0 0 30px;
       width: 0;
       flex: 1;
       position: relative;
       text-align: left;
 
+      ul > li::marker {
+        color: #d8d8d8;
+      }
+
       .stepNumber {
+        font-family: AlibabaSans102-Bold;
         position: absolute;
         right: 29px;
-        top: 0;
+        top: 46px;
         width: 88px;
         height: 102px;
         font-size: 80px;
@@ -38,7 +46,7 @@
       .stepIcon {
         width: 40px;
         height: 40px;
-        margin-bottom: 19px;
+        margin-bottom: 15px;
       }
 
       .stepTitle {
@@ -62,33 +70,20 @@
 
 // footer btn
 .startGuideButton {
-  align-self: center;
-  min-width: 146px;
   width: 146px;
-  height: 46px;
-  margin-top: 58px;
-  margin-right: 2px;
-  border: none;
-  background-color: #2e5dfe;
-  color: #e6ebff;
+  height: 48px;
+  text-align: center;
+  line-height: 48px;
+  background: #f8fbff;
+  border: 1px solid #e0e1e2;
+  border-radius: 24px;
   font-size: 16px;
+  color: #293643d9;
+  opacity: 0.66;
   cursor: pointer;
-
-  .arrowRightIcon {
-    transition: all 0.3s;
-  }
+  margin: 32px auto 47px;
 
   &:hover {
-    .arrowRightIcon {
-      transform: translateX(5px);
-    }
+    opacity: 0.88;
   }
-}
-
-.buttonTextQuickStart {
-  align-self: center;
-  background-color: #2e5dfe;
-  white-space: nowrap;
-  color: #e6ebff;
-  font-size: 16px;
 }

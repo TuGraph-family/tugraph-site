@@ -9,27 +9,25 @@ export interface BannerInfoProps {
   onChangeType?: (type: string) => void;
   tag?: string;
   onChangeTag?: (tag: string) => void;
+  categorylist?: { value: string; label: string }[];
 }
 
-const Banner = ({ type, onChangeType, tag, onChangeTag }: BannerInfoProps) => {
-  const { pathname, search } = useLocation();
-
+const Banner = ({
+  type,
+  onChangeType,
+  tag,
+  onChangeTag,
+  categorylist = [],
+}: BannerInfoProps) => {
   let background =
     'url(https://mdn.alipayobjects.com/huamei_p63okt/afts/img/tW0oRbTxuhcAAAAAAAAAAAAADh8WAQFr/original)';
 
   const typeList = [
     {
-      value: 'all',
+      value: '全部',
       label: '全部',
     },
-    {
-      value: 'news',
-      label: '新闻资讯',
-    },
-    {
-      value: 'technology',
-      label: '前沿技术',
-    },
+    ...categorylist,
   ];
 
   const tagList = [

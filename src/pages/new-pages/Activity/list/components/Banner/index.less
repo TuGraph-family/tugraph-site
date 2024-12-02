@@ -1,26 +1,23 @@
 .bannerBox {
   height: fit-content;
-  background-image: linear-gradient(
-    180deg,
-    #d4dfea 0%,
-    #d4dfea 65%,
-    #e8e9ee00 100%
-  );
   margin: 0 -120px;
 }
 
 .banner {
-  background-repeat: no-repeat;
   width: 100vw;
-  background-size: 771px 354px;
-  background-position: 75%;
+
   position: relative;
 
   .bannerContent {
-    padding: 0 120px;
+    height: 340px;
+    background-repeat: no-repeat;
+    background-size: 771px 354px;
+    background-position: 75%;
+    width: 1200px;
+    margin: auto;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
 
     .bannerLeft {
       padding-top: 47px;
@@ -150,6 +147,7 @@
   overflow: hidden;
   padding: 16px;
   cursor: pointer;
+  margin-top: 24px;
 
   .calendarHeader {
     display: flex;
@@ -220,7 +218,7 @@
   }
 
   .startandend {
-    background: #2e5dfe;
+    background-color: #2e5dfe !important;
     color: #fff;
     border-radius: 4px;
   }

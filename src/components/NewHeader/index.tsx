@@ -66,8 +66,7 @@ export const NewHeader = ({
     : `${window.location.origin}${history?.location?.pathname}?lang=en-US`;
 
   const getCurrentLanguage = () => {
-    const segments = pathname.split('/');
-    return ['zh', 'en'].find((lang) => segments.includes(lang)) || 'en';
+    return lang === 'en-US' ? 'en' : 'zh';
   };
 
   const getVersionFromUrl = () => {
@@ -121,19 +120,19 @@ export const NewHeader = ({
             label: intl.formatMessage({ id: 'header.product.desc1' }),
             desc: intl.formatMessage({ id: 'home.version0.desc' }),
             productPath: '/product/db',
-            docPath: '/docs/tugraph-db',
+            docPath: `/docs/tugraph-db/${getCurrentLanguage()}/4.5.0/guide`,
           },
           {
             label: intl.formatMessage({ id: 'header.product.desc2' }),
             desc: intl.formatMessage({ id: 'product_analytics.description' }),
             productPath: '/product/analytics',
-            docPath: '/docs/tugraph-analytics',
+            docPath: `/docs/tugraph-analytics/${getCurrentLanguage()}/introduction/`,
           },
           {
             label: intl.formatMessage({ id: 'header.product.desc3' }),
             desc: intl.formatMessage({ id: 'product_learn.description' }),
             productPath: '/product/learn',
-            docPath: '/docs/learn',
+            docPath: `/docs/tugraph-db/${getCurrentLanguage()}/4.5.0/olap&procedure/learn/tutorial`,
           },
         ],
       },
@@ -201,15 +200,15 @@ export const NewHeader = ({
       {
         title: intl.formatMessage({ id: 'header.learning.title' }),
         subMenu: [
-          {
-            label: intl.formatMessage({ id: 'header.learning.cooperate' }),
-          },
+          // {
+          //   label: intl.formatMessage({ id: 'header.learning.cooperate' }),
+          // },
           {
             label: intl.formatMessage({ id: 'header.learning.course' }),
           },
-          {
-            label: intl.formatMessage({ id: 'header.learning.training' }),
-          },
+          // {
+          //   label: intl.formatMessage({ id: 'header.learning.training' }),
+          // },
         ],
       },
       {
@@ -247,9 +246,9 @@ export const NewHeader = ({
             label: intl.formatMessage({ id: 'header.assets.download' }),
             path: '/download',
           },
-          {
-            label: intl.formatMessage({ id: 'header.assets.report' }),
-          },
+          // {
+          //   label: intl.formatMessage({ id: 'header.assets.report' }),
+          // },
         ],
       },
     ];
@@ -327,7 +326,7 @@ export const NewHeader = ({
         label: intl.formatMessage({ id: 'header.doc' }),
         onMouseMove: () => onHover('subMenuDocs', 'move'),
         onMouseLeave: () => onHover('subMenuDocs', 'leave'),
-        path: '/docs/tugraph-db/zh/4.5.0/guide',
+        path: `/docs/tugraph-db/${getCurrentLanguage()}/4.5.0/guide`,
       },
 
       {

@@ -1,43 +1,31 @@
 import { SubTitle } from '@/components/SubTitle';
 import styles from './index.less';
-const Host = () => {
-  const hostList = [
-    {
-      avatar:
-        'https://mdn.alipayobjects.com/huamei_p63okt/afts/img/dR8USJrp5vMAAAAAAAAAAAAADh8WAQFr/original',
-      name: '李四',
-      position: '蚂蚁金服 高级工程师',
-    },
-    {
-      avatar:
-        'https://mdn.alipayobjects.com/huamei_p63okt/afts/img/dR8USJrp5vMAAAAAAAAAAAAADh8WAQFr/original',
-      name: '李四',
-      position: '蚂蚁金服 高级工程师',
-    },
-    {
-      avatar:
-        'https://mdn.alipayobjects.com/huamei_p63okt/afts/img/dR8USJrp5vMAAAAAAAAAAAAADh8WAQFr/original',
-      name: '李四',
-      position: '蚂蚁金服 高级工程师',
-    },
-    {
-      avatar:
-        'https://mdn.alipayobjects.com/huamei_p63okt/afts/img/dR8USJrp5vMAAAAAAAAAAAAADh8WAQFr/original',
-      name: '李四',
-      position: '蚂蚁金服 高级工程师',
-    },
-  ];
+import { Typography } from 'antd';
 
+const { Text } = Typography;
+const Host = ({ list }: { list?: API.ActivityGuestVO[] }) => {
   const renderHost = () => {
     return (
       <div className={styles.hostList}>
-        {hostList.map((item) => {
+        {list?.map((item) => {
           return (
-            <div className={styles.hostCard}>
-              <img src={item.avatar} alt="" className={styles.avatar} />
+            <div key={item?.id} className={styles.hostCard}>
+              <img src={item?.photo} alt="" className={styles.avatar} />
               <div className={styles.info}>
-                <div className={styles.name}>{item.name}</div>
-                <div className={styles.position}>{item.position}</div>
+                <div className={styles.name}>{item?.name}</div>
+                <Text
+                  style={
+                    item?.introduction?.length > 14 ? { width: 192 } : undefined
+                  }
+                  ellipsis={
+                    item?.introduction?.length > 14
+                      ? { tooltip: item?.introduction }
+                      : false
+                  }
+                >
+                  {item?.introduction}
+                </Text>
+                <div className={styles.position}>{}</div>
               </div>
             </div>
           );
@@ -46,7 +34,7 @@ const Host = () => {
     );
   };
   return (
-    <div>
+    <div style={{ marginBottom: 72 }}>
       <SubTitle title="主持人" />
       {renderHost()}
     </div>

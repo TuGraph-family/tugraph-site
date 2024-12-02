@@ -34,9 +34,15 @@ export const goLinkAt = (path: string) => {
 };
 
 export const historyPushLinkAt = (path: string) => {
-  const { search } = window.location;
-  const curSearch = getSearch(search);
-  return `${path}?lang=${curSearch?.lang || DEFAULT_LOCAL}`;
+  const { search, pathname } = window.location;
+  let curSearch = getSearch(search);
+  if (/^\/docs\//.test(pathname)) {
+    return `${path}?lang=${
+      pathname.split('/')[3] === 'en' ? 'en-US' : 'zh-CN'
+    }`;
+  } else {
+    return `${path}?lang=${curSearch?.lang || DEFAULT_LOCAL}`;
+  }
 };
 
 /** 蚂蚁埋点 - 手动 */

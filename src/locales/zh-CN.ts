@@ -187,6 +187,18 @@ export default {
   'footer.extraInfo': '© 2022 蚂蚁集团',
   'footer.address': '地址：中国北京朝阳区东三环中路1号环球金融中心东塔9层',
   'footer.addressMobile': '中国北京朝阳区东三环中路1号环球金融中心东塔9层',
+  'product.btn.desc': '开始体验',
+  'product.btn.desc1': '查看文档',
+  'product.btn.desc3': '更多用户实践',
+  'product.case.title': '用户案例',
+  'product.case.desc1':
+    '全图风控技术应对复杂多变，不断升级的金融风险全图风控技术应对复杂多变，不断升级的金融风险全图风控技术应对复杂多变，不断升级的金融风险全图风控技术',
+  'product.case.desc2':
+    '全图风控技术应对复杂多变，不断升级的金融风险全图风控技术应对复杂多变，不断升级的金融风险',
+  'product.case.desc3':
+    '全图风控技术应对复杂多变，不断升级的金融风险全图风控技术应对复杂多变，不断升级的金融风险全图风控技术应对复杂多变',
+  'product.case.desc4':
+    '全图风控技术应对复杂多变，不断升级的金融风险全图风控技术应对复杂多变，不断升级的金融风险全图风控技术应对复杂多变不断升级',
   'product.description':
     '为用户管理和分析复杂关联数据提供了高效、易用、可靠的一站式平台',
   'product_learn.description':

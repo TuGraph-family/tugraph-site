@@ -1,15 +1,31 @@
 import { Button } from 'antd';
 import cx from 'classnames';
-import { ReactNode } from 'react';
-import { useLocation } from 'umi';
 import styles from './index.less';
-import { ArrowRightOutlined } from '@ant-design/icons';
+import { ActivityWayOptionsEnum } from '@/constant';
+import moment from 'moment';
+import ActivityTag from '@/pages/new-pages/Activity/components/ActivityTag';
+import { useMemo } from 'react';
 
-const Banner = () => {
-  const { pathname, search } = useLocation();
-
+const Banner = ({ detail }: { detail: API.ActivityDetailVO }) => {
   let background =
     'url(https://mdn.alipayobjects.com/huamei_p63okt/afts/img/DxbPRKoOmCcAAAAAAAAAAAAADh8WAQFr/fmt.avif)';
+
+  const isDisable = useMemo(() => {
+    return ['PROGRESS', 'OVER'].includes(detail?.activityState);
+  }, [detail]);
+
+  const getBtnText = (status?: string) => {
+    switch (status) {
+      case 'PROGRESS':
+        return '活动进行中';
+      case 'OVER':
+        return '活动已结束';
+      case 'REGISTRATION_DURING':
+        return '立即报名';
+      default:
+        return '';
+    }
+  };
 
   return (
     <div className={styles.bannerBox}>
@@ -24,39 +40,60 @@ const Banner = () => {
           <div
             className={styles.bannerLeft}
             style={{
-              backgroundImage: background,
+              backgroundImage: `url(${detail?.frontCoverImage?.url})`,
             }}
           >
-            <div className={styles.activityTag}>报名中</div>
+            <ActivityTag status={detail?.activityState} />
           </div>
           <div className={styles.bannerRight}>
             <div>
-              <div className={styles.avtivityTitle}>
-                新一代数据底座，来外滩大会解锁图智能前沿技术
-              </div>
+              <div className={styles.avtivityTitle}>{detail?.title}</div>
               <div className={styles.avtivityInfo}>
                 <div className={styles.InfoItem}>
                   <div className={styles.InfoItemLabel}>活动类型：</div>
-                  <div className={styles.InfoItemVal}>线下活动</div>
+                  <div className={styles.InfoItemVal}>
+                    {ActivityWayOptionsEnum[detail?.activityWay]}
+                  </div>
                 </div>
                 <div className={styles.InfoItem}>
                   <div className={styles.InfoItemLabel}>活动时间：</div>
                   <div className={styles.InfoItemVal}>
-                    2024-09-07～2024-09-09
+                    {detail?.startTime
+                      ? moment(detail.startTime).format('YYYY-MM-DD HH:mm:ss')
+                      : ''}
+                    ～
+                    {detail?.endTime
+                      ? moment(detail.endTime).format('YYYY-MM-DD HH:mm:ss')
+                      : ''}
                   </div>
                 </div>
                 <div className={styles.InfoItem}>
-                  <div className={styles.InfoItemLabel}>活动地点：</div>
+                  <div className={styles.InfoItemLabel}>
+                    {detail?.activityWay === 'ONLINE'
+                      ? '活动渠道：'
+                      : '活动地点：'}
+                  </div>
                   <div className={styles.InfoItemVal}>
-                    上海·黄浦区世博园区(黄浦区龙华东路68号) C7 场馆
+                    {detail?.activityWay === 'ONLINE'
+                      ? detail?.activityChannel
+                      : detail?.address}
                   </div>
                 </div>
               </div>
             </div>
             <div className={styles.footer}>
-              <Button className={cx(styles.mainBtn, true ? styles.ending : '')}>
-                立即报名
-              </Button>
+              {(detail?.registrationUrl &&
+                detail?.activityState === 'REGISTRATION_DURING') ||
+              isDisable ? (
+                <Button
+                  className={cx(styles.mainBtn, isDisable ? styles.ending : '')}
+                  onClick={() => window.open(detail?.registrationUrl)}
+                  disabled={isDisable}
+                >
+                  {getBtnText(detail?.activityState)}
+                </Button>
+              ) : null}
+
               <Button className={styles.shareBtn}>分享</Button>
               <div className={styles.shareCard}>
                 <div className={styles.shareCardTitle}>分享活动</div>

@@ -61,3 +61,59 @@ export const logoList = [
 ];
 export const DEFAULT_LOCAL = 'zh-CN';
 export const MATCH_LOCAL_SEARCH_REG = /[\\?]?([a-zA-Z0-9]+)=([0-9A-Z\-a-z]+)/g;
+
+export const HOST = 'http://47.108.139.230:6688';
+
+export const activityWayEnumOptions = [
+  {
+    label: '不限',
+    value: 'all',
+  },
+  {
+    label: '线上活动',
+    value: 'ONLINE',
+  },
+  {
+    label: '线下活动',
+    value: 'OFFLINE',
+  },
+];
+
+export const ActivityWayOptionsEnum = {
+  ONLINE: '线上活动',
+  OFFLINE: '线下活动',
+};
+
+export const activityStateEnumOptions = [
+  {
+    label: '不限',
+    value: 'all',
+  },
+  {
+    label: '报名中',
+    value: 'REGISTRATION_DURING',
+  },
+  {
+    label: '进行中',
+    value: 'PROGRESS',
+  },
+  {
+    label: '已结束',
+    value: 'OVER',
+  },
+];
+
+export const resourceOPtions = [
+  {
+    label: '不限',
+    value: 'all',
+  },
+  {
+    label: '有',
+    value: true,
+  },
+  {
+    label: '无',
+    value: false,
+  },
+];

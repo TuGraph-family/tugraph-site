@@ -25,6 +25,7 @@
     "antd": "^4.24.3",
     "classnames": "^2.3.2",
     "framer-motion": "^11.11.17",
+    "immer": "^10.1.1",
     "jol-player": "^3.2.0",
     "lodash": "^4.17.21",
     "moment": "^2.29.4",
@@ -40,7 +41,8 @@
     "rehype-slug": "^5.1.0",
     "remark": "^14.0.3",
     "remark-parse": "^10.0.2",
-    "umi": "^3.5.28"
+    "umi": "^3.5.28",
+    "use-immer": "^0.9.0"
   },
   "devDependencies": {
     "@types/react": "^17.0.0",

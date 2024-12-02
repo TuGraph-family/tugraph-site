@@ -99,7 +99,7 @@ export default defineConfig({
       title: 'blog.title',
     },
     {
-      path: '/blog/info',
+      path: '/blog/info/*',
       component: '@/pages/new-pages/Blog/info',
     },
     {
@@ -107,7 +107,7 @@ export default defineConfig({
       component: '@/pages/new-pages/Activity/list',
     },
     {
-      path: '/activity/info',
+      path: '/activity/info/*',
       component: '@/pages/new-pages/Activity/info',
     },
   ],
