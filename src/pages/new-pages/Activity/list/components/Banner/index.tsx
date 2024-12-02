@@ -16,7 +16,7 @@ const Banner = () => {
     'url(https://mdn.alipayobjects.com/huamei_p63okt/afts/img/mWlxRYlT07oAAAAAAAAAAAAADh8WAQFr/fmt.avif)';
 
   useEffect(() => {
-    getLastActicity();
+    getLastActicity('REGISTRATION_DURING');
   }, []);
   const cellRender: any = (current) => {
     const startOfDayStartDate = moment(lastDetial?.startTime).endOf('day');
@@ -30,12 +30,6 @@ const Banner = () => {
       moment(lastDetial?.startTime).format('YYYY-MM-DD'),
       moment(lastDetial?.endTime).format('YYYY-MM-DD'),
     ].includes(moment(current._d).format('YYYY-MM-DD'));
-
-    console.log(
-      'isBetween',
-      moment(current._d).format('YYYY-MM-DD'),
-      isStartandEnd,
-    );
 
     return !(isBetween || isStartandEnd) ? (
       <div className={cx(styles.fullCell, isToDay ? styles.today : '')}>
@@ -100,11 +94,13 @@ const Banner = () => {
       <div
         className={styles.banner}
         style={{
-          backgroundImage: background,
           height: '340px',
         }}
       >
-        <div className={styles.bannerContent}>
+        <div
+          className={styles.bannerContent}
+          style={{ backgroundImage: background }}
+        >
           <div className={styles.bannerLeft}>
             <div>
               <div className={styles.avtivityTitle}>{lastDetial?.title}</div>

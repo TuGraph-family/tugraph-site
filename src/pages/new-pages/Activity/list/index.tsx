@@ -60,6 +60,7 @@ const ActivityList = () => {
 
   return (
     <NewLayout
+      isFooter={false}
       content={
         <>
           <Banner />
@@ -74,14 +75,8 @@ const ActivityList = () => {
               <ActivityCard key={item?.id} detail={item} />
             ))}
           </div>
-          <div
-            style={{
-              display: 'flex',
-              justifyContent: 'flex-end',
-              marginBottom: 40,
-            }}
-          >
-            {total > 10 ? (
+          <div className={styles.pagination}>
+            {total < 10 ? (
               <Pagination
                 current={current}
                 pageSize={pageSize}

@@ -63,18 +63,24 @@ export const useActivity = () => {
     }
   };
 
-  const getLastActicity = async () => {
+  const getLastActicity = async (state: string) => {
     try {
       const res = await getBlogList({
         current: 1,
         size: 1,
         activityStatusEnum: 'PUBLISHED',
-        activityStateEnum: 'REGISTRATION_DURING',
+        activityStateEnum: state,
       });
       if (res?.success) {
-        setState((draft) => {
-          draft.lastDetial = res?.data?.records?.[0] || {};
-        });
+        if (res?.data?.total) {
+          setState((draft) => {
+            draft.lastDetial = res?.data?.records?.[0] || {};
+          });
+        } else {
+          if (state === 'REGISTRATION_DURING') {
+            getLastActicity('PROGRESS');
+          }
+        }
       }
     } catch (error) {
       console.log('getLastActicity' + error);

@@ -11,7 +11,7 @@ const Banner = ({ detail }: { detail: API.ActivityDetailVO }) => {
     'url(https://mdn.alipayobjects.com/huamei_p63okt/afts/img/DxbPRKoOmCcAAAAAAAAAAAAADh8WAQFr/fmt.avif)';
 
   const isDisable = useMemo(() => {
-    return ['PROGRESS', 'OVER'].includes(detail?.activityStatus);
+    return ['PROGRESS', 'OVER'].includes(detail?.activityState);
   }, [detail]);
 
   const getBtnText = (status?: string) => {
@@ -43,7 +43,7 @@ const Banner = ({ detail }: { detail: API.ActivityDetailVO }) => {
               backgroundImage: `url(${detail?.frontCoverImage?.url})`,
             }}
           >
-            <ActivityTag status={detail?.activityStatus} />
+            <ActivityTag status={detail?.activityState} />
           </div>
           <div className={styles.bannerRight}>
             <div>
@@ -83,14 +83,14 @@ const Banner = ({ detail }: { detail: API.ActivityDetailVO }) => {
             </div>
             <div className={styles.footer}>
               {(detail?.registrationUrl &&
-                detail?.activityStatus === 'REGISTRATION_DURING') ||
+                detail?.activityState === 'REGISTRATION_DURING') ||
               isDisable ? (
                 <Button
                   className={cx(styles.mainBtn, isDisable ? styles.ending : '')}
                   onClick={() => window.open(detail?.registrationUrl)}
                   disabled={isDisable}
                 >
-                  {getBtnText(detail?.activityStatus)}
+                  {getBtnText(detail?.activityState)}
                 </Button>
               ) : null}
 

@@ -3,7 +3,7 @@
  * author: Allen
  */
 
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect, useState, useMemo } from 'react';
 import { setLocale, useLocation } from 'umi';
 import { getSearch } from '@/util';
 import { DEFAULT_LOCAL } from '@/constant';
@@ -15,6 +15,12 @@ const Docs: React.FC = () => {
   const location = useLocation();
   const { search } = location;
 
+  useEffect(() => {
+    if (location.pathname.split('/')[2] !== iframeUrl?.split('/')[1]) {
+      setIframeUrl(location.pathname.split('/docs')[1]);
+    }
+  }, [location]);
+
   const removePrefixFromPath = (path: string, prefix?: string) => {
     if (prefix && path.startsWith(prefix)) {
       return path.slice(prefix.length);
@@ -22,29 +28,15 @@ const Docs: React.FC = () => {
     return path;
   };
 
-  const [iframeUrl] = useState<string>(() => {
-    if (
-      ['/docs/tugraph-db', '/docs/tugraph-analytics'].includes(
-        location.pathname,
-      )
-    ) {
-      const docType = location.pathname.split('/')[2];
-      const docPath =
-        docType === 'tugraph-db' ? '/zh/4.5.0/guide' : '/zh/introduction/';
-      window.history.pushState({}, '', `${location.pathname + docPath}`);
-      return `/${docType + docPath}`;
-    }
-
+  const [iframeUrl, setIframeUrl] = useState<string>(() => {
     return removePrefixFromPath(location.pathname + location.hash, '/docs');
   });
 
-  console.log('iframeUrl:', iframeUrl);
-
-  const [solidIframeUrl] = useState<string>(() => {
+  const solidIframeUrl = useMemo(() => {
     return iframeUrl.includes('/tugraph-analytics')
       ? `https://liukaiming-alipay.github.io${iframeUrl}`
       : `https://zhongyunwan.github.io${iframeUrl}`;
-  });
+  }, [iframeUrl]);
 
   const iframeRef = useRef<HTMLIFrameElement>(null);
 
