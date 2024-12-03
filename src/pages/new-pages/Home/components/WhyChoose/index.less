@@ -10,7 +10,6 @@
   display: flex;
   flex-direction: column;
   width: 1440px;
-  // height: ;
   padding: 49px 250px 140px 242px;
   margin: auto;
 }
@@ -147,7 +146,7 @@
 
       .lineContetImg {
         position: absolute;
-        top: -188px;
+        top: -162px;
         left: 123px;
         width: 312px;
         height: 172px;
@@ -205,8 +204,17 @@
 
     .progress {
       width: 100%;
-      height: 100%;
-      background-color: red;
+      min-height: 100px;
+      position: relative;
+
+      .progress-header {
+        height: 100px;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        background-image: linear-gradient(180deg, #ecedf0 0%, #131415 100%);
+        opacity: 0.29;
+      }
     }
   }
 }

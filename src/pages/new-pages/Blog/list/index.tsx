@@ -1,8 +1,9 @@
 import { NewLayout } from '@/components/NewLayout';
+import SiteEmpty from '@/components/SiteEmpty';
 import { useBlog } from '@/hooks/useBlog';
 import Banner from '@/pages/new-pages/Blog/list/components/Banner';
 import BlogItem from '@/pages/new-pages/Blog/list/components/BlogItem';
-import { Pagination } from 'antd';
+import { Empty, Pagination } from 'antd';
 import { useEffect } from 'react';
 import { useImmer } from 'use-immer';
 
@@ -44,8 +45,14 @@ const BlogList = () => {
       size: pageSize,
       state: 'PUBLISHED',
       category: type === '全部' ? undefined : type,
+      sortMap:
+        tag === 'new'
+          ? {
+              publish_time: false,
+            }
+          : undefined,
     });
-  }, [current, pageSize, type]);
+  }, [current, pageSize, type, tag]);
 
   return (
     <NewLayout
@@ -58,9 +65,15 @@ const BlogList = () => {
             onChangeTag={onChangeTag}
             categorylist={categorylist}
           />
-          {list?.map((item) => (
-            <BlogItem detail={item} key={item?.id} />
-          ))}
+          {list?.length ? (
+            <>
+              {list?.map((item) => (
+                <BlogItem detail={item} key={item?.id} />
+              ))}
+            </>
+          ) : (
+            <SiteEmpty text="暂无博客" />
+          )}
 
           <div
             style={{

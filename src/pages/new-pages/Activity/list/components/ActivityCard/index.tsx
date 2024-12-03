@@ -40,7 +40,7 @@ const ActivityCard = ({ detail }: { detail: API.ActivityListVO }) => {
             : ''}
         </div>
         <div className={styles.activityLocation}>
-          {ActivityWayOptionsEnum[detail?.activityWay]}｜{' '}
+          {ActivityWayOptionsEnum[detail?.activityWay || 'ONLINE']}｜{' '}
           {isOnline ? <PlaySquareOutlined /> : <EnvironmentOutlined />}{' '}
           {isOnline
             ? detail?.activityChannel

@@ -4,9 +4,10 @@ import JoLPlayer from '@/components/Player';
 import FadeInSection from '@/components/FadeInSection';
 import { IntlShape } from 'react-intl';
 import MainButton from '@/components/MainButton';
-import { historyPushLinkAt } from '@/util';
-import { history } from 'umi';
+import { getSearch, historyPushLinkAt } from '@/util';
+import { history, useLocation } from 'umi';
 import Title from 'antd/lib/skeleton/Title';
+import { DEFAULT_LOCAL } from '@/constant';
 
 export interface IBannerProps {
   type: string;
@@ -14,9 +15,14 @@ export interface IBannerProps {
 }
 
 const Banner = ({ type, intl }: IBannerProps) => {
+  const { search } = useLocation();
+  const lang = getSearch(search)?.lang || DEFAULT_LOCAL;
   let background =
     'url(https://mdn.alipayobjects.com/huamei_p63okt/afts/img/G9ZrRYyDzWIAAAAAAAAAAAAADh8WAQFr/original)';
 
+  const getCurrentLanguage = () => {
+    return lang === 'en-US' ? 'en' : 'zh';
+  };
   const banners = {
     db: {
       title: intl.formatMessage({ id: 'header.product.desc1' }),
@@ -35,7 +41,11 @@ const Banner = ({ type, intl }: IBannerProps) => {
               shape="round"
               className={styles.enterpriseConsultationButton}
               onClick={() => {
-                history.push(historyPushLinkAt('/docs/tugraph-db'));
+                history.push(
+                  historyPushLinkAt(
+                    `/docs/tugraph-db/${getCurrentLanguage()}/4.5.0/guide`,
+                  ),
+                );
               }}
             >
               {intl.formatMessage({ id: 'product.btn.desc1' })}
@@ -62,7 +72,11 @@ const Banner = ({ type, intl }: IBannerProps) => {
               shape="round"
               className={styles.enterpriseConsultationButton}
               onClick={() => {
-                history.push(historyPushLinkAt('/docs/tugraph-analytics'));
+                history.push(
+                  historyPushLinkAt(
+                    `/docs/tugraph-analytics/${getCurrentLanguage()}/introduction/`,
+                  ),
+                );
               }}
             >
               {intl.formatMessage({ id: 'product.btn.desc1' })}
@@ -89,7 +103,11 @@ const Banner = ({ type, intl }: IBannerProps) => {
               shape="round"
               className={styles.enterpriseConsultationButton}
               onClick={() => {
-                history.push(historyPushLinkAt('/docs/tugraph-db'));
+                history.push(
+                  historyPushLinkAt(
+                    `/docs/tugraph-db/${getCurrentLanguage()}/4.5.0/olap&procedure/learn/tutorial`,
+                  ),
+                );
               }}
             >
               {intl.formatMessage({ id: 'product.btn.desc1' })}
@@ -126,6 +144,18 @@ const Banner = ({ type, intl }: IBannerProps) => {
               type="connect"
               btnText={intl.formatMessage({ id: 'footer.contact' })}
             />
+            <Button
+              size="large"
+              shape="round"
+              className={styles.enterpriseConsultationButton}
+              onClick={() => {
+                window.open(
+                  'https://market.aliyun.com/products/56024006/cmgj00065940.html?spm=5176.21213303.result.4.76342f3dUpiTZe&innerSource=search_TuGraph#sku=yuncode5994000001',
+                );
+              }}
+            >
+              {intl.formatMessage({ id: 'product.btn.desc2' })}
+            </Button>
           </div>
         </FadeInSection>
       ),
@@ -155,20 +185,24 @@ const Banner = ({ type, intl }: IBannerProps) => {
   const renderVideo = () => {
     return type === 'db' ? (
       <div className={styles.featureSection}>
-        {videoList.map((item) => (
-          <div className={styles.featureSectionItem}>
-            <JoLPlayer
-              option={{
-                videoSrc: item.url,
-                height: 191,
-                width: 345,
-              }}
-            />
-            <div className={styles.videoDesc}>
-              <div className={styles.videoName}>{item.title}</div>
-              <div className={styles.videoLength}>{item.length}</div>
+        {videoList.map((item, key) => (
+          <FadeInSection key={key}>
+            <div className={styles.featureSectionItem}>
+              <JoLPlayer
+                option={{
+                  videoSrc: item.url,
+                  height: 191,
+                  width: 345,
+                  isShowPicture: false,
+                  isShowWebFullScreen: false,
+                }}
+              />
+              <div className={styles.videoDesc}>
+                <div className={styles.videoName}>{item.title}</div>
+                <div className={styles.videoLength}>{item.length}</div>
+              </div>
             </div>
-          </div>
+          </FadeInSection>
         ))}
       </div>
     ) : null;
@@ -193,6 +227,7 @@ const Banner = ({ type, intl }: IBannerProps) => {
           {bannerDetail?.btn}
         </div>
         <img src={bannerDetail.icon} alt="" className={styles.icon} />
+
         {renderVideo()}
       </div>
     </div>

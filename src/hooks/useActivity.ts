@@ -63,7 +63,7 @@ export const useActivity = () => {
     }
   };
 
-  const getLastActicity = async (state: string) => {
+  const getLastActicity = async (state?: API.ActivityStateEnum) => {
     try {
       const res = await getBlogList({
         current: 1,
@@ -79,6 +79,9 @@ export const useActivity = () => {
         } else {
           if (state === 'REGISTRATION_DURING') {
             getLastActicity('PROGRESS');
+          }
+          if (state === 'PROGRESS') {
+            getLastActicity('NOT_STARTED');
           }
         }
       }

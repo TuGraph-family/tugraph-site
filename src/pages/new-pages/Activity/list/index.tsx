@@ -7,6 +7,7 @@ import { Pagination } from 'antd';
 import { useActivity } from '@/hooks/useActivity';
 import { useImmer } from 'use-immer';
 import { useEffect } from 'react';
+import SiteEmpty from '@/components/SiteEmpty';
 const ActivityList = () => {
   const [state, setState] = useImmer<any>({
     activityWayEnum: 'all',
@@ -60,7 +61,6 @@ const ActivityList = () => {
 
   return (
     <NewLayout
-      isFooter={false}
       content={
         <>
           <Banner />
@@ -70,13 +70,18 @@ const ActivityList = () => {
             activityResourceFlag={activityResourceFlag}
             updateFilter={updateFilter}
           />
-          <div className={styles.activityList}>
-            {list?.map((item) => (
-              <ActivityCard key={item?.id} detail={item} />
-            ))}
-          </div>
+          {list?.length ? (
+            <div className={styles.activityList}>
+              {list?.map((item) => (
+                <ActivityCard key={item?.id} detail={item} />
+              ))}
+            </div>
+          ) : (
+            <SiteEmpty text={'暂无活动'} />
+          )}
+
           <div className={styles.pagination}>
-            {total < 10 ? (
+            {total > 10 ? (
               <Pagination
                 current={current}
                 pageSize={pageSize}

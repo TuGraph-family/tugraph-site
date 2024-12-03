@@ -47,18 +47,22 @@ const Banner = ({ intl }: { intl: IntlShape }) => {
           className={styles.icon}
         />
       </div>
-      <FadeInSection>
-        <div className={styles.bannerFooter}>
-          {getPartner(intl).map((item, key) => {
-            return (
-              <div className={styles.typeItem} key={key}>
+
+      <div className={styles.bannerFooter}>
+        {getPartner(intl).map((item, key) => {
+          return (
+            <FadeInSection key={key}>
+              <div
+                className={styles.typeItem}
+                style={{ backgroundImage: `url(${item.icon})` }}
+              >
                 <div className={styles.title}>{item.title}</div>
                 <div className={styles.description}>{item.desc}</div>
               </div>
-            );
-          })}
-        </div>
-      </FadeInSection>
+            </FadeInSection>
+          );
+        })}
+      </div>
     </div>
   );
 };

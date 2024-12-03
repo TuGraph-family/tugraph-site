@@ -39,11 +39,7 @@ const Banner = ({ intl }: { intl: IntlShape }) => {
             <FadeInSection key={key}>
               <motion.div whileHover={{ y: -12 }}>
                 <div className={styles.featureSectionItem}>
-                  <img
-                    src="https://lark-app.oss-cn-beijing.aliyuncs.com/fecodex/fallback-images/04.jpeg"
-                    alt=""
-                    className={styles.fieldImg}
-                  />
+                  <img src={item.bgUrl} alt="" className={styles.fieldImg} />
                   <div className={styles.fieldName}>{item.type}</div>
                 </div>
               </motion.div>

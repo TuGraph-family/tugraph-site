@@ -155,7 +155,8 @@ declare namespace API {
     | 'PUBLISHED'
     | 'REGISTRATION_DURING'
     | 'PROGRESS'
-    | 'OVER';
+    | 'OVER'
+    | 'NOT_STARTED';
 
   type ActivityWayEnum = 'ONLINE' | 'OFFLINE';
 
@@ -169,7 +170,14 @@ declare namespace API {
     /** 搜索关键字 */
     keywords?: string;
     /** 活动状态 */
+    activityStateEnum?: ActivityStateEnum;
     activityStatusEnum?: ActivityStateEnum;
+    /** 活动形式 */
+    activityWayEnum?: ActivityWayEnum;
+    /** 活动资料 */
+    activityResourceFlag?: boolean;
+    /** 活动ids */
+    activityIds?: Array<number>;
   }
 
   interface Result_PageVO_ActivityListVO__ {
@@ -222,6 +230,25 @@ declare namespace API {
     activityState?: ActivityStateEnum;
     /** 活动状态(草稿/发布) */
     activityStatus?: ActivityStateEnum;
+    /** 活动结束时间 */
+    endTime?: string;
+    /** 报名开始时间 */
+    registrationStartTime?: string;
+    /** 报名结束时间 */
+    registrationEndTime?: string;
+    /** 报名链接 */
+    registrationUrl?: string;
+    /** 活动简介 */
+    introduction?: string;
+    /** 背景图 */
+    backgroundImage?: ImageVO;
+    /** 封面图 */
+    frontCoverImage?: ImageVO;
+    province?: string;
+    city?: string;
+    district?: string;
+    address?: string;
+    activityResourceFlag?: boolean;
   }
 
   interface Result_ActivityDetailVO_ {
@@ -290,7 +317,9 @@ declare namespace API {
     /** 封面图 */
     frontCoverImage?: ImageVO;
     /** 活动状态 */
-    activityStatus?: string;
+    activityStatus?: ActivityStateEnum;
+    /** 活动状态 */
+    activityState?: ActivityStateEnum;
   }
 
   interface ActivityProcessVO {

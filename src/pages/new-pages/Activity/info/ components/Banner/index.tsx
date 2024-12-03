@@ -11,7 +11,7 @@ const Banner = ({ detail }: { detail: API.ActivityDetailVO }) => {
     'url(https://mdn.alipayobjects.com/huamei_p63okt/afts/img/DxbPRKoOmCcAAAAAAAAAAAAADh8WAQFr/fmt.avif)';
 
   const isDisable = useMemo(() => {
-    return ['PROGRESS', 'OVER'].includes(detail?.activityState);
+    return ['PROGRESS', 'OVER'].includes(detail?.activityState || '');
   }, [detail]);
 
   const getBtnText = (status?: string) => {
@@ -52,7 +52,7 @@ const Banner = ({ detail }: { detail: API.ActivityDetailVO }) => {
                 <div className={styles.InfoItem}>
                   <div className={styles.InfoItemLabel}>活动类型：</div>
                   <div className={styles.InfoItemVal}>
-                    {ActivityWayOptionsEnum[detail?.activityWay]}
+                    {ActivityWayOptionsEnum[detail?.activityWay || 'ONLINE']}
                   </div>
                 </div>
                 <div className={styles.InfoItem}>

@@ -67,7 +67,11 @@ const QuickStart = ({ intl }: { intl: IntlShape }) => {
           <div
             className={styles.startGuideButton}
             onClick={() => {
-              history.push(historyPushLinkAt('/docs/tugraph-db'));
+              history.push(
+                historyPushLinkAt(
+                  '/docs/tugraph-db/en/4.5.0/quick-start/preparation',
+                ),
+              );
             }}
           >
             {intl.formatMessage({ id: 'product.btn.desc1' })}

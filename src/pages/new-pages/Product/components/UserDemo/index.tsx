@@ -15,19 +15,19 @@ const UserDemo = ({ intl }: { intl: IntlShape }) => {
 
   const caseList = [
     {
-      logo: 'https://mdn.alipayobjects.com/huamei_p63okt/afts/img/dctDTYIXmsoAAAAAAAAAAAAADh8WAQFr/original',
+      logo: 'https://mdn.alipayobjects.com/huamei_p63okt/afts/img/2HtGRr1gZbUAAAAAAAAAAAAADh8WAQFr/original',
       desc: intl.formatMessage({ id: 'product.case.desc1' }),
     },
     {
-      logo: 'https://mdn.alipayobjects.com/huamei_p63okt/afts/img/4su9SIEA1jAAAAAAAAAAAAAADh8WAQFr/original',
+      logo: 'https://mdn.alipayobjects.com/huamei_p63okt/afts/img/uO3BSZxK0A8AAAAAAAAAAAAADh8WAQFr/original',
       desc: intl.formatMessage({ id: 'product.case.desc2' }),
     },
     {
-      logo: 'https://mdn.alipayobjects.com/huamei_p63okt/afts/img/yEnGRKX8NpgAAAAAAAAAAAAADh8WAQFr/original',
+      logo: 'https://mdn.alipayobjects.com/huamei_p63okt/afts/img/c4Z6Qrwp8ToAAAAAAAAAAAAADh8WAQFr/original',
       desc: intl.formatMessage({ id: 'product.case.desc3' }),
     },
     {
-      logo: 'https://mdn.alipayobjects.com/huamei_p63okt/afts/img/5SC9SJBGoSUAAAAAAAAAAAAADh8WAQFr/original',
+      logo: 'https://mdn.alipayobjects.com/huamei_p63okt/afts/img/wKz-ToQrIBAAAAAAAAAAAAAADh8WAQFr/original',
       desc: intl.formatMessage({ id: 'product.case.desc4' }),
     },
   ];
@@ -57,15 +57,6 @@ const UserDemo = ({ intl }: { intl: IntlShape }) => {
                 key={key}
               >
                 <div className={styles.demoItem}>
-                  <img
-                    src={
-                      isEven
-                        ? 'https://mdn.alipayobjects.com/huamei_p63okt/afts/img/0SJcRrYqbMkAAAAAAAAAAAAADh8WAQFr/original'
-                        : 'https://mdn.alipayobjects.com/huamei_p63okt/afts/img/7LccT4RZ1TQAAAAAAAAAAAAADh8WAQFr/original'
-                    }
-                    alt=""
-                    className={styles.itemBg}
-                  />
                   <img src={item.logo} alt="" className={styles.logo} />
                   <div className={styles.desc}>{item.desc}</div>
                   <ArrowRightOutlined className={styles.arrowIcon} />

@@ -2,15 +2,16 @@ import styles from './index.less';
 import cx from 'classnames';
 
 interface ISwitchTabProps {
-  options: { value: string; label: string }[];
+  options: { value: string | boolean; label: string }[];
   current?: string;
-  onChange?: (value: string) => void;
+  onChange?: (value: string | boolean) => void;
 }
 const SwitchTab = ({ options, current, onChange }: ISwitchTabProps) => {
   return (
     <div className={styles.tabList}>
-      {options.map((item) => (
+      {options.map((item, key) => (
         <div
+          key={key}
           className={cx(
             styles.tabItem,
             item.value === current ? styles.tabActived : '',

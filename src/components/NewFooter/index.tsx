@@ -42,32 +42,18 @@ export const NewFooter = ({ className }: { className?: string }) => {
             <div className={styles.title}>
               {intl.formatMessage({ id: 'footer.product.title' })}
             </div>
-            <a className={styles.item} href="/product">
+            <a className={styles.item} href="/product/db">
               {intl.formatMessage({ id: 'footer.productName' })}
             </a>
             <a
               className={styles.item}
               href={
                 lang === 'zh-CN'
-                  ? 'https://tugraph-db.readthedocs.io/zh_CN/latest/4.user-guide/1.tugraph-browser.html'
-                  : 'https://tugraph-db.readthedocs.io/en/latest/4.user-guide/1.tugraph-browser.html'
+                  ? '/docs/tugraph-db/zh/4.5.0/user-guide/tugraph-browser'
+                  : '/docs/tugraph-db/en/4.5.0/user-guide/tugraph-browser'
               }
-              target="_blank"
-              rel="noreferrer"
             >
               TuGraph Browser
-            </a>
-            <a
-              className={styles.item}
-              href={
-                lang === 'zh-CN'
-                  ? 'https://tugraph-db.readthedocs.io/zh_CN/latest/5.developer-manual/5.ecosystem-tools/3.tugraph-explorer.html'
-                  : 'https://tugraph-db.readthedocs.io/en/latest/5.developer-manual/5.ecosystem-tools/3.tugraph-explorer.html'
-              }
-              target="_blank"
-              rel="noreferrer"
-            >
-              TuGraph Explorer
             </a>
           </div>
         </Col>
