@@ -17,42 +17,42 @@ export const searchParamsZh = {
 
 export const logoList = [
   {
-    icon: 'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*wAJ-TqsSvmAAAAAAAAAAAAAADgOBAQ/original',
+    icon: 'https://mdn.alipayobjects.com/huamei_p63okt/afts/img/7x4fQp7iwt0AAAAAAAAAAAAADh8WAQFr/fmt.avif',
     link: '',
     desc: '',
     width: 384,
     height: 84,
   },
   {
-    icon: 'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*5gTZQ4I78GEAAAAAAAAAAAAADgOBAQ/original',
+    icon: 'https://mdn.alipayobjects.com/huamei_p63okt/afts/img/_7LVQ6FiMhEAAAAAAAAAAAAADh8WAQFr/fmt.avif',
     link: '',
     desc: '',
     width: 384,
     height: 84,
   },
   {
-    icon: 'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*GJ9iQpJsFSIAAAAAAAAAAAAADgOBAQ/original',
+    icon: 'https://mdn.alipayobjects.com/huamei_p63okt/afts/img/a8VrTK8pO4IAAAAAAAAAAAAADh8WAQFr/fmt.avif',
     link: '',
     desc: '',
     width: 384,
     height: 84,
   },
   {
-    icon: 'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*GxbFSIve6NwAAAAAAAAAAAAADgOBAQ/original',
+    icon: 'https://mdn.alipayobjects.com/huamei_p63okt/afts/img/e2AfTZAQcFMAAAAAAAAAAAAADh8WAQFr/fmt.avif',
     link: '',
     desc: '',
     width: 384,
     height: 84,
   },
   {
-    icon: 'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*wfL5T402fPQAAAAAAAAAAAAADgOBAQ/original',
+    icon: 'https://mdn.alipayobjects.com/huamei_p63okt/afts/img/nHddTpEtk5wAAAAAAAAAAAAADh8WAQFr/fmt.avif',
     link: '',
     desc: '',
     width: 384,
     height: 84,
   },
   {
-    icon: 'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*HeeMQ4t3qu4AAAAAAAAAAAAADgOBAQ/original',
+    icon: 'https://mdn.alipayobjects.com/huamei_p63okt/afts/img/lH5MTaoEF1EAAAAAAAAAAAAADh8WAQFr/fmt.avif',
     link: '',
     desc: '',
     width: 384,

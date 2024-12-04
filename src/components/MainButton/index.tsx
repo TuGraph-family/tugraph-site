@@ -7,19 +7,20 @@ import {
   Radio,
   Select,
   Space,
+  Typography,
 } from 'antd';
 import styles from './index.less';
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import {
   AliyunOutlined,
   ArrowRightOutlined,
-  DownOutlined,
   GithubOutlined,
   UpOutlined,
   VerticalAlignBottomOutlined,
 } from '@ant-design/icons';
-import { historyPushLinkAt } from '@/util';
-import { history, useIntl } from 'umi';
+import { getSearch, historyPushLinkAt } from '@/util';
+import { history, useIntl, useLocation } from 'umi';
+import { DEFAULT_LOCAL } from '@/constant';
 
 const { Item } = Form;
 
@@ -39,6 +40,8 @@ const MainButton: React.FC<IMainButtonProps> = ({
   const [open, setOpen] = useState(false);
   const [visible, setVisible] = useState(false);
   const [form] = Form.useForm();
+  const { search } = useLocation();
+  const lang = getSearch(search)?.lang || DEFAULT_LOCAL;
 
   const items = [
     {
@@ -62,11 +65,11 @@ const MainButton: React.FC<IMainButtonProps> = ({
   ];
 
   const TYPE_OPTION = [
-    { label: 'TuGraph 企业版价格', value: 'a' },
-    { label: 'TuGraph 企业版试用', value: 'b' },
-    { label: '预约现场技术交流', value: 'c' },
-    { label: '成为 TuGraph 合作伙伴', value: 'd' },
-    { label: '其他', value: 'e' },
+    { label: intl.formatMessage({ id: 'form.need.value' }), value: '0' },
+    { label: intl.formatMessage({ id: 'form.need.value1' }), value: '1' },
+    { label: intl.formatMessage({ id: 'form.need.value2' }), value: '2' },
+    { label: intl.formatMessage({ id: 'form.need.value3' }), value: '3' },
+    { label: intl.formatMessage({ id: 'form.need.value4' }), value: '4' },
   ];
 
   const handleCancel = () => {
@@ -93,10 +96,9 @@ const MainButton: React.FC<IMainButtonProps> = ({
               {...props}
             >
               {btnText}
-              {/* {visible ? ( */}
               <UpOutlined
                 className={styles.arrowIcon}
-                style={{ transform: `rotateZ(${visible ? 0 : 180}deg)` }}
+                style={{ transform: `rotateX(${visible ? 0 : 180}deg)` }}
               />
             </Button>
           </Dropdown>
@@ -134,6 +136,37 @@ const MainButton: React.FC<IMainButtonProps> = ({
     }
   };
 
+  const onOk = (values: any) => {
+    form.validateFields().then((values) => {
+      const body = [];
+      for (const [key, value] of Object.entries(values)) {
+        body.push(`${key}: ${value}`);
+      }
+
+      const bodyString = body.join(';');
+      // TODO 用邮件服务替换掉 https://dashboard.emailjs.com/
+      window.location.href = `mailto:tugraph@service.alipay.com?subject=${btnText}&body=${bodyString}`;
+    });
+  };
+
+  const POSITION_OPTION = useMemo(() => {
+    if (['consult', 'connect'].includes(type)) {
+      return (
+        intl
+          .formatMessage({ id: 'form.item.position.options' })
+          ?.split(',')
+          ?.map((item) => {
+            return {
+              label: item,
+              value: item,
+            };
+          }) || []
+      );
+    } else {
+      return [];
+    }
+  }, [intl, type]);
+
   return (
     <>
       {renderBtn()}
@@ -154,9 +187,14 @@ const MainButton: React.FC<IMainButtonProps> = ({
       >
         <Form form={form} layout="vertical">
           <Item
-            label="您想咨询的问题类型"
+            label={intl.formatMessage({ id: 'form.item.type' })}
             name="type"
-            rules={[{ required: true, message: '请选择咨询类型' }]}
+            rules={[
+              {
+                required: true,
+                message: intl.formatMessage({ id: 'form.need.tip' }),
+              },
+            ]}
           >
             <Radio.Group>
               <Space direction="vertical">
@@ -248,9 +286,17 @@ const MainButton: React.FC<IMainButtonProps> = ({
             <Item
               label={intl.formatMessage({ id: 'form.item.position' })}
               name="position"
-              rules={[{ required: true, message: '请选择' }]}
+              rules={[
+                {
+                  required: true,
+                  message: intl.formatMessage({ id: 'form.need.tip' }),
+                },
+              ]}
             >
-              <Select placeholder="请选择" />
+              <Select
+                placeholder={intl.formatMessage({ id: 'form.need.tip' })}
+                options={POSITION_OPTION}
+              />
             </Item>
             <Item
               label={intl.formatMessage({ id: 'form.item.city' })}
@@ -292,10 +338,27 @@ const MainButton: React.FC<IMainButtonProps> = ({
             />
           </Item>
         </Form>
+        {lang === 'zh-CN' && (
+          <div className={styles.footer}>
+            <Typography.Text className={styles.tip} type="secondary">
+              {intl.formatMessage({ id: 'form.tip0' })}
+              <a
+                href="https://render.alipay.com/p/yuyan/180020010001196791/preview.html?agreementId=AG00000174"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {intl.formatMessage({ id: 'form.rule' })}
+              </a>
+              {intl.formatMessage({ id: 'form.tip1' })}
+            </Typography.Text>
+          </div>
+        )}
         <div className={styles.footerBtn}>
           <Space>
-            <Button onClick={handleCancel}>取消</Button>
-            <Button type="primary">
+            <Button onClick={handleCancel}>
+              {intl.formatMessage({ id: 'form.cancel' })}
+            </Button>
+            <Button type="primary" onClick={onOk}>
               {intl.formatMessage({ id: 'form.submit' })}
             </Button>
           </Space>

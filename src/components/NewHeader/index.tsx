@@ -1,6 +1,5 @@
 import { DocSearch } from '@docsearch/react';
-import { useCallback, useEffect, useState } from 'react';
-import { useMedia } from 'react-use';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { history, isBrowser, useIntl, useLocation } from 'umi';
 import cx from 'classnames';
 import { DEFAULT_LOCAL } from '@/constant';
@@ -17,33 +16,28 @@ export const NewHeader = ({
 }) => {
   let time: any = null;
   const intl = useIntl();
-  const { pathname, search } = useLocation();
+  const { pathname, search, hash } = useLocation();
   const lang = getSearch(search)?.lang || DEFAULT_LOCAL;
-  const isZH = lang === 'zh-CN';
-  const isWide = useMedia('(min-width: 767.99px)', true);
   const [subVisibleKey, setSubVisibleKey] = useState('');
   const [show, setShow] = useState(true);
-  const [selectMenuItem, setSelectMenuItem] = useState<string>(() => {
-    /** 匹配路由，初始化所选择的菜单栏 */
-    function captureRouteLevel(url: string, level: number) {
-      try {
-        const pathname = new URL(url).pathname;
-        const segments = pathname.split('/').filter(Boolean);
-        if (segments.length >= level) {
-          const pathKey = segments[level - 1];
-          return ['blog', 'activity', 'download'].includes(pathKey)
-            ? 'community'
-            : pathKey;
-        } else {
-          return '';
-        }
-      } catch (error) {
-        console.error('Invalid URL');
-        return '';
-      }
+  const [isStick, setIsStick] = useState<boolean>(false);
+
+  const subMenuHeight = useMemo(() => {
+    return lang === 'zh-CN' ? 330 : 360;
+  }, [lang]);
+
+  const selectMenuItem = useMemo(() => {
+    const mainMenu = pathname?.split('/')[1];
+
+    switch (mainMenu) {
+      case 'activity':
+      case 'blog':
+      case 'download':
+        return 'community';
+      default:
+        return mainMenu;
     }
-    return captureRouteLevel(location.href, 1);
-  });
+  }, [pathname]);
 
   const toggleLanguage = (url: string, language: 'zh' | 'en') => {
     const format = url.replace(/\/(zh|en)\//, () => {
@@ -52,19 +46,9 @@ export const NewHeader = ({
     return format;
   };
 
-  const zhSite = currentUrl
-    ? `${window.location.origin}${toggleLanguage(
-        currentUrl.pathname,
-        'zh',
-      )}?lang=zh-CN${currentUrl?.hash}`
-    : `${window.location.origin}${history?.location?.pathname}?lang=zh-CN`;
-  const enSite = currentUrl
-    ? `${window.location.origin}${toggleLanguage(
-        currentUrl.pathname,
-        'en',
-      )}?lang=en-US${currentUrl?.hash}`
-    : `${window.location.origin}${history?.location?.pathname}?lang=en-US`;
+  const zhSite = `${window.location.origin}${history?.location?.pathname}?lang=zh-CN`;
 
+  const enSite = `${window.location.origin}${history?.location?.pathname}?lang=en-US`;
   const getCurrentLanguage = () => {
     return lang === 'en-US' ? 'en' : 'zh';
   };
@@ -96,7 +80,7 @@ export const NewHeader = ({
               // 在这里修改 URL。例如，将路径中的 `/docs/` 替换为 `/`
               return {
                 ...item,
-                url: '/docs' + item?.url?.split('/tugraph-db')[1] ?? '',
+                url: '/docs' + (item?.url?.split('/tugraph-db')[1] ?? ''),
               };
             });
           },
@@ -162,7 +146,7 @@ export const NewHeader = ({
           return (
             <div className={styles.productSubMenuVersion} key={item.title}>
               <div className={styles.productSubMenuTitle}>{item.title}</div>
-              {item.subMenu?.map((subItem) => {
+              {item.subMenu?.map((subItem, key) => {
                 return (
                   <div
                     className={styles.productSubMenuItem}
@@ -178,6 +162,7 @@ export const NewHeader = ({
                         clearTimeout(time);
                       }, 500);
                     }}
+                    key={key}
                   >
                     <div className={styles.productSubMenuItemLabel}>
                       {subItem.label}
@@ -205,6 +190,7 @@ export const NewHeader = ({
           // },
           {
             label: intl.formatMessage({ id: 'header.learning.course' }),
+            url: 'https://tugraphdb.beta.oscollege.net/os',
           },
           // {
           //   label: intl.formatMessage({ id: 'header.learning.training' }),
@@ -222,9 +208,9 @@ export const NewHeader = ({
             label: intl.formatMessage({ id: 'header.community.video' }),
             url: 'https://space.bilibili.com/1196053065/',
           },
-          {
-            label: intl.formatMessage({ id: 'header.community.forum' }),
-          },
+          // {
+          //   label: intl.formatMessage({ id: 'header.community.forum' }),
+          // },
           {
             label: intl.formatMessage({ id: 'header.community.activity' }),
             path: '/activity/list',
@@ -295,7 +281,19 @@ export const NewHeader = ({
   };
 
   const handleLangClick = () => {
-    window.location.href = lang === 'zh-CN' ? enSite : zhSite;
+    if (currentUrl) {
+      window.location.href = /\/en\//.test(window.location.pathname)
+        ? `${window.location.origin}${toggleLanguage(
+            window.location.pathname,
+            'zh',
+          )}?lang=zh-CN${window.location.hash}`
+        : `${window.location.origin}${toggleLanguage(
+            window.location.pathname,
+            'en',
+          )}?lang=en-US${window.location.hash}`;
+    } else {
+      window.location.href = lang === 'zh-CN' ? enSite : zhSite;
+    }
   };
 
   const onHover = (id: string, type: 'move' | 'leave') => {
@@ -346,13 +344,10 @@ export const NewHeader = ({
               key={key}
               className={cx(
                 styles.menuItem,
-                key === selectMenuItem && !subVisibleKey
-                  ? styles.menuItemSelect
-                  : '',
+                key === selectMenuItem ? styles.menuItemSelect : '',
               )}
               onClick={() => {
                 if (path) {
-                  setSelectMenuItem(item?.label);
                   history.push(historyPushLinkAt(path));
                 }
               }}
@@ -390,10 +385,10 @@ export const NewHeader = ({
             className={styles[item.menuKeys]}
             initial={{ height: 0, zIndex: 500 }}
             animate={{
-              height: subVisibleKey === item.menuKeys ? 321 : 0,
+              height: subVisibleKey === item.menuKeys ? subMenuHeight : 0,
               zIndex: 900,
             }}
-            whileHover={{ height: show ? 321 : 0, zIndex: 900 }}
+            whileHover={{ height: show ? subMenuHeight : 0, zIndex: 900 }}
             transition={{ duration: 0.5 }}
           >
             {item.constent}
@@ -403,7 +398,6 @@ export const NewHeader = ({
     );
   };
 
-  const [isStick, setIsStick] = useState<boolean>(false);
   const handleScroll = useCallback(() => {
     if (!isBrowser()) {
       return;

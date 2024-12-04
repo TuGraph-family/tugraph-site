@@ -10,7 +10,7 @@ interface IProps {
   activityWayEnum: string;
   activityStateEnum: string;
   activityResourceFlag: string;
-  updateFilter: (key: string, val: string) => void;
+  updateFilter: (key: string, val: string | boolean) => void;
 }
 const FilterCard = ({
   activityWayEnum,

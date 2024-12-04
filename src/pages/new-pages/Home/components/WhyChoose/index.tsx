@@ -1,57 +1,68 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import FadeInSection from '@/components/FadeInSection';
 import styles from './index.less';
 import { SubTitle } from '@/components/SubTitle';
 import { motion, useScroll } from 'framer-motion';
+import { IntlShape } from 'react-intl';
 
-const WhyChoose: React.FC = () => {
+const WhyChoose: React.FC<{ intl: IntlShape }> = ({ intl }) => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const list = [
-    {
-      title: '蚂蚁自有业务驱动与验证',
-      content:
-        'TuGraph历经蚂蚁集团万亿级业务锤炼，截止目前TuGraph已应用于蚂蚁内部300多个场景，包括全图风控、反洗钱、反欺诈、保险知识图谱、花呗图谱、会员服务、蚂蚁森林、新春五福等业务场景。',
-      img: 'https://lark-app.oss-cn-beijing.aliyuncs.com/fecodex/fallback-images/04.jpeg',
-    },
-    {
-      title: '完整高性能的图技术栈',
-      content:
-        'TuGraph提供完整、高性能的图技术栈，实现了完整的在线、近线、离线三线一体的图计算，满足从毫秒级到小时级不同时效性要求的场景需求，多次获得国际图数据库性能基准测试LDBC-SNB第一名。',
-      img: 'https://lark-app.oss-cn-beijing.aliyuncs.com/fecodex/fallback-images/04.jpeg',
-    },
-    {
-      title: '金融级的高可用能力',
-      content:
-        '支持在线分布式扩展，千万顶点/秒的高吞吐率、低延迟响应，可串行化的隔离级别，支持多副本、同城多机房、异地多机房等部署形态，可支持RPO=0，RTO<30s，保障业务连续性。',
-      img: 'https://lark-app.oss-cn-beijing.aliyuncs.com/fecodex/fallback-images/04.jpeg',
-    },
-    {
-      title: '自主可控、兼容性强',
-      content:
-        '蚂蚁集团、清华大学联合自主研发，兼容国产化服务器及操作系统，支持国际标准化图查询语言，兼容主流图查询语言。',
-      img: 'https://lark-app.oss-cn-beijing.aliyuncs.com/fecodex/fallback-images/04.jpeg',
-    },
-    {
-      title: '完整、可扩展的应用开发',
-      content:
-        '开发人员可使用主流查询语言、编程语言、接口协议来快速创建应用，快速对接业务系统、融合数据存储，能够与常见开源架构平滑迁移。',
-      img: 'https://lark-app.oss-cn-beijing.aliyuncs.com/fecodex/fallback-images/04.jpeg',
-    },
-  ];
-
+  const [percentage, setPercentage] = useState(0);
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ['start 25%', 'end end'],
   });
+  const list = [
+    {
+      title: intl.formatMessage({ id: 'home.reason0' }),
+      content: intl.formatMessage({ id: 'home.reason.desc0' }),
+      img: 'https://mdn.alipayobjects.com/huamei_p63okt/afts/img/eQ2CSaTW-iIAAAAAAAAAAAAADh8WAQFr/fmt.avif',
+    },
+    {
+      title: intl.formatMessage({ id: 'home.reason1' }),
+      content: intl.formatMessage({ id: 'home.reason.desc1' }),
+      img: 'https://mdn.alipayobjects.com/huamei_p63okt/afts/img/-2fbSYub2sYAAAAAAAAAAAAADh8WAQFr/fmt.avif',
+    },
+    {
+      title: intl.formatMessage({ id: 'home.reason2' }),
+      content: intl.formatMessage({ id: 'home.reason.desc2' }),
+      img: 'https://mdn.alipayobjects.com/huamei_p63okt/afts/img/bmVhRZuDKQUAAAAAAAAAAAAADh8WAQFr/fmt.avif',
+    },
+    {
+      title: intl.formatMessage({ id: 'home.reason3' }),
+      content: intl.formatMessage({ id: 'home.reason.desc3' }),
+      img: 'https://mdn.alipayobjects.com/huamei_p63okt/afts/img/TAGYR5Pj1gMAAAAAAAAAAAAADh8WAQFr/fmt.avif',
+    },
+    {
+      title: intl.formatMessage({ id: 'home.reason4' }),
+      content: intl.formatMessage({ id: 'home.reason.desc4' }),
+      img: 'https://mdn.alipayobjects.com/huamei_p63okt/afts/img/b2ZtTLd4ppoAAAAAAAAAAAAADh8WAQFr/fmt.avif',
+    },
+  ];
+
+  useEffect(() => {
+    if (scrollYProgress) {
+      // 创建一个函数来处理滚动进度的变化
+      const handleScroll = (latest) => {
+        const percent = (latest * 100).toFixed(2);
+        setPercentage(percent); // 将小数值转换为百分比，并保留两位小数
+      };
+
+      // 订阅 scrollYProgress 的变化
+      const unsubscribe = scrollYProgress.onChange(handleScroll);
+
+      // 清理函数，在组件卸载时取消订阅
+      return () => unsubscribe && unsubscribe();
+    }
+  }, [scrollYProgress]);
 
   return (
     <div className={styles.featureContainer} ref={containerRef}>
       <div className={styles.featureDescriptionWrapper}>
-        <SubTitle title="为什么选择TuGraph" />
-
+        <SubTitle title={intl.formatMessage({ id: 'home.choseReason' })} />
         <div className={styles.lineContet}>
-          {list.map((item) => (
-            <div className={styles.lineContetItem}>
+          {list.map((item, key) => (
+            <div className={styles.lineContetItem} key={key}>
               <FadeInSection>
                 <div className={styles.lineContetBox}>
                   <img
@@ -69,10 +80,15 @@ const WhyChoose: React.FC = () => {
             <motion.div
               className={styles.progress}
               style={{
-                scaleY: scrollYProgress,
+                height: `${percentage}%`,
+                // scaleY: scrollYProgress,
                 originY: 0,
+                position: 'relative',
               }}
-            />
+            >
+              <div className={styles['progress-header']} />
+            </motion.div>
+            {/* <div>{scrollYProgress.get()}</div> */}
           </div>
         </div>
       </div>

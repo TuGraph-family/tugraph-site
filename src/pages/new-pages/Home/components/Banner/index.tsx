@@ -4,10 +4,13 @@ import styles from './index.less';
 import FadeInSection from '@/components/FadeInSection';
 import MainButton from '@/components/MainButton';
 import { IntlShape } from 'react-intl';
+import { useLocation } from 'umi';
+import { getSearch } from '@/util';
+import { DEFAULT_LOCAL } from '@/constant';
 
 const Banner = ({ intl }: { intl: IntlShape }) => {
-  let background =
-    'url(https://mdn.alipayobjects.com/huamei_p63okt/afts/img/An4uTrsTiyUAAAAAAAAAAAAADh8WAQFr/original)';
+  const { search } = useLocation();
+  const lang = getSearch(search)?.lang || DEFAULT_LOCAL;
 
   const CARD_LIST = [
     {
@@ -35,8 +38,7 @@ const Banner = ({ intl }: { intl: IntlShape }) => {
     <div
       className={styles.banner}
       style={{
-        backgroundImage: background,
-        height: '551px',
+        height: '552px',
       }}
     >
       <FadeInSection>
@@ -61,29 +63,31 @@ const Banner = ({ intl }: { intl: IntlShape }) => {
           </div>
         </div>
       </FadeInSection>
-      <div className={styles.featureSection}>
-        {CARD_LIST.map((item, idx) => (
-          <FadeInSection key={idx}>
-            <motion.div
-              className={styles.featureSectionItem}
-              whileHover={{
-                top: -20,
-              }}
-              drag
-              dragSnapToOrigin
-            >
-              <img src={item.bgImg} alt="" className={styles.featureImg} />
-              <img
-                src="https://mdn.alipayobjects.com/huamei_p63okt/afts/img/E2piRoTZrTUAAAAAAAAAAAAADh8WAQFr/original"
-                alt=""
-                className={styles.featureArrow}
-              />
-              <div className={styles.featureCategory}>{item.title}</div>
-              <div className={styles.featureContent}>{item.desc}</div>
-            </motion.div>
-          </FadeInSection>
-        ))}
-      </div>
+      {lang === 'zh-CN' && (
+        <div className={styles.featureSection}>
+          {CARD_LIST.map((item, idx) => (
+            <FadeInSection key={idx}>
+              <motion.div
+                className={styles.featureSectionItem}
+                whileHover={{
+                  top: -20,
+                }}
+                drag
+                dragSnapToOrigin
+              >
+                <img src={item.bgImg} alt="" className={styles.featureImg} />
+                <img
+                  src="https://mdn.alipayobjects.com/huamei_p63okt/afts/img/E2piRoTZrTUAAAAAAAAAAAAADh8WAQFr/original"
+                  alt=""
+                  className={styles.featureArrow}
+                />
+                <div className={styles.featureCategory}>{item.title}</div>
+                <div className={styles.featureContent}>{item.desc}</div>
+              </motion.div>
+            </FadeInSection>
+          ))}
+        </div>
+      )}
     </div>
   );
 };

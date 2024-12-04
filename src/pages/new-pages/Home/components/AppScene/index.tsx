@@ -15,65 +15,70 @@ const AppScene = ({ intl }: { intl: IntlShape }) => {
     {
       field: intl.formatMessage({ id: 'home.case0.title' }),
       scene: intl.formatMessage({ id: 'home.case0.desc' }),
-      illustrate:
-        '在物联网时代，图模型通过构建人、位置、事件、物的关系网络，实现智能交通、道路规划、平安城市、钓鱼网站识别等智慧场景。',
+      illustrate: intl.formatMessage({ id: 'home.case0.illustrate' }),
       style: {
         top: '109px',
         left: 0,
         width: '134px',
         height: '135px',
+        background:
+          'url(https://mdn.alipayobjects.com/huamei_p63okt/afts/img/u2M8T4tM2FgAAAAAAAAAAAAADh8WAQFr/original) 0 0 / 100% 100%',
       },
       className: 'government',
     },
     {
       field: intl.formatMessage({ id: 'home.case1.title' }),
       scene: intl.formatMessage({ id: 'home.case1.desc' }),
-      illustrate:
-        '通过图技术拓展风险特征维度，提升反洗钱、反欺诈、信贷风控等风险防范能力；基于丰富的关联关系和图技术，帮助金融机构精准营销和拓客。',
+      illustrate: intl.formatMessage({ id: 'home.case1.illustrate' }),
       style: {
         top: 0,
         left: '372px',
         width: '170px',
         height: '170px',
+        background:
+          'url(https://mdn.alipayobjects.com/huamei_p63okt/afts/img/zFjEQ4vWuIUAAAAAAAAAAAAADh8WAQFr/original) 0 0 / 100% 100%',
       },
       className: 'finance',
     },
     {
       field: intl.formatMessage({ id: 'home.case2.title' }),
       scene: intl.formatMessage({ id: 'home.case2.desc' }),
-      illustrate:
-        '电信运营商可通过图计算技术，在通信网络上进行骚扰电话分析和阻断，除此之外，电信设备也可以使用图模型进行管理。',
+      illustrate: intl.formatMessage({ id: 'home.case2.illustrate' }),
       style: {
         top: '61px',
         right: '67px',
         width: '110px',
         height: '110px',
+        background:
+          'url(https://mdn.alipayobjects.com/huamei_p63okt/afts/img/MgOtSK07LH8AAAAAAAAAAAAADh8WAQFr/original) 0 0 / 100% 100%',
       },
       className: 'telecommunications',
     },
     {
       field: intl.formatMessage({ id: 'home.case3.title' }),
       scene: intl.formatMessage({ id: 'home.case3.desc' }),
-      illustrate:
-        '图模型强大的表达力擅长展示复杂去且快速变化的事物关系，极其适合在工业领域来管理复杂且快速变化的库存、供应链关系，并推动智能化创新制造。',
+      illustrate: intl.formatMessage({ id: 'home.case3.illustrate' }),
       style: {
         top: '239px',
         left: '223px',
         width: '110px',
         height: '110px',
+        background:
+          'url(https://mdn.alipayobjects.com/huamei_p63okt/afts/img/Z7ucTICP7P8AAAAAAAAAAAAADh8WAQFr/original) 0 0 / 100% 100%',
       },
       className: 'industry',
     },
     {
       field: intl.formatMessage({ id: 'home.case4.title' }),
       scene: intl.formatMessage({ id: 'home.case4.desc' }),
-      illustrate:
-        '通过图基数按技术实现商品智能推荐，在保障用户体验的同时，提升商家营销效果、甄别无效投放，提高会员服务质量，保护商家利益。',
+      illustrate: intl.formatMessage({ id: 'home.case4.illustrate' }),
       style: {
         width: '134px',
         height: '135px',
         top: '234px',
         right: 0,
+        background:
+          'url(https://mdn.alipayobjects.com/huamei_p63okt/afts/img/lvB2T5JgB1oAAAAAAAAAAAAADh8WAQFr/original) 0 0 / 100% 100%',
       },
       className: 'internet',
     },
@@ -81,26 +86,28 @@ const AppScene = ({ intl }: { intl: IntlShape }) => {
     {
       field: intl.formatMessage({ id: 'home.case5.title' }),
       scene: intl.formatMessage({ id: 'home.case5.desc' }),
-      illustrate:
-        '利用图模型找到图数据之间的关联关系，更容易分析数据的流转过程，建立数据链路，进而梳理数据依赖，权限并提升质量。',
+      illustrate: intl.formatMessage({ id: 'home.case5.illustrate' }),
       style: {
         width: '110px',
         height: '110px',
         top: '468px',
         left: '312px',
+        background:
+          'url(https://mdn.alipayobjects.com/huamei_p63okt/afts/img/L5faRonbxpcAAAAAAAAAAAAADh8WAQFr/original) 0 0 / 100% 100%',
       },
       className: 'Universal',
     },
     {
       field: intl.formatMessage({ id: 'home.case6.title' }),
       scene: '',
-      illustrate:
-        '通过图（Graph）+人工智能（AI）的配套工具和方案，实现GraphRAG、多智能体平台、智能助手等，为企业大模型落地、智能化升级提供新动能。',
+      illustrate: intl.formatMessage({ id: 'home.case6.illustrate' }),
       style: {
         width: '110px',
         height: '110px',
         top: '370px',
         right: '214px',
+        background:
+          'url(https://mdn.alipayobjects.com/huamei_p63okt/afts/img/ziLVQ6zbV1IAAAAAAAAAAAAADh8WAQFr/original) 0 0 / 100% 100%',
       },
       className: 'Artificial',
     },

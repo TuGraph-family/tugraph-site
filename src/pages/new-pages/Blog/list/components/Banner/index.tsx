@@ -44,12 +44,13 @@ const Banner = ({
   const renderType = () => {
     return (
       <div className={styles.typelist}>
-        {typeList.map((item) => (
+        {typeList.map((item, key) => (
           <div
             className={cx(
               styles.typeItem,
               item.value === type ? styles.typeActived : '',
             )}
+            key={key}
             onClick={() => onChangeType?.(item.value)}
           >
             {item.label}

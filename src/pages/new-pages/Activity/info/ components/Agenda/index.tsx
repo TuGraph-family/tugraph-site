@@ -3,44 +3,13 @@ import styles from './index.less';
 import moment from 'moment';
 
 const Agenda = ({ list }: { list?: API.ActivityProcessVO[] }) => {
-  const agendaList = [
-    {
-      time: '14:00～14:10',
-      Step: '致辞',
-      memberList: [
-        {
-          name: '唐卫清',
-          desc: '中国计算机学会 秘书长',
-        },
-      ],
-    },
-    {
-      time: '14:10～14:40',
-      Step: 'Streaming Gragh Processing and Analytics',
-      memberList: [
-        {
-          name: 'M. Tamer Ozsu',
-          desc: '加拿大滑铁卢大学 教授  ',
-        },
-        {
-          name: '陈文光',
-          desc: '',
-        },
-        {
-          name: '陈华钧',
-          desc: '浙江大学 计算机学院教授',
-        },
-      ],
-    },
-  ];
-
   const renderList = () => {
     return (
       <div className={styles.agendaList}>
         <div className={styles.Col}>
-          {list?.map((item) => {
+          {list?.map((item, key) => {
             return (
-              <div className={styles.agendaTime}>
+              <div className={styles.agendaTime} key={key}>
                 {item?.processStartTime
                   ? moment(item?.processStartTime).format('YYYY-MM-DD HH:mm')
                   : null}
@@ -78,9 +47,9 @@ const Agenda = ({ list }: { list?: API.ActivityProcessVO[] }) => {
           })}
         </div>
         <div className={styles.Col}>
-          {list?.map((item) => {
+          {list?.map((item, key) => {
             return (
-              <div>
+              <div key={key}>
                 {item?.guest?.map((member) => {
                   return (
                     <div key={member.id} className={styles.memberItemDesc}>

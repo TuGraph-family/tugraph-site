@@ -8,15 +8,23 @@ import { useIntl } from 'umi';
 
 const Home = () => {
   const intl = useIntl();
+  let background =
+    'url(https://mdn.alipayobjects.com/huamei_p63okt/afts/img/3JdrQYNnZU4AAAAAAAAAAAAADh8WAQFr/fmt.webp) no-repeat ';
+
   return (
     <NewLayout
+      headerBgStyles={{
+        background: background,
+        backgroundSize: '100% 100%',
+        height: 619,
+      }}
       content={
         <>
           <Banner intl={intl} />
-          <WhyChoose />
+          <WhyChoose intl={intl} />
           <AppScene intl={intl} />
           <Version intl={intl} />
-          <UserBox />
+          <UserBox intl={intl} />
         </>
       }
     />

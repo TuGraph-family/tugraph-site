@@ -5,8 +5,8 @@ import styles from './index.less';
 import FadeInSection from '@/components/FadeInSection';
 import { history } from 'umi';
 import { historyPushLinkAt } from '@/util';
-
-const UserBox: React.FC = () => {
+import { IntlShape } from 'react-intl';
+const UserBox: React.FC<{ intl: IntlShape }> = ({ intl }) => {
   const [isHover, setIsHover] = useState<boolean>(false);
   console.log('isHover:', isHover);
 
@@ -14,7 +14,9 @@ const UserBox: React.FC = () => {
     <div className={styles.userBox}>
       <FadeInSection>
         {' '}
-        <div className={styles.title}>代表用户</div>
+        <div className={styles.title}>
+          {intl.formatMessage({ id: 'home.users' })}
+        </div>
       </FadeInSection>
       <FadeInSection>
         <div className={styles.userImgList}>
@@ -52,7 +54,7 @@ const UserBox: React.FC = () => {
             onMouseEnter={() => setIsHover(true)}
             onMouseLeave={() => setIsHover(false)}
           >
-            <span>更多案例</span>
+            <span>{intl.formatMessage({ id: 'home.moreDemo' })}</span>
             <motion.span
               animate={{ left: isHover ? 6 : 0 }}
               style={{ position: 'relative' }}

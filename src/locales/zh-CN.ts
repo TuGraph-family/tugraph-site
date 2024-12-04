@@ -15,10 +15,6 @@ export default {
   'header.product.desc3': 'TuGraph Leran 图学习引擎',
   'header.product.desc4': 'TuGraph 企业版',
   'header.product.desc5': 'TuGraph Cloud 版',
-  'footer.product': '产品',
-  'footer.product.title': '社区版',
-  'footer.product.title1': '企业版',
-  'footer.community': '社区',
   'header.osGraph.desc': '开源图谱关系洞察工具',
   'header.learning.title': '学习',
   'header.learning.cooperate': '校企合作',
@@ -34,13 +30,28 @@ export default {
   'header.assets.gitee': 'GITEE',
   'header.assets.download': '下载中心',
   'header.assets.report': '白皮书与行业报告',
+
+  'footer.product': '产品',
+  'footer.product.title': '社区版',
+  'footer.product.title1': '企业版',
+  'footer.community': '社区',
   'footer.contact': '联系我们',
-  'footer.productName': 'TuGraph DB Lite 单机图数据库',
+  'footer.productName': 'TuGraph图数据库',
   'footer.productName1': 'TuGraph DB 分布式图数据库',
   'footer.productName2': 'TuGraph DataFlow 流图计算引擎',
   'footer.productName3': 'TuGraph Platform 一站式图平台',
+  'footer.copyright': '京ICP备15032932号-43',
   'footer.communityName': '哔哩哔哩',
   'footer.phone': '400-903-0809',
+  'footer.qrCode.weChart': '微信公众号',
+  'footer.qrCode.dingTalk': '技术交流群',
+  'footer.qrCode.subDescWeChart': '扫码了解更多资讯',
+  'footer.qrCode.subDescDingTalk': '微信扫码加入',
+  'footer.rules': '隐私条款',
+  'footer.extraInfo': '© 2022 蚂蚁集团',
+  'footer.address': '地址：中国北京朝阳区东三环中路1号环球金融中心东塔9层',
+  'footer.addressMobile': '中国北京朝阳区东三环中路1号环球金融中心东塔9层',
+
   'home.description':
     'TuGraph,蚂蚁图数据库,蚂蚁图计算,图数据库,图计算,图平台,图数据分析, 分布式数据库, Graph,大数据,关联关系分析,知识图谱,GNN, 图神经网络, Neo4j, GeaGraph, GeaBase, GeaFlow, 费马, 人工智能, big data, graph processing,graph database, graph computing, artificial intelligence',
   'home.banner.slogan': '支付宝万亿业务背后的分布式图数据库',
@@ -64,32 +75,49 @@ export default {
   'home.case.desc1': '助力各行业客户打破分析瓶颈',
   'home.case0.title': '金融领域',
   'home.case0.desc': '信贷风控、反洗钱、反欺诈、资金追踪、营销推荐',
+  'home.case0.illustrate':
+    '在物联网时代，图模型通过构建人、位置、事件、物的关系网络，实现智能交通、道路规划、平安城市、钓鱼网站识别等智慧场景。',
   'home.case1.title': '互联网领域',
   'home.case1.desc': '营销推荐、会员及商家服务、社区发现、 好友推荐',
+  'home.case1.illustrate':
+    '通过图技术拓展风险特征维度，提升反洗钱、反欺诈、信贷风控等风险防范能力；基于丰富的关联关系和图技术，帮助金融机构精准营销和拓客。',
   'home.case2.title': '政务领域',
   'home.case2.desc': '物联网、智慧城市、道路规划、智能交通、轨迹分析、反诈',
+  'home.case2.illustrate':
+    '电信运营商可通过图计算技术，在通信网络上进行骚扰电话分析和阻断，除此之外，电信设备也可以使用图模型进行管理。',
   'home.case3.title': '工业领域',
   'home.case3.desc': '电网分析、供应链管理、设备管理、故障诊断',
+  'home.case3.illustrate':
+    '图模型强大的表达力擅长展示复杂去且快速变化的事物关系，极其适合在工业领域来管理复杂且快速变化的库存、供应链关系，并推动智能化创新制造。',
   'home.case4.title': '电信领域',
   'home.case4.desc': '防骚扰、电信诈骗防范、运营商经营分析、设备维护',
+  'home.case4.illustrate':
+    '通过图基数按技术实现商品智能推荐，在保障用户体验的同时，提升商家营销效果、甄别无效投放，提高会员服务质量，保护商家利益。',
   'home.case5.title': '通用领域',
   'home.case5.desc': '隐私保护、数据治理、及数据血缘',
+  'home.case5.illustrate':
+    '利用图模型找到图数据之间的关联关系，更容易分析数据的流转过程，建立数据链路，进而梳理数据依赖，权限并提升质量。',
   'home.case6.title': '人工智能领域',
+  'home.case6.illustrate':
+    '通过图（Graph）+人工智能（AI）的配套工具和方案，实现GraphRAG、多智能体平台、智能助手等，为企业大模型落地、智能化升级提供新动能。',
   'home.knowMore': '了解更多',
   'home.users': '代表用户',
   'home.moreDemo': '更多案例',
   'home.choseReason': '为什么选择 TuGraph',
-  'home.reason0': '高标准的可靠性和安全设计',
+  'home.reason0': '蚂蚁自有业务驱动与验证',
   'home.reason.desc0':
-    '源自蚂蚁集团的数据计算和分析要求，满足用户合规、审计、访问控制等要求。具备金融级高可用性、可串行化隔离级别，超越灾备标准最高级（6级），实现业务系统不间断运行，保护数据不丢失。',
-  'home.reason1': '优化企业业务性能',
+    'TuGraph历经蚂蚁集团万亿级业务锤炼，截止目前TuGraph已应用于蚂蚁内部300多个场景，包括全图风控、反洗钱、反欺诈、保险知识图谱、花呗图谱、会员服务、蚂蚁森林、新春五福等业务场景。',
+  'home.reason1': '完整高性能的图技术栈',
   'home.reason.desc1':
-    'HTAP图数据库，满足实时环境（如实时审核或推荐）和离线分析（如审计）的毫秒级复杂查询需求，一站式存储、查询、分析。具备万亿级图数据处理能力，图数据库性能基准测试世界纪录保持者。',
-  'home.reason2': '直观的数据管理',
+    'TuGraph提供完整、高性能的图技术栈，实现了完整的在线、近线、离线三线一体的图计算，满足从毫秒级到小时级不同时效性要求的场景需求，多次获得国际图数据库性能基准测试LDBC-SNB第一名。',
+  'home.reason2': '金融级的高可用能力',
   'home.reason.desc2':
-    '内置可视化控制台和管理平台，方便业务和开发人员低代码完成建模、查询和分析；内置 5 大类近 30 种图分析算法，轻松搭建高效的场景应用。',
-  'home.reason3': '完整、可扩展的应用开发',
+    '支持在线分布式扩展，千万顶点/秒的高吞吐率、低延迟响应，可串行化的隔离级别，支持多副本、同城多机房、异地多机房等部署形态，可支持RPO=0，RTO<30s，保障业务连续性。',
+  'home.reason3': '自主可控、兼容性强',
   'home.reason.desc3':
+    '蚂蚁集团、清华大学联合自主研发，兼容国产化服务器及操作系统，支持国际标准化图查询语言，兼容主流图查询语言。',
+  'home.reason4': '完整、可扩展的应用开发',
+  'home.reason.desc4':
     '开发人员可使用主流查询语言、编程语言、接口协议来快速创建应用，快速对接业务系统、融合数据存储，能够与常见开源架构平滑迁移。',
   'home.chooseVersion': '版本选择',
   'home.version0': '社区版',
@@ -98,6 +126,26 @@ export default {
   'home.version.desc0':
     '适用于单实例部署，它提供了完备的图数据库基础功能，例如 ACID 兼容的事务，编程 API，配套的相关工具等。它是学习 TuGraph 和实现小型项目的理想选择。如需实现生产级高可用集群架构和运维的企业级服务，请联系我们获得商业支持。',
   'home.version.startUse': '免费下载',
+  'home.version.useFree': '30天免费试用',
+  'home.version.title1': ' TuGraph 社区版',
+  'home.version.title2': ' TuGraph 企业版',
+  'home.version1': '企业版',
+  'home.version.desc1':
+    '企业版本对商业化功能支持更加完善，包括分布式集群架构，覆盖图构建、研发、服务、运维全生命周期的一站式图平台，在线、离线的图计算引擎，支持流式、大数据类数据源，多地多中心的部署形态等。是商业化解决方案的理想选择。',
+  'home.version.contactUs': '联系我们',
+  'home.version.community.desc1':
+    '完全开源免费，自由使用、修改和分发，降低使用成本',
+  'home.version.community.desc2':
+    '集中式版本，支持高可用部署，轻松应对 TB 级别海量数据规模',
+  'home.version.community.desc3': '易用性强，可快速部署、轻松构建图应用',
+  'home.version.community.desc4': '社区活跃，问答和社群等社区技术支持快速响应',
+  'home.version.enterprise.desc1':
+    '提供图存储、研发、服务、运维的图研发全链路管理',
+  'home.version.enterprise.desc2':
+    '分布式架构，金融级别高可用能力，轻松支持 PB 级以上海量数据规模',
+  'home.version.enterprise.desc3': '适用于超大数据量的高吞吐率和低延迟业务场景',
+  'home.version.enterprise.desc4':
+    '专业的技术支持服务（钉钉群、电话、工单、现场等）',
   'home.function': '功能',
   'home.function.title1': 'TuGraph DB 图数据库引擎',
   'home.function.title2': 'TuGraph Analytics 图计算引擎',
@@ -145,16 +193,9 @@ export default {
   'home.fun3.feat4': '运维中心：离在线一体化的运维中心',
   'home.fun3.feat5': '个人中心：个人数据资产管理中心',
   'home.fun3.feat6': '数据管理：实时&离线等多数据源集成配置',
-  'home.version.title1': ' TuGraph 社区版',
-  'home.version.title2': ' TuGraph 企业版',
-  'home.version1': '企业版',
-  'home.tugrpah.db': '单机版',
-  'home.distributed': '分布式',
-  'home.highAvailability': '高可用',
-  'home.three.lines.consistent': '离在线一体',
-  'home.version.desc1':
-    '企业版本对商业化功能支持更加完善，包括分布式集群架构，覆盖图构建、研发、服务、运维全生命周期的一站式图平台，在线、离线的图计算引擎，支持流式、大数据类数据源，多地多中心的部署形态等。是商业化解决方案的理想选择。',
-  'home.version.contactUs': '联系我们',
+  'home.btn.desc': '社区版体验',
+  'home.btn.desc1': '阿里云',
+  'home.btn.tryOut': '企业版咨询',
   'home.feat0': '标签属性图模型',
   'home.feat1': '动态模型变更',
   'home.feat2': '支持多图',
@@ -173,22 +214,15 @@ export default {
   'home.feat15': '图数据库专家支持服务',
   'home.feat16': '高级Cypher优化器',
   'home.feat17': '属性级别的权限管理',
-  'home.version.useFree': '30天免费试用',
-  'home.btn.desc': '社区版体验',
-  'home.btn.desc1': '阿里云',
-  'home.btn.tryOut': '企业版咨询',
+  'home.tugrpah.db': '单机版',
+  'home.distributed': '分布式',
+  'home.highAvailability': '高可用',
+  'home.three.lines.consistent': '离在线一体',
   'home.banner.expandBtnDesc': '公告',
-  'footer.qrCode.weChart': '微信公众号',
-  'footer.qrCode.dingTalk': '技术交流群',
-  'footer.qrCode.subDescWeChart': '扫码了解更多资讯',
-  'footer.qrCode.subDescDingTalk': '微信扫码加入',
-  'footer.rules': '隐私条款',
-  'footer.copyright': '京ICP备15032932号-43',
-  'footer.extraInfo': '© 2022 蚂蚁集团',
-  'footer.address': '地址：中国北京朝阳区东三环中路1号环球金融中心东塔9层',
-  'footer.addressMobile': '中国北京朝阳区东三环中路1号环球金融中心东塔9层',
+
   'product.btn.desc': '开始体验',
   'product.btn.desc1': '查看文档',
+  'product.btn.desc2': '立即购买',
   'product.btn.desc3': '更多用户实践',
   'product.case.title': '用户案例',
   'product.case.desc1':
@@ -257,6 +291,21 @@ export default {
   'product.ecosystem': '产品架构',
   'product.overview.ecosystem': '企业版产品架构',
   'product.overview.desc': '业界实践的企业级平台，创新式的流式图计算',
+  'product.overview.clound.desc':
+    'TuGraph Cloud 版是构建在阿里云公有云基础设施上，完全自主研发的原生分布式图数据库，通过计算巢私有化部署，自动完成云资源的创建及应用部署，大幅降低配置复杂度。',
+  'product.clound.title': '便捷的部署和维护',
+  'product.clound.desc':
+    '由阿里云提供统一的基础设施，TuGraph实现云上自动化部署，分钟级实现集群的快速部署与上线；同时，阿里云提供的自动化运维工具和服务，极大降低了维护成本。',
+  'product.clound.title1': '弹性扩展',
+  'product.clound.desc1':
+    '依托阿里云强大的基础设施，用户可以根据业务需求灵活调整资源配置，保证系统始终运行在最佳状态。',
+  'product.clound.title2': '安全可靠',
+  'product.clound.desc2':
+    '阿里云提供的安全防护和容灾备份机制，为用户的数据安全提供了有力保障。',
+  'product.clound.title3': '生态整合',
+  'product.clound.desc3':
+    '通过阿里云市场，TuGraph能够与阿里云的其他服务无缝集成，进一步提升数据处理和分析能力。',
+
   'demo.title': ' 案例',
   'demo.description':
     '图数据库,图计算,图平台,图数据分析, 分布式数据库, Graph,大数据分析,关联关系分析,大数据分析,反洗钱,反欺诈,金融风控,物联网, 设备管理, 国家电网',
@@ -342,6 +391,7 @@ export default {
     '利用图计算技术，将业务、数据、任务、输入、输出、负责人等对象抽象为图数据结构的点和边，构建数据资产图谱，支撑智能化的数据血缘管理。',
   'demo.example.profit6':
     '可视化、准确地呈现数据之间的血缘路径，便于用户追踪数据链路状态、进行数仓规范化治理、数据安全权限检查等。',
+
   'ecosystem.banner.slogan': '携手合作伙伴共促生态发展',
   'ecosystem.banner.description':
     '即刻加入快速增长的图数据库市场，TuGraph为您提供专业的技术、业务和营销支持',
@@ -371,6 +421,7 @@ export default {
   'ecosystem.support1': '深入的图技术赋能',
   'ecosystem.support2': '重点项目全面支持',
   'ecosystem.support3': '销售激励及市场推广支持',
+
   'download.banner.slogan': '下载 TuGraph',
   'download.banner.description': '',
   'download.title0': 'TuGraph 社区版下载',
@@ -379,6 +430,7 @@ export default {
   'download.downloadBtn': '立即下载',
   'download.applyText': '免费申请试用',
   'download.contactBtn': '联系我们',
+
   'form.banner.slogan': '联系我们',
   'form.banner.desc': '高可用、高稳定、高性能、大规模、专业服务支持',
   'form.banner.subTitle': '欢迎使用TuGraph图数据库！',
@@ -388,24 +440,30 @@ export default {
     '您计划将本产品应用于什么业务场景和期望达到什么效果，帮助我们更好了解您的需求',
   'form.item.need': '我需要',
   'form.need': '需要',
-  'form.need.value': '申请试用付费企业版图数据库',
-  'form.need.value1': '预约现场交流DEMO演示',
-  'form.need.value2': '咨询付费企业版图数据库价格',
-  'form.need.value3': '成为合作伙伴',
+  'form.need.value': 'TuGraph 企业版试用',
+  'form.need.value1': '预约现场技术交流',
+  'form.need.value2': 'TuGraph 企业版价格',
+  'form.need.value3': '成为 TuGraph 合作伙伴',
+  'form.need.value4': '其它',
   'form.need.tip': '请选择',
   'form.item.name': '您的姓名',
   'form.name': '姓 名',
+  'form.item.type': '您想咨询的问题类型',
+  'form.item.city': '所在城市',
   'form.item.firm': '公司名称',
   'form.item.email': '电子邮箱',
   'form.item.position': '职位',
+  'form.item.position.options':
+    'CIO/CTO/技术副总裁/总工程师,政府及事业单位人员,IT总监/研发总监,技术经理/研发经理,DBA,运维,架构师,开发者,产品经理/产品总监,项目经理/PMO,市场/商务/采购,财务/法务/人力,教师/研究人员,媒体/分析师,学生,其他。',
   'form.item.phone': '手机',
-  'form.item.city': '所在城市',
   'form.submit.info': '接受软件许可权',
   'form.submit': '提交',
+  'form.cancel': '取消',
   'form.tip0':
     '您提供以上联系信息，即授权蚂蚁集团通过有关TuGraph的产品和服务的通信与您保持联系，以方便回复您的询问或者发送我们的资料等内容，请参阅我们的',
   'form.rule': '隐私政策',
   'form.tip1': '以了解更多详情或者您可以选择随时退出。',
+
   'blog.banner.slogan': 'TuGraph图数据库解读',
   'blog.banner.subTitle': '带你了解更多信息',
   'blog.all': '全部',

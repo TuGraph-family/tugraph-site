@@ -47,14 +47,14 @@ const DownLoadList = ({ intl }: { intl: IntlShape }) => {
 
   return (
     <div className={styles.downloadList}>
-      {downlist.map((item) => {
+      {downlist.map((item, key) => {
         return (
-          <div className={styles.downloadItem}>
+          <div className={styles.downloadItem} key={key}>
             <div className={styles.title}>{item.title}</div>
             <div className={styles.typeList}>
-              {item.typeList.map((typeItem) => {
+              {item.typeList.map((typeItem, typeKey) => {
                 return (
-                  <div className={styles.typeItem}>
+                  <div className={styles.typeItem} key={typeKey}>
                     <div
                       className={typeItem?.assets ? styles.typeItemFlex : ''}
                     >

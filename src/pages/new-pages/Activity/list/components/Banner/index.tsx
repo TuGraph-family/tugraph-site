@@ -1,4 +1,4 @@
-import { Button, Calendar, Space, Tooltip } from 'antd';
+import { Button, Calendar, Tooltip } from 'antd';
 import cx from 'classnames';
 import { history } from 'umi';
 import styles from './index.less';
@@ -6,12 +6,13 @@ import { CaretLeftOutlined, CaretRightOutlined } from '@ant-design/icons';
 import moment from 'moment';
 import { ActivityWayOptionsEnum } from '@/constant';
 import { historyPushLinkAt } from '@/util';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useActivity } from '@/hooks/useActivity';
+import ActivityTag from '@/pages/new-pages/Activity/components/ActivityTag';
 
 const Banner = () => {
   const { getLastActicity, lastDetial } = useActivity();
-
+  const [visible, setVisible] = useState(false);
   let background =
     'url(https://mdn.alipayobjects.com/huamei_p63okt/afts/img/mWlxRYlT07oAAAAAAAAAAAAADh8WAQFr/fmt.avif)';
 
@@ -30,27 +31,32 @@ const Banner = () => {
       moment(lastDetial?.startTime).format('YYYY-MM-DD'),
       moment(lastDetial?.endTime).format('YYYY-MM-DD'),
     ].includes(moment(current._d).format('YYYY-MM-DD'));
+    const isStart =
+      moment(lastDetial?.startTime).format('YYYY-MM-DD') ===
+      moment(current._d).format('YYYY-MM-DD');
 
-    return !(isBetween || isStartandEnd) ? (
-      <div className={cx(styles.fullCell, isToDay ? styles.today : '')}>
-        {moment(current._d).format('DD')}
-      </div>
-    ) : (
+    return isStart ? (
       <Tooltip
         placement="topLeft"
         color="white"
+        open={visible}
         title={
-          <Space>
-            <a
+          <div
+            className={styles.activityTooltip}
+            onMouseLeave={() => setVisible(false)}
+          >
+            <ActivityTag status={lastDetial?.activityState} />
+            <div
               onClick={() =>
                 history.push(
                   historyPushLinkAt('/activity/info/' + lastDetial?.id),
                 )
               }
+              className={styles.activityBtn}
             >
               {lastDetial?.title}
-            </a>
-          </Space>
+            </div>
+          </div>
         }
       >
         <div
@@ -60,16 +66,29 @@ const Banner = () => {
             isBetween ? styles.between : '',
             isStartandEnd ? styles.startandend : '',
           )}
+          onMouseMove={() => setVisible(true)}
+          id={'activityStart'}
         >
           {moment(current._d).format('DD')}
         </div>
       </Tooltip>
+    ) : (
+      <div
+        className={cx(
+          styles.fullCell,
+          isToDay ? styles.today : '',
+          isBetween ? styles.between : '',
+          isStartandEnd ? styles.startandend : '',
+        )}
+        onMouseMove={() => setVisible(isBetween || isStartandEnd)}
+      >
+        {moment(current._d).format('DD')}
+      </div>
     );
   };
   const headerRender = ({ value, onChange }) => {
     const month = value.month();
 
-    // onChange(11);
     const changeMonth = (newMonth) => {
       const now = value.clone().month(newMonth);
       onChange(now);
@@ -101,62 +120,71 @@ const Banner = () => {
           className={styles.bannerContent}
           style={{ backgroundImage: background }}
         >
-          <div className={styles.bannerLeft}>
-            <div>
-              <div className={styles.avtivityTitle}>{lastDetial?.title}</div>
-              <div className={styles.avtivityInfo}>
-                <div className={styles.InfoItem}>
-                  <div className={styles.InfoItemLabel}>活动类型：</div>
-                  <div className={styles.InfoItemVal}>
-                    {ActivityWayOptionsEnum[lastDetial?.activityWay]}
+          {lastDetial?.title ? (
+            <>
+              <div className={styles.bannerLeft}>
+                <div>
+                  <div className={styles.avtivityTitle}>
+                    {lastDetial?.title}
+                  </div>
+                  <div className={styles.avtivityInfo}>
+                    <div className={styles.InfoItem}>
+                      <div className={styles.InfoItemLabel}>活动类型：</div>
+                      <div className={styles.InfoItemVal}>
+                        {ActivityWayOptionsEnum[lastDetial?.activityWay]}
+                      </div>
+                    </div>
+                    <div className={styles.InfoItem}>
+                      <div className={styles.InfoItemLabel}>活动时间：</div>
+                      <div className={styles.InfoItemVal}>
+                        {lastDetial?.startTime
+                          ? moment(lastDetial.startTime).format(
+                              'YYYY-MM-DD HH:mm:ss',
+                            )
+                          : ''}
+                        ～
+                        {lastDetial?.endTime
+                          ? moment(lastDetial.endTime).format(
+                              'YYYY-MM-DD HH:mm:ss',
+                            )
+                          : ''}
+                      </div>
+                    </div>
+                    <div className={styles.InfoItem}>
+                      <div className={styles.InfoItemLabel}>
+                        {' '}
+                        {ActivityWayOptionsEnum[lastDetial?.activityWay]}：
+                      </div>
+                      <div className={styles.InfoItemVal}>
+                        {lastDetial?.activityWay === 'ONLINE'
+                          ? lastDetial?.activityChannel
+                          : lastDetial?.address}
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <div className={styles.InfoItem}>
-                  <div className={styles.InfoItemLabel}>活动时间：</div>
-                  <div className={styles.InfoItemVal}>
-                    {lastDetial?.startTime
-                      ? moment(lastDetial.startTime).format(
-                          'YYYY-MM-DD HH:mm:ss',
-                        )
-                      : ''}
-                    ～
-                    {lastDetial?.endTime
-                      ? moment(lastDetial.endTime).format('YYYY-MM-DD HH:mm:ss')
-                      : ''}
-                  </div>
-                </div>
-                <div className={styles.InfoItem}>
-                  <div className={styles.InfoItemLabel}>
-                    {' '}
-                    {ActivityWayOptionsEnum[lastDetial?.activityWay]}：
-                  </div>
-                  <div className={styles.InfoItemVal}>
-                    {lastDetial?.activityWay === 'ONLINE'
-                      ? lastDetial?.activityChannel
-                      : lastDetial?.address}
-                  </div>
+                <div className={styles.footer}>
+                  {lastDetial?.registrationUrl &&
+                  lastDetial?.activityState === 'REGISTRATION_DURING' ? (
+                    <Button
+                      onClick={() => window.open(lastDetial?.registrationUrl)}
+                      className={cx(styles.mainBtn)}
+                    >
+                      立即报名
+                    </Button>
+                  ) : null}
                 </div>
               </div>
-            </div>
-            <div className={styles.footer}>
-              {lastDetial?.registrationUrl ? (
-                <Button
-                  onClick={() => window.open(lastDetial?.registrationUrl)}
-                  className={cx(styles.mainBtn)}
-                >
-                  立即报名
-                </Button>
-              ) : null}
-            </div>
-          </div>
 
-          <Calendar
-            value={moment(lastDetial?.startTime)}
-            className={styles.activityCalendar}
-            fullscreen={false}
-            dateFullCellRender={cellRender}
-            headerRender={headerRender}
-          />
+              <Calendar
+                defaultValue={moment(lastDetial?.startTime)}
+                className={styles.activityCalendar}
+                fullscreen={false}
+                dateFullCellRender={cellRender}
+                headerRender={headerRender}
+              />
+            </>
+          ) : null}
         </div>
       </div>
     </div>

@@ -12,12 +12,14 @@ export interface LayoutProps {
   content: JSX.Element;
   isFooter?: boolean;
   currentUrl?: { pathname: string; hash: string };
+  headerBgStyles?: Record<string, any>;
 }
 
 export const NewLayout = ({
   isFooter = true,
   content,
   currentUrl,
+  headerBgStyles,
 }: LayoutProps) => {
   const location = useLocation();
   const { search } = location;
@@ -56,7 +58,7 @@ export const NewLayout = ({
       <NewHeader currentUrl={currentUrl} />
       <div className={styles.mainWrapper}>
         <div className={styles.content}>
-          <div className={styles.headerBg} />
+          <div className={styles.headerBg} style={headerBgStyles} />
           {content}
         </div>
       </div>
