@@ -169,6 +169,12 @@ export default defineConfig({
   request: {
     dataField: '',
   },
+  proxy: {
+    '/api': {
+      target: 'http://47.108.139.230:6688',
+      changeOrigin: true,
+    },
+  },
   hash: true,
   locale: {
     antd: true,

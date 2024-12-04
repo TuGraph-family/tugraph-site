@@ -1,9 +1,8 @@
-import { HOST } from '@/constant';
 import { request } from 'umi';
 
 /** 详情
 @param id
-@return 
+@return
  GET /api/activity/detail/${param0} */
 export async function detail(
   params: {
@@ -14,7 +13,7 @@ export async function detail(
 ) {
   const { id: param0 } = params;
   return request<API.Result_ActivityDetailVO_>(
-    HOST + `/api/activity/detail/${param0}`,
+    `/api/activity/detail/${param0}`,
     {
       method: 'GET',
       params: { ...params },
@@ -25,21 +24,18 @@ export async function detail(
 
 /** 活动列表
   @param request
-  @return 
+  @return
    POST /api/activity/list */
 export async function list(
   body?: API.ActivityListRequest,
   options?: { [key: string]: any },
 ) {
-  return request<API.Result_PageVO_ActivityListVO__>(
-    HOST + '/api/activity/list',
-    {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      data: body,
-      ...(options || {}),
+  return request<API.Result_PageVO_ActivityListVO__>('/api/activity/list', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
     },
-  );
+    data: body,
+    ...(options || {}),
+  });
 }
