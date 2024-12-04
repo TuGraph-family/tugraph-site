@@ -7,9 +7,9 @@ const Agenda = ({ list }: { list?: API.ActivityProcessVO[] }) => {
     return (
       <div className={styles.agendaList}>
         <div className={styles.Col}>
-          {list?.map((item, key) => {
+          {list?.map((item) => {
             return (
-              <div className={styles.agendaTime} key={key}>
+              <div className={styles.agendaTime} key={item?.id}>
                 {item?.processStartTime
                   ? moment(item?.processStartTime).format('YYYY-MM-DD HH:mm')
                   : null}
@@ -25,7 +25,6 @@ const Agenda = ({ list }: { list?: API.ActivityProcessVO[] }) => {
           {list?.map((item) => {
             return (
               <div key={item?.id} className={styles.agendaStep}>
-                {' '}
                 {item?.processSubject}
               </div>
             );
@@ -47,9 +46,9 @@ const Agenda = ({ list }: { list?: API.ActivityProcessVO[] }) => {
           })}
         </div>
         <div className={styles.Col}>
-          {list?.map((item, key) => {
+          {list?.map((item) => {
             return (
-              <div key={key}>
+              <div key={item?.id}>
                 {item?.guest?.map((member) => {
                   return (
                     <div key={member.id} className={styles.memberItemDesc}>

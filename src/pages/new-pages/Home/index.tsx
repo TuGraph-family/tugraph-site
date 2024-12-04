@@ -4,17 +4,16 @@ import Banner from '@/pages/new-pages/Home/components/Banner';
 import UserBox from '@/pages/new-pages/Home/components/UserBox';
 import Version from '@/pages/new-pages/Home/components/Version';
 import WhyChoose from '@/pages/new-pages/Home/components/WhyChoose';
+import { BACKGROUND } from '@/pages/new-pages/Home/constants';
 import { useIntl } from 'umi';
 
 const Home = () => {
   const intl = useIntl();
-  let background =
-    'url(https://mdn.alipayobjects.com/huamei_p63okt/afts/img/3JdrQYNnZU4AAAAAAAAAAAAADh8WAQFr/fmt.webp) no-repeat ';
 
   return (
     <NewLayout
       headerBgStyles={{
-        background: background,
+        background: BACKGROUND,
         backgroundSize: '100% 100%',
         height: 619,
       }}

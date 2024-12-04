@@ -61,6 +61,18 @@ export default {
   'home.banner.description':
     "TuGraph is a high-performance graph database jointly developed by Ant Group and Tsinghua University. It has been rigorously tested in Ant Group's 500,000-core graph computing cluster and over 300 real-world business scenarios, and has achieved the top-ranking performance in LDBC-SNB, a globally-recognized benchmark test, surpassing competing solutions.",
   'home.banner.quickStart': 'Quick Start',
+  'home.quickStart.step1.title': 'Environment preparation',
+  'home.quickStart.step1.desc1':
+    'Refer to "Environment Preparation" to ensure that your software and hardware environment meets the requirements to download TuGraph DB',
+  'home.quickStart.step2.title': 'Deployment and installation',
+  'home.quickStart.step2.desc1': 'Set configuration file',
+  'home.quickStart.step2.desc2': 'Install TuGraph DB',
+  'home.quickStart.step2.desc3':
+    'Full-link cross-domain management and control and ensuring the scarcity of data product value',
+  'home.quickStart.step3.title': 'Start TuGraph DB',
+  'home.quickStart.step3.desc1': 'Start TuGraph DB service',
+  'home.quickStart.step3.desc2': 'View process status',
+  'home.quickStart.step3.desc3': 'Browser access, open TuGraph DB',
   'home.notice0.tag': 'BENCHMARK',
   'home.notice0.title': 'TuGraph Named a Leader in the IDC MarketScape',
   'home.notice0.desc':

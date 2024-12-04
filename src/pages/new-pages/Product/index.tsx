@@ -17,7 +17,6 @@ const Product = () => {
       content={
         <>
           <Banner type={type} intl={intl} />
-
           <Introduction type={type} intl={intl} />
           {type !== 'clound' ? <Architecture type={type} intl={intl} /> : null}
           {type === 'db' ? (

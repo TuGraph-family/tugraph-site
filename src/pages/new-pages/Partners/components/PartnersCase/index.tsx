@@ -1,8 +1,8 @@
-import { logoList } from '@/constant';
 import styles from './index.less';
 import { IntlShape } from 'react-intl';
 import { SubTitle } from '@/components/SubTitle';
 import FadeInSection from '@/components/FadeInSection';
+import { LOGO_LIST } from '@/pages/new-pages/Partners/constants';
 
 const PartnersCase = ({ intl }: { intl: IntlShape }) => {
   return (
@@ -12,9 +12,9 @@ const PartnersCase = ({ intl }: { intl: IntlShape }) => {
       />
 
       <div className={styles.logoList}>
-        {logoList?.map((item, key) => {
+        {LOGO_LIST?.map((item) => {
           return (
-            <FadeInSection key={key}>
+            <FadeInSection key={item.key}>
               <img src={item.icon} />
             </FadeInSection>
           );

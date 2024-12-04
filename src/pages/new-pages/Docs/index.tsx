@@ -7,7 +7,6 @@ import React, { useRef, useEffect, useState, useMemo } from 'react';
 import { setLocale, useLocation } from 'umi';
 import { getSearch } from '@/util';
 import { DEFAULT_LOCAL } from '@/constant';
-import { NewHeader } from '@/components/NewHeader';
 import styles from './index.less';
 import { NewLayout } from '@/components/NewLayout';
 
@@ -52,7 +51,6 @@ const Docs: React.FC = () => {
     };
 
     window.addEventListener('message', handleReceiveMessage);
-
     return () => {
       window.removeEventListener('message', handleReceiveMessage);
     };

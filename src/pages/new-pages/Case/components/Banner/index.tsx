@@ -1,8 +1,8 @@
 import styles from './index.less';
 import FadeInSection from '@/components/FadeInSection';
 import { IntlShape } from 'react-intl';
-import { getDemos } from '@/data/demos';
 import { motion } from 'framer-motion';
+import { getDemos } from '@/pages/new-pages/Case/components/constants/data';
 
 const Banner = ({ intl }: { intl: IntlShape }) => {
   let background =
@@ -35,8 +35,8 @@ const Banner = ({ intl }: { intl: IntlShape }) => {
           className={styles.icon}
         />
         <div className={styles.featureSection}>
-          {getDemos(intl)?.map((item, key) => (
-            <FadeInSection key={key}>
+          {getDemos(intl)?.map((item) => (
+            <FadeInSection key={item.type}>
               <motion.div whileHover={{ y: -12 }}>
                 <div className={styles.featureSectionItem}>
                   <img src={item.bgUrl} alt="" className={styles.fieldImg} />

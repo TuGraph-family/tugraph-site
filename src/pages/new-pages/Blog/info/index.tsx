@@ -3,10 +3,8 @@ import InfoContent from '@/pages/new-pages/Blog/info/components/InfoContent';
 import styles from './index.less';
 import InfoRight from '@/pages/new-pages/Blog/info/components/InfoRight';
 import { useLocation } from 'umi';
-import { useImmer } from 'use-immer';
 import { useBlog } from '@/hooks/useBlog';
 import { useEffect } from 'react';
-import { message } from 'antd';
 
 const BlogInfo = () => {
   const location = useLocation();

@@ -12,12 +12,14 @@ const Banner = ({ intl }: { intl: IntlShape }) => {
   const { search } = useLocation();
   const lang = getSearch(search)?.lang || DEFAULT_LOCAL;
 
+  // TODO 接口获取
   const CARD_LIST = [
     {
       title: '基准',
       desc: '被 IDC MarketScape评为领导者',
       bgImg:
         'https://mdn.alipayobjects.com/huamei_p63okt/afts/img/owr4Q4fmE6YAAAAAAAAAAAAADh8WAQFr/original',
+      key: 'card_1',
     },
 
     {
@@ -25,12 +27,14 @@ const Banner = ({ intl }: { intl: IntlShape }) => {
       desc: '领导 LDBC Finbench 项目',
       bgImg:
         'https://mdn.alipayobjects.com/huamei_p63okt/afts/img/dR8USJrp5vMAAAAAAAAAAAAADh8WAQFr/original',
+      key: 'card_2',
     },
     {
       title: '消息',
       desc: '免费试用阿里云上的 TuGraph',
       bgImg:
         'https://mdn.alipayobjects.com/huamei_p63okt/afts/img/mvIOTaTxY9QAAAAAAAAAAAAADh8WAQFr/original',
+      key: 'card_3',
     },
   ];
 
@@ -65,8 +69,8 @@ const Banner = ({ intl }: { intl: IntlShape }) => {
       </FadeInSection>
       {lang === 'zh-CN' && (
         <div className={styles.featureSection}>
-          {CARD_LIST.map((item, idx) => (
-            <FadeInSection key={idx}>
+          {CARD_LIST.map((item) => (
+            <FadeInSection key={item.key}>
               <motion.div
                 className={styles.featureSectionItem}
                 whileHover={{

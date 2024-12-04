@@ -146,7 +146,7 @@ export const NewHeader = ({
           return (
             <div className={styles.productSubMenuVersion} key={item.title}>
               <div className={styles.productSubMenuTitle}>{item.title}</div>
-              {item.subMenu?.map((subItem, key) => {
+              {item.subMenu?.map((subItem) => {
                 return (
                   <div
                     className={styles.productSubMenuItem}
@@ -162,7 +162,7 @@ export const NewHeader = ({
                         clearTimeout(time);
                       }, 500);
                     }}
-                    key={key}
+                    key={subItem.label}
                   >
                     <div className={styles.productSubMenuItemLabel}>
                       {subItem.label}

@@ -1,9 +1,9 @@
 import { SubTitle } from '@/components/SubTitle';
 import { IntlShape } from 'react-intl';
 import styles from './index.less';
-import { getPartnerReason } from '@/data/get_partner_reason';
 import { Col, Row } from 'antd';
 import FadeInSection from '@/components/FadeInSection';
+import { getPartnerReason } from '@/pages/new-pages/Partners/constants/data';
 
 const PartnersSupport = ({ intl }: { intl: IntlShape }) => {
   return (
@@ -14,9 +14,9 @@ const PartnersSupport = ({ intl }: { intl: IntlShape }) => {
       />
       <div className={styles['partners-support-content']}>
         <Row gutter={[24, 24]}>
-          {getPartnerReason(intl).map((item, index) => {
+          {getPartnerReason(intl).map((item) => {
             return (
-              <Col span={12} key={index}>
+              <Col span={12} key={item.key}>
                 <FadeInSection>
                   <div className={styles.supportItem}>
                     <img src={item.src} alt="icon" />

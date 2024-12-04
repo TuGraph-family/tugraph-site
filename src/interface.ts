@@ -61,3 +61,14 @@ export interface DownloadItem {
   };
   items?: any;
 }
+
+export interface IFormValues {
+  type?: string;
+  name?: string;
+  phone?: string;
+  email?: string;
+  company?: string;
+  position?: string;
+  city?: string;
+  content?: string;
+}

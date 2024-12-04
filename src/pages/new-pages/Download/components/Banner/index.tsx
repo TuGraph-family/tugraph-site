@@ -1,10 +1,8 @@
-import cx from 'classnames';
-
 import styles from './index.less';
 import { IntlShape } from 'react-intl';
 
 const Banner = ({ intl }: { intl: IntlShape }) => {
-  let background =
+  const background =
     'url(https://mdn.alipayobjects.com/huamei_p63okt/afts/img/Si-AR7mhUpUAAAAAAAAAAAAADh8WAQFr/fmt.webp)';
 
   return (
