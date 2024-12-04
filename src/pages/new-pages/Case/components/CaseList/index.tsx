@@ -1,18 +1,18 @@
 import { SubTitle } from '@/components/SubTitle';
 import styles from './index.less';
 import { IntlShape } from 'react-intl';
-import { getExamples } from '@/data/examples';
 import FadeInSection from '@/components/FadeInSection';
+import { getExamples } from '@/pages/new-pages/Case/components/constants/data';
 
 const CaseList = ({ intl }: { intl: IntlShape }) => {
   return (
     <div className={styles.caseList}>
       <SubTitle title={intl.formatMessage({ id: 'demo.examples' })} />
       <div>
-        {getExamples(intl).map((item, key) => {
+        {getExamples(intl).map((item) => {
           return (
-            <div className={styles.caseItemBox}>
-              <div className={styles.caseItem} key={key}>
+            <div className={styles.caseItemBox} key={item.title}>
+              <div className={styles.caseItem}>
                 <div className={styles.caseContent}>
                   <FadeInSection>
                     <div className={styles.caseTitle}>{item.title}</div>

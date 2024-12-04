@@ -4,48 +4,22 @@ import styles from './index.less';
 import { SubTitle } from '@/components/SubTitle';
 import { motion, useScroll } from 'framer-motion';
 import { IntlShape } from 'react-intl';
+import { getReason } from '@/pages/new-pages/Home/constants/data';
 
 const WhyChoose: React.FC<{ intl: IntlShape }> = ({ intl }) => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [percentage, setPercentage] = useState(0);
+  const [percentage, setPercentage] = useState<string | number>(0);
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ['start 25%', 'end end'],
   });
-  const list = [
-    {
-      title: intl.formatMessage({ id: 'home.reason0' }),
-      content: intl.formatMessage({ id: 'home.reason.desc0' }),
-      img: 'https://mdn.alipayobjects.com/huamei_p63okt/afts/img/eQ2CSaTW-iIAAAAAAAAAAAAADh8WAQFr/fmt.avif',
-    },
-    {
-      title: intl.formatMessage({ id: 'home.reason1' }),
-      content: intl.formatMessage({ id: 'home.reason.desc1' }),
-      img: 'https://mdn.alipayobjects.com/huamei_p63okt/afts/img/-2fbSYub2sYAAAAAAAAAAAAADh8WAQFr/fmt.avif',
-    },
-    {
-      title: intl.formatMessage({ id: 'home.reason2' }),
-      content: intl.formatMessage({ id: 'home.reason.desc2' }),
-      img: 'https://mdn.alipayobjects.com/huamei_p63okt/afts/img/bmVhRZuDKQUAAAAAAAAAAAAADh8WAQFr/fmt.avif',
-    },
-    {
-      title: intl.formatMessage({ id: 'home.reason3' }),
-      content: intl.formatMessage({ id: 'home.reason.desc3' }),
-      img: 'https://mdn.alipayobjects.com/huamei_p63okt/afts/img/TAGYR5Pj1gMAAAAAAAAAAAAADh8WAQFr/fmt.avif',
-    },
-    {
-      title: intl.formatMessage({ id: 'home.reason4' }),
-      content: intl.formatMessage({ id: 'home.reason.desc4' }),
-      img: 'https://mdn.alipayobjects.com/huamei_p63okt/afts/img/b2ZtTLd4ppoAAAAAAAAAAAAADh8WAQFr/fmt.avif',
-    },
-  ];
 
   useEffect(() => {
     if (scrollYProgress) {
       // 创建一个函数来处理滚动进度的变化
-      const handleScroll = (latest) => {
+      const handleScroll = (latest: number) => {
         const percent = (latest * 100).toFixed(2);
-        setPercentage(percent); // 将小数值转换为百分比，并保留两位小数
+        setPercentage(percent);
       };
 
       // 订阅 scrollYProgress 的变化
@@ -61,8 +35,8 @@ const WhyChoose: React.FC<{ intl: IntlShape }> = ({ intl }) => {
       <div className={styles.featureDescriptionWrapper}>
         <SubTitle title={intl.formatMessage({ id: 'home.choseReason' })} />
         <div className={styles.lineContet}>
-          {list.map((item, key) => (
-            <div className={styles.lineContetItem} key={key}>
+          {getReason(intl).map((item) => (
+            <div className={styles.lineContetItem} key={item.key}>
               <FadeInSection>
                 <div className={styles.lineContetBox}>
                   <img
@@ -81,14 +55,12 @@ const WhyChoose: React.FC<{ intl: IntlShape }> = ({ intl }) => {
               className={styles.progress}
               style={{
                 height: `${percentage}%`,
-                // scaleY: scrollYProgress,
                 originY: 0,
                 position: 'relative',
               }}
             >
               <div className={styles['progress-header']} />
             </motion.div>
-            {/* <div>{scrollYProgress.get()}</div> */}
           </div>
         </div>
       </div>

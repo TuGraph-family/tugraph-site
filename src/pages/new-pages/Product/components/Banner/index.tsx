@@ -8,6 +8,7 @@ import { getSearch, historyPushLinkAt } from '@/util';
 import { history, useLocation } from 'umi';
 import Title from 'antd/lib/skeleton/Title';
 import { DEFAULT_LOCAL } from '@/constant';
+import { getVideos } from '@/pages/new-pages/Product/constants/data';
 
 export interface IBannerProps {
   type: string;
@@ -165,28 +166,11 @@ const Banner = ({ type, intl }: IBannerProps) => {
 
   const bannerDetail = banners?.[type] || {};
 
-  const videoList = [
-    {
-      url: 'https://gw.alipayobjects.com/os/bmw-prod/2145f227-08f0-435a-abe6-7f503b65da7d.mov',
-      title: intl.formatMessage({ id: 'product.video0' }),
-      length: '02:39',
-    },
-    {
-      url: 'https://gw.alipayobjects.com/os/bmw-prod/2145f227-08f0-435a-abe6-7f503b65da7d.mov',
-      title: intl.formatMessage({ id: 'product.video1' }),
-      length: '02:39',
-    },
-    {
-      url: 'https://gw.alipayobjects.com/os/bmw-prod/2145f227-08f0-435a-abe6-7f503b65da7d.mov',
-      title: intl.formatMessage({ id: 'product.video2' }),
-      length: '02:39',
-    },
-  ];
   const renderVideo = () => {
     return type === 'db' ? (
       <div className={styles.featureSection}>
-        {videoList.map((item, key) => (
-          <FadeInSection key={key}>
+        {getVideos(intl).map((item) => (
+          <FadeInSection key={item.key}>
             <div className={styles.featureSectionItem}>
               <JoLPlayer
                 option={{

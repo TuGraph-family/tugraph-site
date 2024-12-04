@@ -11,9 +11,7 @@ const Partners = () => {
       content={
         <>
           <Banner intl={intl} />
-
           <PartnersSupport intl={intl} />
-
           <PartnersCase intl={intl} />
         </>
       }

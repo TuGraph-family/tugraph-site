@@ -58,6 +58,17 @@ export default {
   'home.banner.description':
     '高性能图数据库TuGraph由蚂蚁集团和清华大学共同研发，历经蚂蚁50万核图计算集群和300+实际业务场景锤炼，在国际图数据库基准测试中多次获得性能第一。',
   'home.banner.quickStart': '快速上手',
+  'home.quickStart.step1.title': '环境准备',
+  'home.quickStart.step1.desc1':
+    '参考《环境准备》确保您的软硬件环境满足要求下载 TuGraph DB',
+  'home.quickStart.step2.title': '部署安装',
+  'home.quickStart.step2.desc1': '设置配置文件',
+  'home.quickStart.step2.desc2': '安装TuGraph DB',
+  'home.quickStart.step2.desc3': '全链路跨域管控和保障数据产品值稀缺性',
+  'home.quickStart.step3.title': '启动 TuGraph DB',
+  'home.quickStart.step3.desc1': '开启 TuGraph DB 服务',
+  'home.quickStart.step3.desc2': '查看进程状态',
+  'home.quickStart.step3.desc3': '浏览器访问，开启 TuGraph DB',
   'home.notice0.tag': '测试报告',
   'home.notice0.title': '蚂蚁集团TuGraph跻身中国图数据库市场“领导者”象限',
   'home.notice0.desc':

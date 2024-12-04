@@ -81,9 +81,9 @@ const InfoRight = ({
       </Anchor>
       <div className={styles.newest}>
         <div className={styles.newestTitle}>最新博客</div>
-        {list?.map((item, key) => (
+        {list?.map((item) => (
           <div
-            key={key}
+            key={item?.id}
             className={styles.newestItem}
             onClick={() =>
               history.push(historyPushLinkAt(`/blog/info/${item.id}`))

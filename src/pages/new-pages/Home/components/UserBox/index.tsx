@@ -6,6 +6,7 @@ import FadeInSection from '@/components/FadeInSection';
 import { history } from 'umi';
 import { historyPushLinkAt } from '@/util';
 import { IntlShape } from 'react-intl';
+import { USER_LOGO_LIST } from '@/pages/new-pages/Home/constants';
 const UserBox: React.FC<{ intl: IntlShape }> = ({ intl }) => {
   const [isHover, setIsHover] = useState<boolean>(false);
   console.log('isHover:', isHover);
@@ -13,33 +14,20 @@ const UserBox: React.FC<{ intl: IntlShape }> = ({ intl }) => {
   return (
     <div className={styles.userBox}>
       <FadeInSection>
-        {' '}
         <div className={styles.title}>
           {intl.formatMessage({ id: 'home.users' })}
         </div>
       </FadeInSection>
       <FadeInSection>
         <div className={styles.userImgList}>
-          <img
-            src="https://mdn.alipayobjects.com/huamei_p63okt/afts/img/dctDTYIXmsoAAAAAAAAAAAAADh8WAQFr/original"
-            alt=""
-            className={styles.userImg}
-          />
-          <img
-            src="https://mdn.alipayobjects.com/huamei_p63okt/afts/img/4su9SIEA1jAAAAAAAAAAAAAADh8WAQFr/original"
-            alt=""
-            className={styles.userImg}
-          />
-          <img
-            src="https://mdn.alipayobjects.com/huamei_p63okt/afts/img/yEnGRKX8NpgAAAAAAAAAAAAADh8WAQFr/original"
-            alt=""
-            className={styles.userImg}
-          />
-          <img
-            src="https://mdn.alipayobjects.com/huamei_p63okt/afts/img/5SC9SJBGoSUAAAAAAAAAAAAADh8WAQFr/original"
-            alt=""
-            className={styles.userImg}
-          />
+          {USER_LOGO_LIST.map((item) => (
+            <img
+              key={item.key}
+              src={item.src}
+              alt=""
+              className={styles.userImg}
+            />
+          ))}
         </div>
       </FadeInSection>
       <FadeInSection>

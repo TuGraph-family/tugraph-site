@@ -19,14 +19,17 @@ export const NewFooter = ({ className }: { className?: string }) => {
     {
       icon: 'https://gw.alipayobjects.com/zos/bmw-prod/5bb7aed7-7b96-4f15-9147-6ba150e5a220.svg',
       url: 'https://github.com/TuGraph-family',
+      key: 'icon_1',
     },
     {
       icon: 'https://gw.alipayobjects.com/zos/bmw-prod/eba3a225-f8a3-4c56-ad7a-339a60707a49.svg',
       img: 'https://gw.alipayobjects.com/zos/antfincdn/v6wTr95cHw/ae4398ac-2cc3-4401-9149-992b93a81b27.png',
+      key: 'icon_2',
     },
     {
       icon: 'https://gw.alipayobjects.com/zos/bmw-prod/db10078e-ebc9-4d19-b13a-18d07f327c8c.svg',
       url: 'https://space.bilibili.com/1196053065/',
+      key: 'icon_3',
     },
   ];
 
@@ -256,8 +259,8 @@ export const NewFooter = ({ className }: { className?: string }) => {
       {lang === 'zh-CN' && (
         <div className={styles.contactInfo}>
           <Space size={32} className={styles.iconGroup}>
-            {icons.map((item, key) => (
-              <div key={key}>
+            {icons.map((item) => (
+              <div key={item.key}>
                 {item.url ? (
                   <a target="_blank" href={item.url} rel="noopener noreferrer">
                     <img src={item.icon} />

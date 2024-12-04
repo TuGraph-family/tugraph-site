@@ -1,8 +1,9 @@
 import styles from './index.less';
 import { IntlShape } from 'react-intl';
 import FadeInSection from '@/components/FadeInSection';
-import { getPartner } from '@/data/get_partner';
+
 import MainButton from '@/components/MainButton';
+import { getPartner } from '@/pages/new-pages/Partners/constants/data';
 
 const Banner = ({ intl }: { intl: IntlShape }) => {
   let background =
@@ -49,9 +50,9 @@ const Banner = ({ intl }: { intl: IntlShape }) => {
       </div>
 
       <div className={styles.bannerFooter}>
-        {getPartner(intl).map((item, key) => {
+        {getPartner(intl).map((item) => {
           return (
-            <FadeInSection key={key}>
+            <FadeInSection key={item.key}>
               <div
                 className={styles.typeItem}
                 style={{ backgroundImage: `url(${item.icon})` }}

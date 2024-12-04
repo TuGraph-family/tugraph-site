@@ -21,6 +21,7 @@ import {
 import { getSearch, historyPushLinkAt } from '@/util';
 import { history, useIntl, useLocation } from 'umi';
 import { DEFAULT_LOCAL } from '@/constant';
+import { IFormValues } from '@/interface';
 
 const { Item } = Form;
 
@@ -136,8 +137,8 @@ const MainButton: React.FC<IMainButtonProps> = ({
     }
   };
 
-  const onOk = (values: any) => {
-    form.validateFields().then((values) => {
+  const onOk = () => {
+    form.validateFields().then((values: IFormValues) => {
       const body = [];
       for (const [key, value] of Object.entries(values)) {
         body.push(`${key}: ${value}`);
