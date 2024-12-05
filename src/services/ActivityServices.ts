@@ -1,3 +1,4 @@
+import { HOST } from '@/constant';
 import { request } from 'umi';
 
 /** 详情
@@ -13,7 +14,7 @@ export async function detail(
 ) {
   const { id: param0 } = params;
   return request<API.Result_ActivityDetailVO_>(
-    `/api/activity/detail/${param0}`,
+    HOST + `/api/activity/detail/${param0}`,
     {
       method: 'GET',
       params: { ...params },
@@ -30,12 +31,15 @@ export async function list(
   body?: API.ActivityListRequest,
   options?: { [key: string]: any },
 ) {
-  return request<API.Result_PageVO_ActivityListVO__>('/api/activity/list', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
+  return request<API.Result_PageVO_ActivityListVO__>(
+    HOST + '/api/activity/list',
+    {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      data: body,
+      ...(options || {}),
     },
-    data: body,
-    ...(options || {}),
-  });
+  );
 }

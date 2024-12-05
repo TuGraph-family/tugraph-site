@@ -171,7 +171,7 @@ export default defineConfig({
   },
   proxy: {
     '/api': {
-      target: 'http://47.108.139.230:6688',
+      target: 'https://tugraphportal-pre.tugraph.tech:4433',
       changeOrigin: true,
     },
   },
