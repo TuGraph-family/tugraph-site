@@ -4,13 +4,13 @@ import { request } from 'umi';
 /* 获取版本列表 */
 /** 博客列表
 @param request
-@return 
+@return
  POST /api/bolg/list */
 export async function list(
   body?: API.BlogListRequest,
   options?: { [key: string]: any },
 ) {
-  return request<API.Result_PageVO_BlogListVO__>(HOST + '/api/bolg/list', {
+  return request<API.Result_PageVO_BlogListVO__>(HOST + '/api/blog/list', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -29,7 +29,7 @@ export async function detail(
 ) {
   const { id: param0 } = params;
   return request<API.Result_BlogDetailVO_>(
-    HOST + `/api/bolg/detail/${param0}`,
+    HOST + `/api/blog/detail/${param0}`,
     {
       method: 'GET',
       params: { ...params },

@@ -169,6 +169,12 @@ export default defineConfig({
   request: {
     dataField: '',
   },
+  proxy: {
+    '/api': {
+      target: 'https://tugraphportal-pre.tugraph.tech:4433',
+      changeOrigin: true,
+    },
+  },
   hash: true,
   locale: {
     antd: true,

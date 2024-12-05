@@ -3,7 +3,7 @@ import { request } from 'umi';
 
 /** 详情
 @param id
-@return 
+@return
  GET /api/activity/detail/${param0} */
 export async function detail(
   params: {
@@ -25,7 +25,7 @@ export async function detail(
 
 /** 活动列表
   @param request
-  @return 
+  @return
    POST /api/activity/list */
 export async function list(
   body?: API.ActivityListRequest,
