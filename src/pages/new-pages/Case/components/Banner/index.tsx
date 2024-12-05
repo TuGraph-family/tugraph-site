@@ -3,8 +3,14 @@ import FadeInSection from '@/components/FadeInSection';
 import { IntlShape } from 'react-intl';
 import { motion } from 'framer-motion';
 import { getDemos } from '@/pages/new-pages/Case/components/constants/data';
+import { useLocation } from 'umi';
+import { getSearch } from '@/util';
+import { DEFAULT_LOCAL } from '@/constant';
 
 const Banner = ({ intl }: { intl: IntlShape }) => {
+  const { search } = useLocation();
+  const lang = getSearch(search)?.lang || DEFAULT_LOCAL;
+
   let background =
     'url(https://mdn.alipayobjects.com/huamei_p63okt/afts/img/uxB_TauEWMkAAAAAAAAAAAAADh8WAQFr/original)';
 
@@ -34,15 +40,16 @@ const Banner = ({ intl }: { intl: IntlShape }) => {
           alt=""
           className={styles.icon}
         />
-        <div className={styles.featureSection}>
+        <div
+          className={styles.featureSection}
+          style={lang === 'en-US' ? { height: 200 } : {}}
+        >
           {getDemos(intl)?.map((item) => (
-            <FadeInSection key={item.type}>
-              <motion.div whileHover={{ y: -12 }}>
-                <div className={styles.featureSectionItem}>
-                  <img src={item.bgUrl} alt="" className={styles.fieldImg} />
-                  <div className={styles.fieldName}>{item.type}</div>
-                </div>
-              </motion.div>
+            <FadeInSection key={item.type} whileHover={{ y: -12 }}>
+              <div className={styles.featureSectionItem}>
+                <img src={item.bgUrl} alt="" className={styles.fieldImg} />
+                <div className={styles.fieldName}>{item.type}</div>
+              </div>
             </FadeInSection>
           ))}
         </div>

@@ -354,6 +354,11 @@ export const NewHeader = ({
               {...props}
             >
               <div className={styles.mainMenu}>{label}</div>
+              <div className={styles.footerLine}>
+                <div className={styles.line} />
+                <div className={styles.arrow} />
+                <div className={styles.line} />
+              </div>
             </div>
           );
         })}

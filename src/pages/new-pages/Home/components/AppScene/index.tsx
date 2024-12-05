@@ -45,6 +45,7 @@ const AppScene = ({ intl }: { intl: IntlShape }) => {
               content={renderPopover(item.field, item.scene, item.illustrate)}
             >
               <div className={styles.fieldCard} style={item.style}>
+                <img src={item.icon} alt="" className={styles.sceneIcon} />
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: inView ? 1 : 0 }}

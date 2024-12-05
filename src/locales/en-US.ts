@@ -529,6 +529,8 @@ TuGraph supports more than 300 applications in the Ant Group, including "Double 
   'doc.title': ' TuGraph Documentation',
   'blog.title': ' TuGraph Blog',
   'download.title': ' TuGraph Download',
+  'download.desc':
+    'TuGraph Download Center provides users with downloads of various versions of the TuGraph database, as well as supporting tools, drivers and middleware. If you are a signed Enterprise Edition user, you can contact your support staff to download the exclusive software. ',
   'platform.title': 'TuGraph Platform: One-stop Graph Platform',
   'platform.slog': `One-Stop Graph Platform for Entire R&D Life Cycle `,
   'platform.mobileSlog': 'One-Stop Graph Platform for Entire R&D Life Cycle ',

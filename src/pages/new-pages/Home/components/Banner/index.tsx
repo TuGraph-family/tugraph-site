@@ -50,7 +50,10 @@ const Banner = ({ intl }: { intl: IntlShape }) => {
           <div className={styles.titleText}>
             {intl.formatMessage({ id: 'home.banner.slogan' })}
           </div>
-          <div className={styles.descriptionText}>
+          <div
+            className={styles.descriptionText}
+            style={lang === 'zh-CN' ? {} : { width: 833 }}
+          >
             {intl.formatMessage({ id: 'home.banner.description' })}
           </div>
           <div className={styles.buttonContainer}>
