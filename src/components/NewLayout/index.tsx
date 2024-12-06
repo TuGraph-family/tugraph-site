@@ -11,6 +11,7 @@ export interface LayoutProps {
   isFooter?: boolean;
   currentUrl?: { pathname: string; hash: string };
   headerBgStyles?: Record<string, any>;
+  mainStyles?: Record<string, any>;
 }
 
 export const NewLayout: React.FC<LayoutProps> = ({
@@ -18,6 +19,7 @@ export const NewLayout: React.FC<LayoutProps> = ({
   content,
   currentUrl,
   headerBgStyles,
+  mainStyles,
 }) => {
   const location = useLocation();
   const { search } = location;
@@ -35,7 +37,7 @@ export const NewLayout: React.FC<LayoutProps> = ({
   return (
     <div>
       <NewHeader currentUrl={currentUrl} />
-      <div className={styles.mainWrapper}>
+      <div className={styles.mainWrapper} style={mainStyles}>
         <div className={styles.content}>
           <div className={styles.headerBg} style={headerBgStyles} />
           {content}

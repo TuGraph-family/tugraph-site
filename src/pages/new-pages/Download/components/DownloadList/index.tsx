@@ -35,9 +35,7 @@ const DownLoadList = ({ intl }: { intl: IntlShape }) => {
                         />
                       )}
                     </div>
-                    <div className={styles.fileDesc}>
-                      这是该内容的简短说明，这是该内容的简短说明，文本在两行以内，这是该内容的简短说明，这是该内容的简短说明，文本在两行以内
-                    </div>
+                    <div className={styles.fileDesc}>{item.versionDesc}</div>
                   </div>
                 );
               })}

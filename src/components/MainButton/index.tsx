@@ -62,7 +62,7 @@ const MainButton: React.FC<IMainButtonProps> = ({
       icon: <AliyunOutlined />,
       onClick: () => {
         setVisible(false);
-        window.open('https://www.aliyun.com/product/graphdb');
+        window.open('https://aliyun-computenest.github.io/quickstart-tugraph/');
       },
     },
     {
@@ -99,8 +99,12 @@ const MainButton: React.FC<IMainButtonProps> = ({
             trigger={['click']}
             onOpenChange={(visible) => setVisible(visible)}
             overlayStyle={overlayStyle}
+            getPopupContainer={() =>
+              document.getElementById('main-dropdown-button') || document.body
+            }
           >
             <Button
+              id="main-dropdown-button"
               type="primary"
               size="large"
               shape="round"
