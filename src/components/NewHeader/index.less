@@ -35,7 +35,6 @@
   height: 66px;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid #3f537123;
 }
 
 .headerLeft {
@@ -114,19 +113,33 @@
 
 .menuList {
   display: flex;
-  margin-left: 162px;
   margin-top: -66px;
   height: 66px;
+
+  &::before {
+    content: '';
+    width: 151px;
+    height: 66px;
+    border-bottom: 1px solid #3f537123;
+    pointer-events: none;
+  }
+
+  &::after {
+    content: '';
+    flex: 1;
+    height: 66px;
+    border-bottom: 1px solid #3f537123;
+    pointer-events: none;
+  }
 
   .menuItem {
     cursor: pointer;
   }
 
-  .menuItem,
-  .mainMenuCase,
-  .mainMenuProduct {
+  .menuItem {
     height: 66px;
-    margin-right: 24px;
+    padding: 0 16px;
+    position: relative;
 
     .mainMenu {
       height: 66px;
@@ -148,19 +161,32 @@
         transform: translate(-50%, 0);
         opacity: 0;
       }
+    }
 
-      &::after {
-        content: '';
-        width: 10px;
-        height: 10px;
-        background-color: rgb(217, 225, 234);
-        border: 1px solid transparent;
-        border-color: #3f537123 #3f537123 transparent transparent;
-        position: absolute;
-        bottom: -12px;
-        left: 50%;
-        transform: translateX(-50%) rotate(-45deg);
-        transition: bottom 0.3s ease;
+    .footerLine {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      align-items: flex-end;
+      height: 10px;
+      overflow: hidden;
+
+      .arrow {
+        width: 0;
+        height: 0;
+        margin: 0;
+        border: 0px solid transparent;
+        transform: translateY(50%) rotate(-45deg);
+        transition: all 0.3s linear;
+        background-color: transparent;
+      }
+
+      .line {
+        flex: 1;
+        height: 1px;
+        background-color: #3f537123;
       }
     }
 
@@ -169,8 +195,11 @@
         opacity: 1;
       }
 
-      .mainMenu::after {
-        bottom: -6px;
+      .arrow {
+        border: 1px solid #3f537123;
+        width: 10px;
+        height: 10px;
+        margin: 0 1px;
       }
     }
   }
@@ -180,10 +209,13 @@
       &::before {
         opacity: 1;
       }
+    }
 
-      &::after {
-        bottom: -6px;
-      }
+    .footerLine > .arrow {
+      border: 1px solid #3f537123;
+      width: 10px;
+      height: 10px;
+      margin: 0 1px;
     }
   }
 }

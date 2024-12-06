@@ -1,0 +1,27 @@
+.homeBg {
+  display: flex;
+  width: 100vw;
+  margin: 0 -120px;
+  height: 619px;
+  position: absolute;
+  align-items: stretch;
+  top: 0;
+
+  &::before,
+  &::after {
+    content: '';
+    flex: 1;
+    background: url('https://mdn.alipayobjects.com/huamei_p63okt/afts/img/eSJzQo_4BtYAAAAAAAAAAAAADh8WAQFr/original')
+      no-repeat center / 100% 100%;
+  }
+
+  .centerBg {
+    width: 1200px;
+    background: url('https://mdn.alipayobjects.com/huamei_p63okt/afts/img/j4CARLuc_vgAAAAAAAAAAAAADh8WAQFr/original')
+      no-repeat center / 100% 100%;
+  }
+
+  &::after {
+    background-image: url('https://mdn.alipayobjects.com/huamei_p63okt/afts/img/WqoVQK7tboMAAAAAAAAAAAAADh8WAQFr/original');
+  }
+}

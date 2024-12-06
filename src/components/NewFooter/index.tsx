@@ -9,7 +9,7 @@ import { getSearch } from '@/util';
 
 const { Panel } = Collapse;
 
-export const NewFooter = ({ className }: { className?: string }) => {
+export const NewFooter = () => {
   const intl = useIntl();
   const isWide = useMedia('(min-width: 767.99px)', true);
   const { search } = useLocation();

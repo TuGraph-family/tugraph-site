@@ -54,6 +54,9 @@ export const getDownList = (intl: IntlShape) => [
         ],
       },
     ],
+    versionDesc: intl.formatMessage({
+      id: 'download.version.desc1',
+    }),
   },
   {
     title: 'TuGraph Analytics',
@@ -71,6 +74,9 @@ export const getDownList = (intl: IntlShape) => [
         content: 'docker pull tugraph/geaflow-console',
       },
     ],
+    versionDesc: intl.formatMessage({
+      id: 'download.version.desc2',
+    }),
   },
   {
     title: 'TuGraph Learn',
@@ -88,5 +94,8 @@ export const getDownList = (intl: IntlShape) => [
         content: 'docker pull tugraph/geaflow-console',
       },
     ],
+    versionDesc: intl.formatMessage({
+      id: 'download.version.desc3',
+    }),
   },
 ];

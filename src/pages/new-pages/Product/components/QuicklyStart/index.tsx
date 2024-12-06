@@ -3,11 +3,16 @@ import { ArrowRightOutlined } from '@ant-design/icons';
 import { SubTitle } from '@/components/SubTitle';
 import FadeInSection from '@/components/FadeInSection';
 import { IntlShape } from 'react-intl';
-import { history } from 'umi';
-import { historyPushLinkAt } from '@/util';
+import { history, useLocation } from 'umi';
+import { getSearch, historyPushLinkAt } from '@/util';
 import { getSteps } from '@/pages/new-pages/Product/constants/data';
 
 const QuickStart = ({ intl }: { intl: IntlShape }) => {
+  const { search } = useLocation();
+
+  const getLang = () => {
+    return getSearch(search)?.lang === 'en-US' ? 'en' : 'zh';
+  };
   return (
     <div className={styles.lastSectionContainer}>
       <div>
@@ -42,7 +47,7 @@ const QuickStart = ({ intl }: { intl: IntlShape }) => {
             onClick={() => {
               history.push(
                 historyPushLinkAt(
-                  '/docs/tugraph-db/en/4.5.0/quick-start/preparation',
+                  `/docs/tugraph-db/${getLang()}/4.5.0/quick-start/preparation`,
                 ),
               );
             }}

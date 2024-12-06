@@ -29,12 +29,14 @@ interface IMainButtonProps {
   type: 'experience' | 'consult' | 'connect';
   style?: Record<string, any>;
   btnText: string;
+  overlayStyle?: Record<string, any>;
 }
 
 const MainButton: React.FC<IMainButtonProps> = ({
   type,
   style,
   btnText,
+  overlayStyle,
   ...props
 }) => {
   const intl = useIntl();
@@ -49,19 +51,28 @@ const MainButton: React.FC<IMainButtonProps> = ({
       label: 'github',
       key: 'item-1',
       icon: <GithubOutlined />,
-      onClick: () => window.open('https://github.com/TuGraph-family'),
+      onClick: () => {
+        setVisible(false);
+        window.open('https://github.com/TuGraph-family');
+      },
     },
     {
       label: intl.formatMessage({ id: 'home.btn.desc1' }),
       key: 'item-2',
       icon: <AliyunOutlined />,
-      onClick: () => window.open('https://www.aliyun.com/product/graphdb'),
+      onClick: () => {
+        setVisible(false);
+        window.open('https://aliyun-computenest.github.io/quickstart-tugraph/');
+      },
     },
     {
       label: intl.formatMessage({ id: 'header.assets.download' }),
       key: 'item-3',
       icon: <VerticalAlignBottomOutlined />,
-      onClick: () => history.push(historyPushLinkAt('/download')),
+      onClick: () => {
+        setVisible(false);
+        history.push(historyPushLinkAt('/download'));
+      },
     },
   ];
 
@@ -87,8 +98,13 @@ const MainButton: React.FC<IMainButtonProps> = ({
             overlayClassName={styles.communityDropdown}
             trigger={['click']}
             onOpenChange={(visible) => setVisible(visible)}
+            overlayStyle={overlayStyle}
+            getPopupContainer={() =>
+              document.getElementById('main-dropdown-button') || document.body
+            }
           >
             <Button
+              id="main-dropdown-button"
               type="primary"
               size="large"
               shape="round"

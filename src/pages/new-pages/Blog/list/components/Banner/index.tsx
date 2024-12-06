@@ -61,14 +61,14 @@ const Banner = ({
   };
 
   return (
-    <div className={styles.bannerBox}>
-      <div
-        className={styles.banner}
-        style={{
-          backgroundImage: background,
-          height: '310px',
-        }}
-      >
+    <div
+      className={styles.bannerBox}
+      style={{
+        backgroundImage: background,
+        height: '300px',
+      }}
+    >
+      <div className={styles.banner}>
         <div className={styles.databaseTitleSection}>
           <div className={styles.titleText}>博客 </div>
           <div className={styles.descriptionText}>

@@ -19,6 +19,7 @@ const Version = ({ intl }: { intl: IntlShape }) => {
         <MainButton
           type="experience"
           btnText={intl.formatMessage({ id: 'home.btn.desc' })}
+          overlayStyle={{ width: 514 }}
         />
       ),
     },

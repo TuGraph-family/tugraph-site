@@ -51,9 +51,9 @@ export default {
   'footer.rules': 'Privacy Policy',
   'footer.extraInfo': '© 2022 Ant Group',
   'footer.address':
-    '9th Floor, East Tower, Beijing World Financial Center, No.1 East 3rd Ring Middle Road, Chaoyang District, Beijing 100020',
+    'Lijin Intelligent Center - East Tower, Building 1, No. 6 Weigongcun Road, Haidian District, Beijing',
   'footer.addressMobile':
-    '9th Floor, East Tower, Beijing World Financial Center, No.1 East 3rd Ring Middle Road, Chaoyang District, Beijing 100020',
+    'Lijin Intelligent Center - East Tower, Building 1, No. 6 Weigongcun Road, Haidian District, Beijing',
 
   'home.description':
     'TuGraph, ant graph database, ant graph computing, graph database, graph computing, graph platform, graph data analysis, distributed database, Graph, big data, association analysis, knowledge graph, GNN, graph neural network, Neo4j, GeaGraph, GeaBase , GeaFlow, Fermat, artificial intelligence, big data, graph processing,graph database, graph computing, artificial intelligence',
@@ -529,6 +529,8 @@ TuGraph supports more than 300 applications in the Ant Group, including "Double 
   'doc.title': ' TuGraph Documentation',
   'blog.title': ' TuGraph Blog',
   'download.title': ' TuGraph Download',
+  'download.desc':
+    'TuGraph Download Center provides users with downloads of various versions of the TuGraph database, as well as supporting tools, drivers and middleware. If you are a signed Enterprise Edition user, you can contact your support staff to download the exclusive software. ',
   'platform.title': 'TuGraph Platform: One-stop Graph Platform',
   'platform.slog': `One-Stop Graph Platform for Entire R&D Life Cycle `,
   'platform.mobileSlog': 'One-Stop Graph Platform for Entire R&D Life Cycle ',
@@ -611,16 +613,19 @@ TuGraph supports more than 300 applications in the Ant Group, including "Double 
     'Debug and tracing for distributed programs, queries, DDL statements, execution, and data flow',
   'db.freeTrial': 'Free Trial',
   'doc.menu': 'Learn about v3.5.0',
-  'product_analytics.introfuction':
-    'The open-source distributed real-time graph computing engine developed by Ant Group, supports graph analytics on trillion-scale data. It supports unified processing on graph and tabular data models, as well as multi-mode computing including stream computing, batch processing, and graph computing. It provides exactly-once semantics, high availability, one-stop cloud-native development and deployment. It is widely used for data warehouse acceleration, financial risk management, knowledge graphs, social networks, and many more scenarios.',
-  'product_learn.introfuction':
-    'TuGraph Learn is a graph learning framework developed on top of TuGraph DB. It empowers users to efficiently develop, train, and deploy graph learning models. The framework provides various sampling algorithms including neighbor, negative, edge, and random walk sampling to optimize model training. TuGraph Learn supports integration with popular open-source frameworks like DGL, PyG, and OpenHGNN. Through high-performance compiler optimizations, TuGraph Learn accelerates model development and inference with minimal coding effort.',
   'download.title3': 'TuGraph Analytics Download',
   'download.title4': 'TuGraph Learn Download',
   'download.copyLinkBtn': 'Copy',
   'download.imageDownloadAddress': 'Official docker images',
   'download.imageDownloadMethod': 'Pull the latest image',
   'download.copySuccess': 'Copied',
+  'download.version.desc1':
+    'Single instance, high availability, high performance graph database',
+  'download.version.desc2':
+    'Cloud native, distributed, batch-stream integrated graph computing engine',
+  'download.version.desc3':
+    'A large-scale, high-performance graph learning framework that supports the development, training and inference of graph learning models based on TuGraph DB',
+
   'product_analytics.feature.title0': 'Dynamic Graph Computing',
   'product_analytics.feature.desc0':
     'Supporting dynamic graph analytics and improving real-time performance of graph computing results.',

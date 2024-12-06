@@ -49,8 +49,8 @@ export default {
   'footer.qrCode.subDescDingTalk': '微信扫码加入',
   'footer.rules': '隐私条款',
   'footer.extraInfo': '© 2022 蚂蚁集团',
-  'footer.address': '地址：中国北京朝阳区东三环中路1号环球金融中心东塔9层',
-  'footer.addressMobile': '中国北京朝阳区东三环中路1号环球金融中心东塔9层',
+  'footer.address': '地址：北京市海淀区魏公村路6号院1号楼丽金智地中心-东塔',
+  'footer.addressMobile': '北京市海淀区魏公村路6号院1号楼丽金智地中心-东塔',
 
   'home.description':
     'TuGraph,蚂蚁图数据库,蚂蚁图计算,图数据库,图计算,图平台,图数据分析, 分布式数据库, Graph,大数据,关联关系分析,知识图谱,GNN, 图神经网络, Neo4j, GeaGraph, GeaBase, GeaFlow, 费马, 人工智能, big data, graph processing,graph database, graph computing, artificial intelligence',
@@ -585,6 +585,11 @@ export default {
   'download.imageDownloadAddress': '镜像下载地址',
   'download.imageDownloadMethod': '镜像下载方式/命令',
   'download.copySuccess': '复制成功',
+  'download.version.desc1': '单实例、高可用、高性能图数据库',
+  'download.version.desc2': '云原生、分布式、批流一体图计算引擎',
+  'download.version.desc3':
+    '大规模高性能的图学习框架，支持基于TuGraph DB进行图学习模型的开发、训练和推理',
+
   'product_analytics.feature.title0': '动态图计算',
   'product_analytics.feature.desc0':
     '业内率先支持动态图分析的工业级图计算引擎，提升图计算结果的实时性。',
