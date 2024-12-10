@@ -3,17 +3,17 @@ import { IntlShape } from 'react-intl';
 
 const Banner = ({ intl }: { intl: IntlShape }) => {
   const background =
-    'url(https://mdn.alipayobjects.com/huamei_p63okt/afts/img/Si-AR7mhUpUAAAAAAAAAAAAADh8WAQFr/fmt.webp)';
+    'url(https://mdn.alipayobjects.com/huamei_p63okt/afts/img/jsh9Q6hyQaAAAAAAAAAAAAAADh8WAQFr/original)';
 
   return (
-    <div className={styles.bannerBox}>
-      <div
-        className={styles.banner}
-        style={{
-          backgroundImage: background,
-          height: '280px',
-        }}
-      >
+    <div
+      className={styles.bannerBox}
+      style={{
+        backgroundImage: background,
+        height: '280px',
+      }}
+    >
+      <div className={styles.banner}>
         <div className={styles.databaseTitleSection}>
           <div className={styles.titleText}>
             {intl.formatMessage({ id: 'download.title' })}{' '}
@@ -25,7 +25,7 @@ const Banner = ({ intl }: { intl: IntlShape }) => {
 
         <img
           src={
-            'https://mdn.alipayobjects.com/huamei_p63okt/afts/img/LS42Qq0IvjMAAAAAAAAAAAAADh8WAQFr/fmt.avif'
+            'https://mdn.alipayobjects.com/huamei_p63okt/afts/img/D25HS7gj49QAAAAAAAAAAAAADh8WAQFr/original'
           }
           className={styles.icon}
         />

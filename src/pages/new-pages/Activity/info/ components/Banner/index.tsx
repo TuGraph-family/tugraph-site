@@ -8,7 +8,7 @@ import { useMemo } from 'react';
 
 const Banner = ({ detail }: { detail: API.ActivityDetailVO }) => {
   let background =
-    'url(https://mdn.alipayobjects.com/huamei_p63okt/afts/img/DxbPRKoOmCcAAAAAAAAAAAAADh8WAQFr/fmt.avif)';
+    'url(https://mdn.alipayobjects.com/huamei_p63okt/afts/img/J0lRQb2Sx6wAAAAAAAAAAAAADh8WAQFr/original)';
 
   const isDisable = useMemo(() => {
     return ['PROGRESS', 'OVER'].includes(detail?.activityState || '');

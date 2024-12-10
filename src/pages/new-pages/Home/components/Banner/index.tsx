@@ -4,39 +4,33 @@ import styles from './index.less';
 import FadeInSection from '@/components/FadeInSection';
 import MainButton from '@/components/MainButton';
 import { IntlShape } from 'react-intl';
-import { useLocation } from 'umi';
-import { getSearch } from '@/util';
+import { useLocation, history } from 'umi';
+import { getSearch, historyPushLinkAt } from '@/util';
 import { DEFAULT_LOCAL } from '@/constant';
+import { useMemo } from 'react';
+import { CARD_LIST } from '@/pages/new-pages/Home/constants';
 
-const Banner = ({ intl }: { intl: IntlShape }) => {
+const Banner = ({
+  intl,
+  blogList,
+}: {
+  intl: IntlShape;
+  blogList: API.BlogListVO[];
+}) => {
   const { search } = useLocation();
   const lang = getSearch(search)?.lang || DEFAULT_LOCAL;
 
-  // TODO 接口获取
-  const CARD_LIST = [
-    {
-      title: '基准',
-      desc: '被 IDC MarketScape评为领导者',
-      bgImg:
-        'https://mdn.alipayobjects.com/huamei_p63okt/afts/img/owr4Q4fmE6YAAAAAAAAAAAAADh8WAQFr/original',
-      key: 'card_1',
-    },
-
-    {
-      title: '消息',
-      desc: '领导 LDBC Finbench 项目',
-      bgImg:
-        'https://mdn.alipayobjects.com/huamei_p63okt/afts/img/dR8USJrp5vMAAAAAAAAAAAAADh8WAQFr/original',
-      key: 'card_2',
-    },
-    {
-      title: '消息',
-      desc: '免费试用阿里云上的 TuGraph',
-      bgImg:
-        'https://mdn.alipayobjects.com/huamei_p63okt/afts/img/mvIOTaTxY9QAAAAAAAAAAAAADh8WAQFr/original',
-      key: 'card_3',
-    },
-  ];
+  const cardList = useMemo(() => {
+    return CARD_LIST.map((item, idx) => {
+      const { category = '', title = '', id } = blogList?.[idx] || {};
+      return {
+        ...item,
+        category,
+        title,
+        id,
+      };
+    }).filter((d) => d?.id);
+  }, [blogList]);
 
   return (
     <div
@@ -45,35 +39,43 @@ const Banner = ({ intl }: { intl: IntlShape }) => {
         height: '552px',
       }}
     >
-      <FadeInSection>
-        <div className={styles.databaseTitleSection}>
+      <div className={styles.databaseTitleSection}>
+        <FadeInSection>
           <div className={styles.titleText}>
             {intl.formatMessage({ id: 'home.banner.slogan' })}
           </div>
+        </FadeInSection>
+        <FadeInSection transition={{ duration: 1, delay: 0.2 }}>
           <div
             className={styles.descriptionText}
             style={lang === 'zh-CN' ? {} : { width: 833 }}
           >
             {intl.formatMessage({ id: 'home.banner.description' })}
           </div>
+        </FadeInSection>
+        <FadeInSection transition={{ duration: 1, delay: 0.3 }}>
           <div className={styles.buttonContainer}>
             <MainButton
               type="experience"
-              style={{ height: 48 }}
+              style={{ height: 48, minWidth: 160 }}
               btnText={intl.formatMessage({ id: 'home.btn.desc' })}
             />
             <MainButton
               type="consult"
-              style={{ height: 48 }}
+              style={{ height: 48, minWidth: 160 }}
               btnText={intl.formatMessage({ id: 'home.btn.tryOut' })}
             />
           </div>
-        </div>
-      </FadeInSection>
+        </FadeInSection>
+      </div>
+
       {lang === 'zh-CN' && (
         <div className={styles.featureSection}>
-          {CARD_LIST.map((item) => (
-            <FadeInSection key={item.key}>
+          {cardList.map((item) => (
+            <FadeInSection
+              key={item.key}
+              transition={{ duration: 1.5, delay: 0.5 }}
+            >
               <motion.div
                 className={styles.featureSectionItem}
                 whileHover={{
@@ -81,6 +83,9 @@ const Banner = ({ intl }: { intl: IntlShape }) => {
                 }}
                 drag
                 dragSnapToOrigin
+                onClick={() =>
+                  history.push(historyPushLinkAt(`/blog/info/${item.id}`))
+                }
               >
                 <img src={item.bgImg} alt="" className={styles.featureImg} />
                 <img
@@ -88,8 +93,8 @@ const Banner = ({ intl }: { intl: IntlShape }) => {
                   alt=""
                   className={styles.featureArrow}
                 />
-                <div className={styles.featureCategory}>{item.title}</div>
-                <div className={styles.featureContent}>{item.desc}</div>
+                <div className={styles.featureCategory}>{item?.category}</div>
+                <div className={styles.featureContent}>{item?.title}</div>
               </motion.div>
             </FadeInSection>
           ))}

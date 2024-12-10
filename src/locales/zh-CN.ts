@@ -150,6 +150,8 @@ export default {
     '集中式版本，支持高可用部署，轻松应对 TB 级别海量数据规模',
   'home.version.community.desc3': '易用性强，可快速部署、轻松构建图应用',
   'home.version.community.desc4': '社区活跃，问答和社群等社区技术支持快速响应',
+  'home.version.community.desc5':
+    '单实例部署、开源免费、简单快速、中小型项目的理想选择',
   'home.version.enterprise.desc1':
     '提供图存储、研发、服务、运维的图研发全链路管理',
   'home.version.enterprise.desc2':
@@ -157,6 +159,8 @@ export default {
   'home.version.enterprise.desc3': '适用于超大数据量的高吞吐率和低延迟业务场景',
   'home.version.enterprise.desc4':
     '专业的技术支持服务（钉钉群、电话、工单、现场等）',
+  'home.version.enterprise.desc5':
+    '分布式、高可用、高稳定性、企业级项目的理想选择',
   'home.function': '功能',
   'home.function.title1': 'TuGraph DB 图数据库引擎',
   'home.function.title2': 'TuGraph Analytics 图计算引擎',
@@ -465,7 +469,7 @@ export default {
   'form.item.email': '电子邮箱',
   'form.item.position': '职位',
   'form.item.position.options':
-    'CIO/CTO/技术副总裁/总工程师,政府及事业单位人员,IT总监/研发总监,技术经理/研发经理,DBA,运维,架构师,开发者,产品经理/产品总监,项目经理/PMO,市场/商务/采购,财务/法务/人力,教师/研究人员,媒体/分析师,学生,其他。',
+    'CIO/CTO/技术副总裁/总工程师,政府及事业单位人员,IT总监/研发总监,技术经理/研发经理,DBA,运维,架构师,开发者,产品经理/产品总监,项目经理/PMO,市场/商务/采购,财务/法务/人力,教师/研究人员,媒体/分析师,学生,其他',
   'form.item.phone': '手机',
   'form.submit.info': '接受软件许可权',
   'form.submit': '提交',

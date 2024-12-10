@@ -9,12 +9,7 @@
 
   :global {
     .ant-dropdown-menu {
-      margin: auto;
-      width: fit-content;
       box-shadow: none;
-      display: flex;
-      flex-direction: column;
-      align-items: stretch;
     }
 
     .ant-dropdown-menu-item:hover {
@@ -24,7 +19,7 @@
 
     .ant-dropdown-menu-item-icon {
       font-size: 18px;
-      margin-right: 4px;
+      margin: 0 4px 0 19px;
       color: #292d3b;
       justify-content: flex-end;
     }
@@ -102,7 +97,18 @@
 .connect,
 .consult {
   :global {
+    min-width: 146px;
     height: 100%;
+  }
+}
+
+.consult {
+  color: #545762;
+  border: none;
+
+  &:hover {
+    color: #545762;
+    opacity: 0.8;
   }
 }
 

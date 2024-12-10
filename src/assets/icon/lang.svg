@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>中英文</title>
+    <g id="浅色评审稿" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="3、官网首页备份-2" transform="translate(-1229, -92)">
+            <g id="导航" transform="translate(120, 88)">
+                <g id="编组-7" transform="translate(1013, 0)">
+                    <g id="中英文" transform="translate(96, 4)">
+                        <rect id="矩形" x="0" y="0" width="24" height="24" rx="2.66666667"></rect>
+                        <g id="编组-21" transform="translate(5, 5)" stroke="#545762">
+                            <circle id="椭圆形" stroke-width="0.933333333" cx="7" cy="7" r="6.53333333"></circle>
+                            <ellipse id="椭圆形" stroke-width="0.933333333" cx="7" cy="7" rx="3.03333333" ry="6.53333333"></ellipse>
+                            <line x1="0.89059905" y1="5.05555556" x2="13.3350435" y2="5.05555556" id="路径-2" stroke-width="0.933333333"></line>
+                            <line x1="0.89059905" y1="8.94444444" x2="13.3350435" y2="8.94444444" id="路径-2"></line>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

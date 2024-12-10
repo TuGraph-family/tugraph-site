@@ -19,7 +19,7 @@ const Banner = ({ type, intl }: IBannerProps) => {
   const { search } = useLocation();
   const lang = getSearch(search)?.lang || DEFAULT_LOCAL;
   let background =
-    'url(https://mdn.alipayobjects.com/huamei_p63okt/afts/img/G9ZrRYyDzWIAAAAAAAAAAAAADh8WAQFr/original)';
+    'url(https://mdn.alipayobjects.com/huamei_p63okt/afts/img/qm9aTJHOJGIAAAAAAAAAAAAADh8WAQFr/original)';
 
   const getCurrentLanguage = () => {
     return lang === 'en-US' ? 'en' : 'zh';
@@ -29,7 +29,7 @@ const Banner = ({ type, intl }: IBannerProps) => {
       title: intl.formatMessage({ id: 'header.product.desc1' }),
       desc: intl.formatMessage({ id: 'home.version0.desc' }),
       btn: (
-        <FadeInSection>
+        <FadeInSection transition={{ duration: 1, delay: 0.3 }}>
           <div className={styles.buttonContainer}>
             <MainButton
               style={{ height: 48 }}
@@ -54,13 +54,13 @@ const Banner = ({ type, intl }: IBannerProps) => {
           </div>
         </FadeInSection>
       ),
-      icon: 'https://mdn.alipayobjects.com/huamei_p63okt/afts/img/7NU5RYANpA0AAAAAAAAAAAAADh8WAQFr/original',
+      icon: 'https://mdn.alipayobjects.com/huamei_p63okt/afts/img/TTduSbtgY18AAAAAAAAAAAAADh8WAQFr/original',
     },
     analytics: {
       title: intl.formatMessage({ id: 'header.product.desc2' }),
       desc: intl.formatMessage({ id: 'product_analytics.description' }),
       btn: (
-        <FadeInSection>
+        <FadeInSection transition={{ duration: 1, delay: 0.3 }}>
           <div className={styles.buttonContainer}>
             <MainButton
               style={{ height: 48 }}
@@ -85,13 +85,13 @@ const Banner = ({ type, intl }: IBannerProps) => {
           </div>
         </FadeInSection>
       ),
-      icon: 'https://mdn.alipayobjects.com/huamei_p63okt/afts/img/ltFLTZ0LRgoAAAAAAAAAAAAADh8WAQFr/original',
+      icon: 'https://mdn.alipayobjects.com/huamei_p63okt/afts/img/bZntRJJTNDwAAAAAAAAAAAAADh8WAQFr/original',
     },
     learn: {
       title: intl.formatMessage({ id: 'header.product.desc3' }),
       desc: intl.formatMessage({ id: 'product_learn.description' }),
       btn: (
-        <FadeInSection>
+        <FadeInSection transition={{ duration: 1, delay: 0.3 }}>
           <div className={styles.buttonContainer}>
             <MainButton
               style={{ height: 48 }}
@@ -122,7 +122,7 @@ const Banner = ({ type, intl }: IBannerProps) => {
       title: intl.formatMessage({ id: 'header.product.desc4' }),
       desc: intl.formatMessage({ id: 'product_enterprise.description' }),
       btn: (
-        <FadeInSection>
+        <FadeInSection transition={{ duration: 1, delay: 0.3 }}>
           <div className={styles.buttonContainer}>
             <MainButton
               style={{ height: 48 }}
@@ -138,7 +138,7 @@ const Banner = ({ type, intl }: IBannerProps) => {
       title: intl.formatMessage({ id: 'header.product.desc5' }),
       desc: intl.formatMessage({ id: 'product_clound.description' }),
       btn: (
-        <FadeInSection>
+        <FadeInSection transition={{ duration: 1, delay: 0.3 }}>
           <div className={styles.buttonContainer}>
             <MainButton
               style={{ height: 48 }}
@@ -170,7 +170,10 @@ const Banner = ({ type, intl }: IBannerProps) => {
     return type === 'db' ? (
       <div className={styles.featureSection}>
         {getVideos(intl).map((item) => (
-          <FadeInSection key={item.key}>
+          <FadeInSection
+            key={item.key}
+            transition={{ duration: 1, delay: 0.4 }}
+          >
             <div className={styles.featureSectionItem}>
               <JoLPlayer
                 option={{

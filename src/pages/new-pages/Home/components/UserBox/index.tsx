@@ -7,17 +7,19 @@ import { history } from 'umi';
 import { historyPushLinkAt } from '@/util';
 import { IntlShape } from 'react-intl';
 import { USER_LOGO_LIST } from '@/pages/new-pages/Home/constants';
+import { SubTitle } from '@/components/SubTitle';
 const UserBox: React.FC<{ intl: IntlShape }> = ({ intl }) => {
   const [isHover, setIsHover] = useState<boolean>(false);
   console.log('isHover:', isHover);
 
   return (
     <div className={styles.userBox}>
-      <FadeInSection>
-        <div className={styles.title}>
-          {intl.formatMessage({ id: 'home.users' })}
-        </div>
-      </FadeInSection>
+      <SubTitle
+        title={intl.formatMessage({ id: 'home.users' })}
+        style={{
+          margin: '72px 0 52px',
+        }}
+      />
       <FadeInSection>
         <div className={styles.userImgList}>
           {USER_LOGO_LIST.map((item) => (

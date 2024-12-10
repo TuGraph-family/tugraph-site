@@ -74,7 +74,6 @@
     .languageIcon {
       width: 24px;
       height: 24px;
-      color: @txt-color;
     }
   }
 
@@ -279,7 +278,7 @@
     transition: all 0.3s;
 
     &:hover {
-      transform: translate(5px, -5px);
+      transform: translateY(-5px);
       box-shadow: 0px 9px 28px 8px #84879b0d, 0px 6px 16px 0px #84879b14,
         0px 3px 6px -4px #84879b1f;
     }
@@ -312,6 +311,16 @@
     .subMenuTitle {
       color: @secondary-color;
       font-weight: 500;
+      padding-left: 8px;
+    }
+
+    .communitySubMenuItem {
+      border-radius: 8px;
+      padding: 8px;
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.15);
+      }
     }
   }
 }

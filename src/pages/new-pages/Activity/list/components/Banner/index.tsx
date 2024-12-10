@@ -14,7 +14,7 @@ const Banner = () => {
   const { getLastActicity, lastDetial } = useActivity();
   const [visible, setVisible] = useState(false);
   let background =
-    'url(https://mdn.alipayobjects.com/huamei_p63okt/afts/img/mWlxRYlT07oAAAAAAAAAAAAADh8WAQFr/fmt.avif)';
+    'url(https://mdn.alipayobjects.com/huamei_p63okt/afts/img/bmXsSKHuSyoAAAAAAAAAAAAADh8WAQFr/original)';
 
   useEffect(() => {
     getLastActicity('REGISTRATION_DURING');
