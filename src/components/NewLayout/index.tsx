@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import { setLocale, useLocation } from 'umi';
 import { NewHeader } from '../NewHeader';
 import styles from './index.less';
@@ -22,7 +22,7 @@ export const NewLayout: React.FC<LayoutProps> = ({
   mainStyles,
 }) => {
   const location = useLocation();
-  const { search } = location;
+  const { search, pathname } = location;
   useEffect(() => {
     setLocale(getSearch(search)?.lang || DEFAULT_LOCAL, false);
     const href = window?.location?.href;
@@ -34,10 +34,17 @@ export const NewLayout: React.FC<LayoutProps> = ({
     }
   }, [search]);
 
+  const bgColor = useMemo(() => {
+    return ['/download', '/'].includes(pathname) ? '#fff' : '#f1f3f6';
+  }, [pathname]);
+
   return (
     <div>
       <NewHeader currentUrl={currentUrl} />
-      <div className={styles.mainWrapper} style={mainStyles}>
+      <div
+        className={styles.mainWrapper}
+        style={{ background: bgColor, ...mainStyles }}
+      >
         <div className={styles.content}>
           <div className={styles.headerBg} style={headerBgStyles} />
           {content}

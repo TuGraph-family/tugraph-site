@@ -12,7 +12,7 @@ const Banner = ({ intl }: { intl: IntlShape }) => {
   const lang = getSearch(search)?.lang || DEFAULT_LOCAL;
 
   let background =
-    'url(https://mdn.alipayobjects.com/huamei_p63okt/afts/img/uxB_TauEWMkAAAAAAAAAAAAADh8WAQFr/original)';
+    'url(https://mdn.alipayobjects.com/huamei_p63okt/afts/img/fcQMSKdYwlkAAAAAAAAAAAAADh8WAQFr/original)';
 
   return (
     <div
@@ -36,7 +36,7 @@ const Banner = ({ intl }: { intl: IntlShape }) => {
           </FadeInSection>
         </div>
         <img
-          src="https://mdn.alipayobjects.com/huamei_p63okt/afts/img/JOVtTqY79zMAAAAAAAAAAAAADh8WAQFr/original"
+          src="https://mdn.alipayobjects.com/huamei_p63okt/afts/img/tcH7Tqfcq10AAAAAAAAAAAAADh8WAQFr/original"
           alt=""
           className={styles.icon}
         />
@@ -45,7 +45,7 @@ const Banner = ({ intl }: { intl: IntlShape }) => {
           style={lang === 'en-US' ? { height: 200 } : {}}
         >
           {getDemos(intl)?.map((item) => (
-            <FadeInSection key={item.type} whileHover={{ y: -12 }}>
+            <FadeInSection key={item.type}>
               <div className={styles.featureSectionItem}>
                 <img src={item.bgUrl} alt="" className={styles.fieldImg} />
                 <div className={styles.fieldName}>{item.type}</div>

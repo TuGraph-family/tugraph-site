@@ -5,9 +5,9 @@ import cx from 'classnames';
 import { DEFAULT_LOCAL } from '@/constant';
 import { getSearch, goLinkAt, historyPushLinkAt } from '@/util';
 import '@docsearch/css';
-
 import styles from './index.less';
 import { motion } from 'framer-motion';
+import langIcon from '@/assets/icon/lang.svg';
 
 export const NewHeader = ({
   currentUrl,
@@ -259,6 +259,7 @@ export const NewHeader = ({
               {item.subMenu.map((subItem) => {
                 return (
                   <div
+                    className={styles.communitySubMenuItem}
                     key={subItem.label}
                     onClick={() => {
                       if (subItem?.path) {
@@ -439,10 +440,7 @@ export const NewHeader = ({
           <div className={styles.headerRight}>
             {/* {searchInput()} */}
             <div className={styles.lang} onClick={handleLangClick}>
-              <img
-                src="https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*GN_WSabhJdwAAAAAAAAAAAAADgOBAQ/original"
-                className={styles.languageIcon}
-              />
+              <img src={langIcon} className={styles.languageIcon} />
               <div className={styles.languageText}>
                 {lang === 'zh-CN' ? '中' : 'EN'}
               </div>

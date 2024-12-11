@@ -34,10 +34,6 @@
     display: flex;
     margin: 43px auto 0;
     gap: 16px;
-
-    & > button {
-      flex: 1;
-    }
   }
 }
 
@@ -142,6 +138,7 @@
 }
 
 .featureCategory {
+  height: 20px;
   display: block;
   align-self: flex-start;
   white-space: nowrap;
@@ -153,7 +150,14 @@
 
 .featureContent {
   width: 215px;
+  height: 66px;
   font-size: 24px;
   color: #1c2442;
+  line-height: 33px;
   margin-bottom: 34px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

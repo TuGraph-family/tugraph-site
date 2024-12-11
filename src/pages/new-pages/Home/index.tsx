@@ -4,11 +4,21 @@ import Banner from '@/pages/new-pages/Home/components/Banner';
 import UserBox from '@/pages/new-pages/Home/components/UserBox';
 import Version from '@/pages/new-pages/Home/components/Version';
 import WhyChoose from '@/pages/new-pages/Home/components/WhyChoose';
-import { BACKGROUND } from '@/pages/new-pages/Home/constants';
 import { useIntl } from 'umi';
 import styles from './index.less';
+import { useBlog } from '@/hooks/useBlog';
+import { useEffect } from 'react';
 const Home = () => {
   const intl = useIntl();
+  const { getList, list } = useBlog();
+
+  useEffect(() => {
+    getList({
+      current: 1,
+      size: 3,
+      state: 'PUBLISHED',
+    });
+  }, []);
 
   return (
     <NewLayout
@@ -17,7 +27,7 @@ const Home = () => {
           <div className={styles.homeBg}>
             <div className={styles.centerBg} />
           </div>
-          <Banner intl={intl} />
+          <Banner intl={intl} blogList={list} />
           <WhyChoose intl={intl} />
           <AppScene intl={intl} />
           <Version intl={intl} />

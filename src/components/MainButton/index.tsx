@@ -4,6 +4,7 @@ import {
   Form,
   Input,
   Modal,
+  notification,
   Radio,
   Select,
   Space,
@@ -22,6 +23,7 @@ import { getSearch, historyPushLinkAt } from '@/util';
 import { history, useIntl, useLocation } from 'umi';
 import { DEFAULT_LOCAL } from '@/constant';
 import { IFormValues } from '@/interface';
+import success from '@/assets/icon/success.svg';
 
 const { Item } = Form;
 
@@ -96,7 +98,7 @@ const MainButton: React.FC<IMainButtonProps> = ({
           <Dropdown
             menu={{ items }}
             overlayClassName={styles.communityDropdown}
-            trigger={['click']}
+            trigger={['hover']}
             onOpenChange={(visible) => setVisible(visible)}
             overlayStyle={overlayStyle}
             getPopupContainer={() =>
@@ -163,6 +165,15 @@ const MainButton: React.FC<IMainButtonProps> = ({
       const bodyString = body.join(';');
       // TODO 用邮件服务替换掉 https://dashboard.emailjs.com/
       window.location.href = `mailto:tugraph@service.alipay.com?subject=${btnText}&body=${bodyString}`;
+    });
+  };
+
+  const submitSuccess = () => {
+    return notification.error({
+      message: '提交成功',
+      icon: <img src={success} />,
+      description:
+        '感谢您的使用，我们将会在 2 个工作日内完成审核，并通过邮件与您联系。',
     });
   };
 

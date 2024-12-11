@@ -164,6 +164,8 @@ export default {
     'Easy to use, can be quickly deployed and easily build graph applications',
   'home.version.community.desc4':
     'The community is active, and community technical support such as Q&A and communities responds quickly',
+  'home.version.community.desc5':
+    'Single instance deployment, open source and free, simple and fast, ideal for small and medium-sized projects',
   'home.version.enterprise.desc1':
     'Providing graph R&D full-link management of graph storage, R&D, services, and operation and maintenance',
   'home.version.enterprise.desc2':
@@ -172,6 +174,8 @@ export default {
     'Suitable for high throughput and low latency business scenarios with extremely large data volumes',
   'home.version.enterprise.desc4':
     'Professional technical support services (DingTalk group, telephone, work orders, on-site, etc.)',
+  'home.version.enterprise.desc5':
+    'Ideal choice for distributed, high-availability, high-stability, enterprise-level projects',
   'home.function': 'Functionalities',
   'home.function.title1': 'TuGraph DB: Graph Database Engine',
   'home.function.title2': 'TuGraph Analytics: Graph Analytics Engine',

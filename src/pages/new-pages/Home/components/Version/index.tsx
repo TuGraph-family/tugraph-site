@@ -1,6 +1,7 @@
 import styles from './index.less';
 import FadeInSection from '@/components/FadeInSection';
 import MainButton from '@/components/MainButton';
+import { SubTitle } from '@/components/SubTitle';
 import { IntlShape } from 'react-intl';
 
 const Version = ({ intl }: { intl: IntlShape }) => {
@@ -14,11 +15,13 @@ const Version = ({ intl }: { intl: IntlShape }) => {
         intl.formatMessage({ id: 'home.version.community.desc2' }),
         intl.formatMessage({ id: 'home.version.community.desc3' }),
         intl.formatMessage({ id: 'home.version.community.desc4' }),
+        intl.formatMessage({ id: 'home.version.community.desc5' }),
       ],
       btn: (
         <MainButton
           type="experience"
           btnText={intl.formatMessage({ id: 'home.btn.desc' })}
+          style={{ marginTop: 12 }}
           overlayStyle={{ width: 514 }}
         />
       ),
@@ -32,11 +35,12 @@ const Version = ({ intl }: { intl: IntlShape }) => {
         intl.formatMessage({ id: 'home.version.enterprise.desc2' }),
         intl.formatMessage({ id: 'home.version.enterprise.desc3' }),
         intl.formatMessage({ id: 'home.version.enterprise.desc4' }),
+        intl.formatMessage({ id: 'home.version.enterprise.desc5' }),
       ],
       btn: (
         <MainButton
           type="consult"
-          style={{ background: '#e1e4e8' }}
+          style={{ background: '#e1e4e8', marginTop: 12 }}
           btnText={intl.formatMessage({ id: 'home.btn.tryOut' })}
         />
       ),
@@ -45,11 +49,12 @@ const Version = ({ intl }: { intl: IntlShape }) => {
 
   return (
     <div className={styles.versionContainer}>
-      <FadeInSection>
-        <div className={styles.versionTitle}>
-          {intl.formatMessage({ id: 'home.chooseVersion' })}
-        </div>
-      </FadeInSection>
+      <SubTitle
+        title={intl.formatMessage({ id: 'home.chooseVersion' })}
+        style={{
+          margin: '80px 0 48px ',
+        }}
+      />
 
       <div className={styles.versionListWrapper}>
         {VERSION_LIST.map((item) => (

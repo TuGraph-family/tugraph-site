@@ -20,7 +20,7 @@ const Banner = ({
   categorylist = [],
 }: BannerInfoProps) => {
   let background =
-    'url(https://mdn.alipayobjects.com/huamei_p63okt/afts/img/tW0oRbTxuhcAAAAAAAAAAAAADh8WAQFr/original)';
+    'url(https://mdn.alipayobjects.com/huamei_p63okt/afts/img/0dUUR6X_gtwAAAAAAAAAAAAADh8WAQFr/original)';
 
   const typeList = [
     {
@@ -77,7 +77,7 @@ const Banner = ({
         </div>
 
         <img
-          src="https://mdn.alipayobjects.com/huamei_p63okt/afts/img/waurSaiuoHcAAAAAAAAAAAAADh8WAQFr/fmt.avif"
+          src="https://mdn.alipayobjects.com/huamei_p63okt/afts/img/9VUhSLSHN9oAAAAAAAAAAAAADh8WAQFr/original"
           alt=""
           className={styles.icon}
         />
