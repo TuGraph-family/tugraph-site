@@ -10,10 +10,10 @@ export default {
   'header.download': ' DOWNLOAD',
   'header.product.title': 'Community Edition',
   'header.product.title1': 'Enterprise Edition',
-  'header.product.desc1': 'TuGraph DB Community Edition',
+  'header.product.desc1': 'TuGraph DB',
   'header.product.desc2':
     'TuGraph Analytics real-time graph calculation engine',
-  'header.product.desc3': 'TuGraph Leran graph learning engine',
+  'header.product.desc3': 'TuGraph Learn graph learning engine',
   'header.product.desc4': 'TuGraph Enterprise Edition',
   'header.product.desc5': 'TuGraph Cloud version',
   'header.osGraph.desc': 'Open source graph relationship insight tool',

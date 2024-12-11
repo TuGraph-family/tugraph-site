@@ -56,6 +56,10 @@ const BlogList = () => {
 
   return (
     <NewLayout
+      headerBgStyles={{
+        backgroundImage:
+          'linear-gradient(rgb(225, 236, 255) 0%, rgb(227, 236, 255) 32%, #FFF 100%)',
+      }}
       content={
         <>
           <Banner
@@ -79,7 +83,7 @@ const BlogList = () => {
             style={{
               display: 'flex',
               justifyContent: 'flex-end',
-              marginBottom: 40,
+              paddingBottom: 40,
             }}
           >
             {total > 10 ? (

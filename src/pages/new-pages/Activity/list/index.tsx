@@ -61,6 +61,10 @@ const ActivityList = () => {
 
   return (
     <NewLayout
+      headerBgStyles={{
+        backgroundImage:
+          'linear-gradient(rgb(225, 236, 255) 0%, rgb(227, 236, 255) 32%, #F7F8FA 100%)',
+      }}
       content={
         <>
           <Banner />

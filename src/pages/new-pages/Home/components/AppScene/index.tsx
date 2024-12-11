@@ -1,6 +1,5 @@
 import { Popover } from 'antd';
 import { motion, useScroll } from 'framer-motion';
-import FadeInSection from '@/components/FadeInSection';
 import styles from './index.less';
 import { useInView } from 'react-intersection-observer';
 import { IntlShape } from 'react-intl';
