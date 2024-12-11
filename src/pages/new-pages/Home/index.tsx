@@ -17,6 +17,9 @@ const Home = () => {
       current: 1,
       size: 3,
       state: 'PUBLISHED',
+      sortMap: {
+        publish_time: false,
+      },
     });
   }, []);
 

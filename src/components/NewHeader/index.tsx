@@ -309,6 +309,7 @@ export const NewHeader = ({
         onMouseMove: () => onHover('subMenuProduct', 'move'),
         onMouseLeave: () => onHover('subMenuProduct', 'leave'),
         path: '/product/db',
+        subKey: 'subMenuProduct',
       },
       {
         key: 'case',
@@ -326,6 +327,7 @@ export const NewHeader = ({
         onMouseMove: () => onHover('subMenuDocs', 'move'),
         onMouseLeave: () => onHover('subMenuDocs', 'leave'),
         path: `/docs/tugraph-db/${getCurrentLanguage()}/4.5.0/guide`,
+        subKey: 'subMenuDocs',
       },
 
       {
@@ -333,19 +335,22 @@ export const NewHeader = ({
         label: intl.formatMessage({ id: 'header.community' }),
         onMouseMove: () => onHover('subMenuCommunity', 'move'),
         onMouseLeave: () => onHover('subMenuCommunity', 'leave'),
+        subKey: 'subMenuCommunity',
       },
     ];
 
     return (
       <div className={styles.menuList}>
         {menuList.map((item) => {
-          const { path, label, key, ...props } = item || {};
+          const { path, label, key, subKey, ...props } = item || {};
           return (
             <div
               key={key}
               className={cx(
                 styles.menuItem,
-                key === selectMenuItem ? styles.menuItemSelect : '',
+                key === selectMenuItem || subKey === subVisibleKey
+                  ? styles.menuItemSelect
+                  : '',
               )}
               onClick={() => {
                 if (path) {
@@ -396,6 +401,8 @@ export const NewHeader = ({
             }}
             whileHover={{ height: show ? subMenuHeight : 0, zIndex: 900 }}
             transition={{ duration: 0.5 }}
+            onMouseMove={() => onHover(item.menuKeys, 'move')}
+            onMouseLeave={() => onHover(item.menuKeys, 'leave')}
           >
             {item.constent}
           </motion.div>
