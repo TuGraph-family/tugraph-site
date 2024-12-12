@@ -37,7 +37,7 @@ export default {
   'footer.product.title1': 'Enterprise Edition',
   'footer.community': 'Community',
   'footer.contact': 'Contact',
-  'footer.productName': 'TuGraph graph database',
+  'footer.productName': 'TuGraph DB',
   'footer.productName1': 'TuGraph DB distributed graph database',
   'footer.productName2': 'TuGraph DataFlow flow graph calculation engine',
   'footer.productName3': 'TuGraph Platform one-stop graph platform',

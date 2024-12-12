@@ -1,8 +1,10 @@
 import FooterInfo from '@/pages/new-pages/Blog/list/components/FooterInfo';
 import { Breadcrumb, Divider } from 'antd';
 import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 import styles from './index.less';
 import rehypeSlug from 'rehype-slug';
+import rehypeRaw from 'rehype-raw';
 import { historyPushLinkAt, slugify } from '@/util';
 import { history } from 'umi';
 
@@ -18,10 +20,14 @@ const InfoContent = ({ detail }: { detail?: API.BlogDetailVO }) => {
         <Breadcrumb.Item>详情</Breadcrumb.Item>
       </Breadcrumb>
       <div className={styles.InfoContentTitle}>{detail?.title}</div>
-      <FooterInfo time={detail?.updateTime} creatorName={detail?.creatorName} />
+      <FooterInfo
+        time={detail?.publishTime}
+        creatorName={detail?.creatorName}
+      />
       <div className={styles.InfoContentText}>
         <ReactMarkdown
-          rehypePlugins={[rehypeSlug]}
+          remarkPlugins={[remarkGfm]}
+          rehypePlugins={[rehypeRaw, rehypeSlug]}
           components={{
             h1: ({ node, ...props }) => {
               return (

@@ -52,8 +52,8 @@ export const NewFooter = () => {
               className={styles.item}
               href={
                 lang === 'zh-CN'
-                  ? '/docs/tugraph-db/zh/4.5.0/user-guide/tugraph-browser'
-                  : '/docs/tugraph-db/en/4.5.0/user-guide/tugraph-browser'
+                  ? '/docs/tugraph-db/zh/4.5.1/user-guide/tugraph-browser'
+                  : '/docs/tugraph-db/en/4.5.1/user-guide/tugraph-browser'
               }
             >
               TuGraph Browser

@@ -22,7 +22,7 @@ declare namespace API {
     /** 博客标题 */
     title?: string;
     /** 博客分类 */
-    category?: string;
+    categories?: string[];
     /** 发布时间 */
     publishTime?: string;
     /** 更新时间 */
@@ -363,5 +363,40 @@ declare namespace API {
     type?: ActivityResourceTypeEnum;
     /** 资料链接 */
     url?: string;
+  }
+
+  interface AskRegisterRequest {
+    /** 问题类型 */
+    askType?: string;
+    /** 用户名 */
+    user?: string;
+    /** 联系方式 */
+    phone?: string;
+    /** 邮箱 */
+    email?: string;
+    /** 公司名称 */
+    companyName?: string;
+    /** 职位 */
+    position?: string;
+    /** 所在城市 */
+    city?: string;
+    /** 问题描述 */
+    content?: string;
+  }
+
+  interface Result_Long_ {
+    /** 所在机器 IP */
+    ip?: string;
+    data?: number;
+    /** 标示是否成功 */
+    success?: boolean;
+    /** 响应消息 */
+    message?: string;
+    /** 平台统一错误码 */
+    responseCode?: PlatformErrorCode;
+    /** 错误码英文解释 */
+    ecEnglishMsg?: string;
+    /** 错误码中文解释 */
+    ecChineseMsg?: string;
   }
 }

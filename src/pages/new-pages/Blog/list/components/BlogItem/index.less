@@ -7,22 +7,23 @@
   cursor: pointer;
 
   .blogItemImg {
-    min-width: 240px;
+    width: 240px;
     height: 160px;
     border-radius: 16px;
-    // background-color: red;
+    overflow: hidden;
     margin-right: 22px;
     display: flex;
     justify-content: center;
     align-items: center;
 
     img {
-      max-width: 100%;
-      max-height: 100%;
+      width: 240px;
+      height: 160px;
     }
   }
 
   .blogItemContent {
+    flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: space-between;

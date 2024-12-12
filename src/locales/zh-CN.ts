@@ -36,7 +36,7 @@ export default {
   'footer.product.title1': '企业版',
   'footer.community': '社区',
   'footer.contact': '联系我们',
-  'footer.productName': 'TuGraph图数据库',
+  'footer.productName': 'TuGraph DB',
   'footer.productName1': 'TuGraph DB 分布式图数据库',
   'footer.productName2': 'TuGraph DataFlow 流图计算引擎',
   'footer.productName3': 'TuGraph Platform 一站式图平台',

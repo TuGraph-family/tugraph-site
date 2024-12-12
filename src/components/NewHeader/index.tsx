@@ -104,7 +104,7 @@ export const NewHeader = ({
             label: intl.formatMessage({ id: 'header.product.desc1' }),
             desc: intl.formatMessage({ id: 'home.version0.desc' }),
             productPath: '/product/db',
-            docPath: `/docs/tugraph-db/${getCurrentLanguage()}/4.5.0/guide`,
+            docPath: `/docs/tugraph-db/${getCurrentLanguage()}/4.5.1/guide`,
           },
           {
             label: intl.formatMessage({ id: 'header.product.desc2' }),
@@ -112,12 +112,12 @@ export const NewHeader = ({
             productPath: '/product/analytics',
             docPath: `/docs/tugraph-analytics/${getCurrentLanguage()}/introduction/`,
           },
-          {
-            label: intl.formatMessage({ id: 'header.product.desc3' }),
-            desc: intl.formatMessage({ id: 'product_learn.description' }),
-            productPath: '/product/learn',
-            docPath: `/docs/tugraph-db/${getCurrentLanguage()}/4.5.0/olap&procedure/learn/tutorial`,
-          },
+          // {
+          //   label: intl.formatMessage({ id: 'header.product.desc3' }),
+          //   desc: intl.formatMessage({ id: 'product_learn.description' }),
+          //   productPath: '/product/learn',
+          //   docPath: `/docs/tugraph-db/${getCurrentLanguage()}/4.5.1/olap&procedure/learn/tutorial`,
+          // },
         ],
       },
     ];
@@ -326,7 +326,7 @@ export const NewHeader = ({
         label: intl.formatMessage({ id: 'header.doc' }),
         onMouseMove: () => onHover('subMenuDocs', 'move'),
         onMouseLeave: () => onHover('subMenuDocs', 'leave'),
-        path: `/docs/tugraph-db/${getCurrentLanguage()}/4.5.0/guide`,
+        path: `/docs/tugraph-db/${getCurrentLanguage()}/4.5.1/guide`,
         subKey: 'subMenuDocs',
       },
 

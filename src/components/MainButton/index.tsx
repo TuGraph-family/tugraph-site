@@ -24,6 +24,7 @@ import { history, useIntl, useLocation } from 'umi';
 import { DEFAULT_LOCAL } from '@/constant';
 import { IFormValues } from '@/interface';
 import success from '@/assets/icon/success.svg';
+import { useHome } from '@/hooks/useHome';
 
 const { Item } = Form;
 
@@ -47,6 +48,8 @@ const MainButton: React.FC<IMainButtonProps> = ({
   const [form] = Form.useForm();
   const { search } = useLocation();
   const lang = getSearch(search)?.lang || DEFAULT_LOCAL;
+
+  const { runRegister } = useHome();
 
   const items = [
     {
@@ -156,24 +159,18 @@ const MainButton: React.FC<IMainButtonProps> = ({
   };
 
   const onOk = () => {
-    form.validateFields().then((values: IFormValues) => {
-      const body = [];
-      for (const [key, value] of Object.entries(values)) {
-        body.push(`${key}: ${value}`);
+    form.validateFields().then(async (values: API.AskRegisterRequest) => {
+      const res = await runRegister(values);
+      if (res) {
+        handleCancel();
+        notification.success({
+          message: '提交成功',
+          icon: <img src={success} />,
+          style: { borderRadius: '8px' },
+          description:
+            '感谢您的使用，我们将会在 2 个工作日内完成审核，并通过邮件与您联系。',
+        });
       }
-
-      const bodyString = body.join(';');
-      // TODO 用邮件服务替换掉 https://dashboard.emailjs.com/
-      window.location.href = `mailto:tugraph@service.alipay.com?subject=${btnText}&body=${bodyString}`;
-    });
-  };
-
-  const submitSuccess = () => {
-    return notification.error({
-      message: '提交成功',
-      icon: <img src={success} />,
-      description:
-        '感谢您的使用，我们将会在 2 个工作日内完成审核，并通过邮件与您联系。',
     });
   };
 
@@ -216,7 +213,7 @@ const MainButton: React.FC<IMainButtonProps> = ({
         <Form form={form} layout="vertical">
           <Item
             label={intl.formatMessage({ id: 'form.item.type' })}
-            name="type"
+            name="askType"
             rules={[
               {
                 required: true,
@@ -227,7 +224,7 @@ const MainButton: React.FC<IMainButtonProps> = ({
             <Radio.Group>
               <Space direction="vertical">
                 {TYPE_OPTION.map((item) => (
-                  <Radio key={item.value} value={item.value}>
+                  <Radio key={item.value} value={item.label}>
                     {item.label}
                   </Radio>
                 ))}
@@ -237,7 +234,7 @@ const MainButton: React.FC<IMainButtonProps> = ({
           <Space size={40}>
             <Item
               label={intl.formatMessage({ id: 'form.item.name' })}
-              name="name"
+              name="user"
               rules={[
                 {
                   required: true,
@@ -293,7 +290,7 @@ const MainButton: React.FC<IMainButtonProps> = ({
             </Item>
             <Item
               label={intl.formatMessage({ id: 'form.item.firm' })}
-              name="company"
+              name="companyName"
               rules={[
                 {
                   required: true,

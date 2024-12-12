@@ -10,7 +10,6 @@ import { USER_LOGO_LIST } from '@/pages/new-pages/Home/constants';
 import { SubTitle } from '@/components/SubTitle';
 const UserBox: React.FC<{ intl: IntlShape }> = ({ intl }) => {
   const [isHover, setIsHover] = useState<boolean>(false);
-  console.log('isHover:', isHover);
 
   return (
     <div className={styles.userBox}>
