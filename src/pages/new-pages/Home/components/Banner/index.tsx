@@ -22,10 +22,10 @@ const Banner = ({
 
   const cardList = useMemo(() => {
     return CARD_LIST.map((item, idx) => {
-      const { category = '', title = '', id } = blogList?.[idx] || {};
+      const { categories = '', title = '', id } = blogList?.[idx] || {};
       return {
         ...item,
-        category,
+        categories,
         title,
         id,
       };
@@ -93,7 +93,9 @@ const Banner = ({
                   alt=""
                   className={styles.featureArrow}
                 />
-                <div className={styles.featureCategory}>{item?.category}</div>
+                <div className={styles.featureCategory}>
+                  {item?.categories?.join('、')}
+                </div>
                 <div className={styles.featureContent}>{item?.title}</div>
               </motion.div>
             </FadeInSection>

@@ -68,31 +68,38 @@ const InfoRight = ({
 
   return (
     <div className={styles.InfoRight}>
-      <Anchor
-        className={styles.blogAnchor}
-        affix={false}
-        getContainer={() => document?.getElementById('blog-content') || window}
-        offsetTop={100}
-        targetOffset={100}
-      >
-        {headings?.map((item: any) => {
-          return renderLink(item);
-        })}
-      </Anchor>
-      <div className={styles.newest}>
-        <div className={styles.newestTitle}>最新博客</div>
-        {list?.map((item) => (
-          <div
-            key={item?.id}
-            className={styles.newestItem}
-            onClick={() =>
-              history.push(historyPushLinkAt(`/blog/info/${item.id}`))
-            }
-          >
-            {item.title}
-          </div>
-        ))}
-      </div>
+      {headings.length ? (
+        <Anchor
+          className={styles.blogAnchor}
+          affix={false}
+          getContainer={() =>
+            document?.getElementById('blog-content') || window
+          }
+          offsetTop={100}
+          targetOffset={100}
+        >
+          {headings?.map((item: any) => {
+            return renderLink(item);
+          })}
+        </Anchor>
+      ) : null}
+
+      {list?.length ? (
+        <div className={styles.newest}>
+          <div className={styles.newestTitle}>最新博客</div>
+          {list?.map((item) => (
+            <div
+              key={item?.id}
+              className={styles.newestItem}
+              onClick={() =>
+                history.push(historyPushLinkAt(`/blog/info/${item.id}`))
+              }
+            >
+              {item.title}
+            </div>
+          ))}
+        </div>
+      ) : null}
       <img src="" alt="" className={styles.bannerImg} />
     </div>
   );

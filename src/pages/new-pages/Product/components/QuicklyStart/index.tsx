@@ -24,7 +24,6 @@ const QuickStart = ({ intl }: { intl: IntlShape }) => {
         <FadeInSection>
           <div className={styles.stepList}>
             {getSteps(intl)?.map((item) => {
-              console.log(item);
               return (
                 <div key={item.stepKey} className={styles.step}>
                   <div className={styles.stepNumber}>{item.stepKey}</div>
@@ -47,7 +46,7 @@ const QuickStart = ({ intl }: { intl: IntlShape }) => {
             onClick={() => {
               history.push(
                 historyPushLinkAt(
-                  `/docs/tugraph-db/${getLang()}/4.5.0/quick-start/preparation`,
+                  `/docs/tugraph-db/${getLang()}/4.5.1/quick-start/preparation`,
                 ),
               );
             }}

@@ -45,7 +45,7 @@ const Banner = () => {
             className={styles.activityTooltip}
             onMouseLeave={() => setVisible(false)}
           >
-            <ActivityTag status={lastDetial?.activityState} />
+            {/* <ActivityTag status={lastDetial?.activityState} /> */}
             <div
               onClick={() =>
                 history.push(

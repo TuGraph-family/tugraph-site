@@ -52,8 +52,8 @@ export const NewFooter = () => {
               className={styles.item}
               href={
                 lang === 'zh-CN'
-                  ? '/docs/tugraph-db/zh/4.5.0/user-guide/tugraph-browser'
-                  : '/docs/tugraph-db/en/4.5.0/user-guide/tugraph-browser'
+                  ? '/docs/tugraph-db/zh/4.5.1/user-guide/tugraph-browser'
+                  : '/docs/tugraph-db/en/4.5.1/user-guide/tugraph-browser'
               }
             >
               TuGraph Browser
@@ -134,7 +134,7 @@ export const NewFooter = () => {
                   })}
                 </div>
               </div>
-              <div className={styles.qrCode}>
+              {/* <div className={styles.qrCode}>
                 <img src="https://mdn.alipayobjects.com/huamei_p63okt/afts/img/Su3NQK1N_VIAAAAAAAAAAAAADh8WAQFr/original" />
                 <div className={styles.desc}>
                   {intl.formatMessage({ id: 'footer.qrCode.dingTalk' })}
@@ -144,7 +144,7 @@ export const NewFooter = () => {
                     id: 'footer.qrCode.subDescDingTalk',
                   })}
                 </div>
-              </div>
+              </div> */}
             </Space>
           </Col>
         )}

@@ -35,7 +35,16 @@ export const NewLayout: React.FC<LayoutProps> = ({
   }, [search]);
 
   const bgColor = useMemo(() => {
-    return ['/download', '/'].includes(pathname) ? '#fff' : '#f1f3f6';
+    switch (pathname) {
+      case '/download':
+      case '/blog/list':
+      case '/':
+        return '#fff';
+      case '/activity/list':
+        return '#F7F8FA';
+      default:
+        return '#f1f3f6';
+    }
   }, [pathname]);
 
   return (
