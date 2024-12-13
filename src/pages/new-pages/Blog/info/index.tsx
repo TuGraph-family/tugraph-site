@@ -5,12 +5,20 @@ import InfoRight from '@/pages/new-pages/Blog/info/components/InfoRight';
 import { useLocation } from 'umi';
 import { useBlog } from '@/hooks/useBlog';
 import { useEffect } from 'react';
+import { Spin } from 'antd';
 
 const BlogInfo = () => {
   const location = useLocation();
   const id = Number(location.pathname.split('/')[3]);
 
-  const { getDetail, getList, detail, list } = useBlog();
+  const { getDetail, getList, detail, list, getDetailLoading } = useBlog();
+
+  const onscrollTop = () => {
+    const element = document.getElementById('blog-content');
+    if (element) {
+      element.scrollTop = 0;
+    }
+  };
 
   useEffect(() => {
     getDetail({
@@ -24,18 +32,21 @@ const BlogInfo = () => {
         publish_time: false,
       },
     });
+    onscrollTop();
   }, [id]);
 
   return (
     <NewLayout
       content={
-        <div className={styles.blogInfo} id={'blog-content'}>
-          <InfoContent detail={detail} />
-          <InfoRight
-            detail={detail}
-            list={list?.filter((item) => item?.id !== id)}
-          />
-        </div>
+        <Spin spinning={getDetailLoading}>
+          <div className={styles.blogInfo} id={'blog-content'}>
+            <InfoContent detail={detail} />
+            <InfoRight
+              detail={detail}
+              list={list?.filter((item) => item?.id !== id)}
+            />
+          </div>
+        </Spin>
       }
       isFooter={false}
     />
