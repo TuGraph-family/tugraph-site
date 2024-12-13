@@ -23,6 +23,7 @@ const InfoContent = ({ detail }: { detail?: API.BlogDetailVO }) => {
       <FooterInfo
         time={detail?.publishTime}
         creatorName={detail?.creatorName}
+        tag={detail?.categories}
       />
       <div className={styles.InfoContentText}>
         <ReactMarkdown

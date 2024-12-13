@@ -5,7 +5,7 @@ import { useIntl, useLocation } from 'umi';
 
 import styles from './index.less';
 import { DEFAULT_LOCAL } from '@/constant';
-import { getSearch } from '@/util';
+import { getSearch, historyPushLinkAt } from '@/util';
 
 const { Panel } = Collapse;
 
@@ -45,18 +45,14 @@ export const NewFooter = () => {
             <div className={styles.title}>
               {intl.formatMessage({ id: 'footer.product.title' })}
             </div>
-            <a className={styles.item} href="/product/db">
+            <a className={styles.item} href={historyPushLinkAt('/product/db')}>
               {intl.formatMessage({ id: 'footer.productName' })}
             </a>
             <a
               className={styles.item}
-              href={
-                lang === 'zh-CN'
-                  ? '/docs/tugraph-db/zh/4.5.1/user-guide/tugraph-browser'
-                  : '/docs/tugraph-db/en/4.5.1/user-guide/tugraph-browser'
-              }
+              href={historyPushLinkAt('/product/analytics')}
             >
-              TuGraph Browser
+              TuGraph Analytics
             </a>
           </div>
         </Col>

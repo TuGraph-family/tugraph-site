@@ -29,7 +29,7 @@ const Banner = ({ intl }: { intl: IntlShape }) => {
               {intl.formatMessage({ id: 'home.case.desc0' })}
             </span>
           </FadeInSection>
-          <FadeInSection>
+          <FadeInSection transition={{ duration: 1, delay: 0.2 }}>
             <span className={styles.descriptionText}>
               {intl.formatMessage({ id: 'home.case.desc1' })}
             </span>
@@ -45,7 +45,10 @@ const Banner = ({ intl }: { intl: IntlShape }) => {
           style={lang === 'en-US' ? { height: 200 } : {}}
         >
           {getDemos(intl)?.map((item) => (
-            <FadeInSection key={item.type}>
+            <FadeInSection
+              key={item.type}
+              transition={{ duration: 1, delay: 0.3 }}
+            >
               <div className={styles.featureSectionItem}>
                 <img src={item.bgUrl} alt="" className={styles.fieldImg} />
                 <div className={styles.fieldName}>{item.type}</div>

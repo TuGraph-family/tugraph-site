@@ -31,7 +31,7 @@ const Banner = ({ intl }: { intl: IntlShape }) => {
             </span>
           </FadeInSection>
 
-          <FadeInSection>
+          <FadeInSection transition={{ duration: 1, delay: 0.2 }}>
             <div className={styles.buttonContainer}>
               <MainButton
                 style={{ height: 48 }}
@@ -52,7 +52,10 @@ const Banner = ({ intl }: { intl: IntlShape }) => {
       <div className={styles.bannerFooter}>
         {getPartner(intl).map((item) => {
           return (
-            <FadeInSection key={item.key}>
+            <FadeInSection
+              key={item.key}
+              transition={{ duration: 1, delay: 0.3 }}
+            >
               <div
                 className={styles.typeItem}
                 style={{ backgroundImage: `url(${item.icon})` }}

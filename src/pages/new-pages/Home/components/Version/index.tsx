@@ -9,13 +9,12 @@ const Version = ({ intl }: { intl: IntlShape }) => {
     {
       key: 'comunity',
       versionName: intl.formatMessage({ id: 'home.version.title1' }),
-      versionType: intl.formatMessage({ id: 'home.tugrpah.db' }),
+      versionType: intl.formatMessage({ id: 'home.version.community.desc5' }),
       descList: [
         intl.formatMessage({ id: 'home.version.community.desc1' }),
         intl.formatMessage({ id: 'home.version.community.desc2' }),
         intl.formatMessage({ id: 'home.version.community.desc3' }),
         intl.formatMessage({ id: 'home.version.community.desc4' }),
-        intl.formatMessage({ id: 'home.version.community.desc5' }),
       ],
       btn: (
         <MainButton
@@ -29,13 +28,12 @@ const Version = ({ intl }: { intl: IntlShape }) => {
     {
       key: 'enterprise',
       versionName: intl.formatMessage({ id: 'home.version.title2' }),
-      versionType: intl.formatMessage({ id: 'home.distributed' }),
+      versionType: intl.formatMessage({ id: 'home.version.enterprise.desc5' }),
       descList: [
         intl.formatMessage({ id: 'home.version.enterprise.desc1' }),
         intl.formatMessage({ id: 'home.version.enterprise.desc2' }),
         intl.formatMessage({ id: 'home.version.enterprise.desc3' }),
         intl.formatMessage({ id: 'home.version.enterprise.desc4' }),
-        intl.formatMessage({ id: 'home.version.enterprise.desc5' }),
       ],
       btn: (
         <MainButton

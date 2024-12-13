@@ -89,7 +89,7 @@ declare namespace API {
     /** 博客标题 */
     title?: string;
     /** 博客分类 */
-    category?: string;
+    categories?: string[];
     /** 博客内容 */
     content?: string;
     /** 博客摘要 */

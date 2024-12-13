@@ -282,6 +282,12 @@ export const NewHeader = ({
   };
 
   const handleLangClick = () => {
+    if (['blog', 'download', 'activity'].includes(pathname?.split('/')[1])) {
+      window.location.href = `${window.location.origin}/?lang=${
+        lang === 'zh-CN' ? 'en-US' : 'zh-CN'
+      }`;
+      return;
+    }
     if (currentUrl) {
       window.location.href = /\/en\//.test(window.location.pathname)
         ? `${window.location.origin}${toggleLanguage(
@@ -336,13 +342,19 @@ export const NewHeader = ({
         onMouseMove: () => onHover('subMenuCommunity', 'move'),
         onMouseLeave: () => onHover('subMenuCommunity', 'leave'),
         subKey: 'subMenuCommunity',
+        disable: lang === 'en-US',
       },
     ];
 
     return (
       <div className={styles.menuList}>
         {menuList.map((item) => {
-          const { path, label, key, subKey, ...props } = item || {};
+          const { path, label, key, subKey, disable, ...props } = item || {};
+
+          if (disable) {
+            return null;
+          }
+
           return (
             <div
               key={key}

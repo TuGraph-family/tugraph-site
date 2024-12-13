@@ -23,7 +23,7 @@ export const getSceneList = (intl: IntlShape) => [
     style: {
       width: '134px',
       height: '135px',
-      top: '234px',
+      top: '250px',
       right: 0,
     },
     icon: 'https://mdn.alipayobjects.com/huamei_p63okt/afts/img/zFjEQ4vWuIUAAAAAAAAAAAAADh8WAQFr/original',

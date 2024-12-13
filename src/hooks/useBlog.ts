@@ -19,7 +19,9 @@ export const useBlog = () => {
   });
 
   const { run: getBlogList } = useRequest(list, { manual: true });
-  const { run: getBlogDetail } = useRequest(detail, { manual: true });
+  const { run: getBlogDetail, loading: getDetailLoading } = useRequest(detail, {
+    manual: true,
+  });
   const { run: getCategorylist } = useRequest(categorylist, { manual: true });
 
   const getList = async (params: API.BlogListRequest) => {
@@ -87,10 +89,5 @@ export const useBlog = () => {
     }
   };
 
-  return {
-    getList,
-    getDetail,
-    getCategory,
-    ...state,
-  };
+  return { ...state, getList, getDetail, getCategory, getDetailLoading };
 };

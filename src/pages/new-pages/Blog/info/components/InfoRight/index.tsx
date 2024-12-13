@@ -53,7 +53,10 @@ const InfoRight = ({
   const renderLink = (item: any) => {
     if (item?.text) {
       return (
-        <Link href={`#${slugify(item?.text)}`} title={item?.text}>
+        <Link
+          href={`#${slugify(item?.text)}`}
+          title={slugify(item?.text, true)}
+        >
           {item?.children?.length
             ? item?.children?.map((childItem: any) => renderLink(childItem))
             : null}

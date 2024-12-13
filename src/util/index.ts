@@ -58,11 +58,21 @@ export const tracertBPos = (bPos: string, options?: Record<string, any>) => {
 };
 
 // 锚点特殊字符处理
-export const slugify = (text?: string) => {
+export const slugify = (text?: string, islabel = false) => {
   if (!text) {
     return '';
   }
-  return text
+
+  let content = text;
+
+  const firstMatch = text.match(/>[^<]*<\//);
+  if (firstMatch) {
+    content = firstMatch[0].replace(/[\>\</]/g, '');
+  }
+  if (islabel) {
+    return content;
+  }
+  return content
     .toLowerCase()
     .replace(/[^a-z0-9\u4e00-\u9fa5 -]/g, '') // Remove all non-word chars
     .replace(/\s+/g, '-') // Replace spaces with -
