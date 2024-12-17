@@ -38,7 +38,7 @@ const Version = ({ intl }: { intl: IntlShape }) => {
       btn: (
         <MainButton
           type="consult"
-          style={{ background: '#e1e4e8', marginTop: 12 }}
+          style={{ background: '#F0F2FD', marginTop: 12 }}
           btnText={intl.formatMessage({ id: 'home.btn.tryOut' })}
         />
       ),

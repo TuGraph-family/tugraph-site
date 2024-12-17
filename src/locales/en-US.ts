@@ -85,7 +85,7 @@ export default {
   'home.notice2.title': 'Try TuGraph on Alibaba Cloud for Free.',
   'home.notice2.desc':
     'Easily create your own graph database application with simple deployment on Alibaba Cloud.',
-  'home.case.title': 'Application scenario',
+  'home.case.title': 'APPLICATION SCENARIOS',
   'home.case.desc0': 'Thousands of times the effect is improved',
   'home.case.desc1':
     'Helping customers in various industries break analysis bottlenecks',
@@ -228,7 +228,7 @@ export default {
   'home.fun3.feat6': 'Data management: Multiple data source configuration',
   'home.btn.desc': 'Community Edition',
   'home.btn.desc1': 'Alibaba Cloud',
-  'home.btn.tryOut': 'Enterprise Edition Consulting',
+  'home.btn.tryOut': 'Enterprise Edition',
   'home.feat0': 'Label property graph model',
   'home.feat1': 'Dynamic model changes',
   'home.feat2': 'Support for multiple images',
@@ -257,7 +257,7 @@ export default {
   'product.btn.desc1': 'View documentation',
   'product.btn.desc2': 'Buy',
   'product.btn.desc3': 'More user practices',
-  'product.case.title': 'User case',
+  'product.case.title': 'USE CASES',
   'product.case.desc1':
     'Full-picture risk control technology copes with complexity and change, constantly upgrading full-picture risk control technology for financial risks copes with complexity and variability, constantly upgrading full-picture risk control technology for financial risks copes with complexity and variability, constantly upgrading full-picture risk control for financial risks technology',
   'product.case.desc2':
@@ -460,7 +460,7 @@ TuGraph supports more than 300 applications in the Ant Group, including "Double 
     'Provide end-users with enterprise-level delivery, implementation, operation and maintenance and other value-added services.',
   'ecosystem.type4.title': 'Channel Partner',
   'ecosystem.type4.description':
-    'Sell TuGraph to end users, with sales and pre-sales consulting capabilities.E.g., Resellers and Distributors.',
+    'Sell TuGraph to end users, with sales and pre-sales consulting capabilities. E.g., Resellers and Distributors.',
   'ecosystem.support.title': 'WHY PARTNER WITH TUGRAPH',
   'ecosystem.support.title1': 'PARTNER',
   'ecosystem.support.description':

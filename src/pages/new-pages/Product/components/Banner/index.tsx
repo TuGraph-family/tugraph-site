@@ -54,7 +54,7 @@ const Banner = ({ type, intl }: IBannerProps) => {
           </div>
         </FadeInSection>
       ),
-      icon: 'https://mdn.alipayobjects.com/huamei_p63okt/afts/img/TTduSbtgY18AAAAAAAAAAAAADh8WAQFr/original',
+      icon: 'https://mdn.alipayobjects.com/huamei_p63okt/afts/img/KdW7SqgSHSMAAAAAAAAAAAAADh8WAQFr/original',
     },
     analytics: {
       title: intl.formatMessage({ id: 'header.product.desc2' }),
@@ -75,7 +75,7 @@ const Banner = ({ type, intl }: IBannerProps) => {
               onClick={() => {
                 history.push(
                   historyPushLinkAt(
-                    `/docs/tugraph-analytics/${getCurrentLanguage()}/introduction/`,
+                    `/docs/tugraph-analytics/${getCurrentLanguage()}/guide/`,
                   ),
                 );
               }}
@@ -85,7 +85,7 @@ const Banner = ({ type, intl }: IBannerProps) => {
           </div>
         </FadeInSection>
       ),
-      icon: 'https://mdn.alipayobjects.com/huamei_p63okt/afts/img/bZntRJJTNDwAAAAAAAAAAAAADh8WAQFr/original',
+      icon: 'https://mdn.alipayobjects.com/huamei_p63okt/afts/img/9VjfR7exPyQAAAAAAAAAAAAADh8WAQFr/original',
     },
     learn: {
       title: intl.formatMessage({ id: 'header.product.desc3' }),
@@ -132,7 +132,7 @@ const Banner = ({ type, intl }: IBannerProps) => {
           </div>
         </FadeInSection>
       ),
-      icon: 'https://mdn.alipayobjects.com/huamei_p63okt/afts/img/hR8lQoHEIoYAAAAAAAAAAAAADh8WAQFr/original',
+      icon: 'https://mdn.alipayobjects.com/huamei_p63okt/afts/img/6OVORo_P_NYAAAAAAAAAAAAADh8WAQFr/original',
     },
     clound: {
       title: intl.formatMessage({ id: 'header.product.desc5' }),
@@ -160,7 +160,7 @@ const Banner = ({ type, intl }: IBannerProps) => {
           </div>
         </FadeInSection>
       ),
-      icon: 'https://mdn.alipayobjects.com/huamei_p63okt/afts/img/KfcLR5aphucAAAAAAAAAAAAADh8WAQFr/original',
+      icon: 'https://mdn.alipayobjects.com/huamei_p63okt/afts/img/azYBRJS4IjwAAAAAAAAAAAAADh8WAQFr/original',
     },
   };
 

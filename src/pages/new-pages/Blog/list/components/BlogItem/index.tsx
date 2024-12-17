@@ -14,8 +14,11 @@ const BlogItem = ({ detail }: { detail: API.BlogListVO }) => {
       </div>
 
       <div className={styles.blogItemContent}>
-        <div className={styles.blogItemTitle}>{detail?.title}</div>
-        <div className={styles.blogItemDesc}>{detail?.digest}</div>
+        <div className={styles.blogItemText}>
+          <div className={styles.blogItemTitle}>{detail?.title}</div>
+          <div className={styles.blogItemDesc}>{detail?.digest}</div>
+        </div>
+
         <FooterInfo
           time={detail?.publishTime}
           tag={detail?.categories}

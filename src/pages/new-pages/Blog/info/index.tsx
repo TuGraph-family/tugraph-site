@@ -37,6 +37,10 @@ const BlogInfo = () => {
 
   return (
     <NewLayout
+      headerBgStyles={{
+        backgroundImage:
+          'linear-gradient(rgb(225, 236, 255) 0%, rgb(227, 236, 255) 32%, #FFF 100%)',
+      }}
       content={
         <Spin spinning={getDetailLoading}>
           <div className={styles.blogInfo} id={'blog-content'}>

@@ -176,6 +176,11 @@ const Banner = () => {
                 </div>
               </div>
 
+              <img
+                src="https://mdn.alipayobjects.com/huamei_p63okt/afts/img/tOgeT70MA2MAAAAAAAAAAAAADh8WAQFr/original"
+                className={styles.icon}
+              />
+
               <Calendar
                 defaultValue={moment(lastDetial?.startTime)}
                 className={styles.activityCalendar}

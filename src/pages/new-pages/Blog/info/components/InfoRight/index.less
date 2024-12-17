@@ -6,7 +6,7 @@
   gap: 24px;
   position: sticky;
   z-index: 500;
-  top: 40px;
+  top: 0;
 }
 
 .newest {
@@ -55,15 +55,46 @@
 }
 
 .bannerImg {
-  height: 220px;
+  height: 180px;
   border-radius: 8px;
-  background-color: #ccc;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .title {
+    font-family: 'PuHuiTi85';
+    font-size: 20px;
+    color: #292d3b;
+    text-align: center;
+    font-weight: 700;
+    opacity: 0.85;
+  }
+
+  .subtitle {
+    font-family: 'PuHuiTi55';
+    font-size: 8px;
+    color: #292d3b;
+    line-height: 18px;
+    opacity: 0.7;
+  }
 }
 
 .blogAnchor {
-  max-height: 220px !important;
+  max-height: 190px !important;
 
   :global {
+    .ant-anchor-link-title {
+      color: #768191;
+    }
+
+    .ant-anchor-link-title-active {
+      color: #1650ff;
+    }
+
     .ant-anchor-link-active {
       position: relative;
       transition: all 0.3s;

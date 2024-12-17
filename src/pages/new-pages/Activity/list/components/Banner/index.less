@@ -20,6 +20,8 @@
     align-items: flex-start;
 
     .bannerLeft {
+      width: 0;
+      flex: 1;
       padding-top: 47px;
       display: flex;
       flex-direction: column;
@@ -30,7 +32,12 @@
         color: #292d3b;
         line-height: 34px;
         font-weight: 600;
-        margin: 25px 0 16px;
+        margin-bottom: 16px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
       }
 
       .avtivityInfo {
@@ -240,4 +247,10 @@
       color: #2e5dfe;
     }
   }
+}
+
+.icon {
+  width: 270px;
+  height: 330px;
+  margin: 0 66px 0 18px;
 }

@@ -28,26 +28,29 @@
     flex-direction: column;
     justify-content: space-between;
 
-    .blogItemTitle {
-      font-size: 20px;
-      color: #292d3b;
-      font-weight: 500;
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
+    .blogItemText {
+      .blogItemTitle {
+        font-size: 20px;
+        color: #292d3b;
+        font-weight: 500;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
 
-    .blogItemDesc {
-      font-size: 14px;
-      color: #545762;
-      line-height: 22px;
-      display: -webkit-box;
-      -webkit-line-clamp: 3;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-      text-overflow: ellipsis;
+      .blogItemDesc {
+        margin-top: 16px;
+        font-size: 14px;
+        color: #545762;
+        line-height: 22px;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
     }
   }
 }
