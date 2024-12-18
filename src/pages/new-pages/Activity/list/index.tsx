@@ -8,6 +8,7 @@ import { useActivity } from '@/hooks/useActivity';
 import { useImmer } from 'use-immer';
 import { useEffect } from 'react';
 import SiteEmpty from '@/components/SiteEmpty';
+import { tracertBPos } from '@/util';
 const ActivityList = () => {
   const [state, setState] = useImmer<any>({
     activityWayEnum: 'all',
@@ -39,6 +40,8 @@ const ActivityList = () => {
       draft.pageSize = pageSize;
     });
   };
+
+  useEffect(() => tracertBPos('b116453'), []);
 
   useEffect(() => {
     getList({

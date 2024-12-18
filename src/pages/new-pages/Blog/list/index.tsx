@@ -3,6 +3,7 @@ import SiteEmpty from '@/components/SiteEmpty';
 import { useBlog } from '@/hooks/useBlog';
 import Banner from '@/pages/new-pages/Blog/list/components/Banner';
 import BlogItem from '@/pages/new-pages/Blog/list/components/BlogItem';
+import { tracertBPos } from '@/util';
 import { Pagination } from 'antd';
 import { useEffect } from 'react';
 import { useImmer } from 'use-immer';
@@ -37,6 +38,7 @@ const BlogList = () => {
 
   useEffect(() => {
     getCategory();
+    tracertBPos('b106234');
   }, []);
 
   useEffect(() => {

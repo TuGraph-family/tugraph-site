@@ -6,6 +6,7 @@ import { useLocation } from 'umi';
 import { useBlog } from '@/hooks/useBlog';
 import { useEffect } from 'react';
 import { Spin } from 'antd';
+import { tracertBPos } from '@/util';
 
 const BlogInfo = () => {
   const location = useLocation();
@@ -21,6 +22,7 @@ const BlogInfo = () => {
   };
 
   useEffect(() => {
+    tracertBPos('b106258');
     getDetail({
       id,
     });
