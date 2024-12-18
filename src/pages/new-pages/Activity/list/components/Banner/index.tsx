@@ -9,6 +9,7 @@ import { historyPushLinkAt } from '@/util';
 import { useEffect, useState } from 'react';
 import { useActivity } from '@/hooks/useActivity';
 import ActivityTag from '@/pages/new-pages/Activity/components/ActivityTag';
+import { ACTIVITY_STATE_ENUM } from '@/pages/new-pages/Activity/constants';
 
 const Banner = () => {
   const { getLastActicity, lastDetial } = useActivity();
@@ -19,6 +20,27 @@ const Banner = () => {
   useEffect(() => {
     getLastActicity('REGISTRATION_DURING');
   }, []);
+
+  const getTagStateColor = (state?: string) => {
+    switch (state) {
+      case 'REGISTRATION_DURING':
+        return '#ff7500f2';
+      case 'PROGRESS':
+        return '#2e5dfef2';
+      default:
+        return '#00000033';
+    }
+  };
+  const getStateColor = (state?: string) => {
+    switch (state) {
+      case 'REGISTRATION_DURING':
+        return '#ff7500';
+      case 'PROGRESS':
+        return '#2e5dfe';
+      default:
+        return '#3f5380';
+    }
+  };
   const cellRender: any = (current) => {
     const startOfDayStartDate = moment(lastDetial?.startTime).endOf('day');
     const startOfDayEndDate = moment(lastDetial?.endTime).startOf('day');
@@ -35,17 +57,33 @@ const Banner = () => {
       moment(lastDetial?.startTime).format('YYYY-MM-DD') ===
       moment(current._d).format('YYYY-MM-DD');
 
+    let backgroundColor = getStateColor(lastDetial?.activityState) + '1a';
+
+    if (isStartandEnd) {
+      backgroundColor = getStateColor(lastDetial?.activityState);
+    }
+
     return isStart ? (
       <Tooltip
         placement="topLeft"
         color="white"
         open={visible}
+        overlayInnerStyle={{
+          borderRadius: '4px',
+        }}
         title={
           <div
             className={styles.activityTooltip}
             onMouseLeave={() => setVisible(false)}
           >
-            {/* <ActivityTag status={lastDetial?.activityState} /> */}
+            <div
+              className={styles.stateTag}
+              style={{
+                backgroundColor: getTagStateColor(lastDetial?.activityState),
+              }}
+            >
+              {ACTIVITY_STATE_ENUM[lastDetial?.activityState]}
+            </div>
             <div
               onClick={() =>
                 history.push(
@@ -66,6 +104,7 @@ const Banner = () => {
             isBetween ? styles.between : '',
             isStartandEnd ? styles.startandend : '',
           )}
+          style={isBetween || isStartandEnd ? { backgroundColor } : {}}
           onMouseMove={() => setVisible(true)}
           id={'activityStart'}
         >
@@ -175,6 +214,11 @@ const Banner = () => {
                   ) : null}
                 </div>
               </div>
+
+              <img
+                src="https://mdn.alipayobjects.com/huamei_p63okt/afts/img/tOgeT70MA2MAAAAAAAAAAAAADh8WAQFr/original"
+                className={styles.icon}
+              />
 
               <Calendar
                 defaultValue={moment(lastDetial?.startTime)}

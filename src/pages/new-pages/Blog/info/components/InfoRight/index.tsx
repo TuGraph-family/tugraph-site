@@ -1,10 +1,11 @@
 import { Anchor } from 'antd';
-import { useMemo } from 'react';
+import { useEffect, useMemo } from 'react';
 import { remark } from 'remark';
 import parse from 'remark-parse';
 import styles from './index.less';
 import { historyPushLinkAt, slugify } from '@/util';
 import { history } from 'umi';
+import { useActivity } from '@/hooks/useActivity';
 
 const { Link } = Anchor;
 
@@ -15,6 +16,7 @@ const InfoRight = ({
   detail?: API.BlogDetailVO;
   list?: API.BlogListVO[];
 }) => {
+  const { getLastActicity, lastDetial } = useActivity();
   const headings = useMemo(() => {
     const headings: any = [];
 
@@ -49,6 +51,10 @@ const InfoRight = ({
 
     return headings;
   }, [detail]);
+
+  useEffect(() => {
+    getLastActicity('REGISTRATION_DURING');
+  }, []);
 
   const renderLink = (item: any) => {
     if (item?.text) {
@@ -103,7 +109,15 @@ const InfoRight = ({
           ))}
         </div>
       ) : null}
-      <img src="" alt="" className={styles.bannerImg} />
+      <div
+        className={styles.bannerImg}
+        style={{
+          backgroundImage: `url(${lastDetial?.backgroundImage?.url})`,
+        }}
+        onClick={() =>
+          history.push(historyPushLinkAt('/activity/info/' + lastDetial?.id))
+        }
+      ></div>
     </div>
   );
 };

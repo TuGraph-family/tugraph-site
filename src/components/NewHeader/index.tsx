@@ -110,7 +110,7 @@ export const NewHeader = ({
             label: intl.formatMessage({ id: 'header.product.desc2' }),
             desc: intl.formatMessage({ id: 'product_analytics.description' }),
             productPath: '/product/analytics',
-            docPath: `/docs/tugraph-analytics/${getCurrentLanguage()}/introduction/`,
+            docPath: `/docs/tugraph-analytics/${getCurrentLanguage()}/guide/`,
           },
           // {
           //   label: intl.formatMessage({ id: 'header.product.desc3' }),

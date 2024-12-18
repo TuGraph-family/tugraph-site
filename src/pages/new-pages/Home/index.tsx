@@ -8,6 +8,7 @@ import { useIntl } from 'umi';
 import styles from './index.less';
 import { useBlog } from '@/hooks/useBlog';
 import { useEffect } from 'react';
+import { tracertBPos } from '@/util';
 const Home = () => {
   const intl = useIntl();
   const { getList, list } = useBlog();
@@ -21,6 +22,7 @@ const Home = () => {
         publish_time: false,
       },
     });
+    tracertBPos('b106229');
   }, []);
 
   return (

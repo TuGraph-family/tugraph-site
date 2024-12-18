@@ -1,10 +1,11 @@
-import { Button } from 'antd';
+import { Button, message } from 'antd';
 import cx from 'classnames';
 import styles from './index.less';
 import { ActivityWayOptionsEnum } from '@/constant';
 import moment from 'moment';
 import ActivityTag from '@/pages/new-pages/Activity/components/ActivityTag';
 import { useMemo } from 'react';
+import CopyToClipboard from 'react-copy-to-clipboard';
 
 const Banner = ({ detail }: { detail: API.ActivityDetailVO }) => {
   let background =
@@ -93,13 +94,20 @@ const Banner = ({ detail }: { detail: API.ActivityDetailVO }) => {
                   {getBtnText(detail?.activityState)}
                 </Button>
               ) : null}
+              <CopyToClipboard
+                text={window.location.href}
+                onCopy={() => {
+                  message.success('分享链接已复制');
+                }}
+              >
+                <Button className={styles.shareBtn}>分享</Button>
+              </CopyToClipboard>
 
-              <Button className={styles.shareBtn}>分享</Button>
-              <div className={styles.shareCard}>
+              {/* <div className={styles.shareCard}>
                 <div className={styles.shareCardTitle}>分享活动</div>
                 <div className={styles.shareCardSource}>微信扫码</div>
                 <img src="" alt="" className={styles.shareCardCode} />
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

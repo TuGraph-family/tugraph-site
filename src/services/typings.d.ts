@@ -268,6 +268,7 @@ declare namespace API {
   }
 
   interface ActivityDetailVO {
+    id?: number;
     /** 活动名称 */
     title?: string;
     /** 活动副标题 */

@@ -35,9 +35,11 @@ export const NewLayout: React.FC<LayoutProps> = ({
   }, [search]);
 
   const bgColor = useMemo(() => {
+    if (pathname?.split('/')[1] === 'blog') {
+      return '#fff';
+    }
     switch (pathname) {
       case '/download':
-      case '/blog/list':
       case '/':
         return '#fff';
       case '/activity/list':

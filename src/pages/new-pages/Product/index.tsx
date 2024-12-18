@@ -4,6 +4,8 @@ import Banner from '@/pages/new-pages/Product/components/Banner';
 import Introduction from '@/pages/new-pages/Product/components/Introduction';
 import QuickStart from '@/pages/new-pages/Product/components/QuicklyStart';
 import UserDemo from '@/pages/new-pages/Product/components/UserDemo';
+import { tracertBPos } from '@/util';
+import { useEffect } from 'react';
 import { useIntl, useLocation } from 'umi';
 
 const Product = () => {
@@ -11,6 +13,22 @@ const Product = () => {
   const intl = useIntl();
 
   const type = pathname.split('/')[2];
+
+  useEffect(() => {
+    switch (type) {
+      case 'analytics':
+        tracertBPos('b106246');
+        break;
+      case 'enterprise':
+        tracertBPos('b106248');
+        break;
+      case 'clound':
+        tracertBPos('b116460');
+        break;
+      default:
+        tracertBPos('b106230');
+    }
+  }, [type]);
 
   return (
     <NewLayout

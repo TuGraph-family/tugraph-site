@@ -5,7 +5,7 @@
 
 import React, { useRef, useEffect, useState, useMemo } from 'react';
 import { setLocale, useLocation } from 'umi';
-import { getSearch } from '@/util';
+import { getSearch, tracertBPos } from '@/util';
 import { DEFAULT_LOCAL } from '@/constant';
 import styles from './index.less';
 import { NewLayout } from '@/components/NewLayout';
@@ -40,6 +40,7 @@ const Docs: React.FC = () => {
   const iframeRef = useRef<HTMLIFrameElement>(null);
 
   useEffect(() => {
+    tracertBPos('b116461');
     /** switch language */
     setLocale(getSearch(search)?.lang || DEFAULT_LOCAL, false);
 

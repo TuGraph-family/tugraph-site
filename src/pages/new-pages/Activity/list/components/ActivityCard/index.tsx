@@ -18,7 +18,7 @@ const ActivityCard = ({ detail }: { detail: API.ActivityListVO }) => {
     >
       <div
         className={styles.activityImg}
-        style={{ backgroundImage: `url(${detail?.frontCoverImage?.url})` }}
+        style={{ backgroundImage: `url(${detail?.backgroundImage?.url})` }}
       >
         <ActivityTag status={detail?.activityState} />
       </div>
