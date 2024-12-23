@@ -39,6 +39,10 @@ const ActivityList = () => {
       draft.current = page;
       draft.pageSize = pageSize;
     });
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
   };
 
   useEffect(() => tracertBPos('b116453'), []);

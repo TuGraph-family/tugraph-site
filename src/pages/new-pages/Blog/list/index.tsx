@@ -34,6 +34,10 @@ const BlogList = () => {
       draft.current = page;
       draft.pageSize = pageSize;
     });
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
   };
 
   useEffect(() => {
@@ -73,8 +77,12 @@ const BlogList = () => {
           />
           {list?.length ? (
             <>
-              {list?.map((item) => (
-                <BlogItem detail={item} key={item?.id} />
+              {list?.map((item, idx) => (
+                <BlogItem
+                  detail={item}
+                  key={item?.id}
+                  isVisibleBoreder={list?.length - 1 === idx}
+                />
               ))}
             </>
           ) : (

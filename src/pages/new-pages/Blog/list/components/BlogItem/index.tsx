@@ -3,11 +3,18 @@ import styles from './index.less';
 import { history } from 'umi';
 import FooterInfo from '@/pages/new-pages/Blog/list/components/FooterInfo';
 
-const BlogItem = ({ detail }: { detail: API.BlogListVO }) => {
+const BlogItem = ({
+  detail,
+  isVisibleBoreder,
+}: {
+  detail: API.BlogListVO;
+  isVisibleBoreder: boolean;
+}) => {
   return (
     <div
       className={styles.blogItem}
       onClick={() => history.push(historyPushLinkAt(`/blog/info/${detail.id}`))}
+      style={isVisibleBoreder ? { borderBottom: 'none' } : {}}
     >
       <div className={styles.blogItemImg}>
         <img src={detail?.images?.[0]?.url || ''} alt="" />
