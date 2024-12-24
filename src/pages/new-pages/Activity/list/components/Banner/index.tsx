@@ -119,6 +119,7 @@ const Banner = () => {
           isBetween ? styles.between : '',
           isStartandEnd ? styles.startandend : '',
         )}
+        style={isBetween || isStartandEnd ? { backgroundColor } : {}}
         onMouseMove={() => setVisible(isBetween || isStartandEnd)}
       >
         {moment(current._d).format('DD')}
@@ -220,13 +221,15 @@ const Banner = () => {
                 className={styles.icon}
               />
 
-              <Calendar
-                defaultValue={moment(lastDetial?.startTime)}
-                className={styles.activityCalendar}
-                fullscreen={false}
-                dateFullCellRender={cellRender}
-                headerRender={headerRender}
-              />
+              <div onMouseLeave={() => setVisible(false)}>
+                <Calendar
+                  defaultValue={moment(lastDetial?.startTime)}
+                  className={styles.activityCalendar}
+                  fullscreen={false}
+                  dateFullCellRender={cellRender}
+                  headerRender={headerRender}
+                />
+              </div>
             </>
           ) : null}
         </div>
