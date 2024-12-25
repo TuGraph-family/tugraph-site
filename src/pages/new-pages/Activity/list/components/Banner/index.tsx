@@ -212,7 +212,18 @@ const Banner = () => {
                     >
                       立即报名
                     </Button>
-                  ) : null}
+                  ) : (
+                    <Button
+                      onClick={() =>
+                        history.push(
+                          historyPushLinkAt('/activity/info/' + lastDetial?.id),
+                        )
+                      }
+                      className={cx(styles.mainBtn)}
+                    >
+                      查看详情
+                    </Button>
+                  )}
                 </div>
               </div>
 
