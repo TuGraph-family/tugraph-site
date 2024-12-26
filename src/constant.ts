@@ -62,7 +62,7 @@ export const logoList = [
 export const DEFAULT_LOCAL = 'zh-CN';
 export const MATCH_LOCAL_SEARCH_REG = /[\\?]?([a-zA-Z0-9]+)=([0-9A-Z\-a-z]+)/g;
 
-export const HOST = 'https://tugraphportal.tugraph.tech';
+export const HOST = 'https://tugraph.tech';
 
 export const activityWayEnumOptions = [
   {

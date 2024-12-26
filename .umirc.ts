@@ -65,6 +65,11 @@ export default defineConfig({
       component: '@/pages/new-pages/Home',
     },
     {
+      path: '/product',
+      component: '@/pages/new-pages/Product',
+      title: 'product.title',
+    },
+    {
       path: '/product/*',
       component: '@/pages/new-pages/Product',
       title: 'product.title',
@@ -103,8 +108,16 @@ export default defineConfig({
       component: '@/pages/new-pages/Blog/info',
     },
     {
+      path: '/blog/info',
+      component: '@/pages/new-pages/Blog/info',
+    },
+    {
       path: '/activity/list',
       component: '@/pages/new-pages/Activity/list',
+    },
+    {
+      path: '/activity/info',
+      component: '@/pages/new-pages/Activity/info',
     },
     {
       path: '/activity/info/*',
@@ -171,7 +184,7 @@ export default defineConfig({
   },
   proxy: {
     '/api': {
-      target: 'https://tugraphportal.tugraph.tech',
+      target: 'https://tugraph.tech',
       changeOrigin: true,
     },
   },
