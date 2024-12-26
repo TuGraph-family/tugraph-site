@@ -16,7 +16,7 @@ const Introduction = ({ type, intl }: { type: string; intl: IntlShape }) => {
         <FadeInSection>
           <div className={styles.desc}>{data.desc}</div>
         </FadeInSection>
-        <FadeInSection>
+        <FadeInSection threshold={0.3}>
           <div className={styles.featureContainer}>
             <Row gutter={[24, 24]} className={styles.contentBoxAll}>
               {data.list?.map((item) => (
