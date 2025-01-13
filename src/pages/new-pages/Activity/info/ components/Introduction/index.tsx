@@ -4,11 +4,25 @@ import rehypeRaw from 'rehype-raw';
 import remarkGfm from 'remark-gfm';
 import styles from './index.less';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-const Introduction = ({ markdown }: { markdown?: string }) => {
+import { renderCard } from '@/util/render-card';
+import cx from 'classnames';
+
+const Introduction = ({
+  markdown,
+  isOld,
+}: {
+  markdown?: string;
+  isOld?: boolean;
+}) => {
   return (
     <div className={styles.activityInfo}>
       <SubTitle title="活动简介" isAnimate={false} />
-      <div className={styles.markdownContent}>
+      <div
+        className={cx(
+          styles.markdownContent,
+          isOld ? styles.oldBlog : styles.newBlog,
+        )}
+      >
         <ReactMarkdown
           remarkPlugins={[remarkGfm]}
           rehypePlugins={[rehypeRaw]}
@@ -28,6 +42,7 @@ const Introduction = ({ markdown }: { markdown?: string }) => {
                 </code>
               );
             },
+            card: renderCard,
           }}
         >
           {markdown || ''}

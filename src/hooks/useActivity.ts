@@ -7,7 +7,7 @@ interface IState {
   list: API.ActivityListVO[];
   detail: API.ActivityDetailVO;
   total: number;
-  lastDetial: API.ActivityDetailVO;
+  lastDetial: API.ActivityListVO;
 }
 
 export const useActivity = () => {

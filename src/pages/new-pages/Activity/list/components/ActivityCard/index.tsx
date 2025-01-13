@@ -1,4 +1,4 @@
-import { historyPushLinkAt } from '@/util';
+import { historyPushLinkAt, isBeforeTime } from '@/util';
 import styles from './index.less';
 import { EnvironmentOutlined, PlaySquareOutlined } from '@ant-design/icons';
 import { history } from 'umi';
@@ -13,7 +13,13 @@ const ActivityCard = ({ detail }: { detail: API.ActivityListVO }) => {
     <div
       className={styles.activityCard}
       onClick={() =>
-        history.push(historyPushLinkAt('/activity/info/' + detail?.id))
+        history.push(
+          historyPushLinkAt(
+            `/activity/info/${detail?.id}${
+              isBeforeTime(detail?.updateTime) ? '/old' : ''
+            }`,
+          ),
+        )
       }
     >
       <div

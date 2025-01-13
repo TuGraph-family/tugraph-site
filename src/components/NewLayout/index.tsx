@@ -5,6 +5,7 @@ import styles from './index.less';
 import { getSearch } from '@/util';
 import { DEFAULT_LOCAL, EN_SITE, HOST_EN, HOST_ZH, ZH_SITE } from '@/constant';
 import { NewFooter } from '@/components/NewFooter';
+import AdBox from '@/components/AdBox';
 
 export interface LayoutProps {
   content: JSX.Element;
@@ -21,6 +22,8 @@ export const NewLayout: React.FC<LayoutProps> = ({
   headerBgStyles,
   mainStyles,
 }) => {
+  // 广告位
+  const isAd = false;
   const location = useLocation();
   const { search, pathname } = location;
   useEffect(() => {
@@ -51,17 +54,26 @@ export const NewLayout: React.FC<LayoutProps> = ({
 
   return (
     <div>
-      <NewHeader currentUrl={currentUrl} />
-      <div
-        className={styles.mainWrapper}
-        style={{ background: bgColor, ...mainStyles }}
-      >
-        <div className={styles.content}>
-          <div className={styles.headerBg} style={headerBgStyles} />
-          {content}
+      {isAd ? <AdBox /> : null}
+      <div>
+        <NewHeader currentUrl={currentUrl} isAd={isAd} />
+        <div
+          className={styles.mainWrapper}
+          style={{ background: bgColor, ...mainStyles }}
+        >
+          <div className={styles.content}>
+            <div
+              className={styles.headerBg}
+              style={{
+                ...headerBgStyles,
+                top: isAd ? 80 : 0,
+              }}
+            />
+            {content}
+          </div>
         </div>
+        {isFooter ? <NewFooter /> : null}
       </div>
-      {isFooter ? <NewFooter /> : null}
     </div>
   );
 };

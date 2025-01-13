@@ -1,5 +1,5 @@
 import FooterInfo from '@/pages/new-pages/Blog/list/components/FooterInfo';
-import { Breadcrumb, Divider } from 'antd';
+import { Breadcrumb } from 'antd';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import styles from './index.less';
@@ -8,10 +8,18 @@ import rehypeRaw from 'rehype-raw';
 import { historyPushLinkAt, slugify } from '@/util';
 import { history } from 'umi';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import cx from 'classnames';
+import { renderCard } from '@/util/render-card';
 
-const InfoContent = ({ detail }: { detail?: API.BlogDetailVO }) => {
+const InfoContent = ({
+  detail,
+  isOldBlog,
+}: {
+  detail?: API.BlogDetailVO;
+  isOldBlog?: boolean;
+}) => {
   return (
-    <div className={styles.InfoContent}>
+    <div className={cx(styles.InfoContent)}>
       <Breadcrumb>
         <Breadcrumb.Item>
           <a onClick={() => history.push(historyPushLinkAt('/blog/list'))}>
@@ -26,7 +34,12 @@ const InfoContent = ({ detail }: { detail?: API.BlogDetailVO }) => {
         creatorName={detail?.creatorName}
         tag={detail?.categories}
       />
-      <div className={styles.InfoContentText}>
+      <div
+        className={cx(
+          styles.InfoContentText,
+          isOldBlog ? styles.oldBlog : styles.newBlog,
+        )}
+      >
         <ReactMarkdown
           remarkPlugins={[remarkGfm]}
           rehypePlugins={[rehypeRaw, rehypeSlug]}
@@ -50,7 +63,6 @@ const InfoContent = ({ detail }: { detail?: API.BlogDetailVO }) => {
             ),
             code({ node, inline, className, children, ...props }) {
               const match = /language-(\w+)/.exec(className || '');
-              console.log(match, 'lkm');
               return !inline && match ? (
                 <SyntaxHighlighter
                   {...props}
@@ -64,6 +76,7 @@ const InfoContent = ({ detail }: { detail?: API.BlogDetailVO }) => {
                 </code>
               );
             },
+            card: renderCard,
           }}
         >
           {detail?.content || ''}

@@ -8,11 +8,14 @@ import '@docsearch/css';
 import styles from './index.less';
 import { motion } from 'framer-motion';
 import langIcon from '@/assets/icon/lang.svg';
+import AdBox from '@/components/AdBox';
 
 export const NewHeader = ({
   currentUrl,
+  isAd,
 }: {
   currentUrl?: { pathname: string; hash: string };
+  isAd: boolean;
 }) => {
   let time: any = null;
   const intl = useIntl();
@@ -406,6 +409,7 @@ export const NewHeader = ({
           <motion.div
             key={item.menuKeys}
             className={styles[item.menuKeys]}
+            style={{ top: isAd && !isStick ? 146 : 66 }}
             initial={{ height: 0, zIndex: 500 }}
             animate={{
               height: subVisibleKey === item.menuKeys ? subMenuHeight : 0,

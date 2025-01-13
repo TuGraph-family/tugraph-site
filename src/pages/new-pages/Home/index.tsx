@@ -12,6 +12,8 @@ import { tracertBPos } from '@/util';
 const Home = () => {
   const intl = useIntl();
   const { getList, list } = useBlog();
+  // 广告位
+  const isAd = false;
 
   useEffect(() => {
     getList({
@@ -29,7 +31,12 @@ const Home = () => {
     <NewLayout
       content={
         <>
-          <div className={styles.homeBg}>
+          <div
+            className={styles.homeBg}
+            style={{
+              top: isAd ? 80 : 0,
+            }}
+          >
             <div className={styles.centerBg} />
           </div>
           <Banner intl={intl} blogList={list} />

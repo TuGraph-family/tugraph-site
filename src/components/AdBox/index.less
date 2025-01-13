@@ -1,6 +1,41 @@
 .adBox {
   background-color: black;
   height: 80px;
+  width: 100vw;
   text-align: center;
   color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .mainBox {
+    padding: 10px;
+    position: relative;
+    overflow: hidden;
+
+    .constent {
+      color: #fff;
+      font-family: 'PuHuiTi55';
+      font-size: 20px;
+      line-height: 28px;
+      display: flex;
+      gap: 20px;
+
+      .desc {
+        text-align: center;
+      }
+    }
+
+    .mask {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: flex;
+      background-image: linear-gradient(90deg, transparent, black 100px);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+    }
+  }
 }
