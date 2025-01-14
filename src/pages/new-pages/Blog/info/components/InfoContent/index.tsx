@@ -82,23 +82,7 @@ const InfoContent = ({
           {detail?.content || ''}
         </ReactMarkdown>
       </div>
-
       <div className={styles.footer}>
-        {detail?.lastCommentId ? (
-          <div
-            className={styles.lastBtn}
-            onClick={() =>
-              history.push(
-                historyPushLinkAt(`/blog/info/${detail?.lastCommentId}`),
-              )
-            }
-          >
-            <div>上一篇</div>
-            <div className={styles.title}>{detail?.lastCommentTitle}</div>
-          </div>
-        ) : (
-          <div />
-        )}
         {detail?.nextCommentId ? (
           <div
             className={styles.nextBtn}
@@ -108,8 +92,23 @@ const InfoContent = ({
               )
             }
           >
-            <div>下一篇</div>
+            <div>上一篇</div>
             <div className={styles.title}>{detail?.nextCommentTitle}</div>
+          </div>
+        ) : (
+          <div />
+        )}
+        {detail?.lastCommentId ? (
+          <div
+            className={styles.lastBtn}
+            onClick={() =>
+              history.push(
+                historyPushLinkAt(`/blog/info/${detail?.lastCommentId}`),
+              )
+            }
+          >
+            <div>下一篇</div>
+            <div className={styles.title}>{detail?.lastCommentTitle}</div>
           </div>
         ) : (
           <div />

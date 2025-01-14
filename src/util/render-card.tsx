@@ -2,7 +2,7 @@ import React from 'react';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 export const renderCard = ({ node }: any): React.ReactNode => {
   try {
-    const { name, value } = node?.children?.[0] || {};
+    const { name, value, alias } = node?.children?.[0] || {};
     const jsonString = decodeURIComponent(value?.replace('data:', '')) || '';
     const nodeData = JSON.parse(jsonString);
 
@@ -15,7 +15,7 @@ export const renderCard = ({ node }: any): React.ReactNode => {
           src={nodeData?.src}
           alt={nodeData?.name}
           width={nodeData?.width}
-          height={nodeData?.height}
+          height="auto"
         />
       );
     }
@@ -29,6 +29,9 @@ export const renderCard = ({ node }: any): React.ReactNode => {
           </code>
         </pre>
       );
+    }
+    if (name === 'thirdparty' && alias === 'bilibili') {
+      return <iframe src={nodeData?.src} width="100%" height="500" />;
     }
     return null;
   } catch (error) {
