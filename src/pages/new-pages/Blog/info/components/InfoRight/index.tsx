@@ -131,7 +131,7 @@ const InfoRight = ({
   };
 
   return (
-    <div className={styles.InfoRight}>
+    <div className={styles.infoRight}>
       {headings.length ? (
         <Anchor
           className={styles.blogAnchor}

@@ -19,7 +19,7 @@ const InfoContent = ({
   isOldBlog?: boolean;
 }) => {
   return (
-    <div className={cx(styles.InfoContent)}>
+    <div className={cx(styles.infoContent)}>
       <Breadcrumb>
         <Breadcrumb.Item>
           <a onClick={() => history.push(historyPushLinkAt('/blog/list'))}>
@@ -28,7 +28,7 @@ const InfoContent = ({
         </Breadcrumb.Item>
         <Breadcrumb.Item>详情</Breadcrumb.Item>
       </Breadcrumb>
-      <div className={styles.InfoContentTitle}>{detail?.title}</div>
+      <div className={styles.infoContentTitle}>{detail?.title}</div>
       <FooterInfo
         time={detail?.publishTime}
         creatorName={detail?.creatorName}
@@ -36,7 +36,7 @@ const InfoContent = ({
       />
       <div
         className={cx(
-          styles.InfoContentText,
+          styles.infoContentText,
           isOldBlog ? styles.oldBlog : styles.newBlog,
         )}
       >
