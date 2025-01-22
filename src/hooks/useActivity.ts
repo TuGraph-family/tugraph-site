@@ -83,6 +83,9 @@ export const useActivity = () => {
           if (state === 'PROGRESS') {
             getLastActicity('NOT_STARTED');
           }
+          if (state === 'NOT_STARTED') {
+            getLastActicity('OVER');
+          }
         }
       }
     } catch (error) {

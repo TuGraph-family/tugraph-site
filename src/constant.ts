@@ -119,4 +119,4 @@ export const resourceOPtions = [
 ];
 
 // Rich text old and new version replacement time
-export const OLD_BLOG_LAST_UPLOAD_TIME = '2025-01-01';
+export const OLD_BLOG_LAST_UPLOAD_TIME = '2025-01-22';
