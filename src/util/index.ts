@@ -1,5 +1,10 @@
 /* eslint-disable no-cond-assign */
-import { DEFAULT_LOCAL, MATCH_LOCAL_SEARCH_REG } from '@/constant';
+import {
+  DEFAULT_LOCAL,
+  MATCH_LOCAL_SEARCH_REG,
+  OLD_BLOG_LAST_UPLOAD_TIME,
+} from '@/constant';
+import moment from 'moment';
 
 /** 中英文 banner 标题的 marginTop */
 export const ChOrEnStyle = (
@@ -77,4 +82,9 @@ export const slugify = (text?: string, islabel = false) => {
     .replace(/[^a-z0-9\u4e00-\u9fa5 -]/g, '') // Remove all non-word chars
     .replace(/\s+/g, '-') // Replace spaces with -
     .replace(/-+/g, '-'); // Replace multiple - with single -
+};
+
+// 获取内容更新时间是否在设定值之前
+export const isBeforeTime = (time?: string) => {
+  return moment(time).isBefore(moment(OLD_BLOG_LAST_UPLOAD_TIME));
 };

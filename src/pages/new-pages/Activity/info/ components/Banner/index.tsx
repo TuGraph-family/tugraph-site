@@ -50,15 +50,15 @@ const Banner = ({ detail }: { detail: API.ActivityDetailVO }) => {
             <div>
               <div className={styles.avtivityTitle}>{detail?.title}</div>
               <div className={styles.avtivityInfo}>
-                <div className={styles.InfoItem}>
-                  <div className={styles.InfoItemLabel}>活动类型：</div>
-                  <div className={styles.InfoItemVal}>
+                <div className={styles.infoItem}>
+                  <div className={styles.infoItemLabel}>活动类型：</div>
+                  <div className={styles.infoItemVal}>
                     {ActivityWayOptionsEnum[detail?.activityWay || 'ONLINE']}
                   </div>
                 </div>
-                <div className={styles.InfoItem}>
-                  <div className={styles.InfoItemLabel}>活动时间：</div>
-                  <div className={styles.InfoItemVal}>
+                <div className={styles.infoItem}>
+                  <div className={styles.infoItemLabel}>活动时间：</div>
+                  <div className={styles.infoItemVal}>
                     {detail?.startTime
                       ? moment(detail.startTime).format('YYYY-MM-DD HH:mm:ss')
                       : ''}
@@ -68,13 +68,13 @@ const Banner = ({ detail }: { detail: API.ActivityDetailVO }) => {
                       : ''}
                   </div>
                 </div>
-                <div className={styles.InfoItem}>
-                  <div className={styles.InfoItemLabel}>
+                <div className={styles.infoItem}>
+                  <div className={styles.infoItemLabel}>
                     {detail?.activityWay === 'ONLINE'
                       ? '活动渠道：'
                       : '活动地点：'}
                   </div>
-                  <div className={styles.InfoItemVal}>
+                  <div className={styles.infoItemVal}>
                     {detail?.activityWay === 'ONLINE'
                       ? detail?.activityChannel
                       : detail?.address}

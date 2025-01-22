@@ -32,9 +32,7 @@ const Docs: React.FC = () => {
   });
 
   const solidIframeUrl = useMemo(() => {
-    return iframeUrl.includes('/tugraph-analytics')
-      ? `https://liukaiming-alipay.github.io${iframeUrl}`
-      : `https://zhongyunwan.github.io${iframeUrl}`;
+    return `https://tugraph-family.github.io${iframeUrl}`;
   }, [iframeUrl]);
 
   const iframeRef = useRef<HTMLIFrameElement>(null);

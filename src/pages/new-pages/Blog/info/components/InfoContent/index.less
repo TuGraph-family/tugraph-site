@@ -1,10 +1,10 @@
-.InfoContent {
+.infoContent {
   width: 0;
   flex: 1;
   min-height: 100%;
   position: relative;
 
-  .InfoContentTitle {
+  .infoContentTitle {
     font-size: 26px;
     color: #292d3b;
     line-height: 34px;
@@ -12,7 +12,7 @@
     margin: 20px 0 13px;
   }
 
-  .InfoContentText {
+  .infoContentText {
     margin-top: 32px;
 
     p > font,
@@ -23,20 +23,12 @@
       line-height: 22px;
     }
 
-    img {
-      width: 80%;
-      height: auto;
-      margin: 0 auto;
-      display: block;
-    }
-
     h1,
     h2,
     h3,
     h4,
     h5,
     h6 {
-      text-align: center;
       color: #292d3b;
       font-weight: 600;
       margin: 32px 0 16px;
@@ -56,6 +48,55 @@
       hyphens: auto;
       padding: 5px 10px;
       border: 1px solid #ddd;
+    }
+  }
+
+  .oldBlog {
+    img {
+      width: 80%;
+      height: auto;
+      margin: 0 auto;
+      display: block;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      text-align: center;
+    }
+  }
+
+  .newBlog {
+    img {
+      max-width: 100%;
+    }
+
+    p {
+      margin-bottom: 0;
+    }
+
+    :global {
+      .ne-quote {
+        display: block;
+        padding-left: 10px;
+        margin: 10px 0;
+        position: relative;
+      }
+
+      .ne-quote::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 2px;
+        border-radius: 2px;
+        background-color: #d8dad9;
+      }
     }
   }
 
@@ -87,7 +128,7 @@
       }
     }
 
-    .nextBtn {
+    .lastBtn {
       text-align: right;
     }
   }

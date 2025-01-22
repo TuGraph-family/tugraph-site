@@ -71,7 +71,7 @@ export const useBlog = () => {
       const res = await getCategorylist();
       if (res?.success) {
         setState((draft) => {
-          draft.categorylist = (res?.data || [])?.map((item) => {
+          draft.categorylist = Array.from(new Set(res?.data))?.map((item) => {
             return {
               value: item,
               label: item,

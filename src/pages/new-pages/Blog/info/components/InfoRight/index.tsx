@@ -6,61 +6,116 @@ import styles from './index.less';
 import { historyPushLinkAt, slugify } from '@/util';
 import { history } from 'umi';
 import { useActivity } from '@/hooks/useActivity';
+import moment from 'moment';
 
 const { Link } = Anchor;
 
 const InfoRight = ({
   detail,
   list,
+  isOldBlog,
 }: {
   detail?: API.BlogDetailVO;
   list?: API.BlogListVO[];
+  isOldBlog?: boolean;
 }) => {
   const { getLastActicity, lastDetial } = useActivity();
-  const headings = useMemo(() => {
-    const headings: any = [];
 
-    const tree = remark().use(parse).parse(detail?.content);
+  const extractHeadingsTree = (html: string) => {
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(html, 'text/html');
+    const headings = Array.from(doc.querySelectorAll('h1, h2, h3'));
 
-    tree?.children
-      ?.filter((node) => node.type === 'heading')
-      .forEach((node) => {
-        const level = node.depth; //2
-        const text = node.children.map((child) => child?.value).join('');
+    const buildTree = (headings: HTMLElement[], level: number = 1) => {
+      const tree = [];
+      let i = 0;
 
-        if (level > 3) {
-          return;
-        }
+      while (i < headings.length) {
+        const heading = headings[i];
+        const currentLevel = parseInt(heading.tagName[1], 10);
 
-        if (!headings?.length) {
-          headings.push({ level, text });
-        } else {
-          if (headings[headings.length - 1]?.level < level) {
-            headings.splice(headings.length - 1, 1, {
-              ...headings[headings.length - 1],
-              children: [
-                ...(headings[headings.length - 1]?.children || []),
-                { level, text },
-              ],
-            });
-          } else {
-            headings.push({ level, text });
+        if (currentLevel >= level) {
+          const node = {
+            tag: heading.tagName.toLowerCase(),
+            id: heading.getAttribute('id'),
+            text: heading.textContent?.trim() || '',
+            children: [],
+          };
+
+          // 递归构建子节点
+          const subHeadings = [];
+          for (let j = i + 1; j < headings.length; j++) {
+            const nextHeadingLevel = parseInt(headings[j].tagName[1], 10);
+            if (nextHeadingLevel > currentLevel) {
+              subHeadings.push(headings[j]);
+            } else {
+              break;
+            }
           }
-        }
-      });
 
-    return headings;
-  }, [detail]);
+          node.children = buildTree(subHeadings, currentLevel + 1);
+          tree.push(node);
+          i += subHeadings.length + 1;
+        } else {
+          i++;
+        }
+      }
+
+      return tree;
+    };
+
+    return buildTree(headings);
+  };
+
+  const headings = useMemo(() => {
+    if (!detail?.content) {
+      return [];
+    }
+    if (isOldBlog) {
+      const headings: any = [];
+      const tree = remark().use(parse).parse(detail?.content);
+
+      tree?.children
+        ?.filter((node) => node.type === 'heading')
+        .forEach((node) => {
+          const level = node.depth; //2
+          const text = node.children.map((child) => child?.value).join('');
+
+          if (level > 3) {
+            return;
+          }
+
+          if (!headings?.length) {
+            headings.push({ level, text });
+          } else {
+            if (headings[headings.length - 1]?.level < level) {
+              headings.splice(headings.length - 1, 1, {
+                ...headings[headings.length - 1],
+                children: [
+                  ...(headings[headings.length - 1]?.children || []),
+                  { level, text },
+                ],
+              });
+            } else {
+              headings.push({ level, text });
+            }
+          }
+        });
+      return headings;
+    } else {
+      return extractHeadingsTree(detail?.content || '');
+    }
+  }, [detail, isOldBlog]);
 
   useEffect(() => {
     getLastActicity('REGISTRATION_DURING');
   }, []);
 
   const renderLink = (item: any) => {
-    if (item?.text) {
+    if (item?.text || item?.id) {
       return (
         <Link
-          href={`#${slugify(item?.text)}`}
+          href={`#${isOldBlog ? slugify(item?.text) : item?.id}`}
           title={slugify(item?.text, true)}
         >
           {item?.children?.length
@@ -76,7 +131,7 @@ const InfoRight = ({
   };
 
   return (
-    <div className={styles.InfoRight}>
+    <div className={styles.infoRight}>
       {headings.length ? (
         <Anchor
           className={styles.blogAnchor}

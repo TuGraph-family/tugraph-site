@@ -4,9 +4,9 @@ import styles from './index.less';
 import InfoRight from '@/pages/new-pages/Blog/info/components/InfoRight';
 import { useLocation } from 'umi';
 import { useBlog } from '@/hooks/useBlog';
-import { useEffect } from 'react';
+import { useEffect, useMemo } from 'react';
 import { Spin } from 'antd';
-import { tracertBPos } from '@/util';
+import { isBeforeTime, tracertBPos } from '@/util';
 
 const BlogInfo = () => {
   const location = useLocation();
@@ -20,6 +20,10 @@ const BlogInfo = () => {
       element.scrollTop = 0;
     }
   };
+
+  const isOldBlog = useMemo(() => {
+    return isBeforeTime(detail?.updateTime);
+  }, [detail]);
 
   useEffect(() => {
     tracertBPos('b106258');
@@ -46,10 +50,11 @@ const BlogInfo = () => {
       content={
         <Spin spinning={getDetailLoading}>
           <div className={styles.blogInfo} id={'blog-content'}>
-            <InfoContent detail={detail} />
+            <InfoContent detail={detail} isOldBlog={isOldBlog} />
             <InfoRight
               detail={detail}
               list={list?.filter((item) => item?.id !== id)}
+              isOldBlog={isOldBlog}
             />
           </div>
         </Spin>

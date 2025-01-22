@@ -1,5 +1,5 @@
 import FooterInfo from '@/pages/new-pages/Blog/list/components/FooterInfo';
-import { Breadcrumb, Divider } from 'antd';
+import { Breadcrumb } from 'antd';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import styles from './index.less';
@@ -8,10 +8,18 @@ import rehypeRaw from 'rehype-raw';
 import { historyPushLinkAt, slugify } from '@/util';
 import { history } from 'umi';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import cx from 'classnames';
+import { renderCard } from '@/util/render-card';
 
-const InfoContent = ({ detail }: { detail?: API.BlogDetailVO }) => {
+const InfoContent = ({
+  detail,
+  isOldBlog,
+}: {
+  detail?: API.BlogDetailVO;
+  isOldBlog?: boolean;
+}) => {
   return (
-    <div className={styles.InfoContent}>
+    <div className={cx(styles.infoContent)}>
       <Breadcrumb>
         <Breadcrumb.Item>
           <a onClick={() => history.push(historyPushLinkAt('/blog/list'))}>
@@ -20,13 +28,18 @@ const InfoContent = ({ detail }: { detail?: API.BlogDetailVO }) => {
         </Breadcrumb.Item>
         <Breadcrumb.Item>详情</Breadcrumb.Item>
       </Breadcrumb>
-      <div className={styles.InfoContentTitle}>{detail?.title}</div>
+      <div className={styles.infoContentTitle}>{detail?.title}</div>
       <FooterInfo
         time={detail?.publishTime}
         creatorName={detail?.creatorName}
         tag={detail?.categories}
       />
-      <div className={styles.InfoContentText}>
+      <div
+        className={cx(
+          styles.infoContentText,
+          isOldBlog ? styles.oldBlog : styles.newBlog,
+        )}
+      >
         <ReactMarkdown
           remarkPlugins={[remarkGfm]}
           rehypePlugins={[rehypeRaw, rehypeSlug]}
@@ -50,7 +63,6 @@ const InfoContent = ({ detail }: { detail?: API.BlogDetailVO }) => {
             ),
             code({ node, inline, className, children, ...props }) {
               const match = /language-(\w+)/.exec(className || '');
-              console.log(match, 'lkm');
               return !inline && match ? (
                 <SyntaxHighlighter
                   {...props}
@@ -64,28 +76,13 @@ const InfoContent = ({ detail }: { detail?: API.BlogDetailVO }) => {
                 </code>
               );
             },
+            card: renderCard,
           }}
         >
           {detail?.content || ''}
         </ReactMarkdown>
       </div>
-
       <div className={styles.footer}>
-        {detail?.lastCommentId ? (
-          <div
-            className={styles.lastBtn}
-            onClick={() =>
-              history.push(
-                historyPushLinkAt(`/blog/info/${detail?.lastCommentId}`),
-              )
-            }
-          >
-            <div>上一篇</div>
-            <div className={styles.title}>{detail?.lastCommentTitle}</div>
-          </div>
-        ) : (
-          <div />
-        )}
         {detail?.nextCommentId ? (
           <div
             className={styles.nextBtn}
@@ -95,8 +92,23 @@ const InfoContent = ({ detail }: { detail?: API.BlogDetailVO }) => {
               )
             }
           >
-            <div>下一篇</div>
+            <div>上一篇</div>
             <div className={styles.title}>{detail?.nextCommentTitle}</div>
+          </div>
+        ) : (
+          <div />
+        )}
+        {detail?.lastCommentId ? (
+          <div
+            className={styles.lastBtn}
+            onClick={() =>
+              history.push(
+                historyPushLinkAt(`/blog/info/${detail?.lastCommentId}`),
+              )
+            }
+          >
+            <div>下一篇</div>
+            <div className={styles.title}>{detail?.lastCommentTitle}</div>
           </div>
         ) : (
           <div />

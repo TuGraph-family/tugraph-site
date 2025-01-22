@@ -1,4 +1,4 @@
-.InfoRight {
+.infoRight {
   width: 322px;
   height: fit-content;
   display: flex;
@@ -87,6 +87,11 @@
   max-height: 190px !important;
 
   :global {
+    .ant-anchor {
+      position: relative;
+      transition: all 0.3s;
+    }
+
     .ant-anchor-link-title {
       color: #768191;
     }
@@ -96,20 +101,15 @@
     }
 
     .ant-anchor-link-active {
-      position: relative;
-      transition: all 0.3s;
-
       &::before {
         content: '';
         width: 2px;
-        height: 14px;
+        height: 26px;
         background: #2e5dfe;
         border-radius: 1px;
         border: none;
         position: absolute;
         left: 0;
-        top: 50%;
-        transform: translate(-2px, -50%);
       }
     }
   }

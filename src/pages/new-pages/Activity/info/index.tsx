@@ -12,6 +12,7 @@ import { useLocation } from 'umi';
 const ActivityInfo = () => {
   const location = useLocation();
   const id = Number(location.pathname.split('/')[3]);
+  const isOld = location.pathname.split('/')[4] === 'old';
   const { getDetail, detail } = useActivity();
 
   useEffect(() => {
@@ -36,7 +37,7 @@ const ActivityInfo = () => {
             {detail?.frontResourceShow ? (
               <DataReview list={detail?.activityResources} />
             ) : null}
-            <Introduction markdown={detail?.introduction} />
+            <Introduction markdown={detail?.introduction} isOld={isOld} />
             {detail?.frontProcessShow ? (
               <Agenda list={detail?.processes} />
             ) : null}
