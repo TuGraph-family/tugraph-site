@@ -197,4 +197,10 @@ export default defineConfig({
     default: DEFAULT_LOCAL,
     useLocalStorage: false,
   },
+  metas: [
+    {
+      name: 'referrer',
+      content: 'never',
+    },
+  ],
 });
