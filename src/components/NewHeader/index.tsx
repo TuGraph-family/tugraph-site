@@ -456,7 +456,7 @@ export const NewHeader = ({
             <a href={goLinkAt('/')} rel="noopener noreferrer">
               <img
                 className={styles.log}
-                src="https://mdn.alipayobjects.com/huamei_p63okt/afts/img/V8XITL_lpf4AAAAAAAAAAAAADh8WAQFr/original"
+                src="https://mdn.alipayobjects.com/huamei_p63okt/afts/img/FdGmQYzJAScAAAAAAAAAAAAAeh8WAQFr/fmt.avif"
               />
             </a>
           </div>
