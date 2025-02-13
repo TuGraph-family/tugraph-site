@@ -1,5 +1,10 @@
 /* eslint-disable no-cond-assign */
-import { DEFAULT_LOCAL, MATCH_LOCAL_SEARCH_REG } from '@/constant';
+import {
+  DEFAULT_LOCAL,
+  MATCH_LOCAL_SEARCH_REG,
+  OLD_BLOG_LAST_UPLOAD_TIME,
+} from '@/constant';
+import moment from 'moment';
 
 /** 中英文 banner 标题的 marginTop */
 export const ChOrEnStyle = (
@@ -34,9 +39,15 @@ export const goLinkAt = (path: string) => {
 };
 
 export const historyPushLinkAt = (path: string) => {
-  const { search } = window.location;
-  const curSearch = getSearch(search);
-  return `${path}?lang=${curSearch?.lang || DEFAULT_LOCAL}`;
+  const { search, pathname } = window.location;
+  let curSearch = getSearch(search);
+  if (/^\/docs\//.test(pathname)) {
+    return `${path}?lang=${
+      pathname.split('/')[3] === 'en' ? 'en-US' : 'zh-CN'
+    }`;
+  } else {
+    return `${path}?lang=${curSearch?.lang || DEFAULT_LOCAL}`;
+  }
 };
 
 /** 蚂蚁埋点 - 手动 */
@@ -49,4 +60,31 @@ export const tracertBPos = (bPos: string, options?: Record<string, any>) => {
     ifRouterNeedPv: false,
   });
   window.Tracert?.call?.('logPv', options || {});
+};
+
+// 锚点特殊字符处理
+export const slugify = (text?: string, islabel = false) => {
+  if (!text) {
+    return '';
+  }
+
+  let content = text;
+
+  const firstMatch = text.match(/>[^<]*<\//);
+  if (firstMatch) {
+    content = firstMatch[0].replace(/[\>\</]/g, '');
+  }
+  if (islabel) {
+    return content;
+  }
+  return content
+    .toLowerCase()
+    .replace(/[^a-z0-9\u4e00-\u9fa5 -]/g, '') // Remove all non-word chars
+    .replace(/\s+/g, '-') // Replace spaces with -
+    .replace(/-+/g, '-'); // Replace multiple - with single -
+};
+
+// 获取内容更新时间是否在设定值之前
+export const isBeforeTime = (time?: string) => {
+  return moment(time).isBefore(moment(OLD_BLOG_LAST_UPLOAD_TIME));
 };

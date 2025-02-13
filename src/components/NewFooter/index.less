@@ -1,0 +1,262 @@
+.footer {
+  background: #f1f3f6;
+  height: 388px;
+  z-index: 9;
+  cursor: pointer !important;
+
+  .contactGroup {
+    font-size: 16px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.89);
+  }
+
+  .slack {
+    font-size: 5.2vw;
+    color: #fff;
+    display: block;
+  }
+
+  a:hover {
+    color: #1890ff !important;
+  }
+
+  .containerWrapper {
+    max-width: 1200px;
+    margin: auto;
+    padding: 57px 0 56px 0;
+
+    .title {
+      font-weight: 500;
+      font-size: 14px;
+      color: #363740;
+      line-height: 24px;
+      margin-bottom: 17px;
+    }
+
+    .title1 {
+      font-weight: 500;
+      font-size: 14px;
+      color: #6a6b71;
+      line-height: 24px;
+      margin: 30px 0 17px 0;
+    }
+
+    a,
+    .item {
+      font-size: 14px;
+      color: #6a6b71;
+      line-height: 22px;
+
+      display: block;
+    }
+
+    .item {
+      margin-top: 12px;
+    }
+
+    .iconGroup {
+      margin: 36px 0 30px 0;
+
+      img {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .logo {
+    text-align: center;
+    width: 100px;
+    height: 100px;
+  }
+
+  .qrCode {
+    height: 211px;
+    width: 164px;
+    background: #1a1b2505;
+    border-radius: 8px;
+    padding: 24px;
+    text-align: center;
+
+    .desc {
+      margin-top: 16px;
+      font-size: 14px;
+      color: #363740;
+    }
+
+    .subDesc {
+      margin-top: 8px;
+      font-size: 12px;
+      color: #6a6b71;
+    }
+
+    img {
+      border-radius: 8px;
+      width: 100px;
+    }
+  }
+
+  .footerExtraInfo {
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
+    height: 64px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+
+    a,
+    div {
+      font-size: 14px;
+      color: #6a6b71;
+    }
+
+    a {
+      text-decoration: underline;
+    }
+  }
+
+  :global {
+    .docFooter {
+      margin-left: 242px;
+    }
+  }
+}
+
+@media only screen and (max-width: 767.99px) {
+  .footer {
+    padding: 3.2vw;
+    color: rgba(255, 255, 255, 0.89);
+    font-weight: 400;
+    height: auto;
+
+    .qrCode {
+      height: 19.7vw;
+      text-align: left;
+      padding: 3.2vw;
+      width: 100%;
+      margin: 3.2vw auto;
+      background-color: rgba(255, 255, 255, 0.08);
+
+      img {
+        border-radius: 1.1vw;
+        width: 13.3vw;
+        height: 13.3vw;
+      }
+
+      .group {
+        .desc {
+          color: #fff;
+          font-weight: 500;
+          font-size: 3.7vw;
+          width: 19.7vw;
+          height: 5.3vw;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          margin-top: 0px;
+        }
+
+        .subDesc {
+          font-weight: 400;
+          font-size: 2.6vw;
+          color: rgba(255, 255, 255, 0.65);
+          line-height: 4vw;
+          margin-top: 2.6vw;
+          overflow: hidden;
+          width: 19.7vw;
+          height: 4vw;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+      }
+    }
+
+    .contactInfo {
+      margin: 0;
+      color: #fff;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+
+      img {
+        width: 3.7vw;
+        height: auto;
+        margin: 3.2vw 0;
+      }
+    }
+
+    .footerExtraInfo {
+      margin: 0;
+      padding: 0;
+      height: auto;
+      border: none;
+      display: block;
+      font-family: 'PingFang';
+      font-weight: 400;
+
+      .divider {
+        height: 1px;
+        background: rgba(255, 255, 255, 0.25);
+      }
+
+      a,
+      div {
+        font-size: 2.22vw;
+        color: rgba(255, 255, 255, 0.65);
+      }
+
+      a {
+        margin-bottom: 1.1vw;
+        display: block;
+      }
+    }
+
+    .textGroup {
+      .item {
+        display: block;
+        color: #fff;
+        height: 12.8vw;
+        padding: 4.3vw 5.3vw;
+      }
+
+      :global {
+        .ant-collapse {
+          border-radius: 0;
+          background-color: #01132b;
+          border: none;
+
+          .ant-collapse-item {
+            border: none;
+
+            .ant-collapse-header {
+              height: 12.8vw;
+              padding: 3.2vw 0;
+              font-size: 3.7vw;
+              color: #fff;
+
+              .ant-collapse-arrow {
+                font-size: 3.7vw;
+              }
+            }
+          }
+        }
+
+        .ant-collapse-content {
+          font-weight: 400;
+          font-size: 3.2vw;
+          color: #fff;
+          background-color: #01132b;
+          border: none;
+
+          a {
+            color: #fff;
+          }
+
+          .ant-collapse-content-box {
+            padding: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .iconGroup {
+    gap: 4.3vw !important;
+  }
+}

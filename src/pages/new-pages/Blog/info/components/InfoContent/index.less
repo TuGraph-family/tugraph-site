@@ -1,0 +1,135 @@
+.infoContent {
+  width: 0;
+  flex: 1;
+  min-height: 100%;
+  position: relative;
+
+  .infoContentTitle {
+    font-size: 26px;
+    color: #292d3b;
+    line-height: 34px;
+    font-weight: 600;
+    margin: 20px 0 13px;
+  }
+
+  .infoContentText {
+    margin-top: 32px;
+
+    p > font,
+    p,
+    li {
+      font-size: 16px;
+      color: #545762;
+      line-height: 22px;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: #292d3b;
+      font-weight: 600;
+      margin: 32px 0 16px;
+    }
+
+    table {
+      margin-bottom: 10px;
+      border-collapse: collapse;
+      display: table;
+      width: 100% !important;
+    }
+
+    td,
+    th {
+      word-wrap: break-word;
+      word-break: break-all;
+      hyphens: auto;
+      padding: 5px 10px;
+      border: 1px solid #ddd;
+    }
+  }
+
+  .oldBlog {
+    img {
+      width: 80%;
+      height: auto;
+      margin: 0 auto;
+      display: block;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      text-align: center;
+    }
+  }
+
+  .newBlog {
+    img {
+      max-width: 100%;
+    }
+
+    p {
+      margin-bottom: 0;
+    }
+
+    :global {
+      .ne-quote {
+        display: block;
+        padding-left: 10px;
+        margin: 10px 0;
+        position: relative;
+      }
+
+      .ne-quote::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 2px;
+        border-radius: 2px;
+        background-color: #d8dad9;
+      }
+    }
+  }
+
+  .footer {
+    width: 100%;
+    min-height: 100px;
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 0 32px;
+    border-top: 1px solid #d8dce3;
+    margin-top: 28px;
+    cursor: pointer;
+
+    & > div {
+      width: 0;
+      flex: 1;
+    }
+
+    .nextBtn,
+    .lastBtn {
+      & > div {
+        font-size: 14px;
+        color: #768191;
+        line-height: 22px;
+      }
+
+      .title {
+        color: #292d3b;
+      }
+    }
+
+    .lastBtn {
+      text-align: right;
+    }
+  }
+}

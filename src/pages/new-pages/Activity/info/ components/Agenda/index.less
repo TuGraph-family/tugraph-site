@@ -1,0 +1,65 @@
+.agenda {
+  background-image: url('https://mdn.alipayobjects.com/huamei_p63okt/afts/img/DdvESa5TfhQAAAAAAAAAAAAADh8WAQFr/original');
+  background-size: cover;
+  overflow: hidden;
+  padding-bottom: 55px;
+}
+
+.agendaList {
+  width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+
+  .Col {
+    display: flex;
+    flex-direction: column;
+    gap: 34px;
+  }
+
+  .agendaTime {
+    height: 22px;
+    font-family: Roboto-Regular;
+    font-size: 14px;
+    color: #545762;
+    line-height: 22px;
+    padding-left: 20px;
+    position: relative;
+
+    &::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #2e5dfe;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  .agendaStep {
+    font-size: 16px;
+    color: #292d3b;
+    line-height: 24px;
+    font-weight: 600;
+  }
+
+  .memberItemName {
+    height: 22px;
+    font-size: 14px;
+    color: #292d3b;
+    line-height: 22px;
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
+
+  .memberItemDesc {
+    height: 22px;
+    font-size: 14px;
+    color: #545762;
+    line-height: 22px;
+    margin-bottom: 8px;
+  }
+}

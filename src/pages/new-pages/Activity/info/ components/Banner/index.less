@@ -1,0 +1,146 @@
+.bannerBox {
+  height: fit-content;
+  margin: 0 -120px;
+}
+
+.banner {
+  background-repeat: no-repeat;
+  width: 100vw;
+  background-size: 100% 100%;
+  position: relative;
+  display: flex;
+
+  .bannerContent {
+    width: 1200px;
+    display: flex;
+    gap: 24px;
+    margin: auto;
+
+    .bannerLeft {
+      width: 530px;
+      height: 320px;
+      border-radius: 12px;
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .bannerRight {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      .avtivityTitle {
+        font-size: 26px;
+        color: #292d3b;
+        line-height: 34px;
+        font-weight: 600;
+        margin-bottom: 16px;
+      }
+
+      .avtivityInfo {
+        .infoItem {
+          display: flex;
+          margin-bottom: 8px;
+
+          .infoItemLabel {
+            font-size: 14px;
+            color: #768191;
+            line-height: 22px;
+          }
+
+          .infoItemVal {
+            font-size: 14px;
+            color: #545762;
+            line-height: 22px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.mainBtn,
+.shareBtn {
+  width: 128px;
+  height: 48px;
+  border-radius: 24px;
+  text-align: center;
+  font-size: 16px;
+  margin-right: 16px;
+  line-height: 24px;
+  border: none;
+}
+
+.mainBtn {
+  background: #2e5dfe;
+  font-size: 16px;
+  color: #ffffff;
+  font-weight: 500;
+
+  &:hover {
+    background: #2e5dfe;
+    color: #ffffff;
+  }
+}
+
+.ending {
+  background: #8eb6fd !important;
+  color: #fff !important;
+
+  &:hover {
+    background: #8eb6fd;
+  }
+}
+
+.shareBtn {
+  background: #0e0b3b0d;
+  color: #292d3b;
+
+  &:hover {
+    background: #0e0b3b0d;
+    color: #292d3b;
+
+    & ~ .shareCard {
+      display: inline-block;
+    }
+  }
+}
+
+.footer {
+  position: relative;
+
+  .shareCard {
+    z-index: 9999;
+    display: none;
+    position: absolute;
+    padding: 8px 13px 10px;
+    background: #ffffff;
+    border-radius: 4px;
+    box-shadow: 0px 3px 10px 8px #00000005, 0px 2px 6px 0px #0000000a,
+      0px 1px 2px -4px #0000000f;
+
+    .shareCardTitle {
+      font-size: 14px;
+      color: #292d3b;
+      line-height: 22px;
+      text-align: center;
+    }
+
+    .shareCardSource {
+      font-size: 12px;
+      color: #545762;
+      line-height: 20px;
+      text-align: center;
+      margin: 8px 0 6px;
+    }
+
+    .shareCardCode {
+      width: 68px;
+      height: 68px;
+      background-color: #ccc;
+    }
+  }
+}

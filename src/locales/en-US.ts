@@ -1,35 +1,78 @@
 export default {
   'header.home': 'HOME',
   'header.product': 'PRODUCTS',
-  'header.case': 'USE CASES',
+  'header.case': ' CUSTOMER CASES',
   'header.ecosystem': 'PARTNERS',
   'header.assets': 'RESOURCES',
   'header.doc': 'DOCS',
-  'header.blog': 'Blog',
+  'header.blog': 'BLOGS',
   'header.community': 'COMMUNITY',
   'header.download': ' DOWNLOAD',
   'header.product.title': 'Community Edition',
   'header.product.title1': 'Enterprise Edition',
-  'header.product.desc': 'TuGraph DB Lite (Standalone)',
-  'header.product.desc1': 'TuGraph Overview',
-  'header.product.desc2': 'TuGraph Analytics: Streaming Graph Computing Engine',
-  'header.product.desc3': 'TuGraph Learn: Graph Learning Engine',
-  'header.product.desc4': 'OSGraph Open Source Graph Relationship Insight Tool',
+  'header.product.desc1': 'TuGraph DB',
+  'header.product.desc2':
+    'TuGraph Analytics real-time graph calculation engine',
+  'header.product.desc3': 'TuGraph Learn graph learning engine',
+  'header.product.desc4': 'TuGraph Enterprise Edition',
+  'header.product.desc5': 'TuGraph Cloud version',
+  'header.osGraph.desc': 'Open source graph relationship insight tool',
+  'header.learning.title': 'Learning',
+  'header.learning.cooperate': 'School-enterprise cooperation',
+  'header.learning.course': 'Training course',
+  'header.learning.training': 'Training certification',
+  'header.community.title': 'Community',
+  'header.community.blog': 'Blog',
+  'header.community.video': 'Video',
+  'header.community.forum': 'Forum',
+  'header.community.activity': 'Activity',
+  'header.assets.title': 'Resources',
+  'header.assets.github': 'GITHUB',
+  'header.assets.gitee': 'GITEE',
+  'header.assets.download': 'Download Center',
+  'header.assets.report': 'White papers and industry reports',
+
+  'footer.product': 'Products',
   'footer.product.title': 'Community Edition',
   'footer.product.title1': 'Enterprise Edition',
-  'footer.product': 'Products',
-  'footer.contact': 'Contact',
-  'footer.productName': 'TuGraph DB Lite (Standalone)',
-  'footer.copyright': '京ICP备15032932号-43',
   'footer.community': 'Community',
+  'footer.contact': 'Contact',
+  'footer.productName': 'TuGraph DB',
+  'footer.productName1': 'TuGraph DB distributed graph database',
+  'footer.productName2': 'TuGraph DataFlow flow graph calculation engine',
+  'footer.productName3': 'TuGraph Platform one-stop graph platform',
+  'footer.copyright': '京ICP备15032932号-43',
   'footer.communityName': 'bilibili',
   'footer.phone': '400-903-0809',
+  'footer.qrCode.weChart': 'WeChat',
+  'footer.qrCode.dingTalk': 'DingTalk',
+  'footer.qrCode.subDescWeChart': '扫码了解更多资讯',
+  'footer.qrCode.subDescDingTalk': '钉钉扫码加入',
+  'footer.rules': 'Privacy Policy',
+  'footer.extraInfo': '© 2022 Ant Group',
+  'footer.address':
+    'Lijin Intelligent Center - East Tower, Building 1, No. 6 Weigongcun Road, Haidian District, Beijing',
+  'footer.addressMobile':
+    'Lijin Intelligent Center - East Tower, Building 1, No. 6 Weigongcun Road, Haidian District, Beijing',
+
   'home.description':
-    'TuGraph,蚂蚁图数据库,蚂蚁图计算,图数据库,图计算,图平台,图数据分析, 分布式数据库, Graph,大数据,关联关系分析,知识图谱,GNN, 图神经网络, Neo4j, GeaGraph, GeaBase, GeaFlow, 费马, 人工智能, big data, graph processing,graph database, graph computing, artificial intelligence',
+    'TuGraph, ant graph database, ant graph computing, graph database, graph computing, graph platform, graph data analysis, distributed database, Graph, big data, association analysis, knowledge graph, GNN, graph neural network, Neo4j, GeaGraph, GeaBase , GeaFlow, Fermat, artificial intelligence, big data, graph processing,graph database, graph computing, artificial intelligence',
   'home.banner.slogan': 'The Distributed Graph Database Behind Alipay',
   'home.banner.description':
     "TuGraph is a high-performance graph database jointly developed by Ant Group and Tsinghua University. It has been rigorously tested in Ant Group's 500,000-core graph computing cluster and over 300 real-world business scenarios, and has achieved the top-ranking performance in LDBC-SNB, a globally-recognized benchmark test, surpassing competing solutions.",
   'home.banner.quickStart': 'Quick Start',
+  'home.quickStart.step1.title': 'Environment preparation',
+  'home.quickStart.step1.desc1':
+    'Refer to "Environment Preparation" to ensure that your software and hardware environment meets the requirements to download TuGraph DB',
+  'home.quickStart.step2.title': 'Deployment and installation',
+  'home.quickStart.step2.desc1': 'Set configuration file',
+  'home.quickStart.step2.desc2': 'Install TuGraph DB',
+  'home.quickStart.step2.desc3':
+    'Full-link cross-domain management and control and ensuring the scarcity of data product value',
+  'home.quickStart.step3.title': 'Start TuGraph DB',
+  'home.quickStart.step3.desc1': 'Start TuGraph DB service',
+  'home.quickStart.step3.desc2': 'View process status',
+  'home.quickStart.step3.desc3': 'Browser access, open TuGraph DB',
   'home.notice0.tag': 'BENCHMARK',
   'home.notice0.title': 'TuGraph Named a Leader in the IDC MarketScape',
   'home.notice0.desc':
@@ -42,59 +85,96 @@ export default {
   'home.notice2.title': 'Try TuGraph on Alibaba Cloud for Free.',
   'home.notice2.desc':
     'Easily create your own graph database application with simple deployment on Alibaba Cloud.',
-  'home.case.title': 'SOLUTIONS',
-  'home.case.desc0':
-    'Thousands of times of performance boost, breaking through ',
-  'home.btn.tryOut': ' Enterprise Edition',
-  'home.tugrpah.db': 'Standalone',
-  'home.distributed': 'Distributed',
-  'home.three.lines.consistent': 'online/near-line/offline all-in-one',
-  'home.case.desc1': 'bottlenecks for  industrial data analysis.',
-  'home.case0.title': 'Financial Services',
-  'home.case0.desc0':
-    'Credit Risk Management, Money Tracking, Anti-Money Laundering, Anti-Fraud, Consumer Product ',
-  'home.case0.desc1': 'Marketing',
-  'home.case1.title': 'Internet Industry',
-  'home.case1.desc0':
-    'Product Marketing, Membership and Merchant Services, Referral ',
-  'home.case1.desc1': 'Marketing, Community Discovery',
-  'home.case2.title': 'Public Sector',
-  'home.case2.desc0':
-    'Smart City, Smart Transportation, Route Planning, IoT, User Behavior ',
-  'home.case2.desc1': 'Analysis, Fraud Detection',
-  'home.case3.title': 'Energy & Manufacturing',
-  'home.case3.desc0':
-    'Supply Chain Management,  Power Grid Analysis, Device Management ',
-  'home.case3.desc1': 'and Troubleshooting',
-  'home.case4.title': 'Telecommunication',
-  'home.case4.desc0':
-    'Telecom Fraud Detection, Business Operation Analytics, Anti-Abuse, ',
-  'home.case4.desc1': 'Device Maintenance',
-  'home.case5.title': 'General',
-  'home.case5.desc0':
-    'Data Privacy and Security, Data Governance, Data Lineage, Data ',
-  'home.case5.desc1': 'Change Impact Analysis',
+  'home.case.title': 'APPLICATION SCENARIOS',
+  'home.case.desc0': 'Thousands of times the effect is improved',
+  'home.case.desc1':
+    'Helping customers in various industries break analysis bottlenecks',
+  'home.case0.title': 'Financial field',
+  'home.case0.desc':
+    'Credit risk control, anti-money laundering, anti-fraud, fund tracking, marketing recommendations',
+  'home.case0.illustrate':
+    'In the era of the Internet of Things, graph models realize smart scenarios such as intelligent transportation, road planning, safe cities, and phishing website identification by building a relationship network between people, locations, events, and things. ',
+  'home.case1.title': 'Internet field',
+  'home.case1.desc':
+    'Marketing recommendations, member and merchant services, community discovery, friend recommendations',
+  'home.case1.illustrate':
+    'Use graph technology to expand the dimension of risk characteristics and improve anti-money laundering, anti-fraud, credit risk control and other risk prevention capabilities; based on rich relationships and graph technology, it helps financial institutions with precise marketing and customer acquisition. ',
+  'home.case2.title': 'Government Affairs',
+  'home.case2.desc':
+    'Internet of Things, Smart City, Road Planning, Intelligent Transportation, Trajectory Analysis, Anti-Fraud',
+  'home.case2.illustrate':
+    'Telecom operators can use graph computing technology to analyze and block harassing calls on the communication network. In addition, telecom equipment can also be managed using graph models. ',
+  'home.case3.title': 'Industrial field',
+  'home.case3.desc':
+    'Power grid analysis, supply chain management, equipment management, fault diagnosis',
+  'home.case3.illustrate':
+    'The powerful expressive power of graph models is good at showing complex and rapidly changing relationships between things. It is extremely suitable for managing complex and rapidly changing inventory and supply chain relationships in the industrial field, and promoting intelligent innovative manufacturing. ',
+  'home.case4.title': 'Telecom field',
+  'home.case4.desc':
+    'Anti-harassment, telecom fraud prevention, operator business analysis, equipment maintenance',
+  'home.case4.illustrate':
+    'Using graph base technology to realize intelligent recommendation of products, while ensuring user experience, it also improves merchant marketing effects, identifies ineffective placements, improves member service quality, and protects merchant interests. ',
+  'home.case5.title': 'General field',
+  'home.case5.desc': 'Privacy protection, data governance, and data lineage',
+  'home.case5.illustrate':
+    'Using the graph model to find the correlation between graph data makes it easier to analyze the data flow process, establish data links, and then sort out data dependencies, permissions and improve quality. ',
+  'home.case6.title': 'Artificial Intelligence Field',
+  'home.case6.illustrate':
+    'Through the supporting tools and solutions of Graph + artificial intelligence (AI), GraphRAG, multi-agent platforms, intelligent assistants, etc. are realized to provide new momentum for the implementation of large enterprise models and intelligent upgrades. ',
   'home.knowMore': 'Learn more',
   'home.users': 'SELECTED CUSTOMERS',
   'home.moreDemo': 'More use cases',
   'home.choseReason': 'WHY TUGRAPH',
-  'home.reason0': 'High Availability and Security',
-  'home.reason.desc0': `Derived from Ant Group’s data analysis needs, TuGraph has financial-level high availability and serializable isolation, surpassing the highest level of disaster recovery standards (level 6), enabling uninterrupted operation of business systems and protecting data from loss.`,
-  'home.reason1': 'Best-in-Class Performance',
+  'home.reason0': "Ant's own business driver and verification",
+  'home.reason.desc0':
+    "TuGraph has been tempered by Ant Group's trillion-level business. So far, TuGraph has been used in more than 300 scenarios within Ant, including full-graph risk control, anti-money laundering, anti-fraud, insurance knowledge map, Huabei map, membership services, Ant Forest, New Year blessings and other business scenarios. ",
+  'home.reason1': 'Complete high-performance graph technology stack',
   'home.reason.desc1':
-    'The HTAP graph database meets the millisecond-level complex query in real-time environments and offline analysis, and provides one-stop storage, query, and analysis. It has the ability to process trillion-level graph data, and holds the world record for graph database performance benchmarks.',
-  'home.reason2': 'Visual Interactive Interface',
+    'TuGraph provides a complete and high-performance graph technology stack, realizing complete online, near-line and offline three-line graph computing, meeting the needs of scenarios with different timeliness requirements from milliseconds to hours, and has repeatedly won the international graph database performance First place in benchmark test LDBC-SNB. ',
+  'home.reason2': 'Financial-level high availability',
   'home.reason.desc2':
-    'The built-in visual console and management platform are convenient for business users and developers to complete modeling, query and analysis with low-code. Nearly 30 built-in graph algorithms in 5 categories, which makes it easy to build efficient applications.',
-  'home.reason3': 'Scalable Application Development',
+    'Supports online distributed expansion, high throughput of tens of millions of vertices/second, low-latency response, serializable isolation level, supports multiple replicas, multiple computer rooms in the same city, multiple computer rooms in different places and other deployment forms, and can support RPO=0, RTO <30s, ensuring business continuity. ',
+  'home.reason3': 'Autonomous and controllable, strong compatibility',
   'home.reason.desc3':
-    'Developers can use mainstream query languages, programming languages, and interface protocols to quickly create applications, quickly connect to business systems, integrate data storage, and smoothly migrate to common open source frameworks.',
+    'Ant Group and Tsinghua University jointly independently developed it. It is compatible with localized servers and operating systems, supports international standardized graph query languages, and is compatible with mainstream graph query languages. ',
+  'home.reason4': 'Complete and scalable application development',
+  'home.reason.desc4':
+    'Developers can use mainstream query languages, programming languages, and interface protocols to quickly create applications, quickly connect to business systems, integrate data storage, and migrate smoothly with common open source architectures. ',
   'home.chooseVersion': 'CHOOSE EDITION',
   'home.version0': 'Community Edition',
-  'home.btn.desc': 'Community Edition',
+  'home.version0.desc':
+    'Single instance deployment, open source and free, simple and fast, ideal for small and medium-sized projects',
+  'home.version1.desc':
+    'Ideal for distributed, highly available, highly stable, enterprise-level projects',
   'home.version.desc0':
-    'TuGraph DB Community Edition is a graph database solution suitable for standalone deployment, providing all essential functionalities for complete graph database capabilities. It is optimal for smaller projects and learning purposes. For users requiring high-availability cluster architecture and enterprise services, we recommend our commercial support services, including consultation, installation, deployment, maintenance, and access to cutting-edge graph modeling technologies. Contact us today to learn more.',
-  'home.version.startUse': 'DOWNLOAD',
+    "Suitable for single-instance deployment, it provides complete basic graph database functions, such as ACID-compatible transactions, programming APIs, supporting related tools, etc. It's ideal for learning TuGraph and implementing small projects. If you need enterprise-level services to achieve production-level high-availability cluster architecture and operation and maintenance, please contact us for commercial support. ",
+  'home.version.startUse': 'Free download',
+  'home.version.useFree': '30-day Free Trial',
+  'home.version.title1': 'Community Edition',
+  'home.version.title2': 'Enterprise Edition',
+  'home.version1': ' Enterprise Edition',
+  'home.version.desc1':
+    'TuGraph DB Enterprise Edition is the ultimate choice for users seeking a comprehensive graph database solution with robust commercial support features. This edition offers a distributed architecture, covering the entire graph database life cycle, from exploration to research, service, operation, and maintenance. It boasts online/near-line/offline graph computing engines, support for multiple data sources, including streaming and big data platforms, and multi-site and multi-center deployment options.',
+  'home.version.contactUs': 'FREE TRIAL ',
+  'home.version.community.desc1':
+    'Completely open source and free, free to use, modify and distribute, reducing usage costs',
+  'home.version.community.desc2':
+    'The centralized version supports high-availability deployment and can easily handle TB-level massive data scale',
+  'home.version.community.desc3':
+    'Easy to use, can be quickly deployed and easily build graph applications',
+  'home.version.community.desc4':
+    'The community is active, and community technical support such as Q&A and communities responds quickly',
+  'home.version.community.desc5': 'open-source and free, simple and fast',
+  'home.version.enterprise.desc1':
+    'Providing graph R&D full-link management of graph storage, R&D, services, and operation and maintenance',
+  'home.version.enterprise.desc2':
+    'Distributed architecture, financial-level high availability, easily supports massive data scale above PB level',
+  'home.version.enterprise.desc3':
+    'Suitable for high throughput and low latency business scenarios with extremely large data volumes',
+  'home.version.enterprise.desc4':
+    'Professional technical support services (DingTalk group, telephone, work orders, on-site, etc.)',
+  'home.version.enterprise.desc5':
+    'Distributed, highly available, high stability',
   'home.function': 'Functionalities',
   'home.function.title1': 'TuGraph DB: Graph Database Engine',
   'home.function.title2': 'TuGraph Analytics: Graph Analytics Engine',
@@ -146,13 +226,9 @@ export default {
   'home.fun3.feat4': 'Ops: Operating and monitoring center',
   'home.fun3.feat5': 'User profile and graph assets management',
   'home.fun3.feat6': 'Data management: Multiple data source configuration',
-  'home.version.title1': 'Community Edition',
-  'home.version.title2': 'Enterprise Edition',
-  'home.version1': ' Enterprise Edition',
-  'home.version.desc1':
-    'TuGraph DB Enterprise Edition is the ultimate choice for users seeking a comprehensive graph database solution with robust commercial support features. This edition offers a distributed architecture, covering the entire graph database life cycle, from exploration to research, service, operation, and maintenance. It boasts online/near-line/offline graph computing engines, support for multiple data sources, including streaming and big data platforms, and multi-site and multi-center deployment options.',
-  'home.version.contactUs': 'FREE TRIAL ',
+  'home.btn.desc': 'Community Edition',
   'home.btn.desc1': 'Alibaba Cloud',
+  'home.btn.tryOut': 'Enterprise Edition',
   'home.feat0': 'Label property graph model',
   'home.feat1': 'Dynamic model changes',
   'home.feat2': 'Support for multiple images',
@@ -171,26 +247,39 @@ export default {
   'home.feat15': 'Graph database expert support services',
   'home.feat16': 'Advanced cypher optimizer',
   'home.feat17': 'Attribute-level permission management',
-  'home.version.useFree': '30-day Free Trial',
-  'footer.qrCode.weChart': 'WeChat',
-  'footer.qrCode.dingTalk': 'DingTalk',
-  'footer.qrCode.subDescWeChart': '扫码了解更多资讯',
-  'footer.qrCode.subDescDingTalk': '钉钉扫码加入',
-  'footer.rules': 'Privacy Policy',
-  'footer.extraInfo': '© 2022 Ant Group',
-  'footer.address':
-    '9th Floor, East Tower, Beijing World Financial Center, No.1 East 3rd Ring Middle Road, Chaoyang District, Beijing 100020',
-  'footer.addressMobile':
-    '9th Floor, East Tower, Beijing World Financial Center, No.1 East 3rd Ring Middle Road, Chaoyang District, Beijing 100020',
+  'home.tugrpah.db': 'Standalone',
+  'home.distributed': 'Distributed',
+  'home.highAvailability': 'High availability',
+  'home.three.lines.consistent': 'online/near-line/offline all-in-one',
+  'home.banner.expandBtnDesc': 'Notice',
+
+  'product.btn.desc': 'Start the experience',
+  'product.btn.desc1': 'View documentation',
+  'product.btn.desc2': 'Buy',
+  'product.btn.desc3': 'More user practices',
+  'product.case.title': 'USE CASES',
+  'product.case.desc1':
+    'Full-picture risk control technology copes with complexity and change, constantly upgrading full-picture risk control technology for financial risks copes with complexity and variability, constantly upgrading full-picture risk control technology for financial risks copes with complexity and variability, constantly upgrading full-picture risk control for financial risks technology',
+  'product.case.desc2':
+    'Full-picture risk control technology copes with complex, changing, and constantly escalating financial risks. Full-picture risk control technology copes with complex, changing, and constantly escalating financial risks',
+  'product.case.desc3':
+    'Full-picture risk control technology copes with complexity and change, constantly upgrading full-picture risk control technology for financial risks copes with complexity and change, constantly upgrading full-picture risk control technology for financial risks copes with complexity and change',
+  'product.case.desc4':
+    'Full-picture risk control technology copes with complexity and change, constantly upgrading full-picture risk control technology for financial risks copes with complexity and variability, constantly upgrades full-picture risk control technology for financial risks copes with complexity, variability and constant upgrading',
   'product.description':
-    'Provides an efficient, easy-to-use and reliable one-stop platform for users to manage and analyze complex and linked data',
-  'product.slogan': 'Speedy Open-Sourced Graph Database',
-  'product_analytics.description':
-    'Cloud native, stream/batch/graph multi-mode computing, graph/table hybrid processing',
+    'Provides an efficient, easy-to-use, and reliable one-stop platform for users to manage and analyze complex related data',
   'product_learn.description':
-    'Provides native support through TuGraph DB to enable large-scale, high-performance development, training, and inference of graph learning models',
-  'product_learn.slogan': 'High Performance Graph Learning System',
-  'product_analytics.slogan': 'Distributed Real-Time Graph Computing Engine',
+    'Providing native support for large-scale, high-performance development, training, and inference of graph learning models through TuGraph DB',
+  'product_enterprise.description':
+    'Ideal choice for distributed, high-availability, high-stability, enterprise-level projects',
+  'product_clound.description':
+    'Built based on Alibaba Cloud, automated deployment, quick online',
+  'product_analytics.description':
+    'Cloud native, distributed, stream/batch/graph multi-computing, graph/table hybrid processing',
+  'product.slogan': 'Extremely fast open source graph database',
+  'product_learn.slogan': 'High performance graph learning system',
+  'product_analytics.slogan': 'Distributed real-time graph calculation engine',
+  'product.overview.slogan': 'Enterprise-level graph data management platform',
   'product.video0': 'Quick Start',
   'product.videoTime0': '2: 39',
   'product.video1': 'TuGraph Browser Demo',
@@ -198,8 +287,10 @@ export default {
   'product.video2': 'Understand Graph Computing in 3 Minutes',
   'product.videoTime2': '3：00',
   'product.intro': 'OVERVIEW',
-  'product.overview.slogan':
-    "Professional Graph Platform From Ant Group's Practice",
+  'product_analytics.introfuction':
+    "Ant's self-developed open source distributed real-time graph computing engine supports trillion-level graph data analysis capabilities, realizes integrated processing of graph models and multi-modal computing of streams, batches, and graphs, and provides Exactly Once semantics and high availability. As well as one-stop cloud-native R&D and deployment capabilities, it is currently widely used in scenarios such as data warehouse acceleration, financial risk control, knowledge graphs, and social networks. ",
+  'product_learn.introfuction':
+    'TuGraph graph learning is a graph learning framework developed on the basis of TuGraph Database. It inherits the capabilities of graph machine learning and enables users to directly use TuGraph database to develop, train and reason graph learning models. TuGraph graph learning supports multi-sampling algorithms such as Neighbor Sampling, Negative Sampling, Edge Sampling and Random Walk Sampling. The backend supports multiple mainstream open source graph learning frameworks such as DGL, PyG, OpenHGNN and so on. Users only need to use the subgraph sampling and full graph loading APIs supported by TuGraph, and it can be easily used in mainstream graph learning frameworks. In addition, TuGraph graph learning supports compilation acceleration technology. Users only need one line of code to accelerate the training and inference performance of graph learning. ',
   'product.introduction0': `TuGraph, jointly developed by Ant Group and Tsinghua University, has built a complete graph system including graph storage, graph computing, graph learning, and graph exploration platforms. It has an industry-leading graph cluster and solves the major challenges faced by graph data analysis, such as large data volume, high throughput rate and low latency. TuGraph is the important infrastructure for Ant Group's financial risk control capabilities, which significantly improves the real-time analysis efficiency of financial fraud detection and anti-money laundering. TuGraph has also adopted in financial services, energy, government services and other industry customers.
 TuGraph supports more than 300 applications in the Ant Group, including "Double 11", the biggest online shopping festival in China. It covers the full graph R&D life cycle from learning, experiment and validation to deployment, operation and maintenance. TuGraph has a distributed, multi-center, high-availability architecture providing safe, stable, reliable services.`,
   'product.introduction1':
@@ -217,7 +308,6 @@ TuGraph supports more than 300 applications in the Ant Group, including "Double 
   'product.feature.title3': 'Out-of-the-box Ops Monitoring Platform',
   'product.feature.desc3':
     'Real-time operation and maintenance monitoring platform, supporting one-click deployment of Docker, CentOS, or Ubuntu. It provides a rich and extensible interface for secondary development and system integration. Additionally, it supports popular open-source monitoring and alarm tools like Prometheus and Grafana.',
-  'product.ecosystem': 'ARCHITECTURE',
   'product.feature.overview.title0':
     'Enterprise-level distributed graph database',
   'product.feature.overview.desc0':
@@ -235,9 +325,25 @@ TuGraph supports more than 300 applications in the Ant Group, including "Double 
     'TuGraph supports distributed cluster expansion with high throughput rates of tens of millions of vertices per second and low-latency response. Ant Group has online clusters with hundreds of thousands of cores that deploy TuGraph. It supports deployment forms such as sharding and replication, across multiple data centers in the same city or different cities.',
   'product.feature.overview.introduction0': `TuGraph, jointly developed by Ant Group and Tsinghua University, provides a comprehensive system for graph data analysis, including graph storage, graph analytics, graph learning, and a graph exploration platform. It has been deployed with an industry-leading scale of graph cluster, and addresses some major challenges such as hugh data volume, high throughput rate, and low latency. TuGraph serves as a critical infrastructure for Ant Group’s financial risk management capabilities, significantly improving the efficiency of real-time analysis for fraud detection and anti-money laundering. TuGraph has also been adopted by customers in the financial services, energy industry, public sector, and other industries.`,
   'product.feature.overview.introduction1': `TuGraph supports over 300 applications within Ant Group, including "Double 11" — the largest shopping festival in China and in the world. It covers the entire graph R&D life cycle from experimentation and validation to deployment and Ops. TuGraph has a distributed, multi-center, high-availability architecture that provides safe, stable, and reliable services.`,
+  'product.ecosystem': 'ARCHITECTURE',
   'product.overview.ecosystem': 'ARCHITECTURE',
   'product.overview.desc':
     'A large-scale enterprise-level graph platform with an innovative streaming graph computing system',
+  'product.overview.clound.desc':
+    "TuGraph Cloud version is a native distributed graph database built on Alibaba Cloud's public cloud infrastructure and completely independently developed. Through privatized deployment of computing nests, it automatically completes the creation and application deployment of cloud resources, greatly reducing configuration complexity. ",
+  'product.clound.title': 'Convenient deployment and maintenance',
+  'product.clound.desc':
+    'Alibaba Cloud provides a unified infrastructure, TuGraph realizes automated deployment on the cloud, and can quickly deploy and go online the cluster in minutes. At the same time, the automated operation and maintenance tools and services provided by Alibaba Cloud greatly reduce maintenance costs. ',
+  'product.clound.title1': 'Elastic expansion',
+  'product.clound.desc1':
+    "Relying on Alibaba Cloud's powerful infrastructure, users can flexibly adjust resource configuration according to business needs to ensure that the system is always running at its best. ",
+  'product.clound.title2': 'Safe and reliable',
+  'product.clound.desc2':
+    'The security protection and disaster recovery backup mechanism provided by Alibaba Cloud provide a strong guarantee for user data security. ',
+  'product.clound.title3': 'Ecological integration',
+  'product.clound.desc3':
+    'Through the Alibaba Cloud Market, TuGraph can be seamlessly integrated with other Alibaba Cloud services to further enhance data processing and analysis capabilities. ',
+
   'demo.title': ' TuGraph Use Cases',
   'demo.description':
     '图数据库,图计算,图平台,图数据分析, 分布式数据库, Graph,大数据分析,关联关系分析,大数据分析,反洗钱,反欺诈,金融风控,物联网, 设备管理, 国家电网',
@@ -332,6 +438,7 @@ TuGraph supports more than 300 applications in the Ant Group, including "Double 
     'Using graph computing technology, entities such as business, data, tasks, input, output, and owner are abstracted into points and edges, and a data asset graph is constructed to support intelligent data lineage management.',
   'demo.example.profit6':
     'Visually and accurately present the lineage relationship between data, which is convenient for users to track the status of data links, conduct standardized management of data warehouses, and check data security permissions.',
+
   'ecosystem.banner.slogan': 'Grow Your Business with TuGraph Partner Program ',
   'ecosystem.banner.description':
     "Become a partner in joining the fast-growing graph database market, with TuGraph's professional technical, sales and marketing supports. ",
@@ -353,7 +460,7 @@ TuGraph supports more than 300 applications in the Ant Group, including "Double 
     'Provide end-users with enterprise-level delivery, implementation, operation and maintenance and other value-added services.',
   'ecosystem.type4.title': 'Channel Partner',
   'ecosystem.type4.description':
-    'Sell TuGraph to end users, with sales and pre-sales consulting capabilities.E.g., Resellers and Distributors.',
+    'Sell TuGraph to end users, with sales and pre-sales consulting capabilities. E.g., Resellers and Distributors.',
   'ecosystem.support.title': 'WHY PARTNER WITH TUGRAPH',
   'ecosystem.support.title1': 'PARTNER',
   'ecosystem.support.description':
@@ -362,6 +469,7 @@ TuGraph supports more than 300 applications in the Ant Group, including "Double 
   'ecosystem.support1': 'Technical Advisory of Graph Technologies',
   'ecosystem.support2': 'On-Premise Project Support',
   'ecosystem.support3': 'Extensive Sales & Marketing Benefits',
+
   'download.banner.slogan': 'Download TuGraph',
   'download.banner.description': '',
   'download.title0': 'TuGraph DB Community Edition',
@@ -370,6 +478,7 @@ TuGraph supports more than 300 applications in the Ant Group, including "Double 
   'download.downloadBtn': 'Download',
   'download.applyText': 'Free Trial',
   'download.contactBtn': 'Contact Us',
+
   'form.banner.slogan': 'FREE TRIAL ',
   'form.banner.desc': 'with high performance and professional support',
   'form.banner.subTitle': '欢迎使用TuGraph图数据库！',
@@ -379,27 +488,31 @@ TuGraph supports more than 300 applications in the Ant Group, including "Double 
   'form.item.desc':
     '您计划将本产品应用于什么业务场景和期望达到什么效果，帮助我们更好了解您的需求',
   'form.item.need': 'I would like to',
-  'form.need.tip': 'Please select',
   'form.need': 'would',
-  'form.need.value': 'Request a free trial of TuGraph DB Enterprise Edition.',
-  'form.need.value1':
-    'Request a meeting or demonstration to discuss TuGraph DB Enterprise Edition.',
-  'form.need.value2':
-    'Inquire about the price of TuGraph DB Enterprise Edition.',
-  'form.need.value3': 'Become a partner of TuGraph.',
+  'form.need.value': 'TuGraph Enterprise Edition Trial',
+  'form.need.value1': 'Reservation for on-site technical exchange',
+  'form.need.value2': 'TuGraph Enterprise Edition Price',
+  'form.need.value3': 'Become a TuGraph partner',
+  'form.need.value4': 'Other',
+  'form.need.tip': 'Please select',
   'form.item.name': 'Name',
   'form.name': 'Name',
+  'form.item.type': 'The type of question you want to ask',
   'form.item.city': 'City',
   'form.item.firm': 'Company',
   'form.item.email': 'Email',
   'form.item.position': 'Position',
+  'form.item.position.options':
+    'CIO/CTO/Technical Vice President/Chief Engineer,government and public institution personnel,IT Director/R&D Director,Technical Manager/R&D manager,DBA,operation and maintenance,architect,developer,product manager/product director,project manager/PMO,marketing/business/purchasing,finance/legal/Manpower,Teachers/Researchers,Media/Analysts,Students,Other',
   'form.item.phone': 'Phone Number',
   'form.submit.info': '接受软件许可权',
   'form.submit': 'Submit',
+  'form.cancel': 'Cancel',
   'form.tip0':
     '您提供以上联系信息，即授权蚂蚁集团通过有关TuGraph的产品和服务的通信与您保持联系，以方便回复您的询问或者发送我们的资料等内容，请参阅我们的',
   'form.rule': 'Privacy Policy',
   'form.tip1': '以了解更多详情或者您可以选择随时退出。',
+
   'blog.banner.slogan': 'TuGraph Blog',
   'blog.banner.subTitle':
     'Get the latest news about TuGraph launches, events, and more.',
@@ -419,6 +532,8 @@ TuGraph supports more than 300 applications in the Ant Group, including "Double 
   'doc.title': ' TuGraph Documentation',
   'blog.title': ' TuGraph Blog',
   'download.title': ' TuGraph Download',
+  'download.desc':
+    'TuGraph Download Center provides users with downloads of various versions of the TuGraph database, as well as supporting tools, drivers and middleware. If you are a signed Enterprise Edition user, you can contact your support staff to download the exclusive software. ',
   'platform.title': 'TuGraph Platform: One-stop Graph Platform',
   'platform.slog': `One-Stop Graph Platform for Entire R&D Life Cycle `,
   'platform.mobileSlog': 'One-Stop Graph Platform for Entire R&D Life Cycle ',
@@ -501,16 +616,19 @@ TuGraph supports more than 300 applications in the Ant Group, including "Double 
     'Debug and tracing for distributed programs, queries, DDL statements, execution, and data flow',
   'db.freeTrial': 'Free Trial',
   'doc.menu': 'Learn about v3.5.0',
-  'product_analytics.introfuction':
-    'The open-source distributed real-time graph computing engine developed by Ant Group, supports graph analytics on trillion-scale data. It supports unified processing on graph and tabular data models, as well as multi-mode computing including stream computing, batch processing, and graph computing. It provides exactly-once semantics, high availability, one-stop cloud-native development and deployment. It is widely used for data warehouse acceleration, financial risk management, knowledge graphs, social networks, and many more scenarios.',
-  'product_learn.introfuction':
-    'TuGraph Learn is a graph learning framework developed on top of TuGraph DB. It empowers users to efficiently develop, train, and deploy graph learning models. The framework provides various sampling algorithms including neighbor, negative, edge, and random walk sampling to optimize model training. TuGraph Learn supports integration with popular open-source frameworks like DGL, PyG, and OpenHGNN. Through high-performance compiler optimizations, TuGraph Learn accelerates model development and inference with minimal coding effort.',
   'download.title3': 'TuGraph Analytics Download',
   'download.title4': 'TuGraph Learn Download',
   'download.copyLinkBtn': 'Copy',
   'download.imageDownloadAddress': 'Official docker images',
   'download.imageDownloadMethod': 'Pull the latest image',
   'download.copySuccess': 'Copied',
+  'download.version.desc1':
+    'Single instance, high availability, high performance graph database',
+  'download.version.desc2':
+    'Cloud native, distributed, batch-stream integrated graph computing engine',
+  'download.version.desc3':
+    'A large-scale, high-performance graph learning framework that supports the development, training and inference of graph learning models based on TuGraph DB',
+
   'product_analytics.feature.title0': 'Dynamic Graph Computing',
   'product_analytics.feature.desc0':
     'Supporting dynamic graph analytics and improving real-time performance of graph computing results.',
@@ -541,5 +659,6 @@ TuGraph supports more than 300 applications in the Ant Group, including "Double 
   'product_learn.feature.title3': 'High Performance',
   'product_learn.feature.desc3':
     'High performance and high operability framework.',
-  'home.banner.expandBtnDesc': 'Notice',
+
+  'docs.title': 'Docs',
 };

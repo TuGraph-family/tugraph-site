@@ -8,28 +8,52 @@ import { useMedia } from 'react-use';
 import { history, useIntl, useLocation } from 'umi';
 import { Link } from 'react-router-dom';
 
-import { DEFAULT_LOCAL, searchParamsEn, searchParamsZh } from '@/constant';
+import { DEFAULT_LOCAL } from '@/constant';
 import { getSearch, goLinkAt, historyPushLinkAt } from '@/util';
 import '@docsearch/css';
 import AnnouncementBanner from '../AnnouncementBanner';
 import GithubButton from '../githubButton';
 import styles from './index.less';
 
-export const Header = ({ isStick }: { isStick?: boolean }) => {
+export const Header = ({
+  isStick,
+  currentUrl,
+}: {
+  isStick?: boolean;
+  currentUrl?: { pathname: string; hash: string };
+}) => {
   const intl = useIntl();
   const { pathname, search } = useLocation();
   const lang = getSearch(search)?.lang || DEFAULT_LOCAL;
   const isZH = lang === 'zh-CN';
   const isWide = useMedia('(min-width: 767.99px)', true);
   const [popupMenuVisible, setPopupMenuVisible] = useState(false);
-  const zhSite = `${window.location.origin}${history?.location?.pathname}?lang=zh-CN`;
-  const enSite = `${window.location.origin}${history?.location?.pathname}?lang=en-US`;
+
+  const toggleLanguage = (url: string, language: 'zh' | 'en') => {
+    const format = url.replace(/\/(zh|en)\//, () => {
+      return `/${language}/`;
+    });
+    return format;
+  };
+
+  const zhSite = currentUrl
+    ? `${window.location.origin}${toggleLanguage(
+        currentUrl.pathname,
+        'zh',
+      )}?lang=zh-CN${currentUrl?.hash}`
+    : `${window.location.origin}${history?.location?.pathname}?lang=zh-CN`;
+  const enSite = currentUrl
+    ? `${window.location.origin}${toggleLanguage(
+        currentUrl.pathname,
+        'en',
+      )}?lang=en-US${currentUrl?.hash}`
+    : `${window.location.origin}${history?.location?.pathname}?lang=en-US`;
 
   const onToggleLanguage = () => {
     if (lang === 'en' || lang === 'en-US') {
-      window.location.href = zhSite;
+      window.location.href = toggleLanguage(zhSite, 'zh');
     } else {
-      window.location.href = enSite;
+      window.location.href = toggleLanguage(enSite, 'en');
     }
   };
 
@@ -41,12 +65,44 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
     const key = pathname.replace(/\//g, '');
     return [key || 'home'];
   };
+
+  const getCurrentLanguage = () => {
+    const segments = pathname.split('/');
+    return ['zh', 'en'].find((lang) => segments.includes(lang)) || 'en';
+  };
+
+  const getVersionFromUrl = () => {
+    const versionRegex = /\/(\d+\.\d+\.\d+)\//;
+
+    // 在路由中搜索版本号
+    const match = pathname.match(versionRegex);
+
+    // 如果找到版本号，返回它，否则返回默认版本号 '4-5-0'
+    return match ? match[1].replace(/\./g, '-') : '4-5-0';
+  };
+
   const searchInput = () => {
     return (
       <DocSearch
-        {...(lang === 'en' || lang === 'en-US'
-          ? searchParamsEn
-          : searchParamsZh)}
+        {...{
+          apiKey: '829a7e48ddbd6916e159c003391543a0',
+          indexName: 'zhongyunwanio',
+          appId: 'DGYVABHR0M',
+          searchParameters: {
+            facetFilters: [
+              `docusaurus_tag:docs-${getVersionFromUrl()}_${getCurrentLanguage()}-current`,
+            ],
+          },
+          transformItems: (items) => {
+            return items.map((item) => {
+              // 在这里修改 URL。例如，将路径中的 `/docs/` 替换为 `/`
+              return {
+                ...item,
+                url: '/docs' + item?.url?.split('/tugraph-db')[1] ?? '',
+              };
+            });
+          },
+        }}
       />
     );
   };
@@ -260,7 +316,7 @@ export const Header = ({ isStick }: { isStick?: boolean }) => {
           </div>
         }
       >
-        <a rel="noopener noreferrer">
+        <a href="/docs" rel="noopener noreferrer">
           {intl.formatMessage({ id: 'header.doc' })}
         </a>
       </Popover>

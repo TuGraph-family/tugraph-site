@@ -17,42 +17,42 @@ export const searchParamsZh = {
 
 export const logoList = [
   {
-    icon: 'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*wAJ-TqsSvmAAAAAAAAAAAAAADgOBAQ/original',
+    icon: 'https://mdn.alipayobjects.com/huamei_p63okt/afts/img/7x4fQp7iwt0AAAAAAAAAAAAADh8WAQFr/fmt.avif',
     link: '',
     desc: '',
     width: 384,
     height: 84,
   },
   {
-    icon: 'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*5gTZQ4I78GEAAAAAAAAAAAAADgOBAQ/original',
+    icon: 'https://mdn.alipayobjects.com/huamei_p63okt/afts/img/_7LVQ6FiMhEAAAAAAAAAAAAADh8WAQFr/fmt.avif',
     link: '',
     desc: '',
     width: 384,
     height: 84,
   },
   {
-    icon: 'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*GJ9iQpJsFSIAAAAAAAAAAAAADgOBAQ/original',
+    icon: 'https://mdn.alipayobjects.com/huamei_p63okt/afts/img/a8VrTK8pO4IAAAAAAAAAAAAADh8WAQFr/fmt.avif',
     link: '',
     desc: '',
     width: 384,
     height: 84,
   },
   {
-    icon: 'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*GxbFSIve6NwAAAAAAAAAAAAADgOBAQ/original',
+    icon: 'https://mdn.alipayobjects.com/huamei_p63okt/afts/img/e2AfTZAQcFMAAAAAAAAAAAAADh8WAQFr/fmt.avif',
     link: '',
     desc: '',
     width: 384,
     height: 84,
   },
   {
-    icon: 'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*wfL5T402fPQAAAAAAAAAAAAADgOBAQ/original',
+    icon: 'https://mdn.alipayobjects.com/huamei_p63okt/afts/img/nHddTpEtk5wAAAAAAAAAAAAADh8WAQFr/fmt.avif',
     link: '',
     desc: '',
     width: 384,
     height: 84,
   },
   {
-    icon: 'https://mdn.alipayobjects.com/huamei_qcdryc/afts/img/A*HeeMQ4t3qu4AAAAAAAAAAAAADgOBAQ/original',
+    icon: 'https://mdn.alipayobjects.com/huamei_p63okt/afts/img/lH5MTaoEF1EAAAAAAAAAAAAADh8WAQFr/fmt.avif',
     link: '',
     desc: '',
     width: 384,
@@ -61,3 +61,62 @@ export const logoList = [
 ];
 export const DEFAULT_LOCAL = 'zh-CN';
 export const MATCH_LOCAL_SEARCH_REG = /[\\?]?([a-zA-Z0-9]+)=([0-9A-Z\-a-z]+)/g;
+
+export const HOST = 'https://tugraph.tech';
+
+export const activityWayEnumOptions = [
+  {
+    label: '不限',
+    value: 'all',
+  },
+  {
+    label: '线上活动',
+    value: 'ONLINE',
+  },
+  {
+    label: '线下活动',
+    value: 'OFFLINE',
+  },
+];
+
+export const ActivityWayOptionsEnum = {
+  ONLINE: '线上活动',
+  OFFLINE: '线下活动',
+};
+
+export const activityStateEnumOptions = [
+  {
+    label: '不限',
+    value: 'all',
+  },
+  {
+    label: '报名中',
+    value: 'REGISTRATION_DURING',
+  },
+  {
+    label: '进行中',
+    value: 'PROGRESS',
+  },
+  {
+    label: '已结束',
+    value: 'OVER',
+  },
+];
+
+export const resourceOPtions = [
+  {
+    label: '不限',
+    value: 'all',
+  },
+  {
+    label: '有',
+    value: true,
+  },
+  {
+    label: '无',
+    value: false,
+  },
+];
+
+// Rich text old and new version replacement time
+export const OLD_BLOG_LAST_UPLOAD_TIME = '2025-01-22';

@@ -1,0 +1,100 @@
+.bannerBox {
+  height: fit-content;
+  margin: 0 -120px;
+  background-size: 100% 100%;
+  background-position: right;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.banner {
+  height: 100%;
+  width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+
+  .databaseTitleSection {
+    padding-top: 76px;
+  }
+
+  .titleText {
+    color: #292d3b;
+    font-size: 48px;
+    font-weight: 300;
+  }
+
+  .descriptionText {
+    color: #768191;
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  .icon {
+    width: 226px;
+    height: 250px;
+    margin: 25px 104px 0 0;
+  }
+}
+
+.footerAction {
+  width: 100%;
+  position: absolute;
+  bottom: 27px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .typelist {
+    display: flex;
+    gap: 16px;
+    cursor: pointer;
+    flex-wrap: wrap;
+
+    .typeItem {
+      padding: 5px 16px;
+      font-size: 14px;
+      color: #292d3b;
+      line-height: 22px;
+      background: #0e0b3b0d;
+      border-radius: 18px;
+
+      &:hover {
+        background: #0e0b3b21;
+      }
+    }
+
+    .typeActived {
+      color: #fff;
+      font-weight: 500;
+      background: #3f5380;
+
+      &:hover {
+        background: #3f5380;
+      }
+    }
+  }
+
+  .tagList {
+    padding: 3px;
+    background: #0e0b3b0d;
+    border-radius: 6px;
+    display: flex;
+
+    .tagItem {
+      padding: 5px 16px;
+      font-size: 14px;
+      color: #292d3b;
+      line-height: 20px;
+      text-align: center;
+      font-weight: 500;
+    }
+
+    .tagActived {
+      background: #ffffff;
+      border-radius: 4px;
+      box-shadow: 0px 1px 2px 0px #00000008;
+    }
+  }
+}

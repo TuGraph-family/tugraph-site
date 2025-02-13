@@ -1,0 +1,78 @@
+.versionContainer {
+  overflow: hidden;
+  margin: 0 -120px;
+  padding: 0 0 123px;
+  background: url('https://mdn.alipayobjects.com/huamei_p63okt/afts/img/DdvESa5TfhQAAAAAAAAAAAAADh8WAQFr/original');
+  background-size: cover;
+}
+
+.versionListWrapper {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+}
+
+.editionWrapper {
+  width: 578px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  padding: 24px 32px 32px;
+
+  .title {
+    font-size: 20px;
+    color: #292d3b;
+    line-height: 28px;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+
+  .tag {
+    width: fit-content;
+    padding: 2px 10px;
+    border: 1px solid #2e5dfe;
+    border-radius: 12px;
+    color: #2e5dfe;
+    font-size: 12px;
+    line-height: 20px;
+    text-align: center;
+    margin-bottom: 18px;
+  }
+
+  .line {
+    border-bottom: 1px solid #efeef3;
+    margin-bottom: 16px;
+  }
+
+  .recommendationPointWrapper {
+    font-size: 16px;
+    color: #131415;
+    line-height: 24px;
+    text-align: justify;
+    opacity: 0.6;
+    position: relative;
+    margin-bottom: 12px;
+    padding-left: 17px;
+
+    &::before {
+      content: '';
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: #d8d8d8;
+      position: absolute;
+      top: 10px;
+      left: 6px;
+    }
+  }
+}
+
+.communityExperienceButton {
+  min-width: 368px;
+  height: 40px;
+  margin-top: 9px;
+  border: none;
+  background-color: #2e5dfe;
+  color: #e6ebff;
+}

@@ -1,0 +1,137 @@
+.communityDropdown {
+  background: #fff;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0px 9px 20px 8px #0000000d, 0px 3px 6px -4px #0000001f;
+  cursor: pointer;
+  text-align: center;
+  width: 100%;
+
+  :global {
+    .ant-dropdown-menu {
+      box-shadow: none;
+    }
+
+    .ant-dropdown-menu-item:hover {
+      background: #1650ff0a;
+      border-radius: 6px;
+    }
+
+    .ant-dropdown-menu-item-icon {
+      font-size: 18px;
+      margin: 0 4px 0 19px;
+      color: #292d3b;
+      justify-content: flex-end;
+    }
+
+    .ant-dropdown-menu-title-content {
+      font-size: 14px;
+      color: #1a1b25e0;
+      line-height: 32px;
+      flex: 0;
+    }
+  }
+}
+
+.consultModal {
+  :global {
+    .ant-modal {
+      top: 17px;
+    }
+
+    .ant-modal-content {
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0px 8px 16px 8px #00000008;
+    }
+
+    .ant-select-selection-item {
+      line-height: 38px !important;
+    }
+
+    input,
+    .ant-select > .ant-select-selector {
+      width: 340px;
+      height: 40px;
+      line-height: 40px;
+      border: 1px solid #1a1b2540;
+      border-radius: 8px;
+    }
+
+    textarea {
+      border-radius: 8px;
+    }
+  }
+
+  .modalHeader {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    .title {
+      font-size: 20px;
+      color: #292d3b;
+      font-weight: 500;
+    }
+
+    .desc {
+      font-size: 14px;
+      color: #768191;
+    }
+  }
+
+  .footerBtn {
+    display: flex;
+    justify-content: flex-end;
+
+    :global {
+      .ant-btn {
+        width: 136px;
+        height: 48px;
+        border-radius: 8px;
+
+        span {
+          font-size: 16px;
+          text-align: center;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+}
+
+.experience,
+.connect,
+.consult {
+  :global {
+    min-width: 146px;
+    height: 100%;
+  }
+}
+
+.consult {
+  color: #545762;
+  border: none;
+
+  &:hover {
+    color: #545762;
+    opacity: 0.8;
+  }
+}
+
+.arrowIcon {
+  vertical-align: baseline;
+  font-size: 12px;
+  transition: all 0.5s !important;
+}
+
+.connect:hover {
+  .arrowIcon {
+    transform: translateX(5px);
+  }
+}
+
+.footer {
+  margin-bottom: 32px;
+}

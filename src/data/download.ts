@@ -1,20 +1,4 @@
 export const assetsList = [
-  // 暂时隐藏掉
-  // {
-  //   name: 'Docker Image',
-  //   assets: [
-  //     {
-  //       label: 'v3.3.2',
-  //       value:
-  //         'https://tugraph-web.oss-cn-beijing.aliyuncs.com/tugraph/tugraph-3.3.2/tugraph-3.3.2.tar.gz',
-  //     },
-  //     {
-  //       label: 'v3.3.0',
-  //       value:
-  //         'https://tugraph-web.oss-cn-beijing.aliyuncs.com/tugraph/tugraph-3.3.0/TuGraph-Image-3.3.0.tar.gz',
-  //     },
-  //   ],
-  // },
   {
     name: 'CentOS',
     assets: [

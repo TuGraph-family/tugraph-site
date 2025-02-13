@@ -1,0 +1,268 @@
+.bannerBox {
+  height: fit-content;
+  margin: 0 -120px;
+}
+
+.banner {
+  width: 100vw;
+
+  position: relative;
+
+  .bannerContent {
+    height: 340px;
+    background-repeat: no-repeat;
+    background-size: 771px 354px;
+    background-position: 75%;
+    width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    .bannerLeft {
+      height: 305px;
+      width: 0;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .avtivityTitle {
+        font-size: 26px;
+        color: #292d3b;
+        line-height: 34px;
+        font-weight: 600;
+        margin-bottom: 16px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+      }
+
+      .avtivityInfo {
+        margin-bottom: 20px;
+
+        .InfoItem {
+          display: flex;
+          margin-bottom: 8px;
+
+          .InfoItemLabel {
+            font-size: 14px;
+            color: #768191;
+            line-height: 22px;
+          }
+
+          .InfoItemVal {
+            font-size: 14px;
+            color: #545762;
+            line-height: 22px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.mainBtn,
+.shareBtn {
+  width: 128px;
+  height: 48px;
+  border-radius: 24px;
+  text-align: center;
+  font-size: 16px;
+  margin-right: 16px;
+  line-height: 24px;
+  border: none;
+}
+
+.mainBtn {
+  background: #2e5dfe;
+  font-size: 16px;
+  color: #ffffff;
+  font-weight: 500;
+
+  &:hover {
+    background: #2e5dfe;
+    color: #ffffff;
+  }
+}
+
+.ending {
+  background: #8eb6fd;
+
+  &:hover {
+    background: #8eb6fd;
+  }
+}
+
+.shareBtn {
+  background: #0e0b3b0d;
+  color: #292d3b;
+
+  &:hover {
+    background: #0e0b3b0d;
+    color: #292d3b;
+
+    & ~ .shareCard {
+      display: inline-block;
+    }
+  }
+}
+
+.footer {
+  position: relative;
+
+  .shareCard {
+    z-index: 9999;
+    display: none;
+    position: absolute;
+    padding: 8px 13px 10px;
+    background: #ffffff;
+    border-radius: 4px;
+    box-shadow: 0px 3px 10px 8px #00000005, 0px 2px 6px 0px #0000000a,
+      0px 1px 2px -4px #0000000f;
+
+    .shareCardTitle {
+      font-size: 14px;
+      color: #292d3b;
+      line-height: 22px;
+      text-align: center;
+    }
+
+    .shareCardSource {
+      font-size: 12px;
+      color: #545762;
+      line-height: 20px;
+      text-align: center;
+      margin: 8px 0 6px;
+    }
+
+    .shareCardCode {
+      width: 68px;
+      height: 68px;
+      background-color: #ccc;
+    }
+  }
+}
+
+.activityCalendar {
+  width: 274px;
+  height: 244px;
+  background: #ffffffb3;
+  border-radius: 12px;
+  overflow: hidden;
+  padding: 16px;
+  cursor: pointer;
+  margin-top: 24px;
+
+  .calendarHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 7px;
+
+    .month {
+      font-family: Roboto-Medium;
+      font-size: 20px;
+      color: #292d3b;
+      line-height: 28px;
+      font-weight: 500;
+    }
+
+    .left,
+    .right {
+      font-size: 20px;
+      color: #768191;
+    }
+  }
+
+  :global {
+    .ant-picker-panel {
+      border: none;
+      background: transparent;
+      height: 179px;
+      overflow: hidden;
+    }
+
+    .ant-picker-body {
+      padding: none !important;
+    }
+
+    .ant-picker-body > .ant-picker-content {
+      width: 242px !important;
+      table-layout: inherit;
+      height: auto;
+    }
+
+    .ant-picker-cell {
+      padding: 3px 0;
+    }
+  }
+
+  .fullCell {
+    width: 100%;
+    height: 24px;
+    text-align: center;
+    line-height: 24px;
+    font-size: 12px;
+  }
+
+  .today {
+    position: relative;
+
+    &::after {
+      content: '';
+      width: 4px;
+      height: 4px;
+      background: #2e5dfe;
+      border-radius: 50%;
+      position: absolute;
+      bottom: -25%;
+      left: 50%;
+      transform: translateX(-2px);
+    }
+  }
+
+  .startandend {
+    color: #fff;
+    border-radius: 4px;
+  }
+
+  .between {
+    background: #2e5dfe1a;
+  }
+}
+
+.activityTooltip {
+  display: flex;
+  cursor: pointer;
+
+  .stateTag {
+    width: 54px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #fff;
+    margin-right: 8px;
+    background: #00000033;
+  }
+
+  .activityBtn {
+    flex: 1;
+    font-size: 16px;
+    color: #545762;
+
+    &:hover {
+      color: #2e5dfe;
+    }
+  }
+}
+
+.icon {
+  width: 250px;
+  height: 285px;
+  margin: 24px 66px 0 18px;
+}

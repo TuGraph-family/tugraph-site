@@ -1,0 +1,132 @@
+.appWrapper {
+  margin: 0 -120px;
+  background-color: #fff;
+  text-align: center;
+  padding-bottom: 97px;
+}
+
+.appContent {
+  margin: auto;
+  width: 823px;
+  height: 623px;
+  position: relative;
+  cursor: pointer !important;
+
+  .fieldCard {
+    position: absolute;
+    background-image: linear-gradient(143deg, #4a59aa10 14%, #23336e10 89%);
+    border-radius: 14.4px;
+
+    .sceneIcon {
+      width: 100%;
+      height: 100%;
+    }
+
+    .tag {
+      white-space: nowrap;
+      width: fit-content;
+      height: fit-content;
+      padding: 5px 11px;
+      background: #2f365315;
+      border-radius: 7.2px;
+      font-size: 16px;
+      color: #8280a9;
+      text-align: center;
+      font-weight: 500;
+      opacity: 0.7;
+      position: absolute;
+      line-height: 34px;
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%, calc(100% + 15px));
+    }
+  }
+
+  .placeholder1 {
+    width: 68px;
+    height: 68px;
+    background-image: linear-gradient(143deg, #4a59aa 14%, #23336e 89%);
+    border: 3.6px solid;
+    border-image: linear-gradient(140deg, #9eacf0 4%, #29315e 97%);
+    border-image-slice: 1;
+    border-radius: 14.39999961853027px;
+    opacity: 0.1;
+    filter: blur(3px);
+    position: absolute;
+    top: 42px;
+    left: 202px;
+  }
+
+  .placeholder2 {
+    width: 50px;
+    height: 50px;
+    background-image: linear-gradient(143deg, #4a59aa 14%, #23336e 89%);
+    border: 3.6px solid;
+    border-image: linear-gradient(140deg, #9eacf0 4%, #29315e 97%);
+    border-image-slice: 1;
+    border-radius: 12px;
+    opacity: 0.1;
+    filter: blur(3px);
+    position: absolute;
+    top: 410px;
+    left: 110px;
+  }
+
+  .placeholder3 {
+    width: 50px;
+    height: 50px;
+    background-image: linear-gradient(162deg, #394771 12%, #20294a 88%);
+    border: 3.6px solid;
+    border-image: linear-gradient(140deg, #c0c4d6 4%, #615b93 97%);
+    border-image-slice: 1;
+    border-radius: 8px;
+    opacity: 0.1;
+    filter: blur(17px);
+    position: absolute;
+    top: 284px;
+    right: 170px;
+  }
+}
+
+.popoverInfo {
+  backdrop-filter: blur(30px);
+  border-radius: 12px;
+  width: 400px;
+  overflow: hidden;
+  background: #ffffff88;
+  border: 3px solid #f0f0f0;
+  border-radius: 12px;
+  padding: 0;
+
+  :global {
+    .ant-popover-inner {
+      background-color: transparent;
+    }
+
+    .ant-popover-inner-content {
+      padding: 24px;
+    }
+  }
+}
+
+.popoverContent {
+  .field {
+    font-size: 16px;
+    color: #292d3b;
+    line-height: 24px;
+    font-weight: 500;
+  }
+
+  .scene {
+    font-size: 13px;
+    color: #545762;
+    line-height: 22px;
+    margin: 4px 0 16px;
+  }
+
+  .illustrate {
+    font-size: 13px;
+    color: #768191;
+    line-height: 22px;
+  }
+}

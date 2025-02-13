@@ -9,45 +9,119 @@ export default defineConfig({
   favicon:
     'https://gw.alipayobjects.com/zos/bmw-prod/6290edfc-e134-4074-a550-079eeba9926d.svg',
   routes: [
-    { path: '/', component: '@/pages/index' },
-    { path: '/product', component: '@/pages/product', title: 'product.title' },
+    // { path: '/', component: '@/pages/index' },
+    // { path: '/product', component: '@/pages/product', title: 'product.title' },
+    // {
+    //   path: '/learn',
+    //   component: '@/pages/product_learn',
+    //   title: 'product.title',
+    // },
+    // {
+    //   path: '/analytics',
+    //   component: '@/pages/product_analytics',
+    //   title: 'product.title',
+    // },
+    // { path: '/case', component: '@/pages/case', title: 'case.title' },
+    // {
+    //   path: '/ecosystem',
+    //   component: '@/pages/ecosystem',
+    //   title: 'ecosystem.title',
+    // },
+    // { path: '/doc', component: '@/pages/doc', title: 'doc.title' },
+    // { path: '/blog', component: '@/pages/blog', title: 'blog.title' },
+    // {
+    //   path: '/download',
+    //   component: '@/pages/download',
+    //   title: 'download.title',
+    // },
+    // {
+    //   path: '/overview',
+    //   component: '@/pages/overview',
+    //   title: 'product.title',
+    // },
+    // {
+    //   path: '/platform',
+    //   component: '@/pages/platform',
+    //   title: 'platform.title',
+    // },
+    // {
+    //   path: '/db',
+    //   component: '@/pages/platform',
+    //   title: 'db.title',
+    // },
+    // {
+    //   path: '/docs/*',
+    //   component: '@/pages/docs',
+    //   title: 'docs.title',
+    // },
+    // {
+    //   path: '/docs',
+    //   component: '@/pages/docs',
+    //   title: 'docs.title',
+    // },
+    // new pages
     {
-      path: '/learn',
-      component: '@/pages/product_learn',
+      path: '/',
+      component: '@/pages/new-pages/Home',
+    },
+    {
+      path: '/product',
+      component: '@/pages/new-pages/Product',
       title: 'product.title',
     },
     {
-      path: '/analytics',
-      component: '@/pages/product_analytics',
+      path: '/product/*',
+      component: '@/pages/new-pages/Product',
       title: 'product.title',
     },
-    { path: '/case', component: '@/pages/case', title: 'case.title' },
     {
-      path: '/ecosystem',
-      component: '@/pages/ecosystem',
-      title: 'ecosystem.title',
+      path: '/case',
+      component: '@/pages/new-pages/Case',
+      title: 'case.title',
     },
-    { path: '/doc', component: '@/pages/doc', title: 'doc.title' },
-    { path: '/blog', component: '@/pages/blog', title: 'blog.title' },
+    {
+      path: '/partners',
+      component: '@/pages/new-pages/Partners',
+    },
+    {
+      path: '/docs',
+      component: '@/pages/new-pages/Docs',
+      title: 'docs.title',
+    },
+    {
+      path: '/docs/*',
+      component: '@/pages/new-pages/Docs',
+      title: 'docs.title',
+    },
     {
       path: '/download',
-      component: '@/pages/download',
+      component: '@/pages/new-pages/Download',
       title: 'download.title',
     },
     {
-      path: '/overview',
-      component: '@/pages/overview',
-      title: 'product.title',
+      path: '/blog/list',
+      component: '@/pages/new-pages/Blog/list',
+      title: 'blog.title',
     },
     {
-      path: '/platform',
-      component: '@/pages/platform',
-      title: 'platform.title',
+      path: '/blog/info/*',
+      component: '@/pages/new-pages/Blog/info',
     },
     {
-      path: '/db',
-      component: '@/pages/platform',
-      title: 'db.title',
+      path: '/blog/info',
+      component: '@/pages/new-pages/Blog/info',
+    },
+    {
+      path: '/activity/list',
+      component: '@/pages/new-pages/Activity/list',
+    },
+    {
+      path: '/activity/info',
+      component: '@/pages/new-pages/Activity/info',
+    },
+    {
+      path: '/activity/info/*',
+      component: '@/pages/new-pages/Activity/info',
     },
   ],
   scripts: [
@@ -96,11 +170,23 @@ export default defineConfig({
       .test(/\.md$/)
       .use('frontmatter-markdown-loader')
       .loader('frontmatter-markdown-loader');
+    memo.module
+      .rule('mjs')
+      .test(/\.mjs$/)
+      .include.add(/node_modules/)
+      .end()
+      .type('javascript/auto');
   },
   exportStatic: {},
   fastRefresh: {},
   request: {
     dataField: '',
+  },
+  proxy: {
+    '/api': {
+      target: 'https://tugraph.tech',
+      changeOrigin: true,
+    },
   },
   hash: true,
   locale: {
@@ -111,4 +197,10 @@ export default defineConfig({
     default: DEFAULT_LOCAL,
     useLocalStorage: false,
   },
+  metas: [
+    {
+      name: 'referrer',
+      content: 'never',
+    },
+  ],
 });

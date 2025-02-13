@@ -1,0 +1,91 @@
+.lastSectionContainer {
+  background-color: #fff;
+  margin: 0 -120px;
+  overflow: hidden;
+
+  .title {
+    font-size: 32px;
+    color: #293e60e0;
+    text-align: center;
+    font-weight: 700;
+  }
+
+  .stepList {
+    background: url('https://mdn.alipayobjects.com/huamei_p63okt/afts/img/IY8QQ5B4zycAAAAAAAAAAAAADh8WAQFr/original');
+    background-size: cover;
+    width: 1202px;
+    height: 278px;
+    margin: auto;
+    display: flex;
+
+    .step {
+      padding: 65px 0 0 30px;
+      width: 0;
+      flex: 1;
+      position: relative;
+      text-align: left;
+
+      ul > li::marker {
+        color: #d8d8d8;
+      }
+
+      .stepNumber {
+        font-family: AlibabaSans102-Bold;
+        position: absolute;
+        right: 29px;
+        top: 46px;
+        width: 88px;
+        height: 102px;
+        font-size: 80px;
+        color: #293e60e0;
+        text-align: center;
+        font-weight: 700;
+        opacity: 0.1;
+      }
+
+      .stepIcon {
+        width: 40px;
+        height: 40px;
+        margin-bottom: 15px;
+      }
+
+      .stepTitle {
+        font-size: 20px;
+        color: #131415;
+        line-height: 24px;
+        font-weight: 500;
+        margin-bottom: 6px;
+      }
+
+      ul > li {
+        max-width: 305px;
+        font-size: 14px;
+        color: #131415;
+        line-height: 24px;
+        opacity: 0.6;
+      }
+    }
+  }
+}
+
+// footer btn
+.startGuideButton {
+  padding: 0 13px;
+  min-width: 146px;
+  height: 48px;
+  line-height: 48px;
+  width: fit-content;
+  text-align: center;
+  background: #f8fbff;
+  border: 1px solid #e0e1e2;
+  border-radius: 24px;
+  font-size: 16px;
+  color: #293643d9;
+  opacity: 0.66;
+  cursor: pointer;
+  margin: 32px auto 47px;
+
+  &:hover {
+    opacity: 0.88;
+  }
+}

@@ -1,0 +1,334 @@
+@import '../../global.less';
+
+.popoverMin {
+  width: auto;
+
+  :global {
+    .ant-popover-inner-content {
+      padding: 0;
+    }
+  }
+}
+
+.header {
+  height: fit-content;
+  padding: 0 120px;
+  z-index: 999;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  background-color: rgba(228, 236, 255, 0.8);
+  backdrop-filter: blur(17px);
+  -webkit-backdrop-filter: blur(17px);
+  transition: all 0.5s linear;
+}
+
+.headerBox {
+  width: 100%;
+  display: flex;
+  height: 66px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+
+  .log {
+    width: 122px;
+    height: 24px;
+    margin-right: 40px;
+
+    &:hover {
+      cursor: pointer;
+      opacity: 0.8;
+    }
+  }
+}
+
+.headerRight {
+  display: flex;
+  align-items: center;
+
+  .lang {
+    padding: 5px 8px;
+    width: 58px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 9px 0 6px;
+    cursor: pointer;
+
+    &:hover {
+      background: #f8fbff59;
+      border-radius: 16px;
+    }
+
+    .languageIcon {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  .loginBtn,
+  .languageText {
+    line-height: 24px;
+    font-size: 16px;
+    color: @txt-color;
+    cursor: pointer;
+  }
+
+  :global {
+    .DocSearch-Button {
+      height: 32px;
+      background: #f8fbff59;
+      border-radius: 16px;
+
+      .DocSearch-Search-Icon {
+        width: 16px;
+        height: 15px;
+        color: @secondary-color;
+        font-weight: 900;
+      }
+
+      .DocSearch-Button-Placeholder {
+        color: @secondary-color;
+        font-weight: 400;
+      }
+
+      .DocSearch-Button-Keys {
+        display: none;
+      }
+    }
+  }
+}
+
+.menuList {
+  display: flex;
+  margin-top: -66px;
+  height: 66px;
+
+  &::before {
+    content: '';
+    width: 151px;
+    height: 66px;
+    border-bottom: 1px solid #3f537123;
+    pointer-events: none;
+  }
+
+  &::after {
+    content: '';
+    flex: 1;
+    height: 66px;
+    border-bottom: 1px solid #3f537123;
+    pointer-events: none;
+  }
+
+  .menuItem {
+    cursor: pointer;
+  }
+
+  .menuItem {
+    height: 66px;
+    padding: 0 16px;
+    position: relative;
+
+    .mainMenu {
+      height: 66px;
+      line-height: 66px;
+      font-size: 16px;
+      color: @txt-color;
+      overflow-y: hidden;
+      position: relative;
+
+      &::before {
+        content: '';
+        width: 4px;
+        height: 4px;
+        background: #3e5270;
+        border-radius: 50%;
+        position: absolute;
+        bottom: 15px;
+        left: 50%;
+        transform: translate(-50%, 0);
+        opacity: 0;
+      }
+    }
+
+    .footerLine {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      align-items: flex-end;
+      height: 10px;
+      overflow: hidden;
+
+      .arrow {
+        width: 0;
+        height: 0;
+        margin: 0;
+        border: 0px solid transparent;
+        transform: translateY(50%) rotate(-45deg);
+        transition: all 0.3s linear;
+        background-color: transparent;
+      }
+
+      .line {
+        flex: 1;
+        height: 1px;
+        background-color: #3f537123;
+      }
+    }
+
+    &:hover {
+      .mainMenu::before {
+        opacity: 1;
+      }
+
+      .arrow {
+        border: 1px solid #3f537123;
+        width: 10px;
+        height: 10px;
+        margin: 0 1px;
+      }
+    }
+  }
+
+  .menuItemSelect {
+    .mainMenu {
+      &::before {
+        opacity: 1;
+      }
+    }
+
+    .footerLine > .arrow {
+      border: 1px solid #3f537123;
+      width: 10px;
+      height: 10px;
+      margin: 0 1px;
+    }
+  }
+}
+
+.productSubMenu {
+  width: 100%;
+  padding: 45px 0 0 282px;
+  display: flex;
+  gap: 44px;
+
+  .productSubMenuTitle {
+    font-size: 14px;
+    color: @secondary-color;
+    line-height: 22px;
+    font-weight: 500;
+    padding-left: 8px;
+    margin-bottom: 8px;
+  }
+
+  .productSubMenuItem {
+    margin-bottom: 8px;
+    cursor: pointer;
+    border-radius: 8px;
+    padding: 8px;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.35);
+    }
+
+    .productSubMenuItemLabel {
+      font-size: 14px;
+      color: @title-color;
+      line-height: 22px;
+    }
+
+    .productSubMenuItemDesc {
+      max-width: 540px;
+      font-size: 14px;
+      color: @secondary-color;
+      line-height: 22px;
+      text-align: justify;
+    }
+  }
+}
+
+.communitySubMenu {
+  width: 100%;
+  padding: 45px 0 0 282px;
+  display: flex;
+
+  .subMenuBanner {
+    width: 262px;
+    height: 164px;
+    background: url('https://mdn.alipayobjects.com/huamei_p63okt/afts/img/F3RxQqX-5lcAAAAAAAAAAAAADh8WAQFr/fmt.webp');
+    background-size: cover;
+    border: 1px solid #c4ceda;
+    border-radius: 12px;
+    padding: 23px 22px;
+    color: #1a1b25e0;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0px 9px 28px 8px #84879b0d, 0px 6px 16px 0px #84879b14,
+        0px 3px 6px -4px #84879b1f;
+    }
+
+    .bannerTitle {
+      font-size: 24px;
+      line-height: 22px;
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+
+    .bannerDesc {
+      font-size: 12px;
+      line-height: 20px;
+      opacity: 0.6;
+    }
+  }
+
+  .subMenuCol {
+    margin-left: 89px;
+
+    & > div {
+      font-size: 14px;
+      color: @title-color;
+      line-height: 22px;
+      cursor: pointer;
+    }
+
+    .subMenuTitle {
+      color: @secondary-color;
+      font-weight: 500;
+      padding-left: 8px;
+      padding-bottom: 8px;
+    }
+
+    .communitySubMenuItem {
+      border-radius: 8px;
+      padding: 8px;
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.35);
+      }
+    }
+  }
+}
+
+.subMenuDocs,
+.subMenuCommunity,
+.subMenuProduct {
+  width: 100vw;
+  height: 0;
+  position: fixed;
+  background-color: rgba(228, 236, 255, 0.8);
+  backdrop-filter: blur(17px);
+  -webkit-backdrop-filter: blur(17px);
+  left: 0;
+  top: 66px;
+  overflow: hidden;
+}
