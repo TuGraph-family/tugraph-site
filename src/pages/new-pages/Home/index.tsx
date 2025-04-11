@@ -9,11 +9,17 @@ import styles from './index.less';
 import { useBlog } from '@/hooks/useBlog';
 import { useEffect } from 'react';
 import { tracertBPos } from '@/util';
+import { useAdvert } from '@/hooks/useAdvert';
+
 const Home = () => {
   const intl = useIntl();
   const { getList, list } = useBlog();
   // 广告位
-  const isAd = false;
+  const { getLastOnline, lastAdvertise } = useAdvert();
+
+  useEffect(() => {
+    getLastOnline();
+  }, []);
 
   useEffect(() => {
     getList({
@@ -34,7 +40,7 @@ const Home = () => {
           <div
             className={styles.homeBg}
             style={{
-              top: isAd ? 80 : 0,
+              top: lastAdvertise?.id ? 50 : 0,
             }}
           >
             <div className={styles.centerBg} />

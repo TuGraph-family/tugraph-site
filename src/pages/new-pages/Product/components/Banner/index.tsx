@@ -44,7 +44,7 @@ const Banner = ({ type, intl }: IBannerProps) => {
               onClick={() => {
                 history.push(
                   historyPushLinkAt(
-                    `/docs/tugraph-db/${getCurrentLanguage()}/4.5.1/guide`,
+                    `/docs/tugraph-db/${getCurrentLanguage()}/4.5.2/guide`,
                   ),
                 );
               }}
@@ -106,7 +106,7 @@ const Banner = ({ type, intl }: IBannerProps) => {
               onClick={() => {
                 history.push(
                   historyPushLinkAt(
-                    `/docs/tugraph-db/${getCurrentLanguage()}/4.5.1/olap&procedure/learn/tutorial`,
+                    `/docs/tugraph-db/${getCurrentLanguage()}/4.5.2/olap&procedure/learn/tutorial`,
                   ),
                 );
               }}

@@ -107,7 +107,7 @@ export const NewHeader = ({
             label: intl.formatMessage({ id: 'header.product.desc1' }),
             desc: intl.formatMessage({ id: 'home.version0.desc' }),
             productPath: '/product/db',
-            docPath: `/docs/tugraph-db/${getCurrentLanguage()}/4.5.1/guide`,
+            docPath: `/docs/tugraph-db/${getCurrentLanguage()}/4.5.2/guide`,
           },
           {
             label: intl.formatMessage({ id: 'header.product.desc2' }),
@@ -335,7 +335,7 @@ export const NewHeader = ({
         label: intl.formatMessage({ id: 'header.doc' }),
         onMouseMove: () => onHover('subMenuDocs', 'move'),
         onMouseLeave: () => onHover('subMenuDocs', 'leave'),
-        path: `/docs/tugraph-db/${getCurrentLanguage()}/4.5.1/guide`,
+        path: `/docs/tugraph-db/${getCurrentLanguage()}/4.5.2/guide`,
         subKey: 'subMenuDocs',
       },
 
@@ -409,7 +409,7 @@ export const NewHeader = ({
           <motion.div
             key={item.menuKeys}
             className={styles[item.menuKeys]}
-            style={{ top: isAd && !isStick ? 146 : 66 }}
+            style={{ top: isAd && !isStick ? 116 : 66 }}
             initial={{ height: 0, zIndex: 500 }}
             animate={{
               height: subVisibleKey === item.menuKeys ? subMenuHeight : 0,

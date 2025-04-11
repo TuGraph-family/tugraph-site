@@ -46,7 +46,7 @@ const QuickStart = ({ intl }: { intl: IntlShape }) => {
             onClick={() => {
               history.push(
                 historyPushLinkAt(
-                  `/docs/tugraph-db/${getLang()}/4.5.1/quick-start/preparation`,
+                  `/docs/tugraph-db/${getLang()}/4.5.2/quick-start/preparation`,
                 ),
               );
             }}

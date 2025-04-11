@@ -1,15 +1,26 @@
 import { motion } from 'framer-motion';
 import styles from './index.less';
 import { Button } from 'antd';
+import { ArrowRightOutlined } from '@ant-design/icons';
 
-const AdBox = () => {
-  const desc = '这是活动这是活动这是活动这是活动';
+interface AdBoxProps {
+  lastAdvertise?: API.AdvertisementDetailVO;
+}
+
+const AdBox: React.FC<AdBoxProps> = ({ lastAdvertise }) => {
+  if (!lastAdvertise?.id) return null;
+
   return (
     <div className={styles.adBox}>
       <div className={styles.mainBox}>
         <div className={styles.constent}>
-          <div className={styles.desc}>{desc}</div>
-          <Button shape="round">去查看</Button>
+          <div className={styles.desc}>{lastAdvertise?.subject}</div>
+          <Button
+            shape="round"
+            onClick={() => window.open(lastAdvertise?.linkUrl)}
+          >
+            去查看 <ArrowRightOutlined />
+          </Button>
         </div>
         <motion.div
           className={styles.mask}

@@ -6,6 +6,7 @@ import { getSearch } from '@/util';
 import { DEFAULT_LOCAL, EN_SITE, HOST_EN, HOST_ZH, ZH_SITE } from '@/constant';
 import { NewFooter } from '@/components/NewFooter';
 import AdBox from '@/components/AdBox';
+import { useAdvert } from '@/hooks/useAdvert';
 
 export interface LayoutProps {
   content: JSX.Element;
@@ -22,10 +23,15 @@ export const NewLayout: React.FC<LayoutProps> = ({
   headerBgStyles,
   mainStyles,
 }) => {
-  // 广告位
-  const isAd = false;
   const location = useLocation();
   const { search, pathname } = location;
+
+  const { getLastOnline, lastAdvertise } = useAdvert();
+
+  useEffect(() => {
+    getLastOnline();
+  }, []);
+
   useEffect(() => {
     setLocale(getSearch(search)?.lang || DEFAULT_LOCAL, false);
     const href = window?.location?.href;
@@ -54,9 +60,9 @@ export const NewLayout: React.FC<LayoutProps> = ({
 
   return (
     <div>
-      {isAd ? <AdBox /> : null}
+      <AdBox lastAdvertise={lastAdvertise} />
       <div>
-        <NewHeader currentUrl={currentUrl} isAd={isAd} />
+        <NewHeader currentUrl={currentUrl} isAd={!!lastAdvertise?.id} />
         <div
           className={styles.mainWrapper}
           style={{ background: bgColor, ...mainStyles }}
@@ -66,7 +72,7 @@ export const NewLayout: React.FC<LayoutProps> = ({
               className={styles.headerBg}
               style={{
                 ...headerBgStyles,
-                top: isAd ? 80 : 0,
+                top: lastAdvertise?.id ? 50 : 0,
               }}
             />
             {content}
