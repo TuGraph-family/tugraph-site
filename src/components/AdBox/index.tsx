@@ -11,16 +11,13 @@ const AdBox: React.FC<AdBoxProps> = ({ lastAdvertise }) => {
   if (!lastAdvertise?.id) return null;
 
   return (
-    <div className={styles.adBox}>
+    <div
+      className={styles.adBox}
+      onClick={() => window.open(lastAdvertise?.linkUrl)}
+    >
       <div className={styles.mainBox}>
         <div className={styles.constent}>
           <div className={styles.desc}>{lastAdvertise?.subject}</div>
-          <Button
-            shape="round"
-            onClick={() => window.open(lastAdvertise?.linkUrl)}
-          >
-            去查看 <ArrowRightOutlined />
-          </Button>
         </div>
         <motion.div
           className={styles.mask}
