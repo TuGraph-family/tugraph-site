@@ -6,8 +6,7 @@ import styles from './index.less';
 import { historyPushLinkAt, slugify } from '@/util';
 import { history } from 'umi';
 import { useActivity } from '@/hooks/useActivity';
-import moment from 'moment';
-
+import { useAdvert } from '@/hooks/useAdvert';
 const { Link } = Anchor;
 
 const InfoRight = ({
@@ -20,7 +19,7 @@ const InfoRight = ({
   isOldBlog?: boolean;
 }) => {
   const { getLastActicity, lastDetial } = useActivity();
-
+  const { getLastOnline, lastAdvertise, loading } = useAdvert();
   const extractHeadingsTree = (html: string) => {
     const parser = new DOMParser();
     const doc = parser.parseFromString(html, 'text/html');
@@ -109,6 +108,7 @@ const InfoRight = ({
 
   useEffect(() => {
     getLastActicity('REGISTRATION_DURING');
+    getLastOnline();
   }, []);
 
   const renderLink = (item: any) => {
@@ -164,15 +164,16 @@ const InfoRight = ({
           ))}
         </div>
       ) : null}
-      <div
-        className={styles.bannerImg}
-        style={{
-          backgroundImage: `url(${lastDetial?.backgroundImage?.url})`,
-        }}
-        onClick={() =>
-          history.push(historyPushLinkAt('/activity/info/' + lastDetial?.id))
-        }
-      ></div>
+
+      {lastAdvertise?.id ? (
+        <div
+          className={styles.bannerImg}
+          style={{
+            backgroundImage: `url(${lastAdvertise?.bannerVO?.url})`,
+          }}
+          onClick={() => window.open(lastAdvertise?.linkUrl)}
+        />
+      ) : null}
     </div>
   );
 };

@@ -22,8 +22,8 @@ const Docs: React.FC = () => {
 
   const [iframeUrl, setIframeUrl] = useState<string>(() => {
     if (['/docs', '/docs/'].includes(location.pathname)) {
-      window.history.pushState({}, '', '/docs/zh/4.5.1/guide');
-      return '/zh/4.5.1/guide';
+      window.history.pushState({}, '', '/docs/zh/4.5.2/guide');
+      return '/zh/4.5.2/guide';
     }
 
     return removePrefixFromPath(location.pathname + location.hash, '/docs');

@@ -1,6 +1,8 @@
 .adBox {
-  background-color: black;
-  height: 80px;
+  background: url(https://mdn.alipayobjects.com/huamei_p63okt/afts/img/ft2tSpzch-kAAAAAAAAAAAAAeh8WAQFr/fmt.webp)
+    no-repeat;
+  background-size: 100% 100%;
+  height: 50px;
   width: 100vw;
   text-align: center;
   color: #fff;
@@ -16,13 +18,17 @@
     .constent {
       color: #fff;
       font-family: 'PuHuiTi55';
-      font-size: 20px;
-      line-height: 28px;
+      font-size: 14px;
+      line-height: 36px;
       display: flex;
       gap: 20px;
 
       .desc {
         text-align: center;
+        max-width: 800px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
       }
     }
 
@@ -33,9 +39,24 @@
       top: 0;
       left: 0;
       display: flex;
-      background-image: linear-gradient(90deg, transparent, black 100px);
+      background-image: linear-gradient(
+        90deg,
+        transparent,
+        rgba(32, 38, 208) 100px
+      );
       backdrop-filter: blur(4px);
       -webkit-backdrop-filter: blur(4px);
+    }
+  }
+
+  :global {
+    .ant-btn-round {
+      height: 36px;
+      border-radius: 36px;
+
+      span {
+        color: #2a2aa6;
+      }
     }
   }
 }

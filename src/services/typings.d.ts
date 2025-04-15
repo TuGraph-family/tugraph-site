@@ -400,4 +400,45 @@ declare namespace API {
     /** 错误码中文解释 */
     ecChineseMsg?: string;
   }
+
+  type AdvertisementStateEnum = 'WAITING' | 'ONLINE' | 'OFFLINE';
+
+  interface AdvertisementDetailVO {
+    /** 广告id */
+    id?: number;
+    /** 广告名称 */
+    name?: string;
+    /** 上线时间 */
+    onlineTime?: string;
+    /** 下线时间 */
+    offlineTime?: string;
+    /** 广告主题 */
+    subject?: string;
+    /** 创建时间 */
+    createTime?: string;
+    /** 更新时间 */
+    updateTime?: string;
+    /** 广告链接 */
+    linkUrl?: string;
+    /** 广告banner图 */
+    bannerVO?: ImageVO;
+    /** 广告状态 */
+    stateEnum?: AdvertisementStateEnum;
+  }
+
+  interface Result_AdvertisementDetailVO_ {
+    /** 所在机器 IP */
+    ip?: string;
+    data?: AdvertisementDetailVO;
+    /** 标示是否成功 */
+    success?: boolean;
+    /** 响应消息 */
+    message?: string;
+    /** 平台统一错误码 */
+    responseCode?: PlatformErrorCode;
+    /** 错误码英文解释 */
+    ecEnglishMsg?: string;
+    /** 错误码中文解释 */
+    ecChineseMsg?: string;
+  }
 }
