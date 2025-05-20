@@ -123,6 +123,18 @@ export default defineConfig({
       path: '/activity/info/*',
       component: '@/pages/new-pages/Activity/info',
     },
+    {
+      path: '/video/home',
+      component: '@/pages/new-pages/Video/home',
+    },
+    {
+      path: '/video/list',
+      component: '@/pages/new-pages/Video/list',
+    },
+    {
+      path: '/video/info/*',
+      component: '@/pages/new-pages/Video/info',
+    },
   ],
   scripts: [
     `var _hmt = _hmt || [];
@@ -201,6 +213,11 @@ export default defineConfig({
     {
       name: 'referrer',
       content: 'never',
+    },
+    {
+      name: 'viewport',
+      content:
+        'width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=0',
     },
   ],
 });

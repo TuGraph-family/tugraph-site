@@ -42,11 +42,9 @@ export const historyPushLinkAt = (path: string) => {
   const { search, pathname } = window.location;
   let curSearch = getSearch(search);
   if (/^\/docs\//.test(pathname)) {
-    return `${path}?lang=${
-      pathname.split('/')[3] === 'en' ? 'en-US' : 'zh-CN'
-    }`;
+    return `${path}${pathname.split('/')[3] === 'en' ? '?lang=en-US' : ''}`;
   } else {
-    return `${path}?lang=${curSearch?.lang || DEFAULT_LOCAL}`;
+    return `${path}${curSearch?.lang === 'en-US' ? '?lang=en-US' : ''}`;
   }
 };
 
