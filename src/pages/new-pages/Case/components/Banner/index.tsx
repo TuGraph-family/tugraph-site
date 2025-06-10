@@ -2,7 +2,7 @@ import styles from './index.less';
 import FadeInSection from '@/components/FadeInSection';
 import { IntlShape } from 'react-intl';
 import { motion } from 'framer-motion';
-import { getDemos } from '@/pages/new-pages/Case/components/constants/data';
+import { getDemos } from '@/pages/new-pages/Case/constants/data';
 import { useLocation } from 'umi';
 import { getSearch } from '@/util';
 import { DEFAULT_LOCAL } from '@/constant';
