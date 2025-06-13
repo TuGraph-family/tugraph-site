@@ -4,13 +4,15 @@ import styles from './index.less';
 import { SubTitle } from '@/components/SubTitle';
 import VideoCard from '@/pages/new-pages/Video/home/components/VideoCard';
 import SetCard from '@/pages/new-pages/Video/home/components/SetCard';
+import { historyPushLinkAt } from '@/util';
+import { history } from 'umi';
 
 interface ITypeBlockProps {
   info?: any;
 }
 
 const TypeBlock: React.FC<ITypeBlockProps> = ({ info }) => {
-  const { title, data, isSet = false } = info || {};
+  const { title, data, isSet = false, type } = info || {};
   return (
     <div className={styles['type-block']}>
       <SubTitle
@@ -28,7 +30,18 @@ const TypeBlock: React.FC<ITypeBlockProps> = ({ info }) => {
           );
         })}
       </div>
-      <div className={styles['type-block-more']}>
+      <div
+        className={styles['type-block-more']}
+        onClick={() =>
+          history.push(
+            historyPushLinkAt(
+              `/video/list?activeKey=${
+                isSet ? 'collection' : 'video'
+              }&type=${type}`,
+            ),
+          )
+        }
+      >
         更多视频 <RightOutlined />
       </div>
     </div>

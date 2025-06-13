@@ -6,17 +6,38 @@ import { useImmer } from 'use-immer';
 import VideoCard from '@/pages/new-pages/Video/home/components/VideoCard';
 import { SearchOutlined } from '@ant-design/icons';
 import { historyPushLinkAt } from '@/util';
-import { history } from 'umi';
+import { history, useLocation } from 'umi';
+import { useEffect } from 'react';
+import SetCard from '@/pages/new-pages/Video/home/components/SetCard';
 
 const VideoList = () => {
+  const location = useLocation();
+  console.log(location);
   const [state, setState] = useImmer({
-    type: '1',
+    type: 'all',
     current: 1,
+    product: 'all',
     pageSize: 10,
     total: 50,
+    activeKey: 'video',
   });
 
-  const { type, current, pageSize, total } = state;
+  const { type, current, pageSize, total, product, activeKey } = state;
+
+  useEffect(() => {
+    const { query } = location;
+
+    if (query.type) {
+      onChangeType(query.type);
+    }
+    if (query.product) {
+      onChangeProduct(query.product);
+    }
+
+    if (query.activeKey) {
+      onChangeActiveKey(query.activeKey);
+    }
+  }, [location]);
 
   const onChangeType = (val: string) => {
     setState((draft) => {
@@ -24,33 +45,56 @@ const VideoList = () => {
     });
   };
 
+  const onChangeProduct = (val: string) => {
+    setState((draft) => {
+      draft.product = val;
+    });
+  };
+
+  const onChangeActiveKey = (val: string) => {
+    setState((draft) => {
+      draft.activeKey = val;
+    });
+  };
+
   const items = [
     {
       label: '视频',
-      key: '1',
+      key: 'video',
     },
     {
       label: '合集',
-      key: '2',
+      key: 'collection',
     },
   ];
 
   const typeList = [
     {
-      value: '1',
+      value: 'all',
       label: '全部',
     },
     {
-      value: '2',
-      label: '测试谁是谁',
+      value: 'basic',
+      label: '基础入门',
     },
     {
-      value: '3',
-      label: '啊的啊阿啊的',
+      value: 'advanced',
+      label: '进阶教程',
     },
     {
-      value: '4',
-      label: '看了就看见',
+      value: 'active',
+      label: '活动回顾',
+    },
+  ];
+
+  const productList = [
+    {
+      value: 'all',
+      label: '全部',
+    },
+    {
+      value: 'tugraphDB',
+      label: 'Tugraph_DB',
     },
   ];
 
@@ -61,7 +105,7 @@ const VideoList = () => {
       time: '36:02',
       date: '2022-02-01',
       title: '基础入门',
-      id: '123',
+      id: '1',
     },
     {
       img: 'https://mdn.alipayobjects.com/huamei_tu4rvn/afts/img/A*UZYhTpJPZjQAAAAAAAAAAAAAep_eAQ/original',
@@ -69,7 +113,7 @@ const VideoList = () => {
       time: '36:02',
       date: '2022-02-01',
       title: '基础入门',
-      id: '123',
+      id: '2',
     },
     {
       img: 'https://mdn.alipayobjects.com/huamei_tu4rvn/afts/img/A*UZYhTpJPZjQAAAAAAAAAAAAAep_eAQ/original',
@@ -77,7 +121,7 @@ const VideoList = () => {
       time: '36:02',
       date: '2022-02-01',
       title: '基础入门',
-      id: '123',
+      id: '3',
     },
     {
       img: 'https://mdn.alipayobjects.com/huamei_tu4rvn/afts/img/A*UZYhTpJPZjQAAAAAAAAAAAAAep_eAQ/original',
@@ -85,7 +129,7 @@ const VideoList = () => {
       time: '36:02',
       date: '2022-02-01',
       title: '基础入门',
-      id: '123',
+      id: '4',
     },
     {
       img: 'https://mdn.alipayobjects.com/huamei_tu4rvn/afts/img/A*UZYhTpJPZjQAAAAAAAAAAAAAep_eAQ/original',
@@ -93,7 +137,7 @@ const VideoList = () => {
       time: '36:02',
       date: '2022-02-01',
       title: '基础入门',
-      id: '123',
+      id: '5',
     },
   ];
 
@@ -123,6 +167,8 @@ const VideoList = () => {
 
           <Tabs
             items={items}
+            activeKey={activeKey}
+            onChange={onChangeActiveKey}
             tabBarExtraContent={{
               right: (
                 <Input
@@ -138,15 +184,20 @@ const VideoList = () => {
             current={type}
             onChangeType={onChangeType}
           />
-          <TypeTab
-            typeList={typeList}
-            current={type}
-            onChangeType={onChangeType}
-          />
-
+          {activeKey === 'video' && (
+            <TypeTab
+              typeList={productList}
+              current={product}
+              onChangeType={onChangeProduct}
+            />
+          )}
           <div className={styles.videoList}>
             {data?.map((item) => {
-              return <VideoCard cardInfo={item} key={item.id} />;
+              return activeKey === 'video' ? (
+                <VideoCard cardInfo={item} key={item.id} />
+              ) : (
+                <SetCard />
+              );
             })}
           </div>
 

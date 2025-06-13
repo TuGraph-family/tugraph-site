@@ -2,6 +2,10 @@ import { NewLayout } from '@/components/NewLayout';
 import Banner from '@/pages/new-pages/Video/home/components/Banner';
 import SetCard from '@/pages/new-pages/Video/home/components/SetCard';
 import TypeBlock from '@/pages/new-pages/Video/home/components/TypeBlock';
+import { video } from '@/services/test';
+import getBilibiliVideoInfo from '@/util/video-info';
+import { useEffect } from 'react';
+import { useRequest } from 'umi';
 
 const VideoHome = () => {
   const BLOCK_LIST = [
@@ -85,6 +89,12 @@ const VideoHome = () => {
       ],
     },
   ];
+
+  const { run: runVideoInfo } = useRequest(video, { manual: true });
+
+  useEffect(() => {
+    runVideoInfo().then((res) => console.log(res));
+  }, []);
 
   return (
     <NewLayout
