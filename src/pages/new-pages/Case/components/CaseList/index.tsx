@@ -2,7 +2,7 @@ import { SubTitle } from '@/components/SubTitle';
 import styles from './index.less';
 import { IntlShape } from 'react-intl';
 import FadeInSection from '@/components/FadeInSection';
-import { getExamples } from '@/pages/new-pages/Case/components/constants/data';
+import { getExamples } from '@/pages/new-pages/Case/constants/data';
 
 const CaseList = ({ intl }: { intl: IntlShape }) => {
   return (

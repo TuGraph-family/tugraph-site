@@ -13,6 +13,8 @@ import { NewLayout } from '@/components/NewLayout';
 const Docs: React.FC = () => {
   const location = useLocation();
   const { search } = location;
+  const currentWidth = window.innerWidth;
+  const currentHeight = window.innerHeight;
 
   useEffect(() => {
     if (location.pathname.split('/')[2] !== iframeUrl?.split('/')[1]) {
@@ -70,7 +72,10 @@ const Docs: React.FC = () => {
             title="Docusaurus Docs"
             style={{
               width: '100%',
-              height: 'calc(100vh - 84px)',
+              height:
+                currentWidth > 768
+                  ? 'calc(100vh - 84px)'
+                  : (currentHeight * 1440) / currentWidth - 84,
               marginTop: '18px',
               border: 'none',
             }}
