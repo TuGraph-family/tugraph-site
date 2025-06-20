@@ -56,6 +56,10 @@ const VideoInfo = () => {
       setState((draft) => {
         draft.collectionDetail = collection?.[0] || {};
       });
+    } else {
+      setState((draft) => {
+        draft.activeKey = 'video_des';
+      });
     }
   };
 
