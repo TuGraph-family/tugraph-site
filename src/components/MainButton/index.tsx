@@ -25,6 +25,8 @@ import { DEFAULT_LOCAL } from '@/constant';
 import { IFormValues } from '@/interface';
 import success from '@/assets/icon/success.svg';
 import { useHome } from '@/hooks/useHome';
+import { useMedia } from 'react-use';
+import moment from 'moment';
 
 const { Item } = Form;
 
@@ -48,6 +50,7 @@ const MainButton: React.FC<IMainButtonProps> = ({
   const [form] = Form.useForm();
   const { search } = useLocation();
   const lang = getSearch(search)?.lang || DEFAULT_LOCAL;
+  const isWide = useMedia('(min-width: 767.99px)', true);
 
   const { runRegister } = useHome();
 
@@ -95,21 +98,20 @@ const MainButton: React.FC<IMainButtonProps> = ({
   };
 
   const renderBtn = () => {
+    const key = moment().valueOf();
     switch (type) {
       case 'experience':
         return (
           <Dropdown
             menu={{ items }}
             overlayClassName={styles.communityDropdown}
-            trigger={['hover']}
+            trigger={['hover', 'click']}
             onOpenChange={(visible) => setVisible(visible)}
             overlayStyle={overlayStyle}
-            getPopupContainer={() =>
-              document.getElementById('main-dropdown-button') || document.body
-            }
+            getPopupContainer={(triggerNode) => triggerNode || document.body}
           >
             <Button
-              id="main-dropdown-button"
+              id={'main-dropdown-button-' + key}
               type="primary"
               size="large"
               shape="round"
@@ -192,6 +194,9 @@ const MainButton: React.FC<IMainButtonProps> = ({
     }
   }, [intl, type]);
 
+  const spaceSize = isWide ? 40 : 0;
+  const spaceDirection = isWide ? 'horizontal' : 'vertical';
+
   return (
     <>
       {renderBtn()}
@@ -231,7 +236,7 @@ const MainButton: React.FC<IMainButtonProps> = ({
               </Space>
             </Radio.Group>
           </Item>
-          <Space size={40}>
+          <Space size={spaceSize} direction={spaceDirection}>
             <Item
               label={intl.formatMessage({ id: 'form.item.name' })}
               name="user"
@@ -269,7 +274,7 @@ const MainButton: React.FC<IMainButtonProps> = ({
               />
             </Item>
           </Space>
-          <Space size={40}>
+          <Space size={spaceSize} direction={spaceDirection}>
             <Item
               label={intl.formatMessage({ id: 'form.item.email' })}
               name="email"
@@ -307,7 +312,7 @@ const MainButton: React.FC<IMainButtonProps> = ({
               />
             </Item>
           </Space>
-          <Space size={40}>
+          <Space size={spaceSize} direction={spaceDirection}>
             <Item
               label={intl.formatMessage({ id: 'form.item.position' })}
               name="position"

@@ -123,6 +123,18 @@ export default defineConfig({
       path: '/activity/info/*',
       component: '@/pages/new-pages/Activity/info',
     },
+    {
+      path: '/video/home',
+      component: '@/pages/new-pages/Video/home',
+    },
+    {
+      path: '/video/list',
+      component: '@/pages/new-pages/Video/list',
+    },
+    {
+      path: '/video/info/*',
+      component: '@/pages/new-pages/Video/info',
+    },
   ],
   scripts: [
     `var _hmt = _hmt || [];
@@ -155,6 +167,15 @@ export default defineConfig({
     ;var t=window.Tracert||{_isRenderInit:!0,call:function(){window.TracertCmdCache.push(arguments)}},f=["call","start","config","logPv","info","err","click","expo","pageName","pageState","time","timeEnd","parse","checkExpo","stringify","report","set","before"];for(let i=0;i<f.length;i++){(function(fn){t[fn]=function(){var a=[],l=arguments.length;for (var j=0;j<l;j++) {a.push(arguments[j])}a.unshift(fn);window.TracertCmdCache.push(a)}})(f[i])}window.Tracert=t;
     window._to={autoLogPv:false};
     window.Tracert.start({});`,
+    `window.onload = ()=>{
+    const currentWidth = window.innerWidth;
+    if(currentWidth < 768){
+      const baseWidth = 1440; 
+      const scaleValue = currentWidth / baseWidth;
+      const rootElement = document.getElementById('root');
+      rootElement.style.transform = 'scale(' + scaleValue + ')';
+      rootElement.style.width =  baseWidth + 'px';
+    }};`,
   ],
   theme: {
     'primary-color': 'rgba(22,80,255,1)',
@@ -201,6 +222,11 @@ export default defineConfig({
     {
       name: 'referrer',
       content: 'never',
+    },
+    {
+      name: 'viewport',
+      content:
+        'width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=0',
     },
   ],
 });

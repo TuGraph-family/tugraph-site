@@ -209,7 +209,7 @@ export const NewHeader = ({
           },
           {
             label: intl.formatMessage({ id: 'header.community.video' }),
-            url: 'https://space.bilibili.com/1196053065/',
+            path: '/video/home',
           },
           // {
           //   label: intl.formatMessage({ id: 'header.community.forum' }),

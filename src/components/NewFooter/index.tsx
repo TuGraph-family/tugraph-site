@@ -346,5 +346,5 @@ export const NewFooter = () => {
       </Row>
     </>
   );
-  return <div className={styles.footer}>{isWide ? pc : mobile}</div>;
+  return <div className={styles.footer}>{pc}</div>;
 };

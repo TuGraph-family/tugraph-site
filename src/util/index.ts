@@ -42,11 +42,9 @@ export const historyPushLinkAt = (path: string) => {
   const { search, pathname } = window.location;
   let curSearch = getSearch(search);
   if (/^\/docs\//.test(pathname)) {
-    return `${path}?lang=${
-      pathname.split('/')[3] === 'en' ? 'en-US' : 'zh-CN'
-    }`;
+    return `${path}${pathname.split('/')[3] === 'en' ? '?lang=en-US' : ''}`;
   } else {
-    return `${path}?lang=${curSearch?.lang || DEFAULT_LOCAL}`;
+    return `${path}${curSearch?.lang === 'en-US' ? '?lang=en-US' : ''}`;
   }
 };
 
@@ -87,4 +85,24 @@ export const slugify = (text?: string, islabel = false) => {
 // 获取内容更新时间是否在设定值之前
 export const isBeforeTime = (time?: string) => {
   return moment(time).isBefore(moment(OLD_BLOG_LAST_UPLOAD_TIME));
+};
+
+/**
+ * 将秒数转换为时分秒格式（小时为0时省略）
+ * @param {number} seconds - 总秒数
+ * @returns {string} 格式化后的时间字符串（HH:mm:ss 或 mm:ss）
+ */
+export const formatTime = (seconds: number) => {
+  if (isNaN(seconds) || seconds < 0) return '00:00'; // 无效输入处理
+
+  const h = Math.floor(seconds / 3600);
+  const m = Math.floor((seconds % 3600) / 60);
+  const s = Math.floor(seconds % 60);
+
+  // 小时为0时省略，否则补零显示
+  return h > 0
+    ? `${h.toString().padStart(2, '0')}:${m.toString().padStart(2, '0')}:${s
+        .toString()
+        .padStart(2, '0')}`
+    : `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
 };

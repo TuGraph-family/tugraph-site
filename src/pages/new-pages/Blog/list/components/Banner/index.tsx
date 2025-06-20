@@ -3,6 +3,7 @@ import cx from 'classnames';
 import { useLocation } from 'umi';
 import styles from './index.less';
 import SwitchTab from '@/components/SwitchTab';
+import TypeTab from '@/components/TypeTab';
 
 export interface BannerInfoProps {
   type?: string;
@@ -41,25 +42,6 @@ const Banner = ({
     },
   ];
 
-  const renderType = () => {
-    return (
-      <div className={styles.typelist}>
-        {typeList.map((item) => (
-          <div
-            className={cx(
-              styles.typeItem,
-              item.value === type ? styles.typeActived : '',
-            )}
-            key={item.value}
-            onClick={() => onChangeType?.(item.value)}
-          >
-            {item.label}
-          </div>
-        ))}
-      </div>
-    );
-  };
-
   return (
     <div
       className={styles.bannerBox}
@@ -83,7 +65,11 @@ const Banner = ({
         />
 
         <div className={styles.footerAction}>
-          {renderType()}
+          <TypeTab
+            typeList={typeList}
+            current={type}
+            onChangeType={onChangeType}
+          />
           <SwitchTab options={tagList} current={tag} onChange={onChangeTag} />
         </div>
       </div>
