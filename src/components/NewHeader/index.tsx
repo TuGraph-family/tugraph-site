@@ -209,7 +209,7 @@ export const NewHeader = ({
           },
           {
             label: intl.formatMessage({ id: 'header.community.video' }),
-            url: '/video/home',
+            path: '/video/home',
           },
           // {
           //   label: intl.formatMessage({ id: 'header.community.forum' }),

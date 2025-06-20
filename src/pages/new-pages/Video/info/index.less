@@ -28,9 +28,11 @@
     display: flex;
     border-radius: 8px;
     overflow: hidden;
+    margin-top: 24px;
+    cursor: pointer;
 
     .videoLeft {
-      width: 881px;
+      width: 73%;
       height: 100%;
 
       iframe {
@@ -70,11 +72,17 @@
         cursor: pointer;
 
         .videoTitle {
+          width: 224px;
           flex: 1;
           overflow: hidden;
+          white-space: nowrap;
           text-overflow: ellipsis;
-          display: -webkit-box;
-          -webkit-box-orient: vertical;
+
+          .playing {
+            width: 9px;
+            height: 11px;
+            margin-right: 6px;
+          }
         }
 
         .videoTime {

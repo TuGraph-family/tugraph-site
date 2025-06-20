@@ -36,13 +36,33 @@
   .searchInput {
     width: 368px;
     height: 36px;
-    background: #fff;
-    border: 1px solid #d8dce3;
-    border-radius: 6px;
 
     :global {
-      .ant-input-suffix {
+      .ant-btn {
+        border: 1px solid #d8dce3;
+        border-left: none;
+        border-radius: 0 6px 6px 0 !important;
+
+        &:hover,
+        &:focus {
+          border-color: #d8dce3;
+        }
+      }
+
+      .ant-input-group-addon {
+        border-radius: 0 6px 6px 0;
+      }
+
+      .ant-input {
+        border: 1px solid #d8dce3;
+        border-right: none;
+        border-radius: 6px 0 0 6px;
         color: #768191;
+
+        &:focus {
+          border-color: #d8dce3;
+          box-shadow: none;
+        }
       }
     }
   }

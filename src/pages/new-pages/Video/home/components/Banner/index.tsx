@@ -1,10 +1,9 @@
-import cx from 'classnames';
 import styles from './index.less';
-import SwitchTab from '@/components/SwitchTab';
 import { Input } from 'antd';
-import { SearchOutlined } from '@ant-design/icons';
 
-const Banner = () => {
+const Banner: React.FC<{
+  onSearch: (value: string) => void;
+}> = ({ onSearch }) => {
   let background =
     'url(https://mdn.alipayobjects.com/huamei_p63okt/afts/img/0dUUR6X_gtwAAAAAAAAAAAAADh8WAQFr/original)';
 
@@ -18,14 +17,14 @@ const Banner = () => {
     >
       <div className={styles.banner}>
         <div className={styles.databaseTitleSection}>
-          <div className={styles.titleText}>视频中心 </div>
+          <div className={styles.titleText}>视频中心</div>
           <div className={styles.descriptionText}>
-            视频中心文案说明，视频中心文案说明，约24～30个字左右
+            探索图数据库的无限可能，一站式学习与实践TuGraph
           </div>
-          <Input
+          <Input.Search
             placeholder="请输入关键词"
             className={styles.searchInput}
-            suffix={<SearchOutlined />}
+            onSearch={onSearch}
           />
         </div>
         <img

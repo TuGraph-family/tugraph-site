@@ -1,6 +1,6 @@
 import React from 'react';
 
-export interface CategoryItem {
+interface CategoryItem {
   fileName: string;
   fileType: number;
   id: string;
@@ -10,13 +10,13 @@ export interface CategoryItem {
   children: CategoryItem[] | [];
 }
 
-export interface Anchor {
+interface Anchor {
   id: string;
   tagName: string;
   title: string;
 }
 
-export interface DocContent {
+interface DocContent {
   id: string;
   body_html?: string;
   fileName?: string;
@@ -28,7 +28,7 @@ export interface DocContent {
   title?: string;
   updated_at?: string;
 }
-export interface BlogItem {
+interface BlogItem {
   id: number;
   img: string;
   title: string;
@@ -39,14 +39,19 @@ export interface BlogItem {
   isLink?: boolean;
 }
 
-export interface MenuItem {
+interface MenuItem {
   label: React.ReactNode;
   key: string;
   children?: MenuItem[];
   icon?: React.ReactNode;
 }
 
-export interface DownloadItem {
+interface IOption {
+  value?: string;
+  label?: string;
+}
+
+interface DownloadItem {
   title?: string;
   subTitle?: string;
   name?: string;
@@ -62,7 +67,7 @@ export interface DownloadItem {
   items?: any;
 }
 
-export interface IFormValues {
+interface IFormValues {
   type?: string;
   name?: string;
   phone?: string;
@@ -72,3 +77,24 @@ export interface IFormValues {
   city?: string;
   content?: string;
 }
+
+interface IUseVideoState {
+  vidoeTypes: IOption[];
+  collectionTypes: IOption[];
+  products: IOption[];
+  collectionList?: API.CollectionListVO[];
+  list?: Record<string, any>[];
+  total: number;
+}
+
+export {
+  CategoryItem,
+  Anchor,
+  DocContent,
+  BlogItem,
+  MenuItem,
+  IOption,
+  DownloadItem,
+  IFormValues,
+  IUseVideoState,
+};

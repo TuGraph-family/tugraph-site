@@ -63,9 +63,9 @@ export const DEFAULT_LOCAL = 'zh-CN';
 export const MATCH_LOCAL_SEARCH_REG = /[\\?]?([a-zA-Z0-9]+)=([0-9A-Z\-a-z]+)/g;
 
 // 线上环境
-// export const HOST = 'https://tugraph.tech';
+export const HOST = 'https://tugraph.tech';
 // 预发环境
-export const HOST = 'https://tugraphportal-pre.tugraph.tech:4433';
+// export const HOST = 'https://tugraphportal-pre.tugraph.tech:4433';
 
 export const activityWayEnumOptions = [
   {
