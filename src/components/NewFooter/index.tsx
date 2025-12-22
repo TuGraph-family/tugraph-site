@@ -148,6 +148,20 @@ export const NewFooter = () => {
 
       <Row className={styles.footerExtraInfo}>
         <Space size={16}>
+          <div>
+            <img
+              src="https://mdn.alipayobjects.com/huamei_tu4rvn/afts/img/A*Ky0xT5cjEkAAAAAAQBAAAAgAep_eAQ/original"
+              className={styles.filingIcon}
+            />
+            <a
+              href="https://beian.mps.gov.cn/#/query/webSearch?code=11010802043153"
+              rel="noreferrer"
+              target="_blank"
+            >
+              京公网安备11010802043153号
+            </a>
+          </div>
+          |
           <a
             href="https://beian.miit.gov.cn"
             rel="noopener noreferrer"
