@@ -10,21 +10,35 @@
 
 @bg-color: #f7f8fa;
 
+/* 引入系统字体 */
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: local('Helvetica Neue'), local('HelveticaNeue'),
+    local('Helvetica Neue Regular'), local('HelveticaNeue-Regular');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: local('Helvetica Neue Bold'), local('HelveticaNeue-Bold');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+html,
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: black;
+}
+
 #root {
   transform-origin: top left;
-}
-
-@font-face {
-  font-family: 'PuHuiTi85';
-  src: url('https://mdn.alipayobjects.com/huamei_qcdryc/afts/file/A*XgxRSo2XyGUAAAAAAAAAAAAADgOBAQ/AlibabaPuHuiTi-2-85-Bold.ttf');
-}
-
-@font-face {
-  font-family: 'PuHuiTi55';
-  src: url('https://mdn.alipayobjects.com/huamei_qcdryc/afts/file/A*yuf1Toumv2AAAAAAAAAAAAAADgOBAQ/AlibabaPuHuiTi-2-55-Regular.ttf');
-}
-
-@font-face {
-  font-family: 'PuHuiTi95';
-  src: url('https://mdn.alipayobjects.com/huamei_qcdryc/afts/file/A*C70kR5334W4AAAAAAAAAAAAADgOBAQ/AlibabaPuHuiTi-2-95-ExtraBold.ttf');
 }

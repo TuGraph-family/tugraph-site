@@ -67,44 +67,36 @@ const ActivityList = () => {
   ]);
 
   return (
-    <NewLayout
-      headerBgStyles={{
-        backgroundImage:
-          'linear-gradient(rgb(225, 236, 255) 0%, rgb(227, 236, 255) 32%, #F7F8FA 100%)',
-      }}
-      content={
-        <>
-          <Banner />
-          <FilterCard
-            activityWayEnum={activityWayEnum}
-            activityStateEnum={activityStateEnum}
-            activityResourceFlag={activityResourceFlag}
-            updateFilter={updateFilter}
-          />
-          {list?.length ? (
-            <div className={styles.activityList}>
-              {list?.map((item) => (
-                <ActivityCard key={item?.id} detail={item} />
-              ))}
-            </div>
-          ) : (
-            <SiteEmpty text={'暂无活动'} />
-          )}
+    <>
+      <Banner />
+      <FilterCard
+        activityWayEnum={activityWayEnum}
+        activityStateEnum={activityStateEnum}
+        activityResourceFlag={activityResourceFlag}
+        updateFilter={updateFilter}
+      />
+      {list?.length ? (
+        <div className={styles.activityList}>
+          {list?.map((item) => (
+            <ActivityCard key={item?.id} detail={item} />
+          ))}
+        </div>
+      ) : (
+        <SiteEmpty text={'暂无活动'} />
+      )}
 
-          <div className={styles.pagination}>
-            {total > 10 ? (
-              <Pagination
-                current={current}
-                pageSize={pageSize}
-                total={total}
-                showSizeChanger={false}
-                onChange={onChangePage}
-              />
-            ) : null}
-          </div>
-        </>
-      }
-    />
+      <div className={styles.pagination}>
+        {total > 10 ? (
+          <Pagination
+            current={current}
+            pageSize={pageSize}
+            total={total}
+            showSizeChanger={false}
+            onChange={onChangePage}
+          />
+        ) : null}
+      </div>
+    </>
   );
 };
 

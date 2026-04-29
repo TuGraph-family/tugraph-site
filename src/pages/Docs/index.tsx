@@ -58,31 +58,22 @@ const Docs: React.FC = () => {
   }, []);
 
   return (
-    <NewLayout
-      currentUrl={{
-        pathname: '/docs' + iframeUrl.split('#')[0],
-        hash: iframeUrl.split('#')[1] ? '#' + iframeUrl.split('#')[1] : '',
-      }}
-      isFooter={false}
-      content={
-        <div className={styles.container}>
-          <iframe
-            ref={iframeRef}
-            src={solidIframeUrl}
-            title="Docusaurus Docs"
-            style={{
-              width: '100%',
-              height:
-                currentWidth > 768
-                  ? 'calc(100vh - 84px)'
-                  : (currentHeight * 1440) / currentWidth - 84,
-              marginTop: '18px',
-              border: 'none',
-            }}
-          />
-        </div>
-      }
-    />
+    <div className={styles.container}>
+      <iframe
+        ref={iframeRef}
+        src={solidIframeUrl}
+        title="Docusaurus Docs"
+        style={{
+          width: '100%',
+          height:
+            currentWidth > 768
+              ? 'calc(100vh - 84px)'
+              : (currentHeight * 1440) / currentWidth - 84,
+          marginTop: '18px',
+          border: 'none',
+        }}
+      />
+    </div>
   );
 };
 

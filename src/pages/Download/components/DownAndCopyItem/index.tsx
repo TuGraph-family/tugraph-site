@@ -1,11 +1,7 @@
 import { message, Select } from 'antd';
 import CopyToClipboard from 'react-copy-to-clipboard';
 import styles from './index.less';
-import {
-  DownloadOutlined,
-  CopyOutlined,
-  CaretDownOutlined,
-} from '@ant-design/icons';
+import { CaretDownOutlined } from '@ant-design/icons';
 import { IntlShape } from 'react-intl';
 import { useState } from 'react';
 
@@ -40,7 +36,6 @@ const DownAndCopyItem = ({
           window.location.href = downlink;
         }}
       >
-        <DownloadOutlined />
         {intl.formatMessage({ id: 'download.downloadBtn' })}
       </div>
     </div>
@@ -58,7 +53,6 @@ const DownAndCopyItem = ({
         }}
       >
         <div className={styles.buttonText}>
-          <CopyOutlined />
           {intl.formatMessage({ id: 'download.copyLinkBtn' })}
         </div>
       </CopyToClipboard>

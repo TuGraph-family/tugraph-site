@@ -25,15 +25,14 @@ const ActivityCard = ({ detail }: { detail: API.ActivityListVO }) => {
       <div
         className={styles.activityImg}
         style={{ backgroundImage: `url(${detail?.backgroundImage?.url})` }}
-      >
-        <ActivityTag status={detail?.activityState} />
-      </div>
+      />
+
       <div className={styles.activityInfo}>
         <div className={styles.activityTitle}>
           <div className={styles.title}>{detail?.title}</div>
-          {detail?.activityResourceFlag ? (
+          {/* {detail?.activityResourceFlag ? (
             <div className={styles.tag}>含资料</div>
-          ) : null}
+          ) : null} */}
         </div>
         <div className={styles.activityTime}>
           时间：
@@ -51,11 +50,6 @@ const ActivityCard = ({ detail }: { detail: API.ActivityListVO }) => {
           {isOnline
             ? detail?.activityChannel
             : `${detail?.province}·${detail?.address}`}
-        </div>
-        <div className={styles.btn}>
-          {detail?.activityState === 'REGISTRATION_DURING'
-            ? '立即报名'
-            : '查看详情'}
         </div>
       </div>
     </div>

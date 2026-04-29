@@ -6,11 +6,9 @@ import moment from 'moment';
 import ActivityTag from '@/pages/Activity/components/ActivityTag';
 import { useMemo } from 'react';
 import CopyToClipboard from 'react-copy-to-clipboard';
+import MainButton from '@/components/MainButton';
 
 const Banner = ({ detail }: { detail: API.ActivityDetailVO }) => {
-  let background =
-    'url(https://mdn.alipayobjects.com/huamei_p63okt/afts/img/J0lRQb2Sx6wAAAAAAAAAAAAADh8WAQFr/original)';
-
   const isDisable = useMemo(() => {
     return ['PROGRESS', 'OVER'].includes(detail?.activityState || '');
   }, [detail]);
@@ -29,86 +27,73 @@ const Banner = ({ detail }: { detail: API.ActivityDetailVO }) => {
   };
 
   return (
-    <div className={styles.bannerBox}>
-      <div
-        className={styles.banner}
-        style={{
-          backgroundImage: background,
-          height: '378px',
-        }}
-      >
-        <div className={styles.bannerContent}>
-          <div
-            className={styles.bannerLeft}
-            style={{
-              backgroundImage: `url(${detail?.frontCoverImage?.url})`,
-            }}
-          >
-            <ActivityTag status={detail?.activityState} />
-          </div>
-          <div className={styles.bannerRight}>
-            <div>
-              <div className={styles.avtivityTitle}>{detail?.title}</div>
-              <div className={styles.avtivityInfo}>
-                <div className={styles.infoItem}>
-                  <div className={styles.infoItemLabel}>活动类型：</div>
-                  <div className={styles.infoItemVal}>
-                    {ActivityWayOptionsEnum[detail?.activityWay || 'ONLINE']}
-                  </div>
+    <div className={styles.banner}>
+      <div className={styles.bannerContent}>
+        <div
+          className={styles.bannerLeft}
+          style={{
+            backgroundImage: `url(${detail?.frontCoverImage?.url})`,
+          }}
+        >
+          <ActivityTag status={detail?.activityState} />
+        </div>
+        <div className={styles.bannerRight}>
+          <div>
+            <div className={styles.avtivityTitle}>{detail?.title}</div>
+            <div className={styles.avtivityInfo}>
+              <div className={styles.infoItem}>
+                <div className={styles.infoItemLabel}>活动类型：</div>
+                <div className={styles.infoItemVal}>
+                  {ActivityWayOptionsEnum[detail?.activityWay || 'ONLINE']}
                 </div>
-                <div className={styles.infoItem}>
-                  <div className={styles.infoItemLabel}>活动时间：</div>
-                  <div className={styles.infoItemVal}>
-                    {detail?.startTime
-                      ? moment(detail.startTime).format('YYYY-MM-DD HH:mm:ss')
-                      : ''}
-                    ～
-                    {detail?.endTime
-                      ? moment(detail.endTime).format('YYYY-MM-DD HH:mm:ss')
-                      : ''}
-                  </div>
+              </div>
+              <div className={styles.infoItem}>
+                <div className={styles.infoItemLabel}>活动时间：</div>
+                <div className={styles.infoItemVal}>
+                  {detail?.startTime
+                    ? moment(detail.startTime).format('YYYY-MM-DD HH:mm:ss')
+                    : ''}
+                  ～
+                  {detail?.endTime
+                    ? moment(detail.endTime).format('YYYY-MM-DD HH:mm:ss')
+                    : ''}
                 </div>
-                <div className={styles.infoItem}>
-                  <div className={styles.infoItemLabel}>
-                    {detail?.activityWay === 'ONLINE'
-                      ? '活动渠道：'
-                      : '活动地点：'}
-                  </div>
-                  <div className={styles.infoItemVal}>
-                    {detail?.activityWay === 'ONLINE'
-                      ? detail?.activityChannel
-                      : detail?.address}
-                  </div>
+              </div>
+              <div className={styles.infoItem}>
+                <div className={styles.infoItemLabel}>
+                  {detail?.activityWay === 'ONLINE'
+                    ? '活动渠道：'
+                    : '活动地点：'}
+                </div>
+                <div className={styles.infoItemVal}>
+                  {detail?.activityWay === 'ONLINE'
+                    ? detail?.activityChannel
+                    : detail?.address}
                 </div>
               </div>
             </div>
-            <div className={styles.footer}>
-              {(detail?.registrationUrl &&
-                detail?.activityState === 'REGISTRATION_DURING') ||
-              isDisable ? (
-                <Button
-                  className={cx(styles.mainBtn, isDisable ? styles.ending : '')}
-                  onClick={() => window.open(detail?.registrationUrl)}
-                  disabled={isDisable}
-                >
-                  {getBtnText(detail?.activityState)}
-                </Button>
-              ) : null}
-              <CopyToClipboard
-                text={window.location.href}
-                onCopy={() => {
-                  message.success('分享链接已复制');
-                }}
-              >
-                <Button className={styles.shareBtn}>分享</Button>
-              </CopyToClipboard>
-
-              {/* <div className={styles.shareCard}>
-                <div className={styles.shareCardTitle}>分享活动</div>
-                <div className={styles.shareCardSource}>微信扫码</div>
-                <img src="" alt="" className={styles.shareCardCode} />
-              </div> */}
-            </div>
+          </div>
+          <div className={styles.footer}>
+            {(detail?.registrationUrl &&
+              detail?.activityState === 'REGISTRATION_DURING') ||
+            isDisable ? (
+              <MainButton
+                className={cx(styles.mainBtn, isDisable ? styles.ending : '')}
+                onClick={() =>
+                  !isDisable ? window.open(detail?.registrationUrl) : null
+                }
+                type="real"
+                btnText={getBtnText(detail?.activityState)}
+              />
+            ) : null}
+            <CopyToClipboard
+              text={window.location.href}
+              onCopy={() => {
+                message.success('分享链接已复制');
+              }}
+            >
+              <MainButton onClick={() => {}} type="illusory" btnText="分享" />
+            </CopyToClipboard>
           </div>
         </div>
       </div>

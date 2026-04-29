@@ -1,0 +1,43 @@
+.mianBox {
+  transform: translate(110px, 170px) rotate(45deg);
+}
+
+.box {
+  width: auto;
+  height: auto;
+}
+
+.path {
+  stroke: #ffffff1a;
+  stroke-width: 0.5;
+  fill: #ec090900;
+}
+
+@keyframes hero-ellipse-orbit {
+  0% {
+    stroke-dashoffset: 0;
+  }
+
+  100% {
+    stroke-dashoffset: 100;
+  }
+}
+
+.star,
+.star2,
+.star3 {
+  fill: none;
+  stroke: #38bdf8a6;
+  stroke-width: 1.4;
+  stroke-linecap: round;
+  stroke-dasharray: 2 98;
+  animation: hero-ellipse-orbit 8s linear infinite;
+}
+
+.star2 {
+  animation-delay: -2.6s;
+}
+
+.star3 {
+  animation-delay: -5.3s;
+}

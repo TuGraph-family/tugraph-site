@@ -4,33 +4,21 @@ import { Input } from 'antd';
 const Banner: React.FC<{
   onSearch: (value: string) => void;
 }> = ({ onSearch }) => {
-  let background =
-    'url(https://mdn.alipayobjects.com/huamei_p63okt/afts/img/0dUUR6X_gtwAAAAAAAAAAAAADh8WAQFr/original)';
+  const onPressEnter = (e) => {
+    onSearch(e?.target?.value);
+  };
 
   return (
-    <div
-      className={styles.bannerBox}
-      style={{
-        backgroundImage: background,
-        height: '300px',
-      }}
-    >
-      <div className={styles.banner}>
-        <div className={styles.databaseTitleSection}>
-          <div className={styles.titleText}>视频中心</div>
-          <div className={styles.descriptionText}>
-            探索图数据库的无限可能，一站式学习与实践TuGraph
-          </div>
-          <Input.Search
-            placeholder="请输入关键词"
-            className={styles.searchInput}
-            onSearch={onSearch}
-          />
+    <div className={styles.banner}>
+      <div className={styles.titleText}>视频中心</div>
+      <div className={styles.footer}>
+        <div className={styles.descriptionText}>
+          探索图数据库的无限可能，一站式学习与实践TuGraph
         </div>
-        <img
-          src="https://mdn.alipayobjects.com/huamei_p63okt/afts/img/m7MpSbJlTGMAAAAAAAAAAAAAeh8WAQFr/original"
-          alt=""
-          className={styles.icon}
+        <Input
+          placeholder="搜索视频"
+          className={styles.searchInput}
+          onPressEnter={onPressEnter}
         />
       </div>
     </div>

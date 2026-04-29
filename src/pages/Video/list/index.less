@@ -3,8 +3,35 @@
   margin: auto;
   position: relative;
 
+  .header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 24px;
+
+    .tab {
+      display: flex;
+      gap: 32px;
+
+      .tabItem {
+        color: #71717a;
+        font-size: 18px;
+        font-weight: 400;
+
+        &:hover {
+          color: #fff;
+        }
+      }
+
+      .selected {
+        color: #fff;
+        font-weight: 600;
+      }
+    }
+  }
+
   .breadcrumb {
     margin: 20px 0 16px;
+    color: #fff;
   }
 
   .videoList {
@@ -16,11 +43,12 @@
   }
 
   .searchInput {
-    width: 328px;
-    height: 36px;
-    background: #fff;
-    border: 1px solid #d8dce3;
-    border-radius: 6px;
+    background-color: rgba(255, 255, 255, 0.06);
+    width: 384px;
+    height: 38px;
+    border-radius: 19px;
+    border: 1px solid #ffffff1a;
+    color: #fff;
   }
 
   :global {

@@ -1,5 +1,6 @@
 import styles from './index.less';
 import SwitchTab from '@/components/SwitchTab';
+import TypeTab from '@/components/TypeTab';
 import {
   activityStateEnumOptions,
   activityWayEnumOptions,
@@ -21,27 +22,27 @@ const FilterCard = ({
   return (
     <div className={styles.FilterCard}>
       <div>
-        <div className={styles.FilterLabel}>活动形式：</div>
-        <SwitchTab
-          options={activityWayEnumOptions}
+        <div className={styles.filterLabel}>活动形式：</div>
+        <TypeTab
+          typeList={activityWayEnumOptions}
           current={activityWayEnum}
-          onChange={(val) => updateFilter('activityWayEnum', val)}
+          onChangeType={(val) => updateFilter('activityWayEnum', val)}
         />
       </div>
       <div>
-        <div className={styles.FilterLabel}>活动状态：</div>
-        <SwitchTab
-          options={activityStateEnumOptions}
+        <div className={styles.filterLabel}>活动状态：</div>
+        <TypeTab
+          typeList={activityStateEnumOptions}
           current={activityStateEnum}
-          onChange={(val) => updateFilter('activityStateEnum', val)}
+          onChangeType={(val) => updateFilter('activityStateEnum', val)}
         />
       </div>
       <div>
         <div className={styles.filterLabel}>活动资料：</div>
-        <SwitchTab
-          options={resourceOPtions}
+        <TypeTab
+          typeList={resourceOPtions}
           current={activityResourceFlag}
-          onChange={(val) => updateFilter('activityResourceFlag', val)}
+          onChangeType={(val) => updateFilter('activityResourceFlag', val)}
         />
       </div>
     </div>

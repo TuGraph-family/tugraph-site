@@ -42,25 +42,16 @@ const BlogInfo = () => {
   }, [id]);
 
   return (
-    <NewLayout
-      headerBgStyles={{
-        backgroundImage:
-          'linear-gradient(rgb(225, 236, 255) 0%, rgb(227, 236, 255) 32%, #FFF 100%)',
-      }}
-      content={
-        <Spin spinning={getDetailLoading}>
-          <div className={styles.blogInfo} id={'blog-content'}>
-            <InfoContent detail={detail} isOldBlog={isOldBlog} />
-            <InfoRight
-              detail={detail}
-              list={list?.filter((item) => item?.id !== id)}
-              isOldBlog={isOldBlog}
-            />
-          </div>
-        </Spin>
-      }
-      isFooter={false}
-    />
+    <Spin spinning={getDetailLoading}>
+      <div className={styles.blogInfo} id={'blog-content'}>
+        <InfoContent detail={detail} isOldBlog={isOldBlog} />
+        <InfoRight
+          detail={detail}
+          list={list?.filter((item) => item?.id !== id)}
+          isOldBlog={isOldBlog}
+        />
+      </div>
+    </Spin>
   );
 };
 

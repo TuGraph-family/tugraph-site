@@ -10,6 +10,7 @@ import { history } from 'umi';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import cx from 'classnames';
 import { renderCard } from '@/util/render-card';
+import moment from 'moment';
 
 const InfoContent = ({
   detail,
@@ -29,11 +30,10 @@ const InfoContent = ({
         <Breadcrumb.Item>详情</Breadcrumb.Item>
       </Breadcrumb>
       <div className={styles.infoContentTitle}>{detail?.title}</div>
-      <FooterInfo
-        time={detail?.publishTime}
-        creatorName={detail?.creatorName}
-        tag={detail?.categories}
-      />
+      <div className={styles.info}>{`${detail?.creatorName} · ${moment(
+        detail?.publishTime,
+      ).format('YYYY-MM-DD HH:mm:ss')} · ${detail?.categories}`}</div>
+
       <div
         className={cx(
           styles.infoContentText,

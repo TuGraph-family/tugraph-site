@@ -10,20 +10,10 @@ const DownLoad = () => {
   useEffect(() => tracertBPos('b106235'), []);
   const intl = useIntl();
   return (
-    <NewLayout
-      headerBgStyles={{
-        backgroundImage:
-          'linear-gradient(180deg, #e1ecff 0%, #e3ecff 32%, #fff 100%)',
-        height: 334,
-      }}
-      mainStyles={{ background: '#fff' }}
-      content={
-        <>
-          <Banner intl={intl} />
-          <DownLoadList intl={intl} />
-        </>
-      }
-    />
+    <>
+      <Banner intl={intl} />
+      <DownLoadList intl={intl} />
+    </>
   );
 };
 

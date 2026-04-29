@@ -2,6 +2,7 @@ import styles from './index.less';
 import FadeInSection from '@/components/FadeInSection';
 import MainButton from '@/components/MainButton';
 import { SubTitle } from '@/components/SubTitle';
+import Tag from '@/components/Tag';
 import { IntlShape } from 'react-intl';
 
 const Version = ({ intl }: { intl: IntlShape }) => {
@@ -18,10 +19,11 @@ const Version = ({ intl }: { intl: IntlShape }) => {
       ],
       btn: (
         <MainButton
-          type="experience"
-          btnText={intl.formatMessage({ id: 'home.btn.desc' })}
-          style={{ marginTop: 12 }}
-          overlayStyle={{ width: 514 }}
+          type="real"
+          isMotion={false}
+          isAnimation={false}
+          btnText={intl.formatMessage({ id: 'home.version.community.btn' })}
+          style={{ width: 514 }}
         />
       ),
     },
@@ -37,9 +39,10 @@ const Version = ({ intl }: { intl: IntlShape }) => {
       ],
       btn: (
         <MainButton
-          type="consult"
-          style={{ background: '#F0F2FD', marginTop: 12 }}
-          btnText={intl.formatMessage({ id: 'home.btn.tryOut' })}
+          type="illusory"
+          style={{ width: 514 }}
+          btnText={intl.formatMessage({ id: 'home.version.enterprise.btn' })}
+          isMotion={false}
         />
       ),
     },
@@ -47,20 +50,16 @@ const Version = ({ intl }: { intl: IntlShape }) => {
 
   return (
     <div className={styles.versionContainer}>
-      <SubTitle
-        title={intl.formatMessage({ id: 'home.chooseVersion' })}
-        style={{
-          margin: '80px 0 48px ',
-        }}
-      />
+      <SubTitle title={intl.formatMessage({ id: 'home.chooseVersion' })} />
 
       <div className={styles.versionListWrapper}>
         {VERSION_LIST.map((item) => (
           <FadeInSection key={item.key}>
             <div className={styles.editionWrapper}>
               <span className={styles.title}>{item.versionName}</span>
-              <span className={styles.tag}>{item.versionType}</span>
-              <div className={styles.line} />
+              <div className={styles.tag}>
+                <Tag text={item.versionType} />
+              </div>
               {item.descList.map((descItem) => (
                 <div
                   key={descItem}
@@ -69,7 +68,7 @@ const Version = ({ intl }: { intl: IntlShape }) => {
                   {descItem}
                 </div>
               ))}
-              {item.btn}
+              <div className={styles.btn}>{item.btn}</div>
             </div>
           </FadeInSection>
         ))}

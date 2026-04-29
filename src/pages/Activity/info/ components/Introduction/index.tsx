@@ -16,7 +16,7 @@ const Introduction = ({
 }) => {
   return (
     <div className={styles.activityInfo}>
-      <SubTitle title="活动简介" isAnimate={false} />
+      <div className={styles.title}>活动简介</div>
       <div
         className={cx(
           styles.markdownContent,

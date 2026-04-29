@@ -19,17 +19,17 @@ const VideoCard: React.FC<ITypeBlockProps> = ({ cardInfo }) => {
     >
       <div className={styles.main}>
         <img src={cardInfo.pic} alt="" />
-        <div className={styles.videoInfo}>
-          <div>
-            <PlaySquareOutlined /> {cardInfo?.view}
-          </div>
-          <div>{formatTime(cardInfo?.duration)}</div>
-        </div>
       </div>
       <div className={styles.sub}>
         <div className={styles.title}>{cardInfo?.name}</div>
         <div className={styles.date}>
-          {moment(cardInfo?.updateTime).format('YYYY-MM-DD')}
+          <div className={styles.time}>
+            {' '}
+            {moment(cardInfo?.updateTime).format('YYYY-MM-DD')}
+          </div>
+          <div>{`${cardInfo?.view} views · ${formatTime(
+            cardInfo?.duration,
+          )}`}</div>
         </div>
       </div>
     </div>

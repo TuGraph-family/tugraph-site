@@ -4,11 +4,11 @@ import styles from './index.less';
 
 interface ITypeTabProps {
   typeList: {
-    value: string;
+    value: string | boolean;
     label: string;
   }[];
-  current?: string;
-  onChangeType?: (type: string) => void;
+  current?: string | boolean;
+  onChangeType?: (type: string | boolean) => void;
 }
 
 const TypeTab: React.FC<ITypeTabProps> = ({

@@ -7,12 +7,9 @@ import { getIntros } from '@/pages/Product/constants/data';
 const Introduction = ({ type, intl }: { type: string; intl: IntlShape }) => {
   const data = getIntros(intl, type);
   return (
-    <div
-      className={styles.container}
-      style={type === 'db' ? { paddingTop: 160 } : { marginTop: -127 }}
-    >
+    <div className={styles.container}>
       <div>
-        <SubTitle title={intl.formatMessage({ id: 'product.intro' })} />
+        <SubTitle title={intl.formatMessage({ id: 'product.overview' })} />
         <FadeInSection>
           <div className={styles.desc}>{data.desc}</div>
         </FadeInSection>
@@ -21,14 +18,12 @@ const Introduction = ({ type, intl }: { type: string; intl: IntlShape }) => {
             <Row gutter={[24, 24]} className={styles.contentBoxAll}>
               {data.list?.map((item) => (
                 <Col span={item?.span} key={item.key}>
-                  <div className={styles.contentBox}>
-                    <div className={styles.intlText}>
-                      <div className={styles.title}>{item?.title}</div>
-                      <div className={styles.descContent}>{item?.desc} </div>
-                    </div>
-                    {item?.img ? (
-                      <img src={item?.img} className={styles.featureImage} />
-                    ) : null}
+                  <div
+                    className={styles.contentBox}
+                    style={{ backgroundImage: `url(${item?.img})` }}
+                  >
+                    <div className={styles.title}>{item?.title}</div>
+                    <div className={styles.descContent}>{item?.desc} </div>
                   </div>
                 </Col>
               ))}

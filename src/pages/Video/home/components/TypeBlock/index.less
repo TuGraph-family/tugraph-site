@@ -2,17 +2,27 @@
   width: 100%;
   text-align: center;
 
+  .heard {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+
+    .type {
+      font-size: 18px;
+      color: #fff;
+    }
+
+    .more {
+      font-size: 14px;
+      color: #60a5fa;
+      cursor: pointer;
+    }
+  }
+
   &-content {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
-    margin-bottom: 24px;
-  }
-
-  &-more {
-    font-size: 14px;
-    color: #2e5dfe;
-    line-height: 22px;
-    cursor: pointer;
+    gap: 24px;
+    margin-bottom: 64px;
   }
 }
