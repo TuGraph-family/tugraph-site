@@ -3,21 +3,22 @@ import { IntlShape } from 'react-intl';
 import FadeInSection from '@/components/FadeInSection';
 import { ArrowRightOutlined } from '@ant-design/icons';
 import MainButton from '@/components/MainButton';
+import CircleAnimation from '@/pages/Partners/components/CircleAnimation';
 
 const Banner = ({ intl }: { intl: IntlShape }) => {
   return (
     <div className={styles.banner}>
       <div className={styles.databaseTitleSection}>
         <FadeInSection>
-          <span className={styles.titleText}>
+          <div className={styles.titleText}>
             {intl.formatMessage({ id: 'ecosystem.banner.slogan' })}{' '}
-          </span>
+          </div>
         </FadeInSection>
 
         <FadeInSection>
-          <span className={styles.descriptionText}>
+          <div className={styles.descriptionText}>
             {intl.formatMessage({ id: 'ecosystem.banner.description' })}
-          </span>
+          </div>
         </FadeInSection>
 
         <FadeInSection transition={{ duration: 1, delay: 0.2 }}>
@@ -31,6 +32,8 @@ const Banner = ({ intl }: { intl: IntlShape }) => {
           </div>
         </FadeInSection>
       </div>
+
+      <CircleAnimation />
     </div>
   );
 };

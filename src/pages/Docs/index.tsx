@@ -8,7 +8,6 @@ import { setLocale, useLocation } from 'umi';
 import { getSearch, tracertBPos } from '@/util';
 import { DEFAULT_LOCAL } from '@/constant';
 import styles from './index.less';
-import { NewLayout } from '@/components/NewLayout';
 
 const Docs: React.FC = () => {
   const location = useLocation();
