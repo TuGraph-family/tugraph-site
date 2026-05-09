@@ -17,7 +17,13 @@ const Introduction = ({ type, intl }: { type: string; intl: IntlShape }) => {
           <div className={styles.featureContainer}>
             <Row gutter={[24, 24]} className={styles.contentBoxAll}>
               {data.list?.map((item) => (
-                <Col span={item?.span} key={item.key}>
+                <Col
+                  span={item?.span}
+                  key={item.key}
+                  xs={24}
+                  sm={24}
+                  md={item?.span}
+                >
                   <div
                     className={styles.contentBox}
                     style={{ backgroundImage: `url(${item?.img})` }}

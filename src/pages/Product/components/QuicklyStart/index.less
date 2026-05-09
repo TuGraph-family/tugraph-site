@@ -12,6 +12,7 @@
   .stepList {
     display: flex;
     gap: 24px;
+    flex-wrap: wrap;
 
     .step {
       width: 0;
@@ -50,6 +51,11 @@
         .title > div {
           color: rgb(96, 165, 250);
         }
+      }
+
+      @media screen and (max-width: 768px) {
+        width: 100%;
+        flex: none;
       }
     }
   }

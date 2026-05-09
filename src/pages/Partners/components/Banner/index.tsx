@@ -27,7 +27,7 @@ const Banner = ({ intl }: { intl: IntlShape }) => {
               type="real"
               isAnimation={true}
               btnText={intl.formatMessage({ id: 'footer.contact' })}
-              icon={<ArrowRightOutlined />}
+              affterIcon={<ArrowRightOutlined />}
             />
           </div>
         </FadeInSection>

@@ -23,7 +23,7 @@ const Version = ({ intl }: { intl: IntlShape }) => {
           isMotion={false}
           isAnimation={false}
           btnText={intl.formatMessage({ id: 'home.version.community.btn' })}
-          style={{ width: 514 }}
+          style={{ width: '100%' }}
         />
       ),
     },
@@ -40,7 +40,7 @@ const Version = ({ intl }: { intl: IntlShape }) => {
       btn: (
         <MainButton
           type="illusory"
-          style={{ width: 514 }}
+          style={{ width: '100%' }}
           btnText={intl.formatMessage({ id: 'home.version.enterprise.btn' })}
           isMotion={false}
         />

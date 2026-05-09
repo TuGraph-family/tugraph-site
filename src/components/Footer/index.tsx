@@ -11,7 +11,7 @@ export const Footer = () => {
   return (
     <div className={styles.footer}>
       <Row id="tugraphFooter" className={styles.containerWrapper}>
-        <Col span={8}>
+        <Col span={8} xs={24} sm={24} md={8}>
           <div className={styles.textGroup}>
             <div className={styles.title}>
               {intl.formatMessage({ id: 'footer.product.title' })}
@@ -21,13 +21,13 @@ export const Footer = () => {
             </a>
             <a
               className={styles.item}
-              href={historyPushLinkAt('/product/analytics')}
+              href={'https://geaflow.apache.org/docs/guide'}
             >
               TuGraph Analytics
             </a>
           </div>
         </Col>
-        <Col span={8}>
+        <Col span={8} xs={24} sm={24} md={8}>
           <div className={styles.textGroup}>
             <div className={styles.title}>
               {intl.formatMessage({ id: 'footer.community' })}
@@ -53,7 +53,7 @@ export const Footer = () => {
             </a>
           </div>
         </Col>
-        <Col span={8}>
+        <Col span={8} xs={24} sm={24} md={8}>
           <div className={styles.textGroup} id="contactUs">
             <div className={styles.title}>
               {intl.formatMessage({ id: 'footer.contact' })}

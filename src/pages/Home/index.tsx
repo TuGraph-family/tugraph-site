@@ -35,7 +35,7 @@ const Home = () => {
               type="real"
               btnText={intl.formatMessage({ id: 'home.btn.desc' })}
               isAnimation={true}
-              icon={<DownOutlined />}
+              affterIcon={<DownOutlined />}
             />
             <MainButton
               type="illusory"

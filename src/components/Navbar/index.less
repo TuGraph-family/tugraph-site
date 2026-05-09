@@ -347,3 +347,35 @@ button {
     color: white;
   }
 }
+
+/* 移动端菜单按钮 */
+.navbar-mobile-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.5rem;
+  font-size: 1.25rem;
+  color: rgb(228 228 231);
+  transition-property: color, background-color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  border-width: 0.5px;
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.25);
+  background-image: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.05),
+    rgba(255, 255, 255, 0.01)
+  );
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+
+  &:hover {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+}

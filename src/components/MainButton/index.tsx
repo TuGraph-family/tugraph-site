@@ -1,6 +1,5 @@
 import {
   Button,
-  Dropdown,
   Form,
   Input,
   Modal,
@@ -12,21 +11,12 @@ import {
 } from 'antd';
 import styles from './index.less';
 import { ReactElement, useMemo, useState } from 'react';
-import {
-  AliyunOutlined,
-  ArrowRightOutlined,
-  GithubOutlined,
-  DownOutlined,
-  VerticalAlignBottomOutlined,
-} from '@ant-design/icons';
-import { getSearch, historyPushLinkAt } from '@/util';
-import { history, useIntl, useLocation } from 'umi';
+import { getSearch } from '@/util';
+import { useIntl, useLocation } from 'umi';
 import { DEFAULT_LOCAL } from '@/constant';
-import { IFormValues } from '@/interface';
 import success from '@/assets/icon/success.svg';
 import { useHome } from '@/hooks/useHome';
 import { useMedia } from 'react-use';
-import moment from 'moment';
 import { motion } from 'framer-motion';
 import cx from 'classnames';
 
@@ -39,7 +29,8 @@ interface IMainButtonProps {
   isAnimation?: boolean;
   isMotion?: boolean;
   onClick?: () => void;
-  icon?: ReactElement;
+  befforeIcon?: ReactElement;
+  affterIcon?: ReactElement;
 }
 
 const MainButton: React.FC<IMainButtonProps> = ({
@@ -47,7 +38,8 @@ const MainButton: React.FC<IMainButtonProps> = ({
   btnText,
   isAnimation = false,
   isMotion = true,
-  icon,
+  befforeIcon,
+  affterIcon,
   ...props
 }) => {
   const intl = useIntl();
@@ -136,6 +128,9 @@ const MainButton: React.FC<IMainButtonProps> = ({
               mass: 0.7,
             }}
             onClick={onBtnClick}
+            onMouseLeave={() => {
+              setVisible(false);
+            }}
             {...props}
           >
             {isAnimation && (
@@ -152,9 +147,13 @@ const MainButton: React.FC<IMainButtonProps> = ({
                 />
               </svg>
             )}
+            {befforeIcon && (
+              <div className={styles.befforeIcon}>{befforeIcon}</div>
+            )}
             {btnText}
-            <div></div>
-            {icon && <div className={styles.arrowIcon}>{icon}</div>}
+            {affterIcon && (
+              <div className={styles.affterIcon}>{affterIcon}</div>
+            )}
             {visible && (
               <motion.div
                 initial={{ opacity: 0, y: -10 }}
@@ -185,7 +184,6 @@ const MainButton: React.FC<IMainButtonProps> = ({
                   </svg>
                 </a>
 
-                {/* 阿里云选项 */}
                 <a
                   href="https://aliyun-computenest.github.io/quickstart-tugraph/"
                   target="_blank"

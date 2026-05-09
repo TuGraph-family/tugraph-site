@@ -2,7 +2,6 @@
  * file: Tugraph Docs
  * author: Allen
  */
-
 import React, { useRef, useEffect, useState, useMemo } from 'react';
 import { setLocale, useLocation } from 'umi';
 import { getSearch, tracertBPos } from '@/util';
@@ -12,8 +11,6 @@ import styles from './index.less';
 const Docs: React.FC = () => {
   const location = useLocation();
   const { search } = location;
-  const currentWidth = window.innerWidth;
-  const currentHeight = window.innerHeight;
 
   useEffect(() => {
     if (location.pathname.split('/')[2] !== iframeUrl?.split('/')[1]) {
@@ -64,12 +61,10 @@ const Docs: React.FC = () => {
         title="Docusaurus Docs"
         style={{
           width: '100%',
-          height:
-            currentWidth > 768
-              ? 'calc(100vh - 84px)'
-              : (currentHeight * 1440) / currentWidth - 84,
+          height: '100vh',
           marginTop: '18px',
           border: 'none',
+          borderRadius: '0 16px 16px 0',
         }}
       />
     </div>

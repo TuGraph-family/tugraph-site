@@ -130,6 +130,7 @@ const HeroCards = () => {
       delay: 0.15,
       floatDuration: 3,
       positionClass: styles.cardPosition0,
+      icon: 'https://mdn.alipayobjects.com/huamei_p63okt/afts/img/nJShRpoerKMAAAAAQBAAAAgAeh8WAQFr/original',
       content: (
         <div className={styles.ul}>
           <div>{intl.formatMessage({ id: 'hero.card.li' })}</div>
@@ -144,6 +145,7 @@ const HeroCards = () => {
       floatDuration: 4,
       floatDelay: 0.5,
       positionClass: styles.cardPosition1,
+      icon: 'https://mdn.alipayobjects.com/huamei_p63okt/afts/img/vNY2QomhzA0AAAAAQDAAAAgAeh8WAQFr/original',
       content: (
         <div className={styles.img}>
           <img src="https://mdn.alipayobjects.com/huamei_p63okt/afts/img/s8LeSou1CWsAAAAAQdAAAAgAeh8WAQFr/fmt.avif" />
@@ -157,6 +159,7 @@ const HeroCards = () => {
       floatDuration: 3.5,
       floatDelay: 1,
       positionClass: styles.cardPosition2,
+      icon: 'https://mdn.alipayobjects.com/huamei_p63okt/afts/img/Z97KQoYzmuIAAAAAQBAAAAgAeh8WAQFr/original',
       content: (
         <div className={styles.ul}>
           <div>{intl.formatMessage({ id: 'hero.card.li' })}</div>
@@ -201,7 +204,7 @@ const HeroCards = () => {
                 <div className={styles.title}>{card.title}</div>
               </div>
               <div className={styles.icon}>
-                <AppstoreOutlined />
+                <img src={card.icon} />
               </div>
             </div>
             <div className={styles.main}>{card.content}</div>

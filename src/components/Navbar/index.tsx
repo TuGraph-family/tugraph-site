@@ -6,7 +6,8 @@ import cx from 'classnames';
 import { useIntl, history } from 'umi';
 import { getSearch, historyPushLinkAt } from '@/util';
 import { DEFAULT_LOCAL } from '@/constant';
-import { GlobalOutlined } from '@ant-design/icons';
+import { GlobalOutlined, MenuOutlined } from '@ant-design/icons';
+import { Drawer, Menu } from 'antd';
 
 const Navbar: React.FC = () => {
   const intl = useIntl();
@@ -14,6 +15,7 @@ const Navbar: React.FC = () => {
   const [activeItem, setActiveItem] = useState('');
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [hoveredDropdown, setHoveredDropdown] = useState('');
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { pathname, search } = useLocation();
   const lang = getSearch(search)?.lang || DEFAULT_LOCAL;
 
@@ -230,6 +232,60 @@ const Navbar: React.FC = () => {
     setHoveredDropdown('');
   };
 
+  const generateMobileMenuItems = () => {
+    const items: any[] = [];
+    navItems
+      .filter((i) => !i.hidden)
+      .forEach((item) => {
+        if (item.hasDropdown) {
+          const dropdownData =
+            item.key === 'community' ? learnDropdown : productsDropdown;
+          const children: any[] = [];
+
+          dropdownData.forEach((group) => {
+            group.items.forEach((link) => {
+              children.push({
+                key: link.label,
+                label: link.external ? (
+                  <a
+                    href={link.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {link.label}
+                  </a>
+                ) : (
+                  <Link to={link.href} onClick={() => setMobileMenuOpen(false)}>
+                    {link.label}
+                  </Link>
+                ),
+              });
+            });
+          });
+
+          items.push({
+            key: item.key,
+            label: item.label,
+            children,
+          });
+        } else {
+          items.push({
+            key: item.key,
+            label: (
+              <Link
+                to={historyPushLinkAt(item.href)}
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                {item.label}
+              </Link>
+            ),
+          });
+        }
+      });
+    return items;
+  };
+
   return (
     <div className="navbar-header">
       <div className="navbar-container">
@@ -244,7 +300,12 @@ const Navbar: React.FC = () => {
           </Link>
 
           {/* Navigation Items */}
-          <div className="navbar-items">
+          <div
+            className="navbar-items"
+            onMouseLeave={() => {
+              setDropdownOpen(false);
+            }}
+          >
             {navItems
               .filter((i) => !i?.hidden)
               .map((item) => (
@@ -445,6 +506,9 @@ const Navbar: React.FC = () => {
                         'navbar-button',
                         activeItem === item.key && 'navbar-button-active',
                       )}
+                      onMouseEnter={() => {
+                        setHoveredDropdown('');
+                      }}
                       style={
                         activeItem === item.key
                           ? {
@@ -489,8 +553,34 @@ const Navbar: React.FC = () => {
             <GlobalOutlined />
             {lang === 'zh-CN' ? '中' : 'EN'}
           </button>
+
+          {/* Mobile Menu Button */}
+          <button
+            type="button"
+            onClick={() => setMobileMenuOpen(true)}
+            className="navbar-mobile-toggle"
+          >
+            <MenuOutlined />
+          </button>
         </nav>
       </div>
+
+      {/* Mobile Drawer */}
+      <Drawer
+        title="Menu"
+        placement="right"
+        onClose={() => setMobileMenuOpen(false)}
+        open={mobileMenuOpen}
+        className="navbar-mobile-drawer"
+        width={280}
+      >
+        <Menu
+          mode="inline"
+          items={generateMobileMenuItems()}
+          defaultOpenKeys={['product', 'community']}
+          style={{ borderRight: 0 }}
+        />
+      </Drawer>
     </div>
   );
 };

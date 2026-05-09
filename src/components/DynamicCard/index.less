@@ -7,6 +7,7 @@
   display: flex;
   justify-content: space-between;
   gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .itemBox {
@@ -56,5 +57,15 @@
     .title {
       color: rgb(96 165 250);
     }
+  }
+
+  @media (max-width: 1024px) {
+    flex: none;
+    width: calc(50% - 0.5rem);
+  }
+
+  @media (max-width: 640px) {
+    flex: none;
+    width: 100%;
   }
 }

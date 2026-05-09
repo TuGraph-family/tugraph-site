@@ -6,10 +6,16 @@
   display: flex;
   gap: 40px;
   justify-content: center;
+  flex-wrap: wrap;
+
+  & > div:first-child {
+    z-index: 10;
+  }
 }
 
 .editionWrapper {
-  width: 578px;
+  width: 570px;
+  height: 100%;
   background: rgba(20, 20, 25, 0.6);
   backdrop-filter: blur(16px);
   border-radius: 12px;
@@ -51,8 +57,18 @@
       left: 6px;
     }
   }
+
+  .recommendationPointWrapper:has(+ .btn) {
+    margin-bottom: 35px;
+  }
 }
 
 .btn {
-  margin-top: 38px;
+  margin-top: auto;
+}
+
+@media (max-width: 600px) {
+  .editionWrapper {
+    width: calc(100vw - 64px);
+  }
 }

@@ -1,16 +1,14 @@
-import { Button } from 'antd';
-import styles from './index.less';
-import JoLPlayer from '@/components/Player';
-import FadeInSection from '@/components/FadeInSection';
 import { IntlShape } from 'react-intl';
 import MainButton from '@/components/MainButton';
 import { getSearch, historyPushLinkAt } from '@/util';
 import { history, useLocation } from 'umi';
-import Title from 'antd/lib/skeleton/Title';
 import { DEFAULT_LOCAL } from '@/constant';
-import { getVideos } from '@/pages/Product/constants/data';
 import ProductBanner from '@/components/ProductBanner';
-import { ArrowRightOutlined, DownOutlined } from '@ant-design/icons';
+import {
+  ArrowRightOutlined,
+  DownOutlined,
+  FileTextOutlined,
+} from '@ant-design/icons';
 
 export interface IBannerProps {
   type: string;
@@ -34,7 +32,7 @@ const Banner = ({ type, intl }: IBannerProps) => {
             type="real"
             isAnimation={true}
             btnText={intl.formatMessage({ id: 'product.db.btn' })}
-            icon={<DownOutlined />}
+            affterIcon={<DownOutlined />}
           />
           <MainButton
             type="illusory"
@@ -46,6 +44,7 @@ const Banner = ({ type, intl }: IBannerProps) => {
                 ),
               );
             }}
+            befforeIcon={<FileTextOutlined />}
           />
         </>
       ),
@@ -59,7 +58,7 @@ const Banner = ({ type, intl }: IBannerProps) => {
             type="real"
             isAnimation={true}
             btnText={intl.formatMessage({ id: 'product.analytics.btn' })}
-            icon={<DownOutlined />}
+            affterIcon={<DownOutlined />}
           />
           <MainButton
             type="illusory"
@@ -67,6 +66,7 @@ const Banner = ({ type, intl }: IBannerProps) => {
             onClick={() => {
               window.open('https://geaflow.apache.org/docs/guide/');
             }}
+            befforeIcon={<FileTextOutlined />}
           />
         </>
       ),
@@ -80,7 +80,7 @@ const Banner = ({ type, intl }: IBannerProps) => {
           type="illusory"
           isAnimation={true}
           btnText={intl.formatMessage({ id: 'product.enterprise.btn' })}
-          icon={<ArrowRightOutlined />}
+          affterIcon={<ArrowRightOutlined />}
         />
       ),
     },
@@ -94,7 +94,7 @@ const Banner = ({ type, intl }: IBannerProps) => {
             type="illusory"
             isAnimation={true}
             btnText={intl.formatMessage({ id: 'product.cloud.btn' })}
-            icon={<ArrowRightOutlined />}
+            affterIcon={<ArrowRightOutlined />}
           />
           <MainButton
             type="illusory"

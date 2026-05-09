@@ -1,14 +1,9 @@
 /* HeroCard 组件样式 */
 
 .heroCardsContainer {
-  display: none;
   position: relative;
   width: 480px;
   height: 500px;
-
-  @media (min-width: 1024px) {
-    display: block;
-  }
 }
 
 .heroCardWrapper {
@@ -50,6 +45,11 @@
 
   .icon {
     color: #fff;
+
+    img {
+      width: 16px;
+      height: 16px;
+    }
   }
 }
 
@@ -86,39 +86,14 @@
       }
     }
   }
-
-  // ul>li {
-  //     color: #d4d4d8;
-  //     font-size: 14px;
-  //     margin-bottom: 10px;
-
-  //     &::marker {
-  //         color: red;
-  //         font-size: 15px;
-  //     }
-  // }
 }
 
-/* 动画效果 */
-@keyframes float {
-  // 0%,
-  // 100% {
-  //     transform: translateY(0px);
-  // }
-
-  // 50% {
-  //     transform: translateY(-12px);
-  // }
-}
-
-/* 响应式调整 */
 @media (max-width: 1023px) {
-  .heroCardsContainer {
+  .heroCardWrapper {
     display: none;
   }
 }
 
-/* 不同卡片的定位样式 */
 .cardPosition0 {
   bottom: -10px;
   right: 100px;

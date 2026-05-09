@@ -10,19 +10,19 @@ interface Scenario {
 
 const iconPaths: Record<string, string> = {
   'Government Affairs':
-    'https://mdn.alipayobjects.com/huamei_p63okt/afts/img/30dXR6tuNV0AAAAAIPAAAAgAeh8WAQFr/original',
+    'https://mdn.alipayobjects.com/huamei_p63okt/afts/img/XWV-Qq_TyB0AAAAAESAAAAgAeh8WAQFr/original',
   'Industrial Field':
-    'https://mdn.alipayobjects.com/huamei_p63okt/afts/img/9SjgRqykCtMAAAAAQBAAAAgAeh8WAQFr/original',
+    'https://mdn.alipayobjects.com/huamei_p63okt/afts/img/uGbxQ7qxDZwAAAAAE3AAAAgAeh8WAQFr/original',
   'General Field':
-    'https://mdn.alipayobjects.com/huamei_p63okt/afts/img/WkBmQbwWo5cAAAAAK9AAAAgAeh8WAQFr/original',
+    'https://mdn.alipayobjects.com/huamei_p63okt/afts/img/Q5inRo2pRNkAAAAAGbAAAAgAeh8WAQFr/original',
   'Financial Field':
-    'https://mdn.alipayobjects.com/huamei_p63okt/afts/img/nJ34TZWI2OIAAAAAMLAAAAgAeh8WAQFr/original',
+    'https://mdn.alipayobjects.com/huamei_p63okt/afts/img/UnAwR4gvmLoAAAAAFLAAAAgAeh8WAQFr/original',
   'AI Field':
-    'https://mdn.alipayobjects.com/huamei_p63okt/afts/img/aCBSS685K2QAAAAAJlAAAAgAeh8WAQFr/original',
+    'https://mdn.alipayobjects.com/huamei_p63okt/afts/img/HfXoT5BzJYoAAAAALBAAAAgAeh8WAQFr/original',
   'Telecom Field':
-    'https://mdn.alipayobjects.com/huamei_p63okt/afts/img/XKuZS41SCIcAAAAAKUAAAAgAeh8WAQFr/original',
+    'https://mdn.alipayobjects.com/huamei_p63okt/afts/img/69UFTKKX0nYAAAAAM_AAAAgAeh8WAQFr/original',
   'Internet Field':
-    'https://mdn.alipayobjects.com/huamei_p63okt/afts/img/q9aRToX16nwAAAAAQSAAAAgAeh8WAQFr/original',
+    'https://mdn.alipayobjects.com/huamei_p63okt/afts/img/peHpSJfkMHsAAAAAQCAAAAgAeh8WAQFr/original',
 };
 
 const scenarios: Scenario[] = [
