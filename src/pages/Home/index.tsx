@@ -1,19 +1,19 @@
-import { NewLayout } from '@/components/NewLayout';
 import AppScene from '@/pages/Home/components/AppScene';
-import Banner from '@/pages/Home/components/Banner';
-import UserBox from '@/pages/Home/components/UserBox';
 import Version from '@/pages/Home/components/Version';
-import WhyChoose from '@/pages/Home/components/WhyChoose';
 import { useIntl } from 'umi';
-import styles from './index.less';
-import { useBlog } from '@/hooks/useBlog';
 import { useEffect } from 'react';
 import { tracertBPos } from '@/util';
 import { useAdvert } from '@/hooks/useAdvert';
+import DynamicCard from '@/components/DynamicCard';
+import { getReason } from '@/pages/Home/constants/data';
+import ProductBanner from '@/components/ProductBanner';
+import Tag from '@/components/Tag';
+import MainButton from '@/components/MainButton';
+import { DownOutlined } from '@ant-design/icons';
 
 const Home = () => {
   const intl = useIntl();
-  const { getList, list } = useBlog();
+
   // 广告位
   const { getLastOnline, lastAdvertise } = useAdvert();
 
@@ -22,37 +22,38 @@ const Home = () => {
   }, []);
 
   useEffect(() => {
-    getList({
-      current: 1,
-      size: 3,
-      state: 'PUBLISHED',
-      sortMap: {
-        publish_time: false,
-      },
-    });
     tracertBPos('b106229');
   }, []);
 
   return (
-    <NewLayout
-      content={
-        <>
-          <div
-            className={styles.homeBg}
-            style={{
-              top: lastAdvertise?.id ? 50 : 0,
-            }}
-          >
-            <div className={styles.centerBg} />
-          </div>
-          <Banner intl={intl} blogList={list} />
-          <WhyChoose intl={intl} />
-          <AppScene intl={intl} />
-          <Version intl={intl} />
-          <UserBox intl={intl} />
-        </>
-      }
-    />
+    <>
+      <ProductBanner
+        tag={<Tag text={intl.formatMessage({ id: 'header.tag' })} />}
+        btnContent={
+          <>
+            <MainButton
+              type="real"
+              btnText={intl.formatMessage({ id: 'home.btn.desc' })}
+              isAnimation={true}
+              affterIcon={<DownOutlined />}
+            />
+            <MainButton
+              type="illusory"
+              btnText={intl.formatMessage({ id: 'home.btn.tryOut' })}
+            />
+          </>
+        }
+        title={intl.formatMessage({ id: 'home.banner.slogan' })}
+        description={intl.formatMessage({ id: 'home.banner.description' })}
+      />
+      <DynamicCard
+        title={intl.formatMessage({ id: 'home.choseReason' })}
+        list={getReason(intl)}
+        viewBox="0 0 32 32"
+      />
+      <AppScene intl={intl} />
+      <Version intl={intl} />
+    </>
   );
 };
 

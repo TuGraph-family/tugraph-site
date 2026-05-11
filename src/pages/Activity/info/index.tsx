@@ -23,29 +23,17 @@ const ActivityInfo = () => {
   }, [id]);
 
   return (
-    <NewLayout
-      content={
-        <>
-          <Banner detail={detail} />
-          <div
-            style={{
-              background: '#fff',
-              margin: '0 -120px',
-              overflow: 'hidden',
-            }}
-          >
-            {detail?.frontResourceShow ? (
-              <DataReview list={detail?.activityResources} />
-            ) : null}
-            <Introduction markdown={detail?.introduction} isOld={isOld} />
-            {detail?.frontProcessShow ? (
-              <Agenda list={detail?.processes} />
-            ) : null}
-            {detail?.frontGuestShow ? <Host list={detail?.guests} /> : null}
-          </div>
-        </>
-      }
-    />
+    <>
+      <Banner detail={detail} />
+      <div>
+        {detail?.frontResourceShow ? (
+          <DataReview list={detail?.activityResources} />
+        ) : null}
+        <Introduction markdown={detail?.introduction} isOld={isOld} />
+        {detail?.frontProcessShow ? <Agenda list={detail?.processes} /> : null}
+        {detail?.frontGuestShow ? <Host list={detail?.guests} /> : null}
+      </div>
+    </>
   );
 };
 

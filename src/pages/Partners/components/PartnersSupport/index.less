@@ -1,38 +1,42 @@
 .partners-support {
-  margin: 0 -120px;
-  padding: 211px 0 100px;
-  background-image: url('https://mdn.alipayobjects.com/huamei_p63okt/afts/img/DdvESa5TfhQAAAAAAAAAAAAADh8WAQFr/original');
-  background-size: cover;
-
-  &-content {
-    max-width: 1200px;
-    margin: auto;
-  }
+  padding: 96px 0;
 }
 
-.supportItem {
-  padding: 14px 24px;
-  background: #ffffff85;
-  border-radius: 12px;
-  box-shadow: 0px 9px 28px 8px #84879b0d, 0px 6px 16px 0px #84879b14,
-    0px 3px 6px -4px #84879b1f;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 10px;
+.benefitCard {
+  padding: 24px;
+  background: rgba(20, 20, 25, 0.6);
+  backdrop-filter: blur(16px);
+  border-radius: 16px;
+  border: 1px solid #27272a80;
+  cursor: pointer;
 
-  img {
-    width: 56px;
-    height: 56px;
+  .title {
+    font-size: 18px;
+    color: #fff;
+    font-weight: 500;
+    display: flex;
+    gap: 12px;
+    margin-bottom: 16px;
+
+    span {
+      width: 32px;
+      height: 32px;
+      background-color: rgba(59, 130, 246, 0.1);
+      color: rgb(96, 165, 250);
+      border-radius: 12px;
+      text-align: center;
+      line-height: 32px;
+    }
   }
 
-  .support {
-    flex: 1;
-    font-family: AlibabaPuHuiTiR;
-    font-size: 20px;
-    color: #292d3b;
-    line-height: 28px;
-    letter-spacing: -0.5;
-    opacity: 0.96;
+  .desc {
+    color: rgb(161, 161, 170);
+    font-size: 14px;
+  }
+
+  &:hover {
+    .title > div {
+      color: rgb(96, 165, 250);
+    }
   }
 }

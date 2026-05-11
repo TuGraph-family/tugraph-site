@@ -20,6 +20,11 @@ const DownLoadList = ({ intl }: { intl: IntlShape }) => {
                       <div className={styles.typeItemTitle}>
                         {typeItem.name}
                       </div>
+                      {!typeItem?.assets && (
+                        <div className={styles.fileDesc}>
+                          {item.versionDesc}
+                        </div>
+                      )}
 
                       {typeItem?.assets ? (
                         <DownAndCopyItem
@@ -35,7 +40,9 @@ const DownLoadList = ({ intl }: { intl: IntlShape }) => {
                         />
                       )}
                     </div>
-                    <div className={styles.fileDesc}>{item.versionDesc}</div>
+                    {typeItem?.assets && (
+                      <div className={styles.fileDesc}>{item.versionDesc}</div>
+                    )}
                   </div>
                 );
               })}

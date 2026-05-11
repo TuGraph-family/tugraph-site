@@ -45,12 +45,22 @@ const TypeBlock: React.FC<ITypeBlockProps> = ({
     <>
       {data?.length ? (
         <div className={styles['type-block']} key={keywords}>
-          <SubTitle
-            title={classification || ''}
-            style={{
-              margin: '64px 0 40px',
-            }}
-          />
+          <div className={styles.heard}>
+            <div className={styles.type}>{classification || ''}</div>
+            <div
+              className={styles.more}
+              onClick={() =>
+                history.push(
+                  historyPushLinkAt(
+                    `/video/list?activeKey=${activeKey}&type=${classification}`,
+                  ),
+                )
+              }
+            >
+              查看更多
+            </div>
+          </div>
+
           <div className={styles['type-block-content']}>
             {data?.map((cardInfo: any) => {
               return activeKey === 'collection' ? (
@@ -60,21 +70,8 @@ const TypeBlock: React.FC<ITypeBlockProps> = ({
               );
             })}
           </div>
-          <div
-            className={styles['type-block-more']}
-            onClick={() =>
-              history.push(
-                historyPushLinkAt(
-                  `/video/list?activeKey=${activeKey}&type=${classification}`,
-                ),
-              )
-            }
-          >
-            更多视频 <RightOutlined />
-          </div>
         </div>
       ) : null}
-      {}
     </>
   );
 };

@@ -1,132 +1,238 @@
-.appWrapper {
-  margin: 0 -120px;
-  background-color: #fff;
-  text-align: center;
-  padding-bottom: 97px;
-}
+/* MarqueeScenarios 组件样式 */
 
-.appContent {
-  margin: auto;
-  width: 823px;
-  height: 623px;
+.marqueeSection {
   position: relative;
-  cursor: pointer !important;
-
-  .fieldCard {
-    position: absolute;
-    background-image: linear-gradient(143deg, #4a59aa10 14%, #23336e10 89%);
-    border-radius: 14.4px;
-
-    .sceneIcon {
-      width: 100%;
-      height: 100%;
-    }
-
-    .tag {
-      white-space: nowrap;
-      width: fit-content;
-      height: fit-content;
-      padding: 5px 11px;
-      background: #2f365315;
-      border-radius: 7.2px;
-      font-size: 16px;
-      color: #8280a9;
-      text-align: center;
-      font-weight: 500;
-      opacity: 0.7;
-      position: absolute;
-      line-height: 34px;
-      bottom: 0;
-      left: 50%;
-      transform: translate(-50%, calc(100% + 15px));
-    }
-  }
-
-  .placeholder1 {
-    width: 68px;
-    height: 68px;
-    background-image: linear-gradient(143deg, #4a59aa 14%, #23336e 89%);
-    border: 3.6px solid;
-    border-image: linear-gradient(140deg, #9eacf0 4%, #29315e 97%);
-    border-image-slice: 1;
-    border-radius: 14.39999961853027px;
-    opacity: 0.1;
-    filter: blur(3px);
-    position: absolute;
-    top: 42px;
-    left: 202px;
-  }
-
-  .placeholder2 {
-    width: 50px;
-    height: 50px;
-    background-image: linear-gradient(143deg, #4a59aa 14%, #23336e 89%);
-    border: 3.6px solid;
-    border-image: linear-gradient(140deg, #9eacf0 4%, #29315e 97%);
-    border-image-slice: 1;
-    border-radius: 12px;
-    opacity: 0.1;
-    filter: blur(3px);
-    position: absolute;
-    top: 410px;
-    left: 110px;
-  }
-
-  .placeholder3 {
-    width: 50px;
-    height: 50px;
-    background-image: linear-gradient(162deg, #394771 12%, #20294a 88%);
-    border: 3.6px solid;
-    border-image: linear-gradient(140deg, #c0c4d6 4%, #615b93 97%);
-    border-image-slice: 1;
-    border-radius: 8px;
-    opacity: 0.1;
-    filter: blur(17px);
-    position: absolute;
-    top: 284px;
-    right: 170px;
-  }
-}
-
-.popoverInfo {
-  backdrop-filter: blur(30px);
-  border-radius: 12px;
-  width: 400px;
   overflow: hidden;
-  background: #ffffff88;
-  border: 3px solid #f0f0f0;
-  border-radius: 12px;
-  padding: 0;
+  background: transparent;
+  padding: 4rem 0;
 
-  :global {
-    .ant-popover-inner {
-      background-color: transparent;
-    }
+  @media (min-width: 640px) {
+    padding: 5rem 0;
+  }
 
-    .ant-popover-inner-content {
-      padding: 24px;
-    }
+  @media (min-width: 1024px) {
+    padding: 6rem 0;
   }
 }
 
-.popoverContent {
-  .field {
-    font-size: 16px;
-    color: #292d3b;
-    line-height: 24px;
-    font-weight: 500;
+.marqueeContainer {
+  position: relative;
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+.titleWrapper {
+  margin-bottom: 3rem;
+  text-align: center;
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.title {
+  font-size: 1.875rem;
+  line-height: 1.1;
+  color: white;
+
+  @media (min-width: 640px) {
+    font-size: 2.25rem;
   }
 
-  .scene {
-    font-size: 13px;
-    color: #545762;
-    line-height: 22px;
-    margin: 4px 0 16px;
+  @media (min-width: 768px) {
+    font-size: 3rem;
   }
 
-  .illustrate {
-    font-size: 13px;
-    color: #768191;
-    line-height: 22px;
+  @media (min-width: 1024px) {
+    font-size: 4rem;
+  }
+}
+
+.cardsWrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.cardsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.marqueeRow {
+  overflow: hidden;
+}
+
+.marqueeTrack {
+  display: flex;
+  width: max-content;
+  gap: 0;
+  flex-wrap: nowrap;
+  will-change: transform;
+
+  &--left {
+    animation: marqueeLeft 28s linear infinite;
+  }
+
+  &--right {
+    animation: marqueeRight 28s linear infinite;
+  }
+
+  &:hover {
+    animation-play-state: paused;
+  }
+}
+
+.marqueeGroup {
+  display: flex;
+  flex-shrink: 0;
+  gap: 1.5rem;
+
+  &--duplicate {
+    margin-left: 1.5rem;
+  }
+}
+
+/* 场景卡片 */
+.scenarioCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  border-radius: 1rem;
+  border: 1px solid rgba(39, 39, 42, 0.5);
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+  width: min(260px, calc(260 * 100vw / 640));
+  min-width: min(260px, calc(260 * 100vw / 640));
+  max-width: min(260px, calc(260 * 100vw / 640));
+  height: min(120px, calc(120 * 100vw / 640));
+
+  &:hover {
+    border-color: rgba(63, 63, 70, 0.5);
+  }
+
+  &:hover .cardImage {
+    transform: scale(1.1);
+  }
+}
+
+.cardImage {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  transition: transform 0.5s ease;
+}
+
+.cardOverlay {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.6) 0%,
+    rgba(0, 0, 0, 0.2) 100%
+  );
+}
+
+.cardContent {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+  transform: translateX(-2px);
+}
+
+.cardIcon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.cardText {
+  margin-top: auto;
+  min-height: 0;
+  font-size: min(18px, calc(18 * 100vw / 640));
+  font-weight: 500;
+  color: white;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  word-break: break-word;
+  transform: translateY(6px);
+}
+
+/* 渐变遮罩 */
+.gradientMaskLeft {
+  position: absolute;
+  inset-y: 0;
+  left: 0;
+  width: 5rem;
+  pointer-events: none;
+  background: linear-gradient(
+    to right,
+    rgba(6, 8, 14, 0.95),
+    rgba(6, 8, 14, 0)
+  );
+
+  @media (min-width: 640px) {
+    width: 7rem;
+  }
+}
+
+.gradientMaskRight {
+  position: absolute;
+  inset-y: 0;
+  right: 0;
+  width: 5rem;
+  pointer-events: none;
+  background: linear-gradient(to left, rgba(6, 8, 14, 0.95), rgba(6, 8, 14, 0));
+
+  @media (min-width: 640px) {
+    width: 7rem;
+  }
+}
+
+/* 动画关键帧 */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes marqueeLeft {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(calc(-50% - 12px));
+  }
+}
+
+@keyframes marqueeRight {
+  from {
+    transform: translateX(calc(-50% - 12px));
+  }
+
+  to {
+    transform: translateX(0);
   }
 }

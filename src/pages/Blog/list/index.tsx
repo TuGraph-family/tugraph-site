@@ -61,54 +61,45 @@ const BlogList = () => {
   }, [current, pageSize, type, tag]);
 
   return (
-    <NewLayout
-      headerBgStyles={{
-        backgroundImage:
-          'linear-gradient(rgb(225, 236, 255) 0%, rgb(227, 236, 255) 32%, #FFF 100%)',
-      }}
-      content={
+    <>
+      <Banner
+        type={type}
+        onChangeType={onChangeType}
+        tag={tag}
+        onChangeTag={onChangeTag}
+        categorylist={categorylist}
+      />
+      {list?.length ? (
         <>
-          <Banner
-            type={type}
-            onChangeType={onChangeType}
-            tag={tag}
-            onChangeTag={onChangeTag}
-            categorylist={categorylist}
-          />
-          {list?.length ? (
-            <>
-              {list?.map((item, idx) => (
-                <BlogItem
-                  detail={item}
-                  key={item?.id}
-                  isVisibleBoreder={list?.length - 1 === idx}
-                />
-              ))}
-            </>
-          ) : (
-            <SiteEmpty text="暂无博客" />
-          )}
-
-          <div
-            style={{
-              display: 'flex',
-              justifyContent: 'flex-end',
-              paddingBottom: 40,
-            }}
-          >
-            {total > 10 ? (
-              <Pagination
-                current={current}
-                pageSize={pageSize}
-                total={total}
-                showSizeChanger={false}
-                onChange={onChangePage}
-              />
-            ) : null}
-          </div>
+          {list?.map((item, idx) => (
+            <BlogItem
+              detail={item}
+              key={item?.id}
+              isVisibleBoreder={list?.length - 1 === idx}
+            />
+          ))}
         </>
-      }
-    />
+      ) : (
+        <SiteEmpty text="暂无博客" />
+      )}
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'flex-end',
+          paddingBottom: 40,
+        }}
+      >
+        {total > 10 ? (
+          <Pagination
+            current={current}
+            pageSize={pageSize}
+            total={total}
+            showSizeChanger={false}
+            onChange={onChangePage}
+          />
+        ) : null}
+      </div>
+    </>
   );
 };
 

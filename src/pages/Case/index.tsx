@@ -1,6 +1,7 @@
 import { NewLayout } from '@/components/NewLayout';
 import Banner from '@/pages/Case/components/Banner';
 import CaseList from '@/pages/Case/components/CaseList';
+import AppScene from '@/pages/Home/components/AppScene';
 import { tracertBPos } from '@/util';
 import { useEffect } from 'react';
 import { useIntl } from 'umi';
@@ -12,14 +13,11 @@ const Case = () => {
   }, []);
   const intl = useIntl();
   return (
-    <NewLayout
-      content={
-        <>
-          <Banner intl={intl} />
-          <CaseList intl={intl} />
-        </>
-      }
-    />
+    <>
+      <Banner intl={intl} />
+      <AppScene intl={intl} />
+      <CaseList intl={intl} />
+    </>
   );
 };
 

@@ -1,0 +1,28 @@
+@import '../global.less';
+
+.main {
+  position: relative;
+  min-height: 100vh;
+  background-color: #06080e;
+}
+
+.mainWrapper {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  position: relative;
+  margin: 2.5rem 6rem 0;
+  padding: 88px 32px 0;
+}
+
+@media screen and (max-width: 768px) {
+  .mainWrapper {
+    padding: 88px 16px 0;
+    margin: 1rem;
+  }
+
+  .mainWrapper > .content > .headerBg {
+    width: 1440px;
+  }
+}

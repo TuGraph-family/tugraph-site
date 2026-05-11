@@ -1,0 +1,110 @@
+/* HeroCard 组件样式 */
+
+.heroCardsContainer {
+  position: relative;
+  width: 480px;
+  height: 500px;
+}
+
+.heroCardWrapper {
+  position: absolute;
+}
+
+.heroCard {
+  position: relative;
+  border-radius: 1rem;
+  border: 1px solid rgba(39, 39, 42, 0.5);
+  overflow: hidden;
+  background: rgba(20, 20, 25, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  padding: 1rem;
+}
+
+.head {
+  padding-bottom: 8px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid rgba(63, 63, 70, 0.5);
+  display: flex;
+  justify-content: space-between;
+
+  .title {
+    display: flex;
+    gap: 8px;
+    color: #fff;
+
+    .tag {
+      background: rgba(63, 63, 70, 0.5);
+      border-radius: 4px;
+      font-size: 12px;
+      text-align: center;
+      padding: 2px 6px;
+      color: rgb(161, 161, 170);
+    }
+  }
+
+  .icon {
+    color: #fff;
+
+    img {
+      width: 16px;
+      height: 16px;
+    }
+  }
+}
+
+.main {
+  .img {
+    border: 1px solid rgb(38, 38, 38);
+    border-radius: 16px;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .ul {
+    color: #d4d4d8;
+
+    div {
+      padding-left: 20px;
+      position: relative;
+      display: flex;
+      align-items: center;
+
+      margin-bottom: 12px;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        width: 8px;
+        height: 8px;
+        background-color: rgb(53, 169, 245);
+        border-radius: 50%;
+      }
+    }
+  }
+}
+
+@media (max-width: 1023px) {
+  .heroCardWrapper {
+    display: none;
+  }
+}
+
+.cardPosition0 {
+  bottom: -10px;
+  right: 100px;
+}
+
+.cardPosition1 {
+  top: 140px;
+  right: 200px;
+}
+
+.cardPosition2 {
+  top: -25px;
+  right: 100px;
+}

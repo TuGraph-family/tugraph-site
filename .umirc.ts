@@ -11,78 +11,84 @@ export default defineConfig({
   routes: [
     {
       path: '/',
-      component: '@/pages/Home',
-    },
-    {
-      path: '/product',
-      component: '@/pages/Product',
-      title: 'product.title',
-    },
-    {
-      path: '/product/*',
-      component: '@/pages/Product',
-      title: 'product.title',
-    },
-    {
-      path: '/case',
-      component: '@/pages/Case',
-      title: 'case.title',
-    },
-    {
-      path: '/partners',
-      component: '@/pages/Partners',
-    },
-    {
-      path: '/docs',
-      component: '@/pages/Docs',
-      title: 'docs.title',
-    },
-    {
-      path: '/docs/*',
-      component: '@/pages/Docs',
-      title: 'docs.title',
-    },
-    {
-      path: '/download',
-      component: '@/pages/Download',
-      title: 'download.title',
-    },
-    {
-      path: '/blog/list',
-      component: '@/pages/Blog/list',
-      title: 'blog.title',
-    },
-    {
-      path: '/blog/info/*',
-      component: '@/pages/Blog/info',
-    },
-    {
-      path: '/blog/info',
-      component: '@/pages/Blog/info',
-    },
-    {
-      path: '/activity/list',
-      component: '@/pages/Activity/list',
-    },
-    {
-      path: '/activity/info',
-      component: '@/pages/Activity/info',
-    },
-    {
-      path: '/activity/info/*',
-      component: '@/pages/Activity/info',
-    },
-    {
-      path: '/video/home',
-      component: '@/pages/Video/home',
-    },
-    {
-      path: '/video/list',
-      component: '@/pages/Video/list',
-    },
-    {
-      path: '/video/info/*',
-      component: '@/pages/Video/info',
+      component: '@/layouts/index',
+      routes: [
+        {
+          path: '/',
+          component: '@/pages/Home',
+        },
+        {
+          path: '/product',
+          component: '@/pages/Product',
+          title: 'product.title',
+        },
+        {
+          path: '/product/*',
+          component: '@/pages/Product',
+          title: 'product.title',
+        },
+        {
+          path: '/case',
+          component: '@/pages/Case',
+          title: 'case.title',
+        },
+        {
+          path: '/partners',
+          component: '@/pages/Partners',
+        },
+        {
+          path: '/docs',
+          component: '@/pages/Docs',
+          title: 'docs.title',
+        },
+        {
+          path: '/docs/*',
+          component: '@/pages/Docs',
+          title: 'docs.title',
+        },
+        {
+          path: '/download',
+          component: '@/pages/Download',
+          title: 'download.title',
+        },
+        {
+          path: '/blog/list',
+          component: '@/pages/Blog/list',
+          title: 'blog.title',
+        },
+        {
+          path: '/blog/info/*',
+          component: '@/pages/Blog/info',
+        },
+        {
+          path: '/blog/info',
+          component: '@/pages/Blog/info',
+        },
+        {
+          path: '/activity/list',
+          component: '@/pages/Activity/list',
+        },
+        {
+          path: '/activity/info',
+          component: '@/pages/Activity/info',
+        },
+        {
+          path: '/activity/info/*',
+          component: '@/pages/Activity/info',
+        },
+        {
+          path: '/video/home',
+          component: '@/pages/Video/home',
+        },
+        {
+          path: '/video/list',
+          component: '@/pages/Video/list',
+        },
+        {
+          path: '/video/info/*',
+          component: '@/pages/Video/info',
+        },
+      ],
     },
   ],
   scripts: [
@@ -97,6 +103,7 @@ export default defineConfig({
       src: 'https://www.googletagmanager.com/gtag/js?id=AW-11092859162',
       async: true,
     },
+    `window.TUGRAPH_UNICORN_FOOTER_PROJECT = "2vXUY5TYl56AhqFP953l";`,
     `window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
@@ -178,4 +185,7 @@ export default defineConfig({
         'width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=0',
     },
   ],
+  antd: {
+    dark: true,
+  },
 });

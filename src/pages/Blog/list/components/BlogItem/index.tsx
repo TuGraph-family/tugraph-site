@@ -23,7 +23,6 @@ const BlogItem = ({
       <div className={styles.blogItemContent}>
         <div className={styles.blogItemText}>
           <div className={styles.blogItemTitle}>{detail?.title}</div>
-          <div className={styles.blogItemDesc}>{detail?.digest}</div>
         </div>
 
         <FooterInfo

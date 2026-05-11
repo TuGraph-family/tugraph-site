@@ -1,0 +1,44 @@
+.ecoWrapper {
+  display: flex;
+  gap: 4rem;
+  margin: 96px 0;
+  flex-wrap: wrap;
+
+  & > div {
+    width: 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @media screen and (max-width: 768px) {
+      width: 100%;
+      flex: none;
+    }
+  }
+
+  .title {
+    font-size: 4rem;
+    color: #fff;
+  }
+
+  .desc {
+    color: rgb(161, 161, 170);
+    font-size: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .Box {
+    background-color: rgba(20, 20, 25, 0.6);
+    backdrop-filter: blur(16px);
+    border: 1px solid #27272a80;
+    border-radius: 1rem;
+    padding: 1px;
+    overflow: hidden;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}

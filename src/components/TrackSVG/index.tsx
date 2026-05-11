@@ -1,0 +1,139 @@
+import React from 'react';
+import styles from './index.less';
+
+const TrackSVG = () => {
+  return (
+    <svg width="520" height="200" viewBox="0 0 520 200" overflow="visible">
+      <g className={styles.mianBox}>
+        <g className={styles.box}>
+          <rect
+            className={styles.path}
+            x="60"
+            y="-230"
+            width="400"
+            height="160"
+            rx="80"
+            ry="80"
+            pathLength="100"
+          />
+          <rect
+            className={styles.star}
+            x="60"
+            y="-230"
+            width="400"
+            height="160"
+            rx="80"
+            ry="80"
+            pathLength="100"
+          />
+          <rect
+            className={styles.star2}
+            x="60"
+            y="-230"
+            width="400"
+            height="160"
+            rx="80"
+            ry="80"
+            pathLength="100"
+          />
+          <rect
+            className={styles.star3}
+            x="60"
+            y="-230"
+            width="400"
+            height="160"
+            rx="80"
+            ry="80"
+            pathLength="100"
+          />
+        </g>
+        <g className={styles.box}>
+          <rect
+            className={styles.path}
+            x="-140"
+            y="30"
+            width="800"
+            height="200"
+            rx="100"
+            ry="100"
+            pathLength="100"
+          />
+          <rect
+            className={styles.star}
+            x="-140"
+            y="30"
+            width="800"
+            height="200"
+            rx="100"
+            ry="100"
+            pathLength="100"
+          />
+          <rect
+            className={styles.star2}
+            x="-140"
+            y="30"
+            width="800"
+            height="200"
+            rx="100"
+            ry="100"
+            pathLength="100"
+          />
+          <rect
+            className={styles.star3}
+            x="-140"
+            y="30"
+            width="800"
+            height="200"
+            rx="100"
+            ry="100"
+            pathLength="100"
+          />
+        </g>
+        <g className={styles.box}>
+          <rect
+            className={styles.path}
+            x="60"
+            y="330"
+            width="400"
+            height="160"
+            rx="80"
+            ry="80"
+            pathLength="100"
+          />
+          <rect
+            className={styles.star}
+            x="60"
+            y="330"
+            width="400"
+            height="160"
+            rx="80"
+            ry="80"
+            pathLength="100"
+          />
+          <rect
+            className={styles.star2}
+            x="60"
+            y="330"
+            width="400"
+            height="160"
+            rx="80"
+            ry="80"
+            pathLength="100"
+          />
+          <rect
+            className={styles.star3}
+            x="60"
+            y="330"
+            width="400"
+            height="160"
+            rx="80"
+            ry="80"
+            pathLength="100"
+          />
+        </g>
+      </g>
+    </svg>
+  );
+};
+
+export default TrackSVG;

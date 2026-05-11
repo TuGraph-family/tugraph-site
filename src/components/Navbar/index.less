@@ -1,0 +1,381 @@
+/* Navbar 组件样式 */
+
+button {
+  -webkit-appearance: button;
+  background-color: transparent;
+  background-image: none;
+  border-width: 0;
+}
+
+/* 主容器 */
+.navbar-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  padding-top: 1.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  @media (min-width: 640px) {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  @media (min-width: 1024px) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.navbar-container {
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.navbar-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 4rem;
+}
+
+/* Logo */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.navbar-logo-image {
+  height: 2rem;
+  width: auto;
+}
+
+/* 导航项容器 */
+.navbar-items {
+  display: none;
+  align-items: center;
+  gap: 0.75rem;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+  border-radius: 9999px;
+  outline: none;
+  border-width: 0.5px;
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.25);
+  background-image: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.05),
+    rgba(255, 255, 255, 0.01)
+  );
+
+  @media (min-width: 768px) {
+    display: flex;
+  }
+}
+
+/* 导航项 */
+.navbar-item {
+  position: relative;
+}
+
+/* 导航按钮 */
+.navbar-button {
+  position: relative;
+  cursor: pointer;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 600;
+  padding: 0.5rem 1.5rem;
+  border-radius: 9999px;
+  transition-property: color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: rgb(228 228 231);
+
+  &:hover {
+    color: #3b82f6;
+  }
+}
+
+.navbar-button-active {
+  color: #3b82f6;
+}
+
+.navbar-button-active-bg {
+  background-image: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.9) 0%,
+    rgba(255, 255, 255, 0.4) 100%
+  );
+}
+
+/* 下拉箭头 */
+.navbar-dropdown-arrow {
+  width: 0.75rem;
+  height: 0.75rem;
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+/* 激活指示灯 */
+.navbar-lamp {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  background-color: rgba(59, 130, 246, 0.05);
+  border-radius: 9999px;
+  z-index: -10;
+}
+
+.navbar-lamp-bar {
+  position: absolute;
+  top: -0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1.5rem;
+  height: 0.125rem;
+  background-color: #35a9f5;
+  border-radius: 0.125rem 0.125rem 0 0;
+}
+
+.navbar-lamp-glow-1 {
+  position: absolute;
+  width: 3rem;
+  height: 1.5rem;
+  background-color: rgba(59, 130, 246, 0.2);
+  border-radius: 9999px;
+  filter: blur(12px);
+  top: -0.5rem;
+  left: -0.5rem;
+}
+
+.navbar-lamp-glow-2 {
+  position: absolute;
+  width: 2rem;
+  height: 1.5rem;
+  background-color: rgba(59, 130, 246, 0.2);
+  border-radius: 9999px;
+  filter: blur(12px);
+  top: -0.25rem;
+}
+
+.navbar-lamp-glow-3 {
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  background-color: rgba(59, 130, 246, 0.2);
+  border-radius: 9999px;
+  filter: blur(4px);
+  top: 0;
+  left: 0.5rem;
+}
+
+/* 下拉菜单 */
+.navbar-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 0.5rem;
+  width: 20rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(63, 63, 70, 0.5);
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  background: rgba(25, 25, 30, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.navbar-dropdown-wide {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 0.5rem;
+  width: 760px;
+  border-radius: 1rem;
+  border: 1px solid rgba(63, 63, 70, 0.5);
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  background: rgba(25, 25, 30, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+/* 下拉菜单分组 */
+.navbar-dropdown-group {
+  /* 分组容器 */
+}
+
+.navbar-dropdown-group-header {
+  padding: 0.5rem 1rem;
+  background-color: rgba(39, 39, 42, 0.5);
+}
+
+.navbar-dropdown-group-title {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 500;
+  color: rgb(113 113 122);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.navbar-dropdown-group-content {
+  padding: 0.5rem;
+}
+
+/* 下拉菜单项 */
+.navbar-dropdown-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  border-radius: 0.75rem;
+  transition-property: color, background-color, border-color,
+    text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+}
+
+.navbar-dropdown-item-icon {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition-property: color, background-color, border-color,
+    text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  background-color: rgba(59, 130, 246, 0.1);
+
+  .navbar-dropdown-item:hover & {
+    background-color: rgba(59, 130, 246, 0.2);
+  }
+}
+
+.navbar-dropdown-item-icon-svg {
+  width: 1rem;
+  height: 1rem;
+  color: rgb(96 165 250);
+}
+
+.navbar-dropdown-item-content {
+  /* 内容容器 */
+}
+
+.navbar-dropdown-item-label {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  color: white;
+  transition-property: color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+
+  .navbar-dropdown-item:hover & {
+    color: rgb(96 165 250);
+  }
+}
+
+.navbar-dropdown-item-description {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  color: rgb(113 113 122);
+  margin-top: 0.125rem;
+}
+
+/* 下拉菜单分隔线 */
+.navbar-dropdown-divider {
+  border-top: 1px solid rgba(63, 63, 70, 0.5);
+}
+
+/* 下拉菜单网格布局 */
+.navbar-dropdown-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  min-width: 700px;
+  padding: 0;
+}
+
+/* 语言切换按钮 */
+.navbar-language-toggle {
+  display: none;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 9999px;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  color: rgb(228 228 231);
+  transition-property: color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  border-width: 0.5px;
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.25);
+  background-image: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.05),
+    rgba(255, 255, 255, 0.01)
+  );
+
+  @media (min-width: 768px) {
+    display: flex;
+  }
+
+  &:hover {
+    color: white;
+  }
+}
+
+/* 移动端菜单按钮 */
+.navbar-mobile-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.5rem;
+  font-size: 1.25rem;
+  color: rgb(228 228 231);
+  transition-property: color, background-color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  border-width: 0.5px;
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.25);
+  background-image: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.05),
+    rgba(255, 255, 255, 0.01)
+  );
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+
+  &:hover {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+}

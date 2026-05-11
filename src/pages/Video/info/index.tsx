@@ -142,82 +142,67 @@ const VideoInfo = () => {
   }, [videoDetail, videoId]);
 
   return (
-    <NewLayout
-      headerBgStyles={{
-        backgroundImage: `linear-gradient(
-                180deg,
-                #e1ecff 0%,
-                #e3ecff 32%,
-                  #fff 100%
-              )`,
-      }}
-      mainStyles={{
-        background: '#fff',
-      }}
-      content={
-        <Spin spinning={loadingList || loadingListCollection}>
-          <div className={styles.info}>
-            <Breadcrumb className={styles.breadcrumb}>
-              <Breadcrumb.Item
-                onClick={() => history.push(historyPushLinkAt('/video/home'))}
+    <Spin spinning={loadingList || loadingListCollection}>
+      <div className={styles.info}>
+        <Breadcrumb className={styles.breadcrumb}>
+          <Breadcrumb.Item
+            onClick={() => history.push(historyPushLinkAt('/video/home'))}
+          >
+            视频中心
+          </Breadcrumb.Item>
+          <Breadcrumb.Item>{videoDetail?.name}</Breadcrumb.Item>
+        </Breadcrumb>
+        <h1 className={styles.title}>{videoDetail?.name}</h1>
+        {isEmpty(collectionDetail) ? null : (
+          <div className={styles.collection}>
+            所属合集：{collectionDetail?.name}
+          </div>
+        )}
+
+        <div className={styles.video}>
+          <div className={styles.videoLeft}>
+            <iframe
+              style={{ overflow: 'hidden' }}
+              src={iframeUrl}
+              border="0"
+              frameborder="no"
+              framespacing="0"
+              allowfullscreen="true"
+            />
+            <div className={styles.videoFooter}>
+              <CopyToClipboard
+                text={`${window.location.origin}/video/info/${videoId}`}
+                onCopy={() => {
+                  message.success('复制成功');
+                }}
               >
-                视频中心
-              </Breadcrumb.Item>
-              <Breadcrumb.Item>{videoDetail?.name}</Breadcrumb.Item>
-            </Breadcrumb>
-            <h1 className={styles.title}>{videoDetail?.name}</h1>
-            {isEmpty(collectionDetail) ? null : (
-              <div className={styles.collection}>
-                所属合集：{collectionDetail?.name}
-              </div>
-            )}
-
-            <div className={styles.video}>
-              <div className={styles.videoLeft}>
-                <iframe
-                  style={{ overflow: 'hidden' }}
-                  src={iframeUrl}
-                  border="0"
-                  frameborder="no"
-                  framespacing="0"
-                  allowfullscreen="true"
-                />
-                <div className={styles.videoFooter}>
-                  <CopyToClipboard
-                    text={`${window.location.origin}/video/info/${videoId}`}
-                    onCopy={() => {
-                      message.success('复制成功');
-                    }}
-                  >
-                    <div>
-                      <LogoutOutlined style={{ marginRight: 7 }} />
-                      分享
-                    </div>
-                  </CopyToClipboard>
-
-                  <div>
-                    <PlaySquareOutlined /> {videoDetail?.view || 0}{' '}
-                    <FieldTimeOutlined style={{ marginLeft: 19 }} />{' '}
-                    {moment(videoDetail?.updateTime).format('YYYY-MM-DD')}
-                  </div>
+                <div>
+                  <LogoutOutlined style={{ marginRight: 7 }} />
+                  分享
                 </div>
-              </div>
-              <div className={styles.videoRight}>
-                <Tabs
-                  items={items}
-                  activeKey={activeKey}
-                  onChange={(key) => {
-                    setState((draft) => {
-                      draft.activeKey = key;
-                    });
-                  }}
-                />
+              </CopyToClipboard>
+
+              <div>
+                <PlaySquareOutlined /> {videoDetail?.view || 0}{' '}
+                <FieldTimeOutlined style={{ marginLeft: 19 }} />{' '}
+                {moment(videoDetail?.updateTime).format('YYYY-MM-DD')}
               </div>
             </div>
           </div>
-        </Spin>
-      }
-    />
+          <div className={styles.videoRight}>
+            <Tabs
+              items={items}
+              activeKey={activeKey}
+              onChange={(key) => {
+                setState((draft) => {
+                  draft.activeKey = key;
+                });
+              }}
+            />
+          </div>
+        </div>
+      </div>
+    </Spin>
   );
 };
 
